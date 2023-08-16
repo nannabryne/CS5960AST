@@ -1,2 +1,26 @@
 
 
+
+
+
+% proper euler 'e' and imaginary 'i':
+
+\makeatletter
+\newcommand{\eu}[1][\@nil]{%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        \ensuremath{\mathrm{e}}
+    \else
+        \ensuremath{\mathrm{e}^{#1}}
+    \fi}
+\makeatother
+
+\providecommand*{\im}{\ensuremath{\mathrm{i}}}
+\providecommand*{\ppi}{\ensuremath{\text{\textpi}}}
+
+
+% single word sub/superscrips:
+
+\providecommand*{\ped}[1]{\ensuremath{_\mathrm{#1}}}    % pedex
+\providecommand*{\ap}[1]{\ensuremath{^\mathrm{#1}}}     % apex
+\providecommand*{\gped}[1]{\ensuremath{_\text{#1}}}     % greek pedex (fixme)
