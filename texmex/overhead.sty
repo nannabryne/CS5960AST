@@ -1,0 +1,91 @@
+\ProvidesPackage{texmex/overhead}
+
+
+
+%%%%% COPY FROM GUIDE %%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}  \urlstyle{sf}
+\usepackage{babel, csquotes, fancyvrb, graphicx, textcomp, varioref}
+\usepackage{texmex/uiomasterfp} % front page
+%% \usepackage[backend=biber,style=numeric-comp]{biblatex}  %% No bibliography
+% \usepackage[hidelinks, hypertexnames=false]{hyperref}
+
+
+
+%%%%%% MY STUFF %%%%%%
+
+\usepackage{physics,amssymb}
+% \usepackage[fleqn]{amsmath}
+
+\usepackage{tensor}         % for tensor
+\usepackage[varg]{txfonts}  % nice font
+\usepackage{xfrac}          % provides \sfrac
+\usepackage{textgreek}      % provides \textmu etc.
+
+
+
+% UNCOMMENT IN NEED:
+% \usepackage[compat=1.0.0]{tikz-feynman} 
+% \usepackage{xcolor}
+% \usepackage{hyperref} 
+% \usepackage{array}
+% \usepackage{listings}   
+% \usepackage{url}
+% \usepackage{upgreek}
+% \usepackage{enumitem}
+% \usepackage{color,soul}
+% \usepackage{stackengine}
+% \usepackage{textgreek}
+% \usepackage{bookmark}
+% \usepackage{mathrsfs}
+% \usepackage{xfrac} % provides \sfrac
+% % \usepackage[caption=false]{subfig}
+% \usepackage{bbold}
+% \usepackage{relsize}
+
+
+
+
+
+% -------------------
+% Clever referencing:
+
+\usepackage[capitalize]{cleveref}
+\crefdefaultlabelformat{\textbf{#2}}
+\crefname{eq}{Eq.}{Eq.}		% equation
+% \crefname{eqs}{Eqs.}{Eqs.}	% set of equations
+\crefname{sec}{Sect.}{Sect.}	% section
+\crefname{app}{appendix}{appendix}	% appendix
+\crefname{fig}{Fig.}{Fig.}	% figure
+\crefname{tab}{Table}{Table}	% table
+% \crefname{item}{item no.}{item no.}	% table
+\crefdefaultlabelformat{#2#1#3}
+
+\newcommand*\normalref[1]{\ref{#1}}
+\renewcommand*\ref[1]{\cref{#1}}
+
+% Label format: \label{[TYPE]:[CHAPTER KEY]:[SECTION KEY]:[LABEL NAME]}
+
+% -------------------
+
+
+
+
+% --------------
+% Fig formatting:
+
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+% --------------
+
+
+
+
+
+\graphicspath{{figs/}}
+
+\input{texmex/adjustments.sty}
+
+\input{texmex/newcommands.sty}

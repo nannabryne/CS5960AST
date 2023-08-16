@@ -1,0 +1,168 @@
+% Make adjustments to get eg italic bold face vectors
+% (Aim for A&A style)
+
+
+
+% ------
+% Basics:
+
+
+
+
+
+% ------
+
+
+
+% ----------------------------
+% Copy-paste lines 1750 - 1896:
+
+\renewcommand*\vec[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand*\tens[1]{\ensuremath{\mathsf{#1}}}
+\newcommand*\sq{%
+  \ifmmode
+    \Box
+  \else
+    \begingroup
+      \unskip\nobreak
+      \hfil
+      \penalty50
+      \hskip1em
+      \null\nobreak\hfil$\Box$%
+      \parfillskip=0pt
+      \finalhyphendemerits=0
+      \endgraf
+    \endgroup
+  \fi
+}
+\newcommand*\sun{\ensuremath{\odot}}
+\newcommand*\degr{\ensuremath{^\circ}}
+\newcommand*\arcmin{\ensuremath{^\prime}}
+\renewcommand*\arcsec{\ensuremath{^{\prime\prime}}}
+\def\utw{\ensuremath{\smash{\rlap{\lower5pt\hbox{$\sim$}}}}}
+\def\udtw{\ensuremath{\smash{\rlap{\lower6pt\hbox{$\approx$}}}}}
+\newcommand*\fd{\ensuremath{\overset{\text{d}}{.}}}
+\newcommand*\fh{\ensuremath{\overset{\text{h}}{.}}}
+\newcommand*\fm{\ensuremath{\overset{\text{m}}{.}}}
+\newcommand*\fs{\ensuremath{\overset{\text{s}}{.}}}
+\newcommand*\fdg{\ensuremath{\overset{\circ}{.}}}
+\newcommand*\farcm{\ensuremath{\overset{\prime}{.}}}
+\newcommand*\farcs{\ensuremath{\overset{\prime\prime}{.}}}
+\newcommand*\fp{\ensuremath{\overset{\scriptscriptstyle\text{p}}{.}}}
+\newcommand*\cor{\ensuremath{\mathrel{\widehat{=}}}}
+\newcommand*\aa@centerstack[2]{%
+  \ensuremath{%
+    \mathrel{%
+      \mathchoice{%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\displaystyle##$\hfil\cr#1\cr#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\textstyle##$\hfil\cr#1\cr#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\scriptstyle##$\hfil\cr#1\cr#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\scriptscriptstyle##$\hfil\cr#1\cr#2\cr}%
+        }%
+      }%
+    }%
+  }%
+}
+\newcommand*\la{\aa@centerstack{<}{\sim}}
+\newcommand*\ga{\aa@centerstack{>}{\sim}}
+\newcommand*\sol{\aa@centerstack{\sim}{<}}
+\newcommand*\sog{\aa@centerstack{\sim}{>}}
+\newcommand*\lse{\aa@centerstack{<}{\simeq}}
+\newcommand*\gse{\aa@centerstack{>}{\simeq}}
+\newcommand*\aa@centerstackskip[6]{%
+  \ensuremath{%
+    \mathrel{%
+      \mathchoice{%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\displaystyle##$\hfil\cr
+            #1\cr\noalign{\vskip#3}#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\textstyle##$\hfil\cr
+            #1\cr\noalign{\vskip#4}#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\scriptstyle##$\hfil\cr
+            #1\cr\noalign{\vskip#5}#2\cr}%
+        }%
+      }
+      {%
+        \vcenter{%
+          \offinterlineskip
+          \halign{\hfil$\scriptscriptstyle##$\hfil\cr
+            #1\cr\noalign{\vskip#6}#2\cr}%
+        }%
+      }%
+    }%
+  }%
+}
+\newcommand*\grole{\aa@centerstackskip{>}{<}{-1.5\p@}{-1.5\p@}{-1\p@}{-.5\p@}}
+\newcommand*\leogr{\aa@centerstackskip{<}{>}{-1.5\p@}{-1.5\p@}{-1\p@}{-.5\p@}}
+\newcommand*\loa{\aa@centerstack{<}{\approx}}
+\newcommand*\goa{\aa@centerstack{>}{\approx}}
+\newcommand*\diameter{%
+  \ensuremath{%
+    \mathchoice{%
+      \ooalign{%
+        \hfil\hbox{$\displaystyle/$}\hfil\crcr
+        {\hbox{$\displaystyle\mathchar"20D$}}%
+      }%
+    }
+    {%
+      \ooalign{%
+        \hfil\hbox{$\textstyle/$}\hfil\crcr
+        {\hbox{$\textstyle\mathchar"20D$}}%
+      }%
+    }
+    {%
+      \ooalign{%
+        \hfil\hbox{$\scriptstyle/$}\hfil\crcr
+        {\hbox{$\scriptstyle\mathchar"20D$}}%
+      }%
+    }
+    {%
+      \ooalign{%
+        \hfil\hbox{$\scriptscriptstyle/$}\hfil\crcr
+        {\hbox{$\scriptscriptstyle\mathchar"20D$}}%
+      }%
+    }%
+  }%
+}
+\let\olddiameter\diameter
+\newcommand*\getsto{\aa@centerstack{\gets}{\to}}
+\newcommand*\lid{\aa@centerstackskip{<}{=}{1.2\p@}{1.2\p@}{1\p@}{0.9\p@}}
+\newcommand*\gid{\aa@centerstackskip{>}{=}{1.2\p@}{1.2\p@}{1\p@}{0.9\p@}}
+\newcommand*\bbbone{%
+  \ensuremath{%
+    \mathchoice{\mathrm 1\mskip-4mu l}
+               {\mathrm 1\mskip-4mu l}
+               {\mathrm 1\mskip-4.5mu l}
+               {\mathrm 1\mskip-5mu l}%
+  }%
+}
+
+% ----------------------------
