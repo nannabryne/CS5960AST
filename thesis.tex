@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%
 
 \frontmatter{}
-
+\tableofcontents
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,14 +39,46 @@
 %%%%%%%%%%%%%%% MAIN MATTER %%%%%%%%%%%%%%%
 
 \mainmatter{}
-\part{Introduction}
 
-\part{Project}
+\chapter*{Notation}
+\import{chapters/nomenclature/}{content.tex}
+
+
+\part{Introduction} % better name please
+
+% INTRODUCTION
+\chapter{Introduction}\label[chap]{chap:intro}
+\import{chapters/intro/}{content.tex}
+
+% THEORETICAL BACKGROUND
+
+\chapter{Theoretical Background}\label[chap]{chap:background}
+\import{chapters/background/}{content.tex}
+
+
+
+
+
+
+\part{Analytical work}
+
 \chapter{Dummy chapter}
 \import{chapters/dummy/}{content.tex}
 
 
 
+
+\part{Numerical work}
+
+
+
+
+\part{Finishing} % better name please
+
+% DISCUSSION
+
+
+% CONCLUSION
 
 
 

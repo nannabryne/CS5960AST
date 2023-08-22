@@ -2,8 +2,8 @@
 
 
 
-
-% proper euler 'e' and imaginary 'i':
+% ----------------------------------------
+% proper euler 'e' and imaginary 'i', etc.:
 
 \makeatletter
 \newcommand{\eu}[1][\@nil]{%
@@ -19,8 +19,40 @@
 \providecommand*{\ppi}{\ensuremath{\text{\textpi}}}
 
 
+% ---------------------------
 % single word sub/superscrips:
 
 \providecommand*{\ped}[1]{\ensuremath{_\mathrm{#1}}}    % pedex
 \providecommand*{\ap}[1]{\ensuremath{^\mathrm{#1}}}     % apex
 \providecommand*{\gped}[1]{\ensuremath{_\text{#1}}}     % greek pedex (fixme)
+
+
+
+
+
+% Mathematical group:
+\newcommand*\Group[2]{\textsf{#1(#2)}}
+
+% Big-O notation:
+\newcommand*\BigO[1]{\ensuremath{\mathcal{O}(#1)}}
+% \newcommand*\BigO[1]{%
+%     \ifmmode
+%         \mathcal{O}(#1)
+%     \else
+%         $\mathcal{O}(#1)$\!
+%     \fi
+% }
+
+
+% Planck units:
+\providecommand*{\Planck}[1]{\ensuremath{#1_{\mathrm{Pl}}}}
+% \providecommand*{\Planck}[1]{\ensuremath{#1_{\text{\tiny{Pl}}}}}
+
+
+
+
+
+% ---------------------
+% Reocurring subscripts:
+
+\providecommand*{\subGW}{\ensuremath{_{\text{\tiny{GW}}}}}
