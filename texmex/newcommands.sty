@@ -19,12 +19,99 @@
 \providecommand*{\ppi}{\ensuremath{\text{\textpi}}}
 
 
+
+% units:
+\providecommand*{\unit}[1]{~\ensuremath{\mathrm{#1}}}
+
+
 % ---------------------------
 % single word sub/superscrips:
 
 \providecommand*{\ped}[1]{\ensuremath{_\mathrm{#1}}}    % pedex
 \providecommand*{\ap}[1]{\ensuremath{^\mathrm{#1}}}     % apex
 \providecommand*{\gped}[1]{\ensuremath{_\text{#1}}}     % greek pedex (fixme)
+
+
+
+% ------------------
+% closed parantheses:
+\providecommand*{\pclosed}[1]{\ensuremath{\left( #1 \right)}}   % parantheses ()
+\providecommand*{\bclosed}[1]{\ensuremath{\left[ #1 \right]}}   % brackets []
+\providecommand*{\cclosed}[1]{\ensuremath{\left\{ #1 \right\}}}   % parantheses ()
+
+
+
+
+
+% ---------------------
+% proper infinitesimals:
+
+\makeatletter % (for use of @ below)
+\newcommand{\diff}[1][\@nil]{%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        \ensuremath{\mathrm{d}}
+    \else
+        % \ensuremath{\mathrm{d}^{#1}}
+        \ensuremath{d^{#1}}\!
+    \fi}
+\makeatother
+
+
+\makeatletter
+\newcommand{\infinitesimal}[2][\@nil]{\diff[#1] #2}
+\makeatother
+
+
+\makeatletter
+\newcommand{\dx}[1][\@nil]{\infinitesimal[#1]x}
+\makeatother
+
+
+% ----------------
+% pretty fractions:
+\providecommand*{\shalf}{\ensuremath{\sfrac{1}{2}}}   % 1/2
+
+
+
+
+
+% -------------------
+% functions/operators:
+
+% Dirac delta function
+\makeatletter % (for use of @ below)
+\newcommand{\Diracdelta}[1][\@nil]{%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        \ensuremath{\text{\textdelta}}
+    \else
+        \ensuremath{\text{\textdelta}(#1)}
+    \fi}
+\makeatother
+
+% Kronecker delta symbol
+\makeatletter % (for use of @ below)
+\newcommand{\Krondelta}[1][\@nil]{%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        \ensuremath{\text{\textdelta}}
+    \else
+        \ensuremath{\text{\textdelta}\indices{#1}}
+    \fi}
+\makeatother
+
+% Heaviside step function
+\makeatletter % (for use of @ below)
+\newcommand{\Heaviside}[1][\@nil]{%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        \ensuremath{\text{\textTheta}}
+    \else
+        \ensuremath{\text{\textTheta}(#1)}
+    \fi}
+\makeatother
+
 
 
 
@@ -42,6 +129,7 @@
 %         $\mathcal{O}(#1)$\!
 %     \fi
 % }
+% \newcommand*\order[1]{\BigO{#1}} % alias
 
 
 % Planck units:
@@ -55,4 +143,22 @@
 % ---------------------
 % Reocurring subscripts:
 
-\providecommand*{\subGW}{\ensuremath{_{\text{\tiny{GW}}}}}
+% \providecommand*{\subGW}{\ensuremath{_{\text{\tiny{GW}}}}}
+\providecommand*{\subGW}{\ensuremath{_{\mathrm{gw}}}}
+
+
+
+
+
+
+% -----
+% Names: (sake of consitency)
+
+% codes:
+\providecommand*{\latfield}{\textsc{lat}field2}
+\providecommand*{\gevolution}{\textit{gevolution}}
+\providecommand*{\gwasevolution}{\textit{gwasevolution}}
+
+% programming:
+\providecommand*{\Python}{\texttt{Python}}
+\providecommand*{\Cpp}{\texttt{C++}}

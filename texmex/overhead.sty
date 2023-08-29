@@ -15,13 +15,18 @@
 
 %%%%%% MY STUFF %%%%%%
 
+
+
 \usepackage{physics,amssymb}
+
+\usepackage[varg]{txfonts}  % nice font (NB! After amssymb)
 % \usepackage[fleqn]{amsmath}
 
 \usepackage{tensor}         % for tensor
-\usepackage[varg]{txfonts}  % nice font
 \usepackage{xfrac}          % provides \sfrac
 \usepackage{textgreek}      % provides \textmu etc.
+\usepackage{booktabs}       % for tables (provides \bottomrule)
+\usepackage{dcolumn}        % for tables (gives \newcolumntype)
 
 
 
@@ -43,6 +48,10 @@
 % % \usepackage[caption=false]{subfig}
 % \usepackage{bbold}
 % \usepackage{relsize}
+
+
+
+\newcolumntype{d}[1]{D{.}{.}{#1}} % "decimal" column type
 
 
 
