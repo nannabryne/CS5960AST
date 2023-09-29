@@ -139,9 +139,23 @@
 %% Define \begin{preface}
 \newenvironment{preface}{%
   \chapter*{\prefacename}
+  \addcontentsline{toc}{chapter}{\prefacename}% NANNA ADDED THIS
   \markboth{\prefacename}{}
   }
   {}
+
+%%%%%%%%%%% NANNA'S ADDITIONAL STUFF %%%%%%%%%%%
+
+%% Define \begin{nomen}
+\newcommand*\uio@nomenname{Notation}
+\newenvironment{nomen}{%
+  \chapter*{\uio@nomenname}
+  \addcontentsline{toc}{chapter}{\uio@nomenname}
+  \markboth{\uio@nomenname}{}
+  }
+  {}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Headers and footers:
 \RequirePackage{fancyhdr}

@@ -4,6 +4,11 @@
 \usepackage{texmex/overhead}
 
 
+
+% Writing tools (remove before submission):
+% \import{texmex/}{writingtools.sty}
+\input{texmex/writingtools.tex}
+
 \title{Gravitational waves from topological defects} 
 \subtitle{Any short subtitle}  
 \author{Nanna Bryne}                    
@@ -15,12 +20,14 @@
 
 %%%%%%%%%%%%%%% FRONT PAGE %%%%%%%%%%%%%%%
 
-
 \uiomasterfp[
     dept={Institute of Theoretical Astrophysics\and Department of Physics},
     program={CS:~Astrophysics}, 
     supervisor={David Fonseca Mota}, % or supervisors={A Name\and B Name},  
+    color={blue},
+    fgimage={starry-night.png},
     long] 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -29,11 +36,20 @@
 %%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%
 
 \frontmatter{}
-\tableofcontents
+\tableofcontents{}
+% \listoffigures{}     
+% \listoftables{}       
+
+
+% \begin{preface}
+%     Here comes your preface, including acknowledgments and thanks.
+%     \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22}
+% \end{preface}
 
 % NOMENCLATURE etc
-\chapter*{Notation}
-\import{chapters/nomenclature/}{content.tex}
+\begin{nomen}
+    \import{chapters/nomenclature/}{content.tex}
+\end{nomen}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -43,45 +59,58 @@
 
 \mainmatter{}
 
+% >>> 
 
-
-
-\part{Introduction} % better name please
+\part*{}%
 
 % INTRODUCTION
 \chapter{Introduction}\label[chap]{chap:intro}
-\import{chapters/intro/}{content.tex}
+    \import{chapters/intro/}{intro.tex}
 
-% THEORETICAL BACKGROUND
 
-\chapter{Theoretical Background}\label[chap]{chap:background}
-\import{chapters/background/}{content.tex}
-
+% \chapter{Dummy chapter}
+% \import{chapters/dummy/}{content.tex}
 
 
 
+% >>> THEORETICAL BACKGROUND
+\part{Background} 
+
+% GR, DWs ++
+\chapter{Classical Field Theory and Gravity}\label[chap]{chap:CFTgrav}
+    \import{chapters/CFTgrav/}{CFTgrav.tex}
+
+% GWs
+\chapter{Gravitational Waves}
+
+% SIMS
+\chapter{Lattice- and \(N\)-body simulations}
 
 
-\part{Analytical work}
+% >>> THE PROJECT
+\part{Project}
 
-\chapter{Dummy chapter}
-\import{chapters/dummy/}{content.tex}
+% ANALYTIC CALCULATION
+\chapter{Calculating Gravitational Waves from Domain Walls}
+    \import{chapters/tmp_anal/}{tmp_anal.tex}
+
+% NUMERICAL SIMULATION
+\chapter{Simulating Gravitational Waves from Domain Walls} 
+
+% COMBINING ANALYSES
+\chapter{Studying Gravitational Waves from Domain Walls}
 
 
 
+% >>> 
 
-\part{Numerical work}
-
-
-
-
-\part{Finishing} % better name please
+\part*{}% 
 
 % DISCUSSION
-
+\chapter{Discussion}
 
 % CONCLUSION
-
+\chapter{Conclusion and Outlook}
 
 
 
@@ -92,11 +121,79 @@
 %%%%%%%%%%%%%%% BACK MATTER %%%%%%%%%%%%%%%
 
 \backmatter{}
+
+
+\part*{}
+
+
 \bibliography{refs}
-% \addbibresource[location=remote]{http://127.0.0.1:23119/better-bibtex/export/collection?/1/4HBU72KS.bibtex}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 
+
+\appendix
+
+\chapter{I do not have an appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 \end{document}
+
+
+
+
+
+
+% |||||||||||||||||||||||||||||||||||||||||||||||| 
+
+\chapter*{My commands}
+
+\important{This section is so that my commands are saved in the cache.} 
+
+\hl{Delete before submission!}
+
+\begin{bullets}
+    \item \dots
+    \item bullet points
+\end{bullets}
+
+\nc[need citation]
+
+\checkthis{check this}
+
+\rephrase{rephrase}
+
+\cringe{awkward wording}
+
+\comment{comment}
+
+\phpar[\dots]
+
+\noindent
+\begin{tabular*}{\linewidth}{ r l }
+    \toprule    
+\end{tabular*}
+
+\Group{SO}{3} is a group 
+
+\textsf{SO(3)} is a group \nc
+
+$\Group{SO}{3}$ is a group
+
+The order \BigO{1} is large
+
+The order $\BigO{1}$ is large
+
+
+
+The Planck unit \Planck{M}
+
+
+
+
+% |||||||||||||||||||||||||||||||||||||||||||||||| 
+
+
+% \end{document}

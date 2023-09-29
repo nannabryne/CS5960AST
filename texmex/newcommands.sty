@@ -1,5 +1,10 @@
 
 
+%%%%%%%%%%%%%%%% NOT FOR FINAL PRODUCT %%%%%%%%%%%%%%%%
+% \input{texmex/writingtools.sty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 % ----------------------------------------
@@ -67,6 +72,14 @@
 \newcommand{\dx}[1][\@nil]{\infinitesimal[#1]x}
 \makeatother
 
+% \newenvironment{integ}[2][x][1]{%
+%     \int 
+%     }
+%     {}
+
+
+
+
 
 % ----------------
 % pretty fractions:
@@ -79,15 +92,17 @@
 % -------------------
 % functions/operators:
 
-% Dirac delta function
+% Dirac delta function 
 \makeatletter % (for use of @ below)
-\newcommand{\Diracdelta}[1][\@nil]{%
+\newcommand{\Diracdelta}[2][\@nil]{%
+\text{\textdelta} 
 \def\tmp{#1}%
     \ifx\tmp\@nnil
-        \ensuremath{\text{\textdelta}}
     \else
-        \ensuremath{\text{\textdelta}(#1)}
-    \fi}
+        ^{(#1)}
+    \fi
+(#2)   
+}
 \makeatother
 
 % Kronecker delta symbol
@@ -114,7 +129,16 @@
 
 
 
+% ----------------
+% Tensor shortcuts:
+\newcommand{\upind}[1]{\ensuremath{\indices{^{#1}}}}   % tens. index upper
+\newcommand{\loind}[1]{\ensuremath{\indices{_{#1}}}}   % tens. index lower
 
+
+
+
+% -----------
+% Misc useful:
 
 
 % Mathematical group:
@@ -162,3 +186,4 @@
 % programming:
 \providecommand*{\Python}{\texttt{Python}}
 \providecommand*{\Cpp}{\texttt{C++}}
+

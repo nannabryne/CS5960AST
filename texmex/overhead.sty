@@ -2,56 +2,71 @@
 
 
 
-%%%%% COPY FROM GUIDE %%%%%
+%%%%%%%%%%%%%%%%%% STANDARD PACKAGES %%%%%%%%%%%%%%%%%%
+
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc, url}  \urlstyle{sf}
-\usepackage{babel, csquotes, fancyvrb, graphicx, textcomp, varioref}
+
+% recommended by guide:
+\usepackage{babel, 
+            csquotes,           % quotes in different fonts/typesettings
+            fancyvrb, 
+            graphicx,           
+            textcomp,           % useful symbols
+            varioref}           % better crossreferencing
 \usepackage{texmex/uiomasterfp} % front page
-%% \usepackage[backend=biber,style=numeric-comp]{biblatex}  %% No bibliography
-% \usepackage[hidelinks, hypertexnames=false]{hyperref}
 
 
-
-%%%%%% MY STUFF %%%%%%
-
-
+\usepackage[hidelinks, hypertexnames=false]{hyperref}
+% \usepackage{hyperref}
+% \hypersetup{citebordercolor={0 0 1}}
 
 \usepackage{physics,amssymb}
 
-\usepackage[varg]{txfonts}  % nice font (NB! After amssymb)
+\usepackage[varg]{txfonts}      % nice font (NB! After amssymb)
 % \usepackage[fleqn]{amsmath}
+% \usepackage{color}
 
-\usepackage{tensor}         % for tensor
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% MISC. PACKAGES %%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{tensor}         % for tensor indices
 \usepackage{xfrac}          % provides \sfrac
 \usepackage{textgreek}      % provides \textmu etc.
+
+
+
+
+% ----------------
+% Table formatting:
+
 \usepackage{booktabs}       % for tables (provides \bottomrule)
 \usepackage{dcolumn}        % for tables (gives \newcolumntype)
-
-
-
-% UNCOMMENT IN NEED:
-% \usepackage[compat=1.0.0]{tikz-feynman} 
-% \usepackage{xcolor}
-% \usepackage{hyperref} 
-% \usepackage{array}
-% \usepackage{listings}   
-% \usepackage{url}
-% \usepackage{upgreek}
-% \usepackage{enumitem}
-% \usepackage{color,soul}
-% \usepackage{stackengine}
-% \usepackage{textgreek}
-% \usepackage{bookmark}
-% \usepackage{mathrsfs}
-% \usepackage{xfrac} % provides \sfrac
-% % \usepackage[caption=false]{subfig}
-% \usepackage{bbold}
-% \usepackage{relsize}
-
-
-
 \newcolumntype{d}[1]{D{.}{.}{#1}} % "decimal" column type
+
+% ----------------
+
+
+
+
+
+
+% --------------
+% Fig formatting:
+
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+% --------------
 
 
 
@@ -81,16 +96,7 @@
 
 
 
-
-% --------------
-% Fig formatting:
-
-\usepackage{float}
-\usepackage{subcaption}
-\usepackage[font=small, labelfont=bf]{caption}
-% --------------
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -99,3 +105,22 @@
 \input{texmex/adjustments.sty}
 
 \input{texmex/newcommands.sty}
+
+
+
+
+% UNCOMMENT IN NEED:
+% \usepackage[compat=1.0.0]{tikz-feynman} 
+% \usepackage{xcolor}
+% \usepackage{array}
+% \usepackage{listings}   
+% \usepackage{url}
+% \usepackage{upgreek}
+% \usepackage{enumitem}
+% \usepackage{color,soul}
+% \usepackage{stackengine}
+% \usepackage{bookmark}
+% \usepackage{mathrsfs}
+% % \usepackage[caption=false]{subfig}
+% \usepackage{bbold}
+% \usepackage{relsize}

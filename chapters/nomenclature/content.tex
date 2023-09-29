@@ -1,23 +1,50 @@
 
 
 
-\paragraph{Constants and units.} We use `natural units' where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum. The Newtonian constant of gravitation $G\ped{N}$ is referenced explicitly, and we use Planck units such as the Planck mass $\Planck{M} = \pclosed{\hbar c /G}^{\shalf} = G^{-\shalf} \sim 10^{-8} \unit{kg}$.
+\paragraph{Constants and units.} %
+We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum.\comment{Planck units? Set $k\ped{B}=G\ped{N}=1$?} The Newtonian constant of gravitation $G\ped{N}$ is referenced explicitly, and we use Planck units such as the Planck mass $\Planck{M} = \pclosed{\hbar c /G\ped{N}}^{\shalf} = G\ped{N}^{-\shalf} \sim 10^{-8} \unit{kg}$. 
+%
 
+\paragraph{Tensors.} %
+The metric signature $(-,+,+,+)$ is considered, i.e.~$\det~\!\![g\indices{_{\mu\nu}}] \equiv \abs{g} < 0 $. The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}$, whereas a general metric is denoted $g\indices{_{\mu\nu}}$. A four-vector $p\indices{^{\mu}} = $
 
-\paragraph{Tensors.} The metric signature $(-,+,+,+)$ is considered. A four-vector $p\indices{^{\mu}} = $
+$[\eta\loind{\mu\nu}] = \text{diag}(-1, 1, 1, 1)$
 
+\subparagraph[Gamma]{Christophel symbols:} %
 \begin{equation}
-    \begin{split}
-        \lambda \quad \bar{\lambda} \hbar \quad \rlap{X}-- \\
-        \text{X\hspace{-0.8em}\raisebox{0.75pt}{\,--}} \\
-        \lambdabar \equiv \lambda /(2\ppi) ; (\lambda = 1/f) \iff k = 2\ppi/\lambda = 1/\lambdabar
-    \end{split}
+    \tensor*{\Gamma}{^\rho_{\mu \nu}} = ...
 \end{equation}
 
-\section*{Frequently used abbreviations}
+\subparagraph[Lambda]{``Lambda tensor'':} %
+\begin{equation}
+    \tensor*{\Lambda}{_{ij, kl}} = ...
+\end{equation}
+
+
+% $[\tens{\eta}] = \text{diag}(-1, 1, 1, 1)$
+
+\paragraph{Fourier transforms.} %
+We use the following convention for the Fourier transform of $f(x)$, $\tilde{f}(k)$, and its inverse, where $x$ and $k$ are Lorentz four-vectors:
+\begin{equation}
+    \begin{split}
+        f(x) &= \int \! \frac{d^4\! k}{(2\ppi)^4} \, \eu[-\im k\cdot x] \tilde{f}(k) \\
+        \tilde{f}(k) &= \int \! d^4\! x \, \eu[\im k \cdot x] f(x) 
+    \end{split}
+\end{equation}
+Here, $k\cdot x = k\loind{\sigma} x\upind{\sigma} = g\loind{\rho\sigma} k\upind{\rho} x\upind{\sigma}$.
+
+
+% \begin{equation}
+%     \begin{split}
+%         \lambda \quad \bar{\lambda} \hbar \quad \rlap{X}-- \\
+%         \text{X\hspace{-0.8em}\raisebox{0.75pt}{\,--}} \\
+%         \lambdabar \equiv \lambda /(2\ppi) ; (\lambda = 1/f) \iff k = 2\ppi/\lambda = 1/\lambdabar
+%     \end{split}
+% \end{equation}
+
+% \section*{Frequently used abbreviations}
+\section*{Acronyms}
 \subimport{./}{abbrv.tex}
-
-
 
 
 \section*{Nomenclature}

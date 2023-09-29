@@ -96,6 +96,12 @@
 \define@key{uiomfp@keys}{supervisors}{\def \uiomfp@supervisors {#1}}
 \define@key{uiomfp@keys}{title}{\def \uiomfp@title {#1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nanna's stuff
+
+\define@key{uiomfp@keys}{fgimage}{\def \uiomfp@fgimage {#1}} % foreground image
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Default values:
 \def \uiomfp@author {\@author}
 \def \uiomfp@bind {0}
@@ -172,6 +178,13 @@
         \put(0,581){\color{uiomfp@\uiomfp@color}%
           \rule{21cm}{9.27cm}}}{% else
         \put(0,581){\includegraphics[width=21cm,height=9.27cm]{\uiomfp@image}}}}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Nanna's stuff
+    \ifthenelse{\equal{\uiomfp@fgimage}{}}{}{%
+      \AddToShipoutPictureFG*{%
+        \put(0,581){\includegraphics[width=21cm,height=9.27cm]{\uiomfp@fgimage}}}
+    }
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Add logo:
     \AddToShipoutPictureFG*{%
       \put(\value{uiomfp@bind@w},784){\includegraphics[height=12.8mm]%
