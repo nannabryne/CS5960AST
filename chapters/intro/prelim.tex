@@ -1,5 +1,14 @@
 
 
+
+
+It is assumed that the reader is familiar with variational calculus and linear perturbation theory.
+
+\rephrase{In the following, we briefly (re)capture some concepts that are important starting points for the rest of the thesis.}
+
+
+
+
 % \subsection{GR}
 
 \begin{bullets}
@@ -13,18 +22,46 @@
 \end{bullets}
 
 
+
 \begin{equation}
-    G\loind{\mu\nu} = 8\ppi G\ped{N} T\loind{\mu\nu}
+    G\lo{\mu\nu} = 8\ppi G\ped{N} T\lo{\mu\nu}
 \end{equation}
 
-
-
+\subsection{Field theory}
+    % Consider Lorentzian \blahblah. We formulate a theory in terms of the Lorentz invariant action
+    % \begin{equation}
+    %     S = \int \! \dx[4]\, \mathcal{L},
+    % \end{equation}
+    % with $\mathcal{L}$ being the \emph{Lagrangian}\footnote{Technically, it is the Lagrangian \emph{density}, an insignificant \grammar[point]{distinction} for these purposes.} of the theory. This Lorentz invariant quantity is composed of scalar terms only.
+    We formulate a theory in four-dimensional spacetime \comment{Minkowski} in terms of the Lorentz invariant action
+    \begin{equation}
+        S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\lo{\mu} \phi_i\}),
+    \end{equation}
+    with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\{\phi_i\}$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. For a general (i.e.~curved) spacetime, \blahblah $\partial\lo{\mu} \to \nabla\lo{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
+    \begin{equation}
+        S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\lo{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\lo{\mu} \phi_i\})}_{\text{scalar}},
+    \end{equation}
+    % where $\hat{\mathcal{L}}$ is a scalar.
+    \comment{Maybe specify that this is only for scalar fields? Or include other fields?}
 
 
 % \subsection{Classical Field Theory}
-    The action
-    \begin{equation}
-        S\ped{ST} = S\ped{EH} + S_{\phi} + S\ped{m}=  \int \!\diff[4] x \, \sqrt{-\abs{g}} \cclosed{ \frac{\Planck{M}^2}{2} R - \frac{1}{2}\nabla\indices{_{\rho}} \phi \nabla\indices{^{\rho}} \phi - V(\phi)} + S\ped{m}
-    \end{equation}
+    % The action
+    % \begin{equation}
+    %     S\ped{ST} = S\ped{EH} + S_{\phi} + S\ped{m}=  \int \!\diff[4] x \, \sqrt{-\abs{g}} \cclosed{ \frac{\Planck{M}^2}{2} R - \frac{1}{2}\nabla\indices{_{\rho}} \phi \nabla\indices{^{\rho}} \phi - V(\phi)} + S\ped{m}
+    % \end{equation}
 
-    GR as we know it is reconstructed when varying $S\ped{E}$ with respect to the metric $g\loind{\mu\nu}(x)$
+    % GR as we know it is reconstructed when varying $S\ped{E}$ with respect to the metric $g\lo{\mu\nu}(x)$
+
+
+
+
+\subsection{Expanding universe: FRW cosmology}
+    The universe expands with the rate $a(t)$ at cosmic time $t$. 
+    \begin{bullets}
+        \item expansion rate, cosmic time, conformal time
+        \item why is flat assumption OK?
+    \end{bullets}
+
+
+

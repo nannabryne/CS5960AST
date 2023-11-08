@@ -23,10 +23,10 @@
 % in-sentence comment:
 % \newcommand{\comment}[1]{\textcolor{n@redish}{$\lceil$~\small{#1}~$\rfloor$}}
 \newcommand{\comment}[1]{\textcolor{n@redish}{%
-    \large{$\boldsymbol{\ulcorner}$}%
+    {\large{$\boldsymbol{\ulcorner}$}}%
     % {\fontfamily{phv}\selectfont
-    \small{#1}%
-    \large{$\boldsymbol{\lrcorner}$}}}
+    {\small{#1}}%
+    {\large{$\boldsymbol{\lrcorner}$}}}}
 
 % something important?
 \newcommand{\important}[1]{\colorbox{black}{\textcolor{white}{\textbf{#1}}}}
@@ -48,22 +48,22 @@
 
 % rephrase:
 \newcommand{\rephrase}[1]{%
-    \large{\textcolor{n@green}{$\boldsymbol{\lceil}$}}%
-    #1%
-    \large{\textcolor{n@green}{$\boldsymbol{\rfloor}_{\circlearrowleft}$}}}
+    {\large{\textcolor{n@green}{$\boldsymbol{\lceil}$}}}%
+    {\normalsize{#1}}%
+    {\large{\textcolor{n@green}{$\boldsymbol{\rfloor}_{\circlearrowleft}$}}}}
     
 % awkward wording:
 \newcommand{\cringe}[1]{%
-    \large{\textcolor{n@green}{$\boldsymbol{\lceil}$}}%
-    #1%
-    \large{\textcolor{n@green}{$\boldsymbol{\rfloor}_{\circlearrowleft}$}}}
+    {\large{\textcolor{n@green}{$\boldsymbol{\lceil}$}}}%
+    {\normalsize{#1}}%
+    {\large{\textcolor{n@green}{$\boldsymbol{\rfloor}_{\circlearrowleft}$}}}}
 
 
 % needs double-checking:
 \newcommand{\checkthis}[1]{%
-    \large{\textcolor{n@lilac}{$\boldsymbol{\lceil}$}}%
-    #1%
-    \large{\textcolor{n@lilac}{$\boldsymbol{\rfloor}_{?}$}}}
+    {\large{\textcolor{n@lilac}{$\boldsymbol{\lceil}$}}}%
+    {\normalsize{#1}}%
+    {\large{\textcolor{n@lilac}{$\boldsymbol{\rfloor}_{?}$}}}}
 
 % Bullet points:
 \newenvironment{bullets}
@@ -116,7 +116,7 @@
     \textcolor{n@blue}{
     \section*{DRAFT}
     \begin{flushleft}
-        \huge{$\boldsymbol{\ulcorner}$}
+        {\huge{$\boldsymbol{\ulcorner}$}}
     \end{flushleft}
     }%
     \noindent%
@@ -124,7 +124,7 @@
     \textcolor{n@blue}{
     \section*{}
     \begin{flushright}
-        \huge{$\boldsymbol{\lrcorner}$}
+        {\huge{$\boldsymbol{\lrcorner}$}}
     \end{flushright}
     \noindent\rule{\linewidth}{1.2pt}
     }%
@@ -133,5 +133,5 @@
 
 % need reference/showing
 \newcommand*{\provethis}[1]{\textcolor{n@darkblue}{%
-    \large{[}$\leftarrow$\small{#1}\large{]}$_\blacksquare$%
+    {\large{[}}$\leftarrow${\small{#1}}{\large{]}$_\blacksquare$}%
     }}

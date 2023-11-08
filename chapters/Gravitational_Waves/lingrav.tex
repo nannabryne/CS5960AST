@@ -1,0 +1,36 @@
+% ||||||||||||||||||||||||||||||||||||
+% |||||| 3.1 Linearised Gravity ||||||
+% ||||||||||||||||||||||||||||||||||||
+
+% -----------------------------------------
+% labels: \label{[type]:Gws:lingrav:[name]}
+% -----------------------------------------
+
+
+
+If we let $\widebar{g}\lo{\mu\nu}$ be the background metric, the perturbed metric is given by
+\begin{equation}
+    g\lo{\mu\nu} = \widebar{g}\lo{\mu\nu} + h\lo{\mu\nu}; \quad \abs{h\lo{\mu\nu}} \ll 1,
+\end{equation}
+where $h\lo{\mu\nu}$ describes a tensor field propagating on said background. %, i.e.~gravitational waves.
+Now, $g\up{\mu\nu} = \widebar{g}\up{\mu\nu} - h\up{\mu\nu}$ is the inverse metric, however $h\up{\mu\nu}h\lo{\nu\lambda}  = \widebar{g}\up{\mu\rho} \widebar{g}\up{\nu\sigma} h\lo{\rho\sigma} h\lo{\nu\lambda} \neq \Krondelta{^\mu _{\lambda} }$.
+
+\phpar[find the linearised Einstein eqs -- using comma notation -- comment about no backreaction]
+
+
+
+The Christophel symbols are now
+\begin{equation}
+\begin{split}
+    \Gamma\indices{^{\rho}_{\mu\nu}} &=  \frac{1}{2}g\up{\rho \sigma} \pclosed{g\lo{\mu\sigma,\nu} + g\lo{\nu\sigma,\mu} - g\lo{\mu\nu,\sigma}}  \\
+    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma}} - \frac{1}{2}h\up{\rho\sigma} \underbrace{\pclosed{ \widebar{g}\lo{\mu\sigma,\nu} + \widebar{g}\lo{\nu\sigma,\mu} - \widebar{g}\lo{\mu\nu,\sigma}}}_{=2 \widebar{g}\lo{\sigma\lambda} \widebar{\Gamma}\indices{^\lambda _{\mu\nu} }} + ~\BigO{h^2} \\
+    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma}} - h\indices{^\rho _\lambda} \widebar{\Gamma}\indices{^\lambda_{\mu\nu}} + \BigO{h^2} \\
+    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma} - 2h\lo{\sigma\lambda}\widebar{\Gamma}\indices{^\lambda_{\mu\nu}} }  + \BigO{h^2} \\
+    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{h\lo{\mu\sigma;\nu} + h\lo{\nu\sigma;\mu} - h\lo{\mu\nu;\sigma}} + \BigO{h^2},
+\end{split}
+\end{equation}
+where $h\lo{\mu\nu;\sigma}=\widebar{\nabla}\lo{\sigma}h\lo{\mu\nu}$ \comment{$+ \BigO{h^2}$ ??}. \provethis{Prove this last line.}
+
+
+% \subsection{Separating GWs from the Background}
+
