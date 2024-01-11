@@ -1,7 +1,7 @@
 % !TEX root = ../thesis.tex
 
 
-
+\makeatletter
 
 % -------
 % Colours:
@@ -14,6 +14,7 @@
 \definecolor{n@lilac}{rgb}{0.87, 0.0, 1.0}
 \definecolor{n@babyblue}{rgb}{0.63, 0.79, 0.95}
 \definecolor{n@blue}{rgb}{0.0, 0.5, 1.0}
+\definecolor{n@darkred}{RGB}{165, 63, 38}
 
 
 
@@ -35,15 +36,19 @@
 \newcommand{\hl}[1]{\colorbox{n@yellow}{#1}}    
 
 % need citation:
-\makeatletter
-\newcommand{\nc}[1][\@nil]{%
-\def\tmp{#1}%
-    \ifx\tmp\@nnil
-        ~\textcolor{n@darkblue}{$\vdots $ \copyright ~$\vdots $}~
-    \else
-        \textcolor{n@darkblue}{#1$^{\text{\copyright}}$}
-    \fi}
-\makeatother
+% \makeatletter
+% \newcommand{\nc}[1][\@nil]{%
+% \def\tmp{#1}%
+%     \ifx\tmp\@nnil
+%         ~\textcolor{n@darkblue}{$\vdots $ \copyright ~$\vdots $}~
+%     \else
+%         \textcolor{n@darkblue}{#1$^{\text{\copyright}}$}
+%     \fi}
+
+\newcommandx*{\nc}[2][2=]{%
+    \textcolor{n@darkblue}{#1$^{\text{\copyright}}_{\text{{\tiny{(#2)}}}}$}
+}
+% \makeatother
 
 
 % rephrase:
@@ -75,7 +80,7 @@
     \medskip}
 
 % Phantom paragraph:
-\makeatletter
+% \makeatletter
 \newcommand{\phpar}[1][\@nil]{%
 \def\tmp{#1}%
     \ifx\tmp\@nnil
@@ -83,7 +88,7 @@
     \else
         \par\colorbox{n@darkblue}{\textcolor{white}{\textsc{phantom paragraph:}}}~\textcolor{n@darkblue}{\textsc{#1}}
     \fi}
-\makeatother
+% \makeatother
 
 % \newcommand{\phpar}[1][]{\colorbox{n@darkblue}{\textsc{phantom paragraph}}}
 
@@ -91,7 +96,7 @@
 
 % \newcommand*{\grammar}[2][]{\textcolor{n@green}{#2}\colorbox{n@green}{\textcolor{white}{#1}}}
 % Check spelling
-\makeatletter
+% \makeatletter
 \newcommand{\grammar}[2][\@nil]{%
 \textcolor{n@blue}{#2\(^{?}\)}%
 \def\tmp{#1}%
@@ -100,12 +105,12 @@
     \else
         ~$^\text{\colorbox{n@blue}{\tiny{\textcolor{white}{#1}}}}$
     \fi}
-\makeatother
+% \makeatother
 
 
 
 % sometext [...]
-\newcommand*{\blahblah}{\textcolor{n@darkblue}{blah blah [\dots]}}
+\newcommand*{\blahblah}{\textcolor{n@darkred}{blah blah [\dots]\,}}
 
 % Temporary section
 \newenvironment{draft}{% 
@@ -135,3 +140,56 @@
 \newcommand*{\provethis}[1]{\textcolor{n@darkblue}{%
     {\large{[}}$\leftarrow${\small{#1}}{\large{]}$_\blacksquare$}%
     }}
+
+
+
+% temporary title
+\newcommand*{\tmptitle}[1]{\textcolor{n@lilac}{TITLE~(}{#1}\textcolor{n@lilac}{)}}
+
+
+
+
+
+
+
+%% define \begin{Nannasnotes} 
+\newcommand*\n@Nannasnotesname{Nanna's notes}
+\newcommand*\n@Nannasnotescolour{n@pink}
+\newenvironment{Nannasnotes}{%
+    \chapter*{\textcolor{\n@Nannasnotescolour}{$\blacksquare \mathcal{NOTES}$}}
+    \markboth{\textcolor{\n@Nannasnotescolour}{\n@Nannasnotesname: \today}}{}
+    % \newcommand*{\newnote}[1]{\section*{\textcolor{\n@Nannasnotescolour}{#1}} }
+    }
+    {
+    \textcolor{\n@Nannasnotescolour}{
+    \begin{flushright}
+        {\huge{$\blacksquare$}}
+    \end{flushright}
+    }%
+    }
+
+\newcommandx*\notesdate[3]{%
+    \noindent\textsf{\textcolor{\n@Nannasnotescolour}{\ordinaldate{#1}~\monthname[#2]~{#3}}
+    }%
+}
+
+% communicate through note
+\newcommand*\speak[1]{\textcolor{uioblue}{\textbf{#1}}}
+
+
+
+
+% question
+\newcommand*{\question}[2][]{%
+{\colorbox{black}{\textcolor{n@yellow}{\textbf{?`}}}}%
+\def\tmp{#1}%
+    \ifx\tmp\@nnil
+        %
+    \else
+        $^{~#1}$~%
+    \fi
+{\normalsize{#2}}%
+{~\colorbox{black}{\textcolor{n@yellow}{\textbf{?}}}}%
+}
+
+\makeatother

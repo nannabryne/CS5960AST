@@ -4,13 +4,22 @@
 % labels: \label{[type]:[this chap key]:[name]}
 % -----------------------------------
 
-
+% ############LOCAL MACROS############
+\newcommand*{\mfa}{\mathfrak{a}} % fraktur a; index 0, 1, 2
+\newcommand*{\mfb}{\mathfrak{b}} % fraktur b; index 0, 1, 2
+\newcommand*{\mfc}{\mathfrak{c}} % fraktur c; index 0, 1, 2
+\newcommand*{\Lam}[2]{\ProjectionLambda{#1}{#2}}
+% ####################################
 
 \newpage
 
 
 \begin{draft}%
-    Consider a planar domain wall in the $xy$-plane in a flat FRW universe, represented by a scalar field $\phi(\eta, \vec{x})$ and a potential $V(\phi)$. The background metric is
+    Consider a planar domain wall in the $xy$-plane in a flat FRW universe, represented by a scalar field $\phi(\eta, \vec{x})$ and a potential $V(\phi)$. The action of this theory is
+    \begin{equation}
+        S = \integ[4]{x\sqrt{-g}} \cclosed{ 16\ppi G\ped{N}\mathcal{R} - \frac{1}{2}\phi\^{;\mu}\phi\_{;\mu} + V(\phi)}.
+    \end{equation}
+    The background metric is
     \begin{equation}
         d\widebar{s}^2 = \widebar{g}\indices{_{\mu\nu}} \diff \widebar{x}\indices{^\mu} \diff\widebar{x}\indices{^\nu} = -\diff t^2 + a^2(t) \Krondelta{_{ij}} \diff x^i \diff x^j = a^2 (\eta) \cclosed{-\diff\eta^2  + \diff x^2 +\diff  y^2 + \diff z^2}.
     \end{equation}
@@ -18,19 +27,20 @@
     \begin{equation}
         \phi(\eta, \vec{x}) = \widebar{\phi}(\eta, z; \zeta(\eta, x^a)) = \widebar{\phi}(\eta, z; 0) + \zeta(\eta, x^a) \pdv{\widebar{\phi}}{z}\bigg|_{\zeta=0} + \BigO{\zeta^2}.
     \end{equation}
+    \comment{Remember eqs for $\zeta$!} 
     Furthermore, Fourier transforming \provethis{show this!} the spatial components gives
     \begin{equation}
-        \phi(\eta,\vec{k}) = \integ[3]{x} \eu[\im k\lo{i} x\up{i}] \phi(\eta,\vec{x})= \bclosed{ (2\ppi)^2 \Diracdelta[2]{k\lo{a}}- \im k\lo{3} \zeta(\eta, k\lo{a}) } \widebar{\phi}(\eta, k\lo{3}; 0) + \order{\zeta^2 }.
+        \phi(\eta,\vec{k}) = \integ[3]{x} \eu[\im k\_{i} x\^{i}] \phi(\eta,\vec{x})= \bclosed{ (2\ppi)^2 \Diracdelta[2]{k\_{a}}- \im k\_{3} \zeta(\eta, k\_{a}) } \widebar{\phi}(\eta, k\_{3}; 0) + \order{\zeta^2 }.
     \end{equation}
 
     % \phpar[expanation of/reference to how to obtain the following:]
-    The TT-part of the energy-momentum tensor is \provethis{refer to some section}
+    The TT-part of the energy-momentum tensor is \provethis{refer to some section} \comment{NB: $g$ cannot have cross terms!!}
     \begin{equation}
-        \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) = \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}})  \integ[3][(2\ppi)^3]{p}  p\lo{k} p\lo{l} \phi(\eta, \vec{p}) \phi(\eta, \vec{k}-\vec{p}).
+        \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) = \Lam{ij}{kl}(\hat{\vec{k}})  \integ[3][(2\ppi)^3]{p}  p\_{k} p\_{l} \phi(\eta, \vec{p}) \phi(\eta, \vec{k}-\vec{p}).
     \end{equation}
     We define a quantity $\tensor{t}{_{kl}}$ by
     \begin{equation}
-        \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) =  \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}}) \pclosed{  \frac{1}{2\ppi} \cdot\tensor{t}{_{kl}}(\eta, \vec{k})  + \BigO{\zeta^2} },
+        \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) =  \Lam{ij}{kl}(\hat{\vec{k}}) \pclosed{  \frac{1}{2\ppi} \cdot\tensor{t}{_{kl}}(\eta, \vec{k})  + \BigO{\zeta^2} },
     \end{equation}
     and the additional function 
     \begin{equation}
@@ -39,9 +49,9 @@
     After some manipulation \provethis{show this!}, we get the following:
     \begin{subequations}
         \begin{align}
-            \tensor{t}{_{ab}} (\eta, \vec{k}) &= k\lo{a} k\lo{b} \bclosed{-\im \zeta(\eta, k\lo{c})} \mathfrak{I}_1(\eta, k\lo{3}) \\
-            \tensor{t}{_{a3}} (\eta, \vec{k}) &= k\lo{a} \bclosed{-\im \zeta(\eta, k\lo{c})} \mathfrak{I}_2(\eta, k\lo{3}) \\
-            \tensor{t}{_{33}} (\eta, \vec{k}) &= k\lo{3} \bclosed{-\im \zeta(\eta, k\lo{c})} \mathfrak{I}_2(\eta, k\lo{3}) + (2\ppi)^2\Diracdelta[2]{k\lo{a}} \mathfrak{I}_2(\eta,k\lo{3})
+            \tensor{t}{_{ab}} (\eta, \vec{k}) &= k\_{a} k\_{b} \bclosed{-\im \zeta(\eta, k\_{c})} \mathfrak{I}_1(\eta, k\_{3}) \\
+            \tensor{t}{_{a3}} (\eta, \vec{k}) &= k\_{a} \bclosed{-\im \zeta(\eta, k\_{c})} \mathfrak{I}_2(\eta, k\_{3}) \\
+            \tensor{t}{_{33}} (\eta, \vec{k}) &= k\_{3} \bclosed{-\im \zeta(\eta, k\_{c})} \mathfrak{I}_2(\eta, k\_{3}) + (2\ppi)^2\Diracdelta[2]{k\_{a}} \mathfrak{I}_2(\eta,k\_{3})
         \end{align}
     \end{subequations}
     \comment{There are some \emph{small} constraint on the perturbation from this. Need to be commented!}
@@ -50,63 +60,80 @@
     \begin{equation}
     \begin{split}
         a\tensor{h}{_{ij}}(\eta, \vec{k}) &= \frac{16\ppi G\ped{N}}{k} \integ{\eta'}[\eta\ped{i}][\eta] \sin{\pclosed{k\bclosed{\eta-\eta'}}} a(\eta')  \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta', \vec{k}) \\
-        &= \frac{8 G\ped{N}}{k} \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}}) \integ{\eta'}[\eta\ped{i}][\eta] \sin{\pclosed{k\bclosed{\eta-\eta'}}} a(\eta') t\lo{kl}(\eta', \vec{k}) + \BigO{\zeta^2}.
+        &= \frac{8 G\ped{N}}{k} \Lam{ij}{kl}(\hat{\vec{k}}) \integ{\eta'}[\eta\ped{i}][\eta] \sin{\pclosed{k\bclosed{\eta-\eta'}}} a(\eta') t\_{kl}(\eta', \vec{k}) + \BigO{\zeta^2}.
     \end{split}
     \end{equation}
-    Remaining are the $\Lambda\lo{ij,kl}t\lo{kl}$-elements, which in total are \checkthis{6} terms per $ij$, due to symmetry in $t\lo{kl}$: %\comment{Gauge freedom implies 4, does it not? Maybe only in $h_{ij}$.} 
+    Remaining are the $\Lam{ij}{kl}t\_{kl}$-elements, which in total are \checkthis{6} terms per $ij$, due to symmetry in $t\_{kl}$: %\comment{Gauge freedom implies 4, does it not? Maybe only in $h_{ij}$.} 
     \begin{equation}
     \begin{split}
-        \Lambda\lo{ij,kl} (\hat{\vec{k}}) t\lo{kl} (\eta,\vec{k}) &= \cclosed{%
+        \Lam{ij}{kl} (\hat{\vec{k}}) t\_{kl} (\eta,\vec{k}) &= \cclosed{%
         \pclosed{%
-            \Lambda\lo{ij,12} + \Lambda\lo{ij,21} } t\lo{12} %
+            \Lam{ij}{12} + \Lam{ij}{21}} t\_{12} %
         + \pclosed{%
-            \Lambda\lo{ij,13} + \Lambda\lo{ij,31} } t\lo{13}  %
+            \Lam{ij}{13} + \Lam{ij}{31} } t\_{13}  %
         + \pclosed{%
-                \Lambda\lo{ij,23} + \Lambda\lo{ij,32} } t\lo{23} }(\eta, k\hat{\vec{k}}) \\
+                \Lam{ij}{23} + \Lam{ij}{32} } t\_{23} }(\eta, k\hat{\vec{k}}) \\
             &\phantom{=}+ \cclosed{
-                \Lambda\lo{ij,11} t\lo{11} + \Lambda\lo{ij,22} t\lo{22} + \Lambda\lo{ij,33} t\lo{33}
+                \Lam{ij}{11} t\_{11} + \Lam{ij}{22} t\_{22} + \Lam{ij}{33} t\_{33}
             }(\eta, k\hat{\vec{k}})
     \end{split}
     \end{equation}
     All of these are on the form
     \begin{equation}
-        -\im \zeta(\eta, k\lo{a}) \times \cclosed{k^2 \mathfrak{I}_1(\eta, k\lo{3}) A\lo{ij}(\hat{\vec{k}}) + k \mathfrak{I}_2(\eta, k\lo{3}) B\lo{ij}(\hat{\vec{k}})},
+        -\im \zeta(\eta, k\_{a}) \times \cclosed{k^2 k\^{2} k\ap{2} \mathfrak{I}_1(\eta, k\_{3}) A\_{ij}(\hat{\vec{k}}) + k \mathfrak{I}_2(\eta, k\_{3}) B\_{ij}(\hat{\vec{k}})},
     \end{equation}
     leaving
     \begin{equation}
-        ah\lo{ij} (\eta, \vec{k}) = 8G\ped{N} \bclosed{k A\lo{ij}(\hat{\vec{k}}) \mathcal{I}_1(\eta, \vec{k}; \eta\ped{i}) + B\lo{ij}(\hat{\vec{k}}) \mathcal{I}_2(\eta, \vec{k}; \eta\ped{i}) }
+        ah\_{ij} (\eta, \vec{k}) = 8G\ped{N} \bclosed{k A\_{ij}(\hat{\vec{k}}) \mathcal{I}_1(\eta, \vec{k}; \eta\ped{i}) + B\_{ij}(\hat{\vec{k}}) \mathcal{I}_2(\eta, \vec{k}; \eta\ped{i}) }
     \end{equation}
     where
     \begin{equation}
-        \mathcal{I}_n(\eta, \vec{k}; \eta\ped{i}) = -\im \integ{\eta'}[\eta\ped{i}][\eta] a(\eta')  \sin{\pclosed{k\pclosed{\eta-\eta'}}} \times \zeta(\eta', k\lo{a}) \mathfrak{I}_n(\eta', k\lo{3}).
+        \mathcal{I}_n(\eta, \vec{k}; \eta\ped{i}) = -\im \integ{\eta'}[\eta\ped{i}][\eta] a(\eta')  \sin{\pclosed{k\pclosed{\eta-\eta'}}} \times \zeta(\eta', k\_{a}) \mathfrak{I}_n(\eta', k\_{3}).
     \end{equation}
-    Furthermore, we can show \provethis{proof!} that $A\lo{ij}(\vec{n}) = -n\lo{3} B\lo{ij}(\vec{n})\equiv +2n\lo{3} C\lo{ij}(\vec{n}) $ for $\abs{\vec{n}}^2=n\lo{1}\!^2 +n\lo{2}\!^2 +n\lo{3}\!^2 = 1$, allowing for the slightly simpler expression
+    Furthermore, we can show \provethis{proof!} that $A\_{ij}(\vec{n}) = -n\_{3} B\_{ij}(\vec{n})\equiv +2n\_{3} C\_{ij}(\vec{n}) $ for $\abs{\vec{n}}^2=n\_{1}\!^2 +n\_{2}\!^2 +n\_{3}\!^2 = 1$, allowing for the slightly simpler expression
     \begin{equation}
-        ah\lo{ij} (\eta, \vec{k}) = 4G\ped{N} C\lo{ij}(\hat{\vec{k}}) \bclosed{ k\lo{3} \mathcal{I}_1(\eta, \vec{k}; \eta\ped{i}) - \mathcal{I}_2(\eta, \vec{k}; \eta\ped{i}) },
+        ah\_{ij} (\eta, \vec{k}) = 4G\ped{N}  C\_{ij}(\hat{\vec{k}}) \bclosed{ k\_{3} \mathcal{I}_1(\eta, \vec{k}; \eta\ped{i}) - \mathcal{I}_2(\eta, \vec{k}; \eta\ped{i}) },
     \end{equation}
     where\checkthis{:
     % \begin{equation}
     %     \begin{split}
-    %         A\lo{11} = \frac{1}{2} n\lo{3}\!^2 \bclosed{ n\lo{1}\!^2 n\lo{3}\!^2 - n\lo{2}\!^2 } \quad    &A\lo{12} = \frac{1}{2} n\lo{1}n\lo{2} n\lo{3}\!^2 \bclosed{ n\lo{3}\!^2 +1} \\
-    %         A\lo{22} = \frac{1}{2} n\lo{3}\!^2 \bclosed{ n\lo{2}\!^2 n\lo{3}\!^2 - n\lo{1}\!^2 }  \quad &A\lo{13} =\frac{1}{2} n\lo{1} n\lo{3}\!^3 \bclosed{ n\lo{3}\!^2 -1} \\
-    %         A\lo{33} = \frac{1}{2} n\lo{3}\!^2 \bclosed{ \pclosed{1 - n\lo{3}\!^2}^2 } \quad  &A\lo{23} =\frac{1}{2} n\lo{2} n\lo{3}\!^3 \bclosed{ n\lo{3}\!^2 -1}
+    %         A\_{11} = \frac{1}{2} n\_{3}\!^2 \bclosed{ n\_{1}\!^2 n\_{3}\!^2 - n\_{2}\!^2 } \quad    &A\_{12} = \frac{1}{2} n\_{1}n\_{2} n\_{3}\!^2 \bclosed{ n\_{3}\!^2 +1} \\
+    %         A\_{22} = \frac{1}{2} n\_{3}\!^2 \bclosed{ n\_{2}\!^2 n\_{3}\!^2 - n\_{1}\!^2 }  \quad &A\_{13} =\frac{1}{2} n\_{1} n\_{3}\!^3 \bclosed{ n\_{3}\!^2 -1} \\
+    %         A\_{33} = \frac{1}{2} n\_{3}\!^2 \bclosed{ \pclosed{1 - n\_{3}\!^2}^2 } \quad  &A\_{23} =\frac{1}{2} n\_{2} n\_{3}\!^3 \bclosed{ n\_{3}\!^2 -1}
     %     \end{split}
     % \end{equation}
     % \begin{equation}
     % \begin{split}
-    %     A\lo{ab}(\vec{n}) &= \frac{1}{2}n\lo{3}\!^2 \bclosed{ n\lo{a} n\lo{b}\pclosed{n\lo{3}\!^2 +1} + \Krondelta{\lo{ab}}\pclosed{n\lo{3}\!^2 -1} } \\
-    %     A\lo{a3}(\vec{n}) &= \frac{1}{2}n\lo{1} n\lo{3}\!^3\bclosed{ n_3^2 -1 } \\
-    %     A\lo{33}(\vec{n}) &= \frac{1}{2} n\lo{3}\!^2 \bclosed{ \pclosed{1-n_3^2}^2 }
+    %     A\_{ab}(\vec{n}) &= \frac{1}{2}n\_{3}\!^2 \bclosed{ n\_{a} n\_{b}\pclosed{n\_{3}\!^2 +1} + \Krondelta{\_{ab}}\pclosed{n\_{3}\!^2 -1} } \\
+    %     A\_{a3}(\vec{n}) &= \frac{1}{2}n\_{1} n\_{3}\!^3\bclosed{ n_3^2 -1 } \\
+    %     A\_{33}(\vec{n}) &= \frac{1}{2} n\_{3}\!^2 \bclosed{ \pclosed{1-n_3^2}^2 }
     % \end{split}
     % \end{equation}
     \begin{equation}
     \begin{split}
-        C\lo{ab}(\vec{n}) &= n\lo{3} \bclosed{ n\lo{a} n\lo{b}\pclosed{n\lo{3}\!^2 +1} - \Krondelta{\lo{ab}}\pclosed{1-n\lo{3}\!^2 } } \\
-        C\lo{a3}(\vec{n}) &= -n\lo{a} n\lo{3}\!^2\pclosed{ 1-n\lo{3}\!^2} \\
-        C\lo{33}(\vec{n}) &=  n\lo{3}\!^2 \pclosed{1-n\lo{3}\!^2}^2 
+        C\_{ab}(\vec{n}) &= n\_{3} \bclosed{ n\_{a} n\_{b}\pclosed{n\_{3}\!^2 +1} - \Krondelta{_{ab}}\pclosed{1-n\_{3}\!^2 } } \\
+        C\_{a3}(\vec{n}) &= -n\_{a} n\_{3}\!^2\pclosed{ 1-n\_{3}\!^2} \\
+        C\_{33}(\vec{n}) &=  n\_{3}\!^2 \pclosed{1-n\_{3}\!^2}^2 
     \end{split}
     \end{equation}
     }
+
+
+    Redshift $\mathfrak{z}_\ast=2 \therefore a(\eta\ped{i}) = (1+\zz_\ast)^{-1}=1/3$
+
+
+
+    $ds^2 =a^2(\eta) \pclosed{\Krondelta{_{\mu\nu}}  + h\_{\mu\nu} } \diff x\^\mu \diff x\^\nu, x\^0 = \eta$
+
+    $u\_{\mfa}x\^{\mfa}, \mfa=0,1,2$
+
+    $u\_{\imath}x\^{\imath}, \imath=0,1,2 \flat \flat $
+
+
+
+    \important{Important references:}~\citep[p.~145]{vachaspatiKinksDomainWalls2006},~\citep[p.~291]{vilenkinCosmicStringsDomain1985},~\citep[p.~375]{vilenkinCosmicStringsOther1994}
+
+    
 
 \end{draft}
 

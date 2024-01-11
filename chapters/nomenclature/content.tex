@@ -8,19 +8,28 @@ We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the r
 \paragraph{Tensors.} %
 The metric signature $(-,+,+,+)$ is considered, i.e.~$\det~\!\![g\indices{_{\mu\nu}}] \equiv \abs{g} < 0 $. The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}$, whereas a general metric is denoted $g\indices{_{\mu\nu}}$. A four-vector $p\indices{^{\mu}} = $
 
-$[\eta\lo{\mu\nu}] = \text{diag}(-1, 1, 1, 1)$
+$[\eta\_{\mu\nu}] = \text{diag}(-1, 1, 1, 1)$
 
-\subparagraph[Gamma]{Christophel symbols:} %
+$f\_{,\mu}\equiv \partial\_\mu f = \pdv{f}{x\^\mu}$
+
+\subparagraph[Gamma]{Christophel symbols.} %
+The Christophel symbols or ``connections'' are written
 \begin{equation}
-    \tensor*{\Gamma}{^\rho_{\mu \nu}} = ...
+    \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  }
 \end{equation}
 
-\subparagraph[Lambda]{``Lambda tensor'':} %
+\subparagraph[Lambda]{``Lambda tensor.''} %
+We express the \textit{Lambda tensor}---sometimes called the ``projection operator''---that projects onto the TT gauge \nc{refer to sec.} as
 \begin{equation}
-    \tensor*{\Lambda}{_{ij, kl}} = ...
+% \begin{split}
+    \ProjectionLambda{ij}{kl}(\vec{n}) = P\_{ik}(\vec{n})P\_{jl}(\vec{n}) - \frac{1}{2}P\_{ij}(\vec{n})P\_{kl}(\vec{n});
+    \quad P\_{ij}(\vec{n}) = \Krondelta{_{ij}}-n\_i n\_j %\land \vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1
+% \end{split}
 \end{equation}
-
-
+% $\forall \vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1$
+$\forall\, \vec{n}$ of unit length; $\vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1$. %Note that the notation is somewhat different from the convention 
+% Other literature may use a comma (`,') instead of a 
+We use a dot (`$.$') instead of the more conventional comma (`$,$') to distinguish from the Minkowskian partial derivative.
 % $[\tens{\eta}] = \text{diag}(-1, 1, 1, 1)$
 
 \paragraph{Fourier transforms.} %
@@ -36,7 +45,7 @@ We use the following convention for the Fourier transform of $f(x)$, $\tilde{f}(
         \tilde{f}(k) &= \integ[4]{x} \eu[\im k \cdot x] f(x) 
     \end{split}
 \end{equation}
-Here, $k\cdot x = k\lo{\sigma} x\up{\sigma} = g\lo{\rho\sigma} k\up{\rho} x\up{\sigma}$.
+Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$.
 
 
 % \begin{equation}

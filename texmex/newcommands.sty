@@ -65,7 +65,7 @@
 
 \makeatletter
 \newcommand{\infinitesimal}[2][\@nil]{\diff[#1] #2}
-\makeatother
+\makeatother 
 
 
 \makeatletter
@@ -106,6 +106,8 @@
 
 \providecommand*{\widebar}[1]{\overline{#1}}
 
+\newcommand*{\bnabla}{\vec{\nabla}}
+
 
 
 
@@ -115,50 +117,44 @@
 % Dirac delta function 
 \makeatletter % (for use of @ below)
 \newcommand{\Diracdelta}[2][\@nil]{%
-\text{\textdelta} 
+\text{\textdelta}
 \def\tmp{#1}%
     \ifx\tmp\@nnil
     \else
         ^{(#1)}
     \fi
-(#2)   
+% (#2)
+\!\pclosed{#2}   
 }
 \makeatother
 
 % Kronecker delta symbol
-\makeatletter % (for use of @ below)
-\newcommand{\Krondelta}[1][\@nil]{%
-\def\tmp{#1}%
-    \ifx\tmp\@nnil
-        \ensuremath{\text{\textdelta}}
-    \else
-        \ensuremath{\text{\textdelta}\indices{#1}}
-    \fi}
-\makeatother
+\newcommand{\Krondelta}[1]{%
+    \ensuremath{\text{\textdelta}\indices{#1}}}
+
 
 % Heaviside step function
-\makeatletter % (for use of @ below)
-\newcommand{\Heaviside}[1][\@nil]{%
-\def\tmp{#1}%
-    \ifx\tmp\@nnil
-        \ensuremath{\text{\textTheta}}
-    \else
-        \ensuremath{\text{\textTheta}(#1)}
-    \fi}
-\makeatother
+% \makeatletter % (for use of @ below)
+\newcommand{\Heaviside}[1]{\ensuremath{\text{\textTheta}\!\pclosed{#1}}}
+% \makeatother
+
+
+
+% Levi-Civita symbol (not tensor)
+\newcommandx*\LeviCivita[1]{\ensuremath{\tilde{\text{\textepsilon}}_{#1}}}
 
 
 
 % ----------------
 % Tensor shortcuts:
-% \newcommand{\upind}[1]{\ensuremath{\indices{^{#1}}}}   % tens. index upper
-% \newcommand{\loind}[1]{\ensuremath{\indices{_{#1}}}}   % tens. index lower
-\newcommand{\up}[1]{\ensuremath{\indices{^{#1}}}}   % tens. index upper
-\newcommand{\lo}[1]{\ensuremath{\indices{_{#1}}}}   % tens. index lower
+\renewcommand*{\^}[1]{\indices{^{#1}}}  % tens. index upper
+\renewcommand*{\_}[1]{\indices{_{#1}}}  % tens. index lower
+% Retrieve underscore _:
+\newcommand*{\underscore}{\char`_}
 
 
 
-
+\renewcommand*{\/}{\Big/}   % large division sign
 
 
 
@@ -178,15 +174,11 @@
 \newcommand*\Group[2]{\textsf{#1(#2)}}
 
 % Big-O notation:
-\newcommand*\BigO[1]{\ensuremath{\mathcal{O}\big(#1\big)}}
-% \newcommand*\BigO[1]{%
-%     \ifmmode
-%         \mathcal{O}(#1)
-%     \else
-%         $\mathcal{O}(#1)$\!
-%     \fi
-% }
+\newcommand*\BigO[1]{\ensuremath{\mathscr{O}\big(#1\big)}}
 % \newcommand*\order[1]{\BigO{#1}} % alias
+
+
+\newcommand*\ZSym[1][2]{\ensuremath{\varmathbb{Z}_{\mathit{#1}}}}
 
 
 % Planck units:
@@ -197,13 +189,90 @@
 
 
 
-% ---------------------
+% --------------------- 
 % Reocurring subscripts:
 
 % \providecommand*{\subGW}{\ensuremath{_{\text{\tiny{GW}}}}}
 \providecommand*{\subGW}{\ensuremath{_{\mathrm{gw}}}}
 
 
+
+% --------------------------------
+% Reocurring operators, quantities:
+
+
+\providecommand{\redshift}{\ensuremath{\mathfrak{z}}}   % redshift z
+\providecommand{\zz}{\ensuremath{\mathfrak{z}}}   % redshift z
+
+% \providecommand{\scalefac}{\ensuremath{\mathfrak{a}}}   % scale factor a
+
+
+% Projection tensor !!!! (FIX TO BE \mathop)
+\newcommandx*{\ProjectionLambda}[2][]{%
+    \Lambda\_{{#1}.{#2}}% 
+}
+
+% Christophel symbols
+\newcommandx*{\ChristophelSym}[3][1=\Gamma]{%
+    #1\indices*{^{#2}_{#3}}%
+}
+
+
+%%%%%%%%%
+%\mathscr{text}
+%\mathcal{text}
+%\mathfrak{text}
+%\mathbb{text}
+%\varmathbb{text}
+%\mathsf{text}
+%\mathrm{text}
+%%%%%%%%
+
+
+% Special functions:
+\makeatletter
+\newcommand{\n@specialfunc}[1]{\mathcal{#1}}
+%
+\newcommandx*{\Bessel}[2][1=\nu, 2=1]{%
+    \def\kind{#2}%
+    \def\first{1}%
+    \def\second{2}%
+    \ifx\kind\first
+        \ensuremath{\n@specialfunc{J}_{#1}}%
+    \else
+        \ifx\kind\second
+            \Neumann[#1]%
+        \fi
+    \fi
+}                                           % Bessel function
+%
+\newcommandx*{\Neumann}[1][1=\nu]{%
+    \ensuremath{\n@specialfunc{N}_{#1}}%
+}                                           % Neumann function
+\makeatletter
+
+
+
+
+% Number spaces:
+\makeatletter
+\newcommandx{\n@powerone}[2]{
+    \def\one{1}
+    \def\expo{#2}
+    \def\arg{#1}
+    \ifx\expo\one
+        \ensuremath{\arg}
+    \else
+        \ensuremath{\arg^{\expo}}
+    \fi
+}
+\newcommand{\n@spacefont}[1]{\mathbb{#1}}
+\newcommandx*{\Natural}{\ensuremath{\n@spacefont{N}}}               % Natural numbers 
+\newcommandx*{\Real}[1][1=1]{\n@powerone{\n@spacefont{R}}{#1}}      % Real numbers 
+\newcommandx*{\Complex}[1][1=1]{\n@powerone{\n@spacefont{C}}{#1}}   % Complex numbers 
+\newcommandx*{\Integer}[1][1=1]{\n@powerone{\n@spacefont{Z}}{#1}}   % Integer numbers 
+\newcommandx*{\Halfinteger}[1][1=1]{\n@powerone{\n@spacefont{Z}}{#1}+ \frac{1}{2}}   % Integer numbers 
+\makeatother
 
 
 
@@ -220,3 +289,46 @@
 \providecommand*{\Python}{\texttt{Python}}
 \providecommand*{\Cpp}{\texttt{C++}}
 
+
+
+
+
+% ---------
+% Environments:
+\newenvironment{eqsplit}{% does not work
+    \begin{equation}%
+        \begin{split}%
+}{%
+        \end{split}%
+    \end{equation}%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ------------------
+% Colours from uiofp:
+
+
+\definecolor{uioblue}{rgb}{0.525, 0.642, 0.969}
+\definecolor{uiolightblue}{rgb}{0.902, 0.925, 1.000}
+\definecolor{uioorange}{rgb}{0.992, 0.796, 0.529}
+\definecolor{uiolightorange}{rgb}{1.000, 0.910, 0.831}
+\definecolor{uiopink}{rgb}{0.984, 0.400, 0.400}
+\definecolor{uiolightpink}{rgb}{0.996, 0.878, 0.878}
+\definecolor{uiogreen}{rgb}{0.484, 0.882, 0.671}
+\definecolor{uiolightgreen}{rgb}{0.808, 1.00, 0.875}
+\definecolor{uiogray}{gray}{0.700}
+\definecolor{uiogrey}{gray}{0.700}
+\definecolor{uiolightgray}{gray}{0.912}
+\definecolor{uiolightgrey}{gray}{0.912}

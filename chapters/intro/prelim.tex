@@ -24,7 +24,7 @@ It is assumed that the reader is familiar with variational calculus and linear p
 
 
 \begin{equation}
-    G\lo{\mu\nu} = 8\ppi G\ped{N} T\lo{\mu\nu}
+    G\_{\mu\nu} = 8\ppi G\ped{N} T\_{\mu\nu}
 \end{equation}
 
 \subsection{Field theory}
@@ -35,11 +35,11 @@ It is assumed that the reader is familiar with variational calculus and linear p
     % with $\mathcal{L}$ being the \emph{Lagrangian}\footnote{Technically, it is the Lagrangian \emph{density}, an insignificant \grammar[point]{distinction} for these purposes.} of the theory. This Lorentz invariant quantity is composed of scalar terms only.
     We formulate a theory in four-dimensional spacetime \comment{Minkowski} in terms of the Lorentz invariant action
     \begin{equation}
-        S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\lo{\mu} \phi_i\}),
+        S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\_{\mu} \phi_i\}),
     \end{equation}
-    with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\{\phi_i\}$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. For a general (i.e.~curved) spacetime, \blahblah $\partial\lo{\mu} \to \nabla\lo{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
+    with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\{\phi_i\}$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. For a general (i.e.~curved) spacetime, \blahblah $\partial\_{\mu} \to \nabla\_{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
     \begin{equation}
-        S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\lo{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\lo{\mu} \phi_i\})}_{\text{scalar}},
+        S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{scalar}}, 
     \end{equation}
     % where $\hat{\mathcal{L}}$ is a scalar.
     \comment{Maybe specify that this is only for scalar fields? Or include other fields?}
@@ -51,7 +51,7 @@ It is assumed that the reader is familiar with variational calculus and linear p
     %     S\ped{ST} = S\ped{EH} + S_{\phi} + S\ped{m}=  \int \!\diff[4] x \, \sqrt{-\abs{g}} \cclosed{ \frac{\Planck{M}^2}{2} R - \frac{1}{2}\nabla\indices{_{\rho}} \phi \nabla\indices{^{\rho}} \phi - V(\phi)} + S\ped{m}
     % \end{equation}
 
-    % GR as we know it is reconstructed when varying $S\ped{E}$ with respect to the metric $g\lo{\mu\nu}(x)$
+    % GR as we know it is reconstructed when varying $S\ped{E}$ with respect to the metric $g\_{\mu\nu}(x)$
 
 
 
@@ -62,6 +62,49 @@ It is assumed that the reader is familiar with variational calculus and linear p
         \item expansion rate, cosmic time, conformal time
         \item why is flat assumption OK?
     \end{bullets}
+
+
+\subsection{Method of Green's Functions}
+    A linear ordinary differential equation (ODE) $\mathop{\mathrm{L}_x}f(x)=g(x)$ assumes a linear differential operator $\mathop{\mathrm{L}}$, a \checkthis{continuous}, unknown function $f$, and a right-hand side $g$ that constitutes the inhomogeneous part of the ODE. The \emph{Green's function} $G$ for the ODE (or $\mathop{\mathrm{L}}$) is manifest as any solution to $\mathop{\mathrm{L}_x} G(x, y) = \Diracdelta{x-y}$ \comment{check plagiarism (Bringmann)}. If $\mathop{\mathrm{L}}$ is translation invariant (invariant under $x\mapsto x+a $)---which is equivalent to $\mathop{\mathrm{L}}$ having constant coefficients---we can write $G(x,y)=G(x-y)$ and \provethis{show?}
+    \begin{equation}
+        f(x) = (G \ast g )(x) =\integ{y}G(x-y)g(y)
+    \end{equation}
+    solves $\mathop{\mathrm{L}_x}f(x)=g(x)$. 
+    
+    Let $f_i^{\mathrm{(0)}}$, $i=1,2,3,\dots$ be solutions to the homogeneous ODE, i.e.~$\mathop{\mathrm{L}_x} f_i^{\mathrm{(0)}}=0$. Then, by the superposition principle, $f(x) + \sum_{i}c_i f_i^{\mathrm{(0)}}$ is also a solution of the original, inhomogeneous equation.
+
+    \paragraph{Pulse signal.} Consider the very common scenario where the source is a temporary pulse;
+    \begin{equation}
+        g(x) = \begin{cases}
+            g(x), & x_0 \leq x \leq x_1, \\
+            0, & x\geq x_1.
+        \end{cases}
+    \end{equation}
+
+
+
+\subsection{Special functions (tmp. name, maybe move (appendix)?)}
+    {
+    \newcommand*{\JJ}[1]{\Bessel[#1]}
+    \newcommand*{\NN}[1]{\Neumann[#1]}
+
+    \blahblah
+
+    For $\nu=n+\shalf, n\in \Natural$ we have
+    \begin{subequations}
+        \begin{equation}
+            \JJ{n+\shalf} (x)= \sqrt{\frac{2}{\ppi}} x^{n+\frac{1}{2}} \pclosed{ -\frac{1}{x} \dv{}{x} }^n \frac{\sin{x}}{x}
+        \end{equation}
+        and
+        \begin{equation}
+            \NN{n+\shalf}(x) = (-1)^{n+1}\JJ{-(n+\shalf)}(x)
+        \end{equation} 
+    \end{subequations}
+    for $x\in\Complex x^{} l xl$
+    
+    
+
+    }
 
 
 

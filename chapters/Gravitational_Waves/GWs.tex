@@ -9,11 +9,25 @@
 % ---------------------------------
 
 
+% ############LOCAL MACROS############
+\newcommand*{\Chr}[2]{\ChristophelSym{#1}{#2}}  % Christoffel symbols        
+\newcommand*{\barChr}[2]{%
+    \ChristophelSym[\widebar{\Gamma}]{#1}{#2}}  % Christoffel symbols (background)
+\newcommand*{\barg}{\widebar{g}}                % background metric
+\newcommandx*{\hTT}[1]{h\indices*{^{\mathrm{TT}}_{ij}}}
+\newcommandx*{\ah}{\mathfrak{h}}
+\newcommand*{\piG}{\ppi G\ped{N}}
+\newcommand*{\Lam}[2]{\ProjectionLambda{#1}{#2}}% Lambda tensor
+% ####################################
+
+
+
+
 
 % ////////////////// intro //////////////////
 
 
-The term ``gravitational waves'' refers to the \nc[tensor perturbations to the background metric]. These ``waves'' are spacetime \normalsize{distortions} whose name comes from the fact that \checkthis{they obey the wave equation}.
+The term ``gravitational waves'' refers to the \nc{tensor perturbations to the background metric}. These ``waves'' are spacetime \normalsize{distortions} whose name comes from the fact that \checkthis{they obey the wave equation}.
 
 
 % ///////////////////////////////////////////
@@ -21,9 +35,8 @@ The term ``gravitational waves'' refers to the \nc[tensor perturbations to the b
 
 
 \section{Linearised Gravity}\label[sec]{sec:GWs:lingrav}
-    \subimport{./}{lingrav.tex}
-
+    {\subimport{./}{lingrav.tex}}
 
 
 \section{Generation of Gravitational Waves}\label[sec]{sec:GWs:generation}
-    \subimport{./}{generation.tex}
+    {\subimport{./}{generation.tex}}

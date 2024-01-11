@@ -7,13 +7,14 @@
 % -----------------------------------------
 
 
+\comment{CONFORMAL TRAFOS!!!! \citet[p.~467]{carrollSpacetimeGeometryIntroduction2019}}
 
-If we let $\widebar{g}\lo{\mu\nu}$ be the background metric, the perturbed metric is given by
+If we let $\widebar{g}\_{\mu\nu}$ be the background metric, the perturbed metric is given by
 \begin{equation}
-    g\lo{\mu\nu} = \widebar{g}\lo{\mu\nu} + h\lo{\mu\nu}; \quad \abs{h\lo{\mu\nu}} \ll 1,
+    g\_{\mu\nu} = \widebar{g}\_{\mu\nu} + h\_{\mu\nu}; \quad \abs{h\_{\mu\nu}} \ll 1,
 \end{equation}
-where $h\lo{\mu\nu}$ describes a tensor field propagating on said background. %, i.e.~gravitational waves.
-Now, $g\up{\mu\nu} = \widebar{g}\up{\mu\nu} - h\up{\mu\nu}$ is the inverse metric, however $h\up{\mu\nu}h\lo{\nu\lambda}  = \widebar{g}\up{\mu\rho} \widebar{g}\up{\nu\sigma} h\lo{\rho\sigma} h\lo{\nu\lambda} \neq \Krondelta{^\mu _{\lambda} }$.
+where $h\_{\mu\nu}$ describes a tensor field propagating on said background. %, i.e.~gravitational waves.
+Now, $g\^{\mu\nu} = \widebar{g}\^{\mu\nu} - h\^{\mu\nu}$ is the inverse metric, however $h\^{\mu\nu}h\_{\nu\lambda}  = \widebar{g}\^{\mu\rho} \widebar{g}\^{\nu\sigma} h\_{\rho\sigma} h\_{\nu\lambda} \neq \Krondelta{^\mu _{\lambda} }$.
 
 \phpar[find the linearised Einstein eqs -- using comma notation -- comment about no backreaction]
 
@@ -22,14 +23,44 @@ Now, $g\up{\mu\nu} = \widebar{g}\up{\mu\nu} - h\up{\mu\nu}$ is the inverse metri
 The Christophel symbols are now
 \begin{equation}
 \begin{split}
-    \Gamma\indices{^{\rho}_{\mu\nu}} &=  \frac{1}{2}g\up{\rho \sigma} \pclosed{g\lo{\mu\sigma,\nu} + g\lo{\nu\sigma,\mu} - g\lo{\mu\nu,\sigma}}  \\
-    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma}} - \frac{1}{2}h\up{\rho\sigma} \underbrace{\pclosed{ \widebar{g}\lo{\mu\sigma,\nu} + \widebar{g}\lo{\nu\sigma,\mu} - \widebar{g}\lo{\mu\nu,\sigma}}}_{=2 \widebar{g}\lo{\sigma\lambda} \widebar{\Gamma}\indices{^\lambda _{\mu\nu} }} + ~\BigO{h^2} \\
-    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma}} - h\indices{^\rho _\lambda} \widebar{\Gamma}\indices{^\lambda_{\mu\nu}} + \BigO{h^2} \\
-    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{ h\lo{\mu\sigma,\nu} + h\lo{\nu\sigma,\mu} - h\lo{\mu\nu,\sigma} - 2h\lo{\sigma\lambda}\widebar{\Gamma}\indices{^\lambda_{\mu\nu}} }  + \BigO{h^2} \\
-    &= \widebar{\Gamma}\indices{^{\rho}_{\mu\nu}} + \frac{1}{2}\widebar{g}\up{\rho\sigma} \pclosed{h\lo{\mu\sigma;\nu} + h\lo{\nu\sigma;\mu} - h\lo{\mu\nu;\sigma}} + \BigO{h^2},
+    \Chr{\rho}{\mu\nu} &=  \frac{1}{2}g\^{\rho \sigma} \pclosed{g\_{\mu\sigma,\nu} + g\_{\nu\sigma,\mu} - g\_{\mu\nu,\sigma}}  \\
+    &=  \barChr{\rho}{\mu\nu}+ \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - \frac{1}{2}h\^{\rho\sigma} \underbrace{\pclosed{ \widebar{g}\_{\mu\sigma,\nu} + \widebar{g}\_{\nu\sigma,\mu} - \widebar{g}\_{\mu\nu,\sigma}}}_{=2 \widebar{g}\_{\sigma\lambda} \barChr{\lambda}{\mu\nu}} + ~\BigO{h^2} \\
+    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - h\indices{^\rho _\lambda} \barChr{\lambda}{\mu\nu} + \BigO{h^2} \\
+    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma} - 2h\_{\sigma\lambda}\barChr{\lambda}{\mu\nu} }  + \BigO{h^2} \\
+    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{h\_{\mu\sigma;\nu} + h\_{\nu\sigma;\mu} - h\_{\mu\nu;\sigma}} + \BigO{h^2},
 \end{split}
 \end{equation}
-where $h\lo{\mu\nu;\sigma}=\widebar{\nabla}\lo{\sigma}h\lo{\mu\nu}$ \comment{$+ \BigO{h^2}$ ??}. \provethis{Prove this last line.}
+where $h\_{\mu\nu;\sigma}=\widebar{\nabla}\_{\sigma}h\_{\mu\nu}$ \comment{$+ \BigO{h^2}$ ??}. \provethis{Prove this last line.} 
+
+
+\comment{Maybe have such things in an appendix?}
+
+
+\begin{draft}
+    \subsection{\tmptitle{Energy--momentum tensor; Eom.; Scalar field}}
+        The energy--momentum tensor is 
+        \begin{equation}
+            T\^{\mu\nu}= -\frac{2}{\sqrt{-q}}\frac{\delta S_\phi}{\delta g\^{\mu\nu}} = \partial\_\mu \phi \partial\_\nu \phi - g\_{\mu\nu}\bclosed{\frac{1}{2}g\^{\rho \sigma}\partial\_\rho  \phi \partial\_\sigma \phi + V(\phi) }
+        \end{equation}
+        \blahblah Assume no cross terms in $g\_{\mu\nu}$. To retrieve the TT-part of $T\_{\mu\nu}$ we utilise the \nc{Lambda tensor}[repeat or refer?]
+        \begin{equation}
+            \begin{split}
+                T\_{ij}(\eta, \vec{k}) &= \Lam{ij}{kl}(\hat{\vec{k}}) \pclosed{T^{\lnot \text{{\tiny{TT}}}} }\_{ij}(\eta, \vec{k}) \\ %T\indices*{^{(\lnot  \mathrm{TT})} _{kl} } 
+                &\stackrel{!}{=} \Lam{ij}{kl}(\hat{\vec{k}}) \bclosed{\partial\_i \phi \partial\_j \phi }(\eta, \vec{k}) 
+            \end{split}
+        \end{equation}
+
+        \begin{equation}
+            \begin{split}
+                \bclosed{\partial\_i \phi \partial\_j \phi }(\eta, \vec{k}) &= \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] \bclosed{\partial\_i \phi  \partial\_j \phi }(\eta, \vec{x}) \\
+                &= ????
+            \end{split}
+        \end{equation}
+
+
+
+
+\end{draft}
 
 
 % \subsection{Separating GWs from the Background}

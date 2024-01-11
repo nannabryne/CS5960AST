@@ -18,15 +18,34 @@
 \usepackage{texmex/uiomasterfp} % front page
 
 
-\usepackage[hidelinks, hypertexnames=false]{hyperref}
-% \usepackage{hyperref}
-% \hypersetup{citebordercolor={0 0 1}}
+
+
+% ----- hyperref setup -----
+% \usepackage[hidelinks, hypertexnames=false]{hyperref}
+\usepackage{hyperref}
+%   uiopink:    {0.984 0.400 0.400}
+%   uioblue:    {0.525 0.642 0.969}
+%   uiogreen:   {0.484 0.882 0.671}
+\hypersetup{allbordercolors={0.984 0.400 0.400}}    % \uiopink  (default)
+\hypersetup{linkbordercolor={0.984 0.400 0.400}}    % \uiopink  (\(cref))
+\hypersetup{citebordercolor={0.484 0.882 0.671}}    % \uiogreen (\cite(...))
+\hypersetup{urlbordercolor ={0.525 0.642 0.969}}    % \uioblue  (\url)
+\hypersetup{filebordercolor={0.525 0.642 0.969}}    % \uioblue  (\file)
+% --------------------------
+
+
+
 
 \usepackage{physics,amssymb}
 
 \usepackage[varg]{txfonts}      % nice font (NB! After amssymb)
 % \usepackage[fleqn]{amsmath}
 % \usepackage{color}
+
+\usepackage[sort&compress]{natbib}
+\bibliographystyle{plainnat}
+\setcitestyle{authoryear,open={((},close={))}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +61,7 @@
 \usepackage{tensor}         % for tensor indices
 \usepackage{xfrac}          % provides \sfrac
 \usepackage{textgreek}      % provides \textmu etc.
-
+\usepackage{mathrsfs}       % provides \mathscr
 
 
 

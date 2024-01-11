@@ -5,6 +5,7 @@
 
 
 
+
 % Writing tools (remove before submission):
 % \import{texmex/}{writingtools.sty}
 \input{texmex/writingtools.tex}
@@ -15,7 +16,7 @@
 
 \begin{document}
 
-\bibliographystyle{plain}
+% \bibliographystyle{plain}
 
 
 %%%%%%%%%%%%%%% FRONT PAGE %%%%%%%%%%%%%%%
@@ -82,7 +83,7 @@
 
 % GWs
 \chapter{Gravitational Waves}\label[chap]{chap:GWs}
-    \import{chapters/Gravitational_Waves/}{GWs.tex}
+    {\import{chapters/Gravitational_Waves/}{GWs.tex}}
 
 
 % DWs
@@ -98,7 +99,7 @@
 
 % ANALYTIC CALCULATION
 \chapter{Calculating Gravitational Waves from Domain Walls}
-    \import{chapters/tmp_anal/}{tmp_anal.tex}
+    {\import{chapters/tmp_anal/}{tmp_anal.tex}}
 
 % NUMERICAL SIMULATION
 \chapter{Simulating Gravitational Waves from Domain Walls} 
@@ -139,6 +140,15 @@
 
 \appendix
 
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+% Notes that are not to be included in the thesis!
+% \begin{Nannasnotes}
+%     {\import{appendices/misc/}{misc.tex}}
+% \end{Nannasnotes}
+% <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
 \chapter{I do not have an appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,7 +175,7 @@
     \item bullet points
 \end{bullets}
 
-\nc[need citation]
+\nc{need citation}
 
 \checkthis{check this}
 
@@ -195,6 +205,14 @@ The order $\BigO{1}$ is large
 
 
 The Planck unit \Planck{M}
+
+\begin{draft}
+    \dots
+\end{draft}
+
+\begin{align}
+    \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots}
+\end{align}
 
 
 
