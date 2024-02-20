@@ -9,6 +9,7 @@
 
 \begin{bullets}
     \item BenteBent (thin) $\to$ KatjaKaj (thick)
+    \item \textit{A story of two brothers (?)}
 \end{bullets}
 
 We consider a relatively general four-dimensional spacetime $(\mathscr{M}, g\_{\mu\nu})$ with continuous metric and associated coordinate system $\{x\^\mu \}$. \blahblah \citep{ishibashiEquationMotionDomain1999} 
@@ -17,22 +18,35 @@ We consider a relatively general four-dimensional spacetime $(\mathscr{M}, g\_{\
 \section{Dynamics of Domain Walls in the Thin-Wall Limit}
 {
 
-Let the $(2+1)$-dimensional submanifold $\varSigma$ embedded in $\mathscr{M}$ represent the thin domain wall we henceforth shall refer to as ``BenteBent'' (or BB). This hypersurface divides the manifold into two separate regions ($\mathscr{M}_{\pm}$), allowing us to write $\mathscr{M} = \mathscr{M}_+ \cup  \varSigma  \cup \mathscr{M}_-$. Allow indices $a,b,c,\dots$ run over $0,1,2$, and assign the coordinate system $\{y\^a\}$ to $\varSigma$. Now, the world-volume metric
+Let the $(2+1)$-dimensional submanifold $\varSigma$ embedded in $\mathscr{M}$ represent the thin domain wall we henceforth shall refer to as ``BenteBent'' (or BB). This hypersurface divides the manifold into two separate regions ($\mathscr{M}_{\pm}$), allowing us to write $\mathscr{M} = \mathscr{M}_+ \cup  \varSigma  \cup \mathscr{M}_-$. Allow indices $a,b,c,\dots$ to run over $0,1,2$, and assign the coordinate system $\{y\^a\}$ to $\varSigma$. The wall location is $X\^\mu=X\^\mu (y\^a)$, such that any spacetime point is expressed
 \begin{equation}
-    \gamma\_{ab} = g\_{\mu\nu} \pdv{x\^\mu}{y\^a}  \pdv{x\^\nu}{y\^b}
+    x^\mu = X\^\mu (y\^a) + \xi N\^\mu (y\^a); \quad  \xi \in \Real, \,  N\^\mu \perp X\^\mu.
 \end{equation}
-is the induced metric on $\varSigma$. \comment{Hmmm, maybe something wrong here.} \citep{carrollSpacetimeGeometryIntroduction2019}
+Now, the world-volume metric
+\begin{equation}
+    \gamma\_{ab} = g\_{\mu\nu}\pdv{X\^\mu}{y\^a}  \pdv{X\^\nu}{y\^b}
+\end{equation}
+is the induced metric on $\varSigma$. \comment{Hmmm, maybe something wrong here.} \citep{carrollSpacetimeGeometryIntroduction2019} 
 
 
 
 We write the covariant action of the domain wall BenteBent as
 \begin{equation}
-    S\ped{BB}  = -\sigma \integ[3]{y\sqrt{-\gamma}}[\varSigma],
+    S\ped{BB}  = -\sigma \integ[3]{y\sqrt{-\gamma}}[\varSigma] = -\sigma \integ[4]{x}[\mathscr{M}]  \Diracdelta[4]{x\^\mu-X\^\mu} \sqrt{-\gamma}; \quad \gamma = \det{\gamma\_{ab}},
 \end{equation}
-where 
+where $\sigma$ is the surface tension of the wall. 
 
 
 
 
 
 }
+
+\section{\tmptitle{IDK}}
+
+\begin{multline}
+    ah\_{ij}(\eta, \vec{k}) = \text{(const.)} \cdot  \Diracdelta{k\_2} \Diracdelta{\ell\in \Integer} \cdot K\_{ij}\cdot \eu[-\pclosed{w_0 k\_3}^2/2] \cdot I; \quad \ell = -k\_1 /u\_1 ; \\
+    \text{(const.)}= 32\ppi^3 G\ped{N} \sigma_0 {\pclosed{a\ped{init}/\eta\ped{init}^\alpha}}^2,\quad
+    K\_{ij} = k^{-6} {k\_1}^2 \bclosed{ \Krondelta{_{ij}} \pclosed{k^2-2k\_i k\_j} + k\_i k\_j},\\
+    I = \integ{\tau'}[\tau\ped{init}][\tau] \mathcal{G}_{\nu}(\tau, \tau') {\tau'}^{2\nu+1} \Bessel[\ell]\pclosed{k\_3 \bar{\epsilon}(\tau'; u)};\quad \tau=k\eta, \, \nu = \alpha+1/2
+\end{multline}

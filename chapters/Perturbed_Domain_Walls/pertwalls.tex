@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Ch. 5: Perturbed Domain Walls  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ---------------------------------------
+% labels: \label{[type]:pertwalls:[name]}
+% ---------------------------------------
+
+
+
+% ////////////////// intro //////////////////
+
+
+
+\phpar[motivation--inspiration(work)]
+
+\checkthis{
+$\Minkowski\equiv (\Real[4], \eta\_{\mu\nu})$, 
+$\FLRW \equiv (\Real[4], a^2 \eta\_{\mu\nu}) $
+}
+
+We shall consider a pseudo-Riemannian $(N+1)$-dimensional spacetime $(\Manifold, g\_{\mu\nu})$ up until the point where concrete expressions are needed to proceed; here we turn to the conformally flat FLRW universe, for which $\Manifold = \FLRW $, $N=3$ and $g\_{\mu\nu}=a^2 \eta_{\mu\nu}$.
+
+
+We begin in the thin-wall limit, where the width of the domain wall in question is negligible. To go beyond the thin-wall limit eventually turns out to be a simple matter of an additional factor in the final expression. \comment{This is not true, get a grip, Nanna.} 
+
+\begin{equation}
+    \Phi\pclosed{x\^\mu-X\^\mu} = \frac{1}{\sqrt{2\ppi}w_0} \exp{-\frac{\pclosed{x\^\mu-X\^\mu}^2}{2w_0^2}} \quad \leadsto \quad \lim_{w_0\to 0}\Phi\pclosed{x\^\mu-X\^\mu} = \Diracdelta[4]{x\^\mu-X\^\mu}
+\end{equation}
+\comment{Needs fixing...}
+
+% ///////////////////////////////////////////
+
+\section{Dynamics of Thin Domain Walls}
+    {\subimport{./}{thinwall.tex}}
+
+
+\section{Generation of Gravitational Waves}
+    {\subimport{./}{gws.tex}}

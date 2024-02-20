@@ -1,0 +1,51 @@
+% |||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 6.1 Dynamics of Thin Domain Walls ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||||
+
+% ------------------------------------------------
+% labels: \label{[type]:pertwalls:thinwall:[name]}
+% ------------------------------------------------
+
+
+
+% ------------------------------------------------
+\newcommand*\hypsurf{\ensuremath{\varSigma}}    % hypersurface
+% ------------------------------------------------
+
+
+
+
+\phpar
+
+
+
+We follow~\citet{garrigaPerturbationsDomainWalls1991} and~\citet{ishibashiEquationMotionDomain1999}. The world sheet $\hypsurf$ divides \Manifold~into two submanifolds $\Manifold_{\pm}$ such that $\mathscr{M} = \mathscr{M}_+ \cup  \hypsurf \cup \mathscr{M}_-$. That is to say, a domain wall holds a world sheet separating two vacua. We take \Manifold~ to be smooth and $(N+1)$-dimensional, and let $\hypsurf$ be a smooth also and $((N-1)+1)$-dimensional. Consequently, $\hypsurf$ is a timelike hypersurface in \Manifold. 
+
+
+%
+% \citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+
+
+\begin{bullets}
+    \item Vary DW action
+    \item Goal: E.O.M. for physically relevant component (epsilon basically)
+    \item Expression for energy--momentum tensor
+    \item Extension to non-thin walls 
+    \item Extension to Asymmetron or introduction of energy bias
+    \item What does thin mean? Why is the tension indep. of width?
+\end{bullets}
+
+
+% The generalisation to $(N+1)$ dimensions is straight-forward.
+We invoke a smooth coordinate system $\{x\^\mu\}$ ($\mu=0,1,\dots,N$) of the spacetime $(\Manifold, g\_{\mu\nu})$ in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = x\^\mu(y\^a)$, where the coordinate system $\{y\^a\}$ ($a=0,1,\dots,N-1$) parametrises $\hypsurf$.
+The induced metric on $\hypsurf$ is
+\begin{equation}\label{eq:pertwalls:thinwall:induced_metrid}
+    h\_{ab} = g\_{\mu\nu} e^\mu_a e^\nu_b; \quad e^\mu_a \equiv \pdv{x\^\mu}{y\^a}% g\_{\mu\nu}\pdv{x\^\mu}{y\^a}\pdv{x\^\nu}{y\^b} 
+\end{equation} \provethis{argue!}
+
+
+The action for a thin domain wall is famously~\citep[e.g.][]{vachaspatiKinksDomainWalls2006} the Nambu-Goto action
+\begin{equation}
+    S\ped{dw} = -\sigma \integ[N]{y\sqrt{-h}}[\hypsurf],
+\end{equation}
+where $\sigma$ is the wall's energy per unit area, henceforth called ``surface tension''.

@@ -1,0 +1,69 @@
+% ||||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 5.2 Generation Gravitational Waves ||||||
+% ||||||||||||||||||||||||||||||||||||||||||||||||
+
+% -------------------------------------------
+% labels: \label{[type]:pertwalls:gws:[name]}
+% -------------------------------------------
+
+
+\rephrase{
+\important{Neglect back-reaction:} 
+We assume that the topological defect does not change the \comment{un-perturbed} metrics of $\mathscr{M}_{\pm}$. The domain wall is simply viewed as a sheet separating two domains, and the (un-perturbed) metric $g\_{\mu\nu}$ that appears in the covariant derivative, d'Alembertian etc., and raises and lowers indices is unaffected by this.}
+
+In the absence of asymmetry, a domain wall will not produce disturbances in the gravitational field. However, perturbations to the wall position, such as ripples or wiggles, can reveal themselves as tensor perturbations to the background metric. 
+
+
+\blahblah
+
+
+
+\subsection{Expanding Universe: General Framework}
+    {
+    \newcommand*\ktau{\mathrm{x}}   % kτ
+    \newcommand*\nuu{\bar{\text{\textalpha}}}  % ν = α - 1/2
+    \newcommand*\aT{\Pi}
+    %%%%%%%%%%%%%%%%%%%%%%%%
+    \comment{Maybe define $t$ to be conformal time? And $h$ to be comoving? Remember conformally flat concept.}
+    \begin{equation}
+        {ds}^2 = - {\diff \check{t}}^2 + a^2(\check{t}) \pclosed{ \Krondelta{_{ij}} + \check{h}\_{ij}(t, x) }{\diff x\^i}{\diff x\^j}  = a^2(t) \pclosed{ -{\diff t}^2 +  \pclosed{\Krondelta{_{ij}}+ \check{h}\_{ij}} {\diff x\^i}{\diff x\^j}    }
+    \end{equation}
+
+
+    From \nc{ref to some section}[GWs chapter] \blahblah
+
+    $\ktau = k\tau$, $\nuu = \alpha - \frac{1}{2}$ , $\aT_\circ(\ktau, \vec{k}) \triangleq  a(\ktau/k) T\indices*{^{\mathrm{TT}}_{\circ}}(\ktau/k, \vec{k})$
+
+    \comment{Temporary placeholder definition sign should be used, perhaps $\triangleq$: $\ktau \triangleq k\tau$  }
+
+    % \dbend
+
+    % \textdbend
+
+    \begin{equation}
+        \mathsf{h}_\circ(\tau, \vec{k}) = \frac{16\ppi G\ped{N}}{k^2} \integ{\ktau'}[\ktau\ped{init}][\ktau] \mathcal{G}_{\nuu}(\ktau, \ktau') \aT_\circ(\ktau',\vec{k} ); \quad \circ = +, \times
+    \end{equation}
+
+    \citep{kawasakiStudyGravitationalRadiation2011}
+
+    If at some conformal time $\tau\ped{fin}$ switch off the source, we obtain the homogeneous solution for $\tau \geq \tau\ped{fin}$,
+    \begin{equation}
+        \mathsf{h}_\circ (\tau, \vec{k}) = \sqrt{\ktau} \cclosed{\mathcal{A}_\circ (\vec{k}) \Bessel[\nuu](\ktau) +  \mathcal{B}_\circ (\vec{k}) \Bessel[\nuu][2](\ktau)}.
+    \end{equation}
+    The coefficients are determined by sowing together the homogeneous and inhomogeneous solutions at $\tau=\tau\ped{fin}$:
+    \begin{multline}
+        \sqrt{\ktau\ped{fin}} \mathcal{A}_\circ (\vec{k}) \Bessel[\nuu](\ktau\ped{fin}) +  \sqrt{\ktau\ped{fin}} \mathcal{B}_\circ (\vec{k}) \Bessel[\nuu][2](\ktau\ped{fin}) \\= \frac{8\ppi^2 G\ped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau \ktau'} \cclosed{ \Bessel[\nuu][2](\ktau)\Bessel[\nuu](\ktau') - \Bessel[\nuu](\ktau)\Bessel[\nuu][2](\ktau') }
+        \aT_\circ(\ktau',\vec{k} )
+    \end{multline}
+    We get that
+    \begin{equation}
+        \begin{split}
+            \mathcal{A}_\circ (\vec{k}) &= - \frac{8\ppi^2 G\ped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau'}\Bessel[\nuu][2](\ktau') 
+            \aT_\circ(\ktau',\vec{k} ) \\
+            \mathcal{B}_\circ (\vec{k}) &= + \frac{8\ppi^2 G\ped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau'}\Bessel[\nuu](\ktau') 
+            \aT_\circ(\ktau',\vec{k} ) \\
+        \end{split}
+    \end{equation}
+    
+    } % 
+

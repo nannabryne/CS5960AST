@@ -3,41 +3,102 @@
 % ||||||||||||||||||||||||||||||||||||
 
 % -----------------------------------------
-% labels: \label{[type]:Gws:lingrav:[name]}
+% labels: \label{[type]:GWs:lingrav:[name]}
 % -----------------------------------------
 
 
-\comment{CONFORMAL TRAFOS!!!! \citet[p.~467]{carrollSpacetimeGeometryIntroduction2019}}
-
-If we let $\widebar{g}\_{\mu\nu}$ be the background metric, the perturbed metric is given by
-\begin{equation}
-    g\_{\mu\nu} = \widebar{g}\_{\mu\nu} + h\_{\mu\nu}; \quad \abs{h\_{\mu\nu}} \ll 1,
-\end{equation}
-where $h\_{\mu\nu}$ describes a tensor field propagating on said background. %, i.e.~gravitational waves.
-Now, $g\^{\mu\nu} = \widebar{g}\^{\mu\nu} - h\^{\mu\nu}$ is the inverse metric, however $h\^{\mu\nu}h\_{\nu\lambda}  = \widebar{g}\^{\mu\rho} \widebar{g}\^{\nu\sigma} h\_{\rho\sigma} h\_{\nu\lambda} \neq \Krondelta{^\mu _{\lambda} }$.
-
-\phpar[find the linearised Einstein eqs -- using comma notation -- comment about no backreaction]
 
 
+The simplest way to find the equation of motion (e.o.m.) for the tensor perturbations to the metric is to \textit{go through} a Minkowski spacetime. First, we establish the law of physics, valid in Minkowski coordinates. We write it in a coordinate-independent form, that is to say write the e.o.m. on tensorial form. \checkthis{The resulting law (e.o.m.) remains true in any spacetime. This procedure is called the ``minimal coupling procedure'' and is extremely powerful.} 
 
-The Christophel symbols are now
-\begin{equation}
-\begin{split}
-    \Chr{\rho}{\mu\nu} &=  \frac{1}{2}g\^{\rho \sigma} \pclosed{g\_{\mu\sigma,\nu} + g\_{\nu\sigma,\mu} - g\_{\mu\nu,\sigma}}  \\
-    &=  \barChr{\rho}{\mu\nu}+ \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - \frac{1}{2}h\^{\rho\sigma} \underbrace{\pclosed{ \widebar{g}\_{\mu\sigma,\nu} + \widebar{g}\_{\nu\sigma,\mu} - \widebar{g}\_{\mu\nu,\sigma}}}_{=2 \widebar{g}\_{\sigma\lambda} \barChr{\lambda}{\mu\nu}} + ~\BigO{h^2} \\
-    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - h\indices{^\rho _\lambda} \barChr{\lambda}{\mu\nu} + \BigO{h^2} \\
-    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma} - 2h\_{\sigma\lambda}\barChr{\lambda}{\mu\nu} }  + \BigO{h^2} \\
-    &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{h\_{\mu\sigma;\nu} + h\_{\nu\sigma;\mu} - h\_{\mu\nu;\sigma}} + \BigO{h^2},
-\end{split}
-\end{equation}
-where $h\_{\mu\nu;\sigma}=\widebar{\nabla}\_{\sigma}h\_{\mu\nu}$ \comment{$+ \BigO{h^2}$ ??}. \provethis{Prove this last line.} 
+\subsection{\tmptitle{Minkowski Spacetime}}
+    For the time being, we take the unperturbed metric to be the flat, static Minkowskian metric such that
+    \begin{equation}
+        %\eta\_{\mu\nu} \to 
+        g\_{\mu\nu}(x) = \eta\_{\mu\nu} + h\_{\mu\nu}(x); \quad \abs{h\_{\mu\nu}} \ll 1
+    \end{equation}
+    % where $g\_{\mu\nu}$ 
+    is the full, perturbed metric. Note that the $g\^{\mu\nu}=\eta\^{\mu\nu}-h\^{\mu\nu}$ is the inverse of $g\_{\mu\nu}$, whereas $h\^{\mu\nu}$ is \emph{not} the inverse of $ h\_{\mu\nu}$. We aim to find the Einstein tensor $\mathcal{G}\_{\mu\nu} = \mathcal{R}\_{\mu\nu} - \frac{1}{2}g\_{\mu\nu} \mathcal{R}$. %Recall that $\mathcal{G}\_{\mu\nu} \big|_{g\_{\mu\nu}=\eta\_{\mu\nu}}=0$
+
+    To zeroth order in $h\_{\mu\nu}$, the Einstein tensor is simply zero and the metric Minkowskian. To leading order $\BigO{h}$, some calculation is required. First, we compute the Christophel symbols
+    \begin{align}
+        \Chr{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{2g\_{\sigma(\mu,\nu)}- g\_{\mu\nu, \sigma} } = \frac{1}{2}\eta\^{\rho\sigma}\pclosed{2h\_{\sigma(\mu,\nu)}- h\_{\mu\nu, \sigma} } + \BigO{h^2}.
+    \end{align}
+    Next, we find the Riemann tensor to be $\mathcal{R}\indices{^{\rho}_{\mu\sigma\nu}}= 2\Chr{\rho}{\mu[\nu,\sigma]}+ \BigO{h^2}$. The Ricci tensor is then
+    \begin{align}
+        \mathcal{R}\_{\mu \nu} &= \frac{1}{2} \pclosed{ \partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \partial\_\rho \partial\^\rho h\_{\mu\nu} - \partial\_\mu \partial\_\nu h\indices{^\rho_\rho}} + \BigO{h^2} \nonumber \\
+        &= \frac{1}{2} \pclosed{ \partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \sq h\_{\mu\nu} - \partial\_\mu \partial\_\nu h} +\BigO{h^2},
+    \end{align}
+    thereby the Ricci scalar $\mathcal{R} = \partial\_{\rho}\partial\_\sigma h\^{\rho\sigma} - \sq h + \BigO{h^2}$. The first order Einstein tensor is
+    \begin{align}
+        \mathcal{G}\_{\mu\nu} = \frac{1}{2} \pclosed{\partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \sq h\_{\mu\nu} - \partial\_\mu \partial\_\nu h - \eta\_{\mu\nu}\partial\_{\rho}\partial\_\sigma h\^{\rho\sigma} + \eta\_{\mu\nu} \sq h } + \BigO{h^2}.
+    \end{align}
 
 
-\comment{Maybe have such things in an appendix?}
+
+
+
+
+
+
+\dots
+
+\dots 
+
+
+\dots
+
+\begin{bullets}
+    \item Gauge freedom
+    \item Explain perturbation equation
+    \item Separating GWs from background (Maggiore)
+\end{bullets}
+
+
+
+
+
+
+
+\subsection{\tmptitle{FLRW Spacetime}}
+
+
+
+\subsection{\tmptitle{TT gauge?}}
+
+
+
+% \comment{CONFORMAL TRAFOS!!!! \citet[p.~467]{carrollSpacetimeGeometryIntroduction2019}}
+
+% If we let $\widebar{g}\_{\mu\nu}$ be the background metric, the perturbed metric is given by
+% \begin{equation}
+%     g\_{\mu\nu} = \widebar{g}\_{\mu\nu} + h\_{\mu\nu}; \quad \abs{h\_{\mu\nu}} \ll 1,
+% \end{equation}
+% where $h\_{\mu\nu}$ describes a tensor field propagating on said background. %, i.e.~gravitational waves.
+% Now, $g\^{\mu\nu} = \widebar{g}\^{\mu\nu} - h\^{\mu\nu}$ is the inverse metric, however $h\^{\mu\nu}h\_{\nu\lambda}  = \widebar{g}\^{\mu\rho} \widebar{g}\^{\nu\sigma} h\_{\rho\sigma} h\_{\nu\lambda} \neq \Krondelta{^\mu _{\lambda} }$.
+
+% \phpar[find the linearised Einstein eqs -- using comma notation -- comment about no backreaction]
+
+
+
+% The Christophel symbols are now
+% \begin{equation}
+% \begin{split}
+%     \Chr{\rho}{\mu\nu} &=  \frac{1}{2}g\^{\rho \sigma} \pclosed{g\_{\mu\sigma,\nu} + g\_{\nu\sigma,\mu} - g\_{\mu\nu,\sigma}}  \\
+%     &=  \barChr{\rho}{\mu\nu}+ \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - \frac{1}{2}h\^{\rho\sigma} \underbrace{\pclosed{ \widebar{g}\_{\mu\sigma,\nu} + \widebar{g}\_{\nu\sigma,\mu} - \widebar{g}\_{\mu\nu,\sigma}}}_{=2 \widebar{g}\_{\sigma\lambda} \barChr{\lambda}{\mu\nu}} + ~\BigO{h^2} \\
+%     &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma}} - h\indices{^\rho _\lambda} \barChr{\lambda}{\mu\nu} + \BigO{h^2} \\
+%     &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{ h\_{\mu\sigma,\nu} + h\_{\nu\sigma,\mu} - h\_{\mu\nu,\sigma} - 2h\_{\sigma\lambda}\barChr{\lambda}{\mu\nu} }  + \BigO{h^2} \\
+%     &= \barChr{\rho}{\mu\nu} + \frac{1}{2}\widebar{g}\^{\rho\sigma} \pclosed{h\_{\mu\sigma;\nu} + h\_{\nu\sigma;\mu} - h\_{\mu\nu;\sigma}} + \BigO{h^2},
+% \end{split}
+% \end{equation}
+% where $h\_{\mu\nu;\sigma}=\widebar{\nabla}\_{\sigma}h\_{\mu\nu}$ \comment{$+ \BigO{h^2}$ ??}. \provethis{Prove this last line.} 
+
+
+% \comment{Maybe have such things in an appendix?}
 
 
 \begin{draft}
-    \subsection{\tmptitle{Energy--momentum tensor; Eom.; Scalar field}}
+    \subsection*{\tmptitle{Energy--momentum tensor; Eom.; Scalar field}}
         The energy--momentum tensor is 
         \begin{equation}
             T\^{\mu\nu}= -\frac{2}{\sqrt{-q}}\frac{\delta S_\phi}{\delta g\^{\mu\nu}} = \partial\_\mu \phi \partial\_\nu \phi - g\_{\mu\nu}\bclosed{\frac{1}{2}g\^{\rho \sigma}\partial\_\rho  \phi \partial\_\sigma \phi + V(\phi) }
@@ -64,4 +125,6 @@ where $h\_{\mu\nu;\sigma}=\widebar{\nabla}\_{\sigma}h\_{\mu\nu}$ \comment{$+ \Bi
 
 
 % \subsection{Separating GWs from the Background}
+
+
 

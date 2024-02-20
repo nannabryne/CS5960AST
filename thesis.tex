@@ -78,6 +78,10 @@
 \part{Background} 
 
 % GR, DWs ++
+
+\chapter{Differential Geometry}\label[chap]{chap:diffgeo}
+{\import{chapters/Differential_Geometry}{diffgeo.tex}}
+
 \chapter{Classical Field Theory and Gravity}\label[chap]{chap:CFTgrav}
     \import{chapters/Classical_Field_Theory_and_Gravity/}{CFTgrav.tex}
 
@@ -97,15 +101,20 @@
 % >>> THE PROJECT
 \part{Project}
 
-% ANALYTIC CALCULATION
-\chapter{Calculating Gravitational Waves from Domain Walls}
-    {\import{chapters/tmp_anal/}{tmp_anal.tex}}
+% % ANALYTIC CALCULATION
+% \chapter{Calculating Gravitational Waves from Domain Walls}
+%     {\import{chapters/tmp_anal/}{tmp_anal.tex}}
 
-% NUMERICAL SIMULATION
-\chapter{Simulating Gravitational Waves from Domain Walls} 
+% % NUMERICAL SIMULATION
+% \chapter{Simulating Gravitational Waves from Domain Walls} 
 
-% COMBINING ANALYSES
-\chapter{Studying Gravitational Waves from Domain Walls}
+% % COMBINING ANALYSES
+% \chapter{Studying Gravitational Waves from Domain Walls}
+
+
+\chapter{Perturbed Domain Walls}\label[chap]{chap:pertwalls}
+    {\import{chapters/Perturbed_Domain_Walls/}{pertwalls.tex}}
+    
 
 
 
@@ -211,8 +220,11 @@ The Planck unit \Planck{M}
 \end{draft}
 
 \begin{align}
-    \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots}
+    \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots} \\
+    \integ{x} f 
 \end{align}
+
+
 
 
 

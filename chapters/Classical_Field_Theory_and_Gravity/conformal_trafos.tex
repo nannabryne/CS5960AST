@@ -1,0 +1,100 @@
+% ||||||||||||||||||||||||||||||||||||||||
+% |||||| 2.X Conformal Field Theory ||||||
+% ||||||||||||||||||||||||||||||||||||||||
+
+% ------------------------------------------------------
+% labels: \label{[type]:CFTgrav:conformal_trafos:[name]}
+% ------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\manifold{\mathscr{M}}
+\newcommand*\conf{\tilde}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated metric $g$ and coordinate system $\{x\}$. If another spacetime $(\conf{\mathscr{M}}, \conf{g})$ of $n$ dimensions is such that $\conf{g}=\omega(x)g $, we say that said spacetime is \emph{conformal} to the original spacetime $(\mathscr{M}, g)$. This is not just a matter of name-dropping---the situation cause for a number of useful relations. We will see that the expansion of the universe is elegantly handled by conformal transformations. In short, \grammar[Is this a word?]{conformality} allows %any quantity of $\conf{\manifold}$ to be expressed in terms of $g$ and .
+\important{THIS IS WRONG! Same spacetime, different metric}
+
+\subsection{The Conformal Group}
+    %https://eduardo.physics.illinois.edu/phys583/ch21.pdf
+    A regular change of the metric tensor under a coordinate transformation $x\^\mu \mapsto {\conf{x}}\^\mu  $ looks like
+    \begin{equation}
+        g\_{\mu\nu}(x) \mapsto {\conf{g}}\_{\mu\nu}(\conf{x}) = \pdv{x\^\rho}{{\conf{x}}\^\mu}\pdv{x\^\sigma}{{\conf{x}}\^\nu} g\_{\rho\sigma}(x).
+    \end{equation}
+    A special group of transformations leaves the metric scale invariant (invariant under a local change of scale), $\conf{g}\_{\mu\nu}(\conf{x}) = \omega^2 (x) g\_{\mu\nu} (x)$. Such \emph{conformal transformations} make up the conformal group, \Group{Conf}{\Manifold}. We say that $\omega(x)$ is the \emph{conformal factor}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Friedmann--Lemaitre--Robertson--Walker Universe}
+    We consider a four-dimensional expanding universe that is both homogeneous and isotropic with a Lorentzian structure (i.e. metric signature $(-,+,+,+)$). The general metric can be written
+    \begin{equation}
+        {ds}^2 = g\_{\mu\nu}{\diff x\^\mu}{\diff x\^\nu} = a^2(\tau) \cclosed{ - {\diff \tau}^2 + {d\varSigma}^2 },
+    \end{equation}
+    where $\tau$ represents conformal time, $a(\tau)$ is the dimensionless scale factor and $\varSigma$ is the time-independent three-dimensional space. In polar coordinates, the spatial line element takes the familiar form
+    \begin{equation}
+        {d\varSigma}^2 = \frac{1}{1-kr^2} + r^2 {d \varOmega}^2, \quad k \in \{-1,0,+1\}.
+    \end{equation}
+    However, as we know, \nc{it is safe to assume that the universe is flat}[ref to some section], and we may as well use regular Cartesian coordinates;
+    \begin{align}
+        {d\varSigma}^2 =\Krondelta{_{ij}}{\diff x\^i}{\diff x\^j} = {\diff x}^2 + {\diff y}^2 + {\diff z}^2.
+    \end{align}
+    This choice of coordinates implies $g\_{\mu\nu} = a^2\big(x\^0\big) \eta_{\mu\nu} $. Hence, $\FLRW \in \Group{Conf}{\Minkowski}$
+
+    \begin{bullets}
+        \item Fourier transform (scale invariance, scalar product preserved)
+        \item Something about the benefit of using $a\propto \tau^\alpha$, and that $\alpha\in \Integer$ is a sensible assumption (for completeness, maybe let $\alpha \in \Real$?)
+    \end{bullets}
+
+    \subsubsection{Fourier Transforms}
+        One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
+        \begin{subequations}
+            \begin{align}
+                f(x) &= \integ[4][{(2\ppi)}^4]{k}  \eu[-\im \eta\_{\mu\nu} k^\mu x\^{\nu}] f(k) &&= \integ[1][2\ppi]{\omega} \eu[\im \omega \tau] \integ[3][{(2\ppi)}^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] f(\omega, \vec{k})\\
+                f(k) &= \integ[4]{x}  \eu[\im \eta\_{\mu\nu} k^\mu x\^{\nu}]f(x) &&=\integ{\tau} \eu[-\im\omega\tau] \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] f(\tau, \vec{x})
+            \end{align}
+        \end{subequations}
+        The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
+
+    
+    \subsection{\tmptitle{Analytical Considerations}}\label{sec:CFTgrav:conformal_trafos:anal_sols}
+        We will encounter several equations of similar forms, for instance $\sq\phi = \text{[some source term]}$, whose homogeneous solution satisfies
+        \begin{equation}
+            \ddot{\phi} + 2\mathcal{H}\dot{\phi} - \vec{\nabla}^2 \phi = 0.
+        \end{equation}
+        This partial differential equation generally depends on initial conditions and expansion history. Transforming the spatial part to Fourier space, \checkthis{$\vec{\nabla}\mapsto -\im \vec{k}$ (check sign!)}, we recognise a wave equation with a damping term $2\mathcal{H}$. %        
+        The special case for which $a\propto \tau^\alpha$ gives $\mathcal{H}=\dot{a}/a=\alpha/\tau$. %We can---regardless of $a$---%decompose the solution in terms of eigenfunctions \checkthis{$\vec{\nabla}\mapsto -\im \vec{k}$ (check sign!)}
+        \grammar{A trained eye} will then identify a transformed Bessel's equation \comment{put details in Appendix}. We write a somewhat more general (mer hensiktsmessig form) equation for some function $f(x)\to f_k(\tau)$ \comment{fix}:
+        \begin{equation}
+            \tau^2  \ddot{f}_k + A\cdot \alpha \tau \dot{f}_k + B^2 \cdot k^2 \tau^2 f_k = 0; \quad A,B\in \Complex
+        \end{equation} 
+        The general solution to this equation is known, and we can use the properties of the Bessel functions to arrive at \rephrase{nicer} expressions for some special cases (define $\nu\equiv n- 1/2, n\equiv A\alpha/2$)
+        \begin{equation}
+            f_k(\tau) = \begin{cases}
+                \tau^{-\nu} \cclosed{C_k \Bessel[\abs{\nu}](Bk\tau)+D_k \Bessel[-\abs{\nu}](Bk\tau)}, & \nu \notin \Integer%, \Halfinteger 
+                \\
+                \tau^{1-n} \cclosed{C_k \sphBessel[\abs{n}](Bk\tau)+D_k \sphBessel[-\abs{n}] (Bk\tau) }, & \nu \in \Halfinteger \\
+                \tau^{-\nu} \cclosed{C_k \Bessel[-\nu](Bk\tau)+ D_k \Bessel[-\nu][2](Bk\tau)} %, &\nu \in \Integer
+            \end{cases}
+        \end{equation}
+        \checkthis{Carefully check these!}
+        \comment{Spoiler alert!} Most physically meaningful scenarios will have $\alpha\in \Integer$ (see \nc{Table XXX}) and $A\in \Integer$.
+
+        \comment{Table with matched $w_s$, $\alpha$, $\beta$ etc.}
+
+        % \subimport{../../../tables/}{misc/untitled_090224.tex}
+        \begin{table}[h]\label[tab]{tab:CFTgrav:conformal_trafos:untit}
+            \import{tables/misc/}{untitled_090224.tex}
+        \end{table}
+        
