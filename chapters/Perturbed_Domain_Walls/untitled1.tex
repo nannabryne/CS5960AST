@@ -1,0 +1,139 @@
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{draft}
+
+\paragraph{Not constant surface tension.} %
+We now let the surface tension of the domain wall be dependent of time. The variation of the action becomes slightly different, and the resulting equation of motion
+\begin{equation}
+    \ddot{\epsilon} + \pclosed{ 3\frac{\dot{a}}{a} + \frac{\dot{\sigma}}{\sigma} } \dot{\epsilon} + k^2 \epsilon = 0.
+\end{equation}
+A simple way to obtain this equation is to substitute $a\to \sigma^{1/3}a$ in the equations above.
+
+We assume an ideal situation in which SSB occurs at some conformal time $\eta_\ast$ in a universe where $a= a_\ast (\eta/\eta_\ast)^\alpha$. It is useful to introduce a dimensionsless time variable $s\equiv\eta/\eta_\ast$, s.s.~$a=a_\ast s^\alpha$, as well as a parameter $q\equiv k\eta_\ast$. The surface tension of a domain wall is computed from the Symmetron effective potential
+\begin{equation}
+    V\ped{eff} (\phi) = \frac{\lambda}{4} \phi^4 + \frac{\mu^2}{2} \left( \frac{\rho\ped{m}}{\mu^2 M^2} - 1\right) \phi^2 + V_0.
+\end{equation}
+We define the matter density at SSB to be $\rho\ped{m}|_{\eta=\eta_\ast}= \mu^2 M^2$. Since $\rho\ped{m}\propto a^{-3(1+w\ped{m})} = a^{-3}$, we get
+\begin{equation}
+    \rho\ped{m} = \mu^2 M^2 \left(a_\ast/a \right)^3 = \mu^2 M^2 \left(\eta_\ast/\eta \right)^{3\alpha} = \mu^2 M^2 s^{-3\alpha}.
+\end{equation}
+% \begin{align}
+%     \frac{\rho_s}{\rho_{s0}} &= \left(\frac{a}{a_0}\right)^{-3(1+w_s)}
+% \end{align}
+\blahblah The surface tension becomes
+\begin{equation}
+    \sigma = \sigma_0 \left(1 - s^{-3\alpha}\right)^{3/2}.
+\end{equation}
+Finally, the equation of motion for the wall normal coordinate $\epsilon n\^\mu$ is
+\begin{equation}\label{eq:pertwalls:untitled1:eom_final}
+    \epsilon'' + \left(  \frac{3\alpha}{s}  + 2 \gamma(s)\right)\epsilon' + q^2\epsilon = 0; \quad \gamma(s)= \frac{9\alpha}{4 s \left( s^{3\alpha}-1 \right)}.
+\end{equation}
+
+
+% We assume the wall to be thin, and so the surface tension is given by
+
+\subsection{Solving the equation of motion in a matter dominated universe}
+We restrict our discussion to $\alpha=2$. The generalisation to $\alpha \geq 1/3$ is trivial \comment{in appendix, maybe?}. We shall solve~\cref{eq:pertwalls:untitled1:eom_final} in two regimes of $s$ and sow these solutions together. In the following, we neglect the spatial part of $\epsilon$, that which is subject to \comment{explain this}
+
+$\epsilon(\eta, x, y) =$
+
+% The field $\epsilon = \epsilon_q(s, x, y)$ 
+
+Consider a planar domain wall formed during SSB at spacetime position $X\^\mu= (\eta_\ast, x, y, z_0)$.
+Assume that such a formation induces a perturbation to the wall that moves the wall normal coordinate from $z_0$ to $z_0 + \epsilon_\ast$. This gives the initial condition $\epsilon(1)=\epsilon_\ast$ to the equation of motion for $\epsilon(s)$ with $\alpha=2$, namely
+\begin{equation}\label{eq:pertwalls:untitled1:eom_MD}
+    \epsilon'' + \left( \frac{6}{s}  +\frac{9}{s\left(s^6-1\right)} \right) \epsilon' + q^2 \epsilon = 0.
+\end{equation}
+The dimensionless variables are restricted $s\geq 1$ and $q\gg 1$ to ensure that SSB has happened and \rephrase{that the scale of the perturbation is subhorizon.}
+
+\paragraph{Shortly after symmetry breaking.} %
+We begin by solving the equation of motion for $s\sim 1$. As our equation has a singularity at $s=1$, the natural way to go is through a Laurent expansion around this point of the damping term in~\cref{eq:pertwalls:untitled1:eom_MD}. We find 
+\begin{equation}
+    \frac{6}{s}  +\frac{9}{s\left(s^6-1\right)} = \frac{3}{2} (s-1) + \frac{3}{4} + \frac{29}{8}(s-1)- \frac{93}{16} {(s-1)}^2 + \BigO{{(s-1)}^3}.
+\end{equation}
+Now $\epsilon(s)$ is also subject to an expansion around $s=1$;
+\begin{equation}
+    \epsilon(s) = \epsilon_\ast \cdot \bclosed{ 1 + c_1 (s-1) + c_2 {(s-1)}^2 + c_3 {(s-1)}^3 + \dots }.
+\end{equation}
+% We immediately see that the initial condition 
+When put together, we get a polynomial in $s-1$ on the left-hand side of~\cref{eq:pertwalls:untitled1:eom_MD}, for which all coefficients must vanish. %Solving the system of equations gives $c_1 = 0$, $c_2 =-q^2/5$ and $c_3 = q^2/35$. Thus,
+We solve the system of equations for $\cclosed{c_1,c_2, c_3} $ and find 
+\begin{equation}\label{eq:pertwalls:untitled1:eps_of_s_first}
+    \epsilon(s) = \epsilon_\ast \cdot \bclosed{ 1 - \frac{q^2}{5} {(s-1)}^2 + \frac{q^2}{35} {(s-1)}^3 } + \BigO{\pclosed{s-1}^4}, \quad s \gtrsim 1
+\end{equation}
+
+
+\paragraph{Later times.} %
+For $s\gg 1$, the damping term $\gamma(s) = 9/(2 s(s^6-1))$ in the eom for $\epsilon$ becomes subdominant \comment{check plag. Julian}, and asymptotically the solution is $s^{-2}\cclosed{c \sphBessel[2](qs) + d \sphNeumann[2](qs)  }$. Said damping term is not completely negligible, however, as it causes a \emph{damping envelope} that is considered much like in the case of a damped harmonic oscillator, writing
+\begin{equation}\label{eq:pertwalls:untitled1:eps_of_s_second_general}
+    \epsilon(s) \simeq \epsilon_\ast \cdot  w(s) \cdot \exp{ - \integ{t}[][s] \gamma(t) }.%; \quad w(s) = \frac{c\sphBessel[2](qs) + d \sphNeumann[2](qs)}{s^2}.
+\end{equation}
+Employing this ansatz in the eom gives
+\begin{equation}
+    w'' + \frac{6}{s} w' + \pclosed{q^2 - \theta(s) }w = 0; \quad \theta(s) = \gamma'(s) + \gamma^2(s) + \frac{6}{s}\gamma (s)
+\end{equation}
+whose solution is 
+\begin{equation}\label{eq:pertwalls:untitled1:w_of_s_undet}
+    w(s) \simeq s^{-5/2} \cclosed{ A \Bessel[-5/2](qs) + B \Neumann[-5/2](qs) }
+\end{equation}
+when the phase shift introduced by $\theta(s)$ is negligible and $A$ and $B$ are constants.%
+{\footnote{In fact, it is possible to show that $\lim_{q\to \infty}{\bclosed{\sqrt{q^2-\theta(1+q^{-1})}-q} /q }= \sqrt{19}/4 -1 \approx 0.09$.}} %
+Now, we find that $\exp{-\integ{t}[][s] \gamma(t)} =s^{9/2} (s^6-1)^{-3/4}  \cdot \text{const.}$, so in redefining the constants $A$ and $B$, we have
+\begin{equation}
+    \epsilon(s) \simeq \epsilon_\ast  \cdot \frac{ A \Bessel[-5/2](qs) + B \Neumann[-5/2](qs) }{s^{5/2}} \frac{s^{9/2}}{{(s^6-1)}^{3/4}}, \quad s \geq s\ped{sow}
+\end{equation}
+
+
+
+\paragraph{Putting it together.} %
+We have obtained solutions for $\epsilon(s)$ in two regimes. We say that $\epsilon(s)$ obeys~\cref{eq:pertwalls:untitled1:eps_of_s_first} for $s \in [1, s\ped{sow}]$ and~\cref{eq:pertwalls:untitled1:eps_of_s_second_general} for $s\in [s\ped{sow}, \infty)$, where $s\ped{sow}$ is close to, but strictly larger than 1. We choose $s\ped{sow}=1+q^{-1}$ since only \cringe{causally conntected modes}, for which $q\gg 1$, are of interest to us. We use a computer algebra system, namely \textit{SageMath}~\citep{sagemath}, to determine $A$ and $B$ in~\cref{eq:pertwalls:untitled1:w_of_s_undet} from the system of equations that comes from equating the right-hand sides of~\cref{eq:pertwalls:untitled1:eps_of_s_first} and~\cref{eq:pertwalls:untitled1:eps_of_s_second_general} with $s=s\ped{sow}$. 
+
+
+
+\begin{figure}[h]\label{fig:test}
+    \import{figs/}{demo001.tex}
+\end{figure}
+
+\begin{bullets}
+    \item We assume given values of $\epsilon_\ast$ and $q$
+    \item $A$ and $B$ are constants dep. on choice of $s\ped{sow}$ (and $q$)
+    \item Find a place to show the expressions for $A$ and $B$, maybe an attachment or appendix
+    \item Two free parameters: As we can see, changing the amplitude $\epsilon_\ast$ does not change the motion, but varying the wavenumber $q$ does
+\end{bullets}
+
+
+\begin{equation}
+    \epsilon_q(s, x, y) = \epsilon_\ast \cdot \begin{cases}
+        1(\dots) & 1 \leq s \leq s\ped{sow} \\
+        2 (\dots)  &s\ped{sow} \leq s < \infty \quad \mathcal{H}
+    \end{cases}
+\end{equation}
+
+
+\end{draft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+% \comment{We find that $\lim_{q\to \infty}{\bclosed{q\ped{mod}(s\ped{sow})-q} /q }= \sqrt{19}/4 -1 \approx 0.09$ for $s\ped{sow}=1+q^{-1}$ and $q\ped{mod}(s) = \sqrt{q^2 -\theta(s)  }$.}
+
+
+
+
+
+% For $s\gg 1$, the term $\gamma(s) = 9/(2 s(s^6-1))$ in the eom for $\epsilon$ is of order $\BigO{s^{-7} }$, and thus negligible. Completely ignoring this term gives a differential equation with the general solution $s^{-\tau} \cdot \cclosed{d_{1} \Bessel[\tau](qs) + d_{2} \Neumann[\tau](qs)  }$ where $\tau=(1-3\alpha)/2=-5/2$.
+% \begin{equation}
+%     \epsilon(s) = 
+% \end{equation}
+

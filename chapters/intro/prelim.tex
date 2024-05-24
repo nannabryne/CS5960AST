@@ -56,15 +56,17 @@ It is assumed that the reader is familiar with variational calculus and linear p
 
 
 
-\subsection{Expanding universe: FRW cosmology}
-    The universe expands with the rate $a(t)$ at cosmic time $t$. 
+\subsection{Expanding universe: standard cosmology}
     \begin{bullets}
         \item expansion rate, cosmic time, conformal time
         \item why is flat assumption OK?
+        \item redshift $\mathfrak{z}=a_0/a-1$
     \end{bullets}
+    The universe expands with the rate $a(t\phys)$ at physical or rather \emph{cosmic} time $t\phys$. \comment{Explain cosmic time and $t\phys=0$.} This work sincerely favours the use of \emph{conformal} time, also known as the comoving horizon. As $t$ is a neat variable name, we shall \emph{not} reserve it for the cosmic time, as is the most common use, but rather let it refer to the conformal time coordinate. 
+    
 
 
-\subsection{Method of Green's Functions}
+\subsection{Method of Green's functions}
     A linear ordinary differential equation (ODE) $\mathop{\mathrm{L}_x}f(x)=g(x)$ assumes a linear differential operator $\mathop{\mathrm{L}}$, a \checkthis{continuous}, unknown function $f$, and a right-hand side $g$ that constitutes the inhomogeneous part of the ODE. The \emph{Green's function} $G$ for the ODE (or $\mathop{\mathrm{L}}$) is manifest as any solution to $\mathop{\mathrm{L}_x} G(x, y) = \Diracdelta{x-y}$ \comment{check plagiarism (Bringmann)}. If $\mathop{\mathrm{L}}$ is translation invariant (invariant under $x\mapsto x+a $)---which is equivalent to $\mathop{\mathrm{L}}$ having constant coefficients---we can write $G(x,y)=G(x-y)$ and \provethis{show?}
     \begin{equation}
         f(x) = (G \ast g )(x) =\integ{y}G(x-y)g(y)

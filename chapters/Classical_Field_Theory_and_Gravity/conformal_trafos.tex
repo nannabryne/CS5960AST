@@ -16,7 +16,7 @@
 Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated metric $g$ and coordinate system $\{x\}$. If another spacetime $(\conf{\mathscr{M}}, \conf{g})$ of $n$ dimensions is such that $\conf{g}=\omega(x)g $, we say that said spacetime is \emph{conformal} to the original spacetime $(\mathscr{M}, g)$. This is not just a matter of name-dropping---the situation cause for a number of useful relations. We will see that the expansion of the universe is elegantly handled by conformal transformations. In short, \grammar[Is this a word?]{conformality} allows %any quantity of $\conf{\manifold}$ to be expressed in terms of $g$ and .
 \important{THIS IS WRONG! Same spacetime, different metric}
 
-\subsection{The Conformal Group}
+\subsection{The conformal group}
     %https://eduardo.physics.illinois.edu/phys583/ch21.pdf
     A regular change of the metric tensor under a coordinate transformation $x\^\mu \mapsto {\conf{x}}\^\mu  $ looks like
     \begin{equation}
@@ -37,7 +37,7 @@ Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated m
 
 
 
-\subsection{Friedmann--Lemaitre--Robertson--Walker Universe}
+\subsection{Friedmann--Lemaitre--Robertson--Walker universe}
     We consider a four-dimensional expanding universe that is both homogeneous and isotropic with a Lorentzian structure (i.e. metric signature $(-,+,+,+)$). The general metric can be written
     \begin{equation}
         {ds}^2 = g\_{\mu\nu}{\diff x\^\mu}{\diff x\^\nu} = a^2(\tau) \cclosed{ - {\diff \tau}^2 + {d\varSigma}^2 },
@@ -57,7 +57,7 @@ Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated m
         \item Something about the benefit of using $a\propto \tau^\alpha$, and that $\alpha\in \Integer$ is a sensible assumption (for completeness, maybe let $\alpha \in \Real$?)
     \end{bullets}
 
-    \subsubsection{Fourier Transforms}
+    \subsubsection{Fourier transforms}
         One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
         \begin{subequations}
             \begin{align}
@@ -68,7 +68,7 @@ Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated m
         The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
 
     
-    \subsection{\tmptitle{Analytical Considerations}}\label{sec:CFTgrav:conformal_trafos:anal_sols}
+    \subsection{\tmptitle{Analytical considerations}}\label{sec:CFTgrav:conformal_trafos:anal_sols}
         We will encounter several equations of similar forms, for instance $\sq\phi = \text{[some source term]}$, whose homogeneous solution satisfies
         \begin{equation}
             \ddot{\phi} + 2\mathcal{H}\dot{\phi} - \vec{\nabla}^2 \phi = 0.
@@ -88,7 +88,7 @@ Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated m
                 \tau^{-\nu} \cclosed{C_k \Bessel[-\nu](Bk\tau)+ D_k \Bessel[-\nu][2](Bk\tau)} %, &\nu \in \Integer
             \end{cases}
         \end{equation}
-        \checkthis{Carefully check these!}
+        \checkthis{Carefully check these! I think they are wrong...}
         \comment{Spoiler alert!} Most physically meaningful scenarios will have $\alpha\in \Integer$ (see \nc{Table XXX}) and $A\in \Integer$.
 
         \comment{Table with matched $w_s$, $\alpha$, $\beta$ etc.}
