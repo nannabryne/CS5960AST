@@ -1,0 +1,141 @@
+% |||||||||||||||||||||||||||||||||
+% |||||| 2.X Symmetron model ||||||
+% |||||||||||||||||||||||||||||||||
+
+% -----------------------------------------------------
+% labels: \label[type]{[type]:CFTgrav:symmetron:[name]}
+% -----------------------------------------------------
+
+
+
+
+
+
+The simplest of fields is the scalar field; the main ingredient to simple modifications of gravity. 
+
+
+\paragraph{Jordan \& Einstein frames.} %
+(Some text about these.) Jordan frame (Jf.) and Einstein frame (Ef.) 
+
+
+
+The origin of the symmetron model is \blahblah
+
+
+The $\mathsf{Z}_2$ symmetry $\phi \to -\phi$ is broken by the symmetron potential $V(\phi)=\lambda\phi^4 / 4 - \mu^2\phi^2/2$. \citep{hinterbichlerScreeningLongRangeForces2010}
+
+
+The \textit{a}symmetron model is a generalisation of the symmetron in which a cubic term is added to the potential. A nonzero cubic term corresponds to a system where one potential well is deeper than the other. We write the asymmetron \checkthis{vacuum} potential as
+%
+% \begin{equation}\label[eq]{eq:CFTgrav:symmetron:asymmetron_potential}
+%     V(\phi) = \frac{\lambda}{4} \phi^4 + \frac{\kappa}{3}\phi^3 - \frac{\mu^2}{2} \phi^2
+% \end{equation}
+% \begin{empheq}[box={\mybluebox[2pt][2pt]}]{equation}%\label[eq]{eq:CFTgrav:symmetron:asymmetron_potential}
+%     V(\phi) = \frac{\lambda}{4} \phi^4 + \frac{\kappa}{3}\phi^3 - \frac{\mu^2}{2} \phi^2
+% \end{empheq}
+\boxedeq{eq:CFTgrav:symmetron:asymmetron_potential}{%
+V(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 - \frac{\mu^2}{2} \phi^2 + V_0%
+}
+for which the symmetron is retrieved when $\kappa=0$. In~\cref{fig:CFTgrav:symmetron:test} we demonstrate the impact of varying each coupling term separately.
+% \begin{figure}[h]\label[fig]{fig:CFTgrav:symmetron:test}
+%     \import{figs/}{demo002.tex}
+% \end{figure}
+\begin{figure}[h]\label[fig]{fig:CFTgrav:symmetron:test}
+    \centering
+    \includegraphics[width=\linewidth]{asymmetron_demo.pdf}
+    %%%%%%%%%%
+    \caption{Asymmetron potential for different parameter choices.}
+    %%%%%%%%%%%%%
+\end{figure}
+
+
+% General framework
+
+\subsection{The symmetron action}
+% 
+
+% \paragraph{Jordan \& Einstein frames.} %
+% (Some text about these.) Jordan frame (Jf.) and Einstein frame (Ef.) 
+
+
+% The action
+We begin with the general chameleon action in the Einstein frame
+\begin{equation}
+    S =S\nped{SE} + S_\phi  + S\ped{m}= \integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{m}[\tilde{g}\_{\mu\nu} , \psi]
+\end{equation} 
+where $X= -\frac{1}{2} \nabla\^\mu \phi \nabla\_\mu \phi $ is viewed as the kinetic energy of the chameleon, and $S\ped{m}$ is the Jordan frame matter action. In truth, the Jf. fields $\tilde{g}\_{\mu\nu}$ and $\psi$ are% \emph{sums} over \blahblah
+
+
+The matter fields couple to the Jordan frame metric $\tilde{g}\_{\mu\nu} = A^2(\phi)g\_{\mu\nu}$. 
+
+In Jf., the SE tensor $\tilde{T}\_{\mu\nu} = -\pclosed{2/\sqrt{-\tilde{g}}} \Fdv*{\mathcal{L}\ped{m}}{\tilde{g}\^{\mu\nu}}$ is covariantly conserved; $\tilde{\nabla}\_{\mu}\tilde{T}\indices{^{\mu}_{\nu}}=0$. By varying the Ef. action, we find the symmetron obeys
+\begin{equation}
+    \sq \phi -V_{,\phi} + A^3(\phi) A_{,\phi} \cdot\tilde{g}\^{\mu\nu} \tilde{T}\_{\mu\nu}=0 .
+\end{equation}
+
+
+
+We let $A(\phi)=1+\Delta A= 1 + \phi^2/(2M^2)$ be the (a)symmetron conformal factor. The Ef. energy density $\rho=A^3\tilde{\rho}$
+
+\paragraph{Matter density in Einstein frame.} %
+% Assuming there is no interaction between the matter fields $\phi_i$, 
+The Jf. SE tensor is covariantly conserved; $\tilde{\nabla}\_{\mu}\tilde{T}\indices{^{\mu}_{\nu}}=0$. Several systems, such as galaxies, allow us to assume  ....
+We then find the trace $\tilde{g}\^{\mu\nu} \tilde{T}\_{\mu\nu}= -\sum_i \tilde{\rho}_i(1-w_i) =-\tilde{\rho}$, and the eom for $\phi$ becomes
+\begin{equation}
+    \sq \phi = V_{,\phi} + \rho A_{,\phi}.
+\end{equation}
+It is customary to define the effective potential s.t. $\sq \phi = V\ped{eff,\phi}$, i.e.
+\begin{equation}
+    V\ped{eff}(\phi) = V(\phi) + \rho A(\phi) =  \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho}{\mu^2M^2}-1} \phi^2 + V_0.
+\end{equation}
+\blahblah
+This potential becomes unstable when $\rho\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua. 
+
+
+\paragraph{Symmetron potential.} %
+    The (a)symmetron effective potential captures the complete phase transition. Let $\upsilon\equiv\rho\ped{m}/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values
+    \begin{equation}
+        \phi_0 = 0 \quad \lor \quad \phi_\pm = \phi_\infty \pclosed{\bar{\kappa} \pm  \sqrt{\bar{\kappa}^2 +  1- \upsilon }},%\frac{\kappa \pm \sqrt{\kappa^2 + 4\lambda\mu^2 \pclosed{1- \rho\ped{m}/(\mu^2M^2)} } }{2\lambda}
+    \end{equation}
+    where we defined $\bar{\kappa} = \kappa / (2\mu \sqrt{\lambda}) $ and $\phi_\infty = \mu/\sqrt{\lambda}$. Note that for the symmetron ($\kappa=0$), since the field is real, VEV is zero before SSB. We determine the stability of these vacua by evaluating $V\ped{eff,\phi\phi}$ at $\phi=\phi_0,\phi_\pm$ and see that $\phi_0$ remains stable until $\rho_\ast$. 
+
+
+    % \begin{enumerate}[label=(\roman*)]
+    %     \item before SSB ($\rho>\rho_\ast$) VEV is 0
+    %     \item at SSB ($\rho=\rho_\ast$) VEV is 0 (unstable)
+    %     \item after SSB ($\rho<\rho_\ast$) VEV are $\phi_\pm$
+    % \end{enumerate}
+
+%     the symmetry break at $\rho_\ast$ such that 
+
+
+% The field-like description of an Asymmetron domain wall 
+% \begin{equation}
+%     S\ped{As} = \integ[4]{x\sqrt{-g}} \cclosed{ \frac{1}{2}M\nped{Pl}^2 \mathcal{R} - \frac{1}{2}\nabla\_\mu \phi \nabla \phi  - V(\phi)  } + S\ped{m}
+% \end{equation}
+
+% \blahblah
+
+% We are left with the eomx
+% \begin{equation}
+%     \sq \phi = \dv{V\ped{eff}}{\phi}
+% \end{equation}
+% with
+% \begin{equation}
+%     V\ped{eff}(\phi) = \frac{\lambda}{4}\phi^4 - \frac{\kappa}{3}\phi^3 -\frac{\mu^2}{2} \pclosed{1-\upsilon  } \phi^2 ,
+% \end{equation}
+% where $\upsilon= \rho\ped{m}/(\mu^2M^2)$. Now
+% \begin{equation}
+%     {V\ped{eff}}\_{,\phi}= \lambda\phi^3 + \kappa \phi^2 - \mu^2 \pclosed{1- \upsilon }\phi,
+% \end{equation}
+% which equated to zero gives the vacuum expectation values
+% \begin{equation}
+%     \phi_0 = 0 \quad \lor \quad \phi_\pm = \phi_\infty \pclosed{\bar{\kappa} \pm  \sqrt{\bar{\kappa}^2 +  1- \upsilon }}\phi%\frac{\kappa \pm \sqrt{\kappa^2 + 4\lambda\mu^2 \pclosed{1- \rho\ped{m}/(\mu^2M^2)} } }{2\lambda}
+% \end{equation}
+% where we defined $\bar{\kappa} = \kappa / (2\mu \lambda) $ and $\phi_\infty = \mu/\sqrt{\lambda}$.
+
+
+
+
+\subsection{Fifth-force}
+    \blahblah

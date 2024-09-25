@@ -11,70 +11,74 @@
 
 
 \begin{bullets}
-    \item Somehow get to this eq: 
-    \begin{equation}
-        \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) = \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}})  \integ[3][(2\ppi)^3]{p}  p\_{k} p\_{l} \phi(\eta, \vec{p}) \phi(\eta, \vec{k}-\vec{p}).
-    \end{equation}
+    % \item Somehow get to this eq: 
+    % \begin{equation}
+    %     \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) = \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}})  \integ[3][(2\ppi)^3]{p}  p\_{k} p\_{l} \phi(\eta, \vec{p}) \phi(\eta, \vec{k}-\vec{p}).
+    % \end{equation}
     \item Production instead of generation?
 \end{bullets}
 
 
+Linearised Einstein equations: \comment{conformal Newtonian gauge}
+\begin{equation}
+    \delta G\indices{^{i}_{j}} = 8\ppi G\nped{N} T\indices{^{i}_{j}}= \frac{1}{2a^2} \bclosed{ \ddot{h}\_{ij} + 2\frac{\dot{a}}{a} \dot{h}\_{ij} - \bnabla^2 h\_{ij} } 
+\end{equation}
+where a dot (`$\dot{\phantom{a}}$') signifies the \emph{conformal} time derivative. ($T\indices{^{i}_{j}} = a^{-2} T\_{ij}$) \blahblah
 
-
-% 
-\subsection{General Formalism}\label[sec]{sec:GWs:generation:formalism}
-    \begin{draft}
-    \comment{Use conformal trafo! \cite[p.~467]{carrollSpacetimeGeometryIntroduction2019} }
-    \begin{equation}
-        ds^2 = -\diff t^2 + a^2(t) \cclosed{ \gamma\_{ij} + h\_{ij}}\diff x\^i \diff x\^j = a^2(\eta)\cclosed{ -\diff \eta^2 + \pclosed{\gamma\_{ij} + h\_{ij}}\diff x\^i  \diff x^j }%; \diff \eta^2 = \diff x\^0 \otimes \diff x\^0
-    \end{equation}
+% % 
+% \subsection{General Formalism}\label[sec]{sec:GWs:generation:formalism}
+%     \begin{draft}
+%     \comment{Use conformal trafo! \cite[p.~467]{carrollSpacetimeGeometryIntroduction2019} }
+%     \begin{equation}
+%         ds^2 = -\diff t^2 + a^2(t) \cclosed{ \gamma\_{ij} + h\_{ij}}\diff x\^i \diff x\^j = a^2(\eta)\cclosed{ -\diff \eta^2 + \pclosed{\gamma\_{ij} + h\_{ij}}\diff x\^i  \diff x^j }%; \diff \eta^2 = \diff x\^0 \otimes \diff x\^0
+%     \end{equation}
     
     
-    $h\_{ij} = h\indices*{^{\mathrm{TT}}_{ij}}, \gamma\_{ij}= \Krondelta{_{ij}}, (\barg\_{\mu\nu}=a^2 \eta\_{\mu\nu})$
+%     $h\_{ij} = h\indices*{^{\mathrm{TT}}_{ij}}, \gamma\_{ij}= \Krondelta{_{ij}}, (\barg\_{\mu\nu}=a^2 \eta\_{\mu\nu})$
     
-    Linearised Einstein equations: \comment{conformal Newtonian gauge}
-    \begin{equation}
-        \delta G\indices{^{i}_{j}} = 8\ppi G\ped{N} T\indices{^{i}_{j}}= \frac{1}{2a^2} \bclosed{ \ddot{h}\_{ij} + 2\frac{\dot{a}}{a} \dot{h}\_{ij} - \bnabla^2 h\_{ij} } 
-    \end{equation}
-    where a dot (`$\dot{\phantom{a}}$') signifies the \emph{conformal} time derivative. ($T\indices{^{i}_{j}} = a^{-2} T\_{ij}$) \blahblah
+%     Linearised Einstein equations: \comment{conformal Newtonian gauge}
+%     \begin{equation}
+%         \delta G\indices{^{i}_{j}} = 8\ppi G\nped{N} T\indices{^{i}_{j}}= \frac{1}{2a^2} \bclosed{ \ddot{h}\_{ij} + 2\frac{\dot{a}}{a} \dot{h}\_{ij} - \bnabla^2 h\_{ij} } 
+%     \end{equation}
+%     where a dot (`$\dot{\phantom{a}}$') signifies the \emph{conformal} time derivative. ($T\indices{^{i}_{j}} = a^{-2} T\_{ij}$) \blahblah
 
-    \begin{equation}\label{eq:GWs:generation:eom_for_h}
-        \ddot{h}\_{ij}(\eta, \vec{k}) + 2\frac{\dot{a}}{a} \dot{h}\_{ij}(\eta, \vec{k}) -k^2 h\_{ij} (\eta, \vec{k})= 16\ppi G\ped{N} T\_{ij}(\eta, \vec{k})
-    \end{equation}
-    Define $\ah\_{ij} \equiv ah\_{ij}$. By inserting this in~\cref{eq:GWs:generation:eom_for_h} and multiplying the equation by $a$, one finds
-    \begin{equation}\label{eq:GWs:generation:eom_for_ah_1}
-        \ddot{\ah}\_{ij}(\eta, \vec{k})+ \bclosed{k^2  -\frac{\ddot{a}(\eta) }{a(\eta)}} \ah\_{ij}(\eta, \vec{k}) = 16\piG a(\eta) T\_{ij}(\eta, \vec{k}).
-    \end{equation}
-    We assume $a(\eta) \propto \eta^\alpha$ and define $\nu\equiv \alpha - \frac{1}{2}$. Letting $\tau=k\eta$,~\cref{eq:GWs:generation:eom_for_ah_1} becomes
-    \begin{equation}\label{eq:GWs:generation:eom_for_ah_2}
-        \bclosed{ \pdv[2]{}{\tau}+  1 -  \frac{4\nu^2 -1}{4\tau^2 } } \ah\_{ij} (\eta, \vec{k}) = \frac{16\piG a(\eta)}{k^2} T\_{ij}(\eta, \vec{k})
-    \end{equation}
-    Now,~\cref{eq:GWs:generation:eom_for_ah_2} transforms into a problem of the form $\mathop{\mathrm{L}_{\tau}} f(\tau) = g(\tau)$; a problem that can be solved using Green's method (see~\nc{some section}).~\citet{kawasakiStudyGravitationalRadiation2011} propose
-    \begin{equation}
-        G(\tau, \tau') = \frac{\ppi}{2} \Heaviside{\tau-\tau'} \bclosed{ \Neumann (\tau) \Bessel (\tau') - \Bessel (\tau) \Neumann (\tau') }
-    \end{equation}
-    as a solution to $\mathop{\mathrm{L}_{\tau}} G(\tau, \tau') = \Diracdelta{\tau-\tau'} $. In \nc{some appendix} we show that this holds for a matter dominated universe where $\nu=2-\frac{1}{2}=\frac{3}{2}$.
+%     \begin{equation}\label{eq:GWs:generation:eom_for_h}
+%         \ddot{h}\_{ij}(\eta, \vec{k}) + 2\frac{\dot{a}}{a} \dot{h}\_{ij}(\eta, \vec{k}) -k^2 h\_{ij} (\eta, \vec{k})= 16\ppi G\nped{N} T\_{ij}(\eta, \vec{k})
+%     \end{equation}
+%     Define $\ah\_{ij} \equiv ah\_{ij}$. By inserting this in~\cref{eq:GWs:generation:eom_for_h} and multiplying the equation by $a$, one finds
+%     \begin{equation}\label{eq:GWs:generation:eom_for_ah_1}
+%         \ddot{\ah}\_{ij}(\eta, \vec{k})+ \bclosed{k^2  -\frac{\ddot{a}(\eta) }{a(\eta)}} \ah\_{ij}(\eta, \vec{k}) = 16\piG a(\eta) T\_{ij}(\eta, \vec{k}).
+%     \end{equation}
+%     We assume $a(\eta) \propto \eta^\alpha$ and define $\nu\equiv \alpha - \frac{1}{2}$. Letting $\tau=k\eta$,~\cref{eq:GWs:generation:eom_for_ah_1} becomes
+%     \begin{equation}\label{eq:GWs:generation:eom_for_ah_2}
+%         \bclosed{ \pdv[2]{}{\tau}+  1 -  \frac{4\nu^2 -1}{4\tau^2 } } \ah\_{ij} (\eta, \vec{k}) = \frac{16\piG a(\eta)}{k^2} T\_{ij}(\eta, \vec{k})
+%     \end{equation}
+%     Now,~\cref{eq:GWs:generation:eom_for_ah_2} transforms into a problem of the form $\mathop{\mathrm{L}_{\tau}} f(\tau) = g(\tau)$; a problem that can be solved using Green's method (see~\nc{some section}).~\citet{kawasakiStudyGravitationalRadiation2011} propose
+%     \begin{equation}
+%         G(\tau, \tau') = \frac{\ppi}{2} \Heaviside{\tau-\tau'} \bclosed{ \Neumann (\tau) \Bessel (\tau') - \Bessel (\tau) \Neumann (\tau') }
+%     \end{equation}
+%     as a solution to $\mathop{\mathrm{L}_{\tau}} G(\tau, \tau') = \Diracdelta(\tau-\tau')$. In \nc{some appendix} we show that this holds for a matter dominated universe where $\nu=2-\frac{1}{2}=\frac{3}{2}$.
 
-    Now assume the source is active (emits gravitational radiation) between $\eta\ped{ini}$ and $\eta\ped{fi}$, and \grammar{followingly} initial conditions $\ah\_{ij}(\eta\ped{ini}, \vec{k})=\dot{\ah}\_{ij}(\eta\ped{ini}, \vec{k})=0$. Thus,
-    \begin{equation}\label{eq:GWs:generation:ah_during}
-        \ah\_{ij}(\eta\geq \eta\ped{ini}, \vec{k}) = \frac{8\ppi^2 G\ped{N}}{k^2} \integ{\tau'}[k\eta\ped{ini}][k\eta] \sqrt{\tau \tau'} \bclosed{ \Neumann (\tau) \Bessel (\tau') - \Bessel (\tau) \Neumann (\tau') } a(\tau') T\_{ij}(\tau', \vec{k}),
-    \end{equation}
-    which reduces to
-    \begin{equation}\label{eq:GWs:generation:ah_after}
-        \ah\_{ij}(\eta\geq \eta\ped{fi}, \vec{k}) = A\_{ij}(\vec{k}) \sqrt{k \eta} \Bessel (k\eta) + B\_{ij}(\vec{k}) \sqrt{k \eta} \Neumann (k\eta).
-    \end{equation}
-    Combining~\cref{eq:GWs:generation:ah_during} and~\cref{eq:GWs:generation:ah_after} at $\eta=\eta\ped{fi}$ gives the coefficients $A\_{ij}$ and $B\_{ij}$:
-    \begin{equation}
-    \begin{split}
-        A\_{ij} (\vec{k}) &= - \frac{8\ppi^2 G\ped{N}}{k^2} \integ{\tau'}[k\eta\ped{ini}][k\eta\ped{fi}] \sqrt{\tau'} a(\tau') \Neumann (\tau') T\_{ij}(\tau', \vec{k}) \\
-        B\_{ij} (\vec{k}) &= + \frac{8\ppi^2 G\ped{N}}{k^2 } \integ{\tau'}[k\eta\ped{ini}][k\eta\ped{fi}] \sqrt{\tau'} a(\tau') \Bessel (\tau') T\_{ij}(\tau', \vec{k})
-    \end{split}
-    \end{equation}
+%     Now assume the source is active (emits gravitational radiation) between $\eta\ped{ini}$ and $\eta\ped{fi}$, and \grammar{followingly} initial conditions $\ah\_{ij}(\eta\ped{ini}, \vec{k})=\dot{\ah}\_{ij}(\eta\ped{ini}, \vec{k})=0$. Thus,
+%     \begin{equation}\label{eq:GWs:generation:ah_during}
+%         \ah\_{ij}(\eta\geq \eta\ped{ini}, \vec{k}) = \frac{8\ppi^2 G\nped{N}}{k^2} \integ{\tau'}[k\eta\ped{ini}][k\eta] \sqrt{\tau \tau'} \bclosed{ \Neumann (\tau) \Bessel (\tau') - \Bessel (\tau) \Neumann (\tau') } a(\tau') T\_{ij}(\tau', \vec{k}),
+%     \end{equation}
+%     which reduces to
+%     \begin{equation}\label{eq:GWs:generation:ah_after}
+%         \ah\_{ij}(\eta\geq \eta\ped{fi}, \vec{k}) = A\_{ij}(\vec{k}) \sqrt{k \eta} \Bessel (k\eta) + B\_{ij}(\vec{k}) \sqrt{k \eta} \Neumann (k\eta).
+%     \end{equation}
+%     Combining~\cref{eq:GWs:generation:ah_during} and~\cref{eq:GWs:generation:ah_after} at $\eta=\eta\ped{fi}$ gives the coefficients $A\_{ij}$ and $B\_{ij}$:
+%     \begin{equation}
+%     \begin{split}
+%         A\_{ij} (\vec{k}) &= - \frac{8\ppi^2 G\nped{N}}{k^2} \integ{\tau'}[k\eta\ped{ini}][k\eta\ped{fi}] \sqrt{\tau'} a(\tau') \Neumann (\tau') T\_{ij}(\tau', \vec{k}) \\
+%         B\_{ij} (\vec{k}) &= + \frac{8\ppi^2 G\nped{N}}{k^2 } \integ{\tau'}[k\eta\ped{ini}][k\eta\ped{fi}] \sqrt{\tau'} a(\tau') \Bessel (\tau') T\_{ij}(\tau', \vec{k})
+%     \end{split}
+%     \end{equation}
 
     
 
-    \end{draft}
+%     \end{draft}
 
 
-\subsection{Scalar Field Source (temp. name)}\label[sec]{sec:GWs:generation:scalarfield}
+% \subsection{Scalar Field Source (temp. name)}\label[sec]{sec:GWs:generation:scalarfield}
     

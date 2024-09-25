@@ -8,12 +8,21 @@
 % ---------------------------------------
 
 
+% ------------------------------------------------
+\newcommand*\hypsurf{\ensuremath{\varSigma}}    % hypersurface
+\newcommand*\sppt{\mathscr{E}}                  % spatial part of pert.
+% ------------------------------------------------
+
+
 
 % ////////////////// intro //////////////////
 
 
 
 \phpar[motivation--inspiration(work)]
+
+
+
 
 \checkthis{
 $\Minkowski\equiv (\Real[4], \eta\_{\mu\nu})$, 
@@ -23,22 +32,142 @@ $\FLRW \equiv (\Real[4], a^2 \eta\_{\mu\nu}) $
 We shall consider a pseudo-Riemannian $(N+1)$-dimensional spacetime $(\Manifold, g\_{\mu\nu})$ up until the point where concrete expressions are needed to proceed; here we turn to the conformally flat FLRW universe, for which $\Manifold = \FLRW $, $N=3$ and $g\_{\mu\nu}=a^2 \eta_{\mu\nu}$.
 
 
-We begin in the thin-wall limit, where the width of the domain wall in question is negligible. To go beyond the thin-wall limit eventually turns out to be a simple matter of an additional factor in the final expression. \comment{This is not true, get a grip, Nanna.} 
+% We begin in the thin-wall limit, where the width of the domain wall in question is negligible. To go beyond the thin-wall limit eventually turns out to be a simple matter of an additional factor in the final expression. \comment{This is not true, get a grip, Nanna.} 
 
 \begin{equation}
     \Phi\pclosed{x\^\mu-X\^\mu} = \frac{1}{\sqrt{2\ppi}w_0} \exp{-\frac{\pclosed{x\^\mu-X\^\mu}^2}{2w_0^2}} \quad \leadsto \quad \lim_{w_0\to 0}\Phi\pclosed{x\^\mu-X\^\mu} = \Diracdelta[4]{x\^\mu-X\^\mu}
 \end{equation}
 \comment{Needs fixing...}
 
+
+We will in this chapter consider infinitely thin $((N-1)+1)$-dimensional topological defects as \checkthis{timelike} hypersurfaces embedded in $(N+1)$-dimensional spacetime. We will use variational calculus to find the eom for the scalar field that is the wall normal coordinate ($\epsilon$), which is not to be confused with the scalar field that crops up later \blahblah
+
+
+% \paragraph{Some section??}
+
+
+
+
+
+
+% We follow~\citet{garrigaPerturbationsDomainWalls1991} and~\citet{ishibashiEquationMotionDomain1999}. The world sheet $\hypsurf$ divides \Manifold~into two submanifolds $\Manifold_{\pm}$ such that $\mathscr{M} = \mathscr{M}_+ \cup  \hypsurf \cup \mathscr{M}_-$. That is to say, a domain wall holds a world sheet separating two vacua. We take \Manifold~ to be smooth and $(N+1)$-dimensional, and let $\hypsurf$ be a smooth also and $((N-1)+1)$-dimensional. Consequently, $\hypsurf$ is a timelike hypersurface in \Manifold. 
+
+
+% %
+% % \citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+
+
+% \begin{bullets}
+%     \item Vary DW action
+%     \item Goal: E.O.M. for physically relevant component (epsilon basically)
+%     \item Expression for energy--momentum tensor
+%     \item Extension to non-thin walls 
+%     \item Extension to Asymmetron or introduction of energy bias
+%     \item What does thin mean? Why is the tension indep. of width?
+% \end{bullets}
+
+
+% % The generalisation to $(N+1)$ dimensions is straight-forward.
+% We invoke a smooth coordinate system $\{x\^\mu\}$ ($\mu=0,1,\dots,N$) of the spacetime $(\Manifold, g\_{\mu\nu})$ in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = x\^\mu(y\^a)$, where the coordinate system $\{y\^a\}$ ($a=0,1,\dots,N-1$) parametrises $\hypsurf$.
+% The induced metric on $\hypsurf$ is
+% \begin{equation}\label{eq:pertwalls:thinwall:induced_metrid}
+%     q\_{ab} = g\_{\mu\nu} e^\mu_a e^\nu_b; \quad e^\mu_a \equiv \pdv{x\^\mu}{y\^a}% g\_{\mu\nu}\pdv{x\^\mu}{y\^a}\pdv{x\^\nu}{y\^b} 
+% \end{equation} \provethis{argue!}
+
+% We let $\sigma$ represent the surface energy density of the wall---a quantity we will discuss i much more detail later---and $v_\pm$ the vacuum energy densities of $\mathscr{M}_\pm$. The complete action of the coupled system is
+% \begin{equation}
+%     S = \underbrace{- \sigma \integ[N]{y\sqrt{-q}}[\hypsurf] }_{S\ped{NG}} %
+%     - v_+ \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_+] %
+%     - v_- \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_-] %
+%     \underbrace{+ \frac{M\nped{Pl}^2}{2}\integ[N+1]{x\sqrt{-g}}[\mathscr{M}] \mathcal{R}}_{S\ped{EH}}.
+% \end{equation}
+% \comment{Comment about Nambu-Goto action. Maybe add matter and $\phi$ actions?}
+
+% % The action for a thin domain wall is famously~\citep[e.g.][]{vachaspatiKinksDomainWalls2006} the Nambu-Goto action $S\ped{NG}$, 
+% % \begin{equation}
+% %     S\ped{dw} = -\sigma \integ[N]{y\sqrt{-h}}[\hypsurf],
+% % \end{equation}
+% % where $\sigma$ is the wall's energy per unit area, henceforth called ``surface tension''. The action for the coupled system
+
+
+% Under small changes in $x\^\mu$ on $\hypsurf$, $x^\mu \to x\^\mu + \delta x\^\mu$, we obtain the equation
+% \begin{equation}
+%     \mathrm{D}\^a e\indices*{^\mu_a} + \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+% \end{equation}
+% or equivalently,
+% \begin{equation}
+%     % \sq_\hypsurf %
+%     \mathrm{D}\_a \mathrm{D}\^a %
+%     x\^\mu+ \ChristophelSym{\mu}{\kappa\tau} q\^{ab} \pdv{x^\kappa}{y\^a} \pdv{x^\tau}{y\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+% \end{equation}
+% where $\mathrm{D}\_a$ is the covariant derivative with respect to $q\_{ab}$.
+
+% \checkthis{The part of $\delta x\^\mu$ that is tangential to $\hypsurf$ are diffeomorphisms on $\hypsurf$ ($y\^a \to y\^a + \delta y\^a$).} The only physically meaningful component is the transverse one; %Let us write $x\^\mu = $
+% \begin{equation}
+%    n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+% \end{equation}
+
+
+% Without loss of generality, we may align $\hypsurf$ with e.g.~the first $N-1$ dimensions of $\Manifold$, i.e.~$e\indices*{^{\mu}_{a}}=\Krondelta*{^\mu_a} + \Krondelta*{^\mu_{\nu_\ast}}\epsilon\_{,a}$ and $n\^\mu = \Krondelta*{^\mu_{\nu_\ast}}$, with $\nu_\ast = N$. We let $x\^{\mu} = \Krondelta*{^\mu_a} y\^a + \Krondelta*{^\mu_{\nu_\ast}} (\epsilon(y\^a) + \zeta ) $ be the embedding function, where $\zeta$ is the $\nu_\ast$-coordinate of $\hypsurf$ in $\Manifold$. Now,
+% \begin{equation}
+%     % \mathrm{D}^2 x\^{\nu_\ast} + \ChristophelSym{{\nu_\ast}}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+%     \mathrm{D}^2 \epsilon + \ChristophelSym{{\nu_\ast}}{\kappa\tau} q\^{ab} \Krondelta{^\kappa_a} \Krondelta{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+%  \end{equation}
+%  \important{FIX ME!!! }
+
+% \comment{Will remove several of these equations.}
+% % Without loss of generality we let \dots $n\^\mu = n\^N$ \blahblah
+
+
+% % \subsection{Planar domain walls in FLRW spacetime}
+    
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{draft}
+% \subsection{Expanding universe. (my scenario)}
+
+
+
+
+% \end{draft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \section{Stress--energy tensor of domain walls}
+
+
+
+
+
 % /////////////////////////////////////////// 
 
-\section{Dynamics of thin domain walls (general framework)}
+
+
+
+
+
+\section{General framework}\label[sec]{sec:pertwalls:eom_wall}
+    {\subimport{./}{eom_wall.tex}}
+
+
+\section{Dynamics of planar domain walls in expanding universe}
     {\subimport{./}{thinwall.tex}}
 
 
-\section{\tmptitle{Symmetron domain walls}}
+\section{\tmptitle{Symmetron domain walls}}\label[sec]{sec:pertwalls:untitled1}
     {\subimport{./}{untitled1.tex}}
 
 
 \section{Generation of gravitational waves}
     {\subimport{./}{gws.tex}}
+
+
+
+
+

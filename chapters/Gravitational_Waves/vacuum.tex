@@ -6,15 +6,50 @@
 % labels: \label{[type]:GWs:vacuum:[name]}
 % ----------------------------------------
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand*\ah{\bar{h}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 In an expanding, flat universe, we choose the TT gauge such that $h\indices{^i_i}=0$ and $h\indices{_{ij,j}}=0$. The unsourced equation reads
 \begin{equation}
-    \sq h_\bullet(x) = 0 \Rightarrow \ddot{h}_\bullet (x) + 2 \mathcal{H}\dot{h}_\bullet(x) - \vec{\nabla}^2 h_\bullet(x) = 0.
+    \sq h_P(x) = 0 \Rightarrow \ddot{h}_P (x) + 2 \mathcal{H}\dot{h}_P(x) - \vec{\nabla}^2 h_P(x) = 0,
 \end{equation}
-Assume $a\propto \tau^\alpha$. We follow~\cref{sec:CFTgrav:conformal_trafos:anal_sols} to find the general solution for this equation in Fourier space. We specify $\alpha \in \Integer$ and get
+and thus describes a damped harmonic oscillator. 
+We specify $a\propto \tau^\alpha$ and $\alpha\in \Integer$ and turn to Fourier space,
 \begin{equation}
-    h_\bullet(\tau, \vec{k}) = \frac{A_k \sphBessel[\abs{\alpha}](k\tau) + B_k \sphBessel[-\abs{\alpha}](k\tau)}{\tau^{\alpha-1}}; \quad k= \abs{\vec{k}}.
+    \ddot{\ah}_P(\tau, \vec{k}) + 2\frac{\alpha}{\tau} \dot{h}_P(\tau, \vec{k})  + k^2 h_P(\tau, \vec{k})  =0.
 \end{equation}
-\comment{OR} we solve for the comoving GWs, $\mathsf{h}_\bullet$, defining $p=k\tau$
+In defining $\ah_P\equiv ah_P$ and $u\equiv k\tau$ we can recognise the convenient form
 \begin{equation}
-    \pdv[2]{\mathsf{h}_\bullet}{p} + \bclosed{1 - \frac{\alpha(\alpha - 1)}{p^2}} \mathsf{h}_\bullet  = 0
+    \dv[2]{\ah_P}{u} + \bclosed{1 - \frac{\alpha(\alpha - 1)}{u^2}} \ah_P  = 0
 \end{equation}
+whose general solution is a linear combination of the first and second order Riccati-Bessel functions, $\ah_P(\tau, \vec{k}) = A_P(k) \RiccatiBessel[n][1](k\tau) + B_P(k)\RiccatiBessel[n][2](k\tau)$ where $n=\alpha-1$.
+% We follow~\cref{sec:CFTgrav:conformal_trafos:anal_sols} to find the general solution for this equation in Fourier space. We specify $\alpha \in \Integer$ and get
+% \begin{equation}
+%     h_P(\tau, \vec{k}) = \frac{A_k \sphBessel[\abs{\alpha}](k\tau) + B_k \sphBessel[-\abs{\alpha}](k\tau)}{\tau^{\alpha-1}}; \quad k= \abs{\vec{k}}.
+% \end{equation}
+% \comment{OR} we solve for the comoving GWs, 
+% $\ah_P$, defining $u=k\tau$
+% \begin{equation}
+%     \pdv[2]{\ah_P}{u} + \bclosed{1 - \frac{\alpha(\alpha - 1)}{u^2}} \ah_P  = 0
+% \end{equation}
+% If $n=\alpha-1$ is an integer, the solution is
+% \begin{equation}
+%     \ah_P(\tau, \vec{k}) = A \RiccatiBessel[n][1](k\tau) + B\RiccatiBessel[n][2](k\tau),
+% \end{equation}
+
+\par
+\dots
+where
+\begin{equation}
+    \begin{split}
+        \RiccatiBessel[n][1](u) &= u \sphBessel[n][1](u) = \sqrt{\frac{\ppi u}{2}} \Bessel[n+ \frac{1}{2}][1](u)  \\
+        \RiccatiBessel[n][2](u) &=- u \sphBessel[n][2](u) = -\sqrt{\frac{\ppi u}{2}} \Bessel[n+ \frac{1}{2}][2](u)  
+    \end{split}
+\end{equation}
+are the Riccati-Bessel functions.

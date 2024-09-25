@@ -1,0 +1,177 @@
+% ||||||||||||||||||||||||||||||||||||||
+% |||||| 7.X Domain wall dynamics ||||||
+% ||||||||||||||||||||||||||||||||||||||
+
+% ---------------------------------------------------
+% labels: \label[type]{[type]:results:epsilon:[name]}
+% ---------------------------------------------------
+
+
+Simulation-wise, the (middle) wall position is tracked by the minimum value of $\abs{\chi}$, i.e.~the $z$-coordinate at which the field is closest to zero. 
+
+
+We reduce the problem from three dimensions to two with cylindrical symmetry, and then again to one dimension by considering a suitable slice in the $y$-direction and taking the coordinate of the minimal absolute value of the scalar field $\chi$. An example of the two-dimensional perspective is shown in~\cref{fig:results:epsilon:wall_profile_2D}. This picture is more or less the same for all simulations, at least when comparing by-eye.     
+% \begin{figure}[h]\label[fig]{fig:results:epsilon:wall_profile_2D}
+%     \centering
+%     \includegraphics[width=\linewidth]{Findings/wall_profile_2D.pdf}
+%     %%%%%%%%%%
+%     \caption{The domain wall evolution in two dimensions. We indicate the aforementioned slice with a green vertical line.}
+%     %%%%%%%%%%%%%
+% \end{figure}
+% ------------------------------
+% ----------- FIGURE -----------
+\begin{figure}[h]
+    \centering
+    %
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Findings/wall_profile_2D.pdf}
+        \caption{The domain wall evolution in two dimensions. We indicate the aforementioned slice with a green vertical line.}
+        \label[fig]{fig:results:epsilon:wall_profile_2D}
+    \end{subfigure}
+    %
+    \hfill
+    \begin{subfigure}[b]{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Findings/achi_eps_1D_analysis.pdf}
+        \caption{\textit{Left panel:}~The scalar field value along $y$-coordinate XXX at different redshifts. \textit{Right panel:}~The wall coordinate as function of time. Note that the colour bar share the same axis as the \blahblah.}
+        \label[fig]{fig:results:epsilon:achi_eps_1D_analysis}
+    \end{subfigure}
+    % %
+    \caption{Demonstration of results from simulation 1.}
+    \label[fig]{fig:results:epsilon:from_achi_to_epsilon}
+\end{figure}
+% ------------------------------
+
+We see that the quasi-static $\tanh$-solution varies in applicability as it occurs ``bumps'' around each wall after some time.
+
+--: constant surface tension \dots
+0: surface tension $\sim \pclosed{ 1 - \upsilon }^{3/2}$ \dots
+1: surface tension different? \dots
+X: ?
+
+Labels: \textsf{\textbf{Tn.i}} = Type T, equation/method n, initial conditions i
+
+
+% Initial conditions: \textsf{\textbf{a}} $\epsilon_p(\tau_\ast)= \epsilon_\ast$, $\dot{\epsilon} (\tau_\ast)=0$.
+
+
+% \begin{figure}[h]\label[fig]{fig:results:epsilon:achi_eps_1D_analysis}
+%     \centering
+%     \includegraphics[width=\linewidth]{Findings/achi_eps_1D_analysis.pdf}
+%     %%%%%%%%%%
+%     \caption{\textit{Left panel:}~The scalar field value along $y$-coordinate XXX at different redshifts. \textit{Right panel:}~The wall coordinate as function of time. Note that the colour bar share the same axis as the \blahblah}
+%     %%%%%%%%%%%%%
+% \end{figure}
+
+\subsection{Technical note}
+    % \noindent\rule{\textwidth}{2pt}
+
+    This section's focus is on the solutions to
+    \begin{equation}
+        \ddot{\epsilon}_p + \pclosed{ 3\dot{a}/a + \dot{\sigma}/\sigma } \,\dot{\epsilon}_p + p^2 \epsilon_p= 0.
+    \end{equation}
+    That is, we compare solutions obtained with different methods (\lbl{A}/\lbl{N}/\lbl{S}), variants (\lbl{--}/\lbl{0}/\lbl{1}/\lbl{X}) and initial conditions (\lbl{a}/\lbl{b}/\lbl{c})
+    %
+    Types:
+    \begin{description}
+        \item[A] Completely analytical solution to eom.
+        \item[N] Numerical solution (\texttt{odeint}) to eom. 
+        \item[S] Simulated result.
+    \end{description}
+    % With type %\ref{itm:results2:epsilon:A}  her
+    Subtype:
+    \begin{description}
+        \item[--] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty$.
+        \item[0] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty \pclosed{ 1 - \upsilon }^{3/2}$.
+        \item[1] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty/ 2 \cdot \pclosed{ 3(1-\upsilon)- \breve{\chi}^2} \breve{\chi}$.
+        \item[X] Where $\abs{\chi}$ takes its minimum value.
+    \end{description}
+    Initial conditions ($\tau_0$, $\epsilon_p(\tau_0)$, $\dot{\epsilon}_p(\tau_0)$) :
+    \begin{description}
+        % \item[a] $\epsilon_p(\tau_\ast)= \epsilon_\ast$, $\dot{\epsilon} (\tau_\ast)=0$
+        % \item[b] $\epsilon_p(\tau\ped{init}) = \epsilon_p(\tau\ped{init})$ from \textsf{\textbf{A0.a}}
+        \item[a] ($\tau_\ast$, $\epsilon_\ast$, $0$) 
+        \item[b] ($\tau\ped{init}$, $\epsilon_p(\tau\ped{init})$ from \lbl{A0.a}, $\dot{\epsilon}_p(\tau\ped{init})$ from \lbl{A0.a})
+    \end{description}
+
+
+
+
+    % \noindent\rule{\textwidth}{2pt}
+
+
+    % With $$k
+    % \begin{description}
+    %     \item[A0] Completely analytical solution to the naive eom for $\epsilon_p(\tau)$, i.e. Eq.~XXX from~\cref{sec:pertwalls:untitled1}.
+    %     \item[N0] Numerical solution (\texttt{odeint}) to naive eom for $\epsilon_p(\tau)$. 
+    %     \item[SX] The $z-L/2$-coordinate where $\abs{\chi}$ from simulation takes its minimum value. %We resolve $\Delta \tau / $  $\Delta x$ 
+    % \end{description}
+
+
+
+\subsection{Idk}
+    % It does not seem as if the 
+    \begin{bullets}
+        \item The initial amplitude affects the phase of the simulated wall evolution, according to simulations.
+        \item In any case, the wall pos. evolution is quite consistent for different levels of oscillations
+        \item $\epsilon_\ast > 1/p$: We will see great impact of changing $\epsilon_\ast$
+        \item Figure showing difference in position graphs
+    \end{bullets}   
+    %
+    %
+    %
+    %
+    The simulated wall position graph is not perfectly overlapping with the analytical one. Simulated walls have tendency to change slower, at least initially, manifesting in a phase difference between $\epsilon_p(\tau)$ from simulation and thin-wall approximation. If not due to numerical error, this is necessarily either a consequence of the field-like description or possibly another damping term in the eom for $\epsilon_p$. In the latter scenario, one could guess that the expression for the surface tension is not flawless (something else would insinuate that the expansion term is wrong, which is not the case.) With better spatial resolution, there was no improvement for this part. Initialising simulations even closer to symmetry break enhanced oscillations and increased the phase difference. Increasing the box size---and scaling all parameters thereafter---did not have any effect in this matter.
+    
+
+    We saw that initial amplitude actually did matter in simulations, cf.~simulation 1 vs.~2. The thin-wall approximation does not say this, however, in fact it says the opposite; \checkthis{the eom is scale invariant, and thus unchanged by translations.} It is therefore hard to argue that this motion is possible to reproduce by adjusting terms in the eom. 
+
+
+    % \begin{figure}[h]\label[fig]{fig:results:epsilon:eps_diff_sims}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{Findings/eps_diff_sims.pdf}
+    %     %%%%%%%%%%
+    %     \caption{The absolute difference between the wall position from calculations and simulations as functions of time.}
+    %     %%%%%%%%%%%%%
+    % \end{figure}
+    % ----------------------------------------
+    % ---------------- FIGURE ----------------
+    \begin{figure}[h]\label[fig]{fig:results:epsilon:eps_diff_sims_combi}
+        \centering
+        \includegraphics[width=\linewidth]{Findings/eps_diff_sims_combi.pdf}
+        %%%%%%%%%%
+        \caption{The absolute difference between the wall position from calculations and simulations as functions of time.}
+        %%%%%%%%%%%%%
+    \end{figure}
+    % ----------------------------------------
+
+    \comment{Possible explanation: Field evolution not independent in $y$-direction, at least when $\epsilon_\ast$ is comparable to $1/p$}
+
+
+    \pensive{The Wiener process is scale-invariant\dots}
+
+    
+
+    We take a closer look at the wall evolution in one particular simulation.
+    \begin{figure}[h]\label[fig]{fig:results:epsilon:epsilon_sim1}
+        \centering
+        \includegraphics[width=\linewidth]{dummy_normal.png}
+        %%%%%%%%%%
+        \caption{The wall position as depicted by \dots.}
+        %%%%%%%%%%%%%
+    \end{figure}
+
+
+
+
+
+    \subsubsection{Why not?}
+        In this section, we want to provide answers to the most likely questions the reader might have. Near on any question starting with ``why did you not ...'' may be answered ``because of temporal and computational limitations.'' 
+        \paragraph{Perturbation amplitude.} %
+        Why was it not increased to better resolve the motion in space? Recall that there needs to be \emph{two} walls present, and the kink profile should really not affect the antikink profile. In the quasi-static limit, the wall's thickness goes as $\sim {(a\chi_+)}^{-1}$, i.e. from infinitely large at symmetry break. 
+
+
+
+
+
