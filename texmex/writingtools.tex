@@ -73,7 +73,7 @@
 % Bullet points:
 \newenvironment{bullets}
     {\par\medskip
-    \begin{itemize}
+    \begin{itemize}[itemsep=0em, leftmargin=2cm, rightmargin=4cm, labelsep=3pt]
      \begingroup\color{n@pink}%
      \ignorespaces}
    {\endgroup\end{itemize}
@@ -144,7 +144,7 @@
 
 
 % temporary title
-\newcommand*{\tmptitle}[1]{\textcolor{n@lilac}{TITLE~(}{#1}\textcolor{n@lilac}{)}}
+\newcommand*{\tmptitle}[1]{\textcolor{n@babyblue}{TITLE~(}{#1}\textcolor{n@babyblue}{)}}
 
 
 
@@ -200,6 +200,16 @@
 \rule{\linewidth}{{#1}pt}}%
 \noindent
 }
+
+
+
+
+
+
+
+% jokes, thoughts etc.
+\newcommand*\pensive[1]{\noindent\textcolor{n@green}{\textit{#1}}}
+
 
 
 

@@ -46,11 +46,15 @@
 
 \usepackage[varg]{txfonts}      % nice font (NB! After amssymb)
 % \usepackage[fleqn]{amsmath}
-% \usepackage{color}
+
 
 \usepackage[sort&compress]{natbib}
 \bibliographystyle{plainnat}
 \setcitestyle{authoryear,open={((},close={))}}
+% Maybe have numbers??
+
+
+
 
 
 
@@ -73,6 +77,9 @@
 \usepackage{suffix}         % for starred and unstarred commands
 
 \usepackage{manfnt}         % dangerous bend symbol, for fun:)
+
+
+\usepackage{nameref}        % for item referncing
 
 
 % ----------------
@@ -118,6 +125,8 @@
 \newcommand*\normalref[1]{\ref{#1}}
 \renewcommand*\ref[1]{\cref{#1}}
 
+
+
 % Label format: \label{[TYPE]:[CHAPTER KEY]:[SECTION KEY]:[LABEL NAME]}
 
 % -------------------
@@ -129,11 +138,48 @@
 \usepackage{enumitem}
 \setlist[description]{font={\bfseries\sffamily}}
 
+
+% -> item label referencing
+% \makeatletter
+% \def\namedlabel#1#2{\begingroup
+%    \def\@currentlabel{#2}%
+%    \label{#1}\endgroup
+% }
+% \makeatother
+
+% \makeatletter
+% \let\orgdescriptionlabel\descriptionlabel
+% \renewcommand*{\descriptionlabel}[1]{%
+%   \let\orglabel\label
+%   \let\label\@gobble
+%   \phantomsection
+%   \edef\@currentlabel{#1\unskip}%
+%   %\edef\@currentlabelname{#1}%
+%   \let\label\orglabel
+%   \orgdescriptionlabel{#1}%
+% }
+% \makeatother
+
+
 % ---------------
+
+
+% -------------------
+% Emphasise equations:
+
+\usepackage{xcolor}
+\usepackage{empheq}
+
+% -------------------
+
 
 
 % % Trying something:
 \usepackage{xargs}
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -37,6 +37,9 @@
 \providecommand*{\gped}[1]{\ensuremath{_\text{#1}}}     % greek pedex (fixme)
 
 
+\providecommand*{\nap}[1]{^{\text{\tiny{#1}}}}          % name apex (small script) 
+\providecommand*{\nped}[1]{_{\text{\tiny{#1}}}}         % name pedex (small script) (e.g. NG, EH, Pl, etc)
+
 
 % ------------------
 % closed parantheses:
@@ -117,7 +120,7 @@
 
 % Dirac delta function 
 \makeatletter % (for use of @ below)
-\newcommand{\Diracdelta}[2][\@nil]{%
+\newcommand{\Diracdelta}[1][\@nil]{%
 \text{\textdelta}
 \def\tmp{#1}%
     \ifx\tmp\@nnil
@@ -125,18 +128,21 @@
         ^{(#1)}
     \fi
 % (#2)
-\pclosed{#2}   
+% \pclosed{#2}   
 }
 \makeatother
 
 % Kronecker delta symbol
 \newcommand{\Krondelta}[1]{%
     \ensuremath{\text{\textdelta}\indices{#1}}}
+\WithSuffix\newcommand\Krondelta*[1]{\text{\textdelta}\indices*{#1}}
 
 
 % Heaviside step function
 % \makeatletter % (for use of @ below)
-\newcommand{\Heaviside}[1]{\ensuremath{\text{\textTheta}\!\pclosed{#1}}}
+% \newcommand{\Heaviside}[1]{\ensuremath{\text{\textTheta}\!\pclosed{#1}}}
+\newcommand{\Heaviside}{%
+    \ensuremath{\text{\textTheta}}}
 % \makeatother
 
 
@@ -148,11 +154,35 @@
 
 % ----------------
 % Tensor shortcuts:
-\renewcommand*{\^}[1]{\indices{^{#1}}}  % tens. index upper
-\renewcommand*{\_}[1]{\indices{_{#1}}}  % tens. index lower
-% Retrieve underscore _:
-\newcommand*{\underscore}{\char`_}
-\newcommand*\circumflex{\string^}
+
+% Retrieve underscore _ and circumflex ^:
+\NewCommandCopy{\circumflex}{\^}
+
+
+\NewCommandCopy{\underscore}{\_}
+
+% \renewcommand{\^}[1]{\indices{^{#1}}} 
+% \renewcommand{\_}[1]{\indices{_{#1}}}
+
+\renewcommand{\^}[1]{%
+\ifmmode
+    \indices{^{#1}}%
+\else
+    \circumflex{#1}%
+\fi
+}  % tens. index upper
+\renewcommand{\_}[1]{%
+\ifmmode
+    \indices{_{#1}}%
+\else
+    \underscore{#1}%
+\fi
+}  % tens. index lower
+
+% ****************************************************
+% Could maybe define a "tensorial enviroment"
+% where these commands applies
+% ****************************************************
 
 
 
@@ -161,7 +191,7 @@
 
 % Functional derivative:
 \newcommand\Fdv[2]{\frac{\delta {#1}}{\delta {#2}}}
-\WithSuffix\newcommand\Fdv*[2]{\delta {#1}/\delta{#2}}
+\WithSuffix\newcommand\Fdv*[2]{\mathop{\delta {#1}/\delta{#2}}}
 
 
 
@@ -252,6 +282,7 @@
 \makeatletter
 \newcommand{\n@specialfunc}[1]{\mathcal{#1}}
 \newcommand{\n@sphspecialfunc}[1]{\mathit{#1}}
+\newcommand{\n@Ricspecialfunc}[1]{\text{\textsf{#1}}}
 %
 \newcommandx*{\Bessel}[2][1=\nu, 2=1]{%
     \def\kind{#2}%
@@ -268,7 +299,10 @@
 %
 \newcommandx*{\Neumann}[1][1=\nu]{%
     \ensuremath{\n@specialfunc{Y}_{#1}}%
-}                                           % Neumann function
+}        
+\newcommandx*{\Sylindrical}[1][1=\nu]{%
+    \ensuremath{\n@specialfunc{Z}_{#1}}%
+}                                           % Sylindrical function
 %
 \newcommandx*{\sphBessel}[2][1=\nu, 2=1]{%
     \def\kind{#2}%
@@ -285,6 +319,19 @@
 \newcommandx*{\sphNeumann}[1][1=\nu]{%
     \ensuremath{\n@sphspecialfunc{y}_{#1}}%
 }                                           % Spherical Neumann function
+% Riccati - Bessel
+\newcommandx*{\RiccatiBessel}[2][1=\nu,2=1]{%
+    \def\kind{#2}%
+    \def\first{1}%
+    \def\second{2}%
+    \ifx\kind\first
+        \ensuremath{\n@Ricspecialfunc{\textpsi}_{#1}}%
+    \else
+        \ifx\kind\second
+            \ensuremath{\n@Ricspecialfunc{\textchi}_{#1}}%
+        \fi
+    \fi
+    }                                           % Riccati-Bessel function
 \makeatletter
 
 
@@ -409,3 +456,40 @@
 \definecolor{O}{RGB}{254, 161, 27}
 \definecolor{OL}{RGB}{253, 203, 135}    % light
 \definecolor{OT}{RGB}{255, 232, 212}    % tone
+
+
+
+
+
+% ------------------
+% Emphasised eqs:
+
+% \newlength\mytemplen
+% \newsavebox\mytempbox
+
+% \makeatletter
+% \newcommand\mybluebox{%
+%     \@ifnextchar[%]
+%        {\@mybluebox}%
+%        {\@mybluebox[0pt]}}
+
+% \def\@mybluebox[#1]{%
+%     \@ifnextchar[%]
+%        {\@@mybluebox[#1]}%
+%        {\@@mybluebox[#1][0pt]}}
+
+% \def\@@mybluebox[#1][#2]#3{
+%     \sbox\mytempbox{#3}%
+%     \mytemplen\ht\mytempbox
+%     \advance\mytemplen #1\relax
+%     \ht\mytempbox\mytemplen
+%     \mytemplen\dp\mytempbox
+%     \advance\mytemplen #2\relax
+%     \dp\mytempbox\mytemplen
+%     \colorbox{BT}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+
+% \makeatother
+
+
+\newcommand{\boxedeq}[2]{\begin{empheq}[box={\fboxsep=6pt\fbox}]{align}\label{#1}#2\end{empheq}}
+\newcommand{\coloredeq}[2]{\begin{empheq}[box=\colorbox{GT}]{align}\label{#1}#2\end{empheq}}
