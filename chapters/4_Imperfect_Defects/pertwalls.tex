@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Ch. 4: Imperfect Defects  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ---------------------------------------
+% labels: \label{[type]:pertwalls:[name]}
+% ---------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand*\hypsurf{\ALIAShypsurf}             % hypersurface
+\newcommand*\sppt{\ALIASsppt}                   % spatial part of pert.
+\newcommand*\pert{\ALIASpert}                   % perturbed quantities
+\newcommand{\hypacc}[1]{\widehat{#1}} % accent on hypersurface quantities
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+% ////////////////// intro //////////////////
+
+
+
+Any cosmologically relevant domain wall will be thin compared to the horizon. Are they sufficiently thin so that the thin-wall approximation holds? If so, we should be able to study the dynamics of such walls by viewing them as $(2+1)$-dimensional timelike hypersurfaces in a spacetime of $3+1$ dimensions. We can find an eom for leading order distortions to the wall normal coordinate, eventually feeding asymmetry to the Nambu--Goto stress--energy tensor (\cref{sec:cosmo:defects}), necessarily causing spacetime distortions that may or may not live on to paint its autograph in a gravitational wave observation on Earth. How this signature looks, is for us to figure out. 
+
+
+\phpar[motivation--inspiration(work)]
+% This accumulates in an eom for the wall normal coordinate at leading order
+% Furthermore, we expect signatures 
+
+
+% In this chapter we 
+
+% This chapter explores the thin-wall limit \blahblah 
+We will in this chapter explore the dynamics of domain walls in the thin-wall limit, where the emphasis is not on the scalar field $\chi$, but of the position and evolution of the domain wall itself.
+
+
+To substantiate the applicability of this theory, we begin in a more general picture than what we eventually will need. We consider a $d$-dimensional timelike submanifold $\hypsurf$ embedded in smooth Riemannian manifold $\Manifold$ of one time dimension and $n-1$ spatial dimensions. 
+We let $\hypsurf$ have codimension one and split the ambient space into two separate hypervolumes. Now, $\hypsurf$ is a timelike hypersurface of $\Manifold$ that can be interpreted as the $n$-dimensional analog of an infinitely thin domain wall.%
+% For $d=n-1$ $\hypsurf$ is a timelike hypersurface of $\Manifold$ that can be interpreted as the $n$-dimensional extension of an infinitely thin domain wall.
+% \footnote{
+%     Standard string and domain wall concepts retrieved for $n=2+1$ and $n=3+1$, respectively.
+% } %
+% We let $\hypsurf$ be a timelike hypersurface that splits the ambient space into two hypervolumes.
+%$\Manifold_\pm$. 
+%, s.t. there are $d=n-2$ spatial dimensions, 
+% We let $\hypsurf$ have codimension 1 such that $d=n-1$
+
+
+
+% To substantiate the level of applicability of this framework, we begin in a very general picture in which a timelike hypersurface of a spacetime of $n+1$ dimensions represents a \grammar[soliton]{kink} in that spacetime. To get particular, we specify domain wall in a FLRW universe, flat ones as such. 
+
+
+% \pensive{Study~\citet{garrigaPerturbationsDomainWalls1991}; This is the equation for the \emph{perturbation}, not the wall coordinate (or the other way around...). That is why it should be small, I suppose. }
+
+% \important{Wall normal coordinate is $n\^\mu=\Krondelta{^{\mu z}}$, perturbation is adding to this!}
+
+
+%$n=3$  $M$
+
+% where the spacetime $\Manifold$ has $n+1$ dimensions and the hypersurface---that which represents a kink in $n+1$ dimensions---is of $n^-=n-1$ spatial dimensions and codimension 1.
+
+% \comment{Try again:} 
+% We consider the spacetime manifold $\Manifold = (\Real^{n,1}, g\_{\mu\nu}) \supset \hypsurf=(\Real^{n^-,1}, b\_{ab})$
+
+
+
+
+
+
+
+% \checkthis{
+% $\Minkowski\equiv (\Real[4], \eta\_{\mu\nu})$, 
+% $\FLRW \equiv (\Real[4], a^2 \eta\_{\mu\nu}) $
+% }
+
+% We shall consider a pseudo-Riemannian $(N+1)$-dimensional spacetime $(\Manifold, g\_{\mu\nu})$ up until the point where concrete expressions are needed to proceed; here we turn to the conformally flat FLRW universe, for which $\Manifold = \FLRW $, $N=3$ and $g\_{\mu\nu}=a^2 \eta_{\mu\nu}$.
+
+
+% We begin in the thin-wall limit, where the width of the domain wall in question is negligible. To go beyond the thin-wall limit eventually turns out to be a simple matter of an additional factor in the final expression. \comment{This is not true, get a grip, Nanna.} 
+
+% \begin{equation}
+%     \Phi\pclosed{x\^\mu-X\^\mu} = \frac{1}{\sqrt{2\ppi}w_0} \exp{-\frac{\pclosed{x\^\mu-X\^\mu}^2}{2w_0^2}} \quad \leadsto \quad \lim_{w_0\to 0}\Phi\pclosed{x\^\mu-X\^\mu} = \Diracdelta[4]{x\^\mu-X\^\mu}
+% \end{equation}
+% \comment{Needs fixing...}
+
+
+% We will in this chapter consider infinitely thin $((N-1)+1)$-dimensional topological defects as \checkthis{timelike} hypersurfaces embedded in $(N+1)$-dimensional spacetime. We will use variational calculus to find the eom for the scalar field that is the wall normal coordinate ($\epsilon$), which is not to be confused with the scalar field that crops up later \blahblah
+
+
+
+
+
+
+% /////////////////////////////////////////// 
+
+
+
+
+
+
+\section{\tmptitle{Kink dynamics / General formula}}\label{sec:pertwalls:eom_wall}
+    {\subimport{./}{eom_wall.tex}}
+
+
+\section{Dynamics of planar domain walls in expanding universe}\label{sec:pertwalls:thinwall}
+    {\subimport{./}{thinwall.tex}}
+
+
+\section{\tmptitle{Symmetron domain walls}}\label{sec:pertwalls:untitled1}
+    {\subimport{./}{untitled1.tex}}
+
+
+\section{Generation of gravitational waves}\label{sec:pertwalls:gws}
+    {\subimport{./}{gws.tex}}
+
+
+
+
+

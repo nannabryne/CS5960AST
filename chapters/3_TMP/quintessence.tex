@@ -1,0 +1,151 @@
+% |||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 3.2 Quintessence ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||
+
+
+% ------------------------------------------------
+% labels: \label{[type]:cosmo:quintessence:[name]}
+% ------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+The general picture presents quintessence as a group of scalar--tensor theories; a subgroup of modifications to gravity in which a scalar field is added to the total action. By going through all possible covariants with maximum second order time derivatives in four dimensional spacetime, one arrives at the most general formulation of these type of theories, the \emph{Hordenski theory}. Said theory is summed up by the total Lagrangian density $\mathcal{L}\nped{H} = \mathcal{L}\ped{m} + M\nped{Pl}^2 \sum_{i=2}^{5} \mathcal{L}_i$, where $\mathcal{L}_i$ are built up by derivatives of the scalar field, the Einstein tensor and arbitrary functionals of the scalar field $\phi$ and its kinetic term $X = - \sfrac{1}{2} \phi\^{;\mu}\phi\_{;\mu}$.%
+\footnote{%
+With the usual notation convention and arbitrary functionals $G_i$, the Lagrangian densities $\mathcal{L}_i$ are given by the following:
+\begin{equation*}
+    \begin{split}
+        \mathcal{L}_2 &= G_2(\phi, X), \\
+        \mathcal{L}_3 &= G_3 (\phi, X)\sq \phi, \\
+        \mathcal{L}_4 &= G_4 (\phi, X)\mathcal{R} + G_{4,X}(\phi, X) \pclosed{ {(\sq \phi)}^2 - \phi\_{;\mu\nu} \phi\^{;\mu\nu}}, \\
+        \mathcal{L}_5 &= G_5 \mathcal{G}\_{\mu\nu}\phi\^{;\mu\nu} - \sfrac{1}{6} G_{5,X}(\phi, X)  \pclosed{ {(\sq \phi)}^3 + 
+        2\phi\indices{^\nu_{;\mu}}\phi\indices{^\mu_{;\nu}} - 3  \phi\_{;\mu\nu} \phi\^{;\mu\nu} \sq \phi},
+    \end{split}
+\end{equation*}%
+where $G_{i,X}= \pdv*{G_i}{X}$.
+}~%
+Let $\mathcal{L}_i=0$ as a starting point. %
+General relativity---represented by the Einstein--Hilbert action---is retrieved with $\mathcal{L}_4 = \mathcal{R}/2$.  By also setting $\mathcal{L}_2 = X(\phi)-V(\phi)$, we get a quintessence model. Performing relevant variations eventually gives an equation of motion that is indistinguishable from standard GR with $\mathcal{L}\ped{m} \to \mathcal{L}\ped{m} + \mathcal{L}_2$ in the stress--energy tensor on the rhs of the Einstein equation. Thus, quintessence models are not actually modified gravity theories, but adds to the total matter in the universe.~%
+\citep{christiansenCosmologicalSimulationsPhase2024}
+
+
+
+
+
+\subsection{General framework}\label{sec:cosmo:quintessence:framework}
+    We go through the dynamics of a quintessence field $\phi$ that is associated with a kinetic term $X=- \sfrac{1}{2} g\^{\mu\nu} \phi\_{;\mu}\phi\_{,\nu}$ and potential energy $V(\phi)$ in rough stages. This will lay the foundation for \comment{symmetron etc.} 
+
+    \paragraph{Conformal duality.} %
+    We argued in~\cref{sec:GR:diffgeo:conformal} that \checkthis{observables are preserved under conformal transformations of the metric.} \comment{Short text about Jordan and Einstein frames.}  
+
+    The dynamics of the quintessence field $\phi$ is described by the action
+    \begin{equation}
+        S =\integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}^2}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{m}[\tilde{g}\_{\mu\nu} , \psi]
+    \end{equation} 
+    in the Einstein frame. Without the presence of the last term, the eom for the scalar field is $\sq \phi = V_{,\phi}$. \nc{Some article}[appendix?] shows that the minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{-1} A_{,\phi}T\ped{m} $, which amounts to writing
+    \begin{equation}
+        \sq \phi = {V\ped{eff}}_{,\phi}; \quad V\ped{eff}(\phi) = V(\phi) - \ln{A(\phi)} \cdot T\ped{m}.
+    \end{equation}
+    For a perfect fluid, $T\ped{m}=-\rho + 3p$.
+
+    \paragraph{Fifth force.} %
+    Matter particles in the Jordan frame obey the simple geodesic equation as there is no coupling to $\phi$. On the other hand, particles in the Einstein frame matter sector experience a \emph{fifth force} due to the universal coupling. The fifth force concept captures the non-trivial rhs of in the geodesic equation,\checkthis{
+    \begin{equation}
+        \ddot{\vec{x}} \supset \frac{\vec{F}_5}{m} = - \frac{\beta}{M\nped{Pl}} \vec{\nabla}\phi.
+    \end{equation}}
+    $\beta$ is then a measure of the strength of the fifth force relative to the Newtonian gravitational force.  
+    \comment{Violation of WEP. Maybe refer to equations in~\cref{sec:GR:einstein}?}
+
+    % Matter particles in the Jordan frame move freely, i.e. obey the geodesic equation, whereas articles in the Einstein frame matter sector do not. 
+
+
+    \paragraph{Screening.} %
+
+
+
+
+
+    \subsection{Asymmetron model}\label{sec:cosmo:quintessence:asymmetron}
+    The particular quintessence model characterised by the symmetric Mexican-hat potential
+    \begin{equation}
+        V(\phi) = \frac{\lambda}{4} \phi^4  - \frac{\mu^2}{2} \phi^2 + V_0
+    \end{equation}
+    is called the \emph{symmetron model}. This theory is invariant under change of sign \comment{reflection}, $\phi\to -\phi$, ($\phi$ is $\mathsf{Z_2}$ symmetric) a \nc{requirement from quantum theory.} %
+    Not equally well-established is the generalisation of this model called the \emph{a}symmetron, in which the potential is given an additional cubic term, $V(\phi)\supset -\kappa\phi^3/3 $. Here, one of the domains is favoured over the other.
+
+    Now, why would we want this asymmetry in the first place? It complicates things by breaking the $\mathsf{Z_2}$-symmetry of the symmetron, so the theory only holds approximately. However, this asymmetry can aid in overcoming the domain wall problem. \comment{Overclosing the universe.}
+
+    Note that introducing asymmetry in this way is different from energy bias in the sense that not only is the energy in the two domains different, but the expectation values for $\phi$ are shifted.
+
+    The simplest symmetron model has the quadratic coupling
+    \begin{equation}
+        A(\phi)  = 1 +\frac{1}{2} \pclosed{\frac{\phi}{M}}^2 + \mathscr{O}\Big( {(\phi/M)}^4 \Big).
+    \end{equation}
+    The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}
+    \boxedeq{eq:cosmo:quintessence:asymmetron_effective_potential}{
+    V\ped{eff}(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho}{\mu^2M^2}-1} \phi^2 + V_0.}
+    %
+    This potential becomes unstable when $\rho\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua. From the cosmological perspective, ignoring $\kappa$, we imagine an initially dense region in the universe where a scalar field oscillates slightly around zero. The energy density dilutes and eventually reaches $\rho=\rho_\ast$, spontaneously breaking the $\mathsf{Z_2}$-symmetry, and separates the scalar field into domains according to their sign at the time. The potential barriers created at this \emph{phase transition} correspond to the topological solitons discussed in~\cref{sec:cosmo:defects}; namely cosmic domain walls.
+    %  The potential barriers created at this \emph{phase transition} \checkthis{represent topological defects}, e.g.~domain walls.
+
+    % \begin{figure}[h]
+    %     \floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+    %     {\includegraphics[width=5cm]{Background/symmetron_screen_milky.png}}
+    %     {\caption{A test figure with its caption side by side}%\label{fig:test}}
+    %     \label{fig:cosmo:quintessence:asymmetron_demo}
+    % \end{figure}
+
+
+
+    Let $\upsilon\equiv\rho\ped{m}/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values
+    \begin{equation}
+        \phi_0 = 0 \quad \lor \quad \phi_\pm = \phi_\infty \pclosed{\bar{\kappa} \pm  \sqrt{\bar{\kappa}^2 +  1- \upsilon }},%\frac{\kappa \pm \sqrt{\kappa^2 + 4\lambda\mu^2 \pclosed{1- \rho\ped{m}/(\mu^2M^2)} } }{2\lambda}
+    \end{equation}
+    where we defined $\bar{\kappa} = \kappa / (2\mu \sqrt{\lambda}) $ and $\phi_\infty = \mu/\sqrt{\lambda}$. Note that for the symmetron ($\kappa=0$), since the field is real, VEV is zero before SSB. We determine the stability of these vacua by evaluating $V\ped{eff,\phi\phi}$ at $\phi=\phi_0,\phi_\pm$ and see that $\phi_0$ remains stable until $\rho_\ast$.
+
+
+
+    \subsubsection{Parameters}
+    \phpar[parameter space of asymmetron]
+
+
+
+
+    \begin{bullets}
+        \item Phase transition aspect
+        \item Screening
+        \item Comment on asymmetron
+    \end{bullets}
+
+
+    \citet{burrageAccurateComputationScreening2024} sets the constraint $M \lesssim 10^{-3.6} M\nped{Pl}$
+    \begin{figure}[h]
+        \centering
+        {\includegraphics[width=\linewidth]{Background/symmetron_screen_milky.png}}
+        {\caption{Schematic of the symmetron screening mechanism. It is clear that the vacuum expectation value goes to zero in dense regions.}}
+        \label{fig:cosmo:quintessence:asymmetron_demo}
+    \end{figure}
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    

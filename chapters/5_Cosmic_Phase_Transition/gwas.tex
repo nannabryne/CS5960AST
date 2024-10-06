@@ -1,0 +1,283 @@
+% |||||||||||||||||||||||||||||||
+% |||||| X.X gwasevolution ||||||
+% |||||||||||||||||||||||||||||||
+
+% --------------------------------------------
+% labels: \label[type]{[type]:PT:gwas:[name]}
+% --------------------------------------------
+
+
+% \newcommand{\lcoord}[1]{\mathtt{#1}} % code lattice coordinate
+
+
+
+% \subsection{\tmptitle{Equations, solvers}}
+
+
+As test bed for our theory we use \gwasevolution~\citep{christiansenAsevolutionRelativisticNbody2023}, an extended version of the massively parallelised $N$-body relativistic code \gevolution~\citep{adamekGevolutionCosmologicalNbody2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this and was originally \blahblah
+
+\comment{Possibly appendix about HPC}
+% We use \gwasevolution~\citep{christiansenAsevolutionRelativisticNbody2023} as a te
+
+% The code \texttt{gwasevolution}~\citep{christiansenAsevolutionRelativisticNbody2023} %
+% %\footnote{Written by \citeauthor{christiansenAsevolutionRelativisticNbody2023}. 
+% is an extended version of the massively parallelised $N$-body relativistic code \texttt{gevolution}~\citep{adamekGevolutionCosmologicalNbody2016}. 
+
+
+
+
+
+
+The general setup is a three-dimensional box of equal side lengths $L_\#$ in $\Mpch$ on a lattice of $N_\#^3$ points, giving a spatial resolution of $\Delta_\#=L_\#/N_\#$. %We refer to the points in the configuration space as 
+
+The mapping from code configuration space to comoving coordinates is:
+\begin{equation}
+    \begin{split}
+        \vec{x} & = \lcoord{x}_{\lcoord{i}, \lcoord{j}, \lcoord{k}} \cdot \Delta_\# ,\\
+        (x, y, z)&= (\lcoord{i}, \lcoord{j}, \lcoord{k})\cdot \Delta_\#.
+    \end{split}
+\end{equation}
+Meanwhile, the corresponding mapping in Fourier space is given in terms of the fundamental frequency $k_\#=2\ppi/L_\#$:
+\begin{equation}
+    \begin{split}
+        \vec{k} & = \lcoord{k}_{\lcoord{u}, \lcoord{v}, \lcoord{w}} \cdot k_\#,\\
+        (k_x, k_y, k_z)&=   (\lcoord{u}, \lcoord{v}, \lcoord{w})\cdot k_\#.
+    \end{split}
+\end{equation}
+\comment{comment about hermitian symmetry?}
+
+
+
+\subsection{Periodic boundaries}
+    The simulation box is a torus as it has periodic boundaries---a common choice for cosmological simulations. 
+
+    \begin{bullets}
+        \item Dirac comb: $\Sha_{L_\#}(z) = \frac{1}{L_{\#}} \Sha (z/L_\#)$
+    \end{bullets}
+
+
+
+\subsection{Initial configuration}
+% In order to accurately compare the evolution of the soliton with the NG prediction, we need to start with an initial condition that is close enough to an exact solution of the full field theory equations. Otherwise, the possible deviations from the NG dynamics could just be due to the lack of precision in the initial configuration.
+% To accurately compare the soliton's evolution with the NG prediction, it is essential to begin with an initial condition closely approximating the exact solution of the full field theory equations. Without this precision, any deviations from the NG dynamics might simply result from inaccuracies in the initial setup.
+
+    To accurately compare the soliton's evolution with the NG prediction, it is essential to begin with an initial configuration closely approximating the exact solution to the equations of the full field theory. Without this, any deviations from the NG dynamics might simply result from inaccuracies in the initial setup.
+
+    That said, we do not actually have these exact solutions in curved spacetime. However, with sufficient tweaking, the setup should be close enough to \blahblah
+
+    The purpose of the simulations is to test the applicability of the thin-wall approximation for the wall evolution (\cref{eq:pertwalls:untitled1:eps_s_complete_MD}) and the corresponding gravitational waves (\cref{sec:pertwalls:gws}). Therefore, the simulation setup imitates a toy model, not a realistic system. To create this idealised cosmological scenario we initialise the simulation box as described below.
+
+    % For the purpose of exploring the validity of our equations, the simulation setup needs be controlled \comment{no stochasticity}. This is why we cannot initialise a cosmological scenario where a phase transition is \cringe{in the cards (on the horizon)}; we would never achieve a domain wall lying perfectly at $z=z_0+\varepsilon_\ast \sin{py}$. 
+
+    We assume wall profiles of the form
+    \begin{subequations}
+        \begin{align}
+            \chi\ped{w}(a\ped{init}, z- z\ped{w}) &= {\breve{\chi}\tanh{\pclosed{\frac{a\breve{\chi}}{2L\nped{C}} (z-z\ped{w}) }} }\Bigg|_{a=a\ped{init}}, \\
+            q\ped{w}(a\ped{init}, z- z\ped{w}) &= a^2 \dv{\chi\ped{w}}{\tau}\bigg|_{a=a\ped{init}},
+        \end{align}
+    \end{subequations}
+    where $a$, $\breve{\chi}$ and $z\ped{w}$ generally depends on time and $z\ped{w}$ on space. Note with $\breve{\chi}=\chi_+$ we get the familiar quasistatic formula in~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}. For more details we refer to~\cref{app:untitled2}.
+
+    \paragraph{($\mathtt{achi}$)} %
+    In an FLRW universe a (semi-)stable Symmetron domain wall is approximated~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW} (or~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW_updated}). To preserve boundary conditions, there needs to be at least two walls present. We choose to place the wall of interest at $z_0 = L_\#/2$, and its counterpart---the anti-wall---at $\widebar{z}_0=0$, both aligned with the $xy$-plane. %The periodicity of the system \blahblah
+    
+
+    % Ignore the perturbation for now. The 3D simulation box of side lengths $L$ has in total $N^3$ lattice points.\footnote{Two dimensions would suffice for this problem, but \texttt{gevolution} only takes cubic boxes.} %Separating the box in two domains calls for two domain walls.
+    % To preserve the periodic boundary conditions, we need at least two walls. We place one topological defect at $z=L/2$ and its counterpart (the antikink) at $z=0$. The simplest way to achieve this is by initialising the scalar field $\chi$ ($\texttt{achi}$ in the code) with eq XX.
+    % % \begin{equation}\label[eq]{eq:PT:gwas:achi_IC_type0}
+    %     \chi_+ \tanh{ \pclosed{ \frac{a(z-z\ped{dw})}{2L\nped{C}} \chi_+ } }.
+    % \end{equation}
+    Now say we add a displacement $\epsilon= \epsilon(\tau, x, y)$ to the middle wall. %
+    % The system of defects is then
+    % \begin{equation}
+    %     \chi(a,z) = \prod_{i\in \Integer} \chi\ped{w}(a, z- [z_0 + \epsilon+ iL_\#] )\prod_{j\in\Integer} \bclosed{-\chi\ped{w}(a, z-jL_\#) },
+    % \end{equation}
+    % assuming sufficient spatial separation.
+    Assuming sufficient spatial separation, the system of defects is given by
+    \begin{equation}
+        \chi(a,z) = \prod_{n= -\infty}^\infty \chi\ped{w}(a, z- z\ped{w}^{n} )\prod_{m=-\infty}^{\infty} {\widebar{\chi}\ped{w}(a, z-\widebar{z}\ped{w}^m) },
+    \end{equation}
+    where
+    \begin{equation}\label{eq:PT:gwas:wall_antiwall_positions}
+        z\ped{w}^n = z_0 + \epsilon + nL_\# %
+        \quad\text{and}\quad %
+        \widebar{z}\ped{w}^m = \widebar{z}_0+ mL_\#.
+    \end{equation}
+    % and $\chi\ped{w}$ is 
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\linewidth]{Methodology/demo_achi_periodicity.png}
+        \caption{Demonstration of the periodicity of $\chi(a\ped{init},z)$ on the lattice. 
+        % We only simulate $z\in[0,L_{\#})$, but the system is theoretically 
+        }\label{fig:PT:gwas:demo_achi_periodicity}
+    \end{figure}
+    
+    
+
+    % \phpar[about tweaked BCs]
+
+
+    \paragraph{($\mathtt{aq}$)} %
+    Setting the initial conditions on the field $q = a^2 \dot{\chi}$ is a matter of algebra. The expression is cleanest when $\dot{z}\ped{w}=\dot{\epsilon}=0$, i.e. for $a\ped{init}=a_\ast$. %a bit more subtle. In short, 
+
+
+    % \comment{Write about $\mathtt{aq}$ field.} 
+
+
+    
+
+
+
+    % We choose to have one topologicalm
+    % To create a stable, thin, planar wall configuration, we 
+
+
+    % We start with a stable, thin, planar wall configuration (no perturbation).
+
+
+
+    \paragraph{Initial time.} %
+    % So far, we have not \blahblah
+    We need to be careful when choosing the exact redshift to initiate the simulation. Clearly, the conventional expression~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW} does not work if we set initial redshift $\redshift\ped{init}=\redshift_\ast$. Initiating only a few time steps later allows us to use this after all, but we need to make sure the wall and anti-wall do not collide. Whether this is the case depends on several parameters. Some sets of initial conditions will induce large fifth force oscillations, and we should try to avoid this.
+
+    Using the tweaked initial conditions on the asymptotic fields as boundary conditions on the quasistatic field in~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW_updated} opens for the possibility of initialising as close to phase transition as we want. 
+    
+    We see that $\breve{\chi}\to \chi_+ $ after some time, and so another strategy to reduce oscillations is to initialise \emph{after} this non-adiabatic phase. The draw-back is that we might lose important information about the source of the gravitational waves.
+
+    \begin{draft}
+        
+    
+    \subsubsection{Stress--energy tensor}
+        We have the SE tensor $T\_{\mu\nu}(\tau, \vec{x})= \sum_{n}{T^{\mathrm{w}(n)}_{\mu\nu}(\tau, \vec{x})} + \sum_m {\widebar{T}^{\mathrm{w}(m)}_{\mu\nu}(\tau, \vec{x})} $, which we can write as~(see~\cref{sec:pertwalls:gws:Fourier_SE_tensor})
+        \begin{equation} 
+            \begin{split}
+                T\_{ab}(\tau, \vec{x}) &= -a \sigma \eta\_{ab} \sum_{n} \bclosed{\varPhi_{\delta\ped{w}/2}(z-z\ped{w}^n)+ \varPhi_{\delta\ped{w}/2}(z-\widebar{z}\ped{w}^n) },  \\
+                T\_{iz}(\tau, \vec{x}) &= -a \sigma \sum_{n} \bclosed{\varPhi_{\delta\ped{w}/2}(z-z\ped{w}^n) \partial\_i z\ped{w}^n + \cancel{ \varPhi_{\delta\ped{w}/2}(z-\widebar{z}\ped{w}^n) \partial\_i \widebar{z}\ped{w}^n} },
+            \end{split}
+        \end{equation}
+        where $z\ped{w}^n$ and $\widebar{z}\ped{w}^n$ are given in~\cref{eq:PT:gwas:wall_antiwall_positions}.
+
+        Going to Fourier space, we have
+        \begin{equation}
+            \begin{split}
+                T\_{ab}(\tau, \vec{k}) &= -a\sigma \eta\_{ab} \sum_{n}\bclosed{ \mathscr{D}\ped{w}^n(\tau, k_z) \integ[2]{x} \eu[-\im k_z \epsilon] \eu[\im (k_x x +k_y y)]  + \widebar{\mathscr{D}}\ped{w}^n (\tau, k_z) \Diracdelta(k_x) 
+                \Diracdelta(k_y)} ,\\
+                T\_{i z}(\tau, \vec{k}) &= -a\sigma \sum_{n} \mathscr{D}\ped{w}^n(\tau, k_z) \integ[2]{x} \epsilon\_{,i} \eu[-\im k_z \epsilon] \eu[\im (k_x x +k_y y)],
+            \end{split}
+        \end{equation}
+        where $\mathscr{D}\ped{w}^n= \eu[-\im k_z L_\#/2]\cdot \widebar{\mathscr{D}}\ped{w}^n   $ and $\widebar{\mathscr{D}}\ped{w}^n = \exp{ -\im k_z nL_\#- (k_z \delta\ped{w}(\tau))^2/8 }$.
+        % \begin{equation}
+        %     \mathscr{D}\ped{w}^n = \exp{ -\im k_z (z_0 + nL) - (k_z \delta\ped{w})/8 } %\quad \text{and} \quad 
+        %     % \widebar{\mathscr{D}}\ped{w}^n = \exp{ -\im k_z (\widebar{z}_0 + nL) + (k_z \delta\ped{w})/8 } 
+        %     % \stackrel{()}{\mathscr{D}}
+        % \end{equation}
+        % and $\widebar{\mathscr{D}}\ped{w}^n$ the same with $\widebar{z}_0$.
+        % \begin{equation}
+        %     \widebar{\mathscr{D}}\ped{w}^n = \exp{ -\im k_z nL_\#- (k_z \delta\ped{w})/8 }.  %\quad \text{and} \quad 
+        % \end{equation}
+        % and $\widebar{\mathscr{D}}\ped{w}^n$ the same with $\widebar{z}_0$.
+
+        Now, inserting $\epsilon = \varepsilon(\tau) \sin{py}$ we get
+        \begin{equation}
+            T\_{xx}(\tau, \vec{k}) = 
+        \end{equation}
+
+
+        \speak{I think I messed it up; should I go through the Dirac comb directly?}
+    
+    
+
+
+
+
+\subsection{Discrete Fourier space}
+    \blahblah
+
+    $h\_{ij}(\eta, \vec{k}) = \Lambda\_{ijkl}(\vec{k}) h\_{kl}(\eta,\vec{k})$ where $\vec{k}$ is \emph{not} defined $\vec{k} = 2\ppi (\lcoord{u},\lcoord{v},\lcoord{w})/ L $
+
+
+    \blahblah
+
+
+    
+    % Let $T^0_{ij}(\tau, \vec{x})$ be the SE tensor for a wall or an anti-wall at $z=0$. For our setup, this amounts to
+    % \begin{equation}
+    %     T\_{ij}(\tau, \vec{x}) = \sum_{n=0}^{\infty} \bclosed{ \Diracdelta(z-z\ped{w}^{n}) + \Diracdelta(z-\widebar{z}\ped{w}^{n})  } T^0_{ij}(\tau, \vec{x})
+    % \end{equation}
+
+
+
+
+    \begin{equation}
+        T\ap{ww}_{ij}(\tau, \vec{x}) = T\ap{w}_{ij}(\tau, \vec{x}) + \widebar{T}\ap{w}_{ij}(\tau, \vec{x})
+    \end{equation}
+
+    \begin{equation}
+        T\_{ij}(\tau, \vec{x}) = \sum_{n}^{\infty}\Diracdelta(\vec{x}\cdot\hat{\vec{z}} -nL)  T\ap{ww}_{ij}(\tau, \vec{x})
+    \end{equation}
+
+
+    \begin{equation}
+        T\_{ij}(\tau, \vec{x}) = \sum_{n}^{\infty} T^{\mathrm{w}}_{ij} (\tau, \vec{x}-\hat{\vec{z}}z\ped{w}^n ) + \sum_{m}^{\infty} \widebar{T}^{\mathrm{w}}_{ij} (\tau, \vec{x}-\hat{\vec{z}}\widebar{z}\ped{w}^m ) 
+    \end{equation}
+    \begin{equation}
+        T\_{ij}(\tau, \vec{x}) = %
+        \sum_{n}^{\infty} \Diracdelta(\vec{x}\cdot\hat{\vec{z}} -z\ped{w}^n) T^{\mathrm{w}}_{ij} (\tau, \vec{x}) 
+        + \sum_{m}^{\infty} \Diracdelta(\vec{x}\cdot\hat{\vec{z}} -\widebar{z}\ped{w}^m) \widebar{T}^{\mathrm{w}}_{ij} (\tau, \vec{x}) 
+    \end{equation}
+    % \begin{equation}
+    %     T\_{ij}(\tau, \vec{x}) = \sum_{n}^{\infty} \Diracdelta(z\ped{w}-z\ped{w}^n) T^{\mathrm{w}}_{ij} (\tau, \vec{x}) 
+    %     % T^{\mathrm{w}(n)}_{ij}(\tau,\vec{x}-z\ped{w}^{n}\hat{\vec{z}}) +
+    % \end{equation}
+
+    The Fourier-space stress--energy tensor becomes
+    \begin{equation}
+        T\_{ij} = 
+    \end{equation}
+
+    
+
+
+\subsection{\tmptitle{Options/parameters}}
+    % Now to the spe
+   \rephrase{We now turn to the details of the simulations we are to perform. For starters, we provide options and compiler flags to make certain that fields $\chi$ and $h\_{ij}$ are computed.} 
+
+    
+    \paragraph{Numerics.} %
+    There are choices to be made concerning temporal and spatial resolution, and what integration method to use. Of solvers, there are a handful to choose from, for instance Leap-Frog or fourth order Runge-Kutta. The spatial resolution $\Delta_\#= L_\#/N_\#$ is set by the users choice of box side length $L_\# $ in $\text{Mpc}/h_0$ and the number of grid points $N_\#$ in each direction. The temporal resolution\emph{s} vary for some field updates. They are controlled by the \emph{Courant factors}
+    \begin{equation}
+        C\ped{f} = v\ped{g} \Delta \tau / \Delta_\#
+    \end{equation}
+    where \blahblah
+    % For the scalar field, we have $v^{\chi}=$
+
+    \comment{$L$ and $\redshift\ped{init}$ difficult to place in category.}
+
+    
+    \paragraph{Physics.} %
+    More exciting are the parameters that directly relates to our theoretical setup and cosmological scenarios. %We can set the simulation box size, $L$, 
+        \subparagraph{Asymmetron parameters.} %
+        The code takes the phenomenological parameters $\mathrm{As}_\ast = \{a_\ast, \xi_\ast, \beta_+, \beta_- \}$ and maps them to Lagrangian parameters $\mathrm{As}_\mathcal{L} = \{ M, \mu, \lambda, \kappa \}$ as described in~\nc{some section or appendix}.
+
+
+        \subparagraph{Perturbation parameters.} % 
+        We added some options to the initialisation-part of the code so to easily create the idealised scenario we want. It has options for this kind of perturbation in the $z$-direction:
+        \begin{equation}
+            \epsilon = \varepsilon(\tau) \mathop{\mathrm{tri}}{\cclosed{ p_x x + p_y y }}; \quad \mathop{\mathrm{tri}} \in \{ \sin, \cos \},
+        \end{equation}
+        for which the user can provide initial amplitude $\varepsilon_\ast$ and perturbation scale in terms of scaled, integer wavenumbers $m_{\lcoord{i},\lcoord{j}} = p_{x,y} /k_\#$. 
+
+        We introduce a ``curvature'' parameter $\Upsilon^{\AC}=  100m_{\lcoord{j}}\epsilon /L_\#$ which will be useful for later discussion. 
+
+
+        
+    We need to be careful \blahblah
+
+\end{draft} 
+
+
+
+
+
+% \comment{Surface tension ``tension'': Sensitivity to this.}
+

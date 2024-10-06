@@ -7,16 +7,59 @@
 % -----------------------------------------------------
 
 
+% The simplest modifications of gravity are constructed from the simplest of fields, namely scalar fields. A group of modified-gravity theories 
+
+
+
+% Scalar-tensor gravity in four dimensions can be formulated in its most general terms
+
+
+
+% \emph{Horndeski theory} formulates scalar--tensor gravity in four dimensions in its most general picture
+
+% The simplest of fields is the scalar field; the main ingredient to simple modifications of gravity. 
+
+
+
+The general picture presents quintessence as a group of scalar--tensor theories---a subgroup of modifications to gravity in which a scalar field is added to the total action. By going through all possible covariants with maximum second order time derivatives in four dimensional spacetime, one arrives at the most general formulation of these type of theories, the \emph{Hordenski theory}. Said theory is summed up by the total Lagrangian density $\mathcal{L}\ped{tot} = \mathcal{L}\ped{m} + M\nped{Pl}^2 \sum_{i=2}^{5} \mathcal{L}_i$, where $\mathcal{L}_i$ are built up by derivatives of the scalar field, the Einstein tensor and arbitrary functionals of the scalar field and its kinetic term.\footnote{%
+With the usual notation convention and arbitrary functionals $F_i$, the Lagrangian densities $\mathcal{L}_i$ are given by the following:
+\begin{equation*}
+    \begin{split}
+        \mathcal{L}_2 &= F_2(\phi, X) \\
+        \mathcal{L}_3 &= F_3 (\phi, X)\sq \phi \\
+        \mathcal{L}_4 &= F_4 (\phi, X)\mathcal{R} + F_{4,X}(\phi, X) \pclosed{ {(\sq \phi)}^2 - \phi\_{;\mu\nu} \phi\^{;\mu\nu}} \\
+        \mathcal{L}_5 &= F_5 \mathcal{G}\_{\mu\nu}\phi\^{;\mu\nu} - \sfrac{1}{6} F_{5,X}(\phi, X)  \pclosed{ {(\sq \phi)}^3 + 
+        2\phi\indices{^\nu_{;\mu}}\phi\indices{^\mu_{;\nu}} - 3  \phi\_{;\mu\nu} \phi\^{;\mu\nu} \sq \phi} 
+    \end{split}
+\end{equation*}%
+} %
+General relativity is retrieved with $\mathcal{L}_4 = \mathcal{R}/2$ and $\mathcal{L}_{2,3,5}=0$. Adding $\mathcal{L}_2 = X(\phi)-V(\phi)$ gives quintessence. Performing relevant variations eventually gives an equation of motion that is indistinguishable from standard GR with $\mathcal{L}\ped{m} \to \mathcal{L}\ped{m} + \mathcal{L}_2$ in the stress--energy tensor on the rhs of the Einstein equation. Thus, quintessence models are not modified gravity theories, but adds to the total matter in the universe. 
+
+
+% Now, the quintessence $\mathcal{L}_2$ gives a stress--energy tensor that is completely analogous to the 
 
 
 
 
-The simplest of fields is the scalar field; the main ingredient to simple modifications of gravity. 
 
 
-\paragraph{Jordan \& Einstein frames.} %
+% \paragraph{Scalar-tensor theories / Quintessence.} %
+% \blahblah Horndeski theory $\mathcal{L}\ped{tot} = \mathcal{L}\ped{m} + M\nped{Pl}^2 \sum_{i=2}^{5} \mathcal{L}_i$, where $\mathcal{L}_i$ are \dots. General relativity is retrieved with $\mathcal{L}_4 = \mathcal{R}/2$ and $\mathcal{L}_{2,3,5}=0$. Adding $\mathcal{L}_2 = X(\phi)-V(\phi)$ gives quintessence.
+
+
+
+\paragraph{Conformal duality / Jordan \& Einstein frames.} %
 (Some text about these.) Jordan frame (Jf.) and Einstein frame (Ef.) 
 
+
+\paragraph{Screening.} %
+\blahblah
+
+
+\begin{bullets}
+    \item Restructure of this chapter
+    \item Remember: origin of symmetron, screening, firth force, asymmetron, phase transition
+\end{bullets}
 
 
 The origin of the symmetron model is \blahblah
@@ -37,10 +80,10 @@ The \textit{a}symmetron model is a generalisation of the symmetron in which a cu
 V(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 - \frac{\mu^2}{2} \phi^2 + V_0%
 }
 for which the symmetron is retrieved when $\kappa=0$. In~\cref{fig:CFTgrav:symmetron:test} we demonstrate the impact of varying each coupling term separately.
-% \begin{figure}[h]\label[fig]{fig:CFTgrav:symmetron:test}
+% \begin{figure}[h]\label{fig:CFTgrav:symmetron:test}
 %     \import{figs/}{demo002.tex}
 % \end{figure}
-\begin{figure}[h]\label[fig]{fig:CFTgrav:symmetron:test}
+\begin{figure}[h]\label{fig:CFTgrav:symmetron:test}
     \centering
     \includegraphics[width=\linewidth]{asymmetron_demo.pdf}
     %%%%%%%%%%
@@ -63,7 +106,8 @@ We begin with the general chameleon action in the Einstein frame
 \begin{equation}
     S =S\nped{SE} + S_\phi  + S\ped{m}= \integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{m}[\tilde{g}\_{\mu\nu} , \psi]
 \end{equation} 
-where $X= -\frac{1}{2} \nabla\^\mu \phi \nabla\_\mu \phi $ is viewed as the kinetic energy of the chameleon, and $S\ped{m}$ is the Jordan frame matter action. In truth, the Jf. fields $\tilde{g}\_{\mu\nu}$ and $\psi$ are% \emph{sums} over \blahblah
+where $X = -\frac{1}{2} \phi\^{;\mu} \phi\_{;\mu}$ %$X= -\frac{1}{2} \nabla\^\mu \phi \nabla\_\mu \phi $
+is viewed as the kinetic energy of the chameleon, and $S\ped{m}$ is the Jordan frame matter action. In truth, the Jf. fields $\tilde{g}\_{\mu\nu}$ and $\psi$ are% \emph{sums} over \blahblah
 
 
 The matter fields couple to the Jordan frame metric $\tilde{g}\_{\mu\nu} = A^2(\phi)g\_{\mu\nu}$. 

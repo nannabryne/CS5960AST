@@ -1,0 +1,229 @@
+% |||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 6.1 Dynamics of Thin Domain Walls ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||||
+
+% ------------------------------------------------
+% labels: \label{[type]:pertwalls:thinwall:[name]}
+% ------------------------------------------------
+
+
+
+% ------------------------------------------------
+% \newcommand*\hypsurf{\ensuremath{\varSigma}}    % hypersurface
+% ------------------------------------------------
+
+
+
+
+
+
+% \phpar[constant surface tension]
+
+
+
+% We follow~\citet{garrigaPerturbationsDomainWalls1991} and~\citet{ishibashiEquationMotionDomain1999}. The world sheet $\hypsurf$ divides \Manifold~into two submanifolds $\Manifold_{\pm}$ such that $\mathscr{M} = \mathscr{M}_+ \cup  \hypsurf \cup \mathscr{M}_-$. That is to say, a domain wall holds a world sheet separating two vacua. We take \Manifold~ to be smooth and $(N+1)$-dimensional, and let $\hypsurf$ be a smooth also and $((N-1)+1)$-dimensional. Consequently, $\hypsurf$ is a timelike hypersurface in \Manifold. 
+
+
+% %
+% % \citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+
+
+% \begin{bullets}
+%     \item Vary DW action
+%     \item Goal: E.O.M. for physically relevant component (epsilon basically)
+%     \item Expression for energy--momentum tensor
+%     \item Extension to non-thin walls 
+%     \item Extension to Asymmetron or introduction of energy bias
+%     \item What does thin mean? Why is the tension indep. of width?
+% \end{bullets}
+
+
+% % The generalisation to $(N+1)$ dimensions is straight-forward.
+% We invoke a smooth coordinate system $\{x\^\mu\}$ ($\mu=0,1,\dots,N$) of the spacetime $(\Manifold, g\_{\mu\nu})$ in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = x\^\mu(y\^a)$, where the coordinate system $\{y\^a\}$ ($a=0,1,\dots,N-1$) parametrises $\hypsurf$.
+% The induced metric on $\hypsurf$ is
+% \begin{equation}\label{eq:pertwalls:thinwall:induced_metrid}
+%     q\_{ab} = g\_{\mu\nu} e^\mu_a e^\nu_b; \quad e^\mu_a \equiv \pdv{x\^\mu}{y\^a}% g\_{\mu\nu}\pdv{x\^\mu}{y\^a}\pdv{x\^\nu}{y\^b} 
+% \end{equation} \provethis{argue!}
+
+% We let $\sigma$ represent the surface energy density of the wall---a quantity we will discuss i much more detail later---and $v_\pm$ the vacuum energy densities of $\mathscr{M}_\pm$. The complete action of the coupled system is
+% \begin{equation}
+%     S = \underbrace{- \sigma \integ[N]{y\sqrt{-q}}[\hypsurf] }_{S\ped{NG}} %
+%     - v_+ \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_+] %
+%     - v_- \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_-] %
+%     \underbrace{+ \frac{M\nped{Pl}^2}{2}\integ[N+1]{x\sqrt{-g}}[\mathscr{M}] \mathcal{R}}_{S\ped{EH}}.
+% \end{equation}
+% \comment{Comment about Nambu-Goto action. Maybe add matter and $\phi$ actions?}
+
+% % The action for a thin domain wall is famously~\citep[e.g.][]{vachaspatiKinksDomainWalls2006} the Nambu-Goto action $S\ped{NG}$, 
+% % \begin{equation}
+% %     S\ped{dw} = -\sigma \integ[N]{y\sqrt{-h}}[\hypsurf],
+% % \end{equation}
+% % where $\sigma$ is the wall's energy per unit area, henceforth called ``surface tension''. The action for the coupled system
+
+
+% Under small changes in $x\^\mu$ on $\hypsurf$, $x^\mu \to x\^\mu + \delta x\^\mu$, we obtain the equation
+% \begin{equation}
+%     \mathrm{D}\^a e\indices*{^\mu_a} + \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+% \end{equation}
+% or equivalently,
+% \begin{equation}
+%     % \sq_\hypsurf %
+%     \mathrm{D}\_a \mathrm{D}\^a %
+%     x\^\mu+ \ChristophelSym{\mu}{\kappa\tau} q\^{ab} \pdv{x^\kappa}{y\^a} \pdv{x^\tau}{y\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+% \end{equation}
+% where $\mathrm{D}\_a$ is the covariant derivative with respect to $q\_{ab}$.
+
+% \checkthis{The part of $\delta x\^\mu$ that is tangential to $\hypsurf$ are diffeomorphisms on $\hypsurf$ ($y\^a \to y\^a + \delta y\^a$).} The only physically meaningful component is the transverse one; %Let us write $x\^\mu = $
+% \begin{equation}
+%    n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+% \end{equation}
+
+
+% Without loss of generality we let \dots $n\^\mu = n\^N$ \blahblah
+
+
+% \subsection{Planar domain walls in FLRW spacetime}
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % \begin{draft}
+% % \subsection{Expanding universe. (my scenario)}
+
+
+
+
+% % \end{draft}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% % \section{Stress--energy tensor of domain walls}
+
+
+
+
+
+% Viewed as a hypersurface in $(3+1)$ dimensions, we align a domain wall with the first three dimensions of the
+
+Now the groundwork is laid for the scenario that which this project is all about. That is, we consider a conformally flat spacetime with %metric $g\_{\mu\nu}= a^2 \eta\_{\mu\nu}$ 
+line element
+\begin{equation}
+    {ds}^2 = g\_{\mu\nu} \diff x\^\mu \diff x\^\nu = a^2 \eta\_{\mu\nu} \diff x\^\mu \diff x\^\nu = a^2(\tau) \cclosed{ -{\diff \tau}^2 + {\diff x}^2 + {\diff y}^2 + {\diff z}^2  }.
+\end{equation}
+% \hlineSep
+% A solution to the eom for $z(\tau)$ is 
+% \hlineSep
+We place a thin domain wall at $z$-coordinate $z_0$, represented by a hypersurface $\hypsurf$, whose induced metric is $\gamma\_{ab}= g\_{\mu\nu} x\indices{^\mu_{,a}} x\indices{^\nu_{,b}}$. 
+We assert the solution $x\^\mu \supset x_\bot(\tau)n\^\mu =z_0 \Krondelta{^{\mu z}}$ to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} with $v=0$.\footnote{
+    In~\citet{garrigaPerturbationsDomainWalls1991} it is shown that $z=z_0$ is the only viable solution in the analogous case in Minkowski space. 
+} %
+
+
+
+The perturbed equation is obtained by a similar action principle as before,
+\begin{equation}\label{eq:pertwalls:thinwall:pert_variation_x_normal_coord}
+    x\^\mu  \to \pert{x}^\mu = x\^\mu + \epsilon n\^\mu.
+\end{equation}
+We simplify our equations tremendously if we keep $n\^\mu$ unaffected by the variation, and solve the one-dimensional problem with
+\begin{equation}
+    x_\bot \to \pert{x}_\bot = x_\bot + \epsilon.
+\end{equation}
+% only we keep $n\^\mu$ unaffected by the variation. 
+The resulting equation of motion for the scalar perturbation reads
+\begin{equation}
+    a^2\hypacc{\sq} \epsilon  - 2\mathcal{H} \dot{\epsilon} = 0
+\end{equation}
+or
+\begin{equation}\label{eq:pertwalls:thinwall:epsilon_eom_simple}
+    \epsilon_{,\tau\tau} + 3\mathcal{H} \epsilon_{,\tau} - \epsilon_{,xx} - \epsilon_{,yy} = 0.
+\end{equation}
+This is a separable partial differential equation (PDE) and we assume solutions of the form $\epsilon(\tau, x, y) = \varepsilon(\tau)\sppt(x,y)$. Now, we separate~\cref{eq:pertwalls:thinwall:epsilon_eom_simple} into
+% \begin{subequations}
+    \begin{align}\label{eq:pertwalls:thinwall:varepsilon_and_E_eoms}
+        \ddot{\varepsilon} + f(\tau) \dot{\varepsilon} + p^2 \varepsilon = 0 \quad\text{and}\quad  \sppt_{,xx} + \sppt_{,yy} + p^2 \sppt = 0,
+    \end{align}
+% \end{subequations}
+where $f(\tau)=3\mathcal{H}$. %
+%
+% \hlineSep
+% %
+% Now, $z = z_0 + \epsilon(y\^a)$ and 
+% \begin{equation}
+%     \mathrm{D}^2 \epsilon + \ChristophelSym{3}{\kappa\tau} q\^{ab} \pclosed{ \Krondelta{^\kappa_a}\Krondelta{^\tau_b} + 2\Krondelta{^\kappa_a} \Krondelta{^\tau_3} \epsilon\_{,b}  +  \Krondelta{^\kappa_3} \Krondelta{^\tau_3} \epsilon\_{,a}   \epsilon\_{,b}    } + \frac{\Delta v}{\sigma} n\^\mu= 0
+% \end{equation}
+% \blahblah \comment{Set $\Delta v=0$ etc.}
+% Eventually, we arrive at
+% \begin{equation}
+%     \ddot{\epsilon} + 3\mathcal{H}\dot{\epsilon} -  \pclosed{\partial_x^2 +\partial_y^2}\epsilon= 0.  %\bclosed{ \pdv[2]{}{x}  + \pdv[2]{}{y}  } \epsilon = 0.
+% \end{equation}
+% With the ansatz $\epsilon=\varepsilon_p(\tau) \sppt(x,y)$ we can solve this in terms of eigenvalues $-p^2$,
+% \begin{equation}\label{eq:pertwalls:eom_epsp_s_MD_simple}
+%     \ddot{\epsilon} + 3\mathcal{H}\dot{\epsilon}+ p^2 \epsilon = 0,% \pclosed{\partial_x^2 +\partial_y^2} \\sppt(x,y) = -p^2 \\sppt(x,y) 
+% \end{equation}
+% where $(\partial_x^2 +\partial_y^2) \sppt(x,y) = -p^2 \sppt(x,y) $. 
+The spatial part has solutions that are linear combinations of $\sin{(p_x x+p_y y)}$ and $\cos{(p_x x+p_y y)}$, with $p_x^2+p_y^2 = p^2$. 
+For a universe with $a\propto \tau^\alpha$, the solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindrical[\nu](p\tau); \, \nu=(1-3\alpha)/2$.
+
+\paragraph{Energy and momentum.} %
+% \subsection{Stress--energy tensor}\label{sec:pertwalls:thinwall:SE_tensor}
+    We perform the variation in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} for the scenario in question to find the SE tensor associated with the wall motion. The detailed calculation can be found in~\cref{app:derivations:SE_NG}. The non-vanishing spatial components are
+    \begin{equation}\label{eq:pertwalls:thinwall:SE_tensor}
+        \begin{split}
+            T\_{ab}(\tau, \vec{x})  &=  -a \sigma \, \varPhi_l(z-z\ped{w}) \, \eta\_{ab} \\
+            T\_{(i3)}(\tau, \vec{x})  &= -a \sigma \,\varPhi_l(z-z\ped{w} ) \,\epsilon\_{,i} %\partial\_{i} \epsilon
+        \end{split}
+    \end{equation}
+    where indices $a,b=0,1,2$.
+
+
+
+\subsection{Time-dependent surface tension}
+    Until now, the theory is model-independent in the sense that we have not assumed any particular type of domain wall (or defect, in general). This dependence is encoded in the \emph{constant} surface tension $\sigma$ and difference in vacuum energies $v=v_+-v_-$. %
+    % It is plain to see that the $\sigma$-dependence disappears when $v=0$.
+    It is plain to see from~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} that the absence of energy bias removes the surface-tension dependence. %
+    But what if the surface tension is not constant? 
+    
+    % What connects the eom for $\epsilon$ to a model of discrete symmetry break, is mainly the surface 
+
+    % Until now, the equations have been model-independent, given constant surface tension ($\dot{\sigma}= 0$) and no energy bias ($v_+ - v_- = 0$). 
+    If we allow the surface tension to vary, $\sigma=\sigma(\tau)$, %$\stackrel{\tau\to \infty}{\to} \sigma_\infty$
+    we need to put this inside of the integral in the Nambu--Goto action in~\cref{eq:pertwalls:eom_wall:total_action}. We immediately see that this is equivalent to letting $a^3\to a^3 \sigma$, which amounts to 
+    % with the substitution 
+    % \begin{equation}
+    %     3\mathcal{H} =  \frac{3}{a} \dv{a}{\tau} \to \frac{3}{a\sigma^{1/3}} \dv{a\sigma^{1/3}}{\tau} =  3\frac{\dot{a}}{a} +  \frac{\dot{\sigma}}{\sigma} = 3\dv{\ln{a}}{\tau} + \dv{\ln{\sigma}}{\tau} %3\dot{\ln{a}} + \dot{\ln{\sigma}}
+    %     % 3\mathcal{H} =  3 \dot{a}/a \to  3 \pclosed{a\sigma^{1/3}}^{-1}\dv{a\sigma^{1/3}}{\tau} =  3 \dot{a}/a  + \dot{\sigma}/\sigma
+    % \end{equation}
+    \begin{equation}
+        f(\tau) = \frac{3}{a\sigma^{1/3}} \dv{a\sigma^{1/3}}{\tau} =  3\frac{\dot{a}}{a} +  \frac{\dot{\sigma}}{\sigma} = 3\dv{\ln{a}}{\tau} + \dv{\ln{\sigma}}{\tau}
+    \end{equation}
+    % %This is equivalent to substituting $a\to a \sigma^{1/3}$, so that we only need to change $\mathcal{H} \to \mathcal{H}_\Upsilon$ \dots 
+    % If we define $\mathcal{H}_\Upsilon = \Upsilon^{-1} \dot{\Upsilon} $, we see that with $\Upsilon=a \sigma^{1/3}$, we get
+    % \begin{equation}
+    %     % \ddot{\epsilon} + \pclosed{ 3\frac{\dot{a}}{a} + \frac{\dot{\sigma}}{\sigma} } \dot{\epsilon} + k^2 \epsilon = 0.
+    %     \ddot{\epsilon} + \pclosed{ 3\mathcal{H}_a + \mathcal{H}_\sigma  } \dot{\epsilon} + k^2 \epsilon = 0.
+    % \end{equation}
+    % If we write
+    % \begin{equation}
+    %     \ddot{\epsilon} + 3\hat{\mathcal{H}}\dot{\epsilon} - \vec{\nabla}^2 \epsilon = 0,
+    % \end{equation}
+    % and let 
+    in~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms}. We get
+    \begin{equation}
+        \ddot{\varepsilon} + \pclosed{3\dot{a}/a + \dot{\sigma}/\sigma}\dot{\varepsilon} +p^2 \varepsilon = 0.
+    \end{equation}
+    This extra term will introduce the model-dependence. As we show in \nc{some section}[next?], the surface tension in the thin-wall approximation is 
+    \begin{equation}\label{eq:pertwalls:thinwall:surface_tension}
+        \sigma\ped{w} \simeq \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
+    \end{equation}
+    % ---the dependence on $V\ped{eff}(\phi)$
+    % seeing as the surface tension in the thin-wall limit is given by
+    % \begin{equation}\label{eq:pertwalls:thinwall:surface_tension}
+    %     \sigma = \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
+    % \end{equation}
+    where $V\ped{eff}(\phi)$ is the effective potential of the scalar field theory. 
+

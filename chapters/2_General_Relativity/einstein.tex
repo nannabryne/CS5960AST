@@ -1,0 +1,80 @@
+% ||||||||||||||||||||||||||||||||||||||
+% |||||| 2.2 Einstein's equation  ||||||
+% ||||||||||||||||||||||||||||||||||||||
+
+
+% ------------------------------------------------
+% labels: \label[type]{[type]:GR:einstein:[name]}
+% ------------------------------------------------
+
+
+
+
+
+
+
+
+
+How does the gravitational field affect how matter behaves, and in what way is matter controlling the gravitational field? Newtonian gravity proposes very good answers to these questions: The acceleration of an object in a gravitational potential $\Phi$ is
+\begin{equation}
+    \vec{a} = -\vec{\nabla} \Phi,
+\end{equation}
+and said field is governed by the matter density $\rho$ through the Poisson equation
+\begin{equation}
+    \vec{\nabla}^2\Phi =  4 \ppi G\nped{N} \,\rho.
+\end{equation}
+% In physics, the answer you get is hugely dependent on \emph{how the question was asked}. 
+In physics, the answer to a question is highly dependent on \emph{how the question was asked}. 
+A common misconception is that Newtonian gravity was disproven by Einstein. Newton was simply telling a different story; a story about dynamics in non-relativistic systems.\footnote{Which, to be fair, are most common on Earth.} %Einstein's theory of general relativity proposes both different questions and answers to gravitational physics.
+Einstein confronted gravitational physics with different but analogous questions, and subsequently more complex answers than Newton. General relativity explains how curvature of spacetime influences matter, manifesting as gravity, and in what way energy and momentum affects spacetime to create curvature. In mathematical terms, these are the geodesic equation 
+\begin{equation}
+    \dv[2]{x\^\mu}{\lambda} = - \Gamma\indices*{^\mu_{\rho\sigma}} \dv{x\^\rho}{\lambda} \dv{x\^\sigma}{\lambda} 
+\end{equation}
+and Einstein's equation
+\begin{equation}
+    \mathcal{G}\_{\mu\nu} = 8 \ppi G\nped{N} \, T\_{\mu\nu}.
+\end{equation}
+These can be obtained by 
+
+\comment{Not too long chapter, but want to mention the ``naive'' tankegang from which these can be obtained (minimal coupling etc.).}
+
+\citep[Ch.~4]{carrollSpacetimeGeometryIntroduction2019}
+
+A more tangible way to obtain the same equation is to vary the combined matter and Einstein--Hilbert actions
+ 
+\boxedeq{eq:GR:einstein:Einstein_eq}{
+    \mathcal{R}\_{\mu\nu} - \frac{1}{2}\mathcal{R} g\_{\mu\nu} = 8\ppi G\nped{N} T\_{\mu\nu}.
+}
+
+\begin{draft}
+    
+    The Einstein--Hilbert action in vacuum is \comment{check Planck mass def.}
+    \begin{equation}
+        S\ped{EH} = \shalf \Planck{M}^2 \int \! \diff[4]x \,\sqrt{-\abs{g}}\,  \mathcal{R}, 
+    \end{equation}
+    where $\mathcal{R} = g\^{\mu\nu}\mathcal{R}\_{\mu\nu}$. By varying $S\ped{EH}$ with respect to $g\_{\mu\nu}$ one obtains the equation of motion
+    \begin{equation}
+        \mathcal{G}\_{\mu\nu} \equiv \mathcal{R}\_{\mu\nu} + \frac{1}{2} g\_{\mu\nu} \mathcal{R} = 0.
+    \end{equation}
+    Thus, we interpret GR as a \emph{classical} field theory where the tensor field $g\_{\mu\nu}$ is the gravitational field, \cringe{with the particle realisation named ``graviton''}.
+
+
+
+    % \begin{bullets}
+    %     \item Einstein's field equations
+    %     \item scalar field (ST theories) 
+    %     \item energy momentum tensor
+    % \end{bullets}
+
+
+
+    Einstein's equation for general relativity
+    % \begin{equation}\label[eq]{eq:CFTgrav:GR:Einsteins_eq_GR}
+    %     \mathcal{R}\_{\mu\nu} - \frac{1}{2}\mathcal{R} g\_{\mu\nu} = 8\ppi G\nped{N} T\_{\mu\nu}
+    % \end{equation}
+    \boxedeq{eq:CFTgrav:GR:Einsteins_eq_GR}{
+        \mathcal{R}\_{\mu\nu} - \frac{1}{2}\mathcal{R} g\_{\mu\nu} = 8\ppi G\nped{N} T\_{\mu\nu}.
+    }
+
+\end{draft}
+

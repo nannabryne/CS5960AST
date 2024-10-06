@@ -1,0 +1,63 @@
+% |||||||||||||||||||||||||||||||||
+% |||||| 7.X Symmetron field ||||||
+% |||||||||||||||||||||||||||||||||
+
+% ------------------------------------------------
+% labels: \label[type]{[type]:results:achi:[name]}
+% ------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\lbl}[1]{\textsf{\textbf{#1}}}
+\newcommand{\brphi}{\breve{\phi}}
+\newcommand{\brchi}{\breve{\chi}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+In the simplest case where there are no walls present, and the scalar field takes the same value everywhere, the evolution is described solely by~\cref{eq:PT:symm_dws:eom_asym_chi_s}. In this case, we expect there to be good correspondence between theory and simulation. We found that the optimal path for the symmetron to minimise oscillations occurs if initial conditions are given by~\cref{eq:PT:symm_dws:optimal_chi_breve}.
+\begin{figure}[h]\label{fig:results:achi:achi_no_wall}
+    \centering
+    \includegraphics[width=\linewidth]{Findings/achi_no_wall.pdf}
+    \caption{The evolution of the symmetron field in the asymptotic limit. The symmetron parameters are the fiducial ones. \hl{Not finished plot.}}
+\end{figure}
+
+
+
+The symmetron field $\chi$ ($\mathtt{achi}$ in the code) will at SSB roll into either minima, depending on the sign of the field right before it happens. The strength of the oscillations around the true minima depend on both the initial field value and its time derivative. 
+
+% As we saw in \nc{section XX}, the solution for 
+
+
+\begin{figure}[h]\label{fig:results:achi:dummy}
+    \centering
+    \includegraphics[width=\linewidth]{dummy_normal.png}
+    %%%%%%%%%%
+    \caption{Background quantities.}
+    %%%%%%%%%%%%%
+\end{figure}
+We see in~\cref{fig:results:achi:dummy} a handful of background quantities from simulations \simnum{X}, \simnum{Y} and \simnum{Z}. 
+% We see that
+
+
+% \subsection{Some title}
+%     The solution to the
+%     % \begin{figure}[h]\label{fig:results:achi:achi_sim1}
+%     %     \centering
+%     %     \includegraphics[width=\linewidth]{Findings/achi_sim1.pdf}
+%     %     %%%%%%%%%%
+%     %     \caption{$\brchi$ as function of conformal time $s=\tau/\tau_\ast$.}
+%     %     %%%%%%%%%%%%%
+%     % \end{figure}
+
+
+
+%     These results, and simply the fact that they are \blahblah
+    
+
+%     The dimensionless time variable $t_p = (\tau-\tau\ped{init}) \cdot p$ or $t_p = (\tau-\tau_\ast) \cdot p= (s-1)u$
+
+    
+
+\subsection{\tmptitle{Discussion}}
+    In the absence of topological defects, we see near on perfect correspondence between predicted and simulated scalar field $\breve{\chi}$. Presence of walls messes with the maximum field value, due to the ``bump'' in the profile, but we see from the average squared field value that the overall oscillations are very close to what we expect. \comment{Repeated?}

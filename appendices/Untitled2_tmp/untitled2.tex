@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% App. B: Stable Symmetron %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ---------------------------------------
+% labels: \label{[type]:untitled2:[name]}
+% ---------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\brchi}{\breve{\chi}}
+\newcommand{\eqregimenum}[1]{{\footnotesize{\textsf{\textbf{({#1})}}}}}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+% ////////////////// intro //////////////////
+
+
+% ///////////////////////////////////////////
+
+
+
+The normal picture in the expanding universe is
+\begin{equation}
+    \chi\ped{dw}(a, z-z\ped{w}) = \chi_\pm \tanh{ \pclosed{\frac{a\chi_+(z-z\ped{w})}{2L\nped{c}} }}
+\end{equation}
+
+
+
+
+\begin{bullets}
+    \item effect on $\sigma$, $\delta$
+    \item also initialisation of $q$
+\end{bullets}
+
+
+
+We can rewrite~\cref{eq:PT:symm_dws:eom_asym_chi_s} in terms of the time coordinate $\chi_+ =\sqrt{1-\upsilon}$,
+\begin{equation}%\label[eq]{eq:PT:symm_dws:eom_asym_chi_chiplus}
+    \dv[2]{\brchi}{\chi_+} - \frac{1}{\chi_+ \pclosed{1-\chi_+^2}} \dv{\brchi}{\chi_+} + m^2 \frac{\chi_+^2 \pclosed{\brchi^2-\chi_+^2}}{\pclosed{1-\chi_+^2}^3}\brchi = 0,
+\end{equation}
+where
+\begin{equation}%\label[eq]{eq:PT:symm_dws:eom_asym_chi_chiplus_m_val}
+    m= \frac{2\mu}{3\mathcal{H}_\ast \pclosed{1+\mathfrak{z}_\ast}} = \frac{\sqrt{2}a_\ast^{3/2}}{3\xi_\ast}.
+\end{equation}
+The idea is to use this solution as boundary conditions for $\chi$:
+% \begin{equation}
+%     \chi(\tau, z\to \pm \infty) =\pm \brchi(\tau) \quad \land \quad \dot{\chi}(\tau, z\to \pm \infty) =\pm \dot{\brchi}(\tau)
+% \end{equation}
+\begin{equation}
+    \chi|_{z\to \pm\infty} =\pm \brchi \quad \land \quad \dot{\chi}|_{z\to \pm\infty} =\pm \dot{\brchi}.
+\end{equation}
+This generally alters the \blahblah
+\comment{Maybe rest in appendix?}
+% We solve in two regimes, each solution expanded around \eqregimenum{I} $\chi_+=0$ and \eqregimenum{II} $\chi_+=1$. We get 
+% \begin{subequations}
+%     \begin{equation}
+%         \brchi \simeq\begin{cases}
+%             \brchi^{\text{\eqregimenum{I}}}  & \chi_+ \leq \chi_+^{\mathrm{match}} \\
+%             \brchi^{\text{\eqregimenum{II}}}  & \chi_+ \geq \chi_+^{\mathrm{match}} \\
+%         \end{cases}
+%     \end{equation}
+%     where
+%     \begin{align}
+%         %\brchi &\stackrel{\chi_+\sim 0}{\simeq} 
+%         \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m^2}{8} \chi_+^4 \\ %& \equiv \brchi^b
+%         %\brchi &\stackrel{\chi_+\sim 1}{\simeq} 
+%         \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m^2)}{m^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636m^2 + 41m^4}{2m^6} \pclosed{\chi_+ -1}^4 %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
+%     \end{align}
+% \end{subequations}
+We solve in two regimes, each solution expanded around \eqregimenum{I} $\chi_+=0$ and \eqregimenum{II} $\chi_+=1$:
+\begin{subequations}
+    \begin{align}
+        %\brchi &\stackrel{\chi_+\sim 0}{\simeq} 
+        \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m^2}{8} \chi_+^4 ,\\ %& \equiv \brchi^b
+        %\brchi &\stackrel{\chi_+\sim 1}{\simeq} 
+        \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m^2)}{m^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636m^2 + 41m^4}{2m^6} \pclosed{\chi_+ -1}^4. %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
+    \end{align}
+\end{subequations}
+We determine $\chi_\ast$ and $\mathcal{C}$ by matching these expressions at $\chi_+\ap{match}$, 
+i.e. solving
+\begin{equation}
+    \begin{split}
+        \brchi^{\text{\eqregimenum{I}}}\big|_{\chi_+=\chi_+\ap{match}} &= \brchi^{\text{\eqregimenum{II}}}\big|_{\chi_+=\chi_+\ap{match}} \\
+        \dv{\brchi^{\text{\eqregimenum{I}}}}{\chi_+}\Big|_{\chi_+=\chi_+\ap{match}} &= \dv{\brchi^{\text{\eqregimenum{II}}}}{\chi_+}\Big|_{\chi_+=\chi_+\ap{match}}
+    \end{split}
+\end{equation}
+
+% By determining $\chi_\ast$, $\mathcal{C}$ and $\chi_+\ap{match}$ 
+The initial conditions best suited for the smallest oscillations possible are given by 
+\begin{equation}\label{eq:PT:symm_dws:optimal_chi_breve}
+    \brchi= \begin{cases}
+        \brchi^{\text{\eqregimenum{I}}} &\text{if } \chi_+ \leq\chi_+\ap{match}, \\
+        \brchi^{\text{\eqregimenum{II}}} &\text{if } \chi_+ \geq\chi_+\ap{match}.
+    \end{cases}
+\end{equation}
+Solving this for the fiducial symmetron parameters $\vec{\theta}_\ast\ap{fid}$, we get $\chi_\ast \simeq 0.09656$, $\mathcal{C}\simeq 5.837$ and $\chi_+\ap{match}\simeq 0.2568$. We update the domain wall profile
+\begin{equation}\label{eq:PT:symm_dws:chi_w_quasistatic_FLRW_updated}
+    \chi\ped{w} = \brchi \tanh{\pclosed{ \frac{a\brchi(z-z\ped{w})}{2L\nped{C}} }}
+\end{equation}
+and in turn the surface tension and thickness
+\begin{equation}
+    \sigma\ped{w} = \sigma_\infty \frac{1}{2} \pclosed{ 3\chi_+^2- \brchi^2 }\brchi \quad\text{and}\quad a\delta\ped{w} = \frac{\delta_\infty}{\brchi} .
+\end{equation}
+Note that both of these inngår i the thin-wall analysis in~\cref{chap:pertwalls}.
+% \comment{Maybe put a lot of these equations in appendix.}
+
+
+
+
+
+
+
+\section{Field initialisation}
+    \begin{bullets}
+        \item both $q$ and $\chi$
+    \end{bullets}
+
+
+
+

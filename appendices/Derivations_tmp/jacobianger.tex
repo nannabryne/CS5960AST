@@ -1,0 +1,26 @@
+% |||||||||||||||||||||||||||||||||||||||||||||
+% |||||| A.X Computation of Fourier SE tensor ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||
+
+
+% -----------------------------------------------------
+% labels: \label{[type]:derivations:jacobianger:[name]}
+% -----------------------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% \newcommand{\pert}[1]{\accentset{\circ}{#1}}
+\newcommand{\sppt}{\ALIASsppt}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+\important{Relevant for~\cref{sec:pertwalls:gw_production}}
+
+
+We look at $\sppt(y)=\sin{py}$ in $\epsilon= \varepsilon(\tau) \sppt(y)$
+
+The trick is to identify the Jacobi--Anger expansion,\footnote{
+    The analogous relation for cosine is obtained by inserting $\theta = \theta' + \ppi/2$ to get an extra factor $\im^n$ inside the sum.
+}
+\begin{equation}
+    \eu[\im x \sin{\theta}] = \sum_{n=-\infty}^{\infty} \Bessel[n](x) \eu[\im n \theta].
+\end{equation}

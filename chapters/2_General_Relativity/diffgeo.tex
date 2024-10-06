@@ -1,0 +1,42 @@
+% |||||||||||||||||||||||||||||||||||||||
+% |||||| 2.1 Differential geometry ||||||
+% |||||||||||||||||||||||||||||||||||||||
+
+
+
+% ----------------------------------------
+% labels: \label{[type]:GR:diffgeo:[name]}
+% ----------------------------------------
+
+
+
+
+To develop a classical field theory, we require a handful of mathematical \grammar[concepts]{structures} from differential geometry.
+
+
+
+\subsection{Hypersurfaces}\label{sec:GR:diffgeo:hypsurfs}
+    A hypersurface of a $(p+q)$-dimensional manifold $\Manifold$ is a submanifold of codimension 1, i.e. with $p+q-1$ dimensions. 
+
+
+
+\subsection{Conformal geometry}\label{sec:GR:diffgeo:conformal}
+
+    \begin{bullets}
+        \item Conformal geometry
+        \item FLRW spacetime \& Jordan vs. Einstein frames 
+        \item Scale invariance
+        \item Scalar product preserved $\leadsto$ neat FTs
+    \end{bullets}
+
+    \subsubsection{Fourier transforms}
+        One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
+        \begin{subequations}
+            \begin{align}
+                f(x) &= \integ[4][{(2\ppi)}^4]{k}  \eu[-\im \eta\_{\mu\nu} k^\mu x\^{\nu}] f(k) &&= \integ[1][2\ppi]{\omega} \eu[\im \omega \tau] \integ[3][{(2\ppi)}^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] f(\omega, \vec{k})\\
+                f(k) &= \integ[4]{x}  \eu[\im \eta\_{\mu\nu} k^\mu x\^{\nu}]f(x) &&=\integ{\tau} \eu[-\im\omega\tau] \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] f(\tau, \vec{x})
+            \end{align}
+        \end{subequations}
+        The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
+            
+        \comment{Make this readable (\href{https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to}{typesetting})} 

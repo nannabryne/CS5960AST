@@ -1,0 +1,115 @@
+% |||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 2.4 Standard model of cosmology ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+% -------------------------------------
+% labels: \label{[type]:GR:lcdm:[name]}
+% -------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand*\pert{\ALIASpert}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+
+
+Employing the cosmological principle (CP) to the Einstein equation, simplifies them drastically. CP states that universe is spatially homogeneous and isotropic\comment{---some ``folkelig'' comment---}or equivalently that the line element of the universe takes the form 
+${ds}^2 = -{\diff t}^2 + a^2(t){d\varSigma}^2$ where ${d\varSigma}$
+is a three-dimensional metric with a specified Gaussian curvature. $a$ is the scale factor describing the universe's expansion. %
+This was the starting point for Alexander Friedmann when he \cringe{utformet} the Friedmann equations. If CP holds, any constituent $s$ behaves as a perfect fluid, and the Hubble parameter reads \comment{decide which here}
+% \begin{equation}
+%     \Omega\ped{tot} \equiv \frac{\rho}{\rho\ped{cr0}} = \sum_{s} \Omega_s
+% \end{equation}
+\begin{equation}\label{eq:GR:lcdm:first_Friedmann}
+    H^2 = H_0^2 \sum_s \Omega_{s0} a^{-3(1+w_s)},
+\end{equation}
+\begin{equation}\label{eq:GR:lcdm:first_Friedmann_conformal}
+    \mathcal{H}^2 = H_0^2 \sum_s \Omega_{s0} a^{-(1+3w_s)},
+\end{equation}
+where $w_s$ is the equation-of-state parameter of $s$. 
+
+\pensive{CP + EFEs = FI \& FII}
+
+\pensive{CP holds for scales $>\mathscr{O}(100~\mathrm{Mpc})$}
+
+
+\comment{Get to Hubble tension.}
+
+
+
+We will work with conformal time $\tau$ that relates to cosmic time $t$ such that the metric is%$a \diff \tau = \diff t$
+\begin{equation}
+    {ds}^2 = a^2 (-{\diff \tau}^2+ {\diff \varSigma}^2).
+\end{equation}
+To get simplified---or simply analytically solvable---equations, we often assume $a\sim \tau^\alpha$ that corresponds to a universe dominated by a single substance. $\alpha$ is eventually determined by the equation-of-state parameter $w_s$ associated with the substance $s$ in question,
+\begin{equation}
+    \alpha = \frac{2}{1+3w_s}.
+\end{equation}
+This means that $\alpha=1$ and $\alpha=2$ for radiation (RD) and matter domination (MD), respectively. Put in cosmic context, \comment{maybe have a figure? Or write something about the different eras?}
+
+
+\subsection{Cosmological perturbation theory}\label{sec:GR:lcdm:cosmopert}
+    Just look around you---the universe is definitely \emph{not} homogeneous and isotropic. %CP generally fholds for scales $>\mathscr{O}(100~\Mpch)$, but 
+    The story of structure formation as we know it is told through cosmological perturbation theory. The leading-order perturbed metric $\pert{g}\_{\mu\nu}= g\_{\mu\nu} + \delta g\_{\mu\nu}$ can be written in terms of functions $A$, $B\_i$ and $C\_{ij}$,
+    \begin{equation}\label{eq:GR:lcdm:perturbed_metric_Bardeen}
+        \pert{ds}^2 = a^2 \bclosed{ -(1+2A){\diff\tau}^2  + 2B\_{i}{\diff x\^i}{\diff \tau} + (\Krondelta{_{ij}} + C\_{ij}){\diff x\^i}{\diff x\^j} }.
+    \end{equation}
+    % \begin{equation}\label{eq:GR:lcdm:perturbed_metric_Bardeen}
+    %     \pert{ds}^2 = {\diff \tau}^2 \bclosed{ -(1+2\Phi){\diff\tau}^2  + 2w\_{i}{\diff x\^i}{\diff \tau} + ((1-2\Psi)\Krondelta{_{ij}} + 2s\_{ij}){\diff x\^i}{\diff x\^j} }.
+    % \end{equation}
+    It is convenient to adopt the convension that spatial vectors and tensors are raised and lowered with $\Krondelta{}$, e.g.~$C\^{ij}=\Krondelta*{^{i}_k}\Krondelta*{^{j}_l} C\_{kl}$. The symmetric metric has ten degrees of freedom, and a scalar-vector-tensor (SVT) decomposition separates these into four scalar, four vector and two tensor degrees of freedom:
+    \begin{subequations}
+        \begin{align}
+            A    &\to  A, \\
+            B\_i &\to \partial\_i B + F\_i,  \\
+            C\_{ij} &\to ( 2 \Krondelta{_{ij}}C + 2\partial\_{i} \partial\_j D  - (2/3)\Krondelta{_{ij}}\vec{\nabla}^2 D ) + 2\partial\_{(i}G\_{j)}  + 2E\_{ij}.
+        \end{align}
+    \end{subequations}
+    This is extremely useful since in the first-order linearised Einstein equation for scalars, vectors and tensors do not mix. We treat these separately and assume they originate from inflation.
+    % \begin{description}
+    %     \item[Scalar] perturbations are density perturbations and describe structure formation.
+    %     \item[Vector] perturbations  
+    % \end{description}
+    \begin{itemize}
+        \item Scalar perturbations ($A$, $B$, $C$, $D$) are density perturbations and describe structure formation.
+        \item Vector perturbations ($F\_i$, $G\_i$) are not predicted by inflation, and would in any case only have decaying solutions, and are thus cosmologically irrelevant.
+        \item Tensor perturbations ($E\_{ij}$)---gravitational waves---are predicted by inflation.
+    \end{itemize}
+
+
+    This thesis focuses solely on the tensorial part of the metric perturbation. Therefore, we will consider the divergence- and traceless $h\_{ij}=2E\_{ij}$. This particular choice is called the \emph{transverse-traceless} (TT) gauge; $\partial\^i h\_{ij} =0$ and $\Krondelta{^{ij}}h\_{ij}=0$. Any symmetric tensor $T\_{ij}$ can be projected onto the TT-gauge by use of the projection tensor in~\cref{eq:notation:projection_tensor},
+    \begin{equation}
+        T\ap{TT}_{ij}(\vec{k}) = \Lambda\indices{^{ij}_{kl}}(\vec{k}/k) T\_{kl}(\vec{k}).
+    \end{equation}
+
+    % \begin{bullets}
+    %     \item Hodge decomposition $\accentset{\circ}{g}\_{\mu\nu} = g\_{\mu\nu} + \delta g\_{\mu\nu} $ where $g\_{\mu\nu}$ is FRLW
+    % \end{bullets}
+
+
+\subsection{Hubble trouble}\label{sec:GR:lcdm:problems}
+    \begin{bullets}
+        \item Hubble tension
+        \item Flatness problem
+        \item Extended models of gravity
+        \item \textLambda{}CDM still very good!
+    \end{bullets}
+
+    % The cosmic microwave background (CMB) 
+    % That the universe is expanding, there is little doubt of.
+
+    
+    
+    
+    In combining the distance to a nearby galaxy and the rate at which it moves away from us, we find the expansion rate of the universe
+    % Observations of stellar objects measures the cosmic redshift $\redshift = 1/a - 1$ 
+
+
+    In short, local measurements suggests $h_0 \simeq 0.73$, but CMB observations will have it $h_0\simeq 0.67$. The measurement errors cannot explain this. 

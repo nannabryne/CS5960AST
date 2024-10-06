@@ -1,0 +1,180 @@
+% ||||||||||||||||||||||||||||||||||||||||
+% |||||| 5.1 Symmetron domain walls ||||||
+% ||||||||||||||||||||||||||||||||||||||||
+
+% ------------------------------------------------
+% labels: \label[type]{[type]:PT:symm_dws:[name]}
+% ------------------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\eqregimenum}[1]{{\footnotesize{\textsf{\textbf{({#1})}}}}}
+\newcommand{\brchi}{\breve{\chi}}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+Assume the boson $\phi$ is responsible for symmtetry break at $a=a_\ast$, when the energy density of the universe is $\rho=\rho_\ast$. %
+From~\cref{sec:cosmo:quintessence:asymmetron} we have the (a)symmetron effective potential~\cref{eq:cosmo:quintessence:asymmetron_effective_potential}, and the equation of motion for the scalar field $\sq \phi=V_{\mathrm{eff},\phi}$ reads
+\begin{equation}
+    -a^{-2} \bclosed{ \ddot{\phi} + 2\mathcal{H} \dot{\phi} - \vec{\nabla}^2\phi } = \lambda \phi^3 +\mu^2 \pclosed{ \upsilon-1}\phi,
+\end{equation}
+where $\upsilon=\rho\ped{m}/(\mu M)^2$. %
+To solve this highly nonlinear equation we evaluate it in the quasistatic and spatially asymptotic limits. 
+
+
+In the rest of the thesis we use the scaled quantities $\chi=\phi/\phi_\infty$, $\phi_\infty=\mu/\sqrt{\lambda}$ and $\chi_\pm=\pm\sqrt{1-\upsilon}$. Prior to SSB, the scalar field solution is trivial, and so we move on to consider $\chi$ from this critical point where the quartic term turns negative and the $\Zn$ symmetry is spontaneously broken. In the following, we only address the regime where $\rho\ped{m}< \rho_\ast$.
+
+
+% The scalar boson $\phi$ responsible for symmetry break
+
+
+% \pensive{Kink = canonical soliton}
+
+
+
+
+
+% % The idea of a spontaneously broken symmetry i
+
+% From~\cref{sec:cosmo:quintessence:asymmetron} we have the (a)symmetron effective potential and \dots
+
+
+% Using the symmetron model to represent a domain wall in an FRLW universe, $\sq \phi=V\ped{eff,\phi}$ becomes
+% \begin{equation}
+%     -a^{-2} \bclosed{ \ddot{\phi} + 2\mathcal{H} \dot{\phi} - \vec{\nabla}^2\phi } = \lambda \phi^3 +\mu^2 \pclosed{ \upsilon-1}\phi,
+% \end{equation}
+% which is highly nonlinear and thus challenging to solve analytically.
+% From here, we will use $\chi=\phi/\phi_\infty$, $\phi_\infty=\mu/\sqrt{\lambda}$ and $\chi_\pm=\pm\sqrt{1-\upsilon}$. We recall \checkthis{that $\upsilon=\rho\ped{m}/\rho_{\mathrm{m}\ast} = (a_\ast/a)^3$.} 
+
+% Prior to SSB, the scalar field is trivial, and so we move on to consider $\chi$ from this critical point where the quartic term turns negative and the $\mathsf{Z_2}$ symmetry is spontaneously broken. 
+
+\subsection{Quasistatic limit}\label{sec:PT:symm_dws:quasistatic}
+    We can solve
+    \begin{equation}\label{eq:PT:symm_dws:eom_chi_quasistatic}
+        \vec{\nabla}^2 \chi \simeq  +\mu^2 
+         \cdot a^2\bclosed{ \chi^2 - \chi_+^2 }\chi
+    \end{equation}
+    to obtain the solution in the limit where spatial gradient plays a much larger role that time derivatives. For $a=1$ and $\chi_+=1$ the solution is the canonical soliton \checkthis{from~\cref{sec:cosmo:defects:ex_Z2_kink}}. 
+    We consider the well-established extension~\citep[see e.g.][]{pressDynamicalEvolutionDomain1989} for the corresponding defect in an expanding universe in combination with adjusting for varying minima~\citep{llinaresDomainWallsCoupled2014}, namely
+    \begin{equation}\label{eq:PT:symm_dws:chi_w_quasistatic_FLRW} 
+        \chi\ped{w}(a, z) = \chi_+ \tanh{\pclosed{ \frac{ \chi_+ az}{2L\nped{C}}  }},
+    \end{equation}
+    where \nc{$L\nped{C}$ is the symmetron Compton wavelength.}[chap. 3] %Assume now $a=a_\ast (\tau/\tau_\ast)^\alpha$. 
+
+    
+    % We use the well-established~\citep[see e.g.][]{llinaresDomainWallsCoupled2014,pressDynamicalEvolutionDomain1989} expression for a domain wall when $a\propto \tau^\alpha$ is slowly varying,\footnote{
+    %     Valid when the wall's thickness is much smaller than the horizon.
+    % } %
+    % namely
+    % \begin{equation}%\label{eq:PT:symm_dws:chi_w_quasistatic_FLRW} 
+    %     \chi\ped{w}(a, z) = \sqrt{1-\upsilon} \tanh{\pclosed{ \frac{az}{2L\nped{C}} \sqrt{1-\upsilon}}}.
+    % \end{equation}
+    % $L\nped{C}={(\sqrt{2}\mu)}^{-1}$ is known as the Compton wavelength of the symmetron, a measurement that will become significant later when \blahblah.
+    % We write $a=a_\ast (\tau/\tau_\ast)^\alpha$, which gives $\upsilon=(a_\ast/a)^3=(\tau_\ast/\tau)^{3\alpha}$.
+    % \begin{figure}[h]
+    %     \centering
+    %     \includegraphics[width=0.5\linewidth]{dummy_small.png}
+    %     %%%%%%%%%%
+    %     \caption{Quasistatic evolution of the domain wall represented by $\chi$.}
+    %     \label{fig:PT:symm_dws:quasi_chi}
+    % \end{figure}
+
+
+    % \phpar[sårbarheter etc., thickness]
+    % We take the thickness of the wall a
+    % The thickness of the wall, $\delta\ped{w}$, can be taken as the 
+    % \begin{equation}
+    %     \tanh{\pclosed{ \frac{z-z\ped{w}}{\sqrt{2}\delta\ped{w}} }}
+    % \end{equation}
+    % i.e.
+    % \begin{equation}
+    %     \delta\ped{w} = \frac{2L\nped{C}}{a\sqrt{1-\upsilon}}
+    % \end{equation}
+
+    \paragraph{Basic properties.} %
+    % We take the wall thickness parameter $\delta\ped{w}$ to be the $z$-coordinate at which the argument in the $\tanh$-function is $1/\sqrt{2}$, i.e.
+    % % \begin{equation}
+    % %     \sqrt{2}\delta\ped{w} = \frac{2L\nped{C}}{a\sqrt{1-\upsilon}}.
+    % % \end{equation}
+    % \begin{equation}
+    %     a\delta\ped{w} = \delta_\infty \pclosed{1-\upsilon}^{-1/2}.
+    % \end{equation}
+    % The surface tension is in this case given by
+    % \begin{equation}
+    %     \sigma\ped{w} = \sigma_\infty \pclosed{1-\upsilon}^{3/2}.
+    % \end{equation}
+    %
+
+    % \citet{vilenkinCosmicStringsOther1994} define the wall thickness as the $(z-z\ped{w})$-coordinate at which the argument in the $\tanh$-function is $1/\sqrt{2}$, which is $\delta_\infty  \equiv \mu^{-1}= \sqrt{2}L\nped{C}$. The surface tension of such a conventional wall \nc{is estimated $\sigma_\infty \equiv \frac{2\sqrt{2}}{3} \mu^3/\lambda$}[maybe background section?]. 
+    Consider the conventional $\Zn$ wall from~\cref{sec:cosmo:defects:dws}. Extrapolated to expanding spacetime, we get
+    \begin{equation}\label{eq:PT:symm_dws:surface_tension_and_thickness_FLRW}
+         \sigma\ped{w} = \sigma_\infty \pclosed{1-\upsilon}^{3/2} %
+         \quad \text{and} \quad  %
+         a\delta\ped{w} = \delta_\infty \pclosed{1-\upsilon}^{-1/2}
+    \end{equation}
+    as expressions for the comoving thickness $\delta\ped{w}$ and the surface energy density $\sigma\ped{w}$, where $\delta_\infty$ and $\sigma_\infty$ are given in~\cref{eq:cosmo:defects:sigma_delta_inf}.
+    % The surface tension is in this case given by
+    % \begin{equation}
+    %     \sigma\ped{w} = \sigma_\infty \pclosed{1-\upsilon}^{3/2}.
+    % \end{equation}
+    % Conventional walls, walls in Minkowski space, have
+    % The system of $N$ walls and $M$ anti-walls is described by~\cref{eq:cosmo:defects:many_kinks} with $\phi_\infty\chi\ped{w}$ instead of $\phi\ped{k}$.
+
+    % The system of $N$ kinks and $M$ antikinks is represented by the field $\phi = \phi_\infty \chi$ with
+    % \begin{equation}
+    %     \chi = \prod_{i}^{N} \chi\ped{k}(z-k_i) \prod_{j}^{M} \widebar{\chi}\ped{k}(z-\widebar{k}_j),
+    % \end{equation}
+    % where
+    % \begin{equation}\label{eq:PT:symm_dws:chi_k_of_z}
+    %     \chi\ped{k}(z-k_i) = \sqrt{1-\upsilon} \tanh{\pclosed{ \frac{a(z-k_i)}{\sqrt{2}\delta_{\mathrm{k},i}} }}
+    % \end{equation}
+    % and $\widebar{\chi}\ped{k} = - \chi\ped{k}$. 
+
+
+
+
+\subsection{Asymptotic limit}\label{sec:PT:symm_dws:asymptotic}
+    We let $\brchi$ denote the field value far away from the wall, well inside the domains. Here,
+    \begin{equation}\label{eq:PT:symm_dws:eom_asym_chi_s}
+        \ddot{\brchi} +  2\mathcal{H} \dot{\brchi} = - \mu^2 \cdot a^2\bclosed{ \brchi^2 + \upsilon - 1 }\brchi
+    \end{equation}
+    governs the evolution of the field strength. The trivial solution becomes unstable after the phase transition, and the field may fall into any of the two vacua, depending on the phase of the a priori fluctuations. We take a look at one of the minima. The positive minimum, which was zero at PT, goes as $\chi_+ = \sqrt{1-\upsilon}$. Now, the rate at which $\chi_+$ moves from its initial value, blows up at the phase transition, but decays rapidly when approaching the limit value. %
+    It makes sense to analyse the equation in the \eqregimenum{I} non-adiabatic and \eqregimenum{II} adiabatic regimes separately.
+
+    The non-adiabatic regime \eqregimenum{I} is a short window around PT in which the effective potential changes faster that what the dynamics of the scalar field allow. That is to say, the asymptotic field value $\brchi$ cannot possibly hope to follow the system's actual minima $\chi_\pm$. When the scalar catches up, the effective potential changes slower than the field in what we call the  adiabatic regime \eqregimenum{II}. What happens is that the field rolls towards the minimum and begins to oscillate around it whilst following its slow drift. The oscillation amplitude is decided by the initial conditions of the field.
+    % what follows is an adiabatic regime \eqregimenum{II} where the effective potential changes slower than 
+
+
+    % We solve this issue by parting the equation in two regimes; \eqregimenum{I} a quick, non-adiabatic regime in which $V\ped{eff}$ changes faster than what $\chi$ can possibly follow and \eqregimenum{II} an adiabatic regime where $V\ped{eff}$ changes much slower than $\chi$. What happens is that the field rolls towards the minimum and begins to oscillate around it whilst following its slow drift. \checkthis{Plagiarism? (Julian's notes)} The oscillation amplitude is decided by the initial conditions of the field.
+
+    % \phpar[Why do we not want oscillations?] 
+    We know that oscillations in the scalar field can themselves produce gravitational waves  \citep{kawasakiStudyGravitationalRadiation2011}. Ideally we would get rid of them completely to not contaminate the \cringe{kinky gravitational waves.} In addition, these oscillations will to some extent affect the surface tension and thickness of the domain wall. This will in turn alter the equations for $\epsilon$ and $h_{ij}$ from the NG theory, making them analytically unsolvable. So we should avoid large oscillations in the scalar field at \cringe{any} cost.
+    
+    % both to be found in the e
+
+
+    % the former 
+    % which in turn might adjust the evolution of the wall perturbation $$
+    
+    % The surface tension of the domain wall is \blahblah 
+
+    How to go about this is explained in detail in~\cref{app:untitled2}. We use the result to put new boundary conditions on the quasistatic equation~\cref{eq:PT:symm_dws:eom_chi_quasistatic}.
+
+
+
+    
+    
+
+
+
+
+%     % \subsection{Compton wavelength}
+%     %     The
+
+
+%         \pensive{We are actually not resolving the Compton wavelength $L\nped{C}$ in our simulations.}
+
+
+% \pensive{%
+% Much like GR, this thesis is highly non-linear. It is near impossible to preserve a causal structure, to write it ``chronologically,'' if one also aims to divide it into subjects for readability. }

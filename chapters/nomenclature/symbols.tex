@@ -20,16 +20,16 @@ In the table below is listed the most frequently used symbols in this paper, for
         \midrule
         \multicolumn{3}{l}{\textit{Subscripts}} \\
         \midrule
-        $Q\subGW$      &  Quantity $Q$ related to gravitational wave  & \\
+        %$Q\subGW$      &  Quantity $Q$ related to gravitational wave  & \\
 
         \midrule
         \multicolumn{3}{l}{\textit{Functions and operators}} \\
         \midrule
-        $\Heaviside{\xi}$      &  Heaviside step function &   \multicolumn{1}{r}{$\begin{cases}
+        $\Heaviside(\xi)$      &  Heaviside step function &   \multicolumn{1}{r}{$\begin{cases}
             1 & \xi>0 \\
             0 & \xi<0
         \end{cases}$} \\
-        $\mathop{\text{sgn}}(\xi)$      &  Signum function &   \multicolumn{1}{r}{$2\Heaviside{\xi}-1$}\\
+        $\mathop{\text{sgn}}(\xi)$      &  Signum function &   \multicolumn{1}{r}{$2\Heaviside(\xi)-1$}\\
         $\Diracdelta[n]{\xi} $      &  Dirac-Delta function of $\xi\in\Real[n]$, $n\in\Natural$. & \\
         $\Krondelta{^{\mu \nu}} $      &  Kronecker delta. & \\
 
@@ -43,9 +43,83 @@ In the table below is listed the most frequently used symbols in this paper, for
         \midrule
         $\Group{Conf}{\Manifold}$    & The conformal group of the manifold \Manifold.  &   \\
         $hh$ & ... & ...\\
+
+        \midrule
+        \multicolumn{3}{l}{\textit{Physical quantities}} \\
+        \midrule
+        $a$    & Scale factor.  &   \\
+        $g\_{\mu\nu}$    & Metric tensor. &   \\
+
+        $\tau$    & Conformal time.  &   \\
+        $s$ & ... & ...\\
+
         \bottomrule
     \end{tabular*}
 \end{table}
+
+
+
+
+\begin{table}
+    \begin{minipage}{0.5\linewidth}
+        {\small{
+        \begin{tabular*}{\linewidth}{c l}
+            \multicolumn{2}{l}{\textsf{Some title}} \\
+            \toprule
+            % ------
+            \multicolumn{2}{l}{\textit{Cosmology} \comment{SORT!}} \\
+            \midrule
+            $a$ &{Scale factor.} \\
+            $\mathcal{H}$%=\dot{a}/a$
+            & Conformal Hubble factor $\dot{a}/a$.  \\
+            $\redshift$ & Cosmic redshift. \\ 
+            $\tau$ & Conformal time. \\
+            $\alpha$ & Exponent \blahblah \\
+            $g\_{\mu\nu}$    & Metric tensor, FLRW.  \\
+            $\vec{x}$ & Comoving coordinate $(x,y,z)$. \\
+            $\vec{k}$ & Comoving wavevector $(k_x,k_y,k_z)$. \\
+            $\Manifold$ & Riemannian manifold. \\
+            $\Zn[n]$ & Symmetry XXX. \\
+
+            \vdots & \vdots\\
+            % \vdots & \vdots\\
+            %----------
+            \bottomrule
+        \end{tabular*}
+        }}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\linewidth}
+        {\small{
+        \begin{tabular*}{\linewidth}{c l}
+            \multicolumn{2}{l}{\textsf{Some title}} \\
+            \toprule
+            % ------
+            \vdots & \vdots \\
+            \vdots & \vdots \\
+            \vdots & \vdots \\
+            \vdots & \vdots \\
+            $\upsilon$ &  Time variable $(a_\ast/a)^{3\alpha}$. \\
+            % $s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
+            $s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
+            \midrule
+            \multicolumn{2}{l}{\textit{Subscripts}} \\
+            \midrule
+            $\mathrm{m}$ & Normal matter. \\
+            $0$ & Today ($a_0=1$ is the scale factor today). \\
+            $*$ & Time of phase transition. \\
+            %----------
+            \bottomrule
+        \end{tabular*}
+        }}
+    \end{minipage}
+    \caption{Variables \blahblah}
+\end{table}
+
+
+
+
+
+
 
 \clearpage
 \newpage
@@ -82,5 +156,11 @@ In the table below is listed the most frequently used symbols in this paper, for
     \noindent\hl{This text is highlighted.}
 
     \noindent Statement. \provethis{That needs to be shown or proven.}
+
+    \noindent\tmptitle{Temporary title.}
+
+    \noindent\question[Question]{Why?}
+
+    \noindent\pensive{Pensive: for thoughts and jokes.}
 
 \end{draft}

@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% App. X: Cylinder Functions  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% -------------------------------------
+% labels: \label{[type]:special:[name]}
+% -------------------------------------
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\myemph}{\textbf}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+
+
+
+
+The solution to% Bessel's equation
+\begin{equation}
+    y'' + \frac{1-2a}{x}y'+ \bclosed{ {(bcx^{c-1})}^2 + \frac{a^2-\nu^2 c^2}{x^2} }y = 0
+\end{equation}
+is
+\begin{equation}
+    y(x) = x^a \Cylindrical[\nu](bx^c),
+\end{equation}
+where $\Cylindrical[\nu]$ is a linear combination of the Bessel functions of the first and second kind, $\Bessel$ and $\Neumann$.
+
+Let $\nu\in\Real$ and $n\in \Integer$. The \myemph{Bessel} and \myemph{Neumann functions}
+\begin{subequations}\label{eq:special:normal_Bessel}
+    \begin{align}
+        \Bessel[\nu](x) &= ,\\
+        \Neumann[\nu](x) &= .
+    \end{align}
+\end{subequations}
+
+
+% \section{Half-integer order}
+    For $\nu=n+1/2$ we can express the functions in terms of \myemph{spherical Bessel} and \myemph{Neumann} functions
+    \begin{subequations}\label{eq:special:spherical_Bessel}
+        \begin{align}
+            \sphBessel[n](x) &= \sqrt{\frac{\ppi}{2x}} \Bessel[n+1/2](x)= +x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\sin{x}}{x}}  ,\\
+            \sphNeumann[n](x) &= \sqrt{\frac{\ppi}{2x}} \Neumann[n+1/2](x)=- x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}}.
+        \end{align}
+        These are linearly independent solutions to 
+        \begin{equation}
+            x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0.
+        \end{equation}
+    \end{subequations}
+    These are related to the \myemph{Riccati--Bessel} and \myemph{--Neumann functions} by
+    \begin{subequations}\label{eq:special:Riccati_Bessel}
+        \begin{align}
+            \RiccatiBessel[n](x) &= +x\sphBessel[n](x),\\
+            \RiccatiNeumann[n](x) &= -x\sphNeumann[n](x),
+        \end{align}
+        that satisfy
+        \begin{equation}
+            x^2 y'' + \pclosed{ x^2 - n(n+1) }y = 0.
+        \end{equation}
+    \end{subequations}
+    Note that $\RiccatiBessel[0](x)=\sin{x}$ and $\RiccatiNeumann[0](x)=\cos{x}$.
+
+
+
+% \section{Useful identities}
+
+
+\section{Properties}
+

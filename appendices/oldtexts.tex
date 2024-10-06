@@ -1,0 +1,655 @@
+
+
+
+
+
+
+
+
+
+% DIFFERENTIAL GEOMETRY
+\begin{draft}{%
+    % -----------------------------------------------
+    \newcommand*\cfac{\Upsilon}   % conformal factor
+    % -----------------------------------------------
+    \section*{Differential geometry}
+        To develop a classical field theory, we require a handful of mathematical \grammar[concepts]{structures} from differential geometry.
+    
+        A classical field theory consists of the following mathematical structures:
+        \begin{description}
+            \item[Spacetime] \dots
+        \end{description}
+    
+        A spacetime is a \emph{smooth manifold} with or without additional mathematical structures.
+    
+    
+    
+        The aim of this somewhat technical chapter is to provide the necessary mathematical tools to get a sufficient grasp of general relativity as a classical field theory.
+    
+    
+    
+    
+        \subsection*{Conformal geometry}
+    
+    
+    \important{\citep[App.~XXX]{carrollSpacetimeGeometryIntroduction2019}~\citep{dabrowskiConformalTransformationsConformal2009,fengLinearisedConformalEinstein2023}}
+    
+    
+    Consider a spacetime $(\Manifold, g\_{\mu\nu})$ where $\Manifold$ is a smooth manifold of $D$ dimensions and $g\_{\mu\nu}$ is a Lorentzian metric on said manifold. Let $\cfac= \cfac(x)\in \Real^+$\footnote{\comment{$\Real^+ \equiv (0, \infty)$ in notation chapter?}} be a smooth function of spacetime coordinate $x\^\mu$. Then
+    \begin{equation}\label{eq:diffgeo:conformal:conf_trafo}
+        \tilde{g}\_{\mu\nu}(x ) = \cfac^2(x) g\_{\mu\nu}(x)
+    \end{equation}
+    is a \emph{conformal transformation} and $\cfac$ the corresponding \emph{conformal factor}. Such angle-preserving transformations leave the causal structure of the manifold unchanged as they extend or contract the distance between spacetime points. \rephrase{In this section, a tilde $\tilde{o}$ refers to $o$ in ``tilde'd'' system.}
+    
+    
+    \blahblah
+    
+    It is straight-forward\footnote{It is, actually, not like when other authors say things like that.} to show that the determinants and inverses of the metrics obey the following relations:
+    \begin{equation}
+        \begin{split}
+            \sqrt{-\tilde{g}}   &= \cfac^D \sqrt{-g} \\
+            \tilde{g}\^{\mu\nu} &= \cfac^{-2} g\^{\mu\nu}
+        \end{split}
+    \end{equation}
+    We apply the transformation~\cref{eq:diffgeo:conformal:conf_trafo} to the connection coefficients
+    
+    \blahblah
+    {
+    \newcommand*\Chr{\ChristophelSym}
+    \newcommand*\Chrt{\ChristophelSym[\tilde{\Gamma}]}
+    \newcommand*\Kd{\Krondelta}
+    \newcommand*\Ri{\RicciScalar}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    
+    
+    \begin{equation}\label{eq:diffgeo:conformal:connection_trafo}
+        \Chrt{\rho}{\mu\nu} = \Chr{\rho}{\mu\nu} + C\indices{^\rho_{\mu\nu}}
+    \end{equation}
+    
+    
+    \begin{equation}
+        C\indices{^\rho_{\mu\nu}} = \cfac^{-1} 
+        \pclosed{ 2\Krondelta{^\rho_{(\mu}} \cfac\_{,\nu)}  - g\_{\mu\nu} g\^{\rho\sigma} \cfac\_{,\sigma} }
+    \end{equation}
+    
+    
+    Under~\cref{eq:diffgeo:conformal:connection_trafo}, the Riemann tensor becomes
+    \begin{equation}
+        \tilde{\Ri}\indices{^\rho_{\sigma\mu\nu}} = \Ri\indices{^\rho_{\sigma\mu\nu}} - 2 C\indices{^\rho _{[\mu|\sigma|;\nu]}} + 2 C\indices{^\rho _{[\mu|\lambda}} C\indices{^{\lambda|} _{\nu]\sigma}}.
+    \end{equation}
+    
+    
+    
+    % \begin{subequations}\label{eq:diffgeo:conformal:Christoffel_symbols}
+    %     \begin{align}
+    %         \Chrt{\rho}{\mu\nu} &= \Chr{\rho}{\mu\nu} + \cfac^{-1} 
+    %         \pclosed{ 2\Krondelta{^\rho_{(\mu}} \cfac\_{,\nu)}  - g\_{\mu\nu} g\^{\rho\sigma} \cfac\_{,\sigma} } \label{eq:diffgeo:conformal:Christoffel_symbols_tilde}\\
+    %         \Chr{\rho}{\mu\nu} &= \Chrt{\rho}{\mu\nu} - \cfac^{-1} 
+    %         \pclosed{ 2\Krondelta{^\rho_{(\mu}} \cfac\_{,\nu)}  - \tilde{g}\_{\mu\nu} \tilde{g}\^{\rho\sigma} \cfac\_{,\sigma} }\label{eq:diffgeo:conformal:Christoffel_symbols_untilde}
+    %     \end{align}
+    % \end{subequations}
+    
+    
+    
+    \begin{subequations}
+        \begin{align}
+            \tilde{\mathcal{R}}\indices{^{\rho}_{\mu\sigma\nu}} = \mathcal{R}\indices{^{\rho}_{\mu\sigma\nu}} + \cfac^{-1} \pclosed{%
+                \Kd{^\rho_\nu} \cfac\_{;\mu\sigma} - \Kd{^\rho_\sigma}\cfac\_{;\mu\nu} +  g\_{\mu\sigma} \cfac\indices{^{;\rho}_{;\nu}} -g\_{\mu\nu} \cfac\indices{^{;\rho}_{;\sigma}} 
+                } %
+            \nonumber \\ + 2\cfac^{-2} \pclosed{ %
+                \Kd{^\rho_\sigma} \cfac\_{,\mu} \cfac\_{,\nu} - \Kd{^\rho_\nu} \cfac\_{,\mu} \cfac\_{,\sigma} + g\_{\mu\sigma} \cfac\^{,\rho} \cfac\_{,\nu}- g\_{\mu\nu} \cfac\^{,\rho} \cfac\_{,\sigma}  %
+                } % 
+            + \cfac^{-2} \pclosed{ \Kd{^\rho_\nu} g\_{\mu\sigma} - \Kd{^\rho_\sigma}  g\_{\mu\nu}} g\_{\kappa\tau} \cfac\^{,\kappa} \cfac\^{,\tau}
+        \end{align}
+    \end{subequations}
+    
+    
+    \begin{subequations}
+        \begin{align}
+            \tilde{\mathcal{R}}\indices{^{\rho}_{\mu\sigma\nu}} = \mathcal{R}\indices{^{\rho}_{\mu\sigma\nu}} + 2\cfac^{-1} \pclosed{%
+                \Kd{^\rho_{[\nu}} \cfac\_{;|\sigma|\mu]} +  g\_{\sigma[\mu} \cfac\indices{^{;|\rho|}_{;\nu]}}
+                } %
+            + 4\cfac^{-2} \pclosed{ %
+                \Kd{^\rho_{[\mu}} \cfac\_{,|\sigma|} \cfac\_{,\nu]} + g\_{\sigma[\mu} \cfac\^{,|\rho|} \cfac\_{,\nu]}  %
+                } % 
+            \nonumber \\ %
+            + 2\cfac^{-2} \Kd{^\rho_{[\nu}} g\_{|\sigma|\mu]} g\_{\mu\nu} g\_{\kappa\tau} \cfac\^{,\kappa} \cfac\^{,\tau}
+        \end{align}
+    \end{subequations}
+    
+    
+    
+    
+    \begin{subequations}
+        \begin{align}
+            \tilde{\mathcal{R}}\indices{^{\rho}_{\mu\sigma\nu}} = \mathcal{R}\indices{^{\rho}_{\mu\sigma\nu}} + 2A\indices{^\rho_{[\mu|\sigma|\nu]}}; \nonumber \\ %
+            A\indices{^\rho_{\mu\sigma\nu}} = \cfac^{-1} \pclosed{%
+            -\Kd{^\rho_{\mu}} \cfac\_{;\sigma\nu} +  g\_{\sigma\mu} \cfac\indices{^{;\rho}_{;\nu}}
+            } + 2\cfac^{-2} \pclosed{ %
+            \Kd{^\rho_{\mu}} \cfac\_{,\sigma} \cfac\_{,\nu} + g\_{\sigma\mu} \cfac\^{,\rho} \cfac\_{,\nu}  %
+            } % 
+            +\cfac^{-2} \Kd{^\rho_{\nu}} g\_{\sigma\mu} g\_{\mu\nu} g\_{\kappa\tau} \cfac\^{,\kappa} \cfac\^{,\tau}
+            %
+        \end{align}
+    \end{subequations}
+    
+    We 
+    
+    
+    
+    \begin{equation}
+        \tilde{\nabla}\_\mu \tilde{\nabla}\_\nu \phi =\phi\_{\tilde{;}\mu\nu} = \nabla\_\mu \nabla\_\nu \phi - \pclosed{\Krondelta{^\kappa_\mu}\Krondelta{^\tau_\nu} + \Krondelta{^\tau_\mu}\Krondelta{^\kappa_\nu} - g\_{\mu\nu}g\^{\kappa \tau} } \cfac^{-1} \pclosed{\nabla\_\kappa \cfac}\pclosed{\nabla\_\tau \phi}
+    \end{equation}
+    
+    
+    \begin{equation}
+        \tilde{\RicciScalar} = \cfac^{-2}\RicciScalar - 2(D-1)g\^{\kappa\tau} \cfac^{-3}\pclosed{ \nabla\_\kappa \nabla\_\tau \cfac} - (D-1)(D-4) g\^{\kappa \tau} \cfac^{-4} \pclosed{\nabla\_\kappa \cfac}\pclosed{\nabla\_\tau \cfac}
+    \end{equation}
+    
+    
+    \begin{subequations}
+        \begin{align}
+            {}\tilde{\sq}\phi&=  \cfac^{-2} \pclosed{\dots} \\
+            {}\sq\phi &= \cfac^2 \pclosed {\dots}
+        \end{align}
+    \end{subequations}
+    
+    
+    
+    
+    \paragraph{Conformal invariants.} %
+    The \emph{Weyl conformal curvature tensor} 
+    \begin{equation}
+        \mathcal{W}\_{\rho\sigma\mu\nu} =  \Ri\_{\rho\sigma\mu\nu} +\frac{2}{D-2} \pclosed{ %
+            g\_{\rho[\nu} \Ri\_{\mu]\sigma} + g\_{\sigma[\mu} \Ri\_{\nu]\rho}  % 
+            } %
+        + \frac{2}{(D-2)(D-1)} \Ri g\_{\rho[\mu} g\_{\nu]\sigma}
+    \end{equation}
+    is preserved under conformal transformations, such that 
+    \begin{equation}
+        \tilde{\mathcal{W}}\indices{^\rho_{\sigma\mu\nu}} = \mathcal{W}\indices{^\rho_{\sigma\mu\nu}}.
+    \end{equation}
+    
+    
+    The \emph{Cotton tensor}
+    \begin{equation}
+        \mathcal{C}\_{\rho\mu\nu} = \Ri\_{\rho[\mu;\nu]} - \frac{1}{2(D-1)} g\_{\rho[\mu} \Ri\_{;\nu]}
+    \end{equation}
+    is 
+    
+    $ \mathcal{C}\_{\sigma\mu\nu}  = \frac{1}{D-3}  \mathcal{W}\_{\rho\sigma\mu\nu;\rho} $
+    
+    
+    \phpar[CONCOMITANT TENSORS]
+    
+    }
+    
+    
+    
+    
+    \begin{bullets}
+        \item Conformal flatness: $g\_{\mu\nu}= \cfac^{-2}(x) \tilde{g}\_{\mu\nu} (x)= \eta\_{\mu\nu} \Rightarrow \tilde{g}\_{\mu\nu}(x)=\cfac^2(x) \eta\_{\mu\nu} $
+        \item Conformal trafos of the Hilbert stress--energy tensor
+    \end{bullets}
+    
+    
+    
+    
+    }
+    \end{draft}
+    
+    
+    
+    
+    
+    % CLASSICAL FIELD THEORY
+    \begin{draft}
+        {
+    \section*{Conformal transformations}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newcommand*\manifold{\mathscr{M}}
+    \newcommand*\conf{\tilde}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    
+    Suppose you have an $n$-dimensional manifold $\mathscr{M}$ with the associated metric $g$ and coordinate system $\{x\}$. If another spacetime $(\conf{\mathscr{M}}, \conf{g})$ of $n$ dimensions is such that $\conf{g}=\omega(x)g $, we say that said spacetime is \emph{conformal} to the original spacetime $(\mathscr{M}, g)$. This is not just a matter of name-dropping---the situation cause for a number of useful relations. We will see that the expansion of the universe is elegantly handled by conformal transformations. In short, \grammar[Is this a word?]{conformality} allows %any quantity of $\conf{\manifold}$ to be expressed in terms of $g$ and .
+    \important{THIS IS WRONG! Same spacetime, different metric}
+    
+    \subsection*{The conformal group}
+        %https://eduardo.physics.illinois.edu/phys583/ch21.pdf
+        A regular change of the metric tensor under a coordinate transformation $x\^\mu \mapsto {\conf{x}}\^\mu  $ looks like
+        \begin{equation}
+            g\_{\mu\nu}(x) \mapsto {\conf{g}}\_{\mu\nu}(\conf{x}) = \pdv{x\^\rho}{{\conf{x}}\^\mu}\pdv{x\^\sigma}{{\conf{x}}\^\nu} g\_{\rho\sigma}(x).
+        \end{equation}
+        A special group of transformations leaves the metric scale invariant (invariant under a local change of scale), $\conf{g}\_{\mu\nu}(\conf{x}) = \omega^2 (x) g\_{\mu\nu} (x)$. Such \emph{conformal transformations} make up the conformal group, \Group{Conf}{\Manifold}. We say that $\omega(x)$ is the \emph{conformal factor}.
+    
+    
+    
+    
+    \subsection*{Friedmann--Lema\^{\i}tre--Robertson--Walker universe}
+        We consider a four-dimensional expanding universe that is both homogeneous and isotropic with a Lorentzian structure (i.e. metric signature $(-,+,+,+)$). The general metric can be written
+        \begin{equation}
+            {ds}^2 = g\_{\mu\nu}{\diff x\^\mu}{\diff x\^\nu} = a^2(\tau) \cclosed{ - {\diff \tau}^2 + {d\varSigma}^2 },
+        \end{equation}
+        where $\tau$ represents conformal time, $a(\tau)$ is the dimensionless scale factor and $\varSigma$ is the time-independent three-dimensional space. In polar coordinates, the spatial line element takes the familiar form
+        \begin{equation}
+            {d\varSigma}^2 = \frac{1}{1-kr^2} + r^2 {d \varOmega}^2, \quad k \in \{-1,0,+1\}.
+        \end{equation}
+        However, as we know, \nc{it is safe to assume that the universe is flat}[ref to some section], and we may as well use regular Cartesian coordinates;
+        \begin{align}
+            {d\varSigma}^2 =\Krondelta{_{ij}}{\diff x\^i}{\diff x\^j} = {\diff x}^2 + {\diff y}^2 + {\diff z}^2.
+        \end{align}
+        This choice of coordinates implies $g\_{\mu\nu} = a^2\big(x\^0\big) \eta_{\mu\nu} $. Hence, $\FLRW \in \Group{Conf}{\Minkowski}$
+    
+        \begin{bullets}
+            \item Fourier transform (scale invariance, scalar product preserved)
+            \item Something about the benefit of using $a\propto \tau^\alpha$, and that $\alpha\in \Integer$ is a sensible assumption (for completeness, maybe let $\alpha \in \Real$?)
+        \end{bullets}
+    
+        % \subsubsection{Fourier transforms}
+        %     One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
+        %     \begin{subequations}
+        %         \begin{align}
+        %             f(x) &= \integ[4][{(2\ppi)}^4]{k}  \eu[-\im \eta\_{\mu\nu} k^\mu x\^{\nu}] f(k) &&= \integ[1][2\ppi]{\omega} \eu[\im \omega \tau] \integ[3][{(2\ppi)}^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] f(\omega, \vec{k})\\
+        %             f(k) &= \integ[4]{x}  \eu[\im \eta\_{\mu\nu} k^\mu x\^{\nu}]f(x) &&=\integ{\tau} \eu[-\im\omega\tau] \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] f(\tau, \vec{x})
+        %         \end{align}
+        %     \end{subequations}
+        %     The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
+    
+        
+        % \subsection*{\tmptitle{Analytical considerations}}\label{sec:CFTgrav:conformal_trafos:anal_sols}
+        %     We will encounter several equations of similar forms, for instance $\sq\phi = \text{[some source term]}$, whose homogeneous solution satisfies
+        %     \begin{equation}
+        %         \ddot{\phi} + 2\mathcal{H}\dot{\phi} - \vec{\nabla}^2 \phi = 0.
+        %     \end{equation}
+        %     This partial differential equation generally depends on initial conditions and expansion history. Transforming the spatial part to Fourier space, \checkthis{$\vec{\nabla}\mapsto -\im \vec{k}$ (check sign!)}, we recognise a wave equation with a damping term $2\mathcal{H}$. %        
+        %     The special case for which $a\propto \tau^\alpha$ gives $\mathcal{H}=\dot{a}/a=\alpha/\tau$. %We can---regardless of $a$---%decompose the solution in terms of eigenfunctions \checkthis{$\vec{\nabla}\mapsto -\im \vec{k}$ (check sign!)}
+        %     \grammar{A trained eye} will then identify a transformed Bessel's equation \comment{put details in Appendix}. We write a somewhat more general (mer hensiktsmessig form) equation for some function $f(x)\to f_k(\tau)$ \comment{fix}:
+        %     \begin{equation}
+        %         \tau^2  \ddot{f}_k + A\cdot \alpha \tau \dot{f}_k + B^2 \cdot k^2 \tau^2 f_k = 0; \quad A,B\in \Complex
+        %     \end{equation} 
+        %     The general solution to this equation is known, and we can use the properties of the Bessel functions to arrive at \rephrase{nicer} expressions for some special cases (define $\nu\equiv n- 1/2, n\equiv A\alpha/2$)
+        %     \begin{equation}
+        %         f_k(\tau) = \begin{cases}
+        %             \tau^{-\nu} \cclosed{C_k \Bessel[\abs{\nu}](Bk\tau)+D_k \Bessel[-\abs{\nu}](Bk\tau)}, & \nu \notin \Integer%, \Halfinteger 
+        %             \\
+        %             \tau^{1-n} \cclosed{C_k \sphBessel[\abs{n}](Bk\tau)+D_k \sphBessel[-\abs{n}] (Bk\tau) }, & \nu \in \Halfinteger \\
+        %             \tau^{-\nu} \cclosed{C_k \Bessel[-\nu](Bk\tau)+ D_k \Bessel[-\nu][2](Bk\tau)} %, &\nu \in \Integer
+        %         \end{cases}
+        %     \end{equation}
+        %     \checkthis{Carefully check these! I think they are wrong...}
+        %     \comment{Spoiler alert!} Most physically meaningful scenarios will have $\alpha\in \Integer$ (see \nc{Table XXX}) and $A\in \Integer$.
+    
+        %     \comment{Table with matched $w_s$, $\alpha$, $\beta$ etc.}
+    
+            % \subimport{../../../tables/}{misc/untitled_090224.tex}
+            \begin{table}[h]\label[tab]{tab:CFTgrav:conformal_trafos:untit}
+                \import{tables/misc/}{untitled_090224.tex}
+            \end{table}
+            
+        }
+    \end{draft}
+    
+    
+    
+    
+    % GRAVITATIONAL WAVES
+    \begin{draft}
+        {
+            \section*{Gravitational waves}
+    
+            % ############LOCAL MACROS############
+    \newcommand*{\Chr}[2]{\ChristophelSym{#1}{#2}}  % Christoffel symbols        
+    \newcommand*{\barChr}[2]{%
+        \ChristophelSym[\widebar{\Gamma}]{#1}{#2}}  % Christoffel symbols (background)
+    \newcommand*{\barg}{\widebar{g}}                % background metric
+    \newcommandx*{\hTT}[1]{h\indices*{^{\mathrm{TT}}_{ij}}}
+    \newcommandx*{\ah}{\bar{h}}
+    \newcommand*{\piG}{\ppi G\nped{N}}
+    \newcommand*{\Lam}[2]{\ProjectionLambda{#1}{#2}}% Lambda tensor
+    % ####################################
+    
+    
+    
+    
+    
+    % ////////////////// intro //////////////////
+    
+    
+    The term ``gravitational waves'' refers to the \nc{tensor perturbations to the background metric}. These ``waves'' are spacetime \normalsize{distortions} whose name comes from the fact that \checkthis{they obey the wave equation}.
+    % //////////////////////////////////////////
+    
+    The simplest way to find the equation of motion (e.o.m.) for the tensor perturbations to the metric is to \textit{go through} a Minkowski spacetime. First, we establish the law of physics, valid in Minkowski coordinates. We write it in a coordinate-independent form, that is to say write the e.o.m. on tensorial form. \checkthis{The resulting law (e.o.m.) remains true in any spacetime. This procedure is called the ``minimal coupling procedure'' and is extremely powerful.} 
+    
+    
+    
+    \subsection*{\tmptitle{Minkowski Spacetime}}
+        For the time being, we take the unperturbed metric to be the flat, static Minkowskian metric such that
+        \begin{equation}
+            %\eta\_{\mu\nu} \to 
+            g\_{\mu\nu}(x) = \eta\_{\mu\nu} + h\_{\mu\nu}(x); \quad \abs{h\_{\mu\nu}} \ll 1
+        \end{equation}
+        % where $g\_{\mu\nu}$ 
+        is the full, perturbed metric. Note that the $g\^{\mu\nu}=\eta\^{\mu\nu}-h\^{\mu\nu}$ is the inverse of $g\_{\mu\nu}$, whereas $h\^{\mu\nu}$ is \emph{not} the inverse of $ h\_{\mu\nu}$. We aim to find the Einstein tensor $\mathcal{G}\_{\mu\nu} = \mathcal{R}\_{\mu\nu} - \frac{1}{2}g\_{\mu\nu} \mathcal{R}$. %Recall that $\mathcal{G}\_{\mu\nu} \big|_{g\_{\mu\nu}=\eta\_{\mu\nu}}=0$
+    
+        To zeroth order in $h\_{\mu\nu}$, the Einstein tensor is simply zero and the metric Minkowskian. To leading order $\BigO{h}$, some calculation is required. First, we compute the Christophel symbols
+        \begin{align}
+            \Chr{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{2g\_{\sigma(\mu,\nu)}- g\_{\mu\nu, \sigma} } = \frac{1}{2}\eta\^{\rho\sigma}\pclosed{2h\_{\sigma(\mu,\nu)}- h\_{\mu\nu, \sigma} } + \BigO{h^2}.
+        \end{align}
+        Next, we find the Riemann tensor to be $\mathcal{R}\indices{^{\rho}_{\mu\sigma\nu}}= 2\Chr{\rho}{\mu[\nu,\sigma]}+ \BigO{h^2}$. The Ricci tensor is then
+        \begin{align}
+            \mathcal{R}\_{\mu \nu} &= \frac{1}{2} \pclosed{ \partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \partial\_\rho \partial\^\rho h\_{\mu\nu} - \partial\_\mu \partial\_\nu h\indices{^\rho_\rho}} + \BigO{h^2} \nonumber \\
+            &= \frac{1}{2} \pclosed{ \partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \sq h\_{\mu\nu} - \partial\_\mu \partial\_\nu h} +\BigO{h^2},
+        \end{align}
+        thereby the Ricci scalar $\mathcal{R} = \partial\_{\rho}\partial\_\sigma h\^{\rho\sigma} - \sq h + \BigO{h^2}$. The first order Einstein tensor is
+        \begin{align}
+            \mathcal{G}\_{\mu\nu} = \frac{1}{2} \pclosed{\partial\_{\mu}\partial\_\rho h\indices{^\rho_\nu} + \partial\_{\nu} \partial\_\rho h\indices{_\mu^\rho} - \sq h\_{\mu\nu} - \partial\_\mu \partial\_\nu h - \eta\_{\mu\nu}\partial\_{\rho}\partial\_\sigma h\^{\rho\sigma} + \eta\_{\mu\nu} \sq h } + \BigO{h^2}.
+        \end{align}
+    
+    
+    
+    
+    
+    
+    
+    
+    \dots
+    
+    \dots 
+    
+    
+    \dots
+    
+    \begin{bullets}
+        \item Gauge freedom
+        \item Explain perturbation equation
+        \item Separating GWs from background (Maggiore)
+    \end{bullets}
+    
+            \subsection*{Generation of GWS}
+            \begin{bullets}
+                % \item Somehow get to this eq: 
+                % \begin{equation}
+                %     \tensor*{T}{^{\mathrm{TT}}_{ij}}(\eta, \vec{k}) = \tensor{\Lambda}{_{ij,kl}}(\hat{\vec{k}})  \integ[3][(2\ppi)^3]{p}  p\_{k} p\_{l} \phi(\eta, \vec{p}) \phi(\eta, \vec{k}-\vec{p}).
+                % \end{equation}
+                \item Production instead of generation?
+            \end{bullets}
+            Sourced gravitational waves obey $\sq h\_{\mu\nu} = - T\_{\mu\nu}/M\nped{Pl}^2$\dots
+            
+            We consider the spatially flat FLRW metric. We identify gravitational waves as the traceless and transverse perturbations to the background metric,
+            \begin{equation}
+                {ds}^2 = a^2(\tau) \bclosed{ - {\diff \tau}^2 + \pclosed{\Krondelta{_{ij}}  + h\_{ij}} {\diff x\^i}{\diff x\^j}  },
+            \end{equation} 
+            with $\partial\_i h\_{ij}=0$ and $h\_{ii}=0$. 
+            
+            Linearised Einstein equations: \comment{conformal Newtonian gauge}
+            \begin{equation}
+                \delta G\indices{^{i}_{j}} = 8\ppi G\nped{N} T\indices{^{i}_{j}}= \frac{1}{2a^2} \bclosed{ \ddot{h}\_{ij} + 2\frac{\dot{a}}{a} \dot{h}\_{ij} - \bnabla^2 h\_{ij} } 
+            \end{equation}
+            where a dot (`$\dot{\phantom{a}}$') signifies the \emph{conformal} time derivative. ($T\indices{^{i}_{j}} = a^{-2} T\_{ij}$) \blahblah
+            
+            
+            \begin{equation}
+                \ddot{h}\_{ij} + 2\frac{\dot{a}}{a} \dot{h}\_{ij} - \bnabla^2 h\_{ij}  = \frac{2}{M\nped{Pl}^2} \pi\_{ij}
+            \end{equation}
+            where $\pi\_{ij}$ is the anisotropic stress--energy tensor satisfying $T\_{ij}=\widebar{p}g\_{ij} + a^2 \pi\_{ij}$
+            % % 
+    
+        }
+    \end{draft}
+
+
+
+
+\begin{draft}
+        {
+    \newcommand{\ah}{\ALIASah}
+    \newcommand{\Src}{S}
+
+    \subsection*{\tmptitle{Dynamics of gravitational waves}}
+    We deduced from the Einstein equation that $\sq h\_{\mu\nu} =- 16 \ppi G\nped{N} a^2T\_{\mu\nu}$\nc{}[some background section]. With the FRLW metric, we get the eom for the tensor perturbation in real space
+    \begin{equation}
+        \ddot{h}\_{\mu\nu}+ 2 \mathcal{H} \dot{h}\_{\mu\nu} -\vec{\nabla}^2 h\_{\mu\nu} = 16\ppi G\nped{N} T\_{\mu\nu},
+    \end{equation}
+    % where we still work in real space. 
+    Suppose $h\_{00}=h\_{0i}=0$. We convert to \nc{Fourier space ($k\_i \leftrightarrow \im \partial\_i$)}[section about this], and define
+    \begin{equation}
+        S\_{ij} \equiv 16\ppi G\nped{N} \Lambda\indices{_{ij}^{lm}} T\_{lm},%\Lambda\_{ij.kl}T\_{kl}.
+    \end{equation}
+    the Fourier image of the TT-part of the SE-tensor multiplied with a prefactor.
+    Now, we recognise the linear polarisation basis \nc{for which $S\_{ij} = \sum_{P=+,\times}S\_P e\indices{^{P}_{ij}}$}[some prev. section], and write
+    \begin{equation}
+        \ddot{h}\_{P} + 2 \mathcal{H} \dot{h}\_{P} + k^2 h\_{P} = S\_{P}.
+    \end{equation}
+    Assume $a\propto \tau^\alpha$. The equation can be rewritten in terms of $\ah\_{P}\equiv a h\_P$:
+    \begin{equation}
+        \ddot{\ah}\_P + \pclosed{k^2-\frac{4\nu^2 - 1}{4\tau^2}}\ah\_P = a S\_P; \quad \nu = \alpha - 1/2
+    \end{equation}
+    \begin{equation}
+        \ddot{\ah}\_P + \pclosed{k^2-\frac{(\alpha-1)\alpha}{\tau^2}}\ah\_P = a S\_P
+    \end{equation}
+    With the linear differential operator $\mathop{\mathrm{L}_{u}}=\dv*[2]{}{u} + 1 - (\nu^2-\frac{1}{4})/u$ we can write this ODE as $\mathop{\mathrm{L}_{u=k\tau}} \ah\_P=  k^{-2}a S\_P$. Imposing initial conditions $\ah\_P(\tau\ped{init})= \dot{\ah}\_P(\tau\ped{init})=0$, we can find the \checkthis{Green's function $G(u,v) = \Heaviside(u-u\ped{init})G\ped{r}(u,v)$ with retarded solution
+    \begin{equation}
+        G\ped{r}(u, v)  =  \frac{\ppi}{2} \sqrt{uv} \cclosed{ \Bessel[\nu][2](u)\Bessel[\nu](v)  - \Bessel[\nu][1](u)\Bessel[\nu][2](v) }.
+    \end{equation}}
+    \begin{equation}
+        G\ped{r}(u, v)  =\RiccatiBessel[n][2](u) \RiccatiBessel[n][1](v)- \RiccatiBessel[n][1](u) \RiccatiBessel[n][2](v) ; \quad n= \alpha-1.
+    \end{equation}
+    \citep{kawasakiStudyGravitationalRadiation2011} %
+    We obtain the solution
+    \begin{equation}
+        \ah_P(\tau, \vec{k}) = k^{-2} \integ{\hat{\tau}}[\tau\ped{init}][\tau] G\ped{r}(k\tau, k\hat{\tau}) a (\hat{\tau}) S_P(\hat{\tau}, \vec{k})
+    \end{equation}
+    % The Green's function to this equation is, as proposed by e.g.~\citet{kawasakiStudyGravitationalRadiation2011}, is
+    % \begin{equation}
+    % \begin{split}
+    %     G(x, y) &=  \frac{\ppi}{2} \sqrt{xy} \cclosed{ \Bessel[\nu][2](x)\Bessel[\nu](y)  - \Bessel[\nu][1](x)\Bessel[\nu][2](y) } \\
+    %     &\equiv \frac{\ppi}{2} \cclosed{  }
+    % \end{split}
+    % \end{equation}
+    \comment{Use Boas to argue! (Green's function method, homogeneous initial conditions.)}
+    The complete solution is a long expression, so we decompose $\ah_P = H^1_P + H^2_P$ where
+    % \begin{equation}
+    %     ah_+ = H_1 + H_2
+    % \end{equation}
+    \begin{align}
+        H_P^1(\tau, \vec{k}) &= +\psi_2(k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \psi_1(k\theta) \Src_P(\theta, \vec{k}) \\
+        H_P^2(\tau, \vec{k}) &= -\psi_1(k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \psi_2(k\theta) \Src_P(\theta, \vec{k})
+    \end{align}
+    \begin{align}
+        H_P^1(\tau, \vec{k}) &= +\RiccatiBessel[n][1](k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k}) \\
+        H_P^2(\tau, \vec{k}) &= -\RiccatiBessel[n][2](k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][1](k\theta) \Src_P(\theta, \vec{k})
+    \end{align}
+    % and $\psi_1(u) = \sqrt{u}\Bessel[\nu](u)$ and $\psi_2(u) = \sqrt{u}\Bessel[\nu][2](u)$,
+    % and  $\psi_n(u) = \sqrt{\ppi/2}\sqrt{u}\Cylindrical[\nu]^{(n)}(u)$,
+    and $\RiccatiBessel[\alpha-1][1](u) = \mathcal{S}_{\alpha-1}(u) $
+    % \begin{align}
+    %     \psi_1(x) &= \sqrt{x}\Bessel[\nu](x) \\
+    %     \psi_2(x) &= \sqrt{x}\Bessel[\nu][2](x) \\
+    % \end{align}
+    with $k^2\Src_P(\tau, \vec{k}) = a(\tau) S\_P(\tau, \vec{k})$.
+    % (Above also true for free waves)
+    
+
+    \comment{It is possible since no back-reaction, right? Otherwise, $h\_{\mu\nu}$ would contribute on the rhs.}
+
+    The conformal time derivative becomes
+    \begin{equation}
+        \begin{split}
+            \dot{H}_P^1(\tau, \vec{k})  &= +k \,\bclosed{ \RiccatiBessel[\alpha][1](k\tau) -  n\sphBessel[n][1](k\tau) } \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k})  \\
+            \dot{H}_P^2(\tau, \vec{k})  &= -k \,\bclosed{ \RiccatiBessel[\alpha][2](k\tau) -  n\sphBessel[n][2](k\tau) } \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][1](k\theta)  \Src_P(\theta, \vec{k})  
+        \end{split}
+    \end{equation}
+
+    \paragraph{Free waves.} %
+    If at some point in time $\tau\ped{fin}$ the source is gone \blahblah, and so the waves propagates freely in the universe (vacuum).
+        }
+\end{draft}
+
+
+
+
+
+
+\begin{draft}
+{
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lbl}[1]{\textsf{\textbf{#1}}}
+\newcommand{\completelbl}[4]{%
+\textbf{#1)}%
+\textbf{#2:}%
+\lbl{#3.#4}%
+}
+% \newcommand{\completelbl}[4]{%
+% \textbf{#1:}%
+% % \textbf{#2:}%
+% \lbl{#3.#4}%
+% $\to${#2}
+% }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newcommand{\lbl}[1]{\textsf{\textbf{#1}}}
+\newcommand{\brphi}{\breve{\phi}}
+\newcommand{\brchi}{\breve{\chi}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection*{Technical note}
+% \noindent\rule{\textwidth}{2pt}
+%
+We have the equations
+\begin{subequations}
+    \begin{equation}
+        \ddot{\phi} + 2\dot{a}/a \,\dot{\phi} - \vec{\nabla}^2 \phi = -a^2 \dv*{V\ped{eff}}{\phi}
+    \end{equation}
+    and
+    \begin{equation}
+        \ddot{\brphi} + 2\dot{a}/a \,\dot{\brphi} = -a^2 \dv*{V\ped{eff}}{\phi}
+    \end{equation}
+\end{subequations}
+% \begin{subequations}
+%     \begin{equation}
+%         \ddot{\chi} + 2\dot{a}/a \,\dot{\chi} - \vec{\nabla}^2 \chi = -a^2 \dv*{V\ped{eff}}{\chi}
+%     \end{equation}
+%     and
+%     \begin{equation}
+%         \ddot{\brchi} + 2\dot{a}/a \,\dot{\brchi} = -a^2 \phi_\infty^{-2} \dv*{V\ped{eff}}{\chi}.
+%     \end{equation}
+% \end{subequations}
+The latter is in focus first. We compare solutions obtained with different methods (\lbl{A}/\lbl{N}/\lbl{S}), variants (\lbl{--}/\lbl{0}/\lbl{1}/\lbl{X}) and initial conditions (\lbl{a}/\lbl{b}/\lbl{c}).
+%
+% Types:
+% \begin{description}
+%     \item[A] Completely analytical solution.
+%     \item[N] Numerical solution (\texttt{odeint}).
+%     \item[S] Simulated result.
+% \end{description}
+%
+Subtype:
+\begin{description}
+    \item[0] Minima $\chi_\pm=\pm\sqrt{1-\upsilon}$
+    \item[1] 
+    \item[T] Equation 
+    \item[X] $\chi$ evaluated at $z=0.8 L$
+    \item[B] $\max{\chi}$ \comment{or $\sqrt{\chi\ped{avg}}$}  
+\end{description}
+%
+Initial conditions ($\tau_0$, $\brchi(\tau_0)$, $\dot{\brchi}(\tau_0)$) :
+\begin{description}
+    \item[t] ($\tau_\ast$, $\chi_\ast$, $3\mathcal{C}$) 
+    \item[b] 
+\end{description}
+
+% Example: \textsf{5$\to$}\textsf{\textchi:}\lbl{N1.a} \dots 
+
+
+% Format: \textsf{(sim. number)}\textbf{field:}\lbl{type.ICs}
+
+
+% \noindent\rule{\textwidth}{2pt}
+
+
+
+}
+\end{draft}
+
+
+
+
+
+
+
+\begin{draft}
+{
+\newcommand*\hypsurf{\ALIAShypsurf}             % hypersurface
+\newcommand*\sppt{\ALIASsppt}                   % spatial part of pert.
+\newcommand{\hypacc}[1]{\widehat{#1}} % accent on hypersurface quantities
+
+% We follow~\citet{garrigaPerturbationsDomainWalls1991} and~\citet{ishibashiEquationMotionDomain1999}. The world sheet $\hypsurf$ divides \Manifold~into two submanifolds $\Manifold_{\pm}$ such that $\mathscr{M} = \mathscr{M}_+ \cup  \hypsurf \cup \mathscr{M}_-$. That is to say, a domain wall holds a world sheet separating two vacua. We take \Manifold~ to be smooth and $(N+1)$-dimensional, and let $\hypsurf$ be a smooth also and $((N-1)+1)$-dimensional. Consequently, $\hypsurf$ is a timelike hypersurface in \Manifold. 
+
+
+%
+% \citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+
+
+
+% The generalisation to $(N+1)$ dimensions is straight-forward.
+We invoke a smooth coordinate system $\{x\^\mu\}$ ($\mu=0,1,\dots,N$) of the spacetime $(\Manifold, g\_{\mu\nu})$ in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = x\^\mu(\xi\^a)$, where the coordinate system $\{\xi\^a\}$ ($a=0,1,\dots,N-1$) parametrises $\hypsurf$.
+The induced metric on $\hypsurf$ is
+\begin{equation}\label{eq:pertwalls:thinwall:induced_metrid}
+    \gamma\_{ab} = g\_{\mu\nu} e^\mu_a e^\nu_b; \quad e^\mu_a \equiv \pdv{x\^\mu}{\xi\^a}% g\_{\mu\nu}\pdv{x\^\mu}{\xi\^a}\pdv{x\^\nu}{\xi\^b} 
+\end{equation} \provethis{argue!}
+
+We let $\sigma$ represent the surface energy density of the wall---a quantity we will discuss i much more detail later---and $v_\pm$ the vacuum energy densities of $\mathscr{M}_\pm$. The complete action of the coupled system is
+\begin{equation}
+    S = \underbrace{- \sigma \integ[N]{y\sqrt{-\gamma}}[\hypsurf] }_{S\ped{NG}} %
+    - v_+ \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_+] %
+    - v_- \integ[N+1]{x\sqrt{-g}}[\mathscr{M}_-] %
+    \underbrace{+ \frac{M\nped{Pl}^2}{2}\integ[N+1]{x\sqrt{-g}}[\mathscr{M}] \mathcal{R}}_{S\ped{EH}}.
+\end{equation}
+\comment{Comment about Nambu-Goto action. Maybe add matter and $\phi$ actions?}
+
+% The action for a thin domain wall is famously~\citep[e.g.][]{vachaspatiKinksDomainWalls2006} the Nambu-Goto action $S\ped{NG}$, 
+% \begin{equation}
+%     S\ped{dw} = -\sigma \integ[N]{y\sqrt{-h}}[\hypsurf],
+% \end{equation}
+% where $\sigma$ is the wall's energy per unit area, henceforth called ``surface tension''. The action for the coupled system
+
+
+Under small changes in $x\^\mu$ on $\hypsurf$, $x^\mu \to x\^\mu + \delta x\^\mu$, we obtain the equation
+\begin{equation}
+    \mathrm{D}\^a e\indices*{^\mu_a} + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+\end{equation}
+or equivalently,
+\begin{equation}
+    % \sq_\hypsurf %
+    \mathrm{D}\_a \mathrm{D}\^a %
+    x\^\mu+ \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} \pdv{x^\kappa}{\xi\^a} \pdv{x^\tau}{\xi\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+\end{equation}
+where $\mathrm{D}\_a$ is the covariant derivative with respect to $\gamma\_{ab}$.
+
+\checkthis{The part of $\delta x\^\mu$ that is tangential to $\hypsurf$ are diffeomorphisms on $\hypsurf$ ($\xi\^a \to \xi\^a + \delta \xi\^a$).} The only physically meaningful component is the transverse one; %Let us write $x\^\mu = $
+\begin{equation}
+   n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+\end{equation}
+
+
+Without loss of generality, we may align $\hypsurf$ with e.g.~the first $N-1$ dimensions of $\Manifold$, i.e.~$e\indices*{^{\mu}_{a}}=\Krondelta*{^\mu_a} + \Krondelta*{^\mu_{\nu_\ast}}\epsilon\_{,a}$ and $n\^\mu = \Krondelta*{^\mu_{\nu_\ast}}$, with $\nu_\ast = N$. We let $x\^{\mu} = \Krondelta*{^\mu_a} \xi\^a + \Krondelta*{^\mu_{\nu_\ast}} (\epsilon(\xi\^a) + \zeta ) $ be the embedding function, where $\zeta$ is the $\nu_\ast$-coordinate of $\hypsurf$ in $\Manifold$. Now,
+\begin{equation}
+    % \mathrm{D}^2 x\^{\nu_\ast} + \ChristophelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+    \mathrm{D}^2 \epsilon + \ChristophelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} \Krondelta{^\kappa_a} \Krondelta{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+ \end{equation}
+ \important{FIX ME!!! }
+
+\comment{Will remove several of these equations.}
+% Without loss of generality we let \dots $n\^\mu = n\^N$ \blahblah
+
+Wall position $X\^\mu = X_0^\mu + \epsilon N\^{\mu}=\Krondelta*{^\mu_a}\xi\^a + \Krondelta*{^\mu_{\nu_\ast}} \pclosed{\zeta  +...}$
+
+
+\important{NB! This is ``general'' for topological defects, should call $\sigma$ something different.}
+}
+
+\end{draft}

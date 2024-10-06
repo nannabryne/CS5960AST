@@ -1,0 +1,398 @@
+% |||||||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 4.4 Generation of gravitational waves ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||||||||
+% -------------------------------------------
+% labels: \label{[type]:pertwalls:gws:[name]}
+% -------------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\ah}{\ALIASah}          % ah - scaled GWs
+\newcommand{\Src}{f}      % S - source term in expr. for GWs (basically SE tensor)
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+\comment{In the absence of asymmetry, a domain wall will not produce disturbances in the gravitational field. However, perturbations to the wall position, such as ripples or wiggles, can reveal themselves as tensor perturbations to the background metric. 
+}
+
+
+
+
+Planar domain walls do not themselves produce gravitational radiation. Introducing asymmetry to the system, as we do when adding perturbations, can give rise to non-vanishing stress--energy tensor components in the TT gauge. %
+In this section we present the gravitational-wave calculations in the case of a planar, thin domain wall in a conformally flat universe with expansion rate $a$.
+
+
+We neglect back-reaction, that is we assume that the defect does not change the unperturbed background metric. The calculations largely follow~\citet{kawasakiStudyGravitationalRadiation2011}.
+
+
+% We have seen that imperfections in what in principle are planar domain walls, do give rise to nonzero a
+
+
+% $T\_{\mu\nu}$. If this does not vanish in the transverse-traceless (TT) gauge, we expect tensor perturbations to the metric, hopefully with a characteristic signature. In this section we present the gravitational-wave calculations \blahblah. Note that we will only consider conformally flat spacetimes with expansion factor $a$.
+
+
+% \rephrase{
+% \important{Neglect back-reaction:} 
+% We assume that the topological defect does not change the \comment{un-perturbed} metrics of $\mathscr{M}_{\pm}$. The domain wall is simply viewed as a sheet separating two domains, and the (un-perturbed) metric $g\_{\mu\nu}$ that appears in the covariant derivative, d'Alembertian etc., and raises and lowers indices is unaffected by this.}
+
+
+
+% \blahblah
+
+
+% % We begin with the perturbed metric $g\_{\mu\nu} + \delta g\_{\mu\nu} = a^2 (\eta\_{\mu\nu} + h\_{\mu\nu}) $. \checkthis{We let $h\_{0\mu}=0$ (why??)}.
+% % It is natural to choose the TT gauge, in which $\partial\_{i} h\indices{^i_j}=0$ and $h\indices{^i_i}= 0$. The perturbed line element noe takes the form 
+% \begin{equation}
+%     {ds}^2 = a^2(\tau) \cclosed{ -{\diff \tau}^2 + \pclosed{\Krondelta{_{ij}} + h\_{ij}(\tau, \vec{x})} \diff x\^i \diff x\^j }   .
+% \end{equation}
+
+
+
+
+
+
+
+
+
+
+% \subsection{Expanding universe: general gramework}
+%     {
+%     \newcommand*\ktau{\mathrm{x}}   % kτ
+%     \newcommand*\nuu{\bar{\text{\textalpha}}}  % ν = α - 1/2
+%     \newcommand*\aT{\Pi}
+%     %%%%%%%%%%%%%%%%%%%%%%%%
+%     \comment{Maybe define $t$ to be conformal time? And $h$ to be comoving? Remember conformally flat concept.}
+%     \begin{equation}
+%         {ds}^2 = - {\diff \check{t}}^2 + a^2(\check{t}) \pclosed{ \Krondelta{_{ij}} + \check{h}\_{ij}(t, x) }{\diff x\^i}{\diff x\^j}  = a^2(t) \pclosed{ -{\diff t}^2 +  \pclosed{\Krondelta{_{ij}}+ \check{h}\_{ij}} {\diff x\^i}{\diff x\^j}    }
+%     \end{equation}
+
+
+%     From \nc{ref to some section}[GWs chapter] \blahblah
+
+%     $\ktau = k\tau$, $\nuu = \alpha - \frac{1}{2}$ , $\aT_\circ(\ktau, \vec{k}) \triangleq  a(\ktau/k) T\indices*{^{\mathrm{TT}}_{\circ}}(\ktau/k, \vec{k})$
+
+%     \comment{Temporary placeholder definition sign should be used, perhaps $\triangleq$: $\ktau \triangleq k\tau$  }
+
+%     % \dbend
+
+%     % \textdbend
+
+%     \begin{equation}
+%         \mathsf{h}_\circ(\tau, \vec{k}) = \frac{16\ppi G\nped{N}}{k^2} \integ{\ktau'}[\ktau\ped{init}][\ktau] \mathcal{G}_{\nuu}(\ktau, \ktau') \aT_\circ(\ktau',\vec{k} ); \quad \circ = +, \times
+%     \end{equation}
+
+%     \citep{kawasakiStudyGravitationalRadiation2011}
+
+%     If at some conformal time $\tau\ped{fin}$ switch off the source, we obtain the homogeneous solution for $\tau \geq \tau\ped{fin}$,
+%     \begin{equation}
+%         \mathsf{h}_\circ (\tau, \vec{k}) = \sqrt{\ktau} \cclosed{\mathcal{A}_\circ (\vec{k}) \Bessel[\nuu](\ktau) +  \mathcal{B}_\circ (\vec{k}) \Bessel[\nuu][2](\ktau)}.
+%     \end{equation}
+%     The coefficients are determined by sowing together the homogeneous and inhomogeneous solutions at $\tau=\tau\ped{fin}$:
+%     \begin{multline}
+%         \sqrt{\ktau\ped{fin}} \mathcal{A}_\circ (\vec{k}) \Bessel[\nuu](\ktau\ped{fin}) +  \sqrt{\ktau\ped{fin}} \mathcal{B}_\circ (\vec{k}) \Bessel[\nuu][2](\ktau\ped{fin}) \\= \frac{8\ppi^2 G\nped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau \ktau'} \cclosed{ \Bessel[\nuu][2](\ktau)\Bessel[\nuu](\ktau') - \Bessel[\nuu](\ktau)\Bessel[\nuu][2](\ktau') }
+%         \aT_\circ(\ktau',\vec{k} )
+%     \end{multline}
+%     We get that
+%     \begin{equation}
+%         \begin{split}
+%             \mathcal{A}_\circ (\vec{k}) &= - \frac{8\ppi^2 G\nped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau'}\Bessel[\nuu][2](\ktau') 
+%             \aT_\circ(\ktau',\vec{k} ) \\
+%             \mathcal{B}_\circ (\vec{k}) &= + \frac{8\ppi^2 G\nped{N}}{k^2}  \integ{\ktau'}[\ktau\ped{init}][\ktau\ped{fin}] \sqrt{\ktau'}\Bessel[\nuu](\ktau') 
+%             \aT_\circ(\ktau',\vec{k} ) \\
+%         \end{split}
+%     \end{equation}
+
+    
+    
+%     } % 
+
+
+
+% \begin{draft}
+% See note ``gwasevolution parameters''
+% \begin{equation}
+%     T^{\mathrm{TT}}_\circ (t, \vec{k}) = (\sigma/u^2) \cdot  2\ppi^2  W(k_z) \Diracdelta{\ell_y} \bbclosed{ \ell_x\in \Integer} a(t) \Bessel[\ell_x](k_z\epsilon_0 \varepsilon(ut))
+% \end{equation}
+
+% \question{Find out if this stress--energy is the same (or how it scales) as the one in $\sq h_\circ = 16\ppi G\nped{N} T_\circ^\mathrm{TT}$}
+
+
+% \end{draft}
+
+
+% \pensive{Joke: Are you a wave vector in real space? Because you're impartial! ($k\_i \leftrightarrow \im \partial\_i$)}
+
+\subsection{\tmptitle{Dynamics of gravitational waves in expanding universe}}
+    % \citep{kawasakiStudyGravitationalRadiation2011}
+    From~\cref{sec:GR:lingrav:gws_FLRW} we have an expression for $h\_{ij}(\tau, \vec{k})$ in a universe with $a\propto \tau^\alpha$. Consider $\alpha\in \Integer$. Assuming homogeneous initial conditions at $\tau\ped{init}=\tau_\ast$, the tensor perturbations are given by~\cref{eq:GR:lingrav:hij_expression_of_Greens_and_source} and~\cref{eq:GR:lingrav:Greens_function_n} with $n=\alpha-1$. For convenience, we use a linear polarisation basis (see~\cref{sec:GR:lingrav:polbasis}) and the decomposition $\ah_P=H^{1}_P + H^2_P $ such that
+    % which we will write as $\ah$
+    \begin{equation}
+        \begin{split}
+            H_P^1(\tau, \vec{k}) &= +\RiccatiBessel[n][1](k\tau) \integ{\eta}[\tau_\ast][\tau]  \RiccatiBessel[n][2](k\eta)  \Src_P(\eta, \vec{k}), \\
+            H_P^2(\tau, \vec{k}) &= -\RiccatiBessel[n][2](k\tau) \integ{\eta}[\tau_\ast][\tau]  \RiccatiBessel[n][1](k\eta) \Src_P(\eta, \vec{k}).
+        \end{split}
+    \end{equation}
+    $\Src_P= 16\ppi G\nped{N} a T\ap{TT}_P/k^2$ contains the TT-projected stress--energy tensor. The conformal time derivative $\dot{\ah} = \dot{H^1_P} + \dot{H^2_P} $ is given by
+    \begin{equation}
+        \begin{split}
+            \dot{H}_P^1(\tau, \vec{k})  &= +k \,\bclosed{ \RiccatiBessel[\alpha][1](k\tau) -  n\sphBessel[n][1](k\tau) } \integ{\eta}[\tau_\ast][\tau]  \RiccatiBessel[n][2](k\eta)  \Src_P(\eta, \vec{k}),  \\
+            \dot{H}_P^2(\tau, \vec{k})  &= -k \,\bclosed{ \RiccatiBessel[\alpha][2](k\tau) -  n\sphBessel[n][2](k\tau) } \integ{\eta}[\tau_\ast][\tau]  \RiccatiBessel[n][1](k\eta)  \Src_P(\eta, \vec{k}).  
+        \end{split}
+    \end{equation}
+    Note that $\dot{h} = a^{-1} ( \dot{\ah} - \dot{a} \ah)$ is the conformal time derivative of the gravitational waves.
+
+
+
+
+    % We deduced from the Einstein equation that $\sq h\_{\mu\nu} =- 16 \ppi G\nped{N} a^2T\_{\mu\nu}$\nc{}[some background section]. With the FRLW metric, we get the eom for the tensor perturbation in real space
+    % \begin{equation}
+    %     \ddot{h}\_{\mu\nu}+ 2 \mathcal{H} \dot{h}\_{\mu\nu} -\vec{\nabla}^2 h\_{\mu\nu} = 16\ppi G\nped{N} T\_{\mu\nu},
+    % \end{equation}
+    % % where we still work in real space. 
+    % Suppose $h\_{00}=h\_{0i}=0$. We convert to \nc{Fourier space ($k\_i \leftrightarrow \im \partial\_i$)}[section about this], and define
+    % \begin{equation}
+    %     S\_{ij} \equiv 16\ppi G\nped{N} \Lambda\indices{_{ij}^{lm}} T\_{lm},%\Lambda\_{ij.kl}T\_{kl}.
+    % \end{equation}
+    % the Fourier image of the TT-part of the SE-tensor multiplied with a prefactor.
+    % Now, we recognise the linear polarisation basis \nc{for which $S\_{ij} = \sum_{P=+,\times}S\_P e\indices{^{P}_{ij}}$}[some prev. section], and write
+
+
+
+    % \comment{It is possible since no back-reaction, right? Otherwise, $h\_{\mu\nu}$ would contribute on the rhs.}
+
+    % The conformal time derivative becomes
+    % \begin{equation}
+    %     \begin{split}
+    %         \dot{H}_P^1(\tau, \vec{k})  &= +k \,\bclosed{ \RiccatiBessel[\alpha][1](k\tau) -  n\sphBessel[n][1](k\tau) } \integ{\eta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][2](k\eta)  \Src_P(\eta, \vec{k})  \\
+    %         \dot{H}_P^2(\tau, \vec{k})  &= -k \,\bclosed{ \RiccatiBessel[\alpha][2](k\tau) -  n\sphBessel[n][2](k\tau) } \integ{\eta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][1](k\eta)  \Src_P(\eta, \vec{k})  
+    %     \end{split}
+    % \end{equation}
+
+    % \paragraph{Free waves.} %
+    % If at some point in time $\tau\ped{fin}$ the source is gone \blahblah, and so the waves propagates freely in the universe (vacuum).
+
+
+\begin{draft}
+    
+
+\subsection{Fourier space stress--energy tensor}\label{sec:pertwalls:gws:Fourier_SE_tensor}
+    \begin{bullets}
+        \item Fourier space SE tensor
+        \item TT gauge
+    \end{bullets}
+    From~\cref{sec:pertwalls:thinwall} we found that the SE tensor of a thin domain wall in an expanding universe looks like~\cref{eq:pertwalls:thinwall:SE_tensor}, which for the case of a wall in the $xy$-plane reduces to
+    % \begin{equation}
+    %     T\_{\mu\nu}(\tau, \vec{x}) = -a \sigma \varPhi(z-\epsilon) \pclosed{ \eta\_{ab} + 2 \Krondelta{^{3}_{(\mu } } \Krondelta{_{\nu )}^{a}}\partial\_{a}\epsilon }
+    % \end{equation}
+    % \begin{equation}
+    %     \begin{split}
+    %         T\_{ab}(\tau, \vec{x})  &=  -a (\tau)\sigma(\tau) \varPhi(z-z\ped{dw}) \, \eta\_{ab} \\
+    %         T\_{(ij^*)}(\tau, \vec{x})  &= -a (\tau)\sigma(\tau) \varPhi(z-z\ped{dw} ) \,\epsilon\_{,i} %\partial\_{i} \epsilon
+    %     \end{split}
+    % \end{equation}
+    \begin{equation}
+        \begin{split}
+            % T\_{ab}(\tau, \vec{x}) 
+            T\ap{w}_{ab}(\tau, \vec{x}) 
+             &=  -a (\tau)\sigma(\tau) \varPhi_l(z-z\ped{w}) \, \eta\_{ab}, \\
+            % T\_{(iz)}(\tau, \vec{x})  
+            T\ap{w}_{iz}(\tau, \vec{x}) 
+            &= -a (\tau)\sigma(\tau) \varPhi_l(z-z\ped{w} ) \,\epsilon\_{,i}, %\partial\_{i} \epsilon
+        \end{split}
+    \end{equation}
+    where $z\ped{w} = z_0 + \epsilon(x\^a)$ and $\varPhi_l$ is a Gaussian with standard deviation $l=\delta\ped{w}/2$. We go further and look at this quantity in Fourier space:
+    \begin{equation}
+        \begin{split}
+            % T\_{ab}(\tau, \vec{k})  = 
+            T\ap{w}_{ab}(\tau, \vec{k}) &=  -a (\tau)\sigma(\tau)  \, \eta\_{ab} \, \mathscr{D}\ped{w}(k_z) \integ[2]{x} \eu[-\im k_z \epsilon] \eu[\im (k_x x+k_y y)], \\
+            % T\_{(iz)}(\tau, \vec{k})  
+            T\ap{w}_{iz}(\tau, \vec{k})
+            &= -a (\tau)\sigma(\tau) \,\mathscr{D}\ped{w}(k_z)  \integ[2]{x} \epsilon\_{,i}  \eu[-\im k_z \epsilon] \eu[\im (k_x x+k_y y)],%\partial\_{i} \epsilon
+        \end{split}
+    \end{equation}
+    where $\mathscr{D}\ped{w}(k_z) = \exp{ -\im k_z z_0-{(k_z\delta\ped{w})}^2/8 }$ adjusts for wall width and origin. %
+    % \begin{equation}
+    %     \begin{split}
+    %         % T\_{ab}(\tau, \vec{k})  = 
+    %         T\ap{w}_{ab}(\tau, \vec{k}) &=  -a (\tau)\sigma(\tau)  \, \eta\_{ab} \,\eu[-k_z^2 l^2 / 2] \eu[-\im k_z z_0] \integ[2]{x} \eu[-\im k_z \epsilon(\tau, x, y)] \eu[\im k_x x]\eu[\im k_y y] \\
+    %         % T\_{(iz)}(\tau, \vec{k})  
+    %         T\ap{w}_{iz}(\tau, \vec{k})
+    %         &= -a (\tau)\sigma(\tau) \,\eu[-k_z^2 l^2 / 2] \eu[-\im k_z z_0] \integ[2]{x} \partial\_i\epsilon(\tau, x, y)  \eu[-\im k_z \epsilon(\tau, x, y)] \eu[\im k_x x]\eu[\im k_y y]%\partial\_{i} \epsilon
+    %     \end{split}
+    % \end{equation}
+    % Let us now take the solution $\epsilon(x\^a) = \varepsilon(\tau) \sppt(x,y)$ to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} with eigenvalue 
+    Let us assume $\epsilon_{,x}=0$ s.t.~$\epsilon(\tau,x,y)=\varepsilon(\tau)\sppt(y)$ with eigenvalue $p^2$. %
+    % In addition, we can put $p\_a$ along the $y$-axis. 
+    Now
+    % \begin{equation}
+    %     \integ{y} \eu[-\im k_z \epsilon_p(\tau) \cdot \sppt(y)] \eu[\im k_y y]\quad \text{and}\quad %
+    %     \integ{y} \partial_y \sppt\, \eu[-\im k_z \epsilon_p(\tau) \cdot \sppt(y)] \eu[\im k_y y]
+    % \end{equation}
+    \begin{equation}
+        \underbrace{\integ{y} \eu[-\im k_z \varepsilon(\tau) \cdot \sppt(y)] \eu[\im k_y y]}_{I\ped{s}}  \quad \text{and}\quad %
+        \underbrace{\varepsilon(\tau)\integ{y} \partial_y \sppt\, \eu[-\im k_z \varepsilon(\tau) \cdot \sppt(y)] \eu[\im k_y y]}_{I\ped{a}}
+    \end{equation}
+    are all we need to solve to have a completely analytic expression for $T\ap{w}_{ij}(\tau, \vec{k})$. %
+    % \begin{equation}
+    %     T\ap{w}_{ij}(\tau, \vec{k} ) =- 2\ppi a\sigma \Diracdelta(k_x) \mathscr{D}\ped{w}(k_z) \pclosed{ \Krondelta{_{ij}} I\ped{s} + \Krondelta{_{iz}}\Krondelta{_{jy}} I\ped{a} }
+    % \end{equation}
+    % %
+    % We write $T_{xx}(\tau, \vec{k})=\mathcal{T}(\tau, k_x, k_z)  \mathscr{I}_1 (\tau, k_y, k_z) $ and $T_{yz}(\tau, \vec{k})=\mathcal{T}(\tau, k_x, k_z)  \mathscr{I}_2 (\tau, k_y, k_z) $ where
+    % \begin{equation}
+    %     \mathcal{T}(\tau, k_x, k_z) = -2\ppi a(\tau) \sigma(\tau) \Diracdelta(k_x) \eu[-k_z^2l^2/2] \eu[-\im k_z z_0]
+    % \end{equation}
+    % is considered dimensionless.
+    % \comment{Comment about cylindrical coordinates?}
+
+
+
+    % ${\Sha}_L(z) =  L \sum_{n=-\infty}^{\infty} \Diracdelta(z-nL)$ or $\Sha_L = L^{-1}\Sha(z/L)$ Cool:$\Zhe, \textsl{\textdelta}$  \textsl{\textchi}
+
+    \subsubsection{Choice of spatial part}
+        It is not obvious what to choose for $\sppt(y)$. In this project, we started out with $\sppt(y)=\sin{py}$, which luckily worked out (though not easily). 
+
+        The advantage of reducing the problem to spatial dimensions $y$ and $z$ becomes very clear when converting to a linear polarisation basis. We show in \nc{appendix X} that
+        \begin{equation}
+            e\indices*{^+_{ij}}(\vec{k}) = \frac{1}{k^2}%
+            {\left(\begin{array}{ccc}
+                k^2 & 0 & 0 \\
+                0 & -k_z^2 & k_y k_z \\
+                0 & k_y k_z & -k_y^2 
+            \end{array}\right)}\_{ij} %
+            \quad \land \quad %
+            e\indices*{^{\times}_{ij}}(\vec{k})  = \frac{1}{k}%
+            {\left(\begin{array}{ccc}
+                0 & k_z & -k_y \\
+                -k_z&0 & 0 \\
+                k_y & 0&0
+            \end{array}\right)}\_{ij} %
+        \end{equation}
+        holds for $\vec{k}= \vec{k}_\llcorner  \equiv (0,k_y, k_z)$, which is enforced by the Fourier transform of unity in $T\_{ij}(\tau, \vec{x})$. We observe that $h\_{ix}=\Krondelta{_{ix}}h\_{xx}$, so $h_\times=0$. This means we only need $\Lambda\indices{_{xx}^{ij}} T\_{ij}$ to get the full $h\_{ij}$ from the thin domain wall. We use the projection tensor given in \nc{some equation}[notation sec.?] to obtain
+        \begin{equation}
+            T^{\mathrm{TT}}_{xx}(\tau, \vec{k}_\llcorner ) = \frac{1}{2k^2} \cclosed{ k_y^2 T\_{xx} + 2k_y k_z T\_{xy} }(\tau, \vec{k}_\llcorner ). %; \quad \vec{k}=(0,k_y,k_z)
+        \end{equation}
+        We present in~\cref{app:derivations} the calculation to get an analytical expression for $T^{\mathrm{TT}}_{xx}$ with $\sppt(y)=\sin{py}$. \textminus + \texttimes
+
+        \blahblah (appendix)
+        \begin{equation}
+            \begin{split}
+                I\ped{s} &= 2\ppi \sum_{n\in \Integer} \Diracdelta(k_y + n p) \cdot \Bessel[n](k_z \epsilon_p)  \\
+                I\ped{a} &= 2\ppi \sum_{n\in \Integer} \Diracdelta(k_y + n p) \cdot \Bessel[n](k_z \epsilon_p) \cdot \frac{np}{k_z}
+            \end{split}
+        \end{equation}
+
+
+        We explore the general behaviour of the non-vanishing modes. 
+        % ------------------------------
+        % ----------- FIGURE -----------
+        \begin{figure}[h]
+            \centering
+            %
+            \begin{subfigure}[b]{\linewidth}
+                \centering
+                \includegraphics[width=\linewidth]{Methodology/examples_eps_simple.pdf}
+                \caption{X.}
+                \label{fig:pertwalls:gws:examples_eps_simple}
+            \end{subfigure}
+            %
+            \hfill
+            \begin{subfigure}[b]{\linewidth}
+                \centering
+                \includegraphics[width=\linewidth]{Methodology/examples_T_simple.pdf}
+                \caption{Gravitational waves from \dots.}
+                \label{fig:pertwalls:gws:examples_T_simple}
+            \end{subfigure}
+            % %
+            \caption{In units where $\mathrm{m}\equiv \tau_\ast / 100.$}
+            \label{fig:pertwalls:gws:examples_epsT_simple}
+        \end{figure}
+        % ------------------------------
+
+
+
+    
+    \subsubsection{Transverse-traceless gauge}
+        We extract the transverse and traceless part of the SE tensor by use of the \nc{projection operator}[early chap.].
+        \begin{equation}
+            T^{\mathrm{TT}}_{+} =  T^{\mathrm{TT}}_{xx} = \frac{1}{2k^2} \bclosed{ k_y^2 T\_{xx} + 2k_y k_z T\_{xy} } 
+        \end{equation}
+
+        \begin{equation}
+            T^{\mathrm{TT}}_{+} = \frac{1}{2k^2} \mathcal{T}(\tau, k_x, k_z) \bclosed{ k_y^2 \mathscr{I}_1 + 2k_y k_z \mathscr{I}_2 }  = - \frac{k_y^2}{2k^2} \mathcal{T}(\tau, k_x, k_z) \mathscr{I}_1(\tau, k_y,k_z)
+        \end{equation}
+
+
+    
+
+
+
+        
+
+
+    
+
+% \subsection{Stress-}
+%     From above, we see that all we need to calculate gravitational waves from a domain wall is its SE tensor. %Without assuming anything about 
+%     Let $\epsilon = \epsilon_q(\tau) \sin{py}$ be the wall normal coordinate. 
+%     % Now, source dependence: Let $\epsilon = \epsilon_q(\tau) \sin{qy}$ 
+%     \begin{equation}
+%         S(\tau, \vec{k}) = 16\ppi^4 G\nped{N} \Diracdelta(k\_x) \sum_{n\in\Integer} \Diracdelta(k_y + nq) (nq/k)^2 \cdot a^4(\tau) \sigma(\tau) \cdot W(\tau,k\_z) \Bessel[-n] \big[\epsilon_q(\tau) k\_z \big]
+%     \end{equation}
+    
+    
+
+    
+
+
+    
+    % % where 
+    % Here $P=+,\times$ reflects the component in the polarisation basis
+    % \begin{equation}
+    %     S\_{ij} = S_+ e^+_{ij} + S_\times e^\times_{ij} = a^2 16\ppi G\nped{N} \Lambda\_{ij.kl} T\_{kl}.
+    % \end{equation}
+
+   
+    
+
+
+
+\subsection{Examples}
+        How will the domain wall manifest in the gravitational waves, given our equations? Let us have a look at some examples. When $z_0=0$, $h_+= \Re \{h_+ \}$. 
+
+        % ------------------------------
+        % ----------- FIGURE -----------
+
+        \begin{figure}[h]
+            \centering
+            %
+            \begin{subfigure}[b]{\linewidth}
+                \centering
+                \includegraphics[width=\linewidth]{Methodology/examples_eps_simple.pdf}
+                \caption{X.}
+                \label{fig:pertwalls:gws:examples_eps_simple}
+            \end{subfigure}
+            %
+            \hfill
+            \begin{subfigure}[b]{\linewidth}
+                \centering
+                \includegraphics[width=\linewidth]{Methodology/examples_h_simple.pdf}
+                \caption{Gravitational waves from \dots.}
+                \label{fig:pertwalls:gws:examples_h_simple}
+            \end{subfigure}
+            % %
+            % \hfill
+            % \begin{subfigure}[b]{\linewidth}
+            %     \centering
+            %     \includegraphics[width=\linewidth]{Methodology/examples_T_simple.pdf}
+            %     \caption{X.}
+            % \end{subfigure}
+            %
+            \caption{In units where $\mathrm{m}\equiv \tau_\ast / 100.$}
+            \label{fig:pertwalls:gws:examples_epsh_simple}
+        \end{figure}
+        % ------------------------------
+        Both the perturbation scale parameter $u$ \emph{and} the initial amplitude $\varepsilon_\ast$ contribute to the GW signature. 
+
+ \end{draft}
