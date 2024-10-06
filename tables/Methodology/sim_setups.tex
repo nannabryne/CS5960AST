@@ -1,0 +1,50 @@
+%
+\subimport{../}{style.tex}
+
+%
+\begin{tabular*}{\tabWidth}{@{\extracolsep{\fill}} c c c c c c c c c}
+    %
+    \multicolumn{9}{l}{\tabHeading{Wall--anti-wall simulations}} \\
+    \toprule
+    &\simO &\simI & \simII & \simIII &\simIV & \simV & \simVI & \simVII \\
+    %
+    \toprule
+    % \midrule
+    \multicolumn{9}{l}{\tabSubheading{Symmetron parameters}} \\
+    \midrule
+    $a_\ast$ & 0.33 & 0.33 & 0.33 &0.33 & 0.33 & 0.33 & 0.33& 0.33  \\
+    $\xi_\ast\times 10^{4}$ & 3.33 & 3.33 & 3.33 &3.33 & 3.33 & 3.33 & 1.00 & 3.33 \\
+    $\beta_\ast$ & 1 & 1 & 1 & 1 & 1 & 1 & 1& 1 \\
+    \midrule
+    %
+    \multicolumn{9}{l}{\tabSubheading{Perturbation parameters %
+    % ($\varepsilon_\ast \sin{ (2\ppi m_{\lcoord{j}} \lcoord{j} )} $)
+    ($\varepsilon_\ast \sin{ (p_y y)} $)
+    % (\(\varepsilon_\ast \sin{2\ppi m_{\lcoord{j}}\lcoord{j}\} \))
+    }} \\
+    \midrule 
+    $\varepsilon_\ast/L_\#$& 0.00 & 0.08 & 0.12 & 0.08 & 0.08 & 0.06 & 0.08 & 0.08 \\
+    % $m_{\lcoord{j}}$  & -- & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
+    $p_y/k_\#$  & -- & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
+    $\Upsilon^{\AC}_\ast$  & 0 & 16 & 24 & 16 & 16 & 18 & 16 & 16 \\
+    \midrule
+    %
+    \multicolumn{9}{l}{\tabSubheading{Simulation box}} \\
+    \midrule
+    $L_\#~[\Mpch]$&  1024 & 1024 &  1024 &  1024 &  1400 &  1024 &  1024 &  1024 \\
+    $N_\#$ & 768& 768 & 768 & 900 & 768 & 960 & 768 & 768 \\
+    %
+    \midrule
+    \multicolumn{9}{l}{\tabSubheading{Initial configuration}} \\
+    \midrule
+    $\redshift\ped{init}$ &2.00 & 2.00 & 2.00 & 2.00 & 2.02 & 2.00 & 2.00 & 2.02 \\
+    $\breve{\chi}\ped{init}$&  - & - &  - &  - &  - &  - &  - &  - \\
+    $q\ped{init}$ & -& - & - & - & - & - & - & - \\
+    %
+    \midrule
+    \multicolumn{9}{l}{\tabSubheading{Numerics}} \\
+    \midrule
+    $C\ped{f}$ & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 \\
+    $C\ped{f}$ & \multicolumn{8}{c}{0.2} \\
+    \bottomrule
+\end{tabular*}

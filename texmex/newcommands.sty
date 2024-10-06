@@ -29,6 +29,8 @@
 \providecommand*{\unit}[1]{~\ensuremath{\mathrm{#1}}}
 
 
+
+
 % ---------------------------
 % single word sub/superscrips:
 
@@ -121,7 +123,7 @@
 % Dirac delta function 
 \makeatletter % (for use of @ below)
 \newcommand{\Diracdelta}[1][\@nil]{%
-\text{\textdelta}
+\deltaup
 \def\tmp{#1}%
     \ifx\tmp\@nnil
     \else
@@ -134,7 +136,7 @@
 
 % Kronecker delta symbol
 \newcommand{\Krondelta}[1]{%
-    \ensuremath{\text{\textdelta}\indices{#1}}}
+    \ensuremath{\deltaup\indices{#1}}}
 \WithSuffix\newcommand\Krondelta*[1]{\text{\textdelta}\indices*{#1}}
 
 
@@ -186,7 +188,7 @@
 
 
 
-\renewcommand*{\/}{\Big/}   % large division sign
+% \renewcommand*{\/}{\Big/}   % large division sign
 
 
 % Functional derivative:
@@ -195,6 +197,10 @@
 
 
 
+
+
+\renewcommand{\Re}{\mathfrak{R}}
+\renewcommand{\Im}{\mathfrak{I}}
 
 
 
@@ -242,7 +248,7 @@
 % Reocurring subscripts:
 
 % \providecommand*{\subGW}{\ensuremath{_{\text{\tiny{GW}}}}}
-\providecommand*{\subGW}{\ensuremath{_{\mathrm{gw}}}}
+% \providecommand*{\subGW}{\ensuremath{_{\mathrm{gw}}}}
 
 
 
@@ -258,8 +264,12 @@
 
 % Projection tensor !!!! (FIX TO BE \mathop)
 \newcommandx*{\ProjectionLambda}[2][]{%
-    \Lambda\_{{#1}.{#2}}% 
+    % \Lambda\_{{#1}.{#2}}% 
+    \Lambda\indices{_{#1}^{#2}}%
 }
+
+
+
 
 % Christophel symbols
 \newcommandx*{\ChristophelSym}[3][1=\Gamma]{%
@@ -280,9 +290,11 @@
 
 % Special functions:
 \makeatletter
-\newcommand{\n@specialfunc}[1]{\mathcal{#1}}
-\newcommand{\n@sphspecialfunc}[1]{\mathit{#1}}
-\newcommand{\n@Ricspecialfunc}[1]{\text{\textsf{#1}}}
+\newcommand{\n@specialfunc}[1]{\mathsf{#1}}
+\newcommand{\n@sphspecialfunc}[1]{\mathsf{#1}}
+% \newcommand{\n@Ricspecialfunc}[1]{\text{\textsf{#1}}}
+\newcommand{\n@Ricspecialfunc}[1]{\mathsf{#1}}
+
 %
 \newcommandx*{\Bessel}[2][1=\nu, 2=1]{%
     \def\kind{#2}%
@@ -300,11 +312,11 @@
 \newcommandx*{\Neumann}[1][1=\nu]{%
     \ensuremath{\n@specialfunc{Y}_{#1}}%
 }        
-\newcommandx*{\Sylindrical}[1][1=\nu]{%
+\newcommandx*{\Cylindrical}[1][1=\nu]{%
     \ensuremath{\n@specialfunc{Z}_{#1}}%
-}                                           % Sylindrical function
+}                                           % Cylindrical function
 %
-\newcommandx*{\sphBessel}[2][1=\nu, 2=1]{%
+\newcommandx*{\sphBessel}[2][1=n, 2=1]{%
     \def\kind{#2}%
     \def\first{1}%
     \def\second{2}%
@@ -316,22 +328,25 @@
         \fi
     \fi
 }                                           % Spherical Bessel function
-\newcommandx*{\sphNeumann}[1][1=\nu]{%
+\newcommandx*{\sphNeumann}[1][1=n]{%
     \ensuremath{\n@sphspecialfunc{y}_{#1}}%
 }                                           % Spherical Neumann function
 % Riccati - Bessel
-\newcommandx*{\RiccatiBessel}[2][1=\nu,2=1]{%
+\newcommandx*{\RiccatiBessel}[2][1=n,2=1]{%
     \def\kind{#2}%
     \def\first{1}%
     \def\second{2}%
     \ifx\kind\first
-        \ensuremath{\n@Ricspecialfunc{\textpsi}_{#1}}%
+        \ensuremath{\n@Ricspecialfunc{S}_{#1}}%
     \else
         \ifx\kind\second
-            \ensuremath{\n@Ricspecialfunc{\textchi}_{#1}}%
+            \ensuremath{\n@Ricspecialfunc{C}_{#1}}%
         \fi
     \fi
     }                                           % Riccati-Bessel function
+\newcommandx*{\RiccatiNeumann}[1][1=n]{%
+    \ensuremath{\n@Ricspecialfunc{C}_{#1}}%
+}                                               % Riccati-Neumann function
 \makeatletter
 
 
@@ -365,13 +380,20 @@
 
 
 
+\newcommandx*{\Zn}[1][1=2]{\ensuremath{\varmathbb{Z}_{#1}}}
+
+
 % -----
 % Names: (sake of consitency)
 
+\newcommand{\LCDM}{\textLambda{}CDM}
+
+
+
 % codes:
 \providecommand*{\latfield}{\textsc{lat}field2}
-\providecommand*{\gevolution}{\textit{gevolution}}
-\providecommand*{\gwasevolution}{\textit{gwasevolution}}
+\providecommand*{\gevolution}{\texttt{gevolution}}
+\providecommand*{\gwasevolution}{\texttt{gwasevolution}}
 
 % programming:
 \providecommand*{\Python}{\texttt{Python}}
@@ -383,6 +405,8 @@
 
 
 
+% units:
+\providecommand{\Mpch}{\ensuremath{\mathrm{Mpc}/h_0}}
 
 
 
@@ -493,3 +517,43 @@
 
 \newcommand{\boxedeq}[2]{\begin{empheq}[box={\fboxsep=6pt\fbox}]{align}\label{#1}#2\end{empheq}}
 \newcommand{\coloredeq}[2]{\begin{empheq}[box=\colorbox{GT}]{align}\label{#1}#2\end{empheq}}
+
+
+
+
+
+
+\newcommand{\figpanel}[1]{\textit{#1:}}
+
+
+
+
+
+
+% Codes for local macros
+
+% a(τ)·h_ij(τ, ...)
+\newcommand{\ALIASah}{\bar{h}}
+
+% e.g. g_μν + δg_μν + δδg_μν + ...
+\newcommand{\ALIASpert}[1]{\accentset{\circ}{#1}}
+
+% hypersurface, aka. domain wall
+\newcommand{\ALIAShypsurf}{\varSigma}
+
+% spatial part of perturbation
+\newcommand{\ALIASsppt}{\mathscr{E}}
+
+
+% Simulation number
+% \newcommand{\ALIASsimnum}[1]{\(\mathnormal{#1}\)}
+
+% lattice coordinate
+\newcommand{\ALIASlcoord}[1]{\mathtt{#1}} % code lattice coordinate
+
+
+
+
+
+\newcommand{\ALIASpolplus}{\rotatebox[origin=c]{0}{+}}
+\newcommand{\ALIASpolcross}{\rotatebox[origin=c]{45}{+}}

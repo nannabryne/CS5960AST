@@ -11,7 +11,9 @@
 \input{texmex/writingtools.tex}
 
 \title{Gravitational waves from topological defects} 
-\subtitle{Signatures of late-time first-order phase transitions}  
+% \title{If Domain Walls Could Talk}
+\subtitle{Signatures of late-time first-order phase transitions} 
+% \subtitle{They would say ...} 
 \author{Nanna Bryne}                    
 
 \begin{document}
@@ -23,7 +25,7 @@
 
 \uiomasterfp[
     dept={Institute of Theoretical Astrophysics\and Department of Physics},
-    program={CS:~Astrophysics}, 
+    program={Computational Science:~Astrophysics}, 
     supervisor={David Fonseca Mota}, % or supervisors={A Name\and B Name},  
     color={blue},
     fgimage={starry-night.png},
@@ -33,10 +35,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
 %%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%
 
 \frontmatter{}
+% \begin{abstract}
+%     We present a theoretical framework \blahblah
+% \end{abstract}
+
+
 \tableofcontents{}
 % \listoffigures{}     
 % \listoftables{}       
@@ -44,7 +50,12 @@
 
 % \begin{preface}
 %     Here comes your preface, including acknowledgments and thanks.
-%     \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22}
+
+      
+%     I would like to give thanks to all my friends and family.
+
+%     To my mother and father, I am especially grateful. 
+%     \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22; computer resources}
 % \end{preface}
 
 % NOMENCLATURE etc
@@ -87,30 +98,50 @@ Below, we describe some phenomena or whatever.
 
 
 
+
+
+
 % INTRODUCTION
 \chapter{Introduction}\label[chap]{chap:intro}
-    \import{chapters/intro/}{intro.tex}
+    \import{chapters/1_Introduction/}{intro.tex}
 
 
 % \chapter{Dummy chapter}
 % \import{chapters/dummy/}{content.tex}
 
 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > BACKGROUND (math+context)
+% ______________________________________________________________________________
+
+
 
 % >>> THEORETICAL BACKGROUND
-\part{Background} 
+\part{Background}\label{part:bckg}
 
 % GR, DWs ++
 
-\chapter{Differential Geometry}\label[chap]{chap:diffgeo}
-{\import{chapters/Differential_Geometry}{diffgeo.tex}}
+% \chapter{Differential Geometry}\label[chap]{chap:diffgeo}
+% {\import{chapters/Differential_Geometry}{diffgeo.tex}}
 
-\chapter{Classical Field Theory and Gravity}\label[chap]{chap:CFTgrav}
-    {\import{chapters/Classical_Field_Theory_and_Gravity/}{CFTgrav.tex}}
+% \chapter{Classical Field Theory and Gravity}\label[chap]{chap:CFTgrav}
+%     {\import{chapters/Classical_Field_Theory_and_Gravity/}{CFTgrav.tex}}
 
-% GWs
-\chapter{Gravitational Waves}\label[chap]{chap:GWs}
-    {\import{chapters/Gravitational_Waves/}{GWs.tex}}
+% % GWs
+% \chapter{Gravitational Waves}\label[chap]{chap:GWs}
+%     {\import{chapters/Gravitational_Waves/}{GWs.tex}}
+
+
+% GR
+\chapter{General Relativity}\label[chap]{chap:GR}
+    {\import{chapters/2_General_Relativity/}{GR.tex}}
+
+
+
+% DWs
+\chapter{\tmptitle{Kinks in Cosmology}}\label[chap]{chap:cosmo}
+    {\import{chapters/3_TMP/}{cosmo.tex}}
 
 
 % DWs
@@ -120,10 +151,22 @@ Below, we describe some phenomena or whatever.
 % SIMS
 % \chapter{Lattice\grammar{-} and \(N\)-body Simulations}
 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+
+
+
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > METHOD (calculations+context+equations+assumptions)
+% ______________________________________________________________________________
+
 
 % >>> THE PROJECT
 
-\part{Methodology}
+\part{Methodology}\label{part:method}
 
 % % ANALYTIC CALCULATION
 % \chapter{Calculating Gravitational Waves from Domain Walls}
@@ -138,26 +181,54 @@ Below, we describe some phenomena or whatever.
 
 
 
+
 % ANALYTICAL CALCULATIONS
 % \chapter{Perturbed Domain Walls}\label[chap]{chap:pertwalls}
-\chapter{Thin-Wall Approximation}\label[chap]{chap:pertwalls}
-    {\import{chapters/Perturbed_Domain_Walls/}{pertwalls.tex}}
+\chapter{Imperfect Defects}\label{chap:pertwalls}
+    {\import{chapters/4_Imperfect_Defects/}{pertwalls.tex}}
 
+
+
+{\import{texmex/}{simulation_typeset.tex}
 % COMPUTATIONAL CALCULATIONS
-\chapter{\tmptitle{Kinks in Cosmology}}\label[chap]{chap:871}
-    {\import{chapters/Untitled_871/}{871.tex}}
+
+
+\chapter{\tmptitle{Cosmic Phase Transition}}\label{chap:PT}
+    {\import{chapters/5_Cosmic_Phase_Transition/}{PT.tex}}
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
 
 
 
-\part{Findings}
-
-% Domain wall dynamics / Scalar results / Spin-0 
-\chapter{\tmptitle{Results}}\label[chap]{chap:results}
-    {\import{chapters/TMP_Results/}{results.tex}}
 
 
-\chapter{\tmptitle{Ifs, buts and maybes}}\label[chap]{chap:results2}
-    {\import{chapters/TMP_Results2/}{results2.tex}}
+
+
+
+
+
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > FINDINGS (results+analysis+discussion+conclusion)
+% ______________________________________________________________________________
+
+
+\part{Findings}\label{part:findings}
+
+
+
+\chapter{\tmptitle{Toy Model Trials}}\label{chap:results}
+    {\import{chapters/6_Toy_Model_Trials/}{results.tex}}
+
+
+\chapter{\tmptitle{Ifs, buts and maybes}}\label{chap:whatif}
+    {\import{chapters/7_TMP_Whatif/}{whatif.tex}}
+
+
+
 
 
 % >>> 
@@ -170,10 +241,22 @@ Below, we describe some phenomena or whatever.
 % CONCLUSION
 \chapter{Conclusion and Outlook}
     {\import{chapters/TMP_FinalChap/}{finalchap.tex}}
+}
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 
 
 
@@ -201,13 +284,44 @@ Below, we describe some phenomena or whatever.
 % <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
-\chapter{I do not have an appendix}
+
+
+\chapter{Derivations}\label{app:derivations}
+    {\import{appendices/Derivations_tmp/}{derivations.tex}}
+
+
+\chapter{\tmptitle{Stable Symmetron}}\label{app:untitled2}
+    {\import{appendices/Untitled2_tmp/}{untitled2.tex}}
+
+
+\chapter{\tmptitle{Cylinder Functions}}\label{app:special}
+    {\import{appendices/Special_tmp/}{cylinder.tex}}
+
+    
+% \chapter{I do not have an appendix}
+
+
+% \chapter*{Old drafts}
+%     {\import{appendices/}{oldtexts.tex}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

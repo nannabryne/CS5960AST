@@ -1,0 +1,45 @@
+
+
+% SIMULATION COLOURS
+
+
+\makeatletter
+
+\definecolor{sim@O}{HTML}{214761}        % dark slate blue?
+\definecolor{sim@I}{HTML}{3E82FC}        % dodgerblue
+\definecolor{sim@II}{HTML}{FE440F}       % orangered
+\definecolor{sim@III}{HTML}{9A0EEA}      % violet
+\definecolor{sim@IV}{HTML}{020035}       % midnight blue
+\definecolor{sim@V}{HTML}{A9F971}        % spring green
+\definecolor{sim@VI}{HTML}{E50000}       % red
+\definecolor{sim@VII}{HTML}{6E750E}      % olive
+
+
+
+
+
+
+% \providecommand*\sim@num[1]{\(\mathnormal{#1}\)}
+
+\providecommand*\sim@num[1]{\(\mathsf{#1}\)}
+\providecommand\sim@boxd[2]{\boxed{\sim@num{#1}}}
+
+
+\providecommand{\simO}{\textcolor{sim@O}{\sim@num{0}}}
+\providecommand{\simI}{\textcolor{sim@I}{\sim@num{1}}}
+\providecommand{\simII}{\textcolor{sim@II}{\sim@num{2}}}
+\providecommand{\simIII}{\textcolor{sim@III}{\sim@num{3}}}
+\providecommand{\simIV}{\textcolor{sim@IV}{\sim@num{4}}}
+\providecommand{\simV}{\textcolor{sim@V}{\sim@num{5}}}
+\providecommand{\simVI}{\textcolor{sim@VI}{\sim@num{6}}}
+\providecommand{\simVII}{\textcolor{sim@VII}{\sim@num{7}}}
+
+% \WithSuffix\providecommand{\simO}{\sim@num{0}}
+
+
+
+\providecommand{\simnum}{\sim@num}
+
+
+\makeatother
+
