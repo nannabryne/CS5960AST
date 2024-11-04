@@ -16,6 +16,7 @@
 \definecolor{n@blue}{rgb}{0.0, 0.5, 1.0}
 \definecolor{n@darkred}{RGB}{165, 63, 38}
 \definecolor{NANNATEST}{RGB}{240,77,108}
+\definecolor{n@grey}{rgb}{0.7, 0.75, 0.71}
 
 
 
@@ -210,6 +211,23 @@
 
 % jokes, thoughts etc.
 \newcommand*\pensive[1]{\noindent\textcolor{n@green}{\textit{#1}}}
+
+
+% verb tenses
+\newcommand*\verbtense[2]{\textcolor{n@green}{$\langle$\texttt{#1}$\rangle$$\lceil$}{#2}\textcolor{n@green}{$\rfloor$}}
+
+
+\newcommand*\deleteme[1]{{\small{%
+    \textcolor{n@babyblue}{\texttt{DELETE ME:}$\langle$}%
+    {\textcolor{n@grey}{#1}}%
+    \textcolor{n@babyblue}{$\rangle$}
+    }}}%
+
+
+
+\newcommand{\iftime}[1]{%
+    \textcolor{n@yellow}{\textsc{ \colorbox{n@grey}{\textbf{if time:}}~{\small{#1}}}}%
+    }
 
 
 

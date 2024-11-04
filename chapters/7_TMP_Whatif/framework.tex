@@ -1,0 +1,174 @@
+% |||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 7.2 Limitations and possibilities ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||||
+
+% ----------------------------------------------
+% labels: \label{[type]:whatif:framework:[name]}
+% ----------------------------------------------
+
+
+
+
+
+
+
+
+
+% \section{Limits of the framework}
+We review the equations this thin-wall approximation is built on. %
+Let us consider three steps that are not completely independent, but describe a certain order of things.
+\begin{description}
+    \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Here:} Set $\alpha=2$ to get matter domination.
+    \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said PT. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Here:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
+    \item[Step three:] Consider a topological defect that is the product of the aforementioned symmetry break. The defect with vanishing thickness possess dynamics derived from the Nambu--Goto action. Add a perturbation to the wall normal coordinate. We find the TT-part of the corresponding stress--energy tensor and consider this as a source of gravitational waves. \textbf{Here:} We consider the domain wall scenario, specifically a planar wall. The equation of motion for this perturbation is expended into eigenvalues and solved thereafter. We use this as input to the Nambu--Goto SE tensor, which in turn source tensor perturbations.
+\end{description}
+Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. 
+
+% We want everything up to the Fourier SE tensor to be analytically solvable, at least to some level that resembles the actual situation, like when using $\sigma \propto (1-\upsilon)^{3/2}$ in this project. %\comment{The behaviour is recognisable at this stage.} 
+% Okay, so far, so good. We found that for a two-dimensional topological defect in a conformally flat spacetime, we have the SE tensor \blahblah
+% \textchi \textit{\textpsi}
+% \begin{equation}
+%     T\_{\mu\nu} = \Krondelta{_{\mu\nu}} \chiup_n \psiup \psi
+% \end{equation}
+% (z-plane) 
+% The result is that any function $\varrho (x\^a)$ that satisfies $-\im \partial\_{a} \leftrightarrow p\_a$ for which we have a analytical formula for the Fourier transforms of 
+% \begin{equation}
+%     \eu[\im c \varrho(x\^a)]\quad \text{and} \quad  \partial\_a \eu[\im c \varrho(x\^a)]
+% \end{equation}
+
+
+\speak{Write about drawbacks?} %
+% We have not been able to take the tensor analysis back to configuration space. 
+
+
+
+
+
+
+\subsection{Improvements}
+% \deleteme{\begin{description}
+%     \item[Generalisation:] A very natural and possibly straight-forward generalisation would be to let $\alpha$ be a more-or-less free parameter. It should also not be too much work to consider arbitrary dimensions.
+%     \item[Beyond linear perturbation:] It would be interesting to solve the eom for the actual wall normal coordinate. 
+%     \item[Asymmetron:] Adjusting the vacuum energy densities and subsequently the surface tension, in addition to adding an energy bias in the thin-wall approximation, one should be able to find a good approximation for \emph{a}symmetron walls. This might be challenging if both $\sigma$ and $v$ are time-dependent. We saw in \nc{some section} that the time-dependence of the surface tension is a game-changer, so this at least should not be neglected.
+% \end{description}}
+
+
+
+
+% \rephrase{The framework is analysed on a particular background with a specific domain wall and scalar field theory. That background is a flat, matter-dominated FLRW universe. We considered the $\Zn$-symmetric symmetron field that provoked a planar domain wall.}
+
+\subsubsection{Generalisation}
+With the above elaboration, we comprise the steps in the following ``hierarchy'':
+% \rephrase{The particularisation hierarchy is shown in the following. Generalisation works backwards.}
+\begin{enumerate}
+    \item\label{item:whatif:framework:bckg} Background: four-dimensional spacetime % metric $g\_{\mu\nu}= a^2(\tau)\eta\_{\mu\nu}$ %
+    \begin{enumerate}
+        \item Metric $g\_{\mu\nu}= a^2(\tau)\eta\_{\mu\nu}$ 
+        \item\label{item:whatif:framework:bckg_simple_scale_factor} Scale factor $a\propto \tau^\alpha$
+        \item\label{item:whatif:framework:bckg_matter_dom} Matter domination, i.e.~$\alpha=2$
+    \end{enumerate}
+    \item\label{item:whatif:framework:pt}  Phase transition: quintessence %
+        \begin{enumerate}
+            \item\label{item:whatif:framework:pt_asymmetron} Asymmetron potential
+            \item\label{item:whatif:framework:pt_symmetron}  Symmetron potential
+        \end{enumerate}
+    \item\label{item:whatif:framework:defect} Topological defect: vanishing thickness %\comment{Nambu--Goto theory}%
+        \begin{enumerate}
+            \item\label{item:whatif:framework:defect_dw} Domain wall of vanishing thickness 
+            \item\label{item:whatif:framework:defect_planar} Planar wall
+            \item\label{item:whatif:framework:defect_pert} Wall position trivial, consider small perturbation to wall normal coordinate
+            \item\label{item:whatif:framework:defect_simple_pert} Choose $\epsilon=\varepsilon(\tau)\sin(py)$
+        \end{enumerate}
+\end{enumerate}
+
+
+Generalisation from~\cref{item:whatif:framework:bckg_matter_dom} to~\labelcref{item:whatif:framework:bckg_simple_scale_factor} %
+%~\crefrange{item:whatif:framework:bckg_matter_dom}{item:whatif:framework:bckg_simple_scale_factor} 
+should be uncomplicated. Considering $N$ spatial dimensions is straight-forward, as long as the topological defect is of codimension one (with $D=N-1$ spatial dimensions). \comment{Comment about coordinates.}
+
+
+It would have been interesting to study the effect of non-degenerate vacua, e.g.~the asymmetron 
+% (\crefrange{item:whatif:framework:pt_symmetron}{item:whatif:framework:pt_asymmetron})
+(\cref{item:whatif:framework:pt_symmetron} to~\labelcref{item:whatif:framework:pt_asymmetron}). Our symmetron results suggest that minor changes in $\phi_\pm$---the limits of the integral on the surface tension---do not drastically alter the overall behaviour of the perturbation on the wall. One can imagine that a similar expression for $\sigma$ would hold for the asymmetron as well. Then there is just the matter of a non-zero vacuum energy difference $v=v_+-v_-$, but this will also generally be time-dependent, $v=V(\phi_+)-V(\phi_-)$. In Minkowski spacetime and the limit where $\sigma$ and $v$ are constants, the solution to the equation of motion corresponding to our setup is the hyperbola~\citep{garrigaPerturbationsDomainWalls1991}, and we should expect solution the conformally related flat, FLRW ambient spacetime to inhabit similar features. 
+% \begin{equation}
+%     % \frac{\sigma}{\sqrt{1-{(\partial_t z)}^2}} - v z = \text{constant}.z
+%     z^2 - t^2 = {(\sigma/v)}^2,
+% \end{equation}
+% i.e. the hyperbola. \blahblah
+
+We mention that to solve the equation of motion for the (unperturbed) wall normal coordinate would remove the restriction that $\epsast\ll \tau_\ast$ (\cref{item:whatif:framework:defect_pert} to~\labelcref{item:whatif:framework:defect_dw}). We address~\cref{item:whatif:framework:defect_simple_pert} below.
+
+
+
+
+
+
+
+\subsubsection{Different wall perturbation}
+    We take a look at a scenario in which the solution to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} is
+    \begin{equation}
+        \epsilon = \sum_{k} \epsilon_k= \sum_k \varepsilon_k  \sin{( p_k y)}; \quad p_k = \ppi k / L, 
+    \end{equation}
+    where $L$ is some length scale. We let $a_k$ be weights such that $\sum_k\abs{a_k}= \epsast$ and $\varepsilon_k = a_k \varepsilon(\tau; p_k)/\varepsilon(\tau_\ast; p_k) $, where $ \varepsilon(\tau; p_k)$ solves~\cref{eq:pertwalls:mywalls:eom_eps_s_MD} for $p=p_k$. %For simplicity, let us say the SE tensor is $T\^{\mu\nu}=$
+    Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, the $xx$-component of the stress--energy tensor goes as
+    \begin{equation}
+        % \integ{y}\eu[\im k_y y]\integ{z}\eu[\im k_z z]\Diracdelta(z-\epsilon)  = \integ{y} \eu[\im k_z\sum_k \epsilon_k ]\eu[\im k_y y]
+        \tilde{T}_{xx} \sim \Diracdelta(k_x)I\ped{s} =\Diracdelta(k_x) \integ{y} \eu[\im k_z \sum_k \epsilon_k ]\eu[\im k_y y].
+    \end{equation}
+    By the same argumentation as in~\cref{app:derivations:jacobianger}, we get
+    % \begin{equation}
+    %     \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \textstyle{\sum\nolimits_{j}} n_l p_j) %= \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \frac{\ppi}{L}\textstyle{\sum\nolimits_{j}} n_j j)
+    % \end{equation}
+    \begin{equation}
+        % \sum_{n_1, n_2, n_3, \dots} 
+        % \sum_{n_1\in \Integer} \sum_{n_2\in \Integer} \sum_{n_3\in \Integer} \cdots 
+        % \sum_{n_1} \sum_{n_2} \sum_{n_3} \cdots 
+        % \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_2](k_z \varepsilon_2)\Bessel[n_3](k_z \varepsilon_3) \cdots  
+        I\ped{s}=2\ppi\sum_{n_1} \Bessel[n_1](k_z \varepsilon_1)\sum_{n_2} \Bessel[n_2](k_z \varepsilon_2) \sum_{n_3}\Bessel[n_3](k_z \varepsilon_3) \cdots \times \Diracdelta(k_y + \ppi[1n_1 + 2n_2 + 3n_3 + \dots]/L)
+        % \Diracdelta(k_y + \ppi/L \textstyle{ \sum_k k n_k })
+    \end{equation}
+    where $n_k \in \Integer$. %
+    We use the property $\Bessel[n](0)=\deltaup_{n0}$ to check that this reduces to~\cref{eq:derivations:jacobianger:I_s_only} when there is only one nonzero weight (e.g.~$a_1= \varepsilon_\ast$).
+
+    % Recall that $\Bessel[n](0)=\deltaup_{n0}$. We see that for $a_k=0$ except for e.g.~$a_4= \epsast$, the SE tensor for $\epsilon = \varepsilon(\tau; p_4) \sin (p_4 y)$ is retrieved. 
+    More compactly, we can write the contribution as
+    \begin{equation}
+        I\ped{s} = 2\ppi 
+        % \sum_{n_1} J^1_{n_1}  \sum_{n_2} J^2_{n_2}  \sum_{n_3} J^3_{n_3} \cdots 
+        \sum_{n_1,n_2, n_3, \dots} J^1_{n_1}J^2_{n_2} J^3_{n_3}\cdots
+        \times \Diracdelta\big(k_y +p_1\textstyle{ \sum_k k n_k}\big)
+    \end{equation}
+    where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+    Now say $a_1$ and $a_3$ are the only non-zero weights. The expression becomes
+    \begin{equation}
+        % \sum_{n_1, n_3} \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_3](k_z \varepsilon_3) 
+        \sum_{n_1, n_3} J^1_{n_1} J^3_{n_3} \times
+        \Diracdelta(k_y + p_1[n_1 + 3n_3] ).
+    \end{equation}
+    % where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+    This means that for modes say $k_y = -10 p_1 $, the term contributes to the source with $J^1_{10} J^3_{0} + J^1_{6} J^3_{1} +J^1_{4} J^3_{2} + J^1_{1} J^3_{3}  + J^1_{16}J^3_{-2} + \dots $, i.e. an infinite series of factors $J^1_{n_1}J^3_{n_3}$ for combinations $n_1+3n_3=10$, $n_k\in \Integer$. %We write this as $\sum_{m\in\Integer} J^1_{10-3m} J^3_{m}$.
+    Thus,
+    \begin{equation}
+        % I\ped{s}\rvert_{k_y=-10p_1} = 2\ppi \Diracdelta(k_y+10p_1) 
+        I\ped{s} = 2\ppi \Diracdelta(k_y+Np_1)\sum_{m\in\Integer} J^1_{N-3m} J^3_{m}
+    \end{equation}
+    for this setup.
+
+    \speak{Some words about this.} This result is regrettable, but not necessarily catastrophic. %
+    It is perhaps possible to make use of some identities to simplify $I\ped{s}$, such as
+    \begin{equation}
+        \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
+    \end{equation}
+    but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
+    If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:derivations:jacobianger}) does not hold either. 
+
+    \speak{Comment on why we extract the summation from the integration.}
+
+    % \begin{bullets}
+    %     \item Adding propagating waves on torus
+    %     \item What would happen if there were two such perturbations? or several pert. walls?
+    % \end{bullets}   
+    
+
+
+% \subsubsection{Applicability}

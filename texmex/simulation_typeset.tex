@@ -5,15 +5,22 @@
 
 \makeatletter
 
-\definecolor{sim@O}{HTML}{214761}        % dark slate blue?
-\definecolor{sim@I}{HTML}{3E82FC}        % dodgerblue
-\definecolor{sim@II}{HTML}{FE440F}       % orangered
-\definecolor{sim@III}{HTML}{9A0EEA}      % violet
-\definecolor{sim@IV}{HTML}{020035}       % midnight blue
-\definecolor{sim@V}{HTML}{A9F971}        % spring green
-\definecolor{sim@VI}{HTML}{E50000}       % red
-\definecolor{sim@VII}{HTML}{6E750E}      % olive
-
+% \definecolor{sim@O}{HTML}{214761}        % dark slate blue?
+% \definecolor{sim@I}{HTML}{3E82FC}        % dodgerblue
+% \definecolor{sim@II}{HTML}{FE440F}       % orangered
+% \definecolor{sim@III}{HTML}{9A0EEA}      % violet
+% \definecolor{sim@IV}{HTML}{020035}       % midnight blue
+% \definecolor{sim@V}{HTML}{A9F971}        % spring green
+% \definecolor{sim@VI}{HTML}{E50000}       % red
+% \definecolor{sim@VII}{HTML}{6E750E}      % olive
+\definecolor{sim@O}{rgb}{0.184314, 0.309804, 0.309804}
+\definecolor{sim@I}{rgb}{0.415686, 0.474510, 0.968627}
+\definecolor{sim@II}{rgb}{1.000000, 0.270588, 0.000000}
+\definecolor{sim@III}{rgb}{0.000000, 1.000000, 0.498039}
+\definecolor{sim@IV}{rgb}{0.082353, 0.313725, 0.517647}
+\definecolor{sim@V}{rgb}{0.996078, 0.513725, 0.800000}
+\definecolor{sim@VI}{rgb}{1.000000, 0.000000, 0.000000}
+\definecolor{sim@VII}{rgb}{0.509804, 0.650980, 0.490196}
 
 
 
@@ -21,7 +28,7 @@
 
 % \providecommand*\sim@num[1]{\(\mathnormal{#1}\)}
 
-\providecommand*\sim@num[1]{\(\mathsf{#1}\)}
+\providecommand*\sim@num[1]{\(\mathtt{#1}\)}
 \providecommand\sim@boxd[2]{\boxed{\sim@num{#1}}}
 
 
@@ -34,11 +41,26 @@
 \providecommand{\simVI}{\textcolor{sim@VI}{\sim@num{6}}}
 \providecommand{\simVII}{\textcolor{sim@VII}{\sim@num{7}}}
 
+
+
+
+
 % \WithSuffix\providecommand{\simO}{\sim@num{0}}
 
 
 
 \providecommand{\simnum}{\sim@num}
+
+
+
+\providecommand{\simcO}[1]{\textcolor{sim@O}{#1}}
+\providecommand{\simcI}[1]{\textcolor{sim@I}{#1}}
+\providecommand{\simcII}[1]{\textcolor{sim@II}{#1}}
+\providecommand{\simcIII}[1]{\textcolor{sim@III}{#1}}
+\providecommand{\simcIV}[1]{\textcolor{sim@IV}{#1}}
+\providecommand{\simcV}[1]{\textcolor{sim@V}{#1}}
+\providecommand{\simcVI}[1]{\textcolor{sim@VI}{#1}}
+\providecommand{\simcVII}[1]{\textcolor{sim@VII}{#1}}
 
 
 \makeatother

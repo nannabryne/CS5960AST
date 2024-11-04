@@ -1,0 +1,112 @@
+% |||||||||||||||||||||||||||||||||||||||||||||
+% |||||| A.X Variation of NG action ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||
+
+
+% ---------------------------------------------------
+% labels: \label{[type]:derivations:NG_action:[name]}
+% ---------------------------------------------------
+
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\hypsurf}{\ALIAShypsurf}
+\newcommand{\pert}{\ALIASpert}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+Following~\cref{sec:pertwalls:thinwall}, we have the thin domain wall in four-dimensional expanding, flat spacetime, represented by the hypersurface $\hypsurf$ located at $x\^\mu = X\^\mu(\xi\^a)$, given by
+\begin{equation}
+    X\^\mu(\xi\^a) = \Krondelta*{^{\mu}_a}\xi\^a + \Krondelta*{^{\mu}_3} X_\bot,%(\xi\^a),
+\end{equation}
+where Greek indices take values $0,1,2,3$ and Latin $a, b, c$ take $0,1,2$. Note that Latin indices $i,j,k, \dots$ still represent indices in the spatial sector.
+
+We go about the variation in a slightly less rigorous, yet more intuitive manner. Consider the Nambu--Goto action for the domain wall in expanding spacetime
+\begin{equation}
+    S\nped{NG} = -  \integ[3]{\xi\sqrt{-\gamma}}[\varSigma] \sigma,
+\end{equation}
+where we keep the surface tension generally dependent on time, and the induced metric is
+% With the embedding $X\^\mu(\xi\^a)$, we have
+\begin{equation}
+    \gamma\_{ab} = g\_{\mu\nu} \partial\_{a} X\^\mu \partial\_{b} X\^\nu,
+\end{equation}
+with determinant
+\begin{equation}
+    \gamma \equiv \det(\gamma) = \tilde{\epsilonup}\^{abc}\gamma\_{a0}\gamma\_{b1}\gamma\_{c2},
+\end{equation}
+where $\tilde{\epsilonup}$ is the Levi--Civita symbol. 
+% for the induced metric. 
+For $X_\bot \to \pert{X}_\bot = X_\bot +  \epsilon$, 
+% For $\xi^a = x\^a$ and $X\^\mu = (\tau, x, y, z_0 + \epsilon)$, 
+where $\epsilon$ is a small perturbation, we get
+% \begin{equation}\label{eq:derivations:NG_action:det_gamma}
+%     \gamma =  -a^6 \cclosed{1 + \eta\_{ab} \partial\^a \epsilon \partial\_b \epsilon},
+% \end{equation}
+% which gives 
+\begin{equation}
+    \sqrt{-\gamma}= a^3\sqrt{1 + \eta\_{ab} \partial\^a \epsilon \partial\_b \epsilon} 
+    = a^3 \cclosed{ 1 +  \frac{1}{2} \eta\_{ab} \partial\^a \epsilon \partial\_b \epsilon } + \mathscr{O}(\epsilon^3).
+\end{equation}
+We vary the action with respect to small changes in $\epsilon$, giving
+\begin{align}
+    \Fdv{S\nped{NG}}{\epsilon} \delta \epsilon &=- \integ[3]{\xi}[\hypsurf]  \sigma a^3 \frac{1}{2}  
+    \bclosed{ \eta\_{ab} \partial\^a \epsilon \partial\_{b}(\delta \epsilon) }
+    \cdot 2 + \mathscr{O}\big((\delta \epsilon)^2 \big)
+\end{align}
+With $\partial\_{\underaccent{\bar}{a}} \epsilon \partial\_{\underaccent{\bar}{a}}(\delta \epsilon)= \partial\_{\underaccent{\bar}{a}} (\partial\_{\underaccent{\bar}{a}} \epsilon\cdot \delta \epsilon)- \partial\_{\underaccent{\bar}{a}} \partial\_{\underaccent{\bar}{a}} \epsilon  \cdot \delta \epsilon$, where the under-bar signifies that it is not a summation, and vanishing surface terms, we get
+\begin{align}
+    -\Fdv{S\nped{NG}}{\epsilon} \delta \epsilon = \integ[3]{\xi} 
+    \bclosed {- \beta^3 \eta\_{ab} \partial\^a \partial\_b \epsilon + \beta^3 3 (\partial_0 \beta / \beta) \partial_0 \epsilon } \delta\epsilon,
+\end{align}
+where $\beta^3 \equiv \sigma a^3$. The equation of motion becomes
+\begin{equation}
+    \partial_0^2 \epsilon + 3 ( \partial_0 \beta / \beta) \partial_0 \epsilon -  (\partial_1^2 + \partial_2^2) \epsilon = 0.
+\end{equation}
+
+
+% For $\xi^a = x\^a$ and $X\^\mu = (\tau, x, y, z_0 + \epsilon)$, where $\epsilon$ is a small perturbation, we get
+% \begin{equation}
+%     \begin{split}
+%         \sqrt{-\gamma} &= a^3\sqrt{1-(\partial_\tau \epsilon)^2 + (\partial_x \epsilon)^2 + (\partial_y \epsilon)^2 } \\
+%         &= a^3 \cclosed{ 1 + \frac{1}{2} \bclosed{-(\partial_\tau \epsilon)^2 + (\partial_x \epsilon)^2 + (\partial_y \epsilon)^2} + \mathscr{O}(\epsilon^3)} 
+%     \end{split}
+% \end{equation}
+% We vary the action with respect to small changes in $\epsilon$ \blahblah
+% \begin{align}
+%     \Fdv{S\nped{NG}}{\epsilon} \delta \epsilon &= - \integ[3]{\xi}[\hypsurf]  \sigma a^3 \frac{1}{2}  \bclosed{ \partial_x \epsilon \partial_x (\delta \epsilon) + \partial_y \epsilon \partial_y (\delta \epsilon)  - \partial_\tau \epsilon \partial_\tau (\delta \epsilon) }\cdot 2 + \mathscr{O}((\delta \epsilon)^2)
+% \end{align}
+% With $\partial\_a \epsilon \partial\_a(\delta \epsilon)= \partial\_a (\partial\_a \epsilon \delta \epsilon)- \partial\_a \partial\_a \epsilon \delta \epsilon$ and vanishing surface terms, we get
+% \begin{align}
+%     \Fdv{S\nped{NG}}{\epsilon} \delta \epsilon &= 
+% \end{align}
+
+
+
+\subsection{Stress--energy tensor}\label{app:derivations:NG_action:SE_tensor}
+    We rewrite the variation
+    \begin{equation}
+        \Fdv{\sqrt{-\gamma}}{g\_{\mu\nu}} =\frac{-1}{2\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}}.
+    \end{equation}
+    % We compute the 
+    To leading order in $\epsilon$, we get
+    \begin{equation}
+        \Fdv{\gamma}{g\_{ab}}  = -a^4 \eta\_{ab}, \quad
+        \Fdv{\gamma}{g\_{a3}}  = -a^4 \partial\_a \epsilon, \quad
+        \Fdv{\gamma}{g\_{33}}  =  0.
+    \end{equation}
+
+    % \begin{equation}
+    %     \Fdv{\gamma}{g\_{\mu\nu}} = -a^4 \left(\begin{array}{cccc}
+    %         -1 & 0 & 0 & \partial_0 \epsilon  \\
+    %         0 & 1 & 0 & \partial_1 \epsilon \\
+    %         0 & 0 & 1 & \partial_2 \epsilon \\
+    %         \partial_0 \epsilon & \partial_1 \epsilon & \partial_2 \epsilon& 0  \\
+    %     \end{array}\right) + \mathscr{O}(\epsilon^2)
+    % \end{equation}
+    Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get
+
+    
+
+

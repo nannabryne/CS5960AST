@@ -10,33 +10,248 @@
 
 
 
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand\Chr{\ChristophelSym}
+\newcommand*\Kd{\Krondelta}
+\newcommand*\Ric{\RicciScalar}
+\newcommand\cfac{\Upsilon}
+\newcommand\wt{\widetilde}
+\newcommand\hypacc{\ALIAShypacc}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
-To develop a classical field theory, we require a handful of mathematical \grammar[concepts]{structures} from differential geometry.
+
+
+
+
+
+% To develop a classical field thkeory, we require a handful of mathematical \grammar[concepts]{structures} from differential geometry.
+
+
+
+
+
+% Differential geometry is the study of the geometry of differentiable \emph{manifolds}. Manifolds are topological spaces that locally \emph{looks like} Eucledian space. 
+
+% Manifolds are topological spaces that locally \emph{looks like} Eucledian space. Differential geometry is the study of the geometry of differentiable (or smooth) manifolds. Special instances of these manifolds 
+
+% Albert Einstein formulated GR in terms of differentiable \emph{manifolds} and their geometry, a mathematical discipline known as differential geometry. 
+% Albert 
+Einstein formulated GR in terms of spacetime geometries, using the mathematical discipline known as differential geometry. 
+Whilst most prominent in physics, differential geometry knows many applications in natural sciences. This~\lcnamecref{sec:GR:diffgeo} briefly introduces basic concepts and terminology of this mathematical branch. For formal definitions, see e.g.~\citet{carrollSpacetimeGeometryIntroduction2019}.
+% Differential geometry knows many applications in natural sciences, most importantly in physics.
+
+
+\newconcept{Manifolds} are topological spaces that locally \emph{look like} Eucledian space. They are characterised by metric tensors that describe their geometries. For example, the Minkowski spacetime from special relativity is described by the metric tensor (defined shortly) $\eta\_{\mu\nu}$ which is related to the line element through
+\begin{equation}
+    {{ds}^2}\rvert\nped{M} = \eta\_{\mu\nu} {\diff x\^\mu}{\diff x\^\nu} = - {\diff t}^2 + \Krondelta{_{ij}}{\diff x\^i}{\diff x\^j},
+\end{equation}
+where $\Krondelta{_{ij}}$ is the Kronecker delta (\cref{eq:notation:Kronecker_delta}). %
+% \begin{equation}
+%     \Krondelta{_{ij}} = \begin{cases}
+%         1 &\text{if } i=j, \\
+%         0 &\text{else.}
+%     \end{cases}
+% \end{equation}
+In the standard picture, the coordinates are $x\^\mu=(t,x,y,z)$ such that the last term above is the three-dimensional Euclidean line element in Cartesian coordinates. 
+Minkowski manifolds are special cases of pseudo-Riemannian manifolds (discussed below).
+% Other special instances of these manifolds, particularly pseudo-Riemannian, represent curved generalisations of the Minkowski spacetime, and these are the main ingredients in GR. There are certain artefacts to these particular mathematical structures needed to understand the steps in the project.
+
+\subsubsection{Metric tensor}
+The \newconcept{metric tensor} $g\_{\mu\nu}$ is a symmetric rank $(0,2)$ tensor that is non-degenerate ($\det(g)\neq 0$) and relates to the line element as 
+\begin{equation}
+    {ds}^2 = g\_{\mu\nu} {\diff x\^\mu}{\diff x\^\nu}.
+\end{equation}
+Its inverse satisfies $g\^{\mu\kappa}g\_{\kappa\nu} = \Kd{^\mu_\nu} $, and we usually denote the determinant by $g=\det(g)$. The metric tensor is used to raise and lower indices of other tensors, e.g.~$A\_\mu = g\_{\mu\nu}A\^\nu$.
+
+
+
+\subsubsection{Pseudo-Riemannian manifolds}
+A manifold $\Manifold$ with a metric $g\_{\mu\nu}$ that put into its \emph{canonical form} is $\text{diag}(-1,+1,+1, \dots,+1)$ is called Lorentzian or \newconcept{pseudo-Riemannian}. For all practical purposes, it is to say that the spacetime has one time dimension and arbitrary number ($d$) of spatial dimensions. We say that $\Manifold$ has $d+1$ dimensions with coordinates $x\^\mu$, and emphasise that Greek indices runs from $\mu=0,i$ and Latin ones $i = 1, \dots , d$. Now, there exists a unique connection $\ChristophelSym{\rho}{\mu\nu}$ constructed from the metric, called the \newconcept{Christoffel symbols} (see~\cref{eq:notation:Christophel_symbols}). From this we get important structures such as the \newconcept{covariant derivative} $\nabla\_\mu$ and the \newconcept{Riemann curvature tensor} $\mathcal{R}\indices{^\rho_{\sigma\mu\nu}}$ (see~\cref{eq:notation:Riemann_tensor}). Further, one can construct the \newconcept{Ricci tensor} $\mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}}$, 
+% \begin{equation}
+%     \mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}} = g\_{\lambda \rho} \mathcal{R}\indices{_{\rho\mu\lambda\nu}} 
+% \end{equation}
+% We will enc
+the contraction of which is the \newconcept{Ricci scalar} $\mathcal{R}= g\^{\mu\nu} \mathcal{R}\_{\mu\nu}$. 
+% We will encounter the \newconcept{Einstein tensor} $\mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - g\_{\mu\nu}  \mathcal{R}/2$. %
+The \newconcept{Bianchi identities},
+\begin{equation}\label{eq:GR:diffgeo:Bianchi_identities}
+    \Ric\_{\mu\nu\alpha\beta;\gamma} + 
+    \Ric\_{\mu\nu\gamma\alpha;\beta} + 
+    \Ric\_{\mu\nu\beta\gamma;\alpha} = 0,
+\end{equation}
+in GR reduce to %$\nabla\^\nu \mathcal{G}\_{\mu\nu}=0$.
+$\mathcal{G}\indices{_{\mu\nu}^{;\nu}}=0$, where %$\mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - g\_{\mu\nu}  \mathcal{R}/2$ is the \newconcept{Einstein tensor}.
+\begin{equation}\label{eq:GR:diffgeo:Einstein_tensor}
+    \mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - \frac{1}{2} g\_{\mu\nu}  \mathcal{R}
+\end{equation}
+is the \newconcept{Einstein tensor}. \iftime{Write better.}
+% or
+% \begin{equation}
+%     \nabla\^\nu \Ric\_{\mu\nu} - \frac{1}{2} \nabla\_\mu \Ric = 0.
+% \end{equation}
+
 
 
 
 \subsection{Hypersurfaces}\label{sec:GR:diffgeo:hypsurfs}
-    A hypersurface of a $(p+q)$-dimensional manifold $\Manifold$ is a submanifold of codimension 1, i.e. with $p+q-1$ dimensions. 
+    { %
+    \newcommand{\zzz}{Y}
+    % --------------------
+    A manifold $\varSigma$ \emph{embedded} (contained within) in another manifold $\Manifold$ is a {submanifold} of the ambient spacetime. We define an \newconcept{induced metric}
+    \begin{equation}\label{eq:GR:diffgeo:induced_metric_submanifold}
+        % \gamma\_{ab} = \partial\_a X\^\mu \partial\_b X\^\nu g\_{\mu\nu}
+        \gamma\_{ab} = X\indices{^\mu_{,a}} X\indices{^\nu_{,b}} g\_{\mu\nu}
+        % \gamma\_{ab} =  \pdv{x\^mu} \partial\_b X\^\nu g\_{\mu\nu}
+    \end{equation}
+    where $X\^\mu (\xi\^a)$ is the embedding function describing the mapping $\varSigma \to \Manifold$, and $\xi\^a$ are the coordinates on $\varSigma$.
 
+
+
+    A \newconcept{hypersurface} of a $(p+q)$-dimensional manifold $\Manifold$ is a submanifold of codimension 1, i.e. with $p+q-1$ dimensions. %\comment{Brief intro.}
+    We write the metric in~\newconcept{Gaussian normal coordinates} $\{\zzz, \xi\^a \}$ as
+    \begin{equation}
+        {ds}^2 = \varsigma {\diff \zzz }^2 + \gamma\_{ab}{\diff \xi\^a}{\diff \xi\^b}, 
+    \end{equation}
+    where $\gamma\_{ab}$ is the induced metric in~\cref{eq:GR:diffgeo:induced_metric_submanifold}~\citep{carrollSpacetimeGeometryIntroduction2019}. We have
+    \begin{equation}\label{eq:GR:diffgeo:varsigma_hypsurf}
+        \varsigma = n\_\mu n\^\mu = \begin{cases}
+            -1 &\text{if \(\varSigma\) is spacelike,} \\
+            +1 &\text{if \(\varSigma\) is timelike,} \\
+        \end{cases}
+    \end{equation}
+    where $n\^\mu = (\partial_{\zzz})\^\mu$ is the normal vector. This means that spacelike hypersurfaces have timelike normal vectors, and vice versa.
+    % \blahblah
+    % \comment{SHORT TEXT ABOUT HYPERSURFACES!}
+
+
+    % Now $\hypacc{K}\_{ab}=-$\comment{INSERT} is the \newconcept{extrinsic curvature} (or first fundamental form) of 
+
+    We will define the \newconcept{extrinsic curvature} as a tensor $\hypacc{K}\_{ab}$ on $\varSigma$ by
+    \begin{equation}\label{eq:GR:diffgeo:extrinsic_curvature}
+        \hypacc{K}\_{ab} \equiv - X\indices{^\mu_{,a}}  X\indices{^\nu_{,b}} \nabla\_\nu n\_\mu.
+    \end{equation}
+    Note that this definition tends to vary in references~\citep{carrollSpacetimeGeometryIntroduction2019}.
+}
 
 
 \subsection{Conformal geometry}\label{sec:GR:diffgeo:conformal}
+    % Two metrics $g\_{\mu\nu}$ and $\widetilde{g}\_{\mu\nu} $ are conformally equivalent if there exists a positive function $\Upsilon$ on $\Manifold$ such that 
+    % A class of transformations of the metric
+    The class of transformation called \newconcept{conformal transformations} are in all essence local changes of scale. They are written
+    % If there exists a positive function $\Upsilon$ on $\Manifold$ such that
+    \begin{equation}\label{eq:GR:diffgeo:conformal_trafo}
+        \wt{g}\_{\mu\nu} = \cfac^2(x) g\_{\mu\nu} , \quad \exists\, \cfac(x) > 0,
+    \end{equation}
+    where $x$ denotes spacetime events on $\Manifold$, and $\cfac$ is called the \newconcept{conformal factor}. The convenience of conformal equivalence comes from the simple fact that any function of $g\_{\mu\nu}$ can be thought of as a function of $\wt{g}\_{\mu\nu}$ and $\cfac(x)$. 
 
-    \begin{bullets}
-        \item Conformal geometry
-        \item FLRW spacetime \& Jordan vs. Einstein frames 
-        \item Scale invariance
-        \item Scalar product preserved $\leadsto$ neat FTs
-    \end{bullets}
 
-    \subsubsection{Fourier transforms}
-        One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
+
+    The inverse transformation is trivial, $g\_{\mu\nu} = \Upsilon^{-2}(x)\wt{g}\_{\mu\nu}$, and the determinant transforms as $\sqrt{-\wt{g}}= \Upsilon^d \sqrt{-g}$, where $d$ is the dimension of the spacetime. The conformally-transformed Christoffel symbols take the form
+    \begin{equation}
+        \Chr[\wt{\Gamma}]{\rho}{\mu\nu} = \Chr{\rho}{\mu\nu}  + C\indices{^\rho_{\mu\nu}},
+    \end{equation}
+    where 
+    \begin{equation}
+        C\indices{^\rho_{\mu\nu}} = \cfac^{-1} 
+        \pclosed{ 2\Krondelta{^\rho_{(\mu}} \cfac\_{,\nu)}  - g\_{\mu\nu} g\^{\rho\sigma} \cfac\_{,\sigma} }.
+    \end{equation}
+    We obtain neat expressions for the Riemann and Ricci tensors and the Ricci scalar, which we will not list here.\footnote{\comment{COMMENT?}}
+
+    Consider a scalar field $\phi$. We get  $\phi\_{\tilde{;}\mu}= \phi\_{;\mu} = \phi\_{,\mu}$ %$\wt{\nabla}\_\mu\phi = \nabla\_\mu=\phi\_{,\mu}$ 
+    for the covariant derivative, and as for the d'Alembertian, 
+    \begin{equation}
+        \wt{\sq} \phi = \cfac^{-2} \sq \phi + (d-2) g\^{\rho \sigma } \cfac^{-3} \cfac\_{;\rho} \phi\_{;\sigma}.
+    \end{equation}
+
+
+
+    We consider two special cases of such relations that will be of use in this thesis.
+
+    
+    % $\det{\tilde{g}} = \Upsilon^d \det{g}$,
+    % The determinant $\sqrt{-\tilde{g}}= \Upsilon^{-d/}$
+
+
+
+
+    % We employ these results in two 
+    % \begin{enumerate}
+    %     \item If $\cfac(x)=a(\tau)$ and $g\_{\mu\nu}= \eta\_{\mu\nu}$, where $\tau=x\^0$ is conformal time, then $\wt{g}\_{\mu\nu}$ is the flat FLRW metric (see~\cref{sec:GR:lcdm}). The conformal metric is then conformally flat, as $\cfac^{-2}(x)\wt{g}\_{\mu\nu}= \eta\_{\mu\nu}$.
+    %     \item A scalar--tensor theory (see~\cref{sec:cosmo:quintessence}) with auxiliary field $\phi(x)$ can be described in two reference frames related by $\wt{g}\_{\mu\nu}= A^2(\phi) g\_{\mu\nu}$. %The Einstein
+    %     % If $\Upsilon(x)=A(\phi)$ and $g\_{\mu\nu}=  a^2(\tau) \eta\_{\mu\nu}$, the 
+    % % \end{enumerate}
+
+
+
+
+
+
+    % \begin{bullets}
+    %     \item Conformal geometry
+    %     \item FLRW spacetime \& Jordan vs. Einstein frames 
+    %     \item Scale invariance
+    %     \item Scalar product preserved $\leadsto$ neat FTs
+    % \end{bullets}
+
+    % \subsubsection{Fourier transforms}
+        
+
+
+
+
+
+    \subsubsection{Expanding universe}
+        If $\cfac(x)=a(\tau)$ and ${ds}^2 = -{\diff \tau}^2 + {d\varSigma}^2$, where $\varSigma$ is a space-like hypersurface with a given Gaussian curvature, then $\wt{ds}^2=a^2 {ds}^2$ is the FLRW line element (see~\cref{sec:GR:lcdm}). If $\varSigma = \Real[3]$, the metric $\wt{g}\_{\mu\nu}$ is said to be conformally flat.
+        % If $\cfac(x)=a(\tau)$ and $g\_{\mu\nu}= \eta\_{\mu\nu}$, where $\tau=x\^0$ is conformal time, then $\wt{g}\_{\mu\nu}$ is the flat FLRW metric (see~\cref{sec:GR:lcdm}). The conformal metric is then conformally flat, as $\cfac^{-2}(x)\wt{g}\_{\mu\nu}= \eta\_{\mu\nu}$. 
+        % We use the comoving coordinates $\vec{x}=a$
+        % The comoving frame 
         \begin{subequations}
-            \begin{align}
-                f(x) &= \integ[4][{(2\ppi)}^4]{k}  \eu[-\im \eta\_{\mu\nu} k^\mu x\^{\nu}] f(k) &&= \integ[1][2\ppi]{\omega} \eu[\im \omega \tau] \integ[3][{(2\ppi)}^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] f(\omega, \vec{k})\\
-                f(k) &= \integ[4]{x}  \eu[\im \eta\_{\mu\nu} k^\mu x\^{\nu}]f(x) &&=\integ{\tau} \eu[-\im\omega\tau] \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] f(\tau, \vec{x})
-            \end{align}
+            We define the Fourier transform of a function $f(\vec{x})$ of comoving coordinates $\vec{x}$ as
+            \begin{equation}
+                \tilde{f}(\vec{k}) = \integ[3]{x}  f(\vec{x})\eu[ \im \vec{k}\cdot \vec{x}],
+            \end{equation}
+            and its inverse
+            \begin{equation}
+                f(\vec{x}) = \integ[3][(2\ppi)^3]{k} \tilde{f}(\vec{k})\eu[-\im \vec{k}\cdot \vec{x}],
+            \end{equation}
+            where $\vec{k}$ is the comoving wavevector.
         \end{subequations}
-        The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
+        The comoving frame relates these coordinates to physical coordinates by $\vec{x}\ped{ph} = a \vec{x}$ and $\vec{k}\ped{ph} = \vec{k}/a$.
+
+        The d'Alembertian is
+        \begin{equation}
+            \wt{\sq} \phi = a^{-2} \pclosed{\sq\nped{M} \phi - 2\mathcal{H}\partial_\tau \phi },
+        \end{equation}
+        where $\mathcal{H}=a^{-1} \partial_\tau a$ and $\sq\nped{M}\equiv\partial\^\mu\partial\_\mu$. 
+
+        Note that more often than not, the tilde will be reserved for other quantities, and the metric $g\_{\mu\nu}$ will refer to the generalised metric or FLRW if specified.
+
+        % \paragraph{Fourier transforms.} %
+        
+        
+
+        % One very neat consequence of this scale invariance is that in FLRW cosmology we can use the regular, flat-space form of the Fourier transform and its inverse:
+        % \begin{subequations}
+        %     \begin{align}
+        %         f(x) &= \integ[4][{(2\ppi)}^4]{k}  \eu[-\im \eta\_{\mu\nu} k^\mu x\^{\nu}] f(k) &&= \integ[1][2\ppi]{\omega} \eu[\im \omega \tau] \integ[3][{(2\ppi)}^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] f(\omega, \vec{k})\\
+        %         f(k) &= \integ[4]{x}  \eu[\im \eta\_{\mu\nu} k^\mu x\^{\nu}]f(x) &&=\integ{\tau} \eu[-\im\omega\tau] \integ[3]{x} \eu[\im \vec{k}\cdot \vec{x}] f(\tau, \vec{x})
+        %     \end{align}
+        % \end{subequations}
+        % The four-vectors $[x\^\mu] = (\tau, \vec{x})$ and $[k\^\mu]= (\omega, \vec{k})$ represent the comoving coordinate and wavevector, respectively. \important{\cite[Ch.~17.1]{maggioreGravitationalWavesVol2018}}
             
-        \comment{Make this readable (\href{https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to}{typesetting})} 
+        % \comment{Make this readable (\href{https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to}{typesetting})}
+        
+        
+    \subsubsection{Scalar--tensor theories}
+        A scalar--tensor theory (see~\cref{sec:cosmo:quintessence}) with auxiliary field $\phi(x)$ can be formulated (mathematically) equivalently in two different reference frames related by $\wt{g}\_{\mu\nu}= A^2(\phi) g\_{\mu\nu}$. Here, $g\_{\mu\nu}$ defines what is known as the \newconcept{Einstein frame}, and $\wt{g}\_{\mu\nu}$ the \newconcept{Jordan frame}. 
+
+
+
+        % The Jordan and Einstein frames are two different but mathematically equivalent formulations 
+
+
+
+        
+        
+

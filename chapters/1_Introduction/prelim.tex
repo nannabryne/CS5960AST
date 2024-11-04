@@ -1,49 +1,125 @@
+% |||||||||||||||||||||||||||||||
+% |||||| 1.2 Preliminaries ||||||
+% |||||||||||||||||||||||||||||||
 
 
 
 
-It is assumed that the reader is familiar with variational calculus and linear perturbation theory.
+% -----------------------------------------
+% labels: \label{[type]:into:prelim:[name]}
+% -----------------------------------------
 
-\rephrase{In the following, we briefly (re)capture some concepts that are important starting points for the rest of the thesis.}
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand\pert{\ALIASpert}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+% ////////////////////// intro //////////////////////
+
+We assume that the reader is familiar with basic concepts from mathematical methods in physics such as the variational principle, tensors, Green's functions and cylindrical functions. Classical field theory and linear perturbation theory will not be covered from ground level. Other than this, the thesis will be relatively self-contained, but understanding of basic modern cosmology will be an advantage. 
+For reference, we cover a few of these concepts in the subsections below.
+
+% \comment{Comment on Lorentz invariance and gauge invariance??}
+
+
+% ///////////////////////////////////////////////////
+
+
+
+
+
+
+
+% classical field theory, linear perturbation theory and mathematical meth
+
+
+% It is assumed that the reader is familiar with variational calculus and linear perturbation theory.
+
+% \rephrase{In the following, we briefly (re)capture some concepts that are important starting points for the rest of the thesis.}
 
 
 
 
 % \subsection{GR}
 
-\begin{bullets}
-    \item variational calculus/ varying action
-    \item action
-    \item pert. theory?
-    \item line element
-    \item gauge invariance
-    \item FRW cosmology
-    \item \underline{classical field theory}
-\end{bullets}
+% \begin{bullets}
+%     \item variational calculus/ varying action
+%     \item action
+%     \item pert. theory?
+%     \item line element
+%     \item gauge invariance
+%     \item FRW cosmology
+%     \item \underline{classical field theory}
+% \end{bullets}
+
+
+% \begin{enumerate}
+%     \item Special relativity 
+%     \item Classical field theory \begin{itemize}
+%         \item Newtonian gravity
+%     \end{itemize}
+%     \item Mathematical tools
+% \end{enumerate}
 
 
 
-\begin{equation}
-    G\_{\mu\nu} = 8\ppi G\nped{N} T\_{\mu\nu}
-\end{equation}
 
-\subsection{Field theory}
+\subsection{Special relativity}
+    The \newconcept{four-vector} $x\^\mu=(t, \vec{x})$ in Minkowski space $\Real[3,1]$ encompasses time $t=x\^0$ and position $\vec{x}=x\^i= (x\^1, x\^2, x\^3)$. The \newconcept{metric tensor} in SR is $g\_{\mu\nu}= \eta\_{\mu\nu} \equiv \text{diag} (-1,+1,+1,+1)$. The four-vector $x\^\mu$ is ``naturally raised,'' whereas the derivative
+    \begin{equation}
+        \partial\_\mu \equiv \pdv{}{x\^\mu} =\pclosed{ \pdv{}{t}, \vec{\nabla} }
+    \end{equation}
+    is ``naturally lowered.'' 
+    \comment{Lorentz invariance.}
+
+
+
+
+
+\subsection{Classical field theory}
     % Consider Lorentzian \blahblah. We formulate a theory in terms of the Lorentz invariant action
     % \begin{equation}
     %     S = \int \! \dx[4]\, \mathcal{L},
     % \end{equation}
     % with $\mathcal{L}$ being the \emph{Lagrangian}\footnote{Technically, it is the Lagrangian \emph{density}, an insignificant \grammar[point]{distinction} for these purposes.} of the theory. This Lorentz invariant quantity is composed of scalar terms only.
-    We formulate a theory in four-dimensional spacetime \comment{Minkowski} in terms of the Lorentz invariant action
+    We formulate a theory of field\emph{s} $\Phi(x)$ in four-dimensional Minkowski spacetime in terms of the Lorentz invariant action
     \begin{equation}
-        S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\_{\mu} \phi_i\}),
+        % S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\_{\mu} \phi_i\}),
+        S = \integ[4]{x} \mathcal{L}(\Phi, \partial\_\mu \Phi),
     \end{equation}
-    with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\{\phi_i\}$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. For a general (i.e.~curved) spacetime, \blahblah $\partial\_{\mu} \to \nabla\_{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
-    \begin{equation}
-        S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{scalar}}, 
-    \end{equation}
-    % where $\hat{\mathcal{L}}$ is a scalar.
-    \comment{Maybe specify that this is only for scalar fields? Or include other fields?}
+    with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\Phi$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. 
 
+    % This translates to a general (i.e.~curved) spacetime with the substitution of partial to covariant derivative and the construction of a Lorentz-invariant Lagrangian,
+    This translates to a general (i.e.~curved) spacetime through the construction of a Lorentz-invariant Lagrangian,
+    % For a general (i.e.~curved) spacetime, \blahblah $\partial\_{\mu} \to \nabla\_{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
+    \begin{equation}
+        % S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{scalar}}, 
+        S = \integ[4]{x}\underbrace{ \mathcal{L}(\Phi,  \nabla\_{\mu} \Phi)}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-g}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\Phi, \nabla\_{\mu} \Phi)}_{\text{scalar}},
+    \end{equation}
+    where $g= \det(g)$ is the determinant of the metric. What was applied here, was the \newconcept{minimal-coupling principle}, 
+    and we may refer to $\mathcal{L}$ as the minimally-coupled Lagrangian (density). Loosely speaking, this principle involves replacing the Minkowski metric with the curved-spacetime metric ($\eta\_{\mu\nu}\to g\_{\mu\nu}$), and partial derivatives to covariant derivatives ($\partial\_{\mu} \to \nabla\_{\mu} $).
+    
+    % where $\hat{\mathcal{L}}$ is a scalar.
+    % \comment{Maybe specify that this is only for scalar fields? Or include other fields?}
+
+    % \comment{Action princible}
+
+
+    \paragraph{Action principle.} %
+    We use variational calculus to obtain the fields' equations of motion. For a scalar field $\phi$, we consider the change $\phi \to \phi + \delta \phi$ and apply this to the action, s.t. $S\to S+ \delta S$. %Identifying terms of leading order ($\mathscr{O}(\delta \phi)$), 
+    After isolating $S$ and gathering terms up to leading order, we set $\delta S = 0$ and obtain an equation for $\phi$ in terms of first and second derivatives.
+
+    Often it is necessary to use \checkthis{Stokes' theorem} to set certain terms to zero. The argument \blahblah \comment{Fix or remove!}
+    % We gather zero-order terms and isolate $S$
+    % \begin{enumerate}
+    %     \item Gather zero-order terms and isolate $S$.
+    %     \item Identify leading-order terms to find $\delta S= \mathscr{O}(\delta \phi)$.
+    %     \item Set all higher-order terms to zero, $\mathscr{O}((\delta \phi))=0$
+    % \end{enumerate}
 
 % \subsection{Classical Field Theory}
     % The action
@@ -55,66 +131,107 @@ It is assumed that the reader is familiar with variational calculus and linear p
 
 
 
-
-\subsection{Expanding universe: standard cosmology}
-    \begin{bullets}
-        \item expansion rate, cosmic time, conformal time
-        \item why is flat assumption OK?
-        \item redshift $\mathfrak{z}=a_0/a-1$
-    \end{bullets}
-    % The universe expands with the rate $a(t\phys)$ at physical or rather \emph{cosmic} time $t\phys$. \comment{Explain cosmic time and $t\phys=0$.} This work sincerely favours the use of \emph{conformal} time, also known as the comoving horizon. As $t$ is a neat variable name, we shall \emph{not}  reserve it for the cosmic time, as is the most common use, but rather let it refer to the conformal time coordinate. 
-
-    The standard model of cosmology, the \hypertarget{abbrv:lcdm}{\textLambda{}CDM}
+    \subsubsection{Newtonian gravity}
+        \blahblah
 
 
 
+\subsection{Mathematical tools}
+\subsubsection{Perturbation theory}
+    % \blahblah
+    We write that to order $o$ in some small parameter $\epsilon$, we have
+    \begin{equation}
+        \pert{q} \equiv \sum_{i=0}^o \delta^{(i)} q =  q^{(0)} + \epsilon q^{(1)}  + \epsilon^2 q^{(2)} + \dots +  \epsilon^o q^{(o)}, 
+    \end{equation}
+    where 
+
+    Consider $Q(q)$. We write
+    \begin{equation}
+        \pert{Q} \equiv \sum_{i=0}^o {}^{(i)} Q,
+    \end{equation}
+    where ${}^{(i)}Q$ is the $i$th order perturbation of $Q$, not necessarily $\epsilon^i Q$
+
+    \comment{Fix or remove.}
     
+
+\subsubsection{Method of Green's functions}
+    A linear ordinary differential equation (ODE) $\mathop{\mathrm{L}}_x f(x)=g(x)$ assumes a linear differential operator $\mathop{\mathrm{L}}$, a \checkthis{continuous}, unknown function $f$, and a right-hand side $g$ that forms the inhomogeneous part of the ODE. The \newconcept{Green's function} $G$ for the ODE (or $\mathop{\mathrm{L}}$) manifests as any solution to $\mathop{\mathrm{L}}_x G(x, y) = \Diracdelta(x-y)$. Now
+    \begin{equation}
+        f(x) = \integ{y} G(x, y) g(y)
+    \end{equation}    
+    solves the original ODE.
     
-
-
-\subsection{Method of Green's functions}
-    A linear ordinary differential equation (ODE) $\mathop{\mathrm{L}_x}f(x)=g(x)$ assumes a linear differential operator $\mathop{\mathrm{L}}$, a \checkthis{continuous}, unknown function $f$, and a right-hand side $g$ that constitutes the inhomogeneous part of the ODE. The \emph{Green's function} $G$ for the ODE (or $\mathop{\mathrm{L}}$) is manifest as any solution to $\mathop{\mathrm{L}_x} G(x, y) = \Diracdelta(x-y)$ \comment{check plagiarism (Bringmann)}. If $\mathop{\mathrm{L}}$ is translation invariant (invariant under $x\mapsto x+a $)---which is equivalent to $\mathop{\mathrm{L}}$ having constant coefficients---we can write $G(x,y)=G(x-y)$ and \provethis{show?}
+    \deleteme{If $\mathop{\mathrm{L}}$ is translation invariant (invariant under $x\mapsto x+a $)---which is equivalent to $\mathop{\mathrm{L}}$ having constant coefficients---we can write $G(x,y)=G(x-y)$ and %\provethis{show?}
     \begin{equation}
         f(x) = (G \ast g )(x) =\integ{y}G(x-y)g(y)
     \end{equation}
-    solves $\mathop{\mathrm{L}_x}f(x)=g(x)$. 
+    solves $\mathop{\mathrm{L}_x}f(x)=g(x)$. }
     
-    Let $f_i^{\mathrm{(0)}}$, $i=1,2,3,\dots$ be solutions to the homogeneous ODE, i.e.~$\mathop{\mathrm{L}_x} f_i^{\mathrm{(0)}}=0$. Then, by the superposition principle, $f(x) + \sum_{i}c_i f_i^{\mathrm{(0)}}$ is also a solution of the original, inhomogeneous equation.
+    \deleteme{%
+    Let $f_i^{\mathrm{(0)}}$, $i=1,2,3,\dots$ be solutions to the homogeneous ODE, i.e.~$\mathop{\mathrm{L}_x} f_i^{\mathrm{(0)}}=0$. Then, by the superposition principle, $f(x) + \sum_{i}c_i f_i^{\mathrm{(0)}}$ is also a solution of the original, inhomogeneous equation.}
 
+    \deleteme{
     \paragraph{Pulse signal.} Consider the very common scenario where the source is a temporary pulse;
     \begin{equation}
         g(x) = \begin{cases}
             g(x), & x_0 \leq x \leq x_1, \\
             0, & x\geq x_1.
         \end{cases}
+    \end{equation}}
+
+
+    \comment{Fix or remove.}
+
+    % This is a test.
+
+
+
+
+
+
+
+\subsection{Cosmic chronology}
+    % \begin{bullets}
+    %     \item expansion rate, cosmic time, conformal time
+    %     \item why is flat assumption OK?
+    %     \item redshift $\redshift=a_0/a-1$
+    % \end{bullets}
+    % The universe expands with the rate $a(t\phys)$ at physical or rather \emph{cosmic} time $t\phys$. \comment{Explain cosmic time and $t\phys=0$.} This work sincerely favours the use of \emph{conformal} time, also known as the comoving horizon. As $t$ is a neat variable name, we shall \emph{not}  reserve it for the cosmic time, as is the most common use, but rather let it refer to the conformal time coordinate. 
+
+    % The standard model of cosmology, the \hypertarget{abbrv:lcdm}{\textLambda{}CDM}
+
+    % In standard model 
+
+    % There are several common choices of time reference frames in cosmological context.
+    % The standard model of cosmology offers several measurements of time that are convenient for various purposes. 
+    The standard model of cosmology provides multiple time measurements that are useful for different applications. 
+    Cosmic time $t$ is often impractical to use in physical cosmology. The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift} $\redshift$,%
+    \footnote{
+        We will use $\redshift$ to distinguish the cosmic redshift from the Cartesian spatial coordinate $z$ in $\vec{x}=(x,y,z)$, as they will both be used frequently.
+    } %
+    defined through
+    \begin{equation}
+        1 + \redshift = a(t_0)/a(t),
     \end{equation}
+    where $t_0\approx 13.8$ gigayears means today, and $a$ is the dimensionless \newconcept{cosmic scale factor}. The cosmic-time term is defined via $a(t\equiv 0)= 0$, which is to say that we define the time of Big Bang as the time \blahblah \comment{Fix!}
+    
+    In this project we make use of \newconcept{conformal time} $\tau$ for which ${\diff t} = a {\diff \tau}$ holds.  
 
-    This is a test.
 
 
+\subsection{Cosmological simulations}
+    \phpar[Nyquist frequency, fundamental frequency, DFTs]
 
-% \subsection{Special functions (tmp. name, maybe move (appendix)?)}
-%     {
-%     \newcommand*{\JJ}[1]{\Bessel[#1]}
-%     \newcommand*{\NN}[1]{\Neumann[#1]}
+    
 
-%     \blahblah
+    \subsubsection{High-performance computing}
 
-%     For $\nu=n+\shalf, n\in \Natural$ we have
-%     \begin{subequations}
-%         \begin{equation}
-%             \JJ{n+\shalf} (x)= \sqrt{\frac{2}{\ppi}} x^{n+\frac{1}{2}} \pclosed{ -\frac{1}{x} \dv{}{x} }^n \frac{\sin{x}}{x}
-%         \end{equation}
-%         and
-%         \begin{equation}
-%             \NN{n+\shalf}(x) = (-1)^{n+1}\JJ{-(n+\shalf)}(x)
-%         \end{equation} 
-%     \end{subequations}
-%     for $x\in\Complex x^{} l xl$
+    There are two main parallelisation techniques \blahblah
     
     
 
-%     }
+    
 
-
+    
+    
 

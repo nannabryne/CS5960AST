@@ -1,0 +1,49 @@
+% |||||||||||||||||||||||||||
+% |||||| 6.4 Hindsight ||||||
+% |||||||||||||||||||||||||||
+
+% -----------------------------------------------------
+% labels: \label{[type]:results:hindsight:[name]}
+% -----------------------------------------------------
+
+
+Some technicalities regarding our choices is necessary to address at this point. 
+It seemed natural to begin with a set of parameters that was deemed sensible before, i.e. $a_\ast = 0.33$, $\xi_\ast = 3.33\times 10^{-4}$ and $\beta_\ast = 1$ from~\citet{christiansenAsevolutionRelativisticNbody2023}. %
+The initial idea was to start simulations at initial redshift $\redshift\ped{i}=2.00$ with SSB happening only a few time steps before this, at $\redshift_\ast = 1/a_\ast - 1 = 2 + 1/33 \simeq 2.0303$. This way, the ``true'' wall width $\delta\ped{w} = (a\mu\chi_+)^{-1}$ is not infinite at the start, and we may use the quasi-static approximation for $\chi$ and $q$ with $\breve{\chi}= \chi_+$. We used the analytical expression for $\varepsilon$ and $\dot{\varepsilon}$ to find suitable values at initial time. To get an idea of the impact of larger oscillations around minima, we attempted initialising at redshift $2.02$, where the walls were dangerously close to colliding, but where separated just enough. 
+
+
+
+It was not until later that we decided to tweak the initial conditions to our advantage, and performed the analysis in~\cref{sec:PT:symm_dws:asymptotic}. Now we could initialise as close to PT as we wanted. The catch was now that maybe the surface tension was too different from what we used in~\cref{sec:pertwalls:mywalls}, so we spent some time adjusting the expression for $\sigma\ped{w}$ and studying the effect on $\varepsilon$. The result was that only when the fifth-force oscillations are exaggeratively large was there significant changes in $\varepsilon$. 
+
+
+If we were to do it all over again, it might make sense to set %
+% $a_\ast = 0.4$ and $\redshift\ped{i}=\redshift_\ast = 1.5$, %
+for example 
+$a_\ast = 2/5$ and $\redshift\ped{i}=\redshift_\ast = 3/2$, %
+and use the initial conditions $\breve{\chi}=\chi_\ast$ and $\breve{q}=q_\ast$ from~\cref{app:untitled2}, with $\varepsilon=\epsast$ and $\dot{\varepsilon}=0$. %
+The advantage that $\dot{z}\ped{w}=0$ is not only that $q$ is less complicated, but we avoid having to include it in $\chi$ as well. To account for a moving wall, we should technically perform a Lorentz transformation on the argument to the hyperbolic tangent~\citep{vachaspatiKinksDomainWalls2006,blanco-pilladoDynamicsDomainWall2023}. In the kink scenario from~\cref{sec:cosmo:defects:ex_Z2_kink},~\cref{eq:cosmo:defects:phi_k_Z2} becomes~\citep{vachaspatiKinksDomainWalls2006}
+\begin{equation}
+    \phi\ped{k}(t, x ) = \eta \tanh{\pclosed{\sqrt{\frac{\lambda}{2}}\eta  \frac{x - vt}{\sqrt{1-v^2}} }},
+\end{equation}
+where $v$ is the speed of the moving defect.
+
+% % That would \blahbla
+% \begin{equation}
+%     \chi\ped{w} =\breve{\chi} \tanh{ \pclosed{ \frac{a\breve{\chi}}{2L\nped{C}}Z  } }
+% \end{equation}
+% with
+% \begin{equation}
+%     Z = \frac{z-z\ped{w} - \dot{z}\ped{w}\tau  }{\sqrt{1-\dot{z}\ped{w}^2}}, (NOT\,CORRECT)
+% \end{equation}
+% i.e.~perform a Lorentz transformation on the argument to the hyperbolic tangent~\citep{vachaspatiKinksDomainWalls2006,blanco-pilladoDynamicsDomainWall2023}. 
+
+
+
+
+
+% At PT and the short time period thereafter in which the potential changes rapidly, we
+
+\speak{Unsure where this section is best placed.}
+
+\iftime{Describe plateau in beginning, and the reasoning for discarding those results. Explain how this plateau showed up again in the thin-wall limit when changing the surface tension.}
+

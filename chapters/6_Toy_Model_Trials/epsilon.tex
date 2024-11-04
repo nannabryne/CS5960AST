@@ -3,18 +3,21 @@
 % ||||||||||||||||||||||||||||||||||||||
 
 % ---------------------------------------------------
-% labels: \label[type]{[type]:results:epsilon:[name]}
+% labels: \label{[type]:results:epsilon:[name]}
 % ---------------------------------------------------
 
 
+\speak{Should I include old results that are very bad? Where $\epsast\sim L/4$.}
 
-
-Ignore the anti-wall the box's boundaries. 
+Ignore the anti-wall at the box's boundaries. 
 Simulation-wise, the wall's position is tracked by the minimum value of $\abs{\chi}$, i.e.~the $z$-coordinate at which the field is closest to zero. %We ignore the anti-wall that is left unperturbed.
 We keep in mind that we do not expect a perfect match between the simulated and analytical wall perturbation, mostly because the analytical equations are only valid for perturbations of leading order. A more tangible way to look at is to consider the unit normal vector $n\^\mu$ that we put along the $z$-axis; just by looking at the simulations (\cref{fig:results:epsilon:wall_profile_2D}), we can see that this is clearly not the case, at least close to phase transition.
 
 
-We reduce the problem from three dimensions to two with cylindrical symmetry, and then again to one dimension by considering a suitable slice in the $y$-direction and taking the coordinate of the minimal absolute value of the scalar field $\chi$. An example of the two-dimensional perspective is shown in~\cref{fig:results:epsilon:wall_profile_2D}. This picture is more or less the same for all simulations, at least when comparing by-eye.     
+We reduce the problem from three dimensions to two with cylindrical symmetry, and then again to one dimension by considering a suitable slice in the $y$-direction %
+% (where $\sin{(2 \ppi m_{\lcoord{j}} \lcoord{j} )} =1$) 
+(where $\sin{py} =1$) %
+and taking the coordinate of the minimal absolute value of the scalar field $\chi$. An example of the two-dimensional perspective is shown in~\cref{fig:results:epsilon:wall_profile_2D}. This picture is more or less the same for all simulations, at least when comparing by-eye.     
 
 % ------------------------------
 % ----------- FIGURE -----------
@@ -24,7 +27,7 @@ We reduce the problem from three dimensions to two with cylindrical symmetry, an
     \begin{subfigure}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Findings/wall_profile_2D.pdf}
-        \caption{The domain wall evolution in two dimensions. We indicate the aforementioned slice with a green vertical line.}
+        \caption{The domain wall evolution in the $yz$-plane of the simulation box. We indicate the aforementioned slice with a grey vertical line. The dash-dotted green graph is~$\epsA[\epsilon](\tau(a), y)$.}
         \label{fig:results:epsilon:wall_profile_2D}
     \end{subfigure}
     %
@@ -32,101 +35,48 @@ We reduce the problem from three dimensions to two with cylindrical symmetry, an
     \begin{subfigure}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Findings/achi_eps_1D_analysis.pdf}
-        \caption{\figpanel{Left panel}~The scalar field value along $y$-coordinate XXX at different redshifts. \figpanel{Right panel}~The wall coordinate as function of time. Note that the colour bar share the same axis as the \blahblah.}
+        \caption{\figpanel{Left panel}~The scalar field value along $y$-coordinate \hl{XXX} at different redshifts. \figpanel{Right panel}~The wall coordinate as function of time. Note that the colour bar share the same axis as the \blahblah. \hl{Fix graph labels!}}
         \label{fig:results:epsilon:achi_eps_1D_analysis}
     \end{subfigure}
     % %
-    \caption{Demonstration of results from simulation 1.}
+    \caption{Demonstration of results from simulation~\simnum{1}.}
     \label{fig:results:epsilon:from_achi_to_epsilon}
 \end{figure}
 % ------------------------------
 
 
-\rephrase{We see that the quasistatic $\tanh$-solution varies in applicability as it occurs ``bumps'' around each wall after some time.} 
+We observe a ``bump'' in the quasi-static $\tanh$-solution in each simulation, manifesting in plots like the left panel of~\cref{fig:results:epsilon:achi_eps_1D_analysis} around $z\sim z_0,\widebar{z}_0$ and in the maximum value of $\chi$, cf.~\cref{fig:results:achi:indepth_achi}. This effect is seemingly more prominent in simulations with $\epsast >0$, i.e.~everyone except~\simnum{0}. 
 
-% --: constant surface tension \dots
-% 0: surface tension $\sim \pclosed{ 1 - \upsilon }^{3/2}$ \dots
-% 1: surface tension different? \dots
-% X: ?
-
-% Labels: \textsf{\textbf{Tn.i}} = Type T, equation/method n, initial conditions i
+The simulated wall position graph is not perfectly overlapping with the analytical one, as the right panel of~\cref{fig:results:epsilon:achi_eps_1D_analysis} shows. Simulated walls show a tendency to evolve slower, at least initially, realised in a phase difference between $\epsC$ from simulation and $\epsA$ from the thin-wall approximation.%$\varepsilon(\tau)$ and . 
 
 
-% Initial conditions: \textsf{\textbf{a}} $\epsilon_p(\tau_\ast)= \varepsilon_\ast$, $\dot{\epsilon} (\tau_\ast)=0$.
+In~\cref{fig:results:epsilon:eps_diff_sims_combi} we show the difference between the Nambu--Goto prediction, which for $e=\varepsilon/\epsast$ vs. $t_\omega=\omega (s-1)$ is the same for each simulation, and the field theory. Simulations with similar perturbation setup (cf.~\simnum{1},~\simnum{2},~\simnum{4},~\simnum{7}) but different box parameters gives the similar wall evolution. Note that there is a bump in the simulations with larger scalar field oscillations (\simnum{4}~\&~\simnum{7}). %
+Larger initial amplitude (\simnum{2}) increases the difference, as does larger scale parameter (\simnum{5}). %
+The bottom panel of~\cref{fig:results:epsilon:eps_diff_sims_combi} is remarkably alike~\cref{fig:results:achi:indepth_aq}.
+% ----------------------------------------
+% ---------------- FIGURE ----------------
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{Findings/eps_diff_sims_combi.pdf}
+    \caption{Functions of the scaled time parameter $t_\omega = \omega (s-1) = p(\tau-\tau_\ast)$.~\figpanel{Top panel}~The wall extremal position normalised to the initial amplitude, $e=\varepsilon/\epsast$.~\figpanel{Bottom panel}~The absolute difference between the wall position from calculations and simulations, $\Delta e = \abs{\epsA-\epsB}/\epsast$.}
+    \label{fig:results:epsilon:eps_diff_sims_combi}
+    %%%%%%%%%%%%%
+\end{figure}
+% ----------------------------------------
 
 
-% \begin{figure}[h]\label{fig:results:epsilon:achi_eps_1D_analysis}
-%     \centering
-%     \includegraphics[width=\linewidth]{Findings/achi_eps_1D_analysis.pdf}
-%     %%%%%%%%%%
-%     \caption{\textit{Left panel:}~The scalar field value along $y$-coordinate XXX at different redshifts. \textit{Right panel:}~The wall coordinate as function of time. Note that the colour bar share the same axis as the \blahblah}
-%     %%%%%%%%%%%%%
-% \end{figure}
+We see that initial amplitude actually does matter in simulations, cf.~simulation \simnum{1} vs.~\simnum{2}. The thin-wall approximation disagrees with this, but it can be argued that this relates to the validity of the perturbation size. %does not say this, however, in fact it says the opposite.%; \checkthis{the equation of motion is scale invariant, and thus unchanged by translations.} 
+% It is therefore hard to argue that this motion is possible to reproduce by adjusting terms in the equation of motion. 
+This points to higher-order effects or resolution issues as explanation for the discrepancy, rather than it being a problem with the damping term in the equation of motion. Otherwise, it is a manifestation of the \grammar[]{disagreement} between the Nambu--Goto and the full field theories. \comment{bad sentence}
 
-% \subsection{Technical note}
-    % % \noindent\rule{\textwidth}{2pt}
+We observe that the initial perturbation amplitudes in simulations~\simnum{2} and~\simnum{4} are similar in comoving units; $\epsast =0.12L_\#\approx 123~\Mpch$ and $ \epsast =0.08L_\# = 112~ \Mpch$, respectively. The large-box simulation give results close to those with $\epsast =0.08L_\#$, whereas simulation~\simnum{2} shows different wall dynamics. The point is that as far as the linearised-perturbation analysis goes, the order is given relative to the comoving horizon $\tau=\tau_\ast$. This give substance to the idea that the discrepancy is due to interactions with the anti-wall. On the other hand, when factoring in the perturbation scale parameter, we can think of the perturbation in simulation~\simnum{4} as equal to those of~\simnum{1},~\simnum{3}, etc. 
 
-    % This section's focus is on the solutions to
-    % \begin{equation}
-    %     \ddot{\epsilon}_p + \pclosed{ 3\dot{a}/a + \dot{\sigma}/\sigma } \,\dot{\epsilon}_p + p^2 \epsilon_p= 0.
-    % \end{equation}
-    % That is, we compare solutions obtained with different methods (\lbl{A}/\lbl{N}/\lbl{S}), variants (\lbl{--}/\lbl{0}/\lbl{1}/\lbl{X}) and initial conditions (\lbl{a}/\lbl{b}/\lbl{c})
-    % %
-    % Types:
-    % \begin{description}
-    %     \item[A] Completely analytical solution to eom.
-    %     \item[N] Numerical solution (\texttt{odeint}) to eom. 
-    %     \item[S] Simulated result.
-    % \end{description}
-    % % With type %\ref{itm:whatif:epsilon:A}  her
-    % Subtype:
-    % \begin{description}
-    %     \item[--] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty$.
-    %     \item[0] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty \pclosed{ 1 - \upsilon }^{3/2}$.
-    %     \item[1] Eom for $\epsilon_p(\tau)$ with $\sigma= \sigma_\infty/ 2 \cdot \pclosed{ 3(1-\upsilon)- \breve{\chi}^2} \breve{\chi}$.
-    %     \item[X] Where $\abs{\chi}$ takes its minimum value.
-    % \end{description}
-    % Initial conditions ($\tau_0$, $\epsilon_p(\tau_0)$, $\dot{\epsilon}_p(\tau_0)$) :
-    % \begin{description}
-    %     % \item[a] $\epsilon_p(\tau_\ast)= \varepsilon_\ast$, $\dot{\epsilon} (\tau_\ast)=0$
-    %     % \item[b] $\epsilon_p(\tau\ped{init}) = \epsilon_p(\tau\ped{init})$ from \textsf{\textbf{A0.a}}
-    %     \item[a] ($\tau_\ast$, $\varepsilon_\ast$, $0$) 
-    %     \item[b] ($\tau\ped{init}$, $\epsilon_p(\tau\ped{init})$ from \lbl{A0.a}, $\dot{\epsilon}_p(\tau\ped{init})$ from \lbl{A0.a})
-    % \end{description}
-
-
-
-
-    % \noindent\rule{\textwidth}{2pt}
-
-
-    % With $$k
-    % \begin{description}
-    %     \item[A0] Completely analytical solution to the naive eom for $\epsilon_p(\tau)$, i.e. Eq.~XXX from~\cref{sec:pertwalls:untitled1}.
-    %     \item[N0] Numerical solution (\texttt{odeint}) to naive eom for $\epsilon_p(\tau)$. 
-    %     \item[SX] The $z-L/2$-coordinate where $\abs{\chi}$ from simulation takes its minimum value. %We resolve $\Delta \tau / $  $\Delta x$ 
-    % \end{description}
-
-
-
-% \subsection{Idk}
-    % It does not seem as if the 
-    % \begin{bullets}
-    %     \item The initial amplitude affects the phase of the simulated wall evolution, according to simulations.
-    %     \item In any case, the wall pos. evolution is quite consistent for different levels of oscillations
-    %     \item $\varepsilon_\ast > 1/p$: We will see great impact of changing $\varepsilon_\ast$
-    %     \item Figure showing difference in position graphs
-    %     \item Appendix with background quantities?
-    % \end{bullets}   
-    % %
-    %
-    %
-    %
-    The simulated wall position graph is not perfectly overlapping with the analytical one. Simulated walls show a tendency to evolve slower, at least initially, manifesting in a phase difference between $\varepsilon(\tau)$ from simulation and thin-wall approximation. 
-    \rephrase{If not due to numerical error, this is necessarily either a consequence of the field-like description or possibly another damping term in the eom for $\varepsilon$. In the latter scenario, one could guess that the expression for the surface tension is not flawless (something else would insinuate that the expansion term is wrong, which is not the case.) With better spatial resolution, there was no improvement for this part. Initialising simulations even closer to symmetry break enhanced oscillations and increased the phase difference. Increasing the box size---and scaling all parameters thereafter---did not have any effect in this matter.} \comment{Old analysis, needs to be updated.}
     
+    
+% \rephrase{If not due to numerical error, this is necessarily either a consequence of the field-like description or possibly another damping term in the equation of motion for $\varepsilon$. In the latter scenario, one could guess that the expression for the surface tension is not flawless (something else would insinuate that the expansion term is wrong, which is not the case.) With better spatial resolution, there was no improvement for this part. Initialising simulations even closer to symmetry break enhanced oscillations and increased the phase difference. Increasing the box size---and scaling all parameters thereafter---did not have any effect in this matter.} \comment{Old analysis, needs to be updated.}
 
-    We saw that initial amplitude actually did matter in simulations, cf.~simulation \simnum{1} vs.~\simnum{2}. The thin-wall approximation does not say this, however, in fact it says the opposite; \checkthis{the EOM is scale invariant, and thus unchanged by translations.} It is therefore hard to argue that this motion is possible to reproduce by adjusting terms in the EoM. 
+
+    
 
    
 
@@ -138,25 +88,14 @@ We reduce the problem from three dimensions to two with cylindrical symmetry, an
     %     \caption{The absolute difference between the wall position from calculations and simulations as functions of time.}
     %     %%%%%%%%%%%%%
     % \end{figure}
-    % ----------------------------------------
-    % ---------------- FIGURE ----------------
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=\linewidth]{Findings/eps_diff_sims_combi.pdf}
-        \caption{The absolute difference between the wall position from calculations and simulations as functions of time.}
-        \label{fig:results:epsilon:eps_diff_sims_combi}
-        %%%%%%%%%%%%%
-    \end{figure}
-    % ----------------------------------------
-    In~\cref{fig:results:epsilon:eps_diff_sims_combi} we show the difference between the NG prediction, which for $e=\varepsilon/\varepsilon_\ast$ vs. $t_\omega=\omega (s-1)$ is the same for each simulation, and the field theory. Simulations with similar perturbation setup (cf.~\simnum{1},~\simnum{2},~\simnum{4},~\simnum{7}) but different box parameters gives the similar wall evolution. Note that there is a bump in the simulations with larger scalar field oscillations (\simnum{4}~\&~\simnum{7}). %
-    Larger initial amplitude (\simnum{2}) increases the difference, as does larger scale parameter (\simnum{5}). %
-    This might indicate that the deviation is due to higher-order effects \comment{and the linearised analysis fails.}
+
+    % This might indicate that the deviation is due to higher-order effects \comment{and the linearised analysis fails.}
 
     % We acknowledge that there might be effects such as inter-kink and possibly intra-kink ($y$-direction) forces at play. \boxed{\textsf{ii}}
 
 
 
-    % \comment{Possible explanation: Field evolution not independent in $y$-direction, at least when $\varepsilon_\ast$ is comparable to $1/p$}
+    % \comment{Possible explanation: Field evolution not independent in $y$-direction, at least when $\epsast$ is comparable to $1/p$}
     % \begin{bullets}
     %     \item Inter-kink forces, and possibly intra-kink forces.
     % \end{bullets}
@@ -164,26 +103,34 @@ We reduce the problem from three dimensions to two with cylindrical symmetry, an
 
     % \pensive{The Wiener process is scale-invariant\dots}
 
+    \iftime{Add the following analysis:}
+    \deleteme{\subsection{Adjusting the equation of motion}
+        We take a closer look at the wall evolution in one particular simulation. We discussed the effect of changing the damping term in the equation of motion for \dots
+        (Study effect of changing damping term.)
+        \textbf{[FIGURE]}}
 
-    \subsection{Adjusting the equation of motion}
-        We take a closer look at the wall evolution in one particular simulation. We discussed the effect of changing the damping term in the equation of motion for \blahblah
-        \comment{Study effect of changing damping term.}
 
-
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=\linewidth]{dummy_normal1.8.png}
-            %%%%%%%%%%
-            \caption{The wall position as depicted by \dots.}
-            \label{fig:results:epsilon:epsilon_sim1}
-        \end{figure}
+        % \begin{figure}[h]
+        %     \centering
+        %     \includegraphics[width=\linewidth]{dummy_normal1.8.png}
+        %     %%%%%%%%%%
+        %     \caption{The wall position as depicted by \dots.}
+        %     \label{fig:results:epsilon:epsilon_sim1}
+        % \end{figure}
 
 
     \subsection{\tmptitle{Discussion}}
+        %
+        The full field-theoretical description of the wall evolution agrees with the thin-wall approximation to some level. The general tendency is that the oscillatory behaviour in the Nambu--Goto description is quicker and somewhat weaker than what simulations would have it. Both show characteristics of a damped harmonic oscillator with wavelength $\gtrsim 2\ppi / t_\omega$. Upgrading the spatial resolution with about $15\%$---as done with simulation~\simnum{1} and~\simnum{3}---does not show significant changes in the evolution of the wall displacement parameter.
         
-        Minimising oscillations does not seem to affect the wall evolution particularly. This can be seen by comparing simulations \simnum{1}, \simnum{3}, \simnum{4} and \simnum{7} which all have the same relative initial amplitude, but different levels of oscillations. However, changing the \emph{curvature} of the wall, seems to change the overall behaviour of the wall. In particular, increasing the parameter $\Upsilon^{\AC}_\ast$ from 16 to 18 (sim. \simnum{3}) or 24 (sim. \simnum{5}). We use this as a naive quantification of the badness of the eom for $\varepsilon$; the larger amplitude, the more likely we are to see higher-order effects, and the larger wavenumber, the farther we are from the wall normal coordinate $n\^\mu \propto \deltaup\^{\mu z}$. I suppose it is also fair to assume some inter-kink forces or perhaps intra-kink forces could contribute to the equation of motion. It would have been interesting to solve the actual eom for the wall normal coordinate and see if we could come closer to the simulated result. \comment{Repeated argument...}
+        Minimising scalar-field oscillations does not seem to affect the wall evolution particularly. This can be seen by comparing simulations \simnum{1}, \simnum{3}, \simnum{4} and \simnum{7} which all have the same relative initial amplitude, but different levels of oscillations. However, changing the ``curvature'' of the wall, seems to change the overall behaviour of the displacement parameter $\varepsilon$. In particular, increasing the parameter $\Upsilon^{\AC}_\ast$ from 16 to 18 (sim. \simnum{3}) or 24 (sim. \simnum{5}). We use this as a naive quantification of the badness of the equation of motion for $\varepsilon$; the larger amplitude, the more likely we are to see higher-order effects, and the larger wavenumber, the farther we are from the wall normal coordinate $n\^\mu \sim \deltaup\indices*{^\mu _z}$, roughly speaking. %
 
-        We notice that higher levels of scalar field fluctuations (\simnum{4}~\&~\simnum{7}) corresponds to simulations where the wall evolution is \cringe{discontinuous} in the very beginning. This is apparently not affecting the motion later. The two simulations in question are also characterised by initialisation closer to SSB, a feature that can technically be source of \emph{both} of these phenomena.
+        The wall--anti-wall system may inhabit inter-kink forces if the walls are not sufficiently far apart, and this could contribute as an external force in the equation of motion for the wall perturbation. There might also be ``intra-kink'' forces at play, that is interactions between different points on the same wall. The parameter $\Upsilon^{\AC}_\ast$ can provide an indication as to the risk of this happening, at least in the $y$-direction. The walls are not infinitely thin and one can imagine that internal forces may contribute in the $z$-direction.
+
+
+        It is difficult to see in~\cref{fig:results:epsilon:eps_diff_sims_combi}, but we notice that higher levels of scalar field fluctuations (\simnum{4}~\&~\simnum{7}) correspond to simulations where the wall evolution is \cringe{discontinuous} in the very beginning. This is apparently not affecting the motion later. The two simulations in question are also characterised by initialisation closer to SSB, a feature that can technically be source of \emph{both} of these phenomena.
+
+        We have \emph{not} thoroughly tested if $\epsB[\epsilon](\tau, x,y)=\epsB(\tau) \sin{py}$ is a good fit. From~\cref{fig:results:epsilon:wall_profile_2D}, and similar results, we can see that the sine profile seems to be quite well-preserved throughout the evolution. 
 
 
     % \subsubsection{Why not?}

@@ -1,5 +1,5 @@
 % |||||||||||||||||||||||||||||||||||
-% |||||| 5.1 General framework ||||||
+% |||||| 4.1 General framework ||||||
 % |||||||||||||||||||||||||||||||||||
 
 % ------------------------------------------------
@@ -10,19 +10,19 @@
 
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
-% \newcommand{\hypacc}[1]{\widehat{#1}} % accent on hypersurface quantities
+% \newcommand*\Ft{\ALIASFt}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
-\begin{bullets}
-    \item Vary DW action
-    \item Goal: E.O.M. for physically relevant component (epsilon basically)
-    \item Expression for energy--momentum tensor
-    \item Extension to non-thin walls 
-    \item Extension to Asymmetron or introduction of energy bias
-    \item What does thin mean? Why is the tension indep. of width?
-\end{bullets}
+% \begin{bullets}
+%     \item Vary DW action
+%     \item Goal: E.O.M. for physically relevant component (epsilon basically)
+%     \item Expression for energy--momentum tensor
+%     \item Extension to non-thin walls 
+%     \item Extension to Asymmetron or introduction of energy bias
+%     \item What does thin mean? Why is the tension indep. of width?
+% \end{bullets}
 
 
 
@@ -35,16 +35,16 @@ In mathematical terms, we consider a smooth spacetime
     \Manifold = (\Real^{n-1,1}, g\_{\mu\nu}) \supset \hypsurf=(\Real^{d-1,1}, \gamma\_{ab})
 \end{equation}
 where $d = n-1$ and indices $a,b,c =0,1,\dots d-1$, while Greek indices as usual runs from 0 to $n-1$. Let the world sheet $\hypsurf$ divide \Manifold~into two hypervolumes $\Manifold_{\pm}$ such that $\mathscr{M} = \mathscr{M}_+ \cup  \hypsurf \cup \mathscr{M}_-$. 
-We invoke a smooth coordinate system $\{x\^\mu\}$ of the spacetime in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = x\^\mu(\xi\^a)$, where the coordinate system $\{\xi\^a\}$ parametrises $\hypsurf$. 
+We invoke a smooth coordinate system $\{x\^\mu\}$ of the spacetime in a neighbourhood of $\hypsurf$. The embedding of $\hypsurf$ in $\Manifold$ is $x\^\mu = X\^\mu(\xi\^a)$, where the coordinate system $\{\xi\^a\}$ parametrises $\hypsurf$. 
 The induced metric on $\hypsurf$ is
 % \begin{equation}\label{eq:pertwalls:eom_wall:induced_metric}
 %     % \gamma\_{ab} = g\_{\mu\nu} e^\mu_a e^\nu_b; \quad e^\mu_a \equiv \pdv{x\^\mu}{\xi\^a}
 %     \gamma\_{ab} = g\_{\mu\nu} x\indices{^\mu_{,a}}x\indices{^\nu_{,b}}
 % \end{equation} 
 \begin{equation}\label{eq:pertwalls:thinwall:induced_metric}
-    \gamma\_{ab} = g\_{\mu\nu} e\indices*{^\mu_{a}} e\indices*{^\nu_{b}}; \quad e\indices*{^\mu_{a}}\equiv x\indices{^\mu_{,a}}= \pdv{x\^\mu}{\xi\^a}.% g\_{\mu\nu}\pdv{x\^\mu}{\xi\^a}\pdv{x\^\nu}{\xi\^b} 
+    \gamma\_{ab} = g\_{\mu\nu} e\indices*{^\mu_{a}} e\indices*{^\nu_{b}}; \quad e\indices*{^\mu_{a}}\equiv X\indices{^\mu_{,a}}= \pdv*{X\^\mu}{\xi\^a}.% g\_{\mu\nu}\pdv{x\^\mu}{\xi\^a}\pdv{x\^\nu}{\xi\^b} 
 \end{equation}
-\provethis{argue!}
+% \provethis{argue!}
 %
 $e\indices*{^\mu_a}$ are the tangent vectors and $n\^\mu$ the unit normal vector pointing from $\hypsurf$ to $\Manifold_+$, obeying
 \begin{equation}
@@ -63,18 +63,19 @@ The action for the system is~\citep{ishibashiEquationMotionDomain1999}
     - v_- \integ[n]{x\sqrt{-g}}[\mathscr{M}_-]. %
     %\underbrace{+ \frac{M\nped{Pl}^2}{2}\integ[n]{x\sqrt{-g}}[\mathscr{M}] \mathcal{R}}_{S\ped{EH}}.
 \end{equation}
-The first term is the Nambu--Goto action $S\nped{NG}$ from \nc{before}, with $\sigma$ representing the constant positive energy density of the defect in its rest frame. The rest is the vacuum action $S\ped{vac}$ given through the constant potential energy densities $v_\pm$ of $\Manifold_\pm$. %
+The first term is called the Nambu--Goto action $S\nped{NG}$, with $\sigma$ representing the constant positive energy density of the defect in its rest frame. The rest is the vacuum action $S\ped{vac}$ given through the constant potential energy densities $v_\pm$ of $\Manifold_\pm$. %
 % We consider
 
-Let us consider the variation of $S$ under small changes in the world sheet, $x\^\mu \to x\^\mu + \delta x\^\mu$. Since only transverse motion is physically relevant, we can write the variation in terms of the small, but otherwise arbitrary, function $\psi(\xi\^a)$;
+Let us consider the variation of $S$ under small changes in the world sheet, $X\^\mu \to X\^\mu + \delta X\^\mu$. Since only transverse motion is physically relevant, we can write the variation in terms of the small, but otherwise arbitrary, function $\psi(\xi\^a)$;
 \begin{equation}\label{eq:pertwalls:eom_wall:variation_x_normal_coord}
-    x\^\mu \to x\^\mu + \psi n\^\mu.
+    X\^\mu \to X\^\mu + \psi n\^\mu.
+    % \delta x\^\mu = \psi n\^\mu.
 \end{equation}
 % Under variation of $S$ with respect to tiny changes in $x^\mu(\xi\^a)$ on $\hypsurf$, 
 % \begin{equation}
 %     x\^\mu \to x\^\mu + \delta x\^\mu,
 % \end{equation}
-The eom for the wall normal coordinate is then~\citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+The equation of motion for the wall normal coordinate is then~\citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
 % \begin{equation}
 %     \sq_\hypsurf x\^\mu  %
 %     + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
@@ -82,20 +83,26 @@ The eom for the wall normal coordinate is then~\citep{ishibashiEquationMotionDom
 % \end{equation}
 \begin{equation}
     % n\_\mu\sq_\hypsurf x\^\mu  %
-    n\_\mu \hypacc{{\sq}} x\^\mu 
-    + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
+    n\_\mu \hypacc{{\sq}} X\^\mu 
+    % + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
+    + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
     +\frac{v}{\sigma} = 0,
 \end{equation}
-where $v=v_+-v_-$, $\hypacc{\sq}$ is the d'Alembertian associated with $\hypsurf$,\footnote{
-    $\hypacc{\sq} = \hypacc{\nabla}\^a  \hypacc{\nabla}\_a  = \frac{1}{\sqrt{-\gamma}} \partial\_a (\sqrt{-\gamma} \gamma\^{ab}\partial\_b)$, $\gamma= \hypacc{g}$.
-} %
-and $\ChristophelSym{\mu}{\kappa\tau}$ are the spacetime Christophel symbols. %The only physical observable is the normal component, 
+where $v=v_+-v_-$, %$\hypacc{\sq}$
+% \footnote{
+%     $\hypacc{\sq} = \hypacc{\nabla}\^a  \hypacc{\nabla}\_a  = \frac{1}{\sqrt{-\gamma}} \partial\_a (\sqrt{-\gamma} \gamma\^{ab}\partial\_b)$, $\gamma= \hypacc{g}$.
+% } %
+\begin{equation}
+    \hypacc{\sq} = \hypacc{\nabla}\^a  \hypacc{\nabla}\_a  = \frac{1}{\sqrt{-\gamma}} \partial\_a (\sqrt{-\gamma} \gamma\^{ab}\partial\_b)
+\end{equation}
+is the d'Alembertian associated with $\hypsurf$, %
+and $\ChristophelSym{\mu}{\kappa\tau}$ are the spacetime Christoffel symbols. %The only physical observable is the normal component, 
 %
 This can be written in the simple form 
 \begin{equation}\label{eq:pertwalls:eom_wall:eom_extrinic_curvature}
     \gamma\^{ab} \hypacc{K}\_{ab} = -\frac{v}{\sigma} ,
 \end{equation}
-where the extrinsic curvature tensor is
+where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) is
 \begin{equation}
     \hypacc{K}_{ab} = - e\indices*{^\mu _a}e\indices*{^\nu _b} \nabla\_\nu n\_\mu.
 \end{equation}
@@ -107,26 +114,40 @@ where the extrinsic curvature tensor is
 
 
 
-In~\citet{garrigaPerturbationsDomainWalls1991} it is shown that a planar domain wall oriented perpendicular to the $z$ axis in Minkowski space follows the trajectory $z=z(t)$ whose eom is 
+In~\citet{garrigaPerturbationsDomainWalls1991} it is shown that a planar domain wall oriented perpendicular to the $z$ axis in Minkowski space follows the trajectory $z=z(t)$ whose equation of motion is 
 \begin{equation}
     \frac{z_{,tt}}{{(1-z_{,t}^2)}^{3/2}} = \frac{v}{\sigma}.
 \end{equation}
-With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \comment{Comment about constant velocity?}
+With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment about constant velocity?}
 
 % A simple solution to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} is a 
 
 
 
 \subsection{Linearised perturbations}\label{sec:pertwalls:eom_wall:linearised_pert}
+    Let $X\^\mu$ solve the equation of motion for the defect. We denote the perturbed solution $\pert{X}\^\mu$. Only transverse motion is physically observable, and so
+    \begin{equation}\label{eq:pertwalls:eom_wall:linear_pert_wall_coord}
+        \pert{X}\^\mu = X\^\mu + \delta X\^\mu = X\^\mu + \epsilon(\xi\^a) n\^\mu,%
+        \footnote{Formally, this is the same as the variation above, but now we are dealing with a physical perturbation as opposed to a mathematical variation.}
+    \end{equation}
+    where the wall displacement variable $\epsilon$ is a linear perturbation, i.e.~$\epsilon^2 \simeq 0$. 
+    To find the equation of motion, we apply~\cref{eq:pertwalls:eom_wall:linear_pert_wall_coord} to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} and solve order by order. If the ambient space is Minkowski, this amounts to~\citep{garrigaPerturbationsDomainWalls1991}
+    \begin{equation}
+        % -\hypacc{\sq} \epsilon + \pclosed{\hypacc{R}-v^2/\sigma^2}\epsilon  = 0.
+        \hypacc{\sq} \epsilon + \hypacc{K}\^{ab}\hypacc{K}\_{ab} \epsilon = 0.%; \quad g\_{\mu\nu}= \eta\_{\mu\nu}.
+    \end{equation}
 
-    \phpar[to linear pert.]
+    
+
+
+    % \phpar[to linear pert.]
     % The traject
     % The simplest solution to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} is $z=z_0$, 
     % i.e. a flat domain wall in the $xy$-plane.
 
 
 
-\hlineSep
+% \hlineSep
 
 
 
@@ -148,7 +169,7 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \comment{Commen
 
 \subsection{Energy and momentum}
     
-    \rephrase{From the Nambu--Goto action $S\nped{NG}$, we can construct an energy--momentum tensor
+    From the Nambu--Goto action $S\nped{NG}$, we can construct an energy--momentum tensor associated with the defect
     % We find the domain wall (hypersurface in $(3+1)$ dimensions) 
     %Lagrangian density as $S\nped{NG} =\integ[4]{x} \mathcal{L}\nped{NG}$, allowing us to compute the associated SE tensor
     % \begin{equation}\label{eq:pertwalls:eom_wall:SE_tensor_NG}
@@ -158,21 +179,35 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \comment{Commen
         T\^{\mu\nu}\big|\nped{NG} = \frac{2}{\sqrt{-g}} \Fdv{S\nped{NG}}{g\_{\mu\nu}}.
     \end{equation}
     % Assume the 
+    Consider $X\^\mu= \xi\^a e\indices*{^\mu_a} + X_\bot n\^\mu$. 
     By rewriting the action to the spacetime integral
     % With the rewriting 
     \begin{equation}
-        S\nped{NG} = - \sigma \integ[n]{x\sqrt{-\gamma}} \Diracdelta( r); \quad r\equiv n\_\mu x\^\mu  - x_\bot,
+        S\nped{NG} = - \sigma \integ[n]{x\sqrt{-\gamma}}[\Manifold] \Diracdelta( r); \quad r\equiv n\_\mu x\^\mu  - X_\bot,
     \end{equation}
     where the Dirac delta function essentially eliminates any spacetime event that is \emph{not} the defect. The variation $g\_{\mu\nu} \to g\_{\mu\nu}+ \delta g\_{\mu\nu}$ gives~\cite{vachaspatiKinksDomainWalls2006}
     \begin{equation}
         T\^{\mu\nu}\big|\nped{NG} = \frac{\sigma}{\sqrt{-g}} \integ[d]{\xi} \sqrt{-\gamma} \gamma\^{ab} X\indices{^\mu_{,a}} X\indices{^\nu_{,b}} \Diracdelta(r ),
     \end{equation}
-    or 
+    alternatively
     \begin{equation}\label{eq:pertwalls:eom_wall:SE_tensor_NG}
-        T\^{\mu\nu}\big|\nped{NG} = \frac{\sigma \Diracdelta(r )}{\sqrt{-g}\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}}.
-    \end{equation}}
+        % {T\^{\mu\nu}}\rvert\nped{NG} 
+        T\^{\mu\nu}\big|\nped{NG}  = \frac{\sigma \Diracdelta(r )}{\sqrt{-g}\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}}.
+    \end{equation}
 
-    \comment{Maybe define $T_{\mathrm{w}}^{\mu\nu}$ or $W\^{\mu\nu}$?}
+    % \comment{Maybe define $T_{\mathrm{w}}^{\mu\nu}$ or $W\^{\mu\nu}$?}
+
+    
+    % \begin{equation}
+    %     \Pi\_{ij} = T\_{ij}- p g\_{ij} = T\_{ij} + \frac{2}{3} \rho g\_{ij}
+    % \end{equation}
+
+
+    % \speak{%
+    % I strongly believe $T\ap{TT}_{ij} = \Pi\ap{TT}_{ij}$. Maybe use ``wall displacement variable''?
+    % %
+    % }
+
 
     % \begin{equation}
     %     S\nped{NG} = -\sigma \integ[d]{\xi} \sqrt{-\gamma} \gamma\^{ab} X\indices{^\mu_{,a}} X\indices{^\nu_{,b}} \Diracdelta[n](x\^\rho - X\^\rho)
@@ -205,13 +240,20 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \comment{Commen
 
 
 
-    \subsubsection{\tmptitle{Thickness?}}
-        To some extent, we can account for a possibly non-vanishing wall half-width $l$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
+    \subsubsection{\tmptitle{Thick domain walls}}
+        
+        To some extent, we can account for a possibly non-vanishing wall half-width $l\sim\delta$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
         \begin{equation}
-            \Diracdelta(r) \to  \varPhi_l(r)  = \frac{1}{\sqrt{2\ppi}l} \exp{ -\frac{r^2}{2l^2} }
+            \Diracdelta(r) \to   \varPhi_l (r) \equiv\frac{1}{\sqrt{2\ppi}l} \exp{ -\frac{r^2}{2l^2} }
         \end{equation}
-        in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} does the trick, and restores $\Diracdelta$ in the limit where $l\to \infty$.  Note that this is not the same as going beyond the thin-wall limit, but rather an approximation that includes a thickness that is small enough to not alter the dynamics.
+        in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} does the trick, and restores $\Diracdelta(r)$ in the limit where $l\to 0$. This is understood in context with~\cref{sec:cosmo:defects:dws}, where we argue that $l=\delta/\sqrt{2}$ gives a suitable Gaussian profile. %, and we define 
+        % \begin{equation}
+        %     \varPhi_\delta (r) \
+        % \end{equation}
+        Note that this is not the same as going beyond the thin-wall limit, but rather an approximation that includes a thickness that is small enough to not alter the dynamics.
 
+        Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies. 
+        % \phpar[meaning of thickness]
 
 
         % \hlineSep

@@ -1,0 +1,305 @@
+% ||||||||||||||||||||||||||||||||||||
+% |||||| 2.4 Linearised gravity ||||||
+% ||||||||||||||||||||||||||||||||||||
+
+
+% ----------------------------------------
+% labels: \label{[type]:GR:gws:[name]}
+% ----------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\pert}{\ALIASpert}           % perturbed quantities
+\newcommand*{\ah}{\ALIASah}                     % a h
+\newcommand{\Ft}{\ALIASFt}
+\newcommand{\dummy}{\ALIASdummy}
+%
+\newcommand*\mhat{\hat{\vec{m}}}
+\newcommand*\nhat{\hat{\vec{n}}}
+\newcommand*\Ohat{\hat{\vec{\varOmega}}}
+%
+\newcommand*{\polplus}{\ALIASpolplus}
+\newcommand*{\polcross}{\ALIASpolcross}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+Gauge freedom, in a general context, refers to the invariance of a physical theory under certain transformations that do not alter the observable quantities or physical content of the theory. In GR, gauge freedom manifests as invariance under coordinate transformations, which is used to simplify the metric or solve Einstein's equation more easily. By choosing an appropriate gauge we can eliminate redundancies. 
+
+Metric perturbations on a homogeneous and isotropic background leaves two tensor degrees of freedom. %
+We isolate the physical, observable components of metric tensor perturbation by selecting the TT gauge. % Mathematically, this is performed by applying the spin-2 projection tensor $\ProjectionLambda{ij}{kl}$. 
+
+
+% \phpar[polarisation]
+If the symmetric $4\cross4$-tensor $h\_{\mu\nu}$ fulfils the TT conditions
+\begin{equation}\label{eq:GR:gws:TT_conditions}
+    h\_{0\mu} = 0, \quad h\indices{^i_i} = 0, \quad h\indices{_{ij}^{,i}}=0,
+\end{equation}
+there are necessarily only two degrees of freedom to this quantity. %
+% \footnote{
+%     $16$ components, $-6$ for symmetry, $-4$ for time components, $-1$
+% }
+We can therefore choose a {polarisation basis} to represent the gravitational waves. In the \newconcept{linear polarisation basis} we consider plus- ($\polplus$) and cross- ($\polcross$) polarised states. \comment{Comment about spin 2.} The tensor representation is written as a superposition of these states,
+\begin{equation}
+    h\_{ij} = h_\polplus e\indices*{^{\polplus}_{ij}} + h_\polcross e\indices*{^{\polcross}_{ij}},
+\end{equation}
+with polarisation tensors% $e^{\polplus, \polcross}_{ij}$ 
+\begin{equation}
+    \begin{split}
+        e^\polplus  (\vec{k}) &= \mhat \otimes \mhat - \nhat \otimes \nhat \quad \text{and} \\
+        e^\polcross (\vec{k}) &= \mhat \otimes \nhat - \nhat \otimes \mhat.
+    \end{split}
+\end{equation}
+\rephrase{Here, $\vec{k} = k\Ohat$ is the momentum vector, $\Ohat$ is propagation direction of the gravitational waves, $\{\mhat, \nhat, \Ohat \}$ is a right-handed orthonormal basis, and 
+\begin{equation}
+    e\indices*{^{P}_{ij}} e\indices*{^{ij}_{P'}} = 2\deltaup^{P}_{P'}.
+\end{equation}}
+Note that
+% observe that
+\begin{equation}
+    \abs{h^2 } =  h\^{ij}h\_{ij} = 2 \sum_{P}h_P^2.
+\end{equation}
+
+
+We extract the TT-part of a symmetric $3\cross 3$ tensor by use of the projection tensor in~\cref{eq:notation:projection_tensor}. %
+The spin-2 projector is non-local in space, and we define the TT-projected tensor in coordinate space as
+\begin{equation}
+    h\_{ij}(\tau, \vec{x}) = \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{h}\_{kl}(\tau, \vec{k}) =  \sum_{P=\polplus, \polcross} \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \Ft{h}_P(\tau, \vec{k}) e\indices*{^{P}_{ij}}(\vec{k}).
+\end{equation}
+Note that the TT conditions in~\cref{eq:GR:gws:TT_conditions} becomes
+\begin{equation}\label{eq:GR:gws:TT_conditions_Ft}
+    \Ft{h}\_{0\mu} = 0, \quad \Ft{h}\indices{^i_i} = 0, \quad k^i \Ft{h}\_{ij}=0,
+\end{equation}
+in Fourier space.
+
+%  We extract these by use of the spin-2 projection tensor $\ProjectionLambda{ij}{kl}$
+
+
+% \hlineSep
+
+
+\subsection{Expanding universe}\label{sec:GR:gws:gws_FLRW}
+    We are interested in a flat FRLW background plus first order in perturbations, and define the perturbed metric as \( \pert{g}\_{\mu\nu} = a^2 (\eta\_{\mu\nu} + h\_{\mu\nu} )\). Furthermore, we focus on the tensorial part of the perturbations, %and consider the gauge-invariant $h\_{ij}$ that fulfills the TT criteria.\footnote{We omit the $^{\mathrm{TT}}$ superscript for cleaner expressions.}
+    leaving
+    \begin{equation}
+        \pert{ds}^2 = a^2(\tau) \pclosed{ -{\diff \tau}^2 + \bclosed{\Krondelta{_{ij}} + h\_{ij}(\tau, \vec{x}) } {\diff x\^i}{\diff x\^j}  }
+    \end{equation}
+    for the perturbed line element. %We get
+    % We define an anisotropic stress--energy tensor whose indices are raised and lowered with $\Krondelta{_{ij}}$, 
+    % \begin{equation}
+    %     \pi\_{ij} = \pi\indices{^i_j} = \pi\^{ij} = \Pi\indices{^i_j} = T\indices{^i_j} - p\Krondelta{^i_j}
+    %     %\Krondelta{^i_j}\Krondelta{^{k}_l}T\indices{^k_l} /3.
+    % \end{equation}
+    % \begin{equation}
+    %     \Ft{\pi}\_{ij} = a^{-2} \ProjectionLambda{ij}{kl} \Ft{T}\_{kl} = a^{-2} \ProjectionLambda{ij}{kl} \Ft{\Pi}\_{kl} 
+    %     %\Krondelta{^i_j}\Krondelta{^{k}_l}T\indices{^k_l} /3.
+    % \end{equation}
+    % \comment{FIXME} 
+
+    We define an anisotropic stress--energy tensor $\Pi\_{ij}\equiv T\_{ij}-  \Krondelta{_{ij}} \Krondelta{^{kl}}T\_{kl}$, and project it onto the TT gauge. It is useful to define a stress--energy tensor whose indices are raised and lowered with $\Krondelta{_{ij}}$. %such that $\pi\_{ij} \supset \Pi\indices{^i_j}$. 
+    %$\pi\_{ij}=  \pi\indices{^i_j}  \supset T\indices{^i_j}$. 
+    We impose the TT-conditions in~\cref{eq:GR:gws:TT_conditions} on this such that 
+    \begin{equation}
+        \pi\_{ij} = \pi\^{ij}= \pi\indices{^i_j}  \equiv  \Pi\indices{^i_j}\rvert\ped{TT} = a^{-2} \Pi\indices*{^{\mathrm{TT}} _{ij}} = a^{-2}\ProjectionLambda{ij}{kl} \Pi\_{kl}.
+        % {(\Pi\ap{TT})}\indices{^i_j}= \ProjectionLambda{ij}{kl} \Krondelta{_{km}}\Pi\indices{^m_l}  =    a^{-2}\ProjectionLambda{ij}{kl} \Pi\_{kl} =a^{-2} \Pi\indices*{^{\mathrm{TT}} _{ij}}. %= \Pi\indices{^i_j} = a^{-2} \Pi\_{ij}.
+    \end{equation}
+    Note that $\Pi\indices*{^{\mathrm{TT}} _{ij}} = T\indices*{^{\mathrm{TT}} _{ij}} $. %
+    % and
+    % We impose the TT conditions such that 
+    % \begin{equation}
+    %     \pi\_{ij}(\tau, \vec{x})  = \integ[3][(2\ppi)^3]{k} \eu[-\im \vec{k}\cdot \vec{x}] \Ft{\pi}\_{ij}(\tau, \vec{k}) %\ProjectionLambda{ij}{kl}(\vec{k}) \Ft{\pi}\_{kl}(\tau, \vec{k})
+    % \end{equation}
+    % in real space, 
+    % where
+    % \begin{equation}
+    %     \Ft{\pi}\_{ij}(\tau, \vec{k}) = \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{\pi}\_{kl}(\tau, \vec{k}) = a^{-2} \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{\Pi}\_{kl}(\tau, \vec{k}).
+    % \end{equation}
+    % We omit the conventional ``$^{\mathrm{TT}}$''-superscript that is used to emphasise traceless and transverse quantities, and simply apply the projection tensor to guarantee the right gauge. 
+    % \rephrase{The anisotropy is the deviation from the perfect fluid.}
+    % $\Pi\_{\mu \nu} = \Krondelta{^i_\mu} \Krondelta{^j_\nu} (T\_{ij} - p\Krondelta{_{ij}})$
+    We consider the linearised Einstein equation (\cref{eq:GR:einstein:linearised_Einstein_eq}) in this gauge. 
+    Now, to first order we have $\delta \mathcal{G}\indices{^i_j} = 8\ppi G\nped{N} \delta T\indices{^i_j}$ as the only non-vanishing components, giving~\citep{maggioreGravitationalWavesVol2018}
+    \begin{equation}
+        % \delta \mathcal{G}\indices{^i_j} =  8 \ppi G\nped{N} \pi\_{ij} = -\frac{1}{2} \sq h\_{ij},
+        -\frac{1}{2} \sq h\_{ij} = 8 \ppi G\nped{N} \pi\_{ij}.
+    \end{equation}
+    The equation of motion for $h\_{ij}$ is
+    \begin{equation}\label{eq:GR:gws:eom_h}
+        \ddot{h}\_{ij} + 2\mathcal{H}\dot{h}\_{ij} - \vec{\nabla}^2 h\_{ij} = 16\ppi G\nped{N} a^2 \pi\_{ij}
+    \end{equation}
+    % \begin{equation}
+    %     \pclosed{ \dv[2]{}{\tau} + 2 \mathcal{H} \dv{}{\tau} - \vec{\nabla}^2 } h\_{ij}(\tau, \vec{x}) = 16\ppi G\nped{N} a^2 \pi\_{ij}(\tau, \vec{x})
+    % \end{equation}
+    where a dot signifies the conformal time derivative, $\dot{}\equiv \dv*{}{\tau}$. %
+    %\comment{Where $\pi\_{ij}$ also satisfies TT conds.?}
+
+    It is convenient to introduce a scaled strain $\ah\equiv a h$ and transform to Fourier space. The equation now reads
+    \begin{equation}\label{eq:GR:gws:eom_ah_Ft}
+        \ddot{\Ft{\ah}}_P + \pclosed{ k^2 - \frac{\ddot{a}}{a} } \Ft{\ah}_P = k^2 f_P; 
+        \quad P = \polplus, \polcross,
+    \end{equation}
+    % which in its homogeneous form is we recognise as a damped harmonic oscillator. %
+    where
+    \begin{equation}\label{eq:GR:gws:Src_P_def}
+        f_P \equiv \frac{16\ppi G\nped{N}a^3 \Ft{\pi}_P(\tau, \vec{k})}{k^2}.
+    \end{equation}
+
+
+
+    % % \blahblah
+    % % \begin{equation}
+    % %     \sq h\_{ij}(\tau, \vec{x}) = - 16 \ppi G\nped{N} a^2  T\_{ij}(\tau, \vec{x})
+    % % \end{equation}
+    % For notational ease, we define \(S\_{ij}\equiv 16 \ppi G\nped{N} a^2\pi\_{ij} \) and omit the lower indices. In real space, the equation reads
+    % % \begin{equation}
+    % %     \ddot{h}(\tau, \vec{x}) + 2 \mathcal{H} \dot{h}(\tau, \vec{x}) -\vec{\nabla}^2 h(\tau, \vec{x}) = S(\tau, \vec{x}),
+    % % \end{equation}
+    % \begin{equation}
+    %     \ddot{h} + 2 \mathcal{H} \dot{h} -\vec{\nabla}^2 h = S,
+    % \end{equation}
+    % which in its homogeneous form is we recognise as a damped harmonic oscillator. %
+    % It is convenient to transform to Fourier space where $k\_{i} \leftrightarrow \im \partial\_{i}$, and even more so to introduce $\ah \equiv ah$, leaving us with
+    % % \begin{equation}
+    % %     \ddot{h} + 2 \mathcal{H} \dot{h} + k^2 h = S.
+    % % \end{equation}
+    % \begin{equation}
+    %     \ddot{\Ft{\ah}} + \pclosed{ k^2 - \frac{\ddot{a}}{a} } \Ft{\ah} =\Ft{\underaccent{\bar}{S}} \equiv a\tilde{S} .%a\tilde{S}.
+    % \end{equation}
+    % We defined $\Ft{\underaccent{\bar}{S}} \equiv a\tilde{S}$, and add the TT condition $\Ft{S}\_{ij} = \ProjectionLambda{ij}{kl}\Ft{S}\_{kl} $ explicitly.
+
+    % \speak{Should I comment on the fact that $T\ap{TT}_{ij}=\Pi\ap{TT}_{ij}$?}
+
+    %
+    \paragraph{Homogeneous solution.} %
+    % We see that for large modes $k^2 \gg \ddot{a}/a \sim \tau^{-2}$, the general solution
+    We see that for large modes $k \gg \ddot{a}/a \sim \tau^{-2}$, the linear operator is approximately $\partial_\tau^2 + k^2$, i.e.~the harmonic oscillator, with plane wave solutions for $f_P=0$. That is to say, small-scale gravitational waves, in the absence of a source, propagate free waves in an FRW spacetime (divided by the scale factor). On larger scales, the propagation is damped in accordance with the expansion of the universe. This damping term generally depends on expansion history.
+
+
+    
+
+
+    \paragraph{Inhomogeneous solution.} %
+    The method of Green's functions presents a suitable recipe for determining the dynamics of tensor perturbations on an expanding background. There are some limitations, however, as to the analytical solvability of the system. In the small-scale limit, the damping is neglected, and we only need the retarded Green's function associated with the harmonic oscillator, $\sin{\pclosed{k(\tau-\tau')}}/k$. Otherwise, an equation of the form $\mathop{\mathrm{L}}_{u=k\tau} \Ft{\ah}_P=f_P$, where
+    \begin{equation}
+        \mathop{\mathrm{L}}_u = \dv[2]{}{u} + \pclosed{1 - \frac{(\alpha-1)\alpha}{u^2}}
+    \end{equation}
+    has a Green's function in terms of Bessel functions $\sqrt{u}\Cylindrical[\alpha-1/2](u)$, which is the case in a single-substance universe with $a \propto \tau^\alpha$. On an even more compact form, if $n\equiv\alpha-1 \in \Integer$, we can use the Green's function
+    \begin{equation}\label{eq:GR:gws:Greens_function_n}
+        G(u,v) = \RiccatiBessel[n](u)\RiccatiNeumann[n](v) - \RiccatiNeumann[n](u)\RiccatiBessel[n](v)
+    \end{equation}
+    where $\RiccatiBessel[n](x)$ and $\RiccatiNeumann[n](x)$ are the Riccati--Bessel and --Neumann functions (given in \cref{app:special}).
+        
+    % \end{equation}
+    % % Otherwise, for a single-substance universe, 
+    % % \begin{equation}
+        
+    % % \end{equation}
+    Assume homogeneous initial conditions $\Ft{\ah}_P(\tau\ped{i}, \vec{k})= \dot{\Ft{\ah}}_P(\tau\ped{i}, \vec{k})=0$. 
+    The full solution is as follows:
+    % \begin{equation}\label{eq:GR:gws:hij_expression_of_Greens_and_source}
+    %     h\_{ij}(\tau, \vec{k}) = \frac{16\ppi G\nped{N}}{k^2} \integ{\eta}[\tau\ped{i}][\tau] G(k\tau, k\eta) \frac{a(\eta)}{a(\tau)} T\_{ij}(\eta, \vec{k}).
+    % \end{equation}
+    \begin{equation}\label{eq:GR:gws:hij_expression_of_Greens_and_source}
+        a(\tau)\Ft{h}\_{ij}(\tau, \vec{k}) = \frac{16\ppi G\nped{N}}{k^2} \integ{\dummy{\tau}}[\tau\ped{i}][\tau] G(k\tau, k\dummy{\tau})a^3(\dummy{\tau}) \Ft{\pi}\_{ij}(\dummy{\tau}, \vec{k}). 
+    \end{equation}
+    % We repeat that
+    % \begin{equation}
+    %     \Ft{\pi}\_{ij}(\tau, \vec{k}) =  \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{\pi}\_{kl}(\tau, \vec{k}) 
+    % \end{equation}
+
+    If the source disappears after $\tau\ped{f}-\tau\ped{i}$, we may write the solution as
+    \begin{equation}
+        \Ft{\ah}\_{ij}(\tau, \vec{k})  = \RiccatiBessel[n](k\tau) F_2(\vec{k}) - \RiccatiNeumann[n](k\tau) F_1(\vec{k})
+    \end{equation}
+    with
+    \begin{equation}
+        F_{i}(\vec{k}) = \integ{\dummy{\tau}}[\tau\ped{i}][\tau\ped{f}]\mathsf{R}_n^{(i)}(k\dummy{\tau}) f_P(\dummy{\tau}, \vec{k}) ,
+    \end{equation}
+    % where $F_{i}(\vec{k}) = \integ{\dummy{\tau}}\mathsf{R}^{(i)}(k\dummy{\tau}) f_P(\dummy{\tau}, \vec{k}) $, where $\mathsf{R}^{(i)}$ refers to the Riccati--Bessel function of $i$th kind.
+    where $\mathsf{R}^{(i)}$ refers to the Riccati--Bessel function of $i$th kind.
+
+
+    % \begin{equation}
+    %     \begin{split}
+    %         F_1(\vec{k}) = 
+    %     \end{split}
+    % \end{equation}
+
+    % \begin{multline}
+    %     a \Ft{h}\_{ij} = \frac{16\ppi G\nped{N}}{k^2}  \RiccatiBessel[n](k\tau)\integ{\dummy{\tau}}[\tau\ped{i}][\tau\ped{f}] \RiccatiNeumann[n](k\dummy{\tau}) a^3(\dummy{\tau}) \Ft{\pi}\_{ij}(\dummy{\tau}, \vec{k}) \\
+    %    -\frac{16\ppi G\nped{N}}{k^2}   \RiccatiNeumann[n](k\tau)\integ{\dummy{\tau}}[\tau\ped{i}][\tau\ped{f}] \RiccatiBessel[n](k\dummy{\tau})  a^3(\dummy{\tau}) \Ft{\pi}\_{ij}(\dummy{\tau}, \vec{k})
+    % \end{multline}
+
+
+
+
+
+
+
+% \subsection{Polarisation of tensor modes / \tmptitle{Effect on test particles}}\label{sec:GR:gws:polbasis}
+%     {% -----------------------
+%     % \newcommand*\mhat{\hat{\vec{m}}}
+%     % \newcommand*\nhat{\hat{\vec{n}}}
+%     % \newcommand*\Ohat{\hat{\vec{\varOmega}}}
+
+%     % \newcommand*{\polplus}{\ALIASpolplus}
+%     % \newcommand*{\polcross}{\ALIASpolcross}
+
+
+%     %%%%%%%%%%%%%%%
+%     \phpar[a longer discussion---specific to GR]
+
+    % The spin-2 part 
+
+    % The two tensor degrees of freedom can be 
+
+
+
+
+
+    % % A popular choice is the linear polarisation basis
+    % From the right-handed orthonormal basis $\{\mhat, \nhat, \Ohat \}$---for which $\Ohat \parallel \vec{k}$---we may construct a linear polarisation basis from the polarisation tensors
+    % \begin{equation}
+    %     \begin{split}
+    %         e^\polplus     (\Ohat) &= \mhat \otimes \mhat - \nhat \otimes \nhat \quad \text{and} \\
+    %         e^\polcross (\Ohat)&= \mhat \otimes \nhat - \nhat \otimes \mhat.
+    %     \end{split}
+    % \end{equation}
+    % This is a popular choice, and it \blahblah
+
+    % Now we retrieve
+    % \begin{equation}
+    %     h\_{ij}(\tau, \vec{k}) = \sum_{P=\polplus, \polcross} h_P(\tau,k \Ohat) e^P_{ij} (\Ohat)
+    % \end{equation}
+    % and observe that
+    % \begin{equation}
+    %     \abs{h^2(\tau, \vec{k}) } =  h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k})  = 2 \sum_{P}h_P^2(\tau, \vec{k}).
+    % \end{equation}
+
+    % % \pensive{monochromatic\polplus: O-I-O-Å, \dots monochromatic \polcross: Michael Jackson dance?}
+    % % -----------------------
+
+
+    % We may write 
+    % \begin{equation}
+    %     \Ft{\pi}\_{ij} = \sum_{P=\polplus,\polcross} e^P_{ij} \Ft{\pi}_P = \ProjectionLambda{ij}{kl} \Ft{\pi}\_{kl}.
+    % \end{equation}
+    % % and know that 
+    % }%
+
+
+
+
+
+% \subsection{Transverse and traceless projection}
+%     The 
+%     \phpar[Address this]
+
+
+
+% \subsection{Gravitational waves}
+%     The term ``gravitational waves'' refers to the \nc{tensor perturbations to the background metric}. These ``waves'' are spacetime distortions whose name comes from the fact that \checkthis{they obey the wave equation}.
+
+
+

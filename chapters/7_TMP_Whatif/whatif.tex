@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%% Ch. 7: Ifs, Buts and Maybes %%%%%%%
+%%%%%% Ch. 7: Ifs, Buts and Maybes %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % -----------------------------------------------
-% labels: \label[type]{[type]:whatif:[name]}
+% labels: \label{[type]:whatif:[name]}
 % -----------------------------------------------
 
 
@@ -23,16 +23,26 @@
 
 
 
-It is assumed in this chapter that the \rephrase{theoretical framework checks out.} What would that mean? And how is it applicable to realistic cosmological scenarios? We dedicate this chapter to suggestions for improvements and implications. In the last section we discuss what simulative experiments we would have performed had we more time.
+
+We provide a general discussion of the project---both methodically and result-wise---in~\cref{sec:whatif:discussion} with regrets and proposed methods of verification. In~\cref{sec:whatif:framework} we address the framework as is, agnostic to any potential (in)validations, and discuss its implications and potential.
 
 
 
 
-\begin{bullets}
-    \item insert sensible parameters
-    \item propose different spatial parts 
-\end{bullets}
+% It is assumed in this chapter that the \rephrase{theoretical framework checks out.} What would that mean? And how is it applicable to realistic cosmological scenarios? We dedicate this chapter to suggestions for improvements and implications. In the last section we discuss what simulative experiments we would have performed had we more time.
 
+
+
+
+% \begin{bullets}
+%     \item insert sensible parameters
+%     \item propose different spatial parts 
+%     \item implications
+% \end{bullets}
+
+
+
+% \pensive{Maybe for large scales, scalar field fluctuations contribute a lot? They should peak at the frequency corresponding to the mass scale $m=\sqrt{2}\mu \sqrt{1 - \upsilon }$?}
 
 
 
@@ -45,122 +55,23 @@ It is assumed in this chapter that the \rephrase{theoretical framework checks ou
 
 
 
-% \paragraph{About the output from the code ...}
-%     We quickly see from calculations that $h\_{ij}(\tau, \vec{k})\in \Real$. The code will have it differently, however, and consistently produces non-negligible imaginary components. Likely, this has to do with the different Fourier conventions used by hand and by code. We have not been able to resolve this completely (i.e.~find a suitable mapping), and so we present only the magnitude of the strain.
-
-
-% \paragraph{Computing the semi-analytical expression ...}
-%     To find $H_{1,2}(\tau, \vec{k})$ we need to use a numerical solver, and for this we chose \textit{Numpy}'s  \texttt{cumtrapz}; a method for integrating cumulatively with the trapezoidal rule. 
-    
-%     %\texttt{odeint} from the \texttt{integrate}-module from the \texttt{Python} library \texttt{Scipy}. 
-
-
-
-
-% ///////////////////////////////////////////
-
-
-
-
-% \section{Mode by mode}
-%     We extract the relevant output from \texttt{gwasevolution} to compare with the analytical calculations. Nothing is assumed about the temporal part of the wall normal coordinate, so we may insert any function as $\epsilon_q(\tau)$ into \nc{Eq. XXX}[main expr.]. This is a huge advantage since the results from~\cref{chap:results} are not perfect. 
-    
-%     An even bigger advantage would be to have the code output the wall position as a near-continuous function of time, but we only have the profile extracted from $\mathtt{achi}$ animation outputs, giving it a function with \blahblah
-
-
-%     \paragraph{A few take-aways.} %
-%     There are some results that need be mentioned, but not necessarily presented plots. 
-%     \subparagraph{Periodicity in $y$-mode.} %
-%     The outputted \texttt{hijFT} shows significantly smaller strains for $K_Y\neq n m_Y$ than for $K_Y = n m_Y$, something we interpret as a corroboration to the Dirac delta factor in \nc{Eq. XXX}[main expr.]. It being non-zero may be a result of numerical error, but it is likely also related to the issue with \nc{the wavenumber ambiguity}. 
-%     \subparagraph{$K_Y=0$ is non-zero.} %
-%     For whatever reason, the code insists there are significant tensor perturbation propagating in the $Z$-direction. This is not what we expected from calculations, where $\vec{k}=(0,0,k\_{z})$ corresponds to zero strain.
-
-
-
-
-% \section{Tensor perturbations}\label{sec:whatif:h11}
-%     {\subimport{./}{h11.tex}}
-
-    
-
-% \section{Sensitivity to changes in \dots}
 
 
 
 
 
+% ****************** SECTIONS ******************
 
-% So the framework is not rock solid, but it is definitely \emph{something} true about the equations. We reserve this chapter for the ifs, buts and maybes. To keep the discussion at bay, we focus only on the $+$-polarised wave of the tensor perturbation.
-
-
-% We have not tested 
-
+\section{Project reflection}\label{sec:whatif:discussion}
+    {\subimport{./}{discussion.tex}}
 
 
-\pensive{Maybe for large scales, scalar field fluctuations contribute a lot? They should peak at the frequency corresponding to the mass scale $m=\sqrt{2}\mu \sqrt{1 - \upsilon }$?}
+\section{Limitations and possibilities}\label{sec:whatif:framework}
+    {\subimport{./}{framework.tex}}
+
+% **********************************************
 
 
-
-
-
-% Discussion:
-% \begin{description}
-%     \item[Asymptotic symmetron field:] In the absence of topological defects, we see near on perfect correspondence between predicted and simulated scalar field $\breve{\chi}$. Presence of walls messes with the maximum field value, due to the ``bump'' in the profile, but we see from the average squared field value that the overall oscillations are very close to what we expect.
-%     \item[Equation for wall perturbation:] Minimising oscillations does not seem to affect the wall evolution particularly. This can be seen by comparing simulations \simnum{1}, \simnum{3}, \simnum{4} and \simnum{7} which all have the same relative initial amplitude, but different levels of oscillations. However, changing the \emph{curvature} of the wall, seems to change the overall behaviour of the wall. In particular, increasing the parameter $\Upsilon^{\AC}_\ast$ from 16 to 18 (sim. \simnum{3}) or 24 (sim. \simnum{5}). We use this as a naive quantification of the badness of the eom for $\epsilon$; the larger amplitude, the more likely we are to see higher-order effects, and the larger wavenumber, the farther we are from the wall normal coordinate $n\^\mu=\deltaup\^{\mu z}$. I suppose it is also fair to assume some inter-kink forces or perhaps intra-kink forces could contribute to the equation of motion. It would have been interesting to solve the actual eom for the wall normal coordinate and see if we could come closer to the simulated result.
-%     \item[Behaviour of tensor perturbation:] One clearly sees characteristics in some tensor modes that definitely has to do with the wall perturbation. However, the correspondence is not obvious in for all modes, the real component and \blahblah
-% \end{description}
-
-
-\section{Limitations and possibilities}
-
-
-% \section{Limits of the framework}
-    Let us review the equations this thin-wall approximation is built on. 
-    We want everything up to the Fourier SE tensor to be analytically solvable, at least to some level that resembles the actual situation, like when using $\sigma \propto (1-\upsilon)^{3/2}$ in this project. \comment{The behaviour is recognisable at this stage.} 
-    Okay, so far, so good. We found that for a two-dimensional topological defect in a conformally flat spacetime, we have the SE tensor \textchi \textit{\textpsi}
-    \begin{equation}
-        T\_{\mu\nu} = \Krondelta{_{\mu\nu}} \chiup_n \psiup \psi
-    \end{equation}
-    (z-plane) 
-    % The result is that any function $\varrho (x\^a)$ that satisfies $-\im \partial\_{a} \leftrightarrow p\_a$ for which we have a analytical formula for the Fourier transforms of 
-    % \begin{equation}
-    %     \eu[\im c \varrho(x\^a)]\quad \text{and} \quad  \partial\_a \eu[\im c \varrho(x\^a)]
-    % \end{equation}
-
-
-    \paragraph{Draw-backs.} %
-    We have not been able to take the tensor analysis back to configuration space. 
-
-
-
-
-\section{Superpositions}
-    \begin{bullets}
-        \item Adding propagating waves on torus
-        \item What would happen if there were two such perturbations? or several pert. walls?
-    \end{bullets}
 
 
     
-\section{Improvements}
-    % A very natural and possibly straight-forward generalisation would be to let $\alpha$ be a more-or-less free parameter. 
-    % It would be interesting to solve the 
-
-
-
-    \begin{description}
-        \item[Generalisation:] A very natural and possibly straight-forward generalisation would be to let $\alpha$ be a more-or-less free parameter. It should also not be too much work to consider arbitrary dimensions.
-        \item[Beyond linear perturbation:] It would be interesting to solve the eom for the actual wall normal coordinate. 
-        \item[Asymmetron:] Adjusting the vacuum energy densities and subsequently the surface tension, in addition to adding an energy bias in the thin-wall approximation, one should be able to find a good approximation for \emph{a}symmetron walls. This might be challenging if both $\sigma$ and $v$ are time-dependent. We saw in \nc{some section} that the time-dependence of the surface tension is a game-changer, so this at least should not be neglected.
-    \end{description}
-
-
-
-
-
-
-\section{Simulative experiments within reach}
-    \begin{bullets}
-        \item Better spatial resolution
-        \item Look at already-formed walls, i.e. drop the formation (see if it matters for the GWs) (time-dep. tension complicates things)
-    \end{bullets}

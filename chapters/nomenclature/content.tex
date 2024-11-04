@@ -1,54 +1,138 @@
 
+\newcommand\Chr{\ChristophelSym}
 
 
-\paragraph{Constants and units.} %
-We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum.\comment{Planck units? Set $k\ped{B}=G\nped{N}=1$?} The Newtonian constant of gravitation $G\nped{N}$ is referenced explicitly, and we use Planck units such as the Planck mass $\Planck{M} = \pclosed{\hbar c /G\nped{N}}^{\shalf} = G\nped{N}^{-\shalf} \sim 10^{-8} \unit{kg}$. 
+
+
+\subsubsection{Constants and units}
+% \paragraph{Constants and units.} %
+We use natural units where the speed of light in vacuum is $c=1$ and the reduced Planck mass is $M\nped{Pl}=1/\sqrt{8\ppi G\nped{N}}=1$. $G\nped{N}$ is the Newtonian constant of gravitation. Comoving lengths are usually given in units of megaparsec per Hubble constant $\mathrm{Mpc}/h_0$, where $1\unit{pc}=3.26156$~light-years.
+% We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum. %\comment{Planck units? Set $k\nped{B}=G\pned{N}=1$?} 
+% The Newtonian constant of gravitation $G\nped{N}$ is referenced explicitly, and we use Planck units such as the (reduced) Planck mass $M\nped{Pl}=1/\sqrt{ 8\ppi G\nped{N} }$. 
+%$\pclosed{\hbar c /G\nped{N}}^{\shalf} = G\nped{N}^{-\shalf} \sim 10^{-8} \unit{kg}$. 
 %
 
-\paragraph{Tensors.} %
-The metric signature $(-,+,+,+)$ is considered, i.e.~$\det~\!\![g\indices{_{\mu\nu}}] \equiv \abs{g} < 0 $. The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}$, whereas a general metric is denoted $g\indices{_{\mu\nu}}$. A four-vector $p\indices{^{\mu}} = $
+\subsubsection{Tensors}
 
-$[\eta\_{\mu\nu}] = \text{diag}(-1, 1, 1, 1)$
+\paragraph{Indices.} %
+Greek indices run from $0$ to $N$, and Latin $i,j,k, \dots$ from $1$ to $N$, in an $(N+1)$-dimensional spacetime. Indices $a,b,c$ are reserved for auxiliary coordinate systems. We adopt Einstein's summing convention in which repeated indices are 
+summed over, e.g.~$x\^\mu x\_\mu= \sum_{\mu=0}^N x\^{\mu} x\_{\mu}$.
 
-$f\_{,\mu}\equiv \partial\_\mu f = \pdv{f}{x\^\mu}$
+% \paragraph{Tensors.} %
+\paragraph{Metric.} %
+The metric signature $(-,+,\dots,+)$ is considered. %i.e.~$\det(g\_{\mu\nu})\equiv g < 0 $. 
+The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}$, whereas a general metric is denoted $g\indices{_{\mu\nu}}$. 
+The metric raises and lowers indices of tensors, e.g.~$x\^\mu = g\^{\mu\nu}x\_\nu$.
+
+% A four-vector $p\indices{^{\mu}} = $
+
+% $[\eta\_{\mu\nu}] = \text{diag}(-1, 1, 1, 1)$
 
 
-\subparagraph[Gamma]{Christophel symbols.} %
-The Christophel symbols or ``connections'' are written
+
+
+\paragraph{Derivatives.} 
+We sometimes adopt the comma-notation for partial derivatives $\partial\_\mu$ and covariant derivatives $\nabla\_\mu$. For a scalar $\phi$, we have:
+% $f\_{,\mu}\equiv \partial\_\mu f = \pdv{f}{x\^\mu}$
+\begin{subequations}
+    \begin{align}
+        \phi\_{,\mu} &\equiv \partial\_\mu \phi = \pdv{\phi}{x\^\mu} =\pclosed{\partial\_0, \partial\_i }, \\
+        \phi\_{;\mu} &\equiv \nabla\_\mu \phi = \partial\_\mu \phi . 
+        % {\sq}\phi &\equiv \nabla\^\mu \nabla\_\mu \phi
+    \end{align}
+\end{subequations}
+The d'Alembertian reads
 \begin{equation}
-    \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  }
+    \sq \phi  = \nabla\^\mu \nabla\_\mu \phi = \frac{1}{\sqrt{-g}} \partial\_\mu \pclosed{ \sqrt{-g} \partial\^\mu \phi},
+\end{equation}
+and we use $\sq\nped{M} \equiv \partial\^\mu\partial\_\mu$ to specify the Minkowski box operator.
+
+
+\paragraph{Miscellanea.} %
+We make use of the notation
+\begin{subequations}
+    \begin{align}
+        T\_{(\mu\nu)} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} + T\_{\nu\mu}  }, \\
+        T\_{[\mu\nu]} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} - T\_{\nu\mu}  }.
+    \end{align} 
+\end{subequations}
+We write $T\_{\mu\nu}= T\_{(\mu\nu)} + T\_{[\mu\nu]}$.
+
+
+
+\paragraph{Special symbols and tensors.} %
+The Kronecker delta is defined as
+\begin{equation}\label{eq:notation:Kronecker_delta}
+    \Krondelta{_{ij}} = \begin{cases}
+        1 &\text{if}\, i=j, \\ 
+        0 &\text{else.}
+    \end{cases}
+\end{equation}
+The Christoffel symbols (also called connection coefficients) are given by
+\begin{equation}\label{eq:notation:Christophel_symbols}
+    \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  }.
+\end{equation}
+% Note that this is not true tensor.
+% \subparagraph[Gamma]{Christoffel symbols.} %
+% The Christoffel symbols or ``connections'' are written
+% \begin{equation}\label{eq:notation:Christophel_symbols}
+%     \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  },
+% \end{equation}
+% and are not true tensors.
+The Riemann curvature tensor is
+% \subparagraph{Riemann curvature tensor.} %
+\begin{equation}\label{eq:notation:Riemann_tensor}
+    \mathcal{R}\indices{^\rho_{\sigma \mu \nu}} = 
+    % 2\partial\_{[\mu} \Chr{{|\rho|}}{\nu]\sigma} + 2\Chr{\rho}{[\mu |\lambda }\Chr{\lambda|}{\nu]\sigma } =  
+    \partial\_{\mu} \Chr{\rho}{\nu\sigma}- \partial\_{\nu} \Chr{\rho}{\mu\sigma} + \Chr{\rho}{\mu \lambda }\Chr{\lambda}{\nu \sigma} -  \Chr{\rho}{\nu \lambda }\Chr{\lambda}{\mu\sigma }.
 \end{equation}
 
-\subparagraph[Lambda]{``Lambda tensor.''} %
-We express the \textit{Lambda tensor}---sometimes called the ``projection operator''---that projects onto the TT gauge \nc{refer to sec.} as
+% \subparagraph[Lambda]{``Lambda tensor.''} %
+We express the \textit{Lambda tensor}---sometimes called the ``projection operator'' or ``spin-2 operator''---that projects a symmetric tensor onto the TT gauge as
 \begin{equation}\label{eq:notation:projection_tensor}
 % \begin{split}
-    \ProjectionLambda{ij}{kl}(\vec{n}) = P\indices{_i^k}(\vec{n})P\indices{_j^l}(\vec{n}) - \frac{1}{2}P\_{ij}(\vec{n})P\^{kl}(\vec{n});
-    \quad P\_{ij}(\vec{n}) = \Krondelta{_{ij}}-n\_i n\_j %\land \vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1
+    \ProjectionLambda{ij}{kl}(\vec{k}) = P\indices*{_i^k}(\vec{k})P\indices*{_j^l}(\vec{k}) - \frac{1}{2}P\_{ij}(\vec{k})P\^{kl}(\vec{k});
+    \quad P\_{ij}(\vec{k}) =  \Krondelta{_{ij}}-k\_i k\_j/ k^2, %\land \vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1
 % \end{split}
 \end{equation}
+where $\vec{k}$ is the propagation direction (see~\cref{sec:GR:gws}).
 % $\forall \vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1$
-$\forall\, \vec{n}$ of unit length; $\vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1$. %Note that the notation is somewhat different from the convention 
+%$\forall\, \vec{n}$ of unit length; $\vec{n}^2 = n\_1\!^2 + n\_2\!^2+ n\_3\!^2 = 1$. %Note that the notation is somewhat different from the convention 
 % Other literature may use a comma (`,') instead of a 
 % We use a dot (`$.$') instead of the more conventional comma (`$,$') to distinguish from the Minkowskian partial derivative.
 % $[\tens{\eta}] = \text{diag}(-1, 1, 1, 1)$
 
-\paragraph{Fourier transforms.} %
+\subsubsection{Fourier transforms} %
 We use the following convention for the Fourier transform of $f(x)$, $\tilde{f}(k)$, and its inverse, where $x$ and $k$ are Lorentz four-vectors:
 \begin{equation}
     \begin{split}
         % f(x) &= \int \del[2 3]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
         % f(x) &= \int \del[2]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
         % f(x) &= \int \del{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
-        f(x) &=  \integ[4][(2\ppi)^4]{k} \eu[-\im k\cdot x]\tilde{f}(k)  \\
+        f(x) &=  \integ[4][(2\ppi)^4]{k} \eu[-\im k\cdot x]\tilde{f}(k),  \\
         % f(x) &= \integ{\frac{\diff[4]k}{(2\ppi)^4}} \eu[-\im k\cdot x] \tilde{f}(k) \\
         % f(x) &= \int \! \frac{d^4\! k}{(2\ppi)^4} \, \eu[-\im k\cdot x] \tilde{f}(k) \\
-        \tilde{f}(k) &= \integ[4]{x} \eu[\im k \cdot x] f(x) 
+        \tilde{f}(k) &= \integ[4]{x} \eu[\im k \cdot x] f(x) .
     \end{split}
 \end{equation}
 Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$.
 
 
+\subsubsection{Special functions} %
+\comment{Will fix this.} %
+We will denote various cylinder functions by \blahblah see~\cref{app:special}
+
+\begin{tabular*}{\linewidth}{r c l}
+    regular Bessel functions: & $\Cylindrical[]$; & $\Cylindrical[\nu]^{(i)}(x)$  \\
+    spherical Bessel functions: & $\Cylindrical[][z]$; &  $\Cylindrical[n][z]^{(i)}(x) = \sqrt{\ppi/(2x)} \,\Cylindrical[n+1/2]^{(i)}(x) $ \\
+    Riccati--Bessel functions: & $\Cylindrical[][R]$; &  $\Cylindrical[n][R]^{(i)}(x) =-(-1)^{i}\cdot x\,\Cylindrical[n][z]^{(i)}(x) $ 
+\end{tabular*}
+Here, $\nu\in \Complex$ and $n\in\Integer$ denotes order, while $i=1,2$ refers to the \emph{$i$th kind}. \speak{Too messy!}
+
+% \begin{align}
+%     \zn^{(i)}(x) &= \sqrt{\frac{\ppi}{2x}} \Zv[n+1/2]^{(i)}(x) \\
+%     \Rn^{(i)}(x) &= (-1)^{i-1} x\zn^{(i)}(x)
+% \end{align}
 % \begin{equation}
 %     \begin{split}
 %         \lambda \quad \widebar{\lambda} \hbar \quad \rlap{X}-- \\
@@ -60,7 +144,7 @@ Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma
 % \section*{Frequently used abbreviations}
 \section*{Acronyms}
 \subimport{./}{abbrv.tex}
-
+% \comment{Glossary?}k
 
 \section*{Nomenclature}
 \subimport{./}{symbols.tex}

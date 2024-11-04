@@ -333,7 +333,7 @@
         % where $g\_{\mu\nu}$ 
         is the full, perturbed metric. Note that the $g\^{\mu\nu}=\eta\^{\mu\nu}-h\^{\mu\nu}$ is the inverse of $g\_{\mu\nu}$, whereas $h\^{\mu\nu}$ is \emph{not} the inverse of $ h\_{\mu\nu}$. We aim to find the Einstein tensor $\mathcal{G}\_{\mu\nu} = \mathcal{R}\_{\mu\nu} - \frac{1}{2}g\_{\mu\nu} \mathcal{R}$. %Recall that $\mathcal{G}\_{\mu\nu} \big|_{g\_{\mu\nu}=\eta\_{\mu\nu}}=0$
     
-        To zeroth order in $h\_{\mu\nu}$, the Einstein tensor is simply zero and the metric Minkowskian. To leading order $\BigO{h}$, some calculation is required. First, we compute the Christophel symbols
+        To zeroth order in $h\_{\mu\nu}$, the Einstein tensor is simply zero and the metric Minkowskian. To leading order $\BigO{h}$, some calculation is required. First, we compute the Christoffel symbols
         \begin{align}
             \Chr{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{2g\_{\sigma(\mu,\nu)}- g\_{\mu\nu, \sigma} } = \frac{1}{2}\eta\^{\rho\sigma}\pclosed{2h\_{\sigma(\mu,\nu)}- h\_{\mu\nu, \sigma} } + \BigO{h^2}.
         \end{align}
@@ -429,7 +429,7 @@
     \begin{equation}
         \ddot{\ah}\_P + \pclosed{k^2-\frac{(\alpha-1)\alpha}{\tau^2}}\ah\_P = a S\_P
     \end{equation}
-    With the linear differential operator $\mathop{\mathrm{L}_{u}}=\dv*[2]{}{u} + 1 - (\nu^2-\frac{1}{4})/u$ we can write this ODE as $\mathop{\mathrm{L}_{u=k\tau}} \ah\_P=  k^{-2}a S\_P$. Imposing initial conditions $\ah\_P(\tau\ped{init})= \dot{\ah}\_P(\tau\ped{init})=0$, we can find the \checkthis{Green's function $G(u,v) = \Heaviside(u-u\ped{init})G\ped{r}(u,v)$ with retarded solution
+    With the linear differential operator $\mathop{\mathrm{L}_{u}}=\dv*[2]{}{u} + 1 - (\nu^2-\frac{1}{4})/u$ we can write this ODE as $\mathop{\mathrm{L}_{u=k\tau}} \ah\_P=  k^{-2}a S\_P$. Imposing initial conditions $\ah\_P(\tau\ped{i})= \dot{\ah}\_P(\tau\ped{i})=0$, we can find the \checkthis{Green's function $G(u,v) = \Heaviside(u-u\ped{i})G\ped{r}(u,v)$ with retarded solution
     \begin{equation}
         G\ped{r}(u, v)  =  \frac{\ppi}{2} \sqrt{uv} \cclosed{ \Bessel[\nu][2](u)\Bessel[\nu](v)  - \Bessel[\nu][1](u)\Bessel[\nu][2](v) }.
     \end{equation}}
@@ -439,7 +439,7 @@
     \citep{kawasakiStudyGravitationalRadiation2011} %
     We obtain the solution
     \begin{equation}
-        \ah_P(\tau, \vec{k}) = k^{-2} \integ{\hat{\tau}}[\tau\ped{init}][\tau] G\ped{r}(k\tau, k\hat{\tau}) a (\hat{\tau}) S_P(\hat{\tau}, \vec{k})
+        \ah_P(\tau, \vec{k}) = k^{-2} \integ{\hat{\tau}}[\tau\ped{i}][\tau] G\ped{r}(k\tau, k\hat{\tau}) a (\hat{\tau}) S_P(\hat{\tau}, \vec{k})
     \end{equation}
     % The Green's function to this equation is, as proposed by e.g.~\citet{kawasakiStudyGravitationalRadiation2011}, is
     % \begin{equation}
@@ -454,12 +454,12 @@
     %     ah_+ = H_1 + H_2
     % \end{equation}
     \begin{align}
-        H_P^1(\tau, \vec{k}) &= +\psi_2(k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \psi_1(k\theta) \Src_P(\theta, \vec{k}) \\
-        H_P^2(\tau, \vec{k}) &= -\psi_1(k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \psi_2(k\theta) \Src_P(\theta, \vec{k})
+        H_P^1(\tau, \vec{k}) &= +\psi_2(k\tau) \integ{\theta}[\tau\ped{i}][\tau]  \psi_1(k\theta) \Src_P(\theta, \vec{k}) \\
+        H_P^2(\tau, \vec{k}) &= -\psi_1(k\tau) \integ{\theta}[\tau\ped{i}][\tau]  \psi_2(k\theta) \Src_P(\theta, \vec{k})
     \end{align}
     \begin{align}
-        H_P^1(\tau, \vec{k}) &= +\RiccatiBessel[n][1](k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k}) \\
-        H_P^2(\tau, \vec{k}) &= -\RiccatiBessel[n][2](k\tau) \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][1](k\theta) \Src_P(\theta, \vec{k})
+        H_P^1(\tau, \vec{k}) &= +\RiccatiBessel[n][1](k\tau) \integ{\theta}[\tau\ped{i}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k}) \\
+        H_P^2(\tau, \vec{k}) &= -\RiccatiBessel[n][2](k\tau) \integ{\theta}[\tau\ped{i}][\tau]  \RiccatiBessel[n][1](k\theta) \Src_P(\theta, \vec{k})
     \end{align}
     % and $\psi_1(u) = \sqrt{u}\Bessel[\nu](u)$ and $\psi_2(u) = \sqrt{u}\Bessel[\nu][2](u)$,
     % and  $\psi_n(u) = \sqrt{\ppi/2}\sqrt{u}\Cylindrical[\nu]^{(n)}(u)$,
@@ -477,8 +477,8 @@
     The conformal time derivative becomes
     \begin{equation}
         \begin{split}
-            \dot{H}_P^1(\tau, \vec{k})  &= +k \,\bclosed{ \RiccatiBessel[\alpha][1](k\tau) -  n\sphBessel[n][1](k\tau) } \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k})  \\
-            \dot{H}_P^2(\tau, \vec{k})  &= -k \,\bclosed{ \RiccatiBessel[\alpha][2](k\tau) -  n\sphBessel[n][2](k\tau) } \integ{\theta}[\tau\ped{init}][\tau]  \RiccatiBessel[n][1](k\theta)  \Src_P(\theta, \vec{k})  
+            \dot{H}_P^1(\tau, \vec{k})  &= +k \,\bclosed{ \RiccatiBessel[\alpha][1](k\tau) -  n\sphBessel[n][1](k\tau) } \integ{\theta}[\tau\ped{i}][\tau]  \RiccatiBessel[n][2](k\theta)  \Src_P(\theta, \vec{k})  \\
+            \dot{H}_P^2(\tau, \vec{k})  &= -k \,\bclosed{ \RiccatiBessel[\alpha][2](k\tau) -  n\sphBessel[n][2](k\tau) } \integ{\theta}[\tau\ped{i}][\tau]  \RiccatiBessel[n][1](k\theta)  \Src_P(\theta, \vec{k})  
         \end{split}
     \end{equation}
 

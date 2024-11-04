@@ -21,7 +21,7 @@
 \makeatother
 
 \providecommand*{\im}{\ensuremath{\mathrm{i}}}
-\providecommand*{\ppi}{\ensuremath{\text{\textpi}}}
+\providecommand*{\ppi}{\ensuremath{\piup}}
 
 
 
@@ -257,7 +257,8 @@
 
 
 \providecommand{\redshift}{\ensuremath{\mathfrak{z}}}   % redshift z
-\providecommand{\zz}{\ensuremath{\mathfrak{z}}}   % redshift z
+% \providecommand{\redshift}{\ensuremath{\underbar{z}}}   % redshift z
+\providecommand{\zz}{\redshift}   % redshift z
 
 % \providecommand{\scalefac}{\ensuremath{\mathfrak{a}}}   % scale factor a
 
@@ -265,13 +266,13 @@
 % Projection tensor !!!! (FIX TO BE \mathop)
 \newcommandx*{\ProjectionLambda}[2][]{%
     % \Lambda\_{{#1}.{#2}}% 
-    \Lambda\indices{_{#1}^{#2}}%
+    \Lambda\indices*{_{#1}^{#2}}%
 }
 
 
 
 
-% Christophel symbols
+% Christoffel symbols
 \newcommandx*{\ChristophelSym}[3][1=\Gamma]{%
     #1\indices*{^{#2}_{#3}}%
 }
@@ -312,8 +313,8 @@
 \newcommandx*{\Neumann}[1][1=\nu]{%
     \ensuremath{\n@specialfunc{Y}_{#1}}%
 }        
-\newcommandx*{\Cylindrical}[1][1=\nu]{%
-    \ensuremath{\n@specialfunc{Z}_{#1}}%
+\newcommandx*{\Cylindrical}[2][1=\nu,2=Z]{%
+    \ensuremath{\n@specialfunc{#2}_{#1}}%
 }                                           % Cylindrical function
 %
 \newcommandx*{\sphBessel}[2][1=n, 2=1]{%
@@ -533,13 +534,26 @@
 % Codes for local macros
 
 % a(τ)·h_ij(τ, ...)
-\newcommand{\ALIASah}{\bar{h}}
+% \newcommand{\ALIASah}{\bar{h}}
+% \newcommand{\ALIASah}{\underbar{\textit{h}}}
+% \newcommand{\ALIASah}{\underaccent{\bar}{h}}
+\newcommand{\ALIASah}{\psi}
+
+
+
+% Fourier transform accent
+\newcommand{\ALIASFt}{\tilde}
+
+% Dummy variable accent
+\newcommand{\ALIASdummy}{\hat}
 
 % e.g. g_μν + δg_μν + δδg_μν + ...
-\newcommand{\ALIASpert}[1]{\accentset{\circ}{#1}}
+% \newcommand{\ALIASpert}[1]{\accentset{\circ}{#1}}
+\newcommand{\ALIASpert}{\ring}
 
 % hypersurface, aka. domain wall
 \newcommand{\ALIAShypsurf}{\varSigma}
+\newcommand{\ALIAShypacc}{\widehat}
 
 % spatial part of perturbation
 \newcommand{\ALIASsppt}{\mathscr{E}}
@@ -550,10 +564,47 @@
 
 % lattice coordinate
 \newcommand{\ALIASlcoord}[1]{\mathtt{#1}} % code lattice coordinate
+\newcommand{\ALIASlcoordx}{\vec{\ALIASlcoord{n}}}
+\newcommand{\ALIASlcoordk}{\tilde{\vec{\ALIASlcoord{n}}}}
 
 
 
 
 
-\newcommand{\ALIASpolplus}{\rotatebox[origin=c]{0}{+}}
-\newcommand{\ALIASpolcross}{\rotatebox[origin=c]{45}{+}}
+% \newcommand{\ALIASpolplus}{{\rotatebox[origin=c]{90}{+}}}
+% \newcommand{\ALIASpolcross}{{\rotatebox[origin=c]{45}{+}}}
+\newcommand{\ALIASpolplus}{+}
+\newcommand{\ALIASpolcross}{\times}
+
+\newcommandx{\ALIAShpAB}[1][1=+]{\ALIASFt{h}_{#1}}
+\newcommandx{\ALIAShpA}[1][1=+]{\ALIAShpAB[#1]\nap{NG}}
+\newcommandx{\ALIAShpB}[1][1=+]{\ALIAShpAB[#1]^{\phi}}
+\newcommandx{\ALIAShpC}[1][1=+]{\ALIASFt{\mathtt{h}}_{#1}}
+\newcommandx{\ALIAShpCR}[1][1=+]{\ALIASFt{\mathtt{h}}_{#1}^{\Re}}
+\newcommandx{\ALIAShpCI}[1][1=+]{\ALIASFt{\mathtt{h}}_{#1}^{\Im}}
+
+
+\newcommandx{\ALIASepsA}[1][1=\varepsilon]{{#1}\nap{NG}}
+\newcommandx{\ALIASepsB}[1][1=\varepsilon]{{#1}^{\phi}}
+\newcommandx{\ALIASepsC}{\ALIASepsB}
+
+
+
+
+% -------------------------------
+
+
+\newcommand\newconcept{\textbf}
+
+
+\newcommand{\epsast}{\varepsilon_\ast}
+
+
+
+\newcommand{\avg}[1]{\left\langle{#1}\right\rangle}
+
+
+\newcommand{\tmpequiv}{\triangleq} % temporary definition
+
+
+\newcommand{\piGN}{\ppi G\nped{N}}

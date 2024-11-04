@@ -1,8 +1,8 @@
 % |||||||||||||||||||||||||||||||||||||||||||||
-% |||||| 2.4 Standard model of cosmology ||||||
+% |||||| 2.3 Standard model of cosmology ||||||
 % |||||||||||||||||||||||||||||||||||||||||||||
 
-% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
 
 % -------------------------------------
 % labels: \label{[type]:GR:lcdm:[name]}
@@ -20,27 +20,53 @@
 
 
 
-Employing the cosmological principle (CP) to the Einstein equation, simplifies them drastically. CP states that universe is spatially homogeneous and isotropic\comment{---some ``folkelig'' comment---}or equivalently that the line element of the universe takes the form 
-${ds}^2 = -{\diff t}^2 + a^2(t){d\varSigma}^2$ where ${d\varSigma}$
-is a three-dimensional metric with a specified Gaussian curvature. $a$ is the scale factor describing the universe's expansion. %
-This was the starting point for Alexander Friedmann when he \cringe{utformet} the Friedmann equations. If CP holds, any constituent $s$ behaves as a perfect fluid, and the Hubble parameter reads \comment{decide which here}
+Employing the cosmological principle (CP) to the Einstein equation, simplifies them drastically. The cosmological principle states that the universe is spatially homogeneous and isotropic%
+% \comment{---some ``folkelig'' comment---}%
+, %
+or equivalently that the line element of the universe takes the form 
+${ds}^2 = -{\diff t}^2 + a^2(t){d\varSigma}^2$ where ${d\varSigma}^2$
+is a three-dimensional metric with a specified Gaussian curvature. The scale factor $a$ describing the universe's expansion is %
+\begin{equation}
+    a = \frac{1}{1+\redshift},
+\end{equation}
+where $\redshift$ is the cosmic redshift. %
+This was the starting point for Alexander Friedmann (1888--1925) when he developed the Friedmann equations. If CP holds---which is widely accepted as a good approximation at large scales, typically orders larger than $\mathscr{O}(100~\mathrm{Mpc})$---any constituent $s$ behaves as a perfect fluid, and the Hubble parameter $H$ reads %\comment{decide which here}
 % \begin{equation}
 %     \Omega\ped{tot} \equiv \frac{\rho}{\rho\ped{cr0}} = \sum_{s} \Omega_s
 % \end{equation}
 \begin{equation}\label{eq:GR:lcdm:first_Friedmann}
     H^2 = H_0^2 \sum_s \Omega_{s0} a^{-3(1+w_s)},
 \end{equation}
-\begin{equation}\label{eq:GR:lcdm:first_Friedmann_conformal}
-    \mathcal{H}^2 = H_0^2 \sum_s \Omega_{s0} a^{-(1+3w_s)},
-\end{equation}
-where $w_s$ is the equation-of-state parameter of $s$. 
+where $\Omega_{s0}\equiv \rho_{s0}/\rho\ped{cr0}$ is a dimensionless present-day energy density parameter, normalised to the critical density today, $\rho\ped{cr0}= 3H_0^2 M\nped{Pl}^2$. %
+$w_s$ is the equation-of-state parameter of $s$, i.e. 
+\[\text{isotropic pressure}= w \cdot \text{homogeneous density}.\]
+\begin{itemize}
+    \item Relativistic matter (radiation, neutrinos): $w\ped{r}=1/3$
+    \item Non-relativistic matter (baryons, CDM): $w\ped{m}=0$ % "dust"
+    \item Effective curvature: $w\ped{K}=-1/3$
+    \item Domain wall network: $w\ped{dw}=-2/3$
+    \item Vacuum energy (\textLambda): $w_{\text{\textLambda}} =-1$
+\end{itemize}
+Note that we define Big Bang as the time when $a=0$ and today as the time when $a=a_0=1$.
+% Note that $a|_{\text{today}}= a(t_0) = a_0 = 1$, and $a|_{}$ 
 
-\pensive{CP + EFEs = FI \& FII}
+% \begin{description}
+%     \item[relativistic matter] has $w\ped{r}=1/3$ and slows the expansion
+%     \item[non-relativistic matter] has $w\ped{r}=1/3$, i.e. is pressureless
+%     \item[effective curvature] has $w\ped{K}=-1/3$
+%     \item[cosmological constant] has $w_\text{{\textLambda}}=-1$, i.e. negative pressure and therefore drives the expansion rate up
+% \end{description}
 
-\pensive{CP holds for scales $>\mathscr{O}(100~\mathrm{Mpc})$}
+% \begin{
+% This is widely accepted as a good approximation at large scales $>\mathscr{O}(100~\mathrm{Mpc})$.
+
+% \pensive{CP + EFEs = FI \& FII}
+
+% \pensive{CP holds for scales $>\mathscr{O}(100~\mathrm{Mpc})$}
 
 
-\comment{Get to Hubble tension.}
+% \comment{Get to Hubble tension.}
+
 
 
 
@@ -48,11 +74,37 @@ We will work with conformal time $\tau$ that relates to cosmic time $t$ such tha
 \begin{equation}
     {ds}^2 = a^2 (-{\diff \tau}^2+ {\diff \varSigma}^2).
 \end{equation}
-To get simplified---or simply analytically solvable---equations, we often assume $a\sim \tau^\alpha$ that corresponds to a universe dominated by a single substance. $\alpha$ is eventually determined by the equation-of-state parameter $w_s$ associated with the substance $s$ in question,
+Subsequently, we make use of the conformal Hubble factor $\mathcal{H}\equiv a H$, given by
+\begin{equation}\label{eq:GR:lcdm:first_Friedmann_conformal}
+    \mathcal{H}^2 = H_0^2 \sum_s \Omega_{s0} a^{-(1+3w_s)},
+\end{equation}
+To get simplified---or simply analytically solvable---equations, we often assume $a\sim \tau^\alpha$ that corresponds to a universe dominated by a single substance. $\alpha$ is ultimately determined by the equation-of-state parameter $w_s$ associated with the substance $s$ in question, 
 \begin{equation}
     \alpha = \frac{2}{1+3w_s}.
 \end{equation}
-This means that $\alpha=1$ and $\alpha=2$ for radiation (RD) and matter domination (MD), respectively. Put in cosmic context, \comment{maybe have a figure? Or write something about the different eras?}
+This means that $\alpha=1$ and $\alpha=2$ for radiation (RD) and matter domination (MD), respectively. %
+% Put in cosmic context, \comment{maybe have a figure? Or write something about the different eras?}
+
+% With the present-day fiducial values $\Omega\ped{m0}\simeq 0.67$
+With fiducial observed values for $\Omega\ped{r0}$, $\Omega\ped{m0}$ and $\Omega_{\text{\textLambda}0}$, it is understood that our universe was dominated by radiation in its early stages, after inflation and until before $a=\Omega\ped{r0}/\Omega\ped{m0}$ (when $\rho\ped{m}=\rho\ped{r}$, about 50 thousand years after Big Bang). The universe entered a matter-dominated era after this, until $a=(\Omega\ped{m0}/\Omega_{\text{\textLambda}0})^{1/3}$ (when $\rho_{\text{\textLambda}}=\rho\ped{m}$, about 10 billion years after Big Bang). The universe started accelerating, and is currently on steady course to a vacuum dominated era.
+
+
+\subsubsection{Hubble trouble}
+    The~\newconcept{Hubble tension} refers to a discrepancy between measurements of the Hubble constant describing the expansion rate of the universe. Different methods yield conflicting values of $H_0 = 100 h_0 \unit{km} \unit{s^{-1}} \unit{Mpc^{-1}}$. Local measurements involving for example distant supernovae suggest $h_0 \approx 0.73$~\citep[e.g.][]{maggioreGravitationalWavesVol2018}. In contrast, the other approach, derived from CMB observations by the Planck satellite, indicates $h_0\approx 0.67$~\citep[e.g.][]{maggioreGravitationalWavesVol2018}. Their confidence intervals do not overlap, thus necessitating new measurements~\citep[e.g.][]{maggioreGravitationalWavesVol2018}. \speak{This citing seems excessive\dots}
+
+
+    Many argue that revision of \textLambda{}CDM is necessary. The accelerated expansion is a late-universe phenomenon conservatively made clear by the dark-energy/cosmological-constant duality, with $w\ped{de}=w_{\Lambda}=-1$. %$w_{\Lambda}=-1$. 
+    Introducing instead a time-dependent ``phantom'' equation-of-state parameter $w\ped{de}(a)$ can harmonise the two measurements~\citep{maggioreGravitationalWavesVol2018}. %
+    % Among the proposed solutions to the Hubble tension is to allow the dark-energy equation-of-state parameter to vary with time. 
+    %A scalar 
+    % Allowing an effective dark-energy equation-of-state parameter to vary with time, \blahblah
+    % \blahblah
+    \comment{More details?}
+
+
+
+
+
 
 
 \subsection{Cosmological perturbation theory}\label{sec:GR:lcdm:cosmopert}
@@ -64,7 +116,7 @@ This means that $\alpha=1$ and $\alpha=2$ for radiation (RD) and matter dominati
     % \begin{equation}\label{eq:GR:lcdm:perturbed_metric_Bardeen}
     %     \pert{ds}^2 = {\diff \tau}^2 \bclosed{ -(1+2\Phi){\diff\tau}^2  + 2w\_{i}{\diff x\^i}{\diff \tau} + ((1-2\Psi)\Krondelta{_{ij}} + 2s\_{ij}){\diff x\^i}{\diff x\^j} }.
     % \end{equation}
-    It is convenient to adopt the convension that spatial vectors and tensors are raised and lowered with $\Krondelta{}$, e.g.~$C\^{ij}=\Krondelta*{^{i}_k}\Krondelta*{^{j}_l} C\_{kl}$. The symmetric metric has ten degrees of freedom, and a scalar-vector-tensor (SVT) decomposition separates these into four scalar, four vector and two tensor degrees of freedom:
+    It is convenient to adopt the convention that spatial vectors and tensors are raised and lowered with $\Krondelta{}$, e.g.~$C\^{ij}=\Krondelta{^{ik}}\Krondelta{^{jl}} C\_{kl}$. The symmetric metric has ten degrees of freedom, and a scalar-vector-tensor (SVT) decomposition separates these into four scalar, four vector and two tensor degrees of freedom:
     \begin{subequations}
         \begin{align}
             A    &\to  A, \\
@@ -82,34 +134,54 @@ This means that $\alpha=1$ and $\alpha=2$ for radiation (RD) and matter dominati
         \item Vector perturbations ($F\_i$, $G\_i$) are not predicted by inflation, and would in any case only have decaying solutions, and are thus cosmologically irrelevant.
         \item Tensor perturbations ($E\_{ij}$)---gravitational waves---are predicted by inflation.
     \end{itemize}
+    This thesis focuses solely on the tensorial part of the metric perturbation. Therefore, we will consider the divergence- and traceless $h\_{ij}=2E\_{ij}$. This particular choice is called the \newconcept{transverse-traceless} (TT) \newconcept{gauge}, and will be addressed in the next section. %
+    % $\partial\^i h\_{ij} =0$ and $\Krondelta{^{ij}}h\_{ij}=0$. Any symmetric tensor $T\_{ij}$ can be projected onto the TT gauge by use of the projection tensor in~\cref{eq:notation:projection_tensor},
+    % \begin{equation}
+    %     T\ap{TT}_{ij}(\vec{k}) = \Lambda\indices*{^{ij}_{kl}}(\vec{k}) T\_{kl}(\vec{k}).
+    % \end{equation}
+    Plugging this into the linearised Einstein equation~\cref{eq:GR:einstein:linearised_Einstein_eq}, we get the equation of motion for the tensor perturbations $h\_{ij}$, which (spoiler alert) are in fact the gravitational waves.
 
-
-    This thesis focuses solely on the tensorial part of the metric perturbation. Therefore, we will consider the divergence- and traceless $h\_{ij}=2E\_{ij}$. This particular choice is called the \emph{transverse-traceless} (TT) gauge; $\partial\^i h\_{ij} =0$ and $\Krondelta{^{ij}}h\_{ij}=0$. Any symmetric tensor $T\_{ij}$ can be projected onto the TT-gauge by use of the projection tensor in~\cref{eq:notation:projection_tensor},
-    \begin{equation}
-        T\ap{TT}_{ij}(\vec{k}) = \Lambda\indices{^{ij}_{kl}}(\vec{k}/k) T\_{kl}(\vec{k}).
-    \end{equation}
+    % \comment{Plug this into Einstein's equation}
 
     % \begin{bullets}
     %     \item Hodge decomposition $\accentset{\circ}{g}\_{\mu\nu} = g\_{\mu\nu} + \delta g\_{\mu\nu} $ where $g\_{\mu\nu}$ is FRLW
     % \end{bullets}
 
 
-\subsection{Hubble trouble}\label{sec:GR:lcdm:problems}
-    \begin{bullets}
-        \item Hubble tension
-        \item Flatness problem
-        \item Extended models of gravity
-        \item \textLambda{}CDM still very good!
-    \end{bullets}
+
+
+
+
+
+
+% \subsection{Hubble trouble}\label{sec:GR:lcdm:problems}
+%     The~\newconcept{Hubble tension} refers to a discrepancy between measurements of the Hubble constant describing the expansion rate of the universe. Different methods yield conflicting values of $h_0 = 100 H_0 \unit{km} \unit{s^{-1}} \unit{Mpc^{-1}}$. Local measurements involving for example distant supernovae suggest $h_0 \approx 0.73$. In contrast, the other approach, derived from CMB observations by the Planck satellite, indicates $h_0\approx 0.67$. Their confidence intervals do not overlap, thus necessitating new measurements. 
+
+
+%     Many argue that revision of \textLambda{}CDM is necessary. The accelerated expansion is a late-universe phenomenon conservatively made clear by dark energy with $w\ped{de}=w_{\Lambda}=-1$. %$w_{\Lambda}=-1$. 
+%     Among the proposed solutions to the Hubble tension is to allow the dark-energy equation-of-state parameter to vary with time. %A scalar 
+%     % Allowing an effective dark-energy equation-of-state parameter to vary with time, \blahblah
+%     \blahblah
+
+
+    % \begin{bullets}
+    %     \item Hubble tension
+    %     \item Flatness problem
+    %     \item Extended models of gravity
+    %     \item \textLambda{}CDM still very good!
+    % \end{bullets}
 
     % The cosmic microwave background (CMB) 
     % That the universe is expanding, there is little doubt of.
 
-    
-    
-    
-    In combining the distance to a nearby galaxy and the rate at which it moves away from us, we find the expansion rate of the universe
+
+
+
+    % In combining the distance to a nearby galaxy and the rate at which it moves away from us, we find the expansion rate of the universe
     % Observations of stellar objects measures the cosmic redshift $\redshift = 1/a - 1$ 
 
 
-    In short, local measurements suggests $h_0 \simeq 0.73$, but CMB observations will have it $h_0\simeq 0.67$. The measurement errors cannot explain this. 
+    % In short, local measurements suggests $h_0 \simeq 0.73$, but CMB observations will have it $h_0\simeq 0.67$. The measurement errors cannot explain this. 
+
+
+

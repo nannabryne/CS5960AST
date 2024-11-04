@@ -1,18 +1,22 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%% Ch. X: Simulation %%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Ch. 5: Cosmic Phase Transition %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% ---------------------------------------
+% --------------------------------
 % labels: \label{[type]:PT:[name]}
-% ---------------------------------------
+% --------------------------------
 
 
-% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
-% \newcommand{\simnum}{\ALIASsimnum}
 \newcommand{\lcoord}{\ALIASlcoord} % code lattice coordinate
-% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+\newcommand{\lcoordx}{\ALIASlcoordx} % code lattice coordinate
+\newcommand{\lcoordk}{\ALIASlcoordk} % code lattice coordinate
+\newcommand*\Ft{\ALIASFt}
+\newcommand\dummy{\ALIASdummy}
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
@@ -21,18 +25,18 @@
 
 % ////////////////// intro //////////////////
 
-\begin{bullets}
-    \item Testing the framework
-    \item Different theory
-    \item Comment on annihilation?
-    \item First, go through the field description (modified gravity, Symmetron)
-\end{bullets}
+% \begin{bullets}
+%     \item Testing the framework
+%     \item Different theory
+%     \item Comment on annihilation?
+%     \item First, go through the field description (modified gravity, Symmetron)
+% \end{bullets}
 
 
 
 
 
-Discrete symmetry breakage leads to formation of domain walls. The thin-wall approximation is not suited to describe the dynamics at this stage, and is \cringe{certainly not able to tell the whole story.} A Lagrangian that are reflection-invariant in a scalar field theory, and then suddenly is not any more, describes a system that undergoes a phase transition. In the case of $3+1$ dimensions, the system is quickly divided into alternating positive and negative vacuum domains. Separating these are stable domain walls---the newborn soliton solution for the scalar field. During the early stages of formation, a domain wall in theory reduces its thickness from initially infinite to $\sim \delta_\infty= \mu^{-1}$; a source of various problems both simulation-wise and for the theory. 
+Discrete symmetry breakage leads to formation of domain walls. The thin-wall approximation is not suited to describe the dynamics at this stage, and is \cringe{certainly not able to tell the whole story.} A Lagrangian that is reflection-invariant in a scalar field theory, and then suddenly is not any more, describes a system that undergoes a phase transition. In the case of $3+1$ dimensions, the system is quickly divided into alternating positive and negative vacuum domains. Separating these are stable domain walls---the newborn soliton solution for the scalar field. During the early stages of formation, a domain wall in theory reduces its thickness from initially infinite to $\sim \delta_\infty = \mathscr{O}(\mu^{-1})$---a source of various problems both simulation-wise and for the theory. 
 
 % These walls may annihilate in the presence of an asymmetry \comment{Or if is an approximation?}, a feature that would weaken the theoretical arguments \comment{}
 
@@ -58,32 +62,36 @@ Previous work~\citep{blanco-pilladoDynamicsDomainWall2023} has been done on Mink
 We build up towards simulations of toy scenarios for which we set $\alpha=2$.
 
 
+This chapter first, in~\cref{sec:PT:symm_dws}, presents the scalar-field formulation of the defect and defect formation. We address the code that was used in~\cref{sec:PT:code} and how we design the simulative experiments in~\cref{sec:PT:gwas}. In~\cref{sec:PT:sims} we present details about the particular simulations we perform.
+
+
+
 % \comment{Important refs: \citep{blanco-pilladoDynamicsDomainWall2023}}
 
 % ///////////////////////////////////////////
 
 
 
-
+% ****************** SECTIONS ******************
 
 \section{\(\Zn\) symmetry break}\label{sec:PT:symm_dws}
     {\subimport{./}{symm_dws.tex}}
 
 
+\section{Dynamic modelling}\label{sec:PT:code} %
+    {\subimport{./}{code.tex}}
 
-\section{Dynamic modelling}\label{sec:PT:dynamics} % (of PTs, DWs?)
-    {\subimport{./}{dynamics.tex}}
+% \section{\tmptitle{\texttt{gwasevolution} (On the lattice?)}}\label{sec:PT:gwas}
+%     {\subimport{./}{gwas.tex}}
 
-
-
-\section{\texttt{gwasevolution} (On the lattice?)}\label{sec:PT:gwas}
+\section{\tmptitle{Toy model design}}\label{sec:PT:gwas}
     {\subimport{./}{gwas.tex}}
 
 
 \section{Simulation setups}\label{sec:PT:sims}
     {\subimport{./}{sims.tex}}
 
-
+% **********************************************
 
 % \begin{draft}
 %     %

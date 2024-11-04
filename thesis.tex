@@ -8,6 +8,7 @@
 
 % Writing tools (remove before submission):
 % \import{texmex/}{writingtools.sty}
+
 \input{texmex/writingtools.tex}
 
 \title{Gravitational waves from topological defects} 
@@ -38,25 +39,25 @@
 %%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%
 
 \frontmatter{}
-% \begin{abstract}
-%     We present a theoretical framework \blahblah
-% \end{abstract}
+\begin{abstract}
+    Topological defects predicted by extensions of general relativity can manifest in gravitational-wave observations on Earth. As a working example, we present symmetron domain walls formed at redshift $\sim 2$ with structural ripples and investigate how gravitational radiation carries information about the symmetry-breaking theory. Future broadband gravitational-wave observations  \speak{COMPLETE THIS!}
+\end{abstract}
 
 
 \tableofcontents{}
-% \listoffigures{}     
+\listoffigures{}     
 % \listoftables{}       
 
+% \part*{Prologue}
+\begin{preface}
+    Here comes your preface, including acknowledgments and thanks.
 
-% \begin{preface}
-%     Here comes your preface, including acknowledgments and thanks.
 
-      
-%     I would like to give thanks to all my friends and family.
+    % I would like to give thanks to all my friends and family.
 
-%     To my mother and father, I am especially grateful. 
-%     \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22; computer resources}
-% \end{preface}
+    % To my mother and father, I am especially grateful. 
+    % \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22; computer resources}
+\end{preface}
 
 % NOMENCLATURE etc
 \begin{nomen}
@@ -73,27 +74,27 @@
 
 % >>> 
 
-\part*{}%
+% \part*{}%
 
-\chapter*{(chapter) Title Case}
-Lorem ipsum\dots
-\section*{(section) Sentence case}
-Lorem ipsum\dots
-\subsection*{(subsection) Sentence case}
-Lorem ipsum\dots
+% \chapter*{(chapter) Title Case}
+% Lorem ipsum\dots
+% \section*{(section) Sentence case}
+% Lorem ipsum\dots
+% \subsection*{(subsection) Sentence case}
+% Lorem ipsum\dots
 
-\paragraph*{(paragraph) Sentence case with punctuation.} %
-Lorem ipsum\dots
+% \paragraph*{(paragraph) Sentence case with punctuation.} %
+% Lorem ipsum\dots
 
-Below, we describe some phenomena or whatever.
-\begin{description}
-    \item[Gravitational waves] are called that or GWs, tensor perturbations, \dots pdsfovnsoz avoszjasvo aoc awvn anvo pewnfvao noav
-    \item[Stress--energy tensor] is called that or SE tensor(?) \comment{OBS: Hilbert SE tensor = HSE tensor?}.
-    \item[Domain walls] are called that or walls, \underline{never} DWs.
-    \item[General relativity] is called that or GR, Einstein's theory of gravity.
-    \item[Einstein field equation(s)] are called that or EFE(s).
-    \item[Equation(s) of motion] are called that or eom(s).  
-\end{description}
+% Below, we describe some phenomena or whatever.
+% \begin{description}
+%     \item[Gravitational waves] are called that or GWs, tensor perturbations, \dots pdsfovnsoz avoszjasvo aoc awvn anvo pewnfvao noav
+%     \item[Stress--energy tensor] is called that or SE tensor(?) \comment{OBS: Hilbert SE tensor = HSE tensor?}.
+%     \item[Domain walls] are called that or walls, \underline{never} DWs.
+%     \item[General relativity] is called that or GR, Einstein's theory of gravity.
+%     \item[Einstein field equation(s)] are called that or EFE(s).
+%     \item[Equation(s) of motion] are called that or eom(s).  
+% \end{description}
 
 
 
@@ -102,7 +103,7 @@ Below, we describe some phenomena or whatever.
 
 
 % INTRODUCTION
-\chapter{Introduction}\label[chap]{chap:intro}
+\chapter{Introduction}\label{chap:intro}
     \import{chapters/1_Introduction/}{intro.tex}
 
 
@@ -134,13 +135,14 @@ Below, we describe some phenomena or whatever.
 
 
 % GR
-\chapter{General Relativity}\label[chap]{chap:GR}
+\chapter{General Relativity}\label{chap:GR}
     {\import{chapters/2_General_Relativity/}{GR.tex}}
 
 
 
 % DWs
-\chapter{\tmptitle{Kinks in Cosmology}}\label[chap]{chap:cosmo}
+%Kinks in Cosmology
+\chapter{Symmetry-Breaking Dark Energy}\label{chap:cosmo}
     {\import{chapters/3_TMP/}{cosmo.tex}}
 
 
@@ -210,6 +212,7 @@ Below, we describe some phenomena or whatever.
 
 
 
+
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
 % > FINDINGS (results+analysis+discussion+conclusion)
@@ -235,10 +238,11 @@ Below, we describe some phenomena or whatever.
 
 % \part*{}% 
 
-% % DISCUSSION
-% \chapter{Discussion}
+
+\part*{Summary} % Epilogue?
 
 % CONCLUSION
+
 \chapter{Conclusion and Outlook}
     {\import{chapters/TMP_FinalChap/}{finalchap.tex}}
 }
@@ -265,13 +269,12 @@ Below, we describe some phenomena or whatever.
 \backmatter{}
 
 
-\part*{}
 
 
 \bibliography{refs}
 \addcontentsline{toc}{chapter}{Bibliography}
 
-
+\part*{Appendices}
 
 \appendix
 
@@ -285,6 +288,8 @@ Below, we describe some phenomena or whatever.
 
 
 
+\chapter{\tmptitle{Cylinder Functions}}\label{app:special}
+    {\import{appendices/Special_tmp/}{cylinder.tex}}
 
 \chapter{Derivations}\label{app:derivations}
     {\import{appendices/Derivations_tmp/}{derivations.tex}}
@@ -294,8 +299,7 @@ Below, we describe some phenomena or whatever.
     {\import{appendices/Untitled2_tmp/}{untitled2.tex}}
 
 
-\chapter{\tmptitle{Cylinder Functions}}\label{app:special}
-    {\import{appendices/Special_tmp/}{cylinder.tex}}
+
 
     
 % \chapter{I do not have an appendix}

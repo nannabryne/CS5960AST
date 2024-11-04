@@ -11,6 +11,8 @@
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
 \newcommand{\brchi}{\breve{\chi}}
+\newcommand{\brq}{\breve{q}}
+\newcommand{\sppt}{\ALIASsppt}
 \newcommand{\eqregimenum}[1]{{\footnotesize{\textsf{\textbf{({#1})}}}}}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
@@ -27,7 +29,7 @@
 
 The normal picture in the expanding universe is
 \begin{equation}
-    \chi\ped{dw}(a, z-z\ped{w}) = \chi_\pm \tanh{ \pclosed{\frac{a\chi_+(z-z\ped{w})}{2L\nped{c}} }}
+    \chi\ped{dw}(a, z-z\ped{w}) = \chi_\pm \tanh{ \pclosed{\frac{a\chi_+(z-z\ped{w})}{2L\nped{C}} }}
 \end{equation}
 
 
@@ -41,12 +43,12 @@ The normal picture in the expanding universe is
 
 
 We can rewrite~\cref{eq:PT:symm_dws:eom_asym_chi_s} in terms of the time coordinate $\chi_+ =\sqrt{1-\upsilon}$,
-\begin{equation}%\label[eq]{eq:PT:symm_dws:eom_asym_chi_chiplus}
-    \dv[2]{\brchi}{\chi_+} - \frac{1}{\chi_+ \pclosed{1-\chi_+^2}} \dv{\brchi}{\chi_+} + m^2 \frac{\chi_+^2 \pclosed{\brchi^2-\chi_+^2}}{\pclosed{1-\chi_+^2}^3}\brchi = 0,
+\begin{equation}%\label[eq]{eq:untitled2:eom_asym_chi_chiplus}
+    \dv[2]{\brchi}{\chi_+} - \frac{1}{\chi_+ \pclosed{1-\chi_+^2}} \dv{\brchi}{\chi_+} + m_\ast^2 \frac{\chi_+^2 \pclosed{\brchi^2-\chi_+^2}}{\pclosed{1-\chi_+^2}^3}\brchi = 0,
 \end{equation}
 where
-\begin{equation}%\label[eq]{eq:PT:symm_dws:eom_asym_chi_chiplus_m_val}
-    m= \frac{2\mu}{3\mathcal{H}_\ast \pclosed{1+\mathfrak{z}_\ast}} = \frac{\sqrt{2}a_\ast^{3/2}}{3\xi_\ast}.
+\begin{equation}%\label[eq]{eq:untitled2:eom_asym_chi_chiplus_m_val}
+    m_\ast= \frac{2\mu}{3\mathcal{H}_\ast \pclosed{1+\redshift_\ast}} = \frac{\sqrt{2}a_\ast^{3/2}}{3\xi_\ast}.
 \end{equation}
 The idea is to use this solution as boundary conditions for $\chi$:
 % \begin{equation}
@@ -68,18 +70,18 @@ This generally alters the \blahblah
 %     where
 %     \begin{align}
 %         %\brchi &\stackrel{\chi_+\sim 0}{\simeq} 
-%         \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m^2}{8} \chi_+^4 \\ %& \equiv \brchi^b
+%         \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m_\ast^2}{8} \chi_+^4 \\ %& \equiv \brchi^b
 %         %\brchi &\stackrel{\chi_+\sim 1}{\simeq} 
-%         \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m^2)}{m^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636m^2 + 41m^4}{2m^6} \pclosed{\chi_+ -1}^4 %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
+%         \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m_\ast^2)}{m_\ast^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636m^2 + 41m^4}{2m^6} \pclosed{\chi_+ -1}^4 %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
 %     \end{align}
 % \end{subequations}
 We solve in two regimes, each solution expanded around \eqregimenum{I} $\chi_+=0$ and \eqregimenum{II} $\chi_+=1$:
 \begin{subequations}
     \begin{align}
         %\brchi &\stackrel{\chi_+\sim 0}{\simeq} 
-        \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m^2}{8} \chi_+^4 ,\\ %& \equiv \brchi^b
+        \brchi^{\text{\eqregimenum{I}}}  &= \chi_\ast + \frac{\mathcal{C}}{2}\chi_+^2 + \frac{\mathcal{C}-\chi_\ast^3 m_\ast^2}{8} \chi_+^4 ,\\ %& \equiv \brchi^b
         %\brchi &\stackrel{\chi_+\sim 1}{\simeq} 
-        \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m^2)}{m^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636m^2 + 41m^4}{2m^6} \pclosed{\chi_+ -1}^4. %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
+        \brchi^{\text{\eqregimenum{II}}} &= \chi_+ + \frac{8(3-m_\ast^2)}{m_\ast^4} \pclosed{\chi_+ -1}^3 + \frac{1440 - 636 m_\ast^2 + 41 m_\ast^4}{2 m_\ast^6} \pclosed{\chi_+ -1}^4. %\\%& \equiv \brchi^a\\%+ \BigO{ \pclosed{\chi_+ -1}^5} \\
     \end{align}
 \end{subequations}
 We determine $\chi_\ast$ and $\mathcal{C}$ by matching these expressions at $\chi_+\ap{match}$, 
@@ -93,21 +95,22 @@ i.e. solving
 
 % By determining $\chi_\ast$, $\mathcal{C}$ and $\chi_+\ap{match}$ 
 The initial conditions best suited for the smallest oscillations possible are given by 
-\begin{equation}\label{eq:PT:symm_dws:optimal_chi_breve}
-    \brchi= \begin{cases}
+\begin{equation}\label{eq:untitled2:optimal_chi_breve}
+    \brchi = \brchi\ap{ideal}\equiv \begin{cases}
         \brchi^{\text{\eqregimenum{I}}} &\text{if } \chi_+ \leq\chi_+\ap{match}, \\
         \brchi^{\text{\eqregimenum{II}}} &\text{if } \chi_+ \geq\chi_+\ap{match}.
     \end{cases}
 \end{equation}
-Solving this for the fiducial symmetron parameters $\vec{\theta}_\ast\ap{fid}$, we get $\chi_\ast \simeq 0.09656$, $\mathcal{C}\simeq 5.837$ and $\chi_+\ap{match}\simeq 0.2568$. We update the domain wall profile
-\begin{equation}\label{eq:PT:symm_dws:chi_w_quasistatic_FLRW_updated}
+Solving this for the fiducial symmetron parameters %$(a_\ast, \xi_\ast)=(0.33, 3.33\times 10^{-4})$
+$m_\ast \simeq 268.36$, we get $\chi_\ast \simeq 0.09656$, $\mathcal{C}\simeq 5.837$ and $\chi_+\ap{match}\simeq 0.2568$. We update the domain wall profile
+\begin{equation}\label{eq:untitled2:chi_w_quasistatic_FLRW_updated}
     \chi\ped{w} = \brchi \tanh{\pclosed{ \frac{a\brchi(z-z\ped{w})}{2L\nped{C}} }}
 \end{equation}
 and in turn the surface tension and thickness
 \begin{equation}
     \sigma\ped{w} = \sigma_\infty \frac{1}{2} \pclosed{ 3\chi_+^2- \brchi^2 }\brchi \quad\text{and}\quad a\delta\ped{w} = \frac{\delta_\infty}{\brchi} .
 \end{equation}
-Note that both of these inngår i the thin-wall analysis in~\cref{chap:pertwalls}.
+Note that both of these affect the thin-wall analysis in~\cref{chap:pertwalls}.
 % \comment{Maybe put a lot of these equations in appendix.}
 
 
@@ -117,9 +120,55 @@ Note that both of these inngår i the thin-wall analysis in~\cref{chap:pertwalls
 
 
 \section{Field initialisation}
-    \begin{bullets}
-        \item both $q$ and $\chi$
-    \end{bullets}
+    {
+    \newcommand{\bw}{\ped{w\#}}
+    % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+    % \begin{bullets}
+    %     \item both $q$ and $\chi$
+    % \end{bullets}
+    % At SSB $\brchi= \chi_\ast$ and $\brq\cdot\tau_\ast= a_\ast^2 3\mathcal{C}$. 
+    At SSB $\brchi= \chi_\ast$ and $\brq=q_\ast =  a_\ast^2 3\mathcal{C}/\tau_\ast$. 
+    To get the most precise initial configuration, we need to determine the full fields $\chi$ and $q$ at $a=a\ped{i}\gtrsim a_\ast$. Note that $\dot{\epsilon}\neq 0$ in general. Define %$t=\tanh{u\ped{w}}$ and 
+    $u\ped{w}=a\brchi (z-z\ped{w})/2L\nped{C}$. Now,
+    \begin{subequations}
+        % \begin{align}
+        %     \chi\ped{w} &= \brchi t \\%\tanh{\pclosed{ \frac{a\brchi(z-z\ped{w})}{2L\nped{C}} }}, \\
+        %     a^{-2}\tau_\ast q\ped{w}&= \brchi' t+ \brchi u\ped{w}' (1-t^2);
+        % \end{align}
+        \begin{align}
+            \chi\bw &= \brchi \tanh{u\ped{w}}, \\%\tanh{\pclosed{ \frac{a\brchi(z-z\ped{w})}{2L\nped{C}} }}, \\
+            a^{-2}\tau_\ast q\bw  &= \brchi' \tanh{u\ped{w}}+ \brchi u\ped{w}' \sech^2{u\ped{w}},
+        \end{align}
+        where
+        \begin{align}
+            \brchi' &= \chi_+' \dv{\brchi}{\chi_+}, \\
+            2L\nped{C} u\ped{w}' &= \bclosed{a' \brchi + a\brchi' } (z-z\ped{w}) - a\brchi z\ped{w}',
+        \end{align}
+        and $z\ped{w}'=\varepsilon' \sppt$.
+    \end{subequations}
+    Similar configuration, $\widebar{\chi}\bw$ and $\widebar{q}\bw $, is used for the unperturbed anti-wall by substituting $u\ped{w}, z\ped{w}\to \widebar{u}\ped{w}, \widebar{z}\ped{w}$ and swapping signs. Note that $\widebar{z}\ped{w}'=0$. %
+    % Evaluated at $\tau=\tau\ped{i}$ we can go through the lattice coordinate-wise to 
+
+    % We can go through the lattice coordinate-wise to assign $\chi$ and $q$ values at 
+    To assign values to $\chi$ and $q$, we can go through the lattice coordination-wise, ``pick'' the nearest wall and evaluate the aforementioned expressions at $\tau=\tau\ped{i}$. 
+    \comment{Maybe figure?}
+    The product scheme (\cref{eq:cosmo:defects:many_kinks}) works as well.
+
+    % To sum up, 
+    % \begin{equation}
+    %     \chi_{\# 0}, q_{\# 0} =  \begin{cases}
+    %         \chi\bw, q\bw & \text{if} \\
+    %         \widebar{\chi}\bw, \widebar{q}\bw & \text{else.}
+    %     \end{cases}
+    % \end{equation}
+    
+    % at $\widebar{z}\ped{w}=$, but here $\widebar{z}\ped{w}'=0$ since it is left unperturbed.
+
+    
+    % $\chi(a\ped{i}, z-z\ped{dw}(\tau\ped{i},y))$
+
+    }
+
 
 
 

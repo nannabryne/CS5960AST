@@ -4,7 +4,7 @@
 
 
 % -------------------------------------------
-% labels: \label[type]{[type]:results:[name]}
+% labels: \label{[type]:results:[name]}
 % -------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,20 +21,35 @@
 % $\to${#2}
 % }
 \newcommand{\lcoord}{\ALIASlcoord}
+\newcommand{\lcoordx}{\ALIASlcoordx}
+\newcommand{\lcoordk}{\ALIASlcoordk}
+\newcommand{\epsA}{\ALIASepsA}
+\newcommand{\epsB}{\ALIASepsB}
+\newcommand{\epsC}{\ALIASepsC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\pensive{Title: \textbf{Simulative Insights}; \textbf{Toy Model Trials}; \textbf{Synthetic Experiments}; }
+% \pensive{Title: \textbf{Simulative Insights}; \textbf{Toy Model Trials}; \textbf{Synthetic Experiments}; }
 
 % ////////////////// intro //////////////////
 
 
 
+% We described in the previous chapter 
+
 
 This chapter provides simulative insights to our theoretical framework. We both present and discuss results from~\cref{tab:PT:sims:sim_setups}, and compare this to the theory. The analysis is split into three parts: In~\cref{sec:results:achi} we study the background evolution through box-averaged scalar quantities. Less primitive analysis proceeds in~\cref{sec:results:epsilon} where the domain wall dynamics of the two theories is compared. Finally, in~\cref{sec:results:h11} we look at what sort of gravitational waves we expect from this phenomenon. 
 
 
+
+% \speak{Consider writing \texttt{S2} instead of simulation~\simnum{2}.}
+
+Simulation~\simnum{6} is considered unsuccessful as it blows up at around $a\approx 0.45$. Where this is considered in the analysis, the results are shown for only $a\in [a\ped{i}, 0.46]$. 
+
+
+
+% \speak{$H_0=1/(2997.8~\Mpch)$ and $\rho\ped{cr0} = 3H_0^2 M\nped{Pl}^2\simeq 1.328\times 10^{-8} ~(\Mpch)^{-2}$}
 
 
 
@@ -53,7 +68,7 @@ This chapter provides simulative insights to our theoretical framework. We both 
 % ****************** SECTIONS ******************
 
 % Background field
-\section{Background evolution / Symmetron field}\label{sec:results:achi}
+\section{Symmetron field}\label{sec:results:achi}
     {\subimport{./}{achi.tex}}
 
 
@@ -64,6 +79,11 @@ This chapter provides simulative insights to our theoretical framework. We both 
 % GWs
 \section{\tmptitle{Gravitational waves}}\label{sec:results:h11}
     {\subimport{./}{h11.tex}}
+
+
+% Hindsight
+\section{Hindsight}\label{sec:results:hindsight}
+    {\subimport{./}{hindsight.tex}}
 
 
 % **********************************************

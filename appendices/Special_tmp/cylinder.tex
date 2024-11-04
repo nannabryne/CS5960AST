@@ -10,6 +10,9 @@
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
 \newcommand{\myemph}{\textbf}
+\newcommandx\Zv[1][1=\nu]{\Cylindrical[#1][Z]}
+\newcommandx\zn[1][1=n]{\Cylindrical[#1][z]}
+\newcommandx\Rn[1][1=n]{\Cylindrical[#1][R]}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
@@ -17,41 +20,78 @@
 
 
 
+\speak{Rewrite this to simpler version!} %
 
+% Cylinder functions, also generally known as \newconcept{Bessel functions}, are 
+Consider the ODE
+\begin{equation}
+    x^2 y'' + x y' + (x^2 -\nu^2 )y = 0
+\end{equation}
+where $'\equiv \dv*{}{x}$ and $x\in \Complex$. Solutions to this equation, $y(x)=\Zv(x)$, are {cylinder functions}, also generally known as {Bessel functions}. % where $\Zv[] =  \sum_{i=1,2} c_i \Zv[]^{(i)} =c_1 \Bessel[] + c_2 \Neumann[]$ and %
+% $\nu\in\Complex$ is then the order of the Bessel functions, and 
+$\Zv[]$ represents a linear combination of the regular Bessel functions of the first and second kind, $\Zv[] =  \sum_{i=1,2} c_i \Zv[]^{(i)}$, known as the \myemph{Bessel} and \myemph{Neumann functions} $\Bessel[]$ and $\Neumann[]$, respectively.
+
+
+
+In the following, we will define and \blahblah 
+\begin{itemize}
+    \item $\Zv[]$ rep
+    \item $\zn[]$
+    \item $\Rn[]$ 
+\end{itemize}
+
+\section{IDK}
 
 
 The solution to% Bessel's equation
+% \begin{equation}
+%     y'' + \frac{1-2a}{x}y'+ \bclosed{ {(bcx^{c-1})}^2 + \frac{a^2-\nu^2 c^2}{x^2} }y = 0
+% \end{equation}
 \begin{equation}
-    y'' + \frac{1-2a}{x}y'+ \bclosed{ {(bcx^{c-1})}^2 + \frac{a^2-\nu^2 c^2}{x^2} }y = 0
+    x^2y'' + x{(1-2a)}y'+ \bclosed{ {(bcx^{c})}^2 + {(a^2-\nu^2 c^2)} }y = 0
 \end{equation}
 is
 \begin{equation}
-    y(x) = x^a \Cylindrical[\nu](bx^c),
+    y(x) = x^a \Cylindrical[\nu](bx^c).
 \end{equation}
-where $\Cylindrical[\nu]$ is a linear combination of the Bessel functions of the first and second kind, $\Bessel$ and $\Neumann$.
+% where $\Cylindrical[\nu]$ is a linear combination of the Bessel functions of the first and second kind, $\Bessel$ and $\Neumann$.
 
-Let $\nu\in\Real$ and $n\in \Integer$. The \myemph{Bessel} and \myemph{Neumann functions}
-\begin{subequations}\label{eq:special:normal_Bessel}
-    \begin{align}
-        \Bessel[\nu](x) &= ,\\
-        \Neumann[\nu](x) &= .
-    \end{align}
-\end{subequations}
+% Let $\nu\in\Real$ and $n\in \Integer$. The \myemph{Bessel} and \myemph{Neumann functions}
+% \begin{subequations}\label{eq:special:normal_Bessel}
+%     \begin{align}
+%         \Bessel[\nu](x) &= ,\\
+%         \Neumann[\nu](x) &= .
+%     \end{align}
+% \end{subequations}
 
 
-% \section{Half-integer order}
-    For $\nu=n+1/2$ we can express the functions in terms of \myemph{spherical Bessel} and \myemph{Neumann} functions
+\subsection{Half-integer order}
+    Let $n\in \Integer$. The spherical Bessel's equation
+    \begin{equation}
+        x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0
+    \end{equation}
+    has the general solution $y(x)=\zn[n](x)$, where $\zn[]=\sum_{i=1,2}c_i \zn[]^{(i)}$,
+    \begin{equation}
+        \zn[n]^{(i)} = \sqrt{\frac{\ppi}{2x}} \Zv[n+1/2]^{(i)}(x),
+    \end{equation}
+    represent the \myemph{spherical Bessel} (first kind) and \myemph{Neumann} (second kind) functions, given by
+    % For $\nu=n+1/2$ we can express the functions in terms of \myemph{spherical Bessel} (first kind) and \myemph{Neumann} (second kind) functions
     \begin{subequations}\label{eq:special:spherical_Bessel}
+        % \begin{align}
+        %     \sphBessel[n](x) &= \sqrt{\frac{\ppi}{2x}} \Bessel[n+1/2](x)= +x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\sin{x}}{x}}  ,\\
+        %     \sphNeumann[n](x) &= \sqrt{\frac{\ppi}{2x}} \Neumann[n+1/2](x)=- x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}}.
+        % \end{align}
         \begin{align}
-            \sphBessel[n](x) &= \sqrt{\frac{\ppi}{2x}} \Bessel[n+1/2](x)= +x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\sin{x}}{x}}  ,\\
-            \sphNeumann[n](x) &= \sqrt{\frac{\ppi}{2x}} \Neumann[n+1/2](x)=- x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}}.
+            \sphBessel[n](x) &= +x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\sin{x}}{x}}  ,\\
+            \sphNeumann[n](x) &= - x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}}.
         \end{align}
-        These are linearly independent solutions to 
-        \begin{equation}
-            x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0.
-        \end{equation}
+        % These are linearly independent solutions to 
+        % \begin{equation}
+        %     x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0.
+        % \end{equation}
     \end{subequations}
-    These are related to the \myemph{Riccati--Bessel} and \myemph{--Neumann functions} by
+    % As a collective term, we use $\Cylindrical[n][z]$ for the spherical Bessel functions of first and second kind. 
+    These are related to the \myemph{Riccati--Bessel} (first kind) and \myemph{--Neumann functions} (second kind) by
     \begin{subequations}\label{eq:special:Riccati_Bessel}
         \begin{align}
             \RiccatiBessel[n](x) &= +x\sphBessel[n](x),\\
@@ -62,7 +102,13 @@ Let $\nu\in\Real$ and $n\in \Integer$. The \myemph{Bessel} and \myemph{Neumann f
             x^2 y'' + \pclosed{ x^2 - n(n+1) }y = 0.
         \end{equation}
     \end{subequations}
-    Note that $\RiccatiBessel[0](x)=\sin{x}$ and $\RiccatiNeumann[0](x)=\cos{x}$.
+    We will use $\Cylindrical[n][R]$ as a reference to either of these special functions. 
+    Note that $\RiccatiBessel[0](x)=\sin{x}$ and $\RiccatiNeumann[0](x)=\cos{x}$. 
+
+    \begin{align}
+        \zn^{(i)}(x) &= \sqrt{\frac{\ppi}{2x}} \Zv[n+1/2]^{(i)}(x) \\
+        \Rn^{(i)}(x) &= (-1)^{i-1} x\zn^{(i)}(x)
+    \end{align}
 
 
 
@@ -70,4 +116,42 @@ Let $\nu\in\Real$ and $n\in \Integer$. The \myemph{Bessel} and \myemph{Neumann f
 
 
 \section{Properties}
+
+\subsection{Some notable identities}
+    Some recurrence relations \blahblah
+    \begin{subequations}
+        \begin{align}
+           \frac{2\nu}{x}\Zv(x) &= \Zv[\nu-1](x) + \Zv[\nu+1](x), \\
+            2\Zv'(x) &= \Zv[\nu-1](x) - \Zv[\nu+1](x), \\
+            \Zv[\nu]'(x) &= \Zv[\nu-1](x) - \frac{\nu}{x}\Zv[\nu](x), \\
+            % \Zv[\nu]' &= \Zv[\nu-1]' - \frac{\nu}{x}\Zv[\nu] \\
+            \pclosed{x^\nu \Zv[\nu](x)}' &= x^\nu \Zv[\nu-1] (x), \\
+            \zn'(x) &= \frac{n}{x}\zn(x) -\zn[n+1](x),
+        \end{align}
+    \end{subequations}
+
+
+    The \newconcept{Jacobi--Anger expansion} reads
+    \begin{subequations}
+        \begin{align}
+            \eu[\im a \sin{bx}]  &= \sum_{n=-\infty}^{\infty} \Bessel[n](a) \eu[\im n bx], \\
+            \eu[\im a \cos{bx}]  &= \sum_{n=-\infty}^{\infty} \im^{n}\Bessel[n](a) \eu[\im n bx].
+        \end{align}
+    \end{subequations}
+    
+
+
+\subsection{Asymptotic behaviour}
+
+    \begin{subequations}\label{eq:cylinder:prop:JacobiAnger}
+        \begin{align}
+            % \Bessel(x) &\stackrel{x \to \infty}{\simeq}  
+            \lim_{x\to \infty} \Bessel(x) &=
+            \sqrt{\frac{2}{\ppi x}} \cos{(x - \nu \ppi/2 - \ppi/4)}, \label{eq:cylinder:prop:JacobiAnger_sin}  \\
+            % \Neumann(x) &\stackrel{x \to \infty}{\simeq} 
+            \lim_{x\to \infty} \Neumann(x) &=
+            \sqrt{\frac{2}{\ppi x}} \sin{(x - \nu \ppi/2 - \ppi/4)},\label{eq:cylinder:prop:JacobiAnger_cos} 
+        \end{align}
+    \end{subequations}
+
 

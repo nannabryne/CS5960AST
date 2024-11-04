@@ -5,17 +5,87 @@
 % labels: \label{[type]:intro:[name]}
 % -----------------------------------
 
-\begin{bullets}
-    \item GOALS: \begin{itemize}
-        \item Gather framework about GWs from DWs
-        \item Remove the need for very expensive $N$-body simulations with (semi-)analytical predictions
-        \item Extract as much information as possible from the NANOgrav spectra thingy
-    \end{itemize}
-    \item WHY RELEVANT: \begin{itemize}
-        \item NANOgrav data wihoo
-        \item Simulations in this regard are hugely expensive, and will not allow us to constrain the parameters of a model
-    \end{itemize}
-\end{bullets}
+% \begin{bullets}
+%     \item GOALS: \begin{itemize}
+%         \item Gather framework about GWs from DWs
+%         \item Remove the need for very expensive $N$-body simulations with (semi-)analytical predictions
+%         \item Extract as much information as possible from the NANOgrav spectra thingy
+%     \end{itemize}
+%     \item WHY RELEVANT: \begin{itemize}
+%         \item NANOgrav data 
+%         \item Simulations in this regard are hugely expensive, and will not allow us to constrain the parameters of a model
+%     \end{itemize}
+%     \item QUESTIONS: \begin{itemize}
+%         \item How important is reproducibility?
+%         \item Should I change the verb tenses in~\cref{part:method,,part:findings}?
+%     \end{itemize}
+% \end{bullets}
+
+% \speak{WORDS/PHRASES: foreplay (preface), prelude, wall displacement variable}
+
+
+
+
+
+% \pensive{If it were to be an article, I would spend more time on the reproducibility of the results; tidy code etc. }
+
+
+
+
+
+
+
+
+% \phpar[motivation--relevance--computational expense]
+
+
+
+From the first gravitational-wave observation by the ground-based Laser Interferometer Gravitational-wave Observatory (LIGO) in 2015~\citep{abbottObservationGravitationalWaves2016}, %
+and until the detection of stochastic nHz-frequency gravitational waves by the North American Nanohertz Observatory for Gravitational Waves (NANOGrav) released in 2023~\citep{agazieNANOGrav15Yr2023a}, astrophysical sources have been the primary focus of the community~\citep{liProbingHighTemperature2023}. The latter pulsar timing array (PTA) data (called \textit{NANOGrav 15 yr}) allows for cosmological scales, and together with other planned gravitational-wave experiments has the potential of probing new physics. \Cref{fig:intro:GWplotter} illustrates relations between detector sensitivities, bandwidths and gravitational sources. 
+
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=\linewidth]{GWplotter.png}
+    \caption{Sensitivity curves for present and future gravitational-wave experiments, created with \href{http://www.sr.bham.ac.uk/~cplb/GWplotter/}{\textsf{gwplotter.com}} (November~2024). The black curves represent the characteristic strain of present detectors European Pulsar Timing Arrays (EPTA), Laser Interferometer Gravitational-wave Observatory (LIGO) and Advanced LIGO O1 (aLIGO (O1)), and future detectors Square Kilometer Array (SKA), evolving Laser Interferometer Space Antenna (eLISA), Deci-hertz Interferometer Gravitational-wave Observatory (DECIGO), aLIGO design (aLIGO), Einstein Telescope (ET) and Cosmic Explorer (CE).}
+    \label{fig:intro:GWplotter}
+\end{figure}
+% ~\url{http://rhcole.com/apps/GWplotter} or
+% \url{http://www.sr.bham.ac.uk/~cplb/GWplotter/}
+
+
+Speculative topological defects in cosmology are generally remnants of phase transitions and potential sources of gravitational waves~\citep{christiansenGravitationalWavesDark2024,saikawaReviewGravitationalWaves2017}. Dynamical ranges of cosmological simulations are limited, so resolving broad-frequency gravitational-wave spectra computationally is challenging~\citep{saikawaReviewGravitationalWaves2017}. This calls for novel analytical analyses of dynamics and gravitational-wave signals of candidate sources of a stochastic gravitational wave background (GWB). This search for cosmological gravitational waves can have great implications for both high-energy physics and cosmology alike, and even non-observations can help constrain beyond-standard model particle-physics models~\citep{kawasakiStudyGravitationalRadiation2011}.
+
+
+Nanohertz frequencies today correspond to the horizon size in the early, very hot (temperature $\mathscr{O}(10^{12}\unit{K})$) universe~\citep{christiansenGravitationalWavesDark2024}. Therefore, high-energy phase transitions, argued to manifest in these frequencies, has been interest of recent studies~\citep{babichevNANOGravSpectralIndex2023,saikawaReviewGravitationalWaves2017,liProbingHighTemperature2023}. It is claimed~\citep{afzalNANOGrav15Yr2023} that \textit{NANOGrav 15 yr}~\cite{agazieNANOGrav15Yr2023a} can constrain domain wall models. \Citet{babichevNANOGravSpectralIndex2023} show that gravitational waves from melting domain walls---walls with time-dependent surface tension---show characteristics consistent with \textit{NANOGrav 15 yr}~\cite{agazieNANOGrav15Yr2023a}.  
+
+
+In this work we put emphasis on theoretical aspects if domain-wall formation in late-time phase transitions following~\citet{christiansenGravitationalWavesDark2024,christiansenAsimulationDomainFormation2024}. Cosmic domain walls are defects predicted by discrete symmetry-breaking scalar field theories such as the symmetron model~\citep{hinterbichlerSymmetronCosmology2011}. Their dynamics is well-understood in idealised scenarios~\citep{vachaspatiKinksDomainWalls2006,blanco-pilladoDynamicsDomainWall2023,guvenPerturbationsTopologicalDefect1993,garrigaPerturbationsDomainWalls1991,ishibashiEquationMotionDomain1999}, but self-contained, rigorous analytical frameworks connecting properties of topological defects and gravitational waves are lacking~\citep{saikawaReviewGravitationalWaves2017}. One of the aims of this thesis is to test the limits of the analytical solvability of such toy scenarios and discuss its potential as substitute for computationally expensive simulations. 
+
+% High-energy phase-transitions in the early universe  is argued to manifest in nanohertz frequencies today, as this is resonating with 
+
+
+
+
+
+% The aim of this project is to gather the framework regarding topological defects in cosmology and test the limits to the analytical \blahblah 
+% The theoretical insight can be interesting in itself, but the main motivation \blahblah
+
+
+We will use mathematics (topology and geometry) and physics (general relativity and cosmology) to study the dynamics of topological defects and to compute tensor perturbations sourced by infinitely thin, planar domain walls. 
+Similar works~\cite{blanco-pilladoDynamicsDomainWall2023,ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991} explore the thin-wall approximation when the energy density is constant, and most thoroughly analysed are walls in Minkowski space. Extensions to non-thin walls has also been considered~\citep{cuttingGravitationalWavesVacuum2021}. %
+
+
+This work concludes in a framework that describes the motion of a small perturbation to the normal coordinate of a planar domain wall in a matter-dominated universe, with possibility for generalisation. The model assumes the symmetron potential, but this is easily changed to another scalar field model with discrete symmetry by changing the surface tension. The equations are tested by comparison to toy scenarios in cosmological simulations using~\gevolution~\citep{adamekGevolutionCosmologicalNbody2016}. 
+The final part---the resulting tensor perturbations to the metric---has room for improvement, or at least needs to be better tested more thoroughly against simulations. The pattern detected in simulations do resemble that of the analytical model, but there are also large deviations between the results.
+% There is no doubt that the signature from such a wall position distortion is detectable \emph{in simulations}, but there are other features of the resulting tensor modes that remain mysterious.
+
+
+% signals from PTAs. The data in question is the . It is claimed~\citep{afzalNANOGrav15Yr2023} that this data can constrain domain wall models. 
+
+
+
+% In this project we aim to study the gravitational signature from late-time (redshift $\sim 2$) first-order phase transitions. To do this, we study topological defect, that is residuals of such phenomena, and their dynamics. 
+
 
 % We use the convention that $(-,+,+,+)$ is the metric signature.
 
@@ -73,23 +143,47 @@
 
 % The thesis is structured as follows. \cref{part:bckg} 
 
-The thesis is divided into three parts. %
-\cref{part:bckg} presents the relevant background theory, including concepts from differential geometry to topological defects. %
-In~\cref{part:method} (pre-sims / a priori) we describe how the framework was designed and the way it is to be tested in simulations. %
-Finally, in~\cref{part:findings} (post-sims), we present the results from simulations and calculations, with comparisons and discussions. %
-Prior to all of this, we describe some basic concepts in the coming section.
-
-
-\begin{draft}
-    \paragraph{Final product.} %
-    We end up with a framework that describes the motion of a small perturbation to the normal coordinate of a planar domain wall in a matter-dominated universe, with possibility for generalisation. The model assumes the symmetron potential, but this is easily changed to another scalar field model with discrete symmetry by changing the surface tension. The equations are tested by comparison to toy scenarios in cosmological simulations. 
-    The final part---the resulting tensor perturbations to the metric---has room for improvement, or at least needs to be better tested more thoroughly against simulations. There is no doubt that the signature from such a wall position distortion is detectable \emph{in simulations}, but there are other features of the resulting tensor modes that remain mysterious. 
-\end{draft}
+\paragraph{Thesis outline.} %
+% \verbtense{future}{%
+{%
+% \comment{THESIS OUTLINE:} %
+The thesis is divided into three main parts. %
+\cref{part:bckg} presents the relevant background theory, including concepts from differential geometry and topological defects. %
+In~\cref{part:method} we describe how the framework was designed and the way it is to be tested in simulations. %
+Finally, in~\cref{part:findings} we present the results from simulations and calculations, with comparisons and discussions. %
+Prior to all of this, we describe some basic concepts in the coming sections.}
 
 
 
 
-\section{Preliminaries}\label{sec:intro:prelim}%
+
+% % \begin{draft}
+%     \deleteme{\paragraph{Final product.} %
+%     We end up with a framework that describes the motion of a small perturbation to the normal coordinate of a planar domain wall in a matter-dominated universe, with possibility for generalisation. The model assumes the symmetron potential, but this is easily changed to another scalar field model with discrete symmetry by changing the surface tension. The equations are tested by comparison to toy scenarios in cosmological simulations. 
+%     The final part---the resulting tensor perturbations to the metric---has room for improvement, or at least needs to be better tested more thoroughly against simulations. There is no doubt that the signature from such a wall position distortion is detectable \emph{in simulations}, but there are other features of the resulting tensor modes that remain mysterious. }
+% % \end{draft}
+
+
+
+
+
+% \section{\tmptitle{BASIC CONCEPTS? / OVERVIEW}}
+\section{Overview}\label{sec:intro:overview}
+    {\subimport{./}{overview.tex}}
+
+
+
+
+
+
+    
+    
+
+
+
+\section{Preliminaries}\label{sec:intro:prelim}
     {\subimport{./}{prelim.tex}}
+
+
 
 
