@@ -75,7 +75,7 @@ Let us consider the variation of $S$ under small changes in the world sheet, $X\
 % \begin{equation}
 %     x\^\mu \to x\^\mu + \delta x\^\mu,
 % \end{equation}
-The equation of motion for the wall normal coordinate is then~\citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
+The equation of motion for the normal coordinate is then~\citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
 % \begin{equation}
 %     \sq_\hypsurf x\^\mu  %
 %     + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
@@ -114,13 +114,26 @@ where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) 
 
 
 
-In~\citet{garrigaPerturbationsDomainWalls1991} it is shown that a planar domain wall oriented perpendicular to the $z$ axis in Minkowski space follows the trajectory $z=z(t)$ whose equation of motion is 
-\begin{equation}
-    \frac{z_{,tt}}{{(1-z_{,t}^2)}^{3/2}} = \frac{v}{\sigma}.
-\end{equation}
-With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment about constant velocity?}
-
 % A simple solution to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} is a 
+
+
+\subsection{Exact solutions}
+    \iftime{Mention Minkowski, $v=0$, strings, gauge invariance.}
+
+    \paragraph{Minkowski.} %
+    In~\citet{garrigaPerturbationsDomainWalls1991} it is shown that a planar domain wall oriented perpendicular to the $z$ axis in Minkowski space follows the trajectory $z=z(t)$ whose equation of motion is 
+    \begin{equation}
+        \frac{z_{,tt}}{{(1-z_{,t}^2)}^{3/2}} = \frac{v}{\sigma}.
+    \end{equation}
+    With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. %\iftime{Comment about constant velocity?}
+    With non-degenerate vacua, the solution is the hyperbola~\citep{garrigaPerturbationsDomainWalls1991}.
+    
+
+    \paragraph{Strings in expanding spacetime.} %
+    % Fixing conformal gauge \dots
+    \iftime{Fill in.}
+
+
 
 
 
@@ -130,11 +143,11 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment
         \pert{X}\^\mu = X\^\mu + \delta X\^\mu = X\^\mu + \epsilon(\xi\^a) n\^\mu,%
         \footnote{Formally, this is the same as the variation above, but now we are dealing with a physical perturbation as opposed to a mathematical variation.}
     \end{equation}
-    where the wall displacement variable $\epsilon$ is a linear perturbation, i.e.~$\epsilon^2 \simeq 0$. 
+    where the wall displacement variable $\epsilon$ is a linear perturbation, i.e.~$\epsilon^2 \simeq 0$, and $n\^\mu$ is the unit normal vector to the \emph{unperturbed} worldsheet. %
     To find the equation of motion, we apply~\cref{eq:pertwalls:eom_wall:linear_pert_wall_coord} to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} and solve order by order. If the ambient space is Minkowski, this amounts to~\citep{garrigaPerturbationsDomainWalls1991}
     \begin{equation}
         % -\hypacc{\sq} \epsilon + \pclosed{\hypacc{R}-v^2/\sigma^2}\epsilon  = 0.
-        \hypacc{\sq} \epsilon + \hypacc{K}\^{ab}\hypacc{K}\_{ab} \epsilon = 0.%; \quad g\_{\mu\nu}= \eta\_{\mu\nu}.
+        \hypacc{\sq} \epsilon + \hypacc{K}\^{ab}\hypacc{K}\_{ab} \epsilon = 0; \quad g\_{\mu\nu}= \eta\_{\mu\nu}.
     \end{equation}
 
     
@@ -169,7 +182,7 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment
 
 \subsection{Energy and momentum}
     
-    From the Nambu--Goto action $S\nped{NG}$, we can construct an energy--momentum tensor associated with the defect
+    From the Nambu--Goto action $S\nped{NG}$, we can construct an effective energy--momentum tensor associated with the defect
     % We find the domain wall (hypersurface in $(3+1)$ dimensions) 
     %Lagrangian density as $S\nped{NG} =\integ[4]{x} \mathcal{L}\nped{NG}$, allowing us to compute the associated SE tensor
     % \begin{equation}\label{eq:pertwalls:eom_wall:SE_tensor_NG}
@@ -185,15 +198,20 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment
     \begin{equation}
         S\nped{NG} = - \sigma \integ[n]{x\sqrt{-\gamma}}[\Manifold] \Diracdelta( r); \quad r\equiv n\_\mu x\^\mu  - X_\bot,
     \end{equation}
-    where the Dirac delta function essentially eliminates any spacetime event that is \emph{not} the defect. The variation $g\_{\mu\nu} \to g\_{\mu\nu}+ \delta g\_{\mu\nu}$ gives~\cite{vachaspatiKinksDomainWalls2006}
+    where the Dirac delta function essentially eliminates any spacetime event that is \emph{not} the defect. The variation $g\_{\mu\nu} \to g\_{\mu\nu}+ \delta g\_{\mu\nu}$ gives~\cite{vachaspatiKinksDomainWalls2006,vilenkinCosmicStringsOther1994}
     \begin{equation}
         T\^{\mu\nu}\big|\nped{NG} = \frac{\sigma}{\sqrt{-g}} \integ[d]{\xi} \sqrt{-\gamma} \gamma\^{ab} X\indices{^\mu_{,a}} X\indices{^\nu_{,b}} \Diracdelta(r ),
     \end{equation}
-    alternatively
+    % alternatively
+    or equivalently
     \begin{equation}\label{eq:pertwalls:eom_wall:SE_tensor_NG}
         % {T\^{\mu\nu}}\rvert\nped{NG} 
         T\^{\mu\nu}\big|\nped{NG}  = \frac{\sigma \Diracdelta(r )}{\sqrt{-g}\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}}.
     \end{equation}
+
+    \speak{Maybe mention \( {\diff \gamma} = \gamma \gamma\^{ab} {\diff \gamma_{ab}}  \)?}
+
+    % We will consider $\Tw\^{\mu\nu} = T\^{\mu\nu}\rvert\nped{NG}$ to be the stress--energy 
 
     % \comment{Maybe define $T_{\mathrm{w}}^{\mu\nu}$ or $W\^{\mu\nu}$?}
 
@@ -240,19 +258,19 @@ With $v=0$ the solution is $z(t)=0$ in a suitable Lorentz frame. \iftime{Comment
 
 
 
-    \subsubsection{\tmptitle{Thick domain walls}}
+    % \subsubsection{\tmptitle{Thick domain walls}}
         
-        To some extent, we can account for a possibly non-vanishing wall half-width $l\sim\delta$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
-        \begin{equation}
-            \Diracdelta(r) \to   \varPhi_l (r) \equiv\frac{1}{\sqrt{2\ppi}l} \exp{ -\frac{r^2}{2l^2} }
-        \end{equation}
-        in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} does the trick, and restores $\Diracdelta(r)$ in the limit where $l\to 0$. This is understood in context with~\cref{sec:cosmo:defects:dws}, where we argue that $l=\delta/\sqrt{2}$ gives a suitable Gaussian profile. %, and we define 
-        % \begin{equation}
-        %     \varPhi_\delta (r) \
-        % \end{equation}
-        Note that this is not the same as going beyond the thin-wall limit, but rather an approximation that includes a thickness that is small enough to not alter the dynamics.
+    %     To some extent, we can account for a possibly non-vanishing wall half-width $l\sim\delta$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
+    %     \begin{equation}
+    %         \Diracdelta(r) \to   \varPhi_l (r) \equiv\frac{1}{\sqrt{2\ppi}l} \exp{ -\frac{r^2}{2l^2} }
+    %     \end{equation}
+    %     in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} does the trick, and restores $\Diracdelta(r)$ in the limit where $l\to 0$. This is understood in context with~\cref{sec:cosmo:defects:dws}, where we argue that $l=\delta/\sqrt{2}$ gives a suitable Gaussian profile. %, and we define 
+    %     % \begin{equation}
+    %     %     \varPhi_\delta (r) \
+    %     % \end{equation}
+    %     Note that this is not the same as going beyond the thin-wall limit, but rather an approximation that includes a thickness that is small enough to not alter the dynamics.
 
-        Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies. 
+    %     Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies. 
         % \phpar[meaning of thickness]
 
 

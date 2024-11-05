@@ -209,20 +209,20 @@ We neglect back-reaction, that is we assume that the defect does not change the 
         \begin{split}
             % T\_{ab}(\tau, \vec{x}) 
             % {}\ap{(w)}T\_{ab}(\tau, \vec{x}) 
-            T\ap{w}_{ab}(\tau, \vec{x}) 
-             &=  -a (\tau)\sigma(\tau) \varPhi_l(z-z\ped{w}) \, \eta\_{ab}, \\
+            \Tw\_{ab}(\tau, \vec{x}) 
+             &=  -a (\tau)\sigma\ped{w}(\tau) \varPhi_l(z-z\ped{w}) \, \eta\_{ab}, \\
             % T\_{(iz)}(\tau, \vec{x})  
-            T\ap{w}_{iz}(\tau, \vec{x}) 
-            &= -a (\tau)\sigma(\tau) \varPhi_l(z-z\ped{w} ) \,\epsilon\_{,i}, %\partial\_{i} \epsilon
+            \Tw\_{iz}(\tau, \vec{x}) 
+            &= -a (\tau)\sigma\ped{w}(\tau) \varPhi_l(z-z\ped{w} ) \,\epsilon\_{,i}, %\partial\_{i} \epsilon
         \end{split}
     \end{equation}
-    where $\sigma=\sigma\ped{w}$ is the wall's surface tension, $z\ped{w} = z_0 + \epsilon(x\^a)$ the wall normal coordinate and $\varPhi_l$ is a Gaussian with standard deviation $l= l\ped{w} \triangleq \delta\ped{w}/\sqrt{2}$. We go further and look at this quantity in Fourier space:
+    where $\sigma\ped{w}$ is the wall's surface tension, $z\ped{w} = z_0 + \epsilon(x\^a)$ the wall normal coordinate and $\varPhi_l$ is a Gaussian with standard deviation $l= l\ped{w} \triangleq \delta\ped{w}/\sqrt{2}$. We go further and look at this quantity in Fourier space:
     \begin{equation}\label{eq:pertwalls:gws:Ft_SE_tensor_general}
         \begin{split}
             % T\_{ab}(\tau, \vec{k})  = 
-            \Ft{T}\ap{w}_{ab}(\tau, \vec{k}) &=  -a (\tau)\sigma\ped{w}(\tau)  \, \eta\_{ab} \, \mathscr{D}\ped{w}(\tau,k_z) \integ[2]{x} \eu[\im k_z \epsilon] \eu[\im (k_x x+k_y y)], \\
+            \Twf\_{ab}(\tau, \vec{k}) &=  -a (\tau)\sigma\ped{w}(\tau)  \, \eta\_{ab} \, \mathscr{D}\ped{w}(\tau,k_z) \integ[2]{x} \eu[\im k_z \epsilon] \eu[\im (k_x x+k_y y)], \\
             % T\_{(iz)}(\tau, \vec{k})  
-            \Ft{T}\ap{w}_{iz}(\tau, \vec{k})
+            \Twf\_{iz}(\tau, \vec{k})
             &= -a (\tau)\sigma\ped{w}(\tau) \,\mathscr{D}\ped{w}(\tau, k_z)  \integ[2]{x} \epsilon\_{,i}  \eu[\im k_z \epsilon] \eu[\im (k_x x+k_y y)],%\partial\_{i} \epsilon
          \end{split}
     \end{equation}
@@ -248,16 +248,16 @@ We neglect back-reaction, that is we assume that the defect does not change the 
         \underbrace{\integ{y} \eu[\im k_z \varepsilon(\tau) \cdot \sppt(y)] \eu[\im k_y y]}_{\equiv  I\ped{s}}  \quad \text{and}\quad %
         \underbrace{\varepsilon(\tau)\integ{y} \partial_y \sppt\, \eu[\im k_z \varepsilon(\tau) \cdot \sppt(y)] \eu[\im k_y y]}_{\equiv I\ped{a}}
     \end{equation}
-    are all we need to solve to have a completely analytic expression for $\Ft{T}\ap{w}_{ij}$.%$\Ft{T}\ap{w}_{ij}(\tau, \vec{k})$. %
+    are all we need to solve to have a completely analytic expression for $\Twf\_{ij}$.%$\Ft{T}\ap{w}_{ij}(\tau, \vec{k})$. %
 
     We choose a linear polarisation basis (\cref{sec:GR:gws}). As there is no dependence on $x$ in real space, there is a proportionality to $\Diracdelta(k_x)$ in Fourier space. Considering $\vec{k}=(0,k_y, k_z)$ leaves only one degree of freedom, and we see that
     \begin{equation} 
-        {\Ft{T}_{ij}\ap{w}}\rvert\ped{TT} = \ProjectionLambda{ij}{kl} \Ft{T}\ap{w}_{kl} = \sum_{P=\polplus, \polcross} \Ft{T}\ap{w}_P e\indices*{^P_{ij}} = \Ft{T}\ap{w}_\polplus e\indices*{^\polplus_{ij}}.
+        {\Twf\_{ij}}\rvert\ped{TT} = \ProjectionLambda{ij}{kl} \Twf\_{kl} = \sum_{P=\polplus, \polcross} \Twf_P e\indices*{^P_{ij}} = \Twf_\polplus e\indices*{^\polplus_{ij}}.
     \end{equation}
-    In addition, we get $\Ft{T}\ap{w}_\polplus = {\Ft{T}_{xx}\ap{w}}\rvert\ped{TT}$. From here, we work with $\Ft{\pi}\ap{w}_\polplus = \Ft{\pi}\ap{w}_{xx}= a^{-2} \ProjectionLambda{xx}{ij}\Ft{T}\ap{w}_{ij}$. 
+    In addition, we get $\Twf_\polplus = {\Twf_{xx}}\rvert\ped{TT}$. From here, we work with $\Ft{\pi}\ap{w}_\polplus = \Ft{\pi}\ap{w}_{xx}= a^{-2} \ProjectionLambda{xx}{ij}\Twf\_{ij}$. 
     Applying the spin-2 projector (\cref{eq:notation:projection_tensor}) and using~\cref{eq:pertwalls:gws:Ft_SE_tensor_general}, we find that
     \begin{equation}
-        a^2 \Ft{\pi}\ap{w}_+ = \frac{k_y}{2k^2} \cclosed{ k_y \Ft{T}\ap{w}_{xx} + 2k_z \Ft{T}\ap{w}_{xy}  }.
+        a^2 \Ft{\pi}\ap{w}_+ =\Twf_+= \frac{k_y}{2k^2} \cclosed{ k_y \Twf\_{xx} + 2k_z \Twf\_{xy}  }.
     \end{equation}
 
     
@@ -284,7 +284,7 @@ We neglect back-reaction, that is we assume that the defect does not change the 
     \subsubsection{Spatial part}
     For simplicity, we choose $\sppt(y)=\sin{py}$. In~\cref{app:derivations:jacobianger} we show that this implies
     \begin{equation}
-        a^{2}\Ft{\pi}\ap{w}_\polplus = - \frac{k_y^2}{2k^2} \Ft{T}\ap{w}_{xx}.
+        a^{2}\Ft{\pi}\ap{w}_\polplus = - \frac{k_y^2}{2k^2} \Twf\_{xx}.
     \end{equation}
     The explicit calculation gives
     \begin{equation}\label{eq:pertwalls:gws:pi_w_plus_Ft}
