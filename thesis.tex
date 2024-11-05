@@ -107,9 +107,6 @@
     \import{chapters/1_Introduction/}{intro.tex}
 
 
-% \chapter{Dummy chapter}
-% \import{chapters/dummy/}{content.tex}
-
 
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
@@ -119,26 +116,13 @@
 
 
 % >>> THEORETICAL BACKGROUND
+
 \part{Background}\label{part:bckg}
-
-% GR, DWs ++
-
-% \chapter{Differential Geometry}\label[chap]{chap:diffgeo}
-% {\import{chapters/Differential_Geometry}{diffgeo.tex}}
-
-% \chapter{Classical Field Theory and Gravity}\label[chap]{chap:CFTgrav}
-%     {\import{chapters/Classical_Field_Theory_and_Gravity/}{CFTgrav.tex}}
-
-% % GWs
-% \chapter{Gravitational Waves}\label[chap]{chap:GWs}
-%     {\import{chapters/Gravitational_Waves/}{GWs.tex}}
 
 
 % GR
 \chapter{General Relativity}\label{chap:GR}
     {\import{chapters/2_General_Relativity/}{GR.tex}}
-
-
 
 % DWs
 %Kinks in Cosmology
@@ -146,12 +130,7 @@
     {\import{chapters/3_TMP/}{cosmo.tex}}
 
 
-% DWs
-% \chapter{Kinks and Domain Walls}\label[chap]{chap:kinks}
-    % \import{chapters/Kinks_and_Domain_Walls/}{kinks.tex}
 
-% SIMS
-% \chapter{Lattice\grammar{-} and \(N\)-body Simulations}
 
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
 
@@ -170,31 +149,19 @@
 
 \part{Methodology}\label{part:method}
 
-% % ANALYTIC CALCULATION
-% \chapter{Calculating Gravitational Waves from Domain Walls}
-%     {\import{chapters/tmp_anal/}{tmp_anal.tex}}
-
-% % NUMERICAL SIMULATION
-% \chapter{Simulating Gravitational Waves from Domain Walls} 
-
-% % COMBINING ANALYSES
-% \chapter{Studying Gravitational Waves from Domain Walls}
-
-
 
 
 
 % ANALYTICAL CALCULATIONS
-% \chapter{Perturbed Domain Walls}\label[chap]{chap:pertwalls}
 \chapter{Imperfect Defects}\label{chap:pertwalls}
     {\import{chapters/4_Imperfect_Defects/}{pertwalls.tex}}
 
 
-
+% Get simulation typesetting
 {\import{texmex/}{simulation_typeset.tex}
+
+
 % COMPUTATIONAL CALCULATIONS
-
-
 \chapter{Cosmic Phase Transitions}\label{chap:PT}
     {\import{chapters/5_Cosmic_Phase_Transition/}{PT.tex}}
 
@@ -230,13 +197,12 @@
 \chapter{\tmptitle{Ifs, buts and maybes}}\label{chap:whatif}
     {\import{chapters/7_TMP_Whatif/}{whatif.tex}}
 
+}
 
 
 
 
 % >>> 
-
-% \part*{}% 
 
 
 \part*{Summary} % Epilogue?
@@ -244,8 +210,7 @@
 % CONCLUSION
 
 \chapter{Conclusion and Outlook}
-    {\import{chapters/TMP_FinalChap/}{finalchap.tex}}
-}
+    {\import{chapters/8_Conclusion_and_Outlook/}{finalchap.tex}}
 
 % øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
 
@@ -295,7 +260,7 @@
     {\import{appendices/Derivations_tmp/}{derivations.tex}}
 
 
-\chapter{\tmptitle{Stable Symmetron}}\label{app:untitled2}
+\chapter{\tmptitle{Stable Symmetron}}\label{app:stablesym}
     {\import{appendices/Untitled2_tmp/}{untitled2.tex}}
 
 
@@ -334,63 +299,63 @@
 
 % |||||||||||||||||||||||||||||||||||||||||||||||| 
 
-\chapter*{My commands}
+% \chapter*{My commands}
 
-\important{This section is so that my commands are saved in the cache.} 
+% \important{This section is so that my commands are saved in the cache.} 
 
-\hl{Delete before submission!}
+% \hl{Delete before submission!}
 
-\begin{bullets}
-    \item \dots
-    \item bullet points
-\end{bullets}
+% \begin{bullets}
+%     \item \dots
+%     \item bullet points
+% \end{bullets}
 
-\nc{need citation}
+% \nc{need citation}
 
-\checkthis{check this}
+% \checkthis{check this}
 
-\rephrase{rephrase}
+% \rephrase{rephrase}
 
-\cringe{awkward wording}
+% \cringe{awkward wording}
 
-\comment{comment}
+% \comment{comment}
 
-\phpar[\dots]
+% \phpar[\dots]
 
-\noindent
-\begin{tabular*}{\linewidth}{ r l }
-    \toprule    
-\end{tabular*}
+% \noindent
+% \begin{tabular*}{\linewidth}{ r l }
+%     \toprule    
+% \end{tabular*}
 
-\Group{SO}{3} is a group 
+% \Group{SO}{3} is a group 
 
-\textsf{SO(3)} is a group \nc
+% \textsf{SO(3)} is a group \nc
 
-$\Group{SO}{3}$ is a group
+% $\Group{SO}{3}$ is a group
 
-The order \BigO{1} is large
+% The order \BigO{1} is large
 
-The order $\BigO{1}$ is large
-
-
-
-The Planck unit \Planck{M}
-
-\begin{draft}
-    \dots
-\end{draft}
-
-\begin{align}
-    \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots} \\
-    \integ{x} f 
-\end{align}
+% The order $\BigO{1}$ is large
 
 
+
+% The Planck unit \Planck{M}
+
+% \begin{draft}
+%     \dots
+% \end{draft}
+
+% \begin{align}
+%     \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots} \\
+%     \integ{x} f 
+% \end{align}
 
 
 
 
-% |||||||||||||||||||||||||||||||||||||||||||||||| 
 
 
-% \end{document}
+% % |||||||||||||||||||||||||||||||||||||||||||||||| 
+
+
+% % \end{document}

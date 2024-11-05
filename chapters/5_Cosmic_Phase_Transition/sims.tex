@@ -59,12 +59,14 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
 \subsubsection{Initial configuration}
 
     The normal quasi-static $\tanh$-profile (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) approximates the initial configuration to $\breve{\chi}_\ast\to0$ and $\breve{\chi}'_\ast \to \infty$, which does not actually work out. %    
-    With the analysis in~\cref{sec:PT:symm_dws:asymptotic} we can impose suitable initial conditions so that the field rolls into the minima in the most effective way. We need to keep in mind that this affects the surface tension and wall width.
+    Since $\redshift_\ast=1/a_\ast-1 = 2 + 1/33> 2$, choosing initial redshift $\redshift\ped{i}=2$ leaves wiggle room enough to get simulations started with spatially separated walls.
+    
+    On the other hand, with the analysis in~\cref{sec:PT:symm_dws:asymptotic} we can impose suitable initial conditions so that the field rolls into the minima in the most effective way. We need to keep in mind that this affects the surface tension and wall width.
     %  However, this affects the expression for the domain wall surface tension and \blahblah 
 
 
 
-\subsubsection{(A)symmetron parameters}
+\subsubsection{Symmetron parameters}
     The code uses phenomenological parameters $(a_\ast, \xi_\ast, \beta_\ast)$ to define the symmetron model. The mapping to Lagrangian parameters $(\mu, M, \lambda)$ is~\citep{christiansenAsevolutionRelativisticNbody2023}:
     \begin{subequations}\label{eq:PT:sims:mapping_symmetron_params}
         \begin{align}
@@ -78,10 +80,13 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
 
 
 \subsubsection{Nature of wall perturbation}
-    We choose to only perturb one wall so that the time of collision between propagating gravitational waves is at $ \tau\ped{i} + L_\#/2$.\footnote{
+    We choose to only perturb one wall so that the time of collision between propagating gravitational waves is at $ \tau\ped{i} + L_\#/2$~\lcomment{Is this true? Maybe col. time is double?}.\footnote{
         Perturbing both walls would give collision time $\tau\ped{i} + L_{\#}/4$.
     } %
-    We would like $\epsast \ll L_\#/2$, but simply by looking at~\cref{fig:pertwalls:mywalls:demo_analytical_epsilon} we can assume that this would require a very high spatial resolution. As a result, we choose to exaggerate the initial perturbation amplitude and risk higher-order effects.%\verb|..|
+    We would like $\epsast \ll L_\#/2$, but with a quick look at~\cref{fig:pertwalls:mywalls:demo_analytical_epsilon} we can assume that this would require a very high spatial resolution. As a result, we choose to exaggerate the initial perturbation amplitude and risk higher-order effects. %\verb|..|
+    \lcomment{Maybe give a length scale?}
+
+    % A typical length scale of our setup is perhaps $L/#$; the separation between the two walls. This gives 
 
     
 
@@ -99,7 +104,7 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
 
     We present results in~\cref{chap:results} from the eight simulations that are listed in~\cref{tab:PT:sims:sim_setups}, with supplementary visualisation in~\cref{fig:PT:sims:initial_configs}. %
     We largely use~\citet{christiansenAsimulationDomainFormation2024} to help make parameter choices. 
-    Every simulation, labelled \simnum{0},~\simnum{1},\dots,~\simnum{7}, used a 4th order Runge-Kutta solver. 
+    Every simulation---labelled \simnum{0},~\simnum{1},\dots,~\simnum{7}---uses a 4th order Runge-Kutta solver. 
     We use simulation~\simnum{1} as a starting point and change one or two parameters at a time for subsequent experiments. The middle wall is unperturbed in simulation~\simnum{0}, and this particular experiment works as a sort of benchmark to separate the wall displacement effect. 
     Each simulation is associated with a characteristic colour (see~\cref{tab:PT:sims:sim_setups}) that will distinguish it in figures to come.
 
@@ -137,7 +142,7 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
 
     % \comment{Some extra simulations for convergence testing!}
 
-    An additional, completely homogeneous simulation (no walls present) is run with the same background as simulation~\simnum{1}, except that the symmetron initial conditions are optimised as described~\cref{app:untitled2} with $\redshift\ped{i}=2.03$. %In particular, 
+    An additional, completely homogeneous simulation (no walls present) is run with the same background as simulation~\simnum{1}, except that the symmetron initial conditions are optimised as described~\cref{app:stablesym} with $\redshift\ped{i}=2.03$. %In particular, 
     
     
 

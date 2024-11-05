@@ -13,7 +13,7 @@
 % LOCAL MACROS.
 % \newcommand{\eqregimenum}[1]{{\footnotesize{\textsf{\textbf{({#1})}}}}} 
 % \newcommand{\eqregimenum}[1]{{\tiny{\textsf{\textbf{(#1)}}}}}
-\newcommand{\eqregimenum}[1]{{\tiny{\textbf{(#1)}}}}
+\newcommand{\eqregimenum}{\ALIASeqregimenum}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
@@ -21,7 +21,8 @@
 
 
 
-We specify our example even further. The symmetron effective potential in~\cref{eq:cosmo:quintessence:asymmetron_effective_potential} is designed to induce phase transition at conformal time $\tau_\ast$, or scale factor $a_\ast$. Inserting this into~\cref{eq:pertwalls:thinwall:surface_tension}, we find that the surface tension of a thin symmetron domain wall is
+% We specify our example even further. 
+The symmetron effective potential in~\cref{eq:cosmo:quintessence:asymmetron_effective_potential} is designed to induce phase transition at conformal time $\tau_\ast$, or scale factor $a_\ast$. Inserting this into~\cref{eq:pertwalls:thinwall:surface_tension}, we find that the surface tension of a thin symmetron domain wall is
 \begin{equation}
     % \sigma = \sigma_\infty \bclosed{1 -\pclosed{a_\ast/a}^3 }^{3/2},
     \sigma = \sigma_\infty \pclosed{1 -\upsilon }^{3/2}; \quad \upsilon=\pclosed{a_\ast/a}^3,
@@ -42,10 +43,12 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
 \end{equation}
 % From hereon, we express the function in terms of $s$ and $\omega$, i.e.~$\epsilon_u(s)$.
 
+\speak{TO-DO: Check if this is a misunderstanding, as $\rho$ in effective potential is manifestly dust-like?}
+
 
 
 \subsection{Solution in matter-dominated universe}
-    This work only truly experiments in a universe with, and only with, homogeneous matter distribution, i.e.~$\alpha=2$ and $\Omega\ped{m0}=1$. Generalisation of the following to other $\alpha$ should in principle be trivial, but at some point we require $\alpha\geq 1/3$, and so a different analysis would be required for smaller $\alpha$.
+    This work only truly experiments in a universe with, and only with, homogeneous matter distribution, i.e.~$\alpha=2$ and $\sum_{s}\Omega_{s0}=\Omega\ped{m0}=1$. Generalisation of the following to other $\alpha$ should in principle be trivial, but at some point in the following we require $\alpha\geq 1/3$, and so a different analysis would be required for smaller $\alpha$.
 
     So, restricting our discussion to $\alpha=2$, we continue with the planar domain wall placed parallel to the $xy$-plane, spontaneously formed at symmetry break, $s=1$. Assume an initial perturbation of amplitude $\epsast$ was given to the wall. We consider the solution to~\cref{eq:pertwalls:mywalls:eom_final} that has eigenvalue $\omega=p\tau_\ast$ and restrict $\max{\abs{\sppt(x,y)}}=1$ for the spatial part.
     % $(\partial_x^2 + \partial_y^2)\sppt(x,y)= -p^2 \sppt(x,y)$, giving the ``scale'' of the perturbation $p$.
@@ -63,7 +66,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
     \end{equation}
     Now $e(s)$ is also subject to an expansion around $s=1$;
     \begin{equation}
-        e(s) = \bclosed{ 1 + c_1 (s-1) + c_2 {(s-1)}^2 + c_3 {(s-1)}^3 + \dots }.
+        e^{\text{\eqregimenum{I}}}(s)= \bclosed{ 1 + c_1 (s-1) + c_2 {(s-1)}^2 + c_3 {(s-1)}^3 + \dots }.
     \end{equation}
     % We immediately see that the initial condition 
     When put together, we get a polynomial in $(s-1)$ on the left-hand side of~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, for which all coefficients must vanish. %Solving the system of equations gives $c_1 = 0$, $c_2 =-q^2/5$ and $c_3 = q^2/35$. Thus,
@@ -75,9 +78,9 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
 
 
     \paragraph{Adiabatic evolution.} %
-    The damping term $2d(s)= 9/(2s(s^6-1))$ initially changes extremely rapidly from very large values, before it becomes very small compared to $3a'/a=6/s$. We expect the solution to quickly approach that of~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} as $s\gg 1$. 
+    The extra damping term $2d(s)= 9/(2s(s^6-1))$ initially changes extremely rapidly from very large values, before it becomes very small compared to $3a'/a=6/s$. We expect the solution to quickly approach that of~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} as $s\gg 1$. 
     % For $s\gg 1$, the damping term $\gamma(s) = 9/(2 s(s^6-1))$ in the eom for $\epsilon$ becomes subdominant \comment{check plag. Julian}, and asymptotically the solution is $s^{-2}\cclosed{c \sphBessel[2](qs) + d \sphNeumann[2](qs)  }$. 
-    Said damping term is not completely negligible, however, as it causes a \emph{damping envelope} that is considered much like in the case of a damped harmonic oscillator, writing
+    Said damping term is not completely negligible, however, as it causes a \emph{damping envelope} that is considered much like in the case of a damped harmonic oscillator. We write
     \begin{equation}\label[eq]{eq:pertwalls:mywalls:eps_s_II_MD_w}
         e^{\text{\eqregimenum{II}}}(s) \simeq   \zeta(s) \cdot \exp{ - \integ{t}[][s] d(t) }.%; \quad w(s) = \frac{c\sphBessel[2](qs) + d \sphNeumann[2](qs)}{s^2}.
     \end{equation}

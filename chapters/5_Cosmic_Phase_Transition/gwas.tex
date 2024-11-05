@@ -25,7 +25,7 @@
 
 To accurately compare the soliton's evolution with the Nambu--Goto prediction, it is essential to begin with an initial configuration closely approximating the exact solution to the equations of the full field theory. Without this, any deviations from the Nambu--Goto dynamics might simply result from inaccuracies in the initial setup.
 
-That said, we do not actually have these exact solutions in curved spacetime.\footnote{\comment{Revise calculation, I forgot it\dots}} However, with sufficient tweaking, we should be able to design our desired scenario in a~\gevolution{} simulation box.
+That said, we do not actually have these exact solutions in curved spacetime~\lcomment{Revise calculation, I forgot it\dots}. However, with sufficient tweaking, we should be able to design our desired scenario in a~\gevolution{} simulation box.
 % \speak{Section about the configuration, particular case}
 This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuration that is the toy model.
 
@@ -33,11 +33,11 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
 
 
 
-\subsection{Initial configuration}
+\subsection{Initial configuration}\label{sec:PT:gwas:initial_config}
 % In order to accurately compare the evolution of the soliton with the Nambu--Goto prediction, we need to start with an initial condition that is close enough to an exact solution of the full field theory equations. Otherwise, the possible deviations from the Nambu--Goto dynamics could just be due to the lack of precision in the initial configuration.
 % To accurately compare the soliton's evolution with the Nambu--Goto prediction, it is essential to begin with an initial condition closely approximating the exact solution of the full field theory equations. Without this precision, any deviations from the Nambu--Goto dynamics might simply result from inaccuracies in the initial setup.
 
-    The purpose of the simulations is to test the applicability of the thin-wall approximation for the wall evolution (\cref{eq:pertwalls:mywalls:eps_s_complete_MD}) and the corresponding gravitational waves (\cref{sec:pertwalls:gws}). Therefore, the simulation setup imitates a toy model, not a realistic system. To create this idealised cosmological scenario we initialise the simulation box as described below.
+    The purpose of the simulations is to test the applicability of the thin-wall approximation for the wall evolution (\cref{eq:pertwalls:mywalls:eps_s_complete_MD}) and the corresponding gravitational waves (\cref{sec:pertwalls:gws}). Therefore, the simulation setup imitates a toy model, not a realistic scenario. To create this idealised cosmological scenario we initialise the simulation box as described below.
 
     % For the purpose of exploring the validity of our equations, the simulation setup needs be controlled \comment{no stochasticity}. This is why we cannot initialise a cosmological scenario where a phase transition is \cringe{in the cards (on the horizon)}; we would never achieve a domain wall lying perfectly at $z=z_0+\epsast \sin{py}$. 
 
@@ -48,10 +48,13 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
             q\ped{w}(a\ped{i}, z- z\ped{w}) &= a^2 \dv{\chi\ped{w}}{\tau}\bigg|_{a=a\ped{i}},
         \end{align}
     \end{subequations}
-    where $a$, $\breve{\chi}$ and $z\ped{w}$ generally depends on time, and $z\ped{w}$ also on spatial coordinate $x$ and $y$. Note with $\breve{\chi}=\chi_+$ we get the familiar quasi-static formula in~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}. We refer to~\cref{app:untitled2} for details.
+    where $a$, $\breve{\chi}$ and $z\ped{w}$ generally depends on time, and $z\ped{w}$ also on spatial coordinates $x$ and $y$. Note that with $\breve{\chi}=\chi_+$ we get the familiar quasi-static formula in~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}. We refer to~\cref{app:stablesym} for details.
 
     % \paragraph{($\mathtt{achi}$)} %
-    In an FLRW universe a (semi-)stable symmetron domain wall is approximated~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW} (or~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW_updated}). To preserve boundary conditions, there needs to be at least two walls present. We choose to place the wall of interest at $z_0 = L_\#/2$, and its counterpart---the anti-wall---at $\widebar{z}_0=0$, both aligned with the $xy$-plane. %The periodicity of the system \blahblah
+    In an FLRW universe a (semi-)stable symmetron domain wall is approximated~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW} (or~\cref{eq:stablesym:chi_w_quasistatic_FLRW_updated}). To preserve periodic boundary conditions, there needs to be an even number of walls present, where half are walls and the other half are anti-walls.\footnote{Made-up term used as the domain-wall analogue of the antikink in~\cref{sec:cosmo:defects:ex_Z2_kink}.} %
+    % ($N=M$ in~\cref{eq:cosmo:defects:many_kinks}). 
+    We choose two, and place the wall of interest at $z_0 = L_\#/2$, and its counterpart %---the anti-wall---
+    at $\widebar{z}_0=0$, both aligned with the $xy$-plane. %The periodicity of the system \blahblah
     
 
     % Ignore the perturbation for now. The 3D simulation box of side lengths $L$ has in total $N^3$ lattice points.\footnote{Two dimensions would suffice for this problem, but \texttt{gevolution} only takes cubic boxes.} %Separating the box in two domains calls for two domain walls.
@@ -65,7 +68,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     %     \chi(a,z) = \prod_{i\in \Integer} \chi\ped{w}(a, z- [z_0 + \epsilon+ iL_\#] )\prod_{j\in\Integer} \bclosed{-\chi\ped{w}(a, z-jL_\#) },
     % \end{equation}
     % assuming sufficient spatial separation.
-    Assuming sufficient spatial separation, the system of defects is given by
+    Assuming sufficient spatial separation, the system of defects is given by (see~\cref{eq:cosmo:defects:many_kinks})
     \begin{equation}
         \chi(a,\vec{x}) = \breve{\chi}^{1-2N}\prod_{n= -\infty}^\infty \chi\ped{w}(a, z- z\ped{w}^{n} )\prod_{m=-\infty}^{\infty} {\widebar{\chi}\ped{w}(a, z-\widebar{z}\ped{w}^m) },
     \end{equation}
@@ -75,15 +78,16 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
         \quad\text{and}\quad %
         \widebar{z}\ped{w}^m = \widebar{z}_0+ mL_\#.
     \end{equation}
-    % and $\chi\ped{w}$ is 
-    \begin{figure}[h]
+    \Cref{fig:PT:gwas:demo_achi_periodicity} demonstrates how $\chi(a\ped{i}, z)$ varies with comoving coordinate $z$, in the absence of wall perturbation.
+    \begin{figure}[t]
         \centering
         \includegraphics[width=\linewidth]{Methodology/demo_achi_periodicity.png}
         \caption{Demonstration of the periodicity of $\chi(a\ped{i},z)$ on the lattice. The shaded region represents the box coordinates.
         % We only simulate $z\in[0,L_{\#})$, but the system is theoretically 
-        }\label{fig:PT:gwas:demo_achi_periodicity}
+        }%
+        \label{fig:PT:gwas:demo_achi_periodicity}
     \end{figure}
-    \Cref{fig:PT:gwas:demo_achi_periodicity} demonstrates how $\chi(a\ped{i}, z)$ varies with comoving coordinate $z$, in the absence of wall perturbation.
+    
     
     
 
@@ -91,7 +95,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
 
 
     % \paragraph{($\mathtt{aq}$)} %
-    Setting the initial conditions on the field $q = a^2 \dot{\chi}$ is a matter of algebra. The expression is cleanest when $\dot{z}\ped{w}=\dot{\epsilon}=0$, i.e. for $a\ped{i}=a_\ast$.  %a bit more subtle. In short, 
+    Setting the initial conditions on the field $q = a^2 \dot{\chi}$ is a matter of algebra. The expression is cleanest when $\dot{z}\ped{w}=\dot{\epsilon}=0$, i.e. for $a\ped{i}=a_\ast$. See~\cref{app:stablesym:initialisation} for detailed explanation. %a bit more subtle. In short, 
 
 
     % \comment{Write about $\mathtt{aq}$ field.} 
@@ -113,11 +117,10 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     % So far, we have not \blahblah
     We need to be careful when choosing the exact redshift to initiate the simulation. Clearly, the conventional expression~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW} does not work if we set initial redshift $\redshift\ped{i}=\redshift_\ast$. Initiating only a few time steps later allows us to use this after all, but we need to make sure the wall and anti-wall do not collide. Whether this is the case depends on several parameters. Some sets of initial conditions will induce large fifth-force oscillations, and we should try to avoid this.
 
-    Using the tweaked initial conditions on the asymptotic fields as boundary conditions on the quasi-static field in~\cref{eq:untitled2:chi_w_quasistatic_FLRW_updated} opens for the possibility of initialising as close to phase transition as we want. 
-    
-    We see that $\breve{\chi}\to \chi_+ $ after some time, and so another strategy to reduce oscillations is to initialise \emph{after} this non-adiabatic phase. The draw-back is that we might lose important information about the source of the gravitational waves.
+    Using the tweaked initial conditions on the asymptotic fields as boundary conditions on the quasi-static field in~\cref{eq:stablesym:chi_w_quasistatic_FLRW_updated} opens for the possibility of initialising as close to phase transition as we want. %
+    We observe that $\breve{\chi}\ap{ideal}\to \chi_+ $ after some time, and so another strategy to reduce oscillations is to initialise \emph{after} this non-adiabatic phase. The drawbacks are that we might lose important information about the source of the gravitational waves and that $\dot{z}\ped{w}\not{approx}0$.
 
-\subsection{Energy and momentum}
+\subsection{Energy and momentum}\label{sec:PT:gwas:SE_tensor}
     With this exact setup, we can write the total domain-wall SE tensor on the form %
     % $T\_{\mu\nu}(\tau, \vec{x})= \sum_{n}{T^{\mathrm{w}(n)}_{\mu\nu}(\tau, \vec{x})} + \sum_m {\widebar{T}^{\mathrm{w}(m)}_{\mu\nu}(\tau, \vec{x})} $, 
     $T\_{\mu\nu}= \sum_{n}{\Tw^n_{\mu\nu}} + \sum_m {\widebar{\Tw}^{m}_{\mu\nu}} $, 
@@ -132,7 +135,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     from~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, with $z\ped{w}^n$ and $\widebar{z}\ped{w}^n$ are given in~\cref{eq:PT:gwas:wall_antiwall_positions}. Here, $\sigma$ and $\delta=\sqrt{2}l$ refers to the surface tension and thickness of any wall in the system.
 
     \subsubsection{Continuous and discrete Fourier space}
-    The Fourier analogue reads
+    The Fourier analogue reads 
     \begin{equation}
         \begin{split}
             \Ft{T}\_{ab}(\tau, \vec{k}) &= -a\sigma \eta\_{ab} \sum_{n}\bclosed{ \mathscr{D}^n(\tau, k_z) \integ[2]{x} \eu[\im k_z \epsilon] \eu[\im (k_x x +k_y y)]  + (2\ppi)^2\widebar{\mathscr{D}}^n (\tau, k_z) \Diracdelta(k_x) 
@@ -140,7 +143,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
             \Ft{T}\_{i z}(\tau, \vec{k}) &= -a\sigma \sum_{n} \mathscr{D}^n(\tau, k_z) \integ[2]{x} \epsilon\_{,i} \eu[\im k_z \epsilon] \eu[\im (k_x x +k_y y)],
         \end{split}
     \end{equation}
-    where $\mathscr{D}^n= \eu[\im k_z L_\#/2]\cdot \widebar{\mathscr{D}}^n$ and $\widebar{\mathscr{D}}^n = \exp{ \im k_z nL_\#- k_z^2 l^2/2 }$. This essentially gives a periodicity in $k_z$ in the SE tensor that goes as $nk_\#$. %
+    where $\mathscr{D}^n= \eu[\im k_z L_\#/2]\cdot \widebar{\mathscr{D}}^n$ and $\widebar{\mathscr{D}}^n = \exp{ \im k_z nL_\#- k_z^2 l^2/2 }$ from~\cref{sec:pertwalls:gws:Fourier_SE_tensor}. This essentially gives a periodicity in $k_z$ in the SE tensor that goes as $n\cdot k_\#$. %
     % The Fourier analogue reads
     % \begin{equation}
     %     \begin{split}
@@ -161,7 +164,8 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
             \Ft{T}\_{ab} = - a\sigma \eta\_{ab} \mathtt{D} \cdot \mathop{\mathcal{F}}_{k_x,k_y}\cclosed{\eu[\im k_z \epsilon]}, \quad \Ft{T}\_{iz} = - a\sigma \mathtt{D} \cdot  \mathop{\mathcal{F}}_{k_x,k_y}\cclosed{\epsilon\_{, i} \eu[\im k_z \epsilon]} ,
         \end{split}
     \end{equation}
-    as expression for the walls' displacement field's contribution to the total energy and momentum. %
+    as expressions for the walls' displacement field's contribution to the total energy and momentum. %
+    We used the shorthand notation $\mathop{\mathcal{F}}_{k_i}$ for Fourier transforms~\lcomment{Ref. to some sec.!}.
     % as the SE tensor representing the contribution from tk
     % \begin{equation}\label{eq:PT:gwas:pi_plus_Ft_series}
     %     \Ft{\pi}\_{ij}(\tau, \vec{k})
@@ -180,12 +184,12 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     % \checkthis{This periodicity will eventually give a periodicity in $k_z$ in the SE tensor that goes as $nk_\#$.} 
     % \rephrase{We see that $\mathscr{D}\ped{w}^n(\tau, k_z=\lcoord{w}k_{\#}) = (-1)^{\lcoord{w}} \exp{-2(\ppi \lcoord{w} \delta\ped{w}(\tau)/L_{\#})^2}\in \Real$.}
 
-    We now get the same result as in~\cref{sec:pertwalls:gws:Fourier_SE_tensor} in letting $\epsilon = \varepsilon(\tau)\sin{py}$ and considering $k_y\neq 0$. Substituting $\mathscr{D}\ped{w}\to \mathtt{D}$ in~\cref{eq:pertwalls:gws:pi_w_plus_Ft}, we get the TT-projected SE tensor for the whole system, and inserted into~\cref{eq:pertwalls:gws:H_P_12} to find the gravitational waves sourced by the displacement in the wall normal coordinate.
+    We now get the same result as in~\cref{sec:pertwalls:gws:Fourier_SE_tensor} in letting $\epsilon = \varepsilon(\tau)\sin{py}$ and considering $k_y\neq 0$. Substituting $\mathscr{D}\ped{w}\to \mathtt{D}$ in~\cref{eq:pertwalls:gws:pi_w_plus_Ft}, we get the TT-projected SE tensor for the whole system, and put into~\cref{eq:pertwalls:gws:H_P_12} gives the gravitational waves sourced by the displacement in the wall normal coordinate. We elaborate on this for $\alpha=2$ in the coming subsection.
 
 
 
 % \subsection{Gravitational waves}
-\subsection{Ripples in matter-dominated spacetime}
+\subsection{Ripples in matter-dominated spacetime}\label{sec:PT:gwas:gws}
     % We collect 
     Consider matter-domination, $\alpha=2$, and set $\epsilon=\varepsilon(\tau)\sin{py}$. %
     % \begin{equation}
@@ -268,7 +272,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     % %     \mathscr{D}\ped{w}(\tau, k_z=\lcoord{w}k_\#) = \exp{ \im k_z z_0 - (k_z \delta\ped{w})^2/2 } \stackrel{\lcoord{w} \in \Integer}{\longrightarrow}(-1)^{\lcoord{w}} \exp{- (\lcoord{w} k_\# \delta\ped{w})^2}.
     % % \end{equation}
     % \comment{Comment about $\zeta$!} %
-    Now,~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} gives $\Ft{h}_+$ for a given $\varepsilon(\tau)$. %$\mathtt{\Delta} \mathtt{e}$
+    Now,~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} gives $\Ft{h}_+$ for a given input function $\varepsilon(\tau)$. %$\mathtt{\Delta} \mathtt{e}$
     
    
 
@@ -291,7 +295,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
 
     The formula for the gravitational waves in the thin-wall limit,~\cref{eq:PT:gwas:mywaves_complete_formula}, allows for any function $\varepsilon(\tau)$ as input. Therefore, we will use both the solution to the equation of motion~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, call it $\epsA$, and the simulated result $\epsB$. We will have to keep in mind that the latter is poorly resolved. 
 
-    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme, specifically the \textit{Numpy} library's \texttt{cumptrapz} method. \comment{More details?}
+    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme, specifically the \textit{Numpy} library's \texttt{cumptrapz} method \rcomment{More details?}. We let $\hpA$ and $\hpB$ signify the solution to~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} with $\epsA$ and $\epsB$ as input, respectively.
 
 
     % \comment{Explain how we obtain $\varepsilon$ and how we compute $\Ft{h}_{+}$}

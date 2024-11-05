@@ -81,14 +81,14 @@ The equation of motion for the normal coordinate is then~\citep{ishibashiEquatio
 %     + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
 %     +\frac{v}{\sigma} n\^\mu = 0,
 % \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:pertwalls:eom_wall:eom_defect}
     % n\_\mu\sq_\hypsurf x\^\mu  %
     n\_\mu \hypacc{{\sq}} X\^\mu 
     % + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
     + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
     +\frac{v}{\sigma} = 0,
 \end{equation}
-where $v=v_+-v_-$, %$\hypacc{\sq}$
+where $v=v_+-v_-$ is the difference in vacuum energies, %$\hypacc{\sq}$
 % \footnote{
 %     $\hypacc{\sq} = \hypacc{\nabla}\^a  \hypacc{\nabla}\_a  = \frac{1}{\sqrt{-\gamma}} \partial\_a (\sqrt{-\gamma} \gamma\^{ab}\partial\_b)$, $\gamma= \hypacc{g}$.
 % } %
@@ -117,7 +117,7 @@ where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) 
 % A simple solution to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} is a 
 
 
-\subsection{Exact solutions}
+\subsubsection{Exact solutions}
     \iftime{Mention Minkowski, $v=0$, strings, gauge invariance.}
 
     \paragraph{Minkowski.} %
@@ -143,8 +143,8 @@ where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) 
         \pert{X}\^\mu = X\^\mu + \delta X\^\mu = X\^\mu + \epsilon(\xi\^a) n\^\mu,%
         \footnote{Formally, this is the same as the variation above, but now we are dealing with a physical perturbation as opposed to a mathematical variation.}
     \end{equation}
-    where the wall displacement variable $\epsilon$ is a linear perturbation, i.e.~$\epsilon^2 \simeq 0$, and $n\^\mu$ is the unit normal vector to the \emph{unperturbed} worldsheet. %
-    To find the equation of motion, we apply~\cref{eq:pertwalls:eom_wall:linear_pert_wall_coord} to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} and solve order by order. If the ambient space is Minkowski, this amounts to~\citep{garrigaPerturbationsDomainWalls1991}
+    where the wall displacement variable $\epsilon$ is a linear perturbation ($\epsilon^2 \simeq 0$), and $n\^\mu$ is the unit normal vector to the \emph{unperturbed} worldsheet~\citep{vilenkinCosmicStringsOther1994}. %
+    To find the equation of motion for $\epsilon$s we apply~\cref{eq:pertwalls:eom_wall:linear_pert_wall_coord} to~\cref{eq:pertwalls:eom_wall:eom_extrinic_curvature} and solve order by order. If the ambient space is Minkowski, this amounts to~\citep{garrigaPerturbationsDomainWalls1991}
     \begin{equation}
         % -\hypacc{\sq} \epsilon + \pclosed{\hypacc{R}-v^2/\sigma^2}\epsilon  = 0.
         \hypacc{\sq} \epsilon + \hypacc{K}\^{ab}\hypacc{K}\_{ab} \epsilon = 0; \quad g\_{\mu\nu}= \eta\_{\mu\nu}.

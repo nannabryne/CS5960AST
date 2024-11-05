@@ -25,10 +25,10 @@
 
 
 Planar domain walls do not themselves produce gravitational radiation. Introducing asymmetry to the system, as we do when adding perturbations, can give rise to non-vanishing stress--energy tensor components in the TT gauge. %
-In this section we present the gravitational-wave calculations in the case of a planar, thin domain wall in a conformally flat universe with expansion rate $a$.
+In this section we present the gravitational-wave calculations in the case of a planar, thin domain wall in a conformally flat universe with expansion rate $a$. %
+We neglect back-reaction, that is we assume that the defect does not change the unperturbed background metric. 
 
-
-We neglect back-reaction, that is we assume that the defect does not change the unperturbed background metric. The calculations largely follow~\citet{kawasakiStudyGravitationalRadiation2011}.
+% We neglect back-reaction, that is we assume that the defect does not change the unperturbed background metric. The first calculations follow~\citet{kawasakiStudyGravitationalRadiation2011}.
 
 
 % We have seen that imperfections in what in principle are planar domain walls, do give rise to nonzero a
@@ -128,9 +128,9 @@ We neglect back-reaction, that is we assume that the defect does not change the 
 
 % \pensive{Joke: Are you a wave vector in real space? Because you're impartial! ($k\_i \leftrightarrow \im \partial\_i$)}
 
-\subsection{\tmptitle{Dynamics of gravitational waves in expanding universe}}
+\subsection{Gravitational waves in expanding universe}
     % \citep{kawasakiStudyGravitationalRadiation2011}
-    From~\cref{sec:GR:gws:gws_FLRW} we have the calculation of $\Ft{h}\_{ij}(\tau, \vec{k})$ in a universe with $a\propto \tau^\alpha$; ${\alpha\in\Integer}$. Assuming homogeneous initial conditions at $\tau\ped{i}=\tau_\ast$, the tensor perturbations are given by~\cref{eq:GR:gws:hij_expression_of_Greens_and_source} and~\cref{eq:GR:gws:Greens_function_n} with $n=\alpha-1$. For convenience, we use a linear polarisation basis (see~\cref{sec:GR:gws}) and the decomposition $\Ft{\ah}_P = a\Ft{h}_P=H^{1}_P + H^2_P $, $P=\polplus, \polcross$, such that
+    From~\cref{sec:GR:gws:gws_FLRW} we have the calculation of $\Ft{h}\_{ij}(\tau, \vec{k})$ in a universe with $a\propto \tau^\alpha$, specified for ${\alpha\in\Integer}$. Assuming homogeneous initial conditions at $\tau\ped{i}=\tau_\ast$, the tensor perturbations are given by~\cref{eq:GR:gws:hij_expression_of_Greens_and_source} and~\cref{eq:GR:gws:Greens_function_n} with $n=\alpha-1$. For convenience, we use a linear polarisation basis (see~\cref{sec:GR:gws}) and the decomposition $\Ft{\ah}_P = a\Ft{h}_P=H^{1}_P + H^2_P $, $P=\polplus, \polcross$, such that~\citep{kawasakiStudyGravitationalRadiation2011}
     % which we will write as $\ah$
     % \begin{equation}
     %     \begin{split}
@@ -155,7 +155,7 @@ We neglect back-reaction, that is we assume that the defect does not change the 
         \dot{H}_P^{1,2}(\tau, \vec{k})  = \pm k \,\bclosed{ \mathsf{R}_\alpha^{(1,2)}(k\tau) -  n\mathsf{z}^{(1,2)}_n(k\tau) } \integ{\dummy{\tau}}[\tau_\ast][\tau] \mathsf{R}_n^{(2,1)}(k\dummy{\tau})  \Src_P(\dummy{\tau}, \vec{k}).
     \end{equation}
     Note that $\dot{h} = a^{-1} ( \dot{\ah} - \dot{a} \ah)$ is the conformal time derivative of the gravitational waves. 
-    We repeat that $\mathsf{R}^{(i)}$ and $\mathsf{z}^{(i)}$ are the Riccati-- and spherical Bessel functions of $i$th kind, respectively.
+    We repeat that $\mathsf{R}^{(i)}$ and $\mathsf{z}^{(i)}$ are the Riccati-- and spherical Bessel functions of $i$th kind, respectively, reported in~\cref{app:special}.
 
 
 
@@ -226,7 +226,7 @@ We neglect back-reaction, that is we assume that the defect does not change the 
             &= -a (\tau)\sigma\ped{w}(\tau) \,\mathscr{D}\ped{w}(\tau, k_z)  \integ[2]{x} \epsilon\_{,i}  \eu[\im k_z \epsilon] \eu[\im (k_x x+k_y y)],%\partial\_{i} \epsilon
          \end{split}
     \end{equation}
-    where $\mathscr{D}\ped{w}= \exp{ \im k_z z_0-{(k_z l\ped{w})}^2/2 }$ adjusts for wall width and origin. %
+    where $\mathscr{D}\ped{w}= \exp{ \im k_z z_0-{(k_z l\ped{w})}^2/2 }$ adjusts for wall width and unperturbed distance from the $xy$-plane. %
     % \begin{equation}
     %     \begin{split}
     %         % T\_{ab}(\tau, \vec{k})  = 

@@ -37,7 +37,15 @@
 
 
 
-Discrete symmetry breakage leads to formation of domain walls. The thin-wall approximation is not suited to describe the dynamics at this stage, and is \cringe{certainly not able to tell the whole story.} A Lagrangian that is reflection-invariant in a scalar field theory, and then suddenly is not any more, describes a system that undergoes a phase transition. In the case of $3+1$ dimensions, the system is quickly divided into alternating positive and negative vacuum domains. Separating these are stable domain walls---the newborn soliton solution for the scalar field. During the early stages of formation, a domain wall in theory reduces its thickness from initially infinite to $\sim \delta_\infty = \mathscr{O}(\mu^{-1})$---a source of various problems both simulation-wise and for the theory. 
+Discrete symmetry breakage leads to formation of domain walls~\citep{vilenkinCosmicStringsOther1994}. %
+We may apply thin-wall dynamics when the thickness parameter $\delta$ is negligible compared to other dimensions of the problem, primarily the horizon size~\citep{vilenkinCosmicStringsOther1994}. Otherwise, we must employ the full field theory. % where the scalar field equation reads $\sq \phi = V_{,\phi}$
+During a phase transition in which the dynamics is governed by a reflection-invariant Lagrangian in $3+1$ dimensions, the system quickly divides into alternating positive and negative vacuum domains. %
+Separating these are domain walls, which during transition is thinning from initially (as we will see) infinite thickness.\footnote{Rather a naive extrapolation of the thickness interpretation, in~\cref{eq:PT:symm_dws:surface_tension_and_thickness_FLRW}.}  
+
+% The thin-wall approximation only holds if the thickness parameter $\delta$ is negligeble 
+% The thin-wall approximation is not suited to describe the dynamics at this stage, and is \cringe{certainly not able to tell the whole story.} 
+
+% A Lagrangian that is reflection-invariant in a scalar field theory, and then suddenly is not any more, describes a system that undergoes a phase transition. In the case of $3+1$ dimensions, the system is quickly divided into alternating positive and negative vacuum domains. Separating these are stable domain walls---the newborn soliton solution for the scalar field. During the early stages of formation, a domain wall in theory reduces its thickness from initially infinite to $\sim \delta_\infty = \mathscr{O}(\mu^{-1})$---a source of various problems both simulation-wise and for the theory. 
 
 % These walls may annihilate in the presence of an asymmetry \comment{Or if is an approximation?}, a feature that would weaken the theoretical arguments \comment{}
 
@@ -58,8 +66,8 @@ Discrete symmetry breakage leads to formation of domain walls. The thin-wall app
 
 
 
-In this chapter we attack the field-theoretical approach to describing the motion of domain walls. We eventually take leave of one spatial dimension, and so the framework also describes strings. %
-Previous work~\citep{blanco-pilladoDynamicsDomainWall2023} has been done on Minkowski background in the static picture. This analysis assumes a conformally flat, homogeneous and isotropic background, particularly one with scale factor $a\propto \tau^\alpha$. We consider the entire phase transition, i.e.~the actual formation of defects, which alters the dynamics in the Nambu--Goto picture. %
+In this chapter we attack the field-theoretical approach to describing the motion of domain walls, during and after phase transition. We eventually take leave of one spatial dimension, and so the framework can also describe strings~\citep{blanco-pilladoDynamicsDomainWall2023}. %
+Previous work~\citep{blanco-pilladoDynamicsDomainWall2023} has been done on Minkowski background in the static picture. The following analysis assumes a conformally flat, homogeneous and isotropic background, particularly one with scale factor $a\propto \tau^\alpha$. We consider the entire phase transition, i.e.~the actual formation of defects, which alters the dynamics in the Nambu--Goto picture. %
 We build up towards simulations of toy scenarios for which we set $\alpha=2$.
 
 
@@ -86,6 +94,7 @@ This chapter first, in~\cref{sec:PT:symm_dws}, presents the scalar-field formula
 %     {\subimport{./}{gwas.tex}}
 
 \section{\tmptitle{Toy model design}}\label{sec:PT:gwas}
+% \section{\tmptitle{Designing the prototype}}\label{sec:PT:gwas}
     {\subimport{./}{gwas.tex}}
 
 

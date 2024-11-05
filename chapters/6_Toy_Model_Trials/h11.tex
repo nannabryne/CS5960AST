@@ -27,13 +27,13 @@
 
 
 
-The gravitational waves from the Nambu--Goto motion are given by a complicated expression. We have not been able to obtain the corresponding expression in configuration, neither have we found a way to present sensible summary statistics from it. 
+The gravitational waves from the Nambu--Goto motion are given by a complicated expression. We have not been able to obtain the corresponding expression in configuration space, neither have we found a way to present sensible summary statistics from it. 
 
 We list a few key points about the simulated gravitational-wave results in general. The data we get from the code is the averaged squared value of the strain's conformal time derivative (see below,~\cref{eq:results:h11:rho_gw}) at every time step, and the Fourier image of the tensor perturbations for $\lcoordk = (0,\lcoord{v}, \lcoord{w})$ at every fourth-or-so time step.
 % \paragraph{About the results in general.} %
 % A few take-aways from the results in all is listed below.
 \begin{itemize}
-    \item Zero walls or unperturbed walls (simulation~\simnum{0}) produce no GWs.
+    \item Zero walls or unperturbed walls (simulation~\simnum{0}) produce no gravitational radiation.
     \item The predicted periodicity in $k_y$ (that $\Ft{h}_{xx}\rvert_{k_y\neq np} \to 0 $) agrees with simulations. \iftime{Maybe provide some numbers?}
     \item There is decidedly \textit{a} signature of the perturbation in some wave modes. There are characteristics similar to what the thin-wall limit predicts, but the resemblance varies a lot from mode to mode, and also in time.
     \item Stronger scalar-field fluctuations correspond to noisier gravitational-wave modes.
@@ -58,7 +58,7 @@ We list a few key points about the simulated gravitational-wave results in gener
     %
     We plot this as functions of (scaled) conformal time $s$ and the perturbation time parameter $t_\omega = \omega(s-1)$ in~\cref{fig:results:h11:avhijprimenorm} for a number of simulations. %
     The graphs in the right panel show similar patterns as before, in~\cref{fig:results:achi:indepth_aq}. %
-    The energy is in the range $\log{(\rho\ped{gw}/\rho\ped{cr0})}\sim-18, -17$. In comparison, gravitational radiation from domain wall networks is often approximated as $\rho\ped{gw}\sim \sigma^2 /(40\ppi M\nped{Pl}^2)$~\citep{ramazanovFreezeinDarkMatter2022}, which is approximately $ \sim 10^{-12}\rho\ped{cr0}$ for the symmetron parameters used in every simulation, expect for~\simnum{6}.
+    The energy is in the range $\log{(\rho\ped{gw}/\rho\ped{cr0})}\sim-18, -17$. In comparison, gravitational radiation from domain wall networks is often approximated as $\rho\ped{gw}\sim \sigma^2 /(40\ppi M\nped{Pl}^2)$~\citep{ramazanovFreezeinDarkMatter2022}, which is approximately $ \sim 10^{-12}\rho\ped{cr0}$ for the symmetron parameters used in every simulation, expect for simulation~\simnum{6}.
     
     % \speak{Possibly compare with $\rho\ped{gw}\sim \sigma\ped{w}^2 /(40\ppi M\nped{Pl}^2)$~\citep{ramazanovFreezeinDarkMatter2022}.}
     
@@ -87,18 +87,18 @@ We list a few key points about the simulated gravitational-wave results in gener
     % \begin{equation}
     %     \Ft{\pi}_+(\tau, \ell, \zeta) =  \frac{2\ppi^2}{1+\zeta^2 }\frac{\sigma(\tau)}{a(\tau)} \mathscr{D}\ped{w}(\tau, p\ell \zeta) \cdot (-1)^\ell\Bessel[\ell]\big(\ell \zeta p \varepsilon(\tau)\big).
     % \end{equation}
-    We will use present our results in terms of scaled wavenumbers that satisfy %$k_x=0$, $k_y=\ell p= \lcoord{v}k_\#$ and $k_z = \zeta\ell p = \lcoord{w}k_\#$, where $\ell\in \Integer$. \speak{Maybe we should use $k_z=\lcoord{w} k\ped{f}$?}
+    We will present our results in terms of scaled wavenumbers that satisfy %$k_x=0$, $k_y=\ell p= \lcoord{v}k_\#$ and $k_z = \zeta\ell p = \lcoord{w}k_\#$, where $\ell\in \Integer$. \speak{Maybe we should use $k_z=\lcoord{w} k\ped{f}$?}
     \begin{equation}
         k_x= 0, \quad k_y= \lcoord{v}k_\#=\ell p, \quad k_z = \lcoord{w}k_\#= \ell p \tan{\vartheta}; \quad \ell\in \Integer,
     \end{equation}
-    where $\lcoordk = (\lcoord{u},\lcoord{v},\lcoord{w})\in\Integer^3$ is the lattice momentum. Note that $\vec{\ell}=(\ell, \theta)$ and $(\lcoord{v}, \lcoord{w})$ represent different comoving momenta $(0,k_y,k_z)$ in e.g.~simulation~\simnum{1} and~\simnum{4}. The length of the wave vector is $k = \abs{p \ell \sec{\vartheta}}$.
+    where $\lcoordk = (\lcoord{u},\lcoord{v},\lcoord{w})\in\Integer^3$ represents the lattice momentum. Note that $\vec{\ell}=(\ell, \theta)$ and $(\lcoord{v}, \lcoord{w})$ represent different comoving momenta $(0,k_y,k_z)$ in e.g.~simulation~\simnum{1} and~\simnum{4}. The length of the wave vector is $k = \abs{p \ell \sec{\vartheta}}$.
     % given by 
     % \begin{equation}
     %     k^2 = p^2 \ell^2\pclosed{  1 + \tan^2{\vartheta}} = p^2 \ell^2 \sec^2{\vartheta}.
     % \end{equation}
     
 
-    The first notable observation is that $\hpAB\in \Real$, whereas $\hpC\in \Complex$. In fact, the results show (consistently) more resemblance between $\hpB$ and $\hpCI$, than between $\hpB$ and $\hpCR$. It is clear that the slight offset $\Delta \varepsilon = \abs{\epsA-\epsC}$ makes for a significant difference. %
+    The first notable observation is that $\hpAB\in \Real$, whereas $\hpC\in \Complex$. In fact, the results consistently show more resemblance between $\hpB$ and $\hpCI$, than between $\hpB$ and $\hpCR$. It is clear that the slight offset $\Delta \varepsilon = \abs{\epsA-\epsC}$ makes for a significant difference in $\hpAB$. %
     %
     % \begin{figure}[h!]
     %     \centering
@@ -185,8 +185,8 @@ We list a few key points about the simulated gravitational-wave results in gener
     %     \label{fig:results:h11:hp_kspace}
     % \end{figure}
     % % ------------------------------
-    \Cref{fig:results:h11:hp_kspace} demonstrates this for a number of $\vec{k}$-modes in simulations~\simnum{1},~\simnum{3},~\simnum{7},~\simnum{2} and~\simnum{5}. The magnitudes are ignored in this analysis. There is a quite remarkable likeness between $\hpB$ (solid red lines) and $\hpCI$ (blue dashed lines). Comparison of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7} suggests that more prominent scalar field fluctuations disturbs the gravitational wave modes a little (blue graphs), and that $\hpB$ is sensitive to tiny deviations in $\epsB$ (red graphs). %
-    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time axes that the resonance in $t_\omega$-space lives on to some extent. 
+    \Cref{fig:results:h11:hp_kspace} demonstrates this for a number of $\vec{k}$-modes in simulations~\simnum{1},~\simnum{3},~\simnum{7},~\simnum{2} and~\simnum{5}. The magnitudes are ignored in this analysis. There is a quite remarkable likeness between $\hpB$ (solid red lines) and $\hpCI$ (blue dashed lines). Comparison of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7} suggests that more prominent scalar-field fluctuations disturb the gravitational wave modes a little (blue graphs), and that $\hpB$ is sensitive to tiny deviations in $\epsB$ (red graphs). %
+    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time axes that the resonance in $t_\omega$-space lives on to some extent, backed by the right panel of~\cref{fig:results:h11:avhijprimenorm}.
 
 
     % %
@@ -201,7 +201,7 @@ We list a few key points about the simulated gravitational-wave results in gener
     Another way to compare the results is through a one-dimensional power spectrum:
     \begin{equation}\label{eq:results:h11:1d_power_spec}
         \Diracdelta(k_x)\Diracdelta(k_y - \ell p)P_h(\tau , \vartheta; \ell) =  h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k}).% \left\langle h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k}) \right\rangle,
-        \footnote{It would be more conventional to use the time derivatives, but we chose to save memory space and only output $\tilde{\mathtt{h}}_{ij}$.}
+        \footnote{It would be more conventional to output and analyse $\dot{h}\_{ij}$, but we make the early (arbitrary) unconventional choice.}
     \end{equation}
     % where $\zeta = k_z/k_y= k_z/(p\ell)$. 
     % which for the analytical expression becomes \blahblah
@@ -209,7 +209,8 @@ We list a few key points about the simulated gravitational-wave results in gener
     %     P_h(k_z; \ell) = 2 (h\ap{(1D)}_+(\tau,\ell, k_z))^2
     % \end{equation}
     We see from~\cref{fig:results:h11:avhijprimenorm} where the intensity of the waves peaks and use this to choose time points for our power-spectrum analysis. It is interesting to compare simulations with different perturbation scale. %
-    In~\cref{fig:results:h11:hij_powerspecs} we compare the results from the Nambu--Goto theory (\cref{eq:PT:gwas:mywaves_complete_formula}) with $\varepsilon = \epsA$ and $\varepsilon = \epsB$, and directly from simulation. Note that the units are arbitrary, and the magnitudes are not reported. Each column represents the same $\ell$-mode for different times, whereas each row signifies the same time point but different $\ell$'s. The horizontal axes show $\vartheta$, where $\vartheta=0^\circ$ and $\vartheta \to 90^\circ$ correspond to $\vec{k} =(0,k,0)$ and $\vec{k} \to (0,0,k)$, respectively. Note that $\vartheta=0^\circ$ suggests waves propagating along the domain wall.
+    In~\cref{fig:results:h11:hij_powerspecs} we compare the results from the Nambu--Goto theory (\cref{eq:PT:gwas:mywaves_complete_formula}) $\hpA$ and $\hpB$, %with $\varepsilon = \epsA$ and $\varepsilon = \epsB$, 
+    and directly from simulation, $\hpC$. We stress that the units are arbitrary, and the magnitudes are not reported. Each column represents the same $\ell$-mode for different times, whereas each row signifies the same time point but different $\ell$'s. The horizontal axes show $\vartheta$, where $\vartheta=0^\circ$ and $\vartheta \to 90^\circ$ correspond to $\vec{k} =(0,k,0)$ and $\vec{k} \to (0,0,k)$, respectively. Note that $\vartheta=0^\circ$ suggests waves propagating along the domain wall.
 
    %It is useful to present such comparisons in terms of the dimensionless wave-vector components $\ell= k_y/p$ and $\zeta = k_z/k_y$.
 
@@ -332,17 +333,16 @@ We list a few key points about the simulated gravitational-wave results in gener
 
 
 
-\subsection{\tmptitle{Discussion}}
+\subsection{Holistic review}
     % \phpar[thoughts about the GW results]
     
     
-    \Cref{fig:results:h11:hp_kspace} shows that the perturbation clearly manifests in the gravitational waves. The physical insight of analysing this mode by mode is maybe not too great, but the likeness indicates that there is a pattern to be found, at least. We would have to go further into technicalities regarding the lattice spin-2 operator to conclude anything about what causes $\hpCI\neq 0$. 
-
+    \Cref{fig:results:h11:hp_kspace} shows that the perturbation parameters clearly manifest in the gravitational waves. The physical insight of analysing this mode by mode is maybe not too great, but the likeness indicates that there is a pattern to be found, at least. We would have to go further into technicalities regarding the lattice spin-2 operator to conclude anything about what causes $\hpCI\neq 0$. 
     \Cref{fig:results:h11:avhijprimenorm} agrees that there is a predictable relationship between the wall perturbation in its simplest form ($\varepsilon \sin{py}$) and gravitational radiation. 
 
     % It is challenging to gain physical intuition from~\cref{fig:results:h11:hij_powerspecs}. \blahblah
 
-    There is a large an inconsistent different in magnitude between $\hpAB^2$ and $\hpC^2$. This thesis does not cover this part of the analysis in depth, but we list some issues that are likely related to this.
+    There is a large and inconsistent difference in magnitude between $\hpAB^2$ and $\hpC^2$. This thesis does not cover this part of the analysis in depth, but we list some issues that are possibly related to this.
     \begin{itemize}
         \item The dimensions of the Fourier-transformed tensor perturbations and SE tensor are $[k^{-3}] = \unit{(length)}^{3}$ and $[k \cdot k^{-3}]=\unit{(length)}^{2}$, respectively. There can be a misunderstanding in the unit conversion both from the simulation output and in the computation of $\Ft{\pi}_+$. \iftime{Comment about Delta-functions?} A source of confusion may be the transformation from discrete to continuous Fourier transforms. 
         \item The cumulative-trapezoidal scheme that computes $\hpAB$ has numerical weaknesses, and the input to $\hpB$ is originally discrete. Tiny changes in $\varepsilon$ can have massive effect for $\hpAB$, and discontinuities often lead to larger values.

@@ -1,0 +1,20 @@
+%
+\subimport{../}{style.tex}
+%
+{\small{
+\begin{tabular*}{\tabWidth}{l c c c | l}
+    \tabHeading{Type} & \tabHeading{Combination} & \tabHeading{1st kind} & \tabHeading{2nd kind} & \tabHeading{$i$th kind}\\
+    \toprule
+    Bessel functions & $\Zv$ & $\Bessel$ & $\Neumann$ & 
+    $\Zv^{(i)}(x)$\\
+    %
+    \midrule
+    Spherical Bessel functions & $\zn$  & $\sphBessel$ & $\sphNeumann$ & %
+    $\zn^{(i)}(x) = \sqrt{\ppi/(2x)} \cdot \Zv[n+1/2]^{(i)}(x)$ \\
+    %
+    \midrule
+    Riccati--Bessel functions & $\Rn$  & $\RiccatiBessel$ & $\RiccatiNeumann$ & %
+    $\Rn^{(i)}(x) = -(-1)^{i} x\cdot \zn^{(i)}(x)$ \\
+    %
+    \bottomrule
+\end{tabular*}}}

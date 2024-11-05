@@ -30,12 +30,27 @@
   - [x] Cosmic pert. theory
   
 
+> #### Sections:
+> - [ ] 2.0 
+> - [ ] 2.1
+> - [ ] 2.2
+> - [ ] 2.3 
+> - [ ] 2.4
+
+
+
 ### 3 Cosmo
 
 - [x] Topological defects
 - [x] PTs/SSB
 - [ ] (A)symmetron
 
+
+> #### Sections:
+> - [ ] 3.0 
+> - [ ] 3.1
+> - [ ] 3.2
+> - [ ] 3.3 ??
 
 ## Pt. II Pre-sims
 
@@ -49,11 +64,11 @@
   - [ ] Review
 
 > #### Sections:
-> - [ ] 4.0 
-> - [ ] 4.1
-> - [ ] 4.2
-> - [ ] 4.3
-> - [ ] 4.4
+> - [x] 4.0 
+> - [x] 4.1
+> - [x] 4.2
+> - [x] 4.3
+> - [x] 4.4
 
 
 
@@ -65,10 +80,10 @@
 - [ ] Describe simulations
 
 > #### Sections:
-> - [ ] 5.0 
+> - [x] 5.0 
 > - [x] 5.1
 > - [ ] 5.2
-> - [ ] 5.3
+> - [x] 5.3
 > - [ ] 5.4
 
 
@@ -80,11 +95,23 @@
 - [x] DW position
 - [ ] GWs
 
+> #### Sections:
+> - [x] 6.0 
+> - [x] 6.1
+> - [x] 6.2
+> - [x] 6.3
+> - [ ] 6.3
+
 
 ### 7 Ifs, buts, maybes
 
 - [ ] Extensions
 - [ ] ...
+
+> #### Sections:
+> - [ ] 7.0 
+> - [ ] 7.1
+> - [ ] 7.2
 
 
 ### 8 Conclusion
@@ -92,6 +119,11 @@
 - [ ] Conclusion (3-8 sent.)
 - [ ] Outlook
 
+
+> #### Sections:
+> - [ ] 8.0 
+> - [ ] 8.1
+> - [ ] 8.2
 
 
 ## App.
@@ -139,3 +171,6 @@ ______
 ## Other things
 
 - [ ] Decide what to do about HPC chapter
+
+
+

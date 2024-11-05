@@ -51,17 +51,49 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \end{equation} 
     where $\Psi$ collects all matter fields, which couple minimally to the Jordan-frame metric,
     \begin{equation}
-        \widetilde{g}\_{\mu\nu} = A^2 (\phi) g\_{\mu\nu},
+        \widetilde{g}\_{\mu\nu} = A^2 (\phi) g\_{\mu\nu}% = A^2(\phi) \cdot  a^2(\tau) \eta_{\mu\nu},
     \end{equation}
     and $S\ped{m}$ is the total matter action. 
     Without the presence of this last term, the equation of motion for the scalar field is $\sq \phi = V_{,\phi}$. %
     % \nc{Some article}[appendix?] shows that 
-    The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{-1} A_{,\phi}T\ped{m} $, which amounts to writing
+    The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{3} A_{,\phi}\widetilde{T}\ped{m}$, where $\widetilde{T}\ped{m}= {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu}$ is the trace of the Jordan-frame matter SE tensor~\citep{hinterbichlerSymmetronCosmology2011,christiansenAsevolutionRelativisticNbody2023}. In particular, 
     \begin{equation}
-        \sq \phi = {V\ped{eff}}_{,\phi}; \quad V\ped{eff}(\phi) \equiv V(\phi) - \ln{A(\phi)} \cdot T\ped{m}.
+        \sq\phi = V_{,\phi}(\phi) - A^{3}(\phi) A_{,\phi}(\phi)\widetilde{T}\ped{m}.
     \end{equation}
-    % Here, $T\ped{m}= g\^{\mu\nu}T\indices*{^{\mathrm{(m)}}_{\mu\nu}}$ 
-    Here, $T\ped{m}=A^4 \widetilde{T}\ped{m}$, $ \widetilde{T}\ped{m}=  {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu} $, is the trace of the Einstein-frame matter SE tensor. For a perfect fluid, $T\ped{m}\rvert\ped{p.f.}=-\rho + 3p$, and in the non-relativistic limit, we have $p\to 0$. %\speak{Maybe write ${}\ap{(m)}T\_{\mu\nu}$ etc.}
+    We model the matter content as non-interacting, perfect fluids indexed $s$ with equation-of-state parameter $w_s$ such that the trace becomes $\widetilde{T}\ped{m}\rvert\ped{p.f.} = \sum_s (3w_s-1 )\widetilde{\rho}_s$.  
+    % The equation of motion for $\phi$ reads
+    % \begin{equation}
+    %     \sq \phi = {V\ped{eff}}_{,\phi},%; \quad V\ped{eff}(\phi) \equiv V(\phi) - A^3(\phi) A_{,\phi}(\phi) \widetilde{T}\ped{m},
+    % \end{equation}
+    % where 
+    % \begin{align}
+    %     V\ped{eff}(\phi) &\equiv V(\phi) - A^3(\phi) A_{,\phi}(\phi) \widetilde{T}\ped{m},\nonumber \\
+    %     &= V(\phi)  - A^3(\phi) A_{,\phi}(\phi) \sum_{s} (1-3 w_s) \widetilde{\rho}_s 
+    % % \end{align}
+    % is the effective potential~\citep{hinterbichlerSymmetronCosmology2011}. 
+    We have $\widetilde{\rho}_s\propto (Aa)^{-3(1+w_s)} \equiv A^{-3(1+w_s)}\rho_s$, where $\rho_s=a^{-3(1+w_s)}$ defines a scaled energy density, conserved in the Einstein frame, and $a$ the Einstein-frame scale factor. Now
+    \begin{equation}
+        \sq \phi = V_{,\phi}(\phi) - A_{,\phi}(\phi) \sum_{s} A^{-3w_s}(\phi) (3w_s-1)\rho_s,
+    \end{equation}
+    which for near-constant $\rho_s$ reduces to $\sq \phi = V_{\mathrm{eff},\phi}$ where~\citep{hinterbichlerSymmetronCosmology2011}
+    %dust-like matter $w_s\simeq 0$ reduce to 
+    \begin{equation}
+        V\ped{eff} = V(\phi) + \sum_s A^{1-3w_s}(\phi) \rho_s
+    \end{equation}
+    is the effective potential~\rcomment{Check if this is only symmetron.}. 
+
+    % The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{-1} A_{,\phi}T\ped{m} $, which amounts to writing
+    % \begin{equation}
+    %     \sq \phi = {V\ped{eff}}_{,\phi}; \quad V\ped{eff}(\phi) \equiv V(\phi) - \ln{A(\phi)} \cdot T\ped{m}.
+    % \end{equation}
+    % % Here, $T\ped{m}= g\^{\mu\nu}T\indices*{^{\mathrm{(m)}}_{\mu\nu}}$ 
+    % Here, $T\ped{m}=A^4 \widetilde{T}\ped{m}$, $ \widetilde{T}\ped{m}=  {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu} $, is the trace of the Einstein-frame matter SE tensor. 
+    % We model the matter content as non-interacting, perfect fluids indexed $s$ with equation-of-state parameter $w_s$ such that the trace becomes
+    % \begin{equation}
+    %     \widetilde{T}\ped{m}\rvert\ped{p.f.} = \sum_s (3w_s-1 )\widetilde{\rho}_s
+    % \end{equation}
+    
+    % For a perfect fluid, $T\ped{m}\rvert\ped{p.f.}=-\rho + 3p$, and in the non-relativistic limit, we have $p\to 0$. %\speak{Maybe write ${}\ap{(m)}T\_{\mu\nu}$ etc.}
 
     % \paragraph{Fifth force.} %
 
@@ -117,7 +149,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \begin{equation}
         A(\phi)  = 1 +\frac{1}{2} \pclosed{\frac{\phi}{M}}^2 + \mathscr{O}\Big( {(\phi/M)}^4 \Big).
     \end{equation}
-    The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}
+    We consider the matter content to be dust-like, so that $\widetilde{T}\ped{m}\simeq -\widetilde{\rho}$. The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}\lcomment{Mention $V\ped{eff}=V(\phi)+A(\phi)\rho$?}
     \boxedeq{eq:cosmo:quintessence:asymmetron_effective_potential}{
     V\ped{eff}(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho}{\mu^2M^2}-1} \phi^2 + V_0.}
     %
@@ -133,7 +165,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
 
 
 
-    Let $\upsilon\equiv\rho\ped{m}/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values (VEVs)
+    Let $\upsilon\equiv\rho/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values (VEVs)
     \begin{equation}
         \phi_0 = 0 \quad \lor \quad \phi_\pm = \phi_\infty \pclosed{\bar{\kappa} \pm  \sqrt{\bar{\kappa}^2 +  1- \upsilon }},%\frac{\kappa \pm \sqrt{\kappa^2 + 4\lambda\mu^2 \pclosed{1- \rho\ped{m}/(\mu^2M^2)} } }{2\lambda}
     \end{equation}
