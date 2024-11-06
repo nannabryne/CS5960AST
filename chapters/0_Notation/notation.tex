@@ -34,7 +34,7 @@ The metric raises and lowers indices of tensors, e.g.~$x\^\mu = g\^{\mu\nu}x\_\n
 \paragraph{Derivatives.} 
 We sometimes adopt the comma-notation for partial derivatives $\partial\_\mu$ and covariant derivatives $\nabla\_\mu$. For a scalar $\phi$, we have:
 % $f\_{,\mu}\equiv \partial\_\mu f = \pdv{f}{x\^\mu}$
-\begin{subequations}
+\begin{subequations}\label{eq:notation:comma_notation_darivatives}
     \begin{align}
         \phi\_{,\mu} &\equiv \partial\_\mu \phi = \pdv{\phi}{x\^\mu} =\pclosed{\partial\_0, \partial\_i }, \\
         \phi\_{;\mu} &\equiv \nabla\_\mu \phi = \partial\_\mu \phi . 
@@ -42,7 +42,7 @@ We sometimes adopt the comma-notation for partial derivatives $\partial\_\mu$ an
     \end{align}
 \end{subequations}
 The d'Alembertian reads
-\begin{equation}
+\begin{equation}\label{eq:notation:dAlembertian}
     \sq \phi  = \nabla\^\mu \nabla\_\mu \phi = \frac{1}{\sqrt{-g}} \partial\_\mu \pclosed{ \sqrt{-g} \partial\^\mu \phi},
 \end{equation}
 and we use $\sq\nped{M} \equiv \partial\^\mu\partial\_\mu$ to specify the Minkowski box operator.
@@ -50,7 +50,7 @@ and we use $\sq\nped{M} \equiv \partial\^\mu\partial\_\mu$ to specify the Minkow
 
 \paragraph{Miscellanea.} %
 We make use of the notation
-\begin{subequations}
+\begin{subequations}\label{eq:notation:sym_and_antisym_tensor_notation}
     \begin{align}
         T\_{(\mu\nu)} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} + T\_{\nu\mu}  }, \\
         T\_{[\mu\nu]} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} - T\_{\nu\mu}  }.
@@ -103,19 +103,31 @@ where $\vec{k}$ is the propagation direction (see~\cref{sec:GR:gws}).
 % $[\tens{\eta}] = \text{diag}(-1, 1, 1, 1)$
 
 \subsubsection{Fourier transforms} %
-We use the following convention for the Fourier transform of $f(x)$, $\tilde{f}(k)$, and its inverse, where $x$ and $k$ are Lorentz four-vectors:
-\begin{equation}
+% We use the following convention for the Fourier transform of $f(x)$, $\tilde{f}(k)$, and its inverse, where $x$ and $k$ are Lorentz four-vectors:
+% \begin{equation}
+%     \begin{split}
+%         % f(x) &= \int \del[2 3]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
+%         % f(x) &= \int \del[2]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
+%         % f(x) &= \int \del{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
+%         f(x) &=  \integ[4][(2\ppi)^4]{k} \eu[-\im k\cdot x]\tilde{f}(k),  \\
+%         % f(x) &= \integ{\frac{\diff[4]k}{(2\ppi)^4}} \eu[-\im k\cdot x] \tilde{f}(k) \\
+%         % f(x) &= \int \! \frac{d^4\! k}{(2\ppi)^4} \, \eu[-\im k\cdot x] \tilde{f}(k) \\
+%         \tilde{f}(k) &= \integ[4]{x} \eu[\im k \cdot x] f(x) .
+%     \end{split}
+% \end{equation}
+% Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$. 
+We use the following convention for the continuous Fourier transform of $f(\vec{x})$, $\tilde{f}(\vec{k})$, and its inverse, where $\vec{x}$ and $\vec{k}$ are three-vectors:
+\begin{equation}\label{eq:notation:Fourier_transform_and_inverse}
     \begin{split}
-        % f(x) &= \int \del[2 3]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
-        % f(x) &= \int \del[2]{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
-        % f(x) &= \int \del{k}  \eu[-\im k\cdot x] \tilde{f}(k) \\
-        f(x) &=  \integ[4][(2\ppi)^4]{k} \eu[-\im k\cdot x]\tilde{f}(k),  \\
-        % f(x) &= \integ{\frac{\diff[4]k}{(2\ppi)^4}} \eu[-\im k\cdot x] \tilde{f}(k) \\
-        % f(x) &= \int \! \frac{d^4\! k}{(2\ppi)^4} \, \eu[-\im k\cdot x] \tilde{f}(k) \\
-        \tilde{f}(k) &= \integ[4]{x} \eu[\im k \cdot x] f(x) .
+        \tilde{f}(\vec{k}) &=\mathop{\mathcal{F}}_{\vec{k}} {\cclosed{f(\vec{x})}}  =\integ[3]{x}\eu[\im \vec{k}\cdot \vec{x}]f(\vec{x}), \\
+        f(\vec{x}) &=  \mathop{\mathcal{F}}_{\vec{x}}^{-1}  {\cclosed{\tilde{f}(\vec{k})}}  =\integ[3][(2\ppi)^3]{k} \eu[-\im \vec{k}\cdot \vec{x}]\tilde{f}(\vec{k}).
     \end{split}
 \end{equation}
-Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$.
+% Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$. 
+Note that this gives $\partial\_i \leftrightarrow +\im k\_i$.
+
+
+
 
 
 \subsubsection{Special functions} %

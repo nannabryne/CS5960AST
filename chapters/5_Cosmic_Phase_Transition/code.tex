@@ -30,7 +30,7 @@
 
 
 
-As test bed for our theory we use the \texttt{C++}-code \gwasevolution~\citep{christiansenAsevolutionRelativisticNbody2023}; an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGevolutionCosmologicalNbody2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
+As test bed for our theory we use the \texttt{C++}-code \gwasevolution~\citep{christiansenGravitationalWavesDark2024};\footnote{Code available on~\url{https://github.com/oyvach/AsGRD} (November 2024).} an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGevolutionCosmologicalNbody2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
 We will describe the code in broad terms, and refer to~\citet{christiansenAsevolutionRelativisticNbody2023,christiansenAsimulationDomainFormation2024,adamekGevolutionCosmologicalNbody2016,daverioLatfield2LibraryClassical2016} for more detailed explanations.
 
 % The particle-mesh code \gevolution{} is
@@ -74,7 +74,7 @@ The code automatically outputs scalar quantities like extremal values of $\chi$ 
 
 
 \paragraph{Fast Fourier transforms.} %
-We write the discrete Fourier transform (DFT) $\tilde{f}(\lcoordk)$ of $f(\lcoordx)$ as
+We write $f(\lcoordx)$ and its discrete Fourier transform (DFT) $\tilde{f}(\lcoordk)$ as
 \begin{equation}\label{eq:PT:gwas:DFT_definition}
     f(\lcoordx) = \frac{1}{N_\#^3} \sum_{\lcoordk } \eu[-2\ppi \im \lcoordk \lcoordx/N_\# ]\tilde{f}(\lcoordk) , \quad \tilde{f}(\lcoordk) = \sum_{\lcoordx} \eu[+2\ppi \im \lcoordk \lcoordx/N_\#  ]f(\lcoordx).
 \end{equation}

@@ -19,7 +19,7 @@ We review the equations this thin-wall approximation is built on. %
 Let us consider three steps that are not completely independent, but describe a certain order of things.
 \begin{description}
     \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Here:} Set $\alpha=2$ to get matter domination.
-    \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said PT. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Here:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
+    \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said phase transition. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Here:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
     \item[Step three:] Consider a topological defect that is the product of the aforementioned symmetry break. The defect with vanishing thickness possess dynamics derived from the Nambu--Goto action. Add a perturbation to the wall normal coordinate. We find the TT-part of the corresponding stress--energy tensor and consider this as a source of gravitational waves. \textbf{Here:} We consider the domain wall scenario, specifically a planar wall. The equation of motion for this perturbation is expended into eigenvalues and solved thereafter. We use this as input to the Nambu--Goto SE tensor, which in turn source tensor perturbations.
 \end{description}
 Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. 
@@ -115,7 +115,7 @@ We mention that to solve the equation of motion for the (unperturbed) wall norma
         % \integ{y}\eu[\im k_y y]\integ{z}\eu[\im k_z z]\Diracdelta(z-\epsilon)  = \integ{y} \eu[\im k_z\sum_k \epsilon_k ]\eu[\im k_y y]
         \tilde{T}_{xx} \sim \Diracdelta(k_x)I\ped{s} =\Diracdelta(k_x) \integ{y} \eu[\im k_z \sum_k \epsilon_k ]\eu[\im k_y y].
     \end{equation}
-    By the same argumentation as in~\cref{app:derivations:jacobianger}, we get
+    By the same argumentation as in~\cref{app:walls:SE_tensor:FT_SE}, we get
     % \begin{equation}
     %     \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \textstyle{\sum\nolimits_{j}} n_l p_j) %= \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \frac{\ppi}{L}\textstyle{\sum\nolimits_{j}} n_j j)
     % \end{equation}
@@ -160,7 +160,7 @@ We mention that to solve the equation of motion for the (unperturbed) wall norma
         \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
     \end{equation}
     but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
-    If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:derivations:jacobianger}) does not hold either. 
+    If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. 
 
     \speak{Comment on why we extract the summation from the integration.}
 

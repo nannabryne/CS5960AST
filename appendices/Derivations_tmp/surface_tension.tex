@@ -8,23 +8,41 @@
 % ---------------------------------------------------------
 
 
-
-
-
-
-The variation of the quintessence action~\cref{eq:cosmo:quintessence:quintessence_action_Einstein} gives the time-time component of the stress--energy tensor
+We have from~\citet{christiansenGravitationalWavesDark2024} that the surface tension of a thin domain wall is
+\begin{equation}\label{eq:derivations:surface_tension:sigma_V_eff}
+    \sigma \simeq \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
+\end{equation}
+which for the effective symmetron potential, $V\ped{eff}(\phi) = \frac{\lambda}{4}\phi^2\pclosed{\phi^2 -\phi_+^2} $, reduces to 
 \begin{equation}
-    {}^{(\phi)}\widetilde{T}\indices{^0_0} = 
+    \sigma \simeq  \sqrt{\frac{\lambda}{2}}\integ{\phi}[\phi_-][\phi_+]  (\phi_+ - \phi) = \frac{4}{3}\sqrt{\frac{\lambda}{2}} \phi_+^3,
+\end{equation}
+where $\phi_\pm = \pm \phi_\infty \sqrt{1-\upsilon}$.
+
+
+\comment{Either fix, or just cite~\citet{christiansenGravitationalWavesDark2024}}
+
+The total Jordan-frame SE tensor is $\widetilde{T}\indices{^\mu_\nu} =  {}^{(\phi)}\widetilde{T}\indices{^\mu_\nu} + {}\ap{(m)}\widetilde{T}\indices{^\mu_\nu} $. %
+The variation of the quintessence action~\cref{eq:cosmo:quintessence:quintessence_action_Einstein} gives the time-time component %of the stress--energy tensor 
+\begin{equation}
+    -\widetilde{T}\indices{^0_0} = 
+    % - {}^{(\phi)}\widetilde{T}\indices{^0_0} - {}^{(m)}\widetilde{T}\indices{^0_0} = 
+    % \widetilde{\rho}_{(\phi)} = 
+    A^{-4}(\phi)\bclosed{\frac{1}{2a^2}\pclosed{\dot{\phi}^2 - {(\vec{\nabla}\phi)}^2 } +V(\phi)  + \rho\ped{(m)}}
 \end{equation}
 in the Jordan frame. %
-The surface energy density becomes
-\begin{equation}
-    \sigma =- \integ{z}.
-\end{equation}
+The surface energy density becomes~\citep{llinaresDomainWallsCoupled2014,pressDynamicalEvolutionDomain1989}
+\begin{align}
+    \sigma &= \integ{(az)}[-\infty][\infty] \widetilde{\rho}_{(\phi)} \nonumber \\%{}^{(\phi)}\widetilde{T}\iud{0}{0}
+    &= \phi_\infty^2 a\integ{z}_{-}
+\end{align}
 We 
 
+\citet{llinaresDomainWallsCoupled2014}
 
 \subsection{Symmetron example}
+    We use ... to 
+
+
     
 
 

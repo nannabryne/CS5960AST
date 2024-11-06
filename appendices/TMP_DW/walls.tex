@@ -1,0 +1,62 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% App. A: Dws  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% -----------------------------------------
+% labels: \label{[type]:walls:[name]}
+% -----------------------------------------
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+\newcommand\hypsurf{\ALIAShypsurf}
+\newcommand\pert{\ALIASpert}
+\newcommand\sppt{\ALIASsppt}
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+
+We present a gathered set of calculations for symmetron, planar domain walls in expanding spacetime. From~\cref{sec:pertwalls:mywalls} we have the FLRW spacetime $\Manifold$ with metric $g\_{\mu\nu}=a^2 \eta\_{\mu\nu}$ and Cartesian comoving coordinates $x\^\mu = (\tau, \vec{x})=(\tau, x,y,z)$. Embedded in this is a hypersurface $\hypsurf$ with induced metric $\gamma\_{ab}$ and coordinates $\xi\^a$, $a=0,1,2$. %We choose the embedding function $X\^\mu(\xi\^a)$ given by $X$
+The hypersurface represents our domain wall, and the induced metric is
+\begin{equation}
+    \gamma\_{ab} = g\_{\mu\nu} \partial\_{a} X\^\mu \partial\_{b} X\^\nu,
+\end{equation}
+with determinant
+\begin{equation}
+    \gamma \equiv \det(\gamma) = \tilde{\epsilonup}\^{abc}\gamma\_{a0}\gamma\_{b1}\gamma\_{c2},
+\end{equation}
+where $\tilde{\epsilonup}$ is the Levi--Civita symbol, 
+giving $\sqrt{-g}\sim a\sqrt{-\gamma}$. Additionally, we define $\hat{\gamma}\_{ab} \equiv a^{-2}\gamma\_{ab}$, s.t. $\gamma =a^6 \hat{\gamma}$.
+
+
+Consider the covariant action, proportional to the area swept by the worldsheet,
+\begin{equation}\label{eq:walls:covariant_action}
+    S = \integ[4]{x\sqrt{-g}}[\Manifold] \hat{\mathcal{L}}\rvert\ped{wall} = \underbrace{\integ{x_\bot}[\partial \Manifold] aT\iud{0}{0}}_{-\sigma} \integ[3]{\xi \sqrt{-\gamma}}[\hypsurf] = -\sigma \integ[3]{\xi}a^3 \sqrt{\hat{\gamma}},
+\end{equation}
+where $x_\bot$ represents the comoving coordinate perpendicular to $\hypsurf$. %
+We choose $\xi\^a = (\tau, x, y)$ and let $z=z\ped{w}=z_0 + \epsilon(\xi\^a)$ describe the position of the wall, where $z_0$ is a constant and $\epsilon$ is a linear perturbation. 
+
+We use the symmetron effective potential
+\begin{equation}\label{eq:walls:symmetron_effective_potential}
+    V\ped{eff}(\phi=\phi_\infty \chi) = \phi_{\infty}^4 \cdot \frac{\lambda}{4} \chi^2 \bclosed{\chi^2 - 2\chi_+^2},
+\end{equation}
+where $\chi_+ = \sqrt{1-\upsilon}$ and $\phi_\infty=\mu/\sqrt{\lambda}$.
+
+
+
+
+\section{Surface tension}\label{app:walls:surface_tension}
+    {\subimport{./}{surface_tension.tex}}
+
+
+\section{Stress--energy tensor}\label{app:walls:SE_tensor}
+    {\subimport{./}{SE_tensor.tex}}
+
+\section{Wall dynamics}\label{app:walls:dynamics}
+    {\subimport{.}{dynamics.tex}}

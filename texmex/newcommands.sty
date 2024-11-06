@@ -163,6 +163,8 @@
 
 \NewCommandCopy{\underscore}{\_}
 
+
+
 % \renewcommand{\^}[1]{\indices{^{#1}}} 
 % \renewcommand{\_}[1]{\indices{_{#1}}}
 
@@ -180,6 +182,11 @@
     \underscore{#1}%
 \fi
 }  % tens. index lower
+
+
+\newcommand\iud[2]{\indices{^{#1}_{#2}}}
+\WithSuffix\newcommand\iud*[2]{\indices*{^{#1}_{#2}}}
+
 
 % ****************************************************
 % Could maybe define a "tensorial enviroment"
@@ -394,7 +401,7 @@
 % codes:
 \providecommand*{\latfield}{\textsc{lat}field2}
 \providecommand*{\gevolution}{\texttt{gevolution}}
-\providecommand*{\gwasevolution}{\texttt{gwasevolution}}
+\providecommand*{\gwasevolution}{\texttt{AsGRD}}
 
 % programming:
 \providecommand*{\Python}{\texttt{Python}}

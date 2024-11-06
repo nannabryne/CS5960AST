@@ -12,13 +12,13 @@
 \newcommand{\myemph}{\textbf}
 \newcommandx\Zv[1][1=\nu]{\Cylindrical[#1][Z]}
 \newcommandx\zn[1][1=n]{\Cylindrical[#1][z]}
-\newcommandx\Rn[1][1=n]{\Cylindrical[#1][R]}
+\newcommandx\Rzn[1][1=n]{\Cylindrical[#1][R]}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
 
-We will in the following define the first and second kinds of the (regular) Bessel functions, spherical Bessel functions and Riccati--Bessel functions, collectively denoted $\Zv[]$, $\zn[]$ and $\Rn[]$, respectively. The second kinds are also called the Neumann, spherical Neumann and Riccati--Neumann functions. Conventions are shown in~\cref{tab:cylinder:Bessel_functions}, and we use $\nu\in\Complex$ and $n\in\Integer$ to denote the order.
+We will in the following define the first and second kinds of the (regular) Bessel functions, spherical Bessel functions and Riccati--Bessel functions, collectively denoted $\Zv[]$, $\zn[]$ and $\Rzn[]$, respectively. The second kinds are also called the Neumann, spherical Neumann and Riccati--Neumann functions. Conventions are shown in~\cref{tab:cylinder:Bessel_functions}, and we use $\nu\in\Complex$ and $n\in\Integer$ to denote the order.
 
 
 \begin{table}[h]
@@ -61,7 +61,7 @@ is $y(x) = \Zv(x)$; a linear combination of the (regular) $\nu$th-order \newconc
 % \begin{itemize}
 %     \item $\Zv[]$ rep
 %     \item $\zn[]$
-%     \item $\Rn[]$ 
+%     \item $\Rzn[]$ 
 % \end{itemize}
 
 % \section{IDK}
@@ -80,12 +80,12 @@ A variation of this is the spherical Bessel's equation
 \begin{equation}
     x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0
 \end{equation}
-has the general solution $y(x)=\zn[n](x)$; a linear combination of the \newconcept{spherical Bessel} (first kind, $\sphBessel$) and \newconcept{Neumann} (second kind, $\sphNeumann$) \newconcept{functions}.
+has the general solution $y(x)=\zn[n](x)$; a linear combination of the $n$th-order \newconcept{spherical Bessel} (first kind, $\sphBessel$) and \newconcept{Neumann} (second kind, $\sphNeumann$) \newconcept{functions}.
 Another useful class of solutions is the general solution to
 \begin{equation}
     x^2 y'' + \pclosed{ x^2 - n(n+1) }y = 0,
 \end{equation}
-which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel} (first kind, $\RiccatiBessel$) and \newconcept{Riccati--Neumann} (second kind, $\RiccatiNeumann$) \newconcept{functions}.
+which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{Riccati--Bessel} (first kind, $\RiccatiBessel$) and \newconcept{Riccati--Neumann} (second kind, $\RiccatiNeumann$) \newconcept{functions}.
 
 
 
@@ -126,7 +126,7 @@ which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel
 
 %     \begin{align}
 %         \zn^{(i)}(x) &= \sqrt{\frac{\ppi}{2x}} \Zv[n+1/2]^{(i)}(x) \\
-%         \Rn^{(i)}(x) &= (-1)^{i-1} x\zn^{(i)}(x)
+%         \Rzn^{(i)}(x) &= (-1)^{i-1} x\zn^{(i)}(x)
 %     \end{align}
 
 \section{Explicit formulas} 
@@ -155,9 +155,10 @@ which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel
         \begin{subequations}
             \begin{align}
                 \sphBessel[n](x) &= +x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\sin{x}}{x}}  ,\\
-                \sphNeumann[n](x) &= - x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}}.
+                \sphNeumann[n](x) &= - x^n \pclosed{-\frac{1}{x} \dv{}{x}}^n \pclosed{ \frac{\cos{x}}{x}},
             \end{align}
         \end{subequations}
+        are the spherical Bessel functions. %
         Observe that 
         \begin{subequations}
             \begin{align}
@@ -165,7 +166,7 @@ which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel
                 \sphNeumann(x) &= (-1)^{n+1} \sphBessel[-(n+1)](x). \\
             \end{align}
         \end{subequations}
-        We have
+        We also have the Riccati--Bessel functions
         \begin{subequations}\label{eq:cylinder:Riccati_Bessel}
             \begin{align}
                 \RiccatiBessel[n](x) &= +x\sphBessel[n](x) = +\sqrt{\frac{\ppi x}{2}} \Bessel[n+1/2](x),\\
@@ -188,11 +189,11 @@ which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel
     We list some notable recurrence relations:
     \begin{subequations}
         \begin{align}
-           \frac{2\nu}{x}\Zv(x) &= \Zv[\nu-1](x) + \Zv[\nu+1](x), \\
-            2\Zv'(x) &= \Zv[\nu-1](x) - \Zv[\nu+1](x), \\
-            \Zv[\nu]'(x) &= \Zv[\nu-1](x) - \frac{\nu}{x}\Zv[\nu](x), \\
+           \frac{2\nu}{x}\Zv(x) &= \Zv[\nu-1](x) + \Zv[\nu+1](x), \label{eq:derivations:cylinder:recurr_Z_plus}\\
+            2\Zv'(x) &= \Zv[\nu-1](x) - \Zv[\nu+1](x),\label{eq:derivations:cylinder:recurr_Z_minus} \\
+            \Zv[\nu]'(x) &= \Zv[\nu-1](x) - \frac{\nu}{x}\Zv[\nu](x),\label{eq:derivations:cylinder:recurr_Z_minus_vol2} \\
             % \Zv[\nu]' &= \Zv[\nu-1]' - \frac{\nu}{x}\Zv[\nu] \\
-            \pclosed{x^\nu \Zv[\nu](x)}' &= x^\nu \Zv[\nu-1] (x), \\
+            \pclosed{x^\nu \Zv[\nu](x)}' &= x^\nu \Zv[\nu-1] (x),\label{eq:derivations:cylinder:der_idk_Z_123} \\
             \zn'(x) &= \frac{n}{x}\zn(x) -\zn[n+1](x).
         \end{align}
     \end{subequations}
@@ -209,6 +210,7 @@ which is $y(x)= \Rn(x)$; a linear combination of the \newconcept{Riccati--Bessel
 
 
 \subsection{Asymptotic behaviour}
+    \iftime{Write something}
 
     \begin{subequations}\label{eq:cylinder:prop:JacobiAnger}
         \begin{align}

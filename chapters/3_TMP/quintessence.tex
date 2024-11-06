@@ -47,20 +47,20 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     % In the Jordan frame, matter fields---denoted collectively by $\Psi$---couple minimally to gravity. In the Einstein frame where the Einstein--Hilbert action assumes its usual form, matter may couple non-minimally to the scalar $\phi$
     The dynamics of the quintessence field $\phi$ is described by the Einstein-frame action (see~\cref{sec:GR:diffgeo:conformal})
     \begin{equation}\label{eq:cosmo:quintessence:quintessence_action_Einstein}
-        S =\integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}^2}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{m}[\widetilde{g}\_{\mu\nu} , \Psi],
+        S =\integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}^2}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{(m)}[\widetilde{g}\_{\mu\nu} , \Psi],
     \end{equation} 
     where $\Psi$ collects all matter fields, which couple minimally to the Jordan-frame metric,
     \begin{equation}
         \widetilde{g}\_{\mu\nu} = A^2 (\phi) g\_{\mu\nu}% = A^2(\phi) \cdot  a^2(\tau) \eta_{\mu\nu},
     \end{equation}
-    and $S\ped{m}$ is the total matter action. 
+    and $S\ped{(m)}$ is the total matter action. 
     Without the presence of this last term, the equation of motion for the scalar field is $\sq \phi = V_{,\phi}$. %
     % \nc{Some article}[appendix?] shows that 
-    The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{3} A_{,\phi}\widetilde{T}\ped{m}$, where $\widetilde{T}\ped{m}= {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu}$ is the trace of the Jordan-frame matter SE tensor~\citep{hinterbichlerSymmetronCosmology2011,christiansenAsevolutionRelativisticNbody2023}. In particular, 
+    The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{3} A_{,\phi}\widetilde{T}\ped{(m)}$, where $\widetilde{T}\ped{(m)}= {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu}$ is the trace of the Jordan-frame matter SE tensor~\citep{hinterbichlerSymmetronCosmology2011,christiansenAsevolutionRelativisticNbody2023}. In particular, 
     \begin{equation}
-        \sq\phi = V_{,\phi}(\phi) - A^{3}(\phi) A_{,\phi}(\phi)\widetilde{T}\ped{m}.
+        \sq\phi = V_{,\phi}(\phi) - A^{3}(\phi) A_{,\phi}(\phi)\widetilde{T}\ped{(m)}.
     \end{equation}
-    We model the matter content as non-interacting, perfect fluids indexed $s$ with equation-of-state parameter $w_s$ such that the trace becomes $\widetilde{T}\ped{m}\rvert\ped{p.f.} = \sum_s (3w_s-1 )\widetilde{\rho}_s$.  
+    We model the matter content as non-interacting, perfect fluids indexed $s$ with equation-of-state parameter $w_s$ such that the trace becomes $\widetilde{T}\ped{(m)}\rvert\ped{p.f.} = \sum_s (3w_s-1 )\widetilde{\rho}_s$.  
     % The equation of motion for $\phi$ reads
     % \begin{equation}
     %     \sq \phi = {V\ped{eff}}_{,\phi},%; \quad V\ped{eff}(\phi) \equiv V(\phi) - A^3(\phi) A_{,\phi}(\phi) \widetilde{T}\ped{m},
@@ -116,9 +116,9 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
 
     The dynamic equation-of-state parameter is 
     \begin{equation}
-        w_\phi =  \frac{\rho_\phi}{p_\phi}= \frac{\frac{1}{2a^2} \dot{\phi}^2 - V(\phi) }{\frac{1}{2a^2} \dot{\phi}^2 + V(\phi)},
+        w_{(\phi)} =  \frac{p_{(\phi)}}{\rho_{(\phi)}}= \frac{\frac{1}{2a^2} \dot{\phi}^2 - V(\phi) }{\frac{1}{2a^2} \dot{\phi}^2 + V(\phi)},
     \end{equation}
-    for which $\lim_{\dot{\phi}\to 0}{w_\phi}=w_\Lambda = -1$. %
+    for which $\lim_{\dot{\phi}\to 0}{w_{(\phi)}}=w_\Lambda = -1$. %
     These models are thus often proposed in context of dark-energy models to explain the accelerated cosmic expansion. We will not consider this directly in this project.
 
 
@@ -149,11 +149,11 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \begin{equation}
         A(\phi)  = 1 +\frac{1}{2} \pclosed{\frac{\phi}{M}}^2 + \mathscr{O}\Big( {(\phi/M)}^4 \Big).
     \end{equation}
-    We consider the matter content to be dust-like, so that $\widetilde{T}\ped{m}\simeq -\widetilde{\rho}$. The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}\lcomment{Mention $V\ped{eff}=V(\phi)+A(\phi)\rho$?}
+    We consider the matter content to be dust-like, so that $\widetilde{T}\ped{(m)}\simeq -\widetilde{\rho}\ped{(m)}$. The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}\lcomment{Mention $V\ped{eff}=V(\phi)+A(\phi)\rho$?}
     \boxedeq{eq:cosmo:quintessence:asymmetron_effective_potential}{
-    V\ped{eff}(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho}{\mu^2M^2}-1} \phi^2 + V_0.}
+    V\ped{eff}(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho\ped{(m)}}{\mu^2M^2}-1} \phi^2 + V_0.}
     %
-    This potential becomes unstable when $\rho\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua. From the cosmological perspective, ignoring $\kappa$, we imagine an initially dense region in the universe where a scalar field oscillates slightly around zero. The energy density dilutes and eventually reaches $\rho=\rho_\ast$, spontaneously breaking the $\Zn$ symmetry, and separates the scalar field into domains according to their sign at the time. A schematic of this evolution is shown in~\cref{fig:cosmo:quintessence:asymmetron_demo}. The potential barriers created at this \emph{phase transition} correspond to the topological solitons discussed in~\cref{sec:cosmo:defects:dws}; namely cosmic domain walls.
+    This potential becomes unstable when $\rho\ped{(m)}\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua. From the cosmological perspective, ignoring $\kappa$, we imagine an initially dense region in the universe where a scalar field oscillates slightly around zero. The energy density dilutes and eventually reaches $\rho\ped{(m)}=\rho_\ast$, spontaneously breaking the $\Zn$ symmetry, and separates the scalar field into domains according to their sign at the time. A schematic of this evolution is shown in~\cref{fig:cosmo:quintessence:asymmetron_demo}. The potential barriers created at this \emph{phase transition} correspond to the topological solitons discussed in~\cref{sec:cosmo:defects:dws}; namely cosmic domain walls.
     %  The potential barriers created at this \emph{phase transition} \checkthis{represent topological defects}, e.g.~domain walls.
 
     % \begin{figure}[h]
@@ -165,11 +165,11 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
 
 
 
-    Let $\upsilon\equiv\rho/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values (VEVs)
+    Let $\upsilon\equiv\rho\ped{(m)}/\rho_\ast = \rho\ped{(m)}/(\mu^2M^2)$. By setting $V\ped{eff,\phi}=0$, we find the vacuum expectation values (VEVs)
     \begin{equation}
         \phi_0 = 0 \quad \lor \quad \phi_\pm = \phi_\infty \pclosed{\bar{\kappa} \pm  \sqrt{\bar{\kappa}^2 +  1- \upsilon }},%\frac{\kappa \pm \sqrt{\kappa^2 + 4\lambda\mu^2 \pclosed{1- \rho\ped{m}/(\mu^2M^2)} } }{2\lambda}
     \end{equation}
-    where we defined $\bar{\kappa} = \kappa / (2\mu \sqrt{\lambda}) $ and $\phi_\infty = \mu/\sqrt{\lambda}$. Note that for the symmetron ($\kappa=0$), since the field is real, VEV is zero before SSB. We determine the stability of these vacua by evaluating $V\ped{eff,\phi\phi}$ at $\phi=\phi_0,\phi_\pm$ and see that $\phi_0$ remains stable until $\rho=\rho_\ast$.\footnote{This is not entirely true for the asymmetron, but we will not discuss this here.}
+    where we defined $\bar{\kappa} = \kappa / (2\mu \sqrt{\lambda}) $ and $\phi_\infty = \mu/\sqrt{\lambda}$. Note that for the symmetron ($\kappa=0$), since the field is real, VEV is zero before SSB. We determine the stability of these vacua by evaluating $V\ped{eff,\phi\phi}$ at $\phi=\phi_0,\phi_\pm$ and see that $\phi_0$ remains stable until $\rho\ped{(m)}=\rho_\ast$.\footnote{This is not entirely true for the asymmetron, but we will not discuss this here.}
 
 
     \subsubsection{Screening}

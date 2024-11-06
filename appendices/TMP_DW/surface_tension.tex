@@ -1,0 +1,52 @@
+% |||||||||||||||||||||||||||||||||
+% |||||| C.1 Surface tension ||||||
+% |||||||||||||||||||||||||||||||||
+
+% ---------------------------------------------------
+% labels: \label{[type]:walls:surface_tension:[name]}
+% ---------------------------------------------------
+
+
+
+
+
+We identified the surface tension $\sigma$ in~\cref{eq:walls:covariant_action}, resulting in $\sigma = a \integ{z}[\Real] \rho(z) $. We use the quintessence action (\cref{eq:cosmo:quintessence:quintessence_action_Einstein}) to find~\citep{llinaresDomainWallsCoupled2014}
+\begin{align}
+    \rho/\phi_\infty^2 = \frac{1}{2a^2} \pclosed{\dot{\phi}^2 - {(\vec{\nabla}\phi)}^2} - V(\phi),
+\end{align}
+and use this as an estimate for the energy contained in the wall. %
+In the quasi-static limit, we find
+\begin{equation}
+    \sigma\ped{w} = \frac{\phi_\infty^2 }{2}a \integ{z}[-\infty][\infty] \cclosed{
+        \frac{{(\vec{\nabla}\chi\ped{w})}^2}{a^2} + \frac{\mu^2}{4} \pclosed{\chi\ped{w}^4 - \chi_+^4 - 2 (\chi\ped{w}^2-\chi_+^2)}
+    },
+\end{equation}
+where $\chi\ped{w}$ is given by~\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}. The resulting surface energy density is 
+\begin{equation}\label{eq:walls:surface_tension:sigma_vol1}
+    \sigma\ped{w} = \frac{2\sqrt{2}}{3} \frac{\mu^3}{\lambda} \chi_+^3.
+\end{equation}
+Note that this is the same in both the Jordan and Einstein frame~\citep{llinaresDomainWallsCoupled2014}.
+
+\citet{christiansenGravitationalWavesDark2024} states that the surface tension of a thin domain wall is
+\begin{equation}\label{eq:walls:surface_tension:sigma_V_eff}
+    \sigma\ped{w} \simeq \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
+\end{equation}
+which for the effective symmetron potential~\cref{eq:walls:symmetron_effective_potential}
+% $V\ped{eff}(\phi) = \frac{\lambda}{4}\phi^2\pclosed{\phi^2 -\phi_+^2} $, 
+reduces to 
+\begin{equation}\label{eq:walls:surface_tension:sigma_vol2}
+    \sigma\ped{w} \simeq  \sqrt{\frac{\lambda}{2}}\integ{\phi}[\phi_-][\phi_+]  (\phi_+^2 - \phi^2) = \frac{4}{3}\sqrt{\frac{\lambda}{2}} \phi_+^3,
+\end{equation}
+where $\phi_\pm = \pm \phi_\infty \sqrt{1-\upsilon}$. We see that~\cref{eq:walls:surface_tension:sigma_vol1,eq:walls:surface_tension:sigma_vol2} are identical.
+
+
+
+\subsection{Adjusting the limits}\label{app:walls:surface_tension:new_limits}
+    If the asymptotic scalar field values are not tracking $\phi_\pm$ well, as the situation in~\cref{app:stablesym}, we approximate the surface tension by~\cref{eq:walls:surface_tension:sigma_V_eff} with the substitution $\phi_\pm\to \pm \breve{\phi}= \pm\phi_\infty \breve{\chi}$, i.e.
+    \begin{equation}
+        \sigma\ped{w} \simeq %\frac{\sqrt{2}}{3}\frac{\mu^3}{\lambda} 
+        \sqrt{\frac{\lambda}{2}}\integ{\phi}[-\breve{\phi}][\breve{\phi}]  (\phi_+^2 - \phi^2)
+        % \sqrt{\frac{\lambda}{2}} \bclosed{\phi_+^2 \phi - \frac{1}{3}\phi^3}^{\breve{\phi}}_{-\breve{\phi}}
+        = \frac{\sigma_\infty}{2} (3\chi_+^2- \breve{\chi}^2)\breve{\chi},
+    \end{equation}
+    where $\sigma_\infty = 2\mu^3\sqrt{2}/(3\lambda)$.

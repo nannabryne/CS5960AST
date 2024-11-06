@@ -1,0 +1,95 @@
+% |||||||||||||||||||||||||||||||||
+% |||||| C.2 Stress--energy ||||||
+% |||||||||||||||||||||||||||||||||
+
+% ---------------------------------------------------
+% labels: \label{[type]:walls:SE_tensor:[name]}
+% ---------------------------------------------------
+
+
+
+
+% \hl{FIX! OR DROP.} %
+The variation of~\cref{eq:walls:covariant_action} gives~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, for which we require
+% We rewrite the variation
+\begin{equation}
+    \Fdv{\sqrt{-\gamma}}{g\_{\mu\nu}} =\frac{-1}{2\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}} = \frac{-a^4}{2\sqrt{-\gamma}} \Fdv{\hat{\gamma}}{\eta\_{\mu\nu}} .
+\end{equation}
+% We compute the 
+To leading order in $\epsilon$, we get
+% \begin{equation}
+%     \Fdv{\gamma}{g\_{ab}}  = -a^4 \eta\_{ab}, \quad
+%     \Fdv{\gamma}{g\_{a3}}  = -a^4 \partial\_a \epsilon, \quad
+%     \Fdv{\gamma}{g\_{33}}  =  0.
+% \end{equation}
+\begin{equation}\label{eq:walls:SE_tensor:variation_of_det_gamma}
+    \Fdv{\hat{\gamma}}{\eta\_{ab}}  = -\eta\^{ab}, \quad
+    \Fdv{\hat{\gamma}}{\eta\_{a3}}  = -\partial\^a \epsilon, \quad
+    \Fdv{\hat{\gamma}}{\eta\_{33}}  =  0.
+\end{equation}
+% \begin{equation}
+%     \Fdv{\gamma}{g\_{\mu\nu}} = -a^4 \left(\begin{array}{cccc}
+%         -1 & 0 & 0 & \partial_0 \epsilon  \\
+%         0 & 1 & 0 & \partial_1 \epsilon \\
+%         0 & 0 & 1 & \partial_2 \epsilon \\
+%         \partial_0 \epsilon & \partial_1 \epsilon & \partial_2 \epsilon& 0  \\
+%     \end{array}\right) + \mathscr{O}(\epsilon^2)
+% \end{equation}
+Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\^{\mu\nu}\rvert\nped{NG} + \mathscr{O}(\epsilon^2)$, i.e.
+\begin{equation}
+    W\^{\mu\nu}(\tau, \vec{x}) = \frac{\sigma \Diracdelta(z-z\ped{w})}{a^3}\Fdv{\hat{\gamma}}{\eta\_{\mu\nu}}.
+\end{equation}
+% \begin{equation}
+%     \begin{split}
+%         T\^{\mu\nu}
+%     \end{split}
+% \end{equation}
+
+
+
+
+
+\subsection{Fourier-space SE tensor}\label{app:walls:SE_tensor:FT_SE}
+    % We let $\epsilon = \varepsilon(\tau) \sppt(y)$ and $\sppt(y)=\sin{py}$ in this subsection.
+    Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, we look at~\cref{eq:pertwalls:gws:def_I_s_and_a} for $\sppt(y)=\sin{py}$ in $\epsilon= \varepsilon(\tau) \sppt(y)$. 
+    The trick is to identify the Jacobi--Anger expansion,~\cref{eq:cylinder:prop:JacobiAnger_sin},
+    % \footnote{
+    %     The analogous relation for cosine is obtained by inserting $bx \to bx + \ppi/2$ to get an extra factor $\im^n$ inside the sum.
+    % }
+    \begin{equation}
+    f(x) \equiv\eu[\im a \sin{bx}] = \sum_{n=-\infty}^{\infty} \Bessel[n](a) \eu[\im n bx].
+    \end{equation}
+    We postulate that the Fourier transform $\tilde{f}(\omega)\equiv\integ{x} \sum_{n} F_n(x;\omega)$ is 
+    \begin{align}
+    \tilde{f}(\omega) &= %\integ{x} f(x)\eu[\im \omega x] =
+        \sum_{n} \Bessel[n](a) \integ{x}\eu[\im (\omega+ nb)x]\nonumber \\
+        &= 2\ppi  \sum_{n} \Bessel[n](a) \Diracdelta(\omega + nb).
+    \end{align}
+    We assumed that the %integration over $x$ and summation over $n$ 
+    integration and summation operators commute, which is known to be true for $\integ{x}\sum_{n}\abs{F_n(x)} < \infty$ (Fubini's theorem). \lcomment{Comment?} 
+    % \speak{Why is this not the case, again?} \blahblah
+    For %$g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb{( \eu[\im bx] + \eu[-\im bx]) } f(x)$, we find
+    \begin{equation}
+    g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb \pclosed{\eu[\im bx] + \eu[-\im bx] } f(x),
+    \end{equation}
+    we find:
+    \begin{align}
+    \tilde{g}(\omega) &= 
+    \frac{cb}{2}\sum_{n} \Bessel[n](a) \integ{x} \bclosed{\eu[\im (\omega+ (n+1)b)x] +\eu[\im (\omega+ (n-1)b)x] }\nonumber \\
+    &= \ppi cb \sum_{n} \bclosed{ \Bessel[n+1](a) +  \Bessel[n-1](a)} \Diracdelta(\omega + nb ) \nonumber \\
+    &= \frac{2\ppi cb}{a} \sum_n n \Bessel[n](a) \Diracdelta(\omega + nb ),
+    \end{align}
+    where in the last line we uses~\cref{eq:derivations:cylinder:recurr_Z_plus}. 
+
+    Now, the expressions in~\cref{eq:pertwalls:gws:def_I_s_and_a} are
+    % We use this to find the relevant expressions in~\cref{sec:pertwalls:gws:Fourier_SE_tensor}:
+    \begin{subequations}\label{eq:derivations:jacobianger:I_s_and_a}
+    \begin{align}
+        I\ped{s} %&= \integ{y} \sum_{n} \Bessel[n](k_z \varepsilon)  \eu[\im np y  ] \eu[\im k_y y ]\nonumber \\
+        & = 2\ppi \sum_{n}  \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np),\label{eq:derivations:jacobianger:I_s_only} \\
+        I\ped{a} %&= \integ{y} \sum_{n} \Bessel[n](k_z \varepsilon)  \eu[\im np y  ] \eu[\im k_y y ]\nonumber \\
+        & = 2\ppi \frac{p}{k_z} \sum_{n} n \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np) = - \frac{k_y}{k_z}I\ped{s}.\label{eq:derivations:jacobianger:I_a_only}
+    \end{align}
+    \end{subequations}
+
+

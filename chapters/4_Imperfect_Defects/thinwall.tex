@@ -214,7 +214,7 @@ Note that this is not the same as going beyond the thin-wall limit, but rather a
 Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies. 
 
 % \subsection{Stress--energy tensor}\label{sec:pertwalls:thinwall:SE_tensor}
-We perform the variation in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} for the scenario in question to find the SE tensor associated with the wall motion. The detailed calculation is found in~\cref{app:derivations:NG_action:SE_tensor}. The non-vanishing spatial components are
+We perform the variation in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} for the scenario in question to find the SE tensor associated with the wall motion. The detailed calculation is found in~\cref{app:walls:SE_tensor}\rcomment{Maybe not...}. The non-vanishing spatial components are
 \begin{equation}\label{eq:pertwalls:thinwall:SE_tensor}
     \begin{split}
         % T\_{ab}(\tau, \vec{x})
@@ -246,7 +246,7 @@ where indices $a,b=0,1,2$ and $z\ped{w}=z_0 + \epsilon$. The tensor $\Tw\^{\mu\n
 
     % Until now, the equations have been model-independent, given constant surface tension ($\dot{\sigma}= 0$) and no energy bias ($v_+ - v_- = 0$).
     If we allow the surface tension to vary, $\sigma=\sigma(\tau)$, %$\stackrel{\tau\to \infty}{\to} \sigma_\infty$
-    we need to put this inside of the integral in the Nambu--Goto action in~\cref{eq:pertwalls:thinwall:Nambu_Goto_action_dw_FLRW}. The calculation is presented in~\cref{app:derivations:NG_action}. We immediately see that this is equivalent to letting $a^3\to a^3 \sigma$, which amounts to
+    we need to put this inside of the integral in the Nambu--Goto action in~\cref{eq:pertwalls:thinwall:Nambu_Goto_action_dw_FLRW}. The calculation is presented in~\cref{app:walls:dynamics}. We immediately see that this is equivalent to letting $a^3\to a^3 \sigma$, which amounts to
     % with the substitution
     % \begin{equation}
     %     3\mathcal{H} =  \frac{3}{a} \dv{a}{\tau} \to \frac{3}{a\sigma^{1/3}} \dv{a\sigma^{1/3}}{\tau} =  3\frac{\dot{a}}{a} +  \frac{\dot{\sigma}}{\sigma} = 3\dv{\ln{a}}{\tau} + \dv{\ln{\sigma}}{\tau} %3\dot{\ln{a}} + \dot{\ln{\sigma}}
@@ -270,9 +270,9 @@ where indices $a,b=0,1,2$ and $z\ped{w}=z_0 + \epsilon$. The tensor $\Tw\^{\mu\n
     \begin{equation}
         \ddot{\varepsilon} + \pclosed{3\dot{a}/a + \dot{\sigma}/\sigma}\dot{\varepsilon} +p^2 \varepsilon = 0.
     \end{equation}
-    This extra term will introduce the model-dependence. We show in~\cref{app:derivations:surface_tension} that the surface tension in the thin-wall approximation is
+    This extra term will introduce the model-dependence since the surface tension is given by (see~\cref{app:walls:surface_tension})%$We show in~\cref{app:walls:surface_tension} that the surface tension in the thin-wall approximation is
     \begin{equation}\label{eq:pertwalls:thinwall:surface_tension}
-        \sigma\ped{w} \simeq \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
+        \sigma\simeq \integ{\phi}[\phi_-][\phi_+] \sqrt{ 2V\ped{eff}(\phi)-2V\ped{eff}(\phi_\pm) },
     \end{equation}
     % ---the dependence on $V\ped{eff}(\phi)$
     % seeing as the surface tension in the thin-wall limit is given by

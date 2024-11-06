@@ -41,7 +41,7 @@
 
 
 
-Below, we describe the reasoning behind the choice of parameters. As a starting point, we consider the fiducial set of symmetron parameters $a_\ast =0.33$, $\xi_\ast = 3.33\times 10^{-4}$ and $\beta_\ast = 1$, following~\citet{christiansenCosmologicalSimulationsPhase2024}. This gives Compton wavelength $L\nped{C}\approx 1~\Mpch$ and asymptotic wall thickness $\delta_\infty = \sqrt{2} L\nped{C}\sim \sqrt{2} ~\Mpch$.
+Below, we describe the reasoning behind the choice of parameters. As a starting point, we consider the fiducial set of symmetron parameters $a_\ast =0.33$, $\xi_\ast = 3.33\times 10^{-4}$ and $\beta_\ast = 1$, following~\citet{christiansenCosmologicalSimulationsPhase2024}, that will be defined below (\cref{eq:PT:sims:mapping_symmetron_params}). This gives Compton wavelength $L\nped{C}\approx 1~\Mpch$ and asymptotic wall thickness $\delta_\infty = \sqrt{2} L\nped{C}\sim \sqrt{2} ~\Mpch$.
 %We refer to this as $\vec{\theta}_\ast\ap{fid}=(0.33, 3.33\times 10^{-1}, 1)$.
 
 
@@ -49,7 +49,7 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
     % In the toy model, we are considering ``infinitely'' broad domain walls with vanishing thickness. We need therefore a simulation box of size that is comparable to the universe, 
     % Size of universe ~ 5000 Mpc/h0
 
-    We use a comoving simulation box size that is comparable to the size of the universe---order $\mathscr{O}(\mathrm{Gpc}/h_0)$---so that $\delta\ped{w}\ll L_\#$ and the separation between the walls is $\sim L_{\#}/2$. If we want to resolve the Compton wavelength, this requires $N_\# \geq L_\#/L\nped{C} \gtrsim L~[\Mpch]$. However, since we are modelling the entire formation, conventional walls (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) will initially be infinitely thick and therefore interact with each other. 
+    We use a comoving simulation box size that is comparable to the size of the universe---order $\mathscr{O}(\mathrm{Gpc}/h_0)$---so that $\delta\ped{w}\ll L_\#$ and the separation between the walls is $\sim L_{\#}/2$. If we want to resolve the Compton wavelength, this requires $N_\# \geq L_\#/L\nped{C} \gtrsim \mathscr{O}(10^3)$. However, since we are modelling the entire formation, conventional walls (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) will initially be infinitely thick and therefore interact with each other. 
 
     % On one hand, we want the comoving box to be large so that the domain wall thickness $\delta\ped{dw}$ is much smaller than the box size $L_\#$ and the separation between the main wall and its counterpart (the ``anti-wall'') are far away from each other. On the other hand, to resolve the Compton wavelength $L\nped{C}$, we require $\Delta_\# \leq L\nped{C}$ and in turn $N_\# \geq L_\#/L\nped{C}$.
 
@@ -142,7 +142,7 @@ Below, we describe the reasoning behind the choice of parameters. As a starting 
 
     % \comment{Some extra simulations for convergence testing!}
 
-    An additional, completely homogeneous simulation (no walls present) is run with the same background as simulation~\simnum{1}, except that the symmetron initial conditions are optimised as described~\cref{app:stablesym} with $\redshift\ped{i}=2.03$. %In particular, 
+    An additional, completely homogeneous simulation (no walls present) is run with the same background as simulation~\simnum{1}, except that the symmetron initial conditions are optimised as described~\cref{app:stablesym} with $\redshift\ped{i}=2.03$ and $\redshift\ped{f}=1.6$. %In particular, 
     
     
 

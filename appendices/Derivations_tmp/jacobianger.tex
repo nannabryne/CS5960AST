@@ -13,11 +13,10 @@
 \newcommand{\sppt}{\ALIASsppt}
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
-\important{Relevant for~\cref{sec:pertwalls:gws:Fourier_SE_tensor}} 
+% \important{Relevant for~\cref{sec:pertwalls:gws:Fourier_SE_tensor}} 
 
 
-We look at $\sppt(y)=\sin{py}$ in $\epsilon= \varepsilon(\tau) \sppt(y)$. 
-
+Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, we look at~\cref{eq:pertwalls:gws:def_I_s_and_a} for $\sppt(y)=\sin{py}$ in $\epsilon= \varepsilon(\tau) \sppt(y)$. 
 The trick is to identify the Jacobi--Anger expansion,~\cref{eq:cylinder:prop:JacobiAnger_sin},
 % \footnote{
 %     The analogous relation for cosine is obtained by inserting $bx \to bx + \ppi/2$ to get an extra factor $\im^n$ inside the sum.
@@ -32,25 +31,29 @@ We postulate that the Fourier transform $\tilde{f}(\omega)\equiv\integ{x} \sum_{
         &= 2\ppi  \sum_{n} \Bessel[n](a) \Diracdelta(\omega + nb).
 \end{align}
 We assumed that the %integration over $x$ and summation over $n$ 
-integration and summation operators commute, which is known to be true for $\integ{x}\sum_{n}\abs{F_n(x)} < \infty$ (Fubini's theorem). \comment{Comment.} 
+integration and summation operators commute, which is known to be true for $\integ{x}\sum_{n}\abs{F_n(x)} < \infty$ (Fubini's theorem). \rcomment{Comment?} 
 % \speak{Why is this not the case, again?} \blahblah
-For $g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb{( \eu[\im bx] + \eu[-\im bx]) } f(x)$, we find
+For %$g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb{( \eu[\im bx] + \eu[-\im bx]) } f(x)$, we find
+\begin{equation}
+    g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb \pclosed{\eu[\im bx] + \eu[-\im bx] } f(x),
+\end{equation}
+we find:
 \begin{align}
     \tilde{g}(\omega) &= 
     \frac{cb}{2}\sum_{n} \Bessel[n](a) \integ{x} \bclosed{\eu[\im (\omega+ (n+1)b)x] +\eu[\im (\omega+ (n-1)b)x] }\nonumber \\
-    &= \ppi cb \sum_{n} \bclosed{ \Bessel[n+1](a) +  \Bessel[n-1](a)}  \Diracdelta(\omega + nb ) \nonumber \\
+    &= \ppi cb \sum_{n} \bclosed{ \Bessel[n+1](a) +  \Bessel[n-1](a)} \Diracdelta(\omega + nb ) \nonumber \\
     &= \frac{2\ppi cb}{a} \sum_n n \Bessel[n](a) \Diracdelta(\omega + nb ),
 \end{align}
-where in the last line we \hl{use the identity XXX}.
+where in the last line we uses~\cref{eq:derivations:cylinder:recurr_Z_plus}. 
 
-
-We use this to find the relevant expressions in~\cref{sec:pertwalls:gws:Fourier_SE_tensor}:
+Now, the expressions in~\cref{eq:pertwalls:gws:def_I_s_and_a} are
+% We use this to find the relevant expressions in~\cref{sec:pertwalls:gws:Fourier_SE_tensor}:
 \begin{subequations}\label{eq:derivations:jacobianger:I_s_and_a}
     \begin{align}
         I\ped{s} %&= \integ{y} \sum_{n} \Bessel[n](k_z \varepsilon)  \eu[\im np y  ] \eu[\im k_y y ]\nonumber \\
         & = 2\ppi \sum_{n}  \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np),\label{eq:derivations:jacobianger:I_s_only} \\
         I\ped{a} %&= \integ{y} \sum_{n} \Bessel[n](k_z \varepsilon)  \eu[\im np y  ] \eu[\im k_y y ]\nonumber \\
-        & = 2\ppi \frac{p}{k_z} \sum_{n} n \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np) = - \frac{k_y}{k_z}I\ped{s},\label{eq:derivations:jacobianger:I_a_only}
+        & = 2\ppi \frac{p}{k_z} \sum_{n} n \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np) = - \frac{k_y}{k_z}I\ped{s}.\label{eq:derivations:jacobianger:I_a_only}
     \end{align}
 \end{subequations}
 
