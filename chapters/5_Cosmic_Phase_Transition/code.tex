@@ -30,8 +30,8 @@
 
 
 
-As test bed for our theory we use the \texttt{C++}-code \gwasevolution~\citep{christiansenGravitationalWavesDark2024};\footnote{Code available on~\url{https://github.com/oyvach/AsGRD} (November 2024).} an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGevolutionCosmologicalNbody2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
-We will describe the code in broad terms, and refer to~\citet{christiansenAsevolutionRelativisticNbody2023,christiansenAsimulationDomainFormation2024,adamekGevolutionCosmologicalNbody2016,daverioLatfield2LibraryClassical2016} for more detailed explanations.
+As test bed for our theory we use the \texttt{C++}-code \asgrd~\citep{christiansenGravitationalWavesDark2024};\footnote{Code available on~\url{https://github.com/oyvach/AsGRD} (November 2024).} an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGeneralRelativityCosmic2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
+We will describe the code in broad terms, and refer to~\citet{christiansenAsevolutionRelativisticNbody2023,christiansenAsimulationDomainFormation2024,adamekGevolutionCosmologicalNbody2016,christiansenGravitationalWavesDark2024,daverioLatfield2LibraryClassical2016} for more detailed explanations.
 
 % The particle-mesh code \gevolution{} is
 % It is parallelised in accordance with the MPI standard.   
@@ -50,7 +50,12 @@ We will describe the code in broad terms, and refer to~\citet{christiansenAsevol
 The general setup is a three-dimensional box of equal side lengths $L_\#$ in $\Mpch$ on a lattice of $N_\#^3$ points, giving a spatial resolution of $\Delta_\#=L_\#/N_\#$. %We refer to the points in the configuration space as 
 A Cartesian coordinate system defines the comoving coordinate $\vec{x}=(x,y,z)$ and wave vector $\vec{k}=(k_x, k_y, k_z)$. The mapping from lattice coordinates $\lcoordx= (\lcoord{i}, \lcoord{j}, \lcoord{k})$ to comoving is $\vec{x}=\lcoordx\cdot  \Delta_\#$, where $\lcoord{i},\lcoord{j}, \lcoord{k}\in [0, N_\#-1]\in \Integer$. 
 Correspondingly in Fourier space, we have lattice coordinates $\lcoordk =(\lcoord{u}, \lcoord{v}, \lcoord{w})$, where $\lcoord{u}, \lcoord{v}, \lcoord{w} \in\pm[0, N_\#/2-1]$, and the mapping $\vec{k} =\lcoordk \cdot k_\# $. Here,  $k_\#=2\ppi/L_\#$ is the fundamental frequency. 
-The box's boundaries are \emph{periodic} which means that $\lcoordx = \lcoordx + \hat{\lcoordx}L_\#$. Furthermore, the box is decomposed in rod domains for MPI-parallelisation.
+The box's boundaries are \emph{periodic} which means that for any function $f(\lcoordx)$, we have
+% $f(\lcoord{i}, \lcoord{j}, \lcoord{k}) = f(\lcoord{i}+N_1 L_\# +\lcoord{i}+N_2 L_\#  + \lcoord{k}+N_3 L_\# )$ for $N_i \in \Integer$.
+\begin{equation}\label{eq:PT:code:periodic_boundaries}
+    f(\lcoord{i}, \lcoord{j}, \lcoord{k}) = f(\lcoord{i}+N_1 L_\# +\lcoord{i}+N_2 L_\#  + \lcoord{k}+N_3 L_\# ) \quad\forall \,  N_i \in \Integer.
+\end{equation}
+Furthermore, the box is decomposed in rod domains for MPI-parallelisation.
 % \begin{equation}
 %     \lcoordx = \lcoordx + 
 % \end{equation}
@@ -111,7 +116,7 @@ The code measures length in units of $L_\#$ and the DFT sign convention is oppos
     % The discretised versions of these are \blahblah
 
 
-    \gwasevolution{} solves discretised versions of these via a numerical-integration protocol chosen by the user. The fourth-order Runge-Kutta scheme and Leap-frog method are amongst the options. %See~\citep{adamekGevolutionCosmologicalNbody2016} for more details. 
+    \asgrd{} solves discretised versions of these via a numerical-integration protocol chosen by the user. The fourth-order Runge-Kutta scheme and Leap-frog method are amongst the options. %See~\citep{adamekGevolutionCosmologicalNbody2016} for more details. 
     The size of the time step $\Delta_\tau^{(\psi)}$ for the solver of the field $\psi$ is given in terms of the Courant factor~\citep{christiansenAsimulationDomainFormation2024}
     \begin{equation}
         C\ped{f}^{(\psi)} = v\ped{g}^{(\psi)} \frac{\Delta_\tau^{(\psi)}}{\Delta_\#},

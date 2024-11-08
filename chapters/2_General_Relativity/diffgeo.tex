@@ -12,7 +12,7 @@
 
 % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
-\newcommand\Chr{\ChristophelSym}
+\newcommand\Chr{\ChristoffelSym}
 \newcommand*\Kd{\Krondelta}
 \newcommand*\Ric{\RicciScalar}
 \newcommand\cfac{\Upsilon}
@@ -38,7 +38,7 @@
 % Albert Einstein formulated GR in terms of differentiable \emph{manifolds} and their geometry, a mathematical discipline known as differential geometry. 
 % Albert 
 Einstein formulated GR in terms of spacetime geometries, using the mathematical discipline known as differential geometry. 
-Whilst most prominent in physics, differential geometry knows many applications in natural sciences. This~\lcnamecref{sec:GR:diffgeo} briefly introduces basic concepts and terminology of this mathematical branch. For formal definitions, see e.g.~\citet{carrollSpacetimeGeometryIntroduction2019}.
+Whilst most prominent in physics, differential geometry has many applications in natural sciences. This~\lcnamecref{sec:GR:diffgeo} briefly introduces basic concepts and terminology of this mathematical branch. For formal definitions, see e.g.~\citet{carrollSpacetimeGeometryIntroduction2019}.
 % Differential geometry knows many applications in natural sciences, most importantly in physics.
 
 
@@ -67,21 +67,21 @@ Its inverse satisfies $g\^{\mu\kappa}g\_{\kappa\nu} = \Kd{^\mu_\nu} $, and we us
 
 
 \subsubsection{Pseudo-Riemannian manifolds}
-A manifold $\Manifold$ with a metric $g\_{\mu\nu}$ that put into its \emph{canonical form} is $\text{diag}(-1,+1,+1, \dots,+1)$ is called Lorentzian or \newconcept{pseudo-Riemannian}. For all practical purposes, it is to say that the spacetime has one time dimension and arbitrary number ($d$) of spatial dimensions. We say that $\Manifold$ has $d+1$ dimensions with coordinates $x\^\mu$, and emphasise that Greek indices runs from $\mu=0,i$ and Latin ones $i = 1, \dots , d$. Now, there exists a unique connection $\ChristophelSym{\rho}{\mu\nu}$ constructed from the metric, called the \newconcept{Christoffel symbols} (see~\cref{eq:notation:Christophel_symbols}). From this we get important structures such as the \newconcept{covariant derivative} $\nabla\_\mu$ and the \newconcept{Riemann curvature tensor} $\mathcal{R}\indices{^\rho_{\sigma\mu\nu}}$ (see~\cref{eq:notation:Riemann_tensor}). Further, one can construct the \newconcept{Ricci tensor} $\mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}}$, 
+A manifold $\Manifold$ with a metric $g\_{\mu\nu}$ that put into its \emph{canonical form} is $\text{diag}(-1,+1,+1, \dots,+1)$, \comment{is} called Lorentzian or \newconcept{pseudo-Riemannian}. For all practical purposes, it is to say that the spacetime has one time dimension and arbitrary number ($d$) of spatial dimensions. We say that $\Manifold$ has $d+1$ dimensions with coordinates $x\^\mu$, and emphasise that Greek indices runs from $\mu=0,i$ and Latin ones $i = 1, \dots , d$. Now, there exists a unique connection $\ChristoffelSym{\rho}{\mu\nu}$ constructed from the metric, called the \newconcept{Christoffel symbols} (see~\cref{eq:notation:Christoffel_symbols}). From this we get important structures such as the \newconcept{covariant derivative} $\nabla\_\mu$ and the \newconcept{Riemann curvature tensor} $\mathcal{R}\indices{^\rho_{\sigma\mu\nu}}$ (see~\cref{eq:notation:Riemann_tensor}). Further, one can construct the \newconcept{Ricci tensor} $\mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}}$, 
 % \begin{equation}
 %     \mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}} = g\_{\lambda \rho} \mathcal{R}\indices{_{\rho\mu\lambda\nu}} 
 % \end{equation}
 % We will enc
 the contraction of which is the \newconcept{Ricci scalar} $\mathcal{R}= g\^{\mu\nu} \mathcal{R}\_{\mu\nu}$. 
 % We will encounter the \newconcept{Einstein tensor} $\mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - g\_{\mu\nu}  \mathcal{R}/2$. %
-The \newconcept{Bianchi identities},
+The \newconcept{Bianchi identities},~\citep{carrollSpacetimeGeometryIntroduction2019}
 \begin{equation}\label{eq:GR:diffgeo:Bianchi_identities}
     \Ric\_{\mu\nu\alpha\beta;\gamma} + 
     \Ric\_{\mu\nu\gamma\alpha;\beta} + 
     \Ric\_{\mu\nu\beta\gamma;\alpha} = 0,
 \end{equation}
 in GR reduce to %$\nabla\^\nu \mathcal{G}\_{\mu\nu}=0$.
-$\mathcal{G}\indices{_{\mu\nu}^{;\nu}}=0$, where %$\mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - g\_{\mu\nu}  \mathcal{R}/2$ is the \newconcept{Einstein tensor}.
+$\mathcal{G}\indices{_{\mu\nu}^{;\nu}}= \nabla\^\nu \mathcal{G}\_{\mu\nu}= 0$, where %$\mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - g\_{\mu\nu}  \mathcal{R}/2$ is the \newconcept{Einstein tensor}.
 \begin{equation}\label{eq:GR:diffgeo:Einstein_tensor}
     \mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - \frac{1}{2} g\_{\mu\nu}  \mathcal{R}
 \end{equation}
@@ -109,7 +109,7 @@ is the \newconcept{Einstein tensor}. \iftime{Write better.}
 
 
     A \newconcept{hypersurface} of a $(p+q)$-dimensional manifold $\Manifold$ is a submanifold of codimension 1, i.e. with $p+q-1$ dimensions. %\comment{Brief intro.}
-    We write the metric in~\newconcept{Gaussian normal coordinates} $\{\zzz, \xi\^a \}$ as
+    We write the metric in~\newconcept{Gaussian normal coordinates} $\{\zzz,\, \xi\^a \}$ as
     \begin{equation}
         {ds}^2 = \varsigma {\diff \zzz }^2 + \gamma\_{ab}{\diff \xi\^a}{\diff \xi\^b}, 
     \end{equation}
@@ -120,18 +120,15 @@ is the \newconcept{Einstein tensor}. \iftime{Write better.}
             +1 &\text{if \(\varSigma\) is timelike,} \\
         \end{cases}
     \end{equation}
-    where $n\^\mu = (\partial_{\zzz})\^\mu$ is the normal vector. This means that spacelike hypersurfaces have timelike normal vectors, and vice versa.
+    where $n\^\mu = (\partial_{\zzz})\^\mu$ is the normal vector. This means that spacelike hypersurfaces have timelike normal vectors, and vice versa. %
     % \blahblah
     % \comment{SHORT TEXT ABOUT HYPERSURFACES!}
-
-
     % Now $\hypacc{K}\_{ab}=-$\comment{INSERT} is the \newconcept{extrinsic curvature} (or first fundamental form) of 
-
-    We will define the \newconcept{extrinsic curvature} as a tensor $\hypacc{K}\_{ab}$ on $\varSigma$ by
+    We define the \newconcept{extrinsic curvature} as a tensor $\hypacc{K}\_{ab}$ on $\varSigma$ by
     \begin{equation}\label{eq:GR:diffgeo:extrinsic_curvature}
         \hypacc{K}\_{ab} \equiv - X\indices{^\mu_{,a}}  X\indices{^\nu_{,b}} \nabla\_\nu n\_\mu.
     \end{equation}
-    Note that this definition tends to vary in references~\citep{carrollSpacetimeGeometryIntroduction2019}.
+    Note that this definition tends to vary in references~\citep{carrollSpacetimeGeometryIntroduction2019}. 
 }
 
 
@@ -143,7 +140,7 @@ is the \newconcept{Einstein tensor}. \iftime{Write better.}
     \begin{equation}\label{eq:GR:diffgeo:conformal_trafo}
         \wt{g}\_{\mu\nu} = \cfac^2(x) g\_{\mu\nu} , \quad \exists\, \cfac(x) > 0,
     \end{equation}
-    where $x$ denotes spacetime events on $\Manifold$, and $\cfac$ is called the \newconcept{conformal factor}. The convenience of conformal equivalence comes from the simple fact that any function of $g\_{\mu\nu}$ can be thought of as a function of $\wt{g}\_{\mu\nu}$ and $\cfac(x)$. 
+    where $x$ denotes spacetime events on $\Manifold$, and $\cfac$ is called the \newconcept{conformal factor}. The convenience of conformal equivalence comes from the simple fact that any function of $g\_{\mu\nu}$ can be thought of as a function of $\wt{g}\_{\mu\nu}$ and $\cfac(x)$~\citep{carrollSpacetimeGeometryIntroduction2019}. 
 
 
 
@@ -156,7 +153,7 @@ is the \newconcept{Einstein tensor}. \iftime{Write better.}
         C\indices{^\rho_{\mu\nu}} = \cfac^{-1} 
         \pclosed{ 2\Krondelta{^\rho_{(\mu}} \cfac\_{,\nu)}  - g\_{\mu\nu} g\^{\rho\sigma} \cfac\_{,\sigma} }.
     \end{equation}
-    We obtain neat expressions for the Riemann and Ricci tensors and the Ricci scalar, which we will not list here.\footnote{\comment{COMMENT?}}
+    We obtain neat expressions for the Riemann and Ricci tensors and the Ricci scalar, which we will not list here.%\footnote{\comment{COMMENT?}}
 
     Consider a scalar field $\phi$. We get  $\phi\_{\tilde{;}\mu}= \phi\_{;\mu} = \phi\_{,\mu}$ %$\wt{\nabla}\_\mu\phi = \nabla\_\mu=\phi\_{,\mu}$ 
     for the covariant derivative, and as for the d'Alembertian, 

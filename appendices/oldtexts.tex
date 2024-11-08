@@ -55,8 +55,8 @@
     
     \blahblah
     {
-    \newcommand*\Chr{\ChristophelSym}
-    \newcommand*\Chrt{\ChristophelSym[\tilde{\Gamma}]}
+    \newcommand*\Chr{\ChristoffelSym}
+    \newcommand*\Chrt{\ChristoffelSym[\tilde{\Gamma}]}
     \newcommand*\Kd{\Krondelta}
     \newcommand*\Ri{\RicciScalar}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -300,9 +300,9 @@
             \section*{Gravitational waves}
     
             % ############LOCAL MACROS############
-    \newcommand*{\Chr}[2]{\ChristophelSym{#1}{#2}}  % Christoffel symbols        
+    \newcommand*{\Chr}[2]{\ChristoffelSym{#1}{#2}}  % Christoffel symbols        
     \newcommand*{\barChr}[2]{%
-        \ChristophelSym[\widebar{\Gamma}]{#1}{#2}}  % Christoffel symbols (background)
+        \ChristoffelSym[\widebar{\Gamma}]{#1}{#2}}  % Christoffel symbols (background)
     \newcommand*{\barg}{\widebar{g}}                % background metric
     \newcommandx*{\hTT}[1]{h\indices*{^{\mathrm{TT}}_{ij}}}
     \newcommandx*{\ah}{\bar{h}}
@@ -620,26 +620,26 @@ We let $\sigma$ represent the surface energy density of the wall---a quantity we
 
 Under small changes in $x\^\mu$ on $\hypsurf$, $x^\mu \to x\^\mu + \delta x\^\mu$, we obtain the equation
 \begin{equation}
-    \mathrm{D}\^a e\indices*{^\mu_a} + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+    \mathrm{D}\^a e\indices*{^\mu_a} + \ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
 \end{equation}
 or equivalently,
 \begin{equation}
     % \sq_\hypsurf %
     \mathrm{D}\_a \mathrm{D}\^a %
-    x\^\mu+ \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} \pdv{x^\kappa}{\xi\^a} \pdv{x^\tau}{\xi\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+    x\^\mu+ \ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} \pdv{x^\kappa}{\xi\^a} \pdv{x^\tau}{\xi\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
 \end{equation}
 where $\mathrm{D}\_a$ is the covariant derivative with respect to $\gamma\_{ab}$.
 
 \checkthis{The part of $\delta x\^\mu$ that is tangential to $\hypsurf$ are diffeomorphisms on $\hypsurf$ ($\xi\^a \to \xi\^a + \delta \xi\^a$).} The only physically meaningful component is the transverse one; %Let us write $x\^\mu = $
 \begin{equation}
-   n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+   n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
 \end{equation}
 
 
 Without loss of generality, we may align $\hypsurf$ with e.g.~the first $N-1$ dimensions of $\Manifold$, i.e.~$e\indices*{^{\mu}_{a}}=\Krondelta*{^\mu_a} + \Krondelta*{^\mu_{\nu_\ast}}\epsilon\_{,a}$ and $n\^\mu = \Krondelta*{^\mu_{\nu_\ast}}$, with $\nu_\ast = N$. We let $x\^{\mu} = \Krondelta*{^\mu_a} \xi\^a + \Krondelta*{^\mu_{\nu_\ast}} (\epsilon(\xi\^a) + \zeta ) $ be the embedding function, where $\zeta$ is the $\nu_\ast$-coordinate of $\hypsurf$ in $\Manifold$. Now,
 \begin{equation}
-    % \mathrm{D}^2 x\^{\nu_\ast} + \ChristophelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
-    \mathrm{D}^2 \epsilon + \ChristophelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} \Krondelta{^\kappa_a} \Krondelta{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+    % \mathrm{D}^2 x\^{\nu_\ast} + \ChristoffelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+    \mathrm{D}^2 \epsilon + \ChristoffelSym{{\nu_\ast}}{\kappa\tau} \gamma\^{ab} \Krondelta{^\kappa_a} \Krondelta{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
  \end{equation}
  \important{FIX ME!!! }
 

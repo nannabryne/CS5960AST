@@ -21,12 +21,14 @@ We describe the wall position in $\Manifold$ with $x\^\mu = X\^\mu(\xi\^a)$ wher
 where $Y$ is the normal distance $\hypsurf$~\citep{vilenkinCosmicStringsOther1994}. With~\cref{eq:pertwalls:thinwall:induced_metric} and the identity \( {\delta \gamma} = \gamma \gamma\^{ab} {\delta\gamma_{ab}}  \), we obtain~\citep{vilenkinCosmicStringsOther1994}
 \begin{equation}\label{eq:pertwalls:thinwall:eom_domain_wall_general}
     \hypacc{{\sq}} X\^\mu
-    % + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
-    + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
+    % + n\_\mu\ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
+    + \ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
      = 0,
 \end{equation}
 which is a repetition of~\cref{eq:pertwalls:eom_wall:eom_defect} with degenerate vacua. %
-According to~\citet{vilenkinCosmicStringsOther1994} \speak{(This was~\citeyear{vilenkinCosmicStringsOther1994}, so maybe outdated?)}, no known gauge choice can reduce~\cref{eq:pertwalls:thinwall:eom_domain_wall_general} to an exactly solvable linear equation. %
+According to~\citet{vilenkinCosmicStringsOther1994}, to the best of the authors' knowledge,
+% \speak{(This was~\citeyear{vilenkinCosmicStringsOther1994}, so maybe outdated?)}, 
+no known gauge choice can reduce~\cref{eq:pertwalls:thinwall:eom_domain_wall_general} to an exactly solvable linear equation. %, to the best of the authors' knowledge. %
 If $X\^\mu$ is a known solution, we can study a linear perturbation to this instead, with the perturbed wall trajectory in~\cref{eq:pertwalls:eom_wall:linear_pert_wall_coord}.
 
 
@@ -80,7 +82,7 @@ This is a separable partial differential equation (PDE) and we assume solutions 
 \end{align}
 where $\mathcal{D}(\tau) = \mathcal{H}(\tau)$. %
 The spatial part has solutions that are linear combinations of $\sin{(p_x x+p_y y)}$ and $\cos{(p_x x+p_y y)}$, with $p_x^2+p_y^2 = p^2$. %
-The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindrical[\nu](p\tau)$ with $ \nu=(1-3\alpha)/2$ (see~\cref{app:special}).
+The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindrical[\nu](p\tau)$ with $ \nu=(1-3\alpha)/2$ (see~\cref{app:cylinder},~\cref{eq:cylinder:Bessel_eq_abc}).
 
 
 % \hlineSep
@@ -143,7 +145,7 @@ The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindri
 % \end{equation}
 % We simplify our equations tremendously now that we keep $n\^\mu$ unaffected by the variation, and solve the one-dimensional problem
 % \begin{equation}
-%     \hypacc{\sq} \pert{X}^{z} + \ChristophelSym{z}{\kappa \tau}\gamma\^{ab}  \pert{X}\indices{^\kappa_{,a}} \pert{X}\indices{^\tau_{,b}} + \frac{\rho}{\sigma} = 0.
+%     \hypacc{\sq} \pert{X}^{z} + \ChristoffelSym{z}{\kappa \tau}\gamma\^{ab}  \pert{X}\indices{^\kappa_{,a}} \pert{X}\indices{^\tau_{,b}} + \frac{\rho}{\sigma} = 0.
 % \end{equation}
 % %with
 % % \begin{equation}
@@ -172,7 +174,7 @@ The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindri
 % %
 % Now, $z = z_0 + \epsilon(y\^a)$ and
 % \begin{equation}
-%     \mathrm{D}^2 \epsilon + \ChristophelSym{3}{\kappa\tau} q\^{ab} \pclosed{ \Krondelta{^\kappa_a}\Krondelta{^\tau_b} + 2\Krondelta{^\kappa_a} \Krondelta{^\tau_3} \epsilon\_{,b}  +  \Krondelta{^\kappa_3} \Krondelta{^\tau_3} \epsilon\_{,a}   \epsilon\_{,b}    } + \frac{\Delta v}{\sigma} n\^\mu= 0
+%     \mathrm{D}^2 \epsilon + \ChristoffelSym{3}{\kappa\tau} q\^{ab} \pclosed{ \Krondelta{^\kappa_a}\Krondelta{^\tau_b} + 2\Krondelta{^\kappa_a} \Krondelta{^\tau_3} \epsilon\_{,b}  +  \Krondelta{^\kappa_3} \Krondelta{^\tau_3} \epsilon\_{,a}   \epsilon\_{,b}    } + \frac{\Delta v}{\sigma} n\^\mu= 0
 % \end{equation}
 % \blahblah \comment{Set $\Delta v=0$ etc.}
 % Eventually, we arrive at
@@ -211,7 +213,7 @@ in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} does the trick, and restores $\Dira
 %     \varPhi_\delta (r) \
 % \end{equation}
 Note that this is not the same as going beyond the thin-wall limit, but rather an approximation that includes a thickness that is small enough to not alter the dynamics. %
-Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies. 
+Domain walls of cosmological relevance will have thickness much smaller than the horizon~\citep{garrigaPerturbationsDomainWalls1991}. However, some models will have instances in time when this is not true, and the thickness in fact varies~\citep{hinterbichlerScreeningLongRangeForces2010}.
 
 % \subsection{Stress--energy tensor}\label{sec:pertwalls:thinwall:SE_tensor}
 We perform the variation in~\cref{eq:pertwalls:eom_wall:SE_tensor_NG} for the scenario in question to find the SE tensor associated with the wall motion. The detailed calculation is found in~\cref{app:walls:SE_tensor}\rcomment{Maybe not...}. The non-vanishing spatial components are
@@ -335,19 +337,19 @@ where indices $a,b=0,1,2$ and $z\ped{w}=z_0 + \epsilon$. The tensor $\Tw\^{\mu\n
 
 % Under small changes in $x\^\mu$ on $\hypsurf$, $x^\mu \to x\^\mu + \delta x\^\mu$, we obtain the equation
 % \begin{equation}
-%     \mathrm{D}\^a e\indices*{^\mu_a} + \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+%     \mathrm{D}\^a e\indices*{^\mu_a} + \ChristoffelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
 % \end{equation}
 % or equivalently,
 % \begin{equation}
 %     % \sq_\hypsurf %
 %     \mathrm{D}\_a \mathrm{D}\^a %
-%     x\^\mu+ \ChristophelSym{\mu}{\kappa\tau} q\^{ab} \pdv{x^\kappa}{y\^a} \pdv{x^\tau}{y\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
+%     x\^\mu+ \ChristoffelSym{\mu}{\kappa\tau} q\^{ab} \pdv{x^\kappa}{y\^a} \pdv{x^\tau}{y\^b}  +\frac{v_+-v_-}{\sigma} n\^\mu = 0,
 % \end{equation}
 % where $\mathrm{D}\_a$ is the covariant derivative with respect to $q\_{ab}$.
 
 % \checkthis{The part of $\delta x\^\mu$ that is tangential to $\hypsurf$ are diffeomorphisms on $\hypsurf$ ($y\^a \to y\^a + \delta y\^a$).} The only physically meaningful component is the transverse one; %Let us write $x\^\mu = $
 % \begin{equation}
-%    n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristophelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
+%    n\_\mu\mathrm{D}\^a \mathrm{D}\_a x\^\mu + n\_\mu \ChristoffelSym{\mu}{\kappa\tau} q\^{ab} e\indices*{^\kappa_a}  e\indices*{^\tau_b} +\frac{\Delta v}{\sigma} = 0.
 % \end{equation}
 
 

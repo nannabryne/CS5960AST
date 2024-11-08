@@ -174,3 +174,31 @@ ______
 
 
 
+
+
+
+______
+______
+______
+
+# TO DO
+
+
+- [x] Quintessence $\to$ scalar-field theories
+- [ ] Abstract
+- [ ] Conclusion
+- [x] Fix power-spectra $\to$ squared strain
+- [ ] Rewrite part about dofs in pert. (cosmology)
+- [x] Add "random" references
+- [ ] Comment on why power spectrum is complicated 
+- [ ] Finish section on preliminaries
+
+
+
+## Close to delivery
+- [ ] Reference list
+- [ ] Remove all comments
+- [ ] Notation chapter
+- [ ] Preface
+- [ ] Title(s)
+- [ ] Check figure legends/labels

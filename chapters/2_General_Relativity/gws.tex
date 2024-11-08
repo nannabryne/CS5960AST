@@ -28,33 +28,61 @@
 Gauge freedom, in a general context, refers to the invariance of a physical theory under certain transformations that do not alter the observable quantities or physical content of the theory. In GR, gauge freedom manifests as invariance under coordinate transformations, which is used to simplify the metric or solve Einstein's equation more easily. By choosing an appropriate gauge we can eliminate redundancies. 
 
 Metric perturbations on a homogeneous and isotropic background leaves two tensor degrees of freedom. %
-We isolate the physical, observable components of metric tensor perturbation by selecting the TT gauge. % Mathematically, this is performed by applying the spin-2 projection tensor $\ProjectionLambda{ij}{kl}$. 
-
-
-% \phpar[polarisation]
-If the symmetric $4\cross4$-tensor $h\_{\mu\nu}$ fulfils the TT conditions
+We isolate the physical, observable components of metric tensor perturbation by selecting the TT gauge, % Mathematically, this is performed by applying the spin-2 projection tensor $\ProjectionLambda{ij}{kl}$. 
+% The TT gauge is 
+defined by
 \begin{equation}\label{eq:GR:gws:TT_conditions}
     h\_{0\mu} = 0, \quad h\indices{^i_i} = 0, \quad h\indices{_{ij}^{,i}}=0,
 \end{equation}
-there are necessarily only two degrees of freedom to this quantity. %
+where $\pert{g}\_{\mu\nu}= a^2 (\eta\_{\mu\nu}+h\_{\mu\nu})$. In Fourier space where $\partial\_i \leftrightarrow \im k\_i $, ~\cref{eq:GR:gws:TT_conditions} becomes
+\begin{equation}\label{eq:GR:gws:TT_conditions_Ft}
+    \Ft{h}\_{0\mu} = 0, \quad \Ft{h}\indices{^i_i} = 0, \quad k\^i \Ft{h}\_{ij}=0.
+\end{equation}
+We extract the TT-part of a symmetric $3\cross 3$ tensor by use of the projection tensor in~\cref{eq:notation:projection_tensor}. %
+The spin-2 projector is non-local in space, and we define the TT-projected tensor in coordinate space as
+\begin{equation}
+    h\_{ij}(\tau, \vec{x}) = \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{h}\_{kl}(\tau, \vec{k}). %=  \sum_{P=\polplus, \polcross} \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \Ft{h}_P(\tau, \vec{k}) e\indices*{^{P}_{ij}}(\vec{k}).
+\end{equation}
+% \phpar[polarisation]
+% The TT gauge is defined by 
+% If the symmetric $4\cross4$-tensor $h\_{\mu\nu}$ fulfils the TT conditions
+% \begin{equation}\label{eq:GR:gws:TT_conditions}
+%     h\_{0\mu} = 0, \quad h\indices{^i_i} = 0, \quad h\indices{_{ij}^{,i}}=0,
+% \end{equation}
+% there are necessarily only two degrees of freedom to this quantity. %
 % \footnote{
 %     $16$ components, $-6$ for symmetry, $-4$ for time components, $-1$
 % }
-We can therefore choose a {polarisation basis} to represent the gravitational waves. In the \newconcept{linear polarisation basis} we consider plus- ($\polplus$) and cross- ($\polcross$) polarised states. \comment{Comment about spin 2.} The tensor representation is written as a superposition of these states,
-\begin{equation}
-    h\_{ij} = h_\polplus e\indices*{^{\polplus}_{ij}} + h_\polcross e\indices*{^{\polcross}_{ij}},
-\end{equation}
-with polarisation tensors% $e^{\polplus, \polcross}_{ij}$ 
+% We can therefore choose a {polarisation basis} to represent the gravitational waves. 
+In the \newconcept{linear polarisation basis} we consider plus- ($\polplus$) and cross- ($\polcross$) polarised states. Said basis is given by tensors~\citep{maggioreGravitationalWavesVol2007}
 \begin{equation}
     \begin{split}
-        e^\polplus  (\vec{k}) &= \mhat \otimes \mhat - \nhat \otimes \nhat \quad \text{and} \\
-        e^\polcross (\vec{k}) &= \mhat \otimes \nhat - \nhat \otimes \mhat.
+        e^\polplus  (\vec{k}) &= \mhat \otimes \mhat - \nhat \otimes \nhat,\\% \quad \text{and} \\
+        e^\polcross (\vec{k}) &= \mhat \otimes \nhat - \nhat \otimes \mhat,
     \end{split}
 \end{equation}
-\rephrase{Here, $\vec{k} = k\Ohat$ is the momentum vector, $\Ohat$ is propagation direction of the gravitational waves, $\{\mhat, \nhat, \Ohat \}$ is a right-handed orthonormal basis, and 
+where the momentum vector $\vec{k}= k\Ohat$ defines the right-handed orthonormal basis $\{\mhat, \nhat, \Ohat \}$, and
 \begin{equation}
     e\indices*{^{P}_{ij}} e\indices*{^{ij}_{P'}} = 2\deltaup^{P}_{P'}.
-\end{equation}}
+\end{equation}
+% \comment{Comment about spin 2.}
+The tensor representation is written as a superposition of these states,
+\begin{equation}
+    h_{ij} = h_\polplus e\indices*{^{\polplus}_{ij}} + h_\polcross e\indices*{^{\polcross}_{ij}} = \sum_{P=\polplus, \polcross} 
+    % \integ[3][(2\ppi)^3]{k}   \eu[-\im \vec{k}\cdot \vec{x}]
+    {\mathop{\mathcal{F}}_{\vec{x}}}^{-1}{\cclosed{\Ft{h}_P e\indices*{^{P}_{ij}}}}.
+\end{equation}
+% with polarisation tensors% $e^{\polplus, \polcross}_{ij}$ 
+% \begin{equation}
+%     \begin{split}
+%         e^\polplus  (\vec{k}) &= \mhat \otimes \mhat - \nhat \otimes \nhat \quad \text{and} \\
+%         e^\polcross (\vec{k}) &= \mhat \otimes \nhat - \nhat \otimes \mhat.
+%     \end{split}
+% \end{equation}
+% \rephrase{Here, $\vec{k} = k\Ohat$ is the momentum vector, $\Ohat$ is propagation direction of the gravitational waves, $\{\mhat, \nhat, \Ohat \}$ is a right-handed orthonormal basis, and 
+% \begin{equation}
+%     e\indices*{^{P}_{ij}} e\indices*{^{ij}_{P'}} = 2\deltaup^{P}_{P'}.
+% \end{equation}}
 Note that
 % observe that
 \begin{equation}
@@ -62,16 +90,16 @@ Note that
 \end{equation}
 
 
-We extract the TT-part of a symmetric $3\cross 3$ tensor by use of the projection tensor in~\cref{eq:notation:projection_tensor}. %
-The spin-2 projector is non-local in space, and we define the TT-projected tensor in coordinate space as
-\begin{equation}
-    h\_{ij}(\tau, \vec{x}) = \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{h}\_{kl}(\tau, \vec{k}) =  \sum_{P=\polplus, \polcross} \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \Ft{h}_P(\tau, \vec{k}) e\indices*{^{P}_{ij}}(\vec{k}).
-\end{equation}
-Note that the TT conditions in~\cref{eq:GR:gws:TT_conditions} becomes
-\begin{equation}\label{eq:GR:gws:TT_conditions_Ft}
-    \Ft{h}\_{0\mu} = 0, \quad \Ft{h}\indices{^i_i} = 0, \quad k^i \Ft{h}\_{ij}=0,
-\end{equation}
-in Fourier space.
+% We extract the TT-part of a symmetric $3\cross 3$ tensor by use of the projection tensor in~\cref{eq:notation:projection_tensor}. %
+% The spin-2 projector is non-local in space, and we define the TT-projected tensor in coordinate space as
+% \begin{equation}
+%     h\_{ij}(\tau, \vec{x}) = \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \ProjectionLambda{ij}{kl}(\vec{k}) \Ft{h}\_{kl}(\tau, \vec{k}) =  \sum_{P=\polplus, \polcross} \integ[3][(2\ppi)^3]{k}  \eu[-\im \vec{k}\cdot \vec{x}] \Ft{h}_P(\tau, \vec{k}) e\indices*{^{P}_{ij}}(\vec{k}).
+% \end{equation}
+% Note that the TT conditions in~\cref{eq:GR:gws:TT_conditions} becomes
+% \begin{equation}\label{eq:GR:gws:TT_conditions_Ft}
+%     \Ft{h}\_{0\mu} = 0, \quad \Ft{h}\indices{^i_i} = 0, \quad k^i \Ft{h}\_{ij}=0,
+% \end{equation}
+% in Fourier space.
 
 %  We extract these by use of the spin-2 projection tensor $\ProjectionLambda{ij}{kl}$
 
@@ -188,7 +216,7 @@ in Fourier space.
     \begin{equation}\label{eq:GR:gws:Greens_function_n}
         G(u,v) = \RiccatiBessel[n](u)\RiccatiNeumann[n](v) - \RiccatiNeumann[n](u)\RiccatiBessel[n](v)
     \end{equation}
-    where $\RiccatiBessel[n](x)$ and $\RiccatiNeumann[n](x)$ are the Riccati--Bessel and --Neumann functions (given in \cref{app:special}).
+    where $\RiccatiBessel[n](x)$ and $\RiccatiNeumann[n](x)$ are the Riccati--Bessel and --Neumann functions (given in \cref{app:cylinder}).
         
     % \end{equation}
     % % Otherwise, for a single-substance universe, 
@@ -303,3 +331,26 @@ in Fourier space.
 
 
 
+
+
+\subsubsection{Gravitational radiation}
+    The gravitational-wave energy density is given by~\citep{maggioreGravitationalWavesVol2018}
+    \begin{equation}\label{eq:GR:gws:rho_gw_first}
+        \rho\ped{gw}(\tau) = \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{ \pclosed{\dot{\ah}_P - \mathcal{H}\ah_P }^2(\tau, \vec{x}) }.
+    \end{equation}
+    For sub-horizon modes, $\dot{\ah}_P \sim k \ah_P \gg\mathcal{H} \ah_P  $, and therefore
+    \begin{equation}\label{eq:GR:gws:rho_gw_second}
+        \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{\dot{\ah}_P^2(\tau, \vec{x}) }.
+    \end{equation}
+    With the spatial average over a volume $V$~\citep{dufauxTheoryNumericsGravitational2007,maggioreGravitationalWavesVol2018}
+    % ($\avg{\eu[\im (\vec{k}-\vec{k}')\cdot \vec{x}]}$)
+    \begin{equation}
+        \frac{1}{V} \integ[3]{x}[V\gg \lambdabar^3] \eu[\im (\vec{k}-\vec{k})\cdot \vec{x} ] = \frac{(2\ppi)^3}{V} \Diracdelta[3](\vec{k}-\vec{k}')
+    \end{equation}
+    where $\lambdabar \sim 1/k, 1/k'$, %
+    we obtain
+    \begin{equation}\label{eq:GR:gws:rho_gw_final}
+        \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \frac{1}{V} \sum_{P=+,\times} \integ[3][(2\ppi)^3]{k} \abs{\dot{\Ft{\ah}}_P(\tau, \vec{k})}^2
+    \end{equation}
+    as a measure of the energy density of gravitational waves in an expanding universe, where $\ah_P= a h_P$, $\dot{\ah}_P =\dv*{\ah_P}{\tau}$ and $P=+, \times$.
+    

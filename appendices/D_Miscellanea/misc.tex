@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% App. D: Misc. %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ---------------------------------------
+% labels: \label{[type]:misc:[name]}
+% ---------------------------------------
+
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand\Ft{\ALIASFt}
+\newcommand\ah{\ALIASah}
+\newcommand\lcoord{\ALIASlcoord}
+\newcommand\lcoordx{\ALIASlcoordx}
+\newcommand\lcoordk{\ALIASlcoordk}
+\newcommand\hpA{\ALIAShpA}
+\newcommand\hpB{\ALIAShpB}
+\newcommand\hpC{\ALIAShpC}
+\newcommand\hpAB{\ALIAShpAB}
+\newcommand\hpCR{\ALIAShpCR}
+\newcommand\hpCI{\ALIAShpCI}
+\newcommand\epsA{\ALIASepsA}
+\newcommand\epsB{\ALIASepsB}
+\newcommand\epsC{\ALIASepsC}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+
+
+
+\speak{IF TIME: * Old simulations with $\varepsilon\sim L_\#/4$ *  ``Adjusting the equation of motion'' * Describe plateau in beginning, and the reasoning for discarding those results. Explain how this plateau showed up again in the thin-wall limit when changing the surface tension. *}
+
+\iftime{classification of topological defects }
+
+\section{Simulation~\simnum{6}}\label{app:misc:sim6}
+    % \speak{Figure showing how this fails.}
+    \Cref{fig:misc:sim6:sim6_err} demonstrates how simulation~\simnum{6} ``fails'' after a time period corresponding to $\Delta \tau/L_\#= 1/2$, i.e. conformal time equal half the box length. Results from simulations~\simnum{1} and~\simnum{7} are shown for comparison.
+    % ------------------------------
+    % ----------- FIGURE -----------
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{sim6_err.pdf}
+        \caption{Simulation results from simulations~\simnum{1},~\simnum{7} and~\simnum{6}, as functions of scale factor $a$. \figpanel{Top panel}~The wall position $\epsB$. \figpanel{Bottom panels}~Spatially averaged values of the scalar fields $\chi$ and $q=a^2 \dot{\chi}$.}
+        \label{fig:misc:sim6:sim6_err}
+    \end{figure}%
+    % ------------------------------
+    Massless particles propagating in the $z$-direction will have travelled the distance corresponding to the separation between the walls between $a\ped{i}$ and the vertical dashed line in~\cref{fig:misc:sim6:sim6_err}. The fact that $\avg{q}$ blow up here is most likely not a coincidence, but rather an unfortunate collision of information at any of the walls.  
+
+
+
+
+\section{\tmptitle{On the CFT/DFT comparison}}
+    One thing we simply did not have the time or space to do, was to go into detail about how the gravitational waves were computed in~\asgrd, and how this might affect the way we interpret the components of $\hpC$. 
+    % \comment{Write short about this problem!} 
+    In doing this analysis properly, we might have gained insight on the fact that $\hpCI \sim \hpB$ and $\hpCR \not\sim \hpB$, following the notation from~\cref{sec:PT:code,sec:PT:gwas}. On the other hand, we have~\citep{adamekGevolutionCosmologicalNbody2016}
+    \begin{equation}
+        \hpC[ij]\ap{new}(\lcoordk) = \eu[-\im \ppi (\lcoordk_i + \lcoordk_j)/N_\# ] \hpC[ij](\lcoordk),
+    \end{equation}
+    which for $\lcoordk_1 =\lcoord{u}= 0$ gives 
+    \begin{equation}
+        \hpC[11]\ap{new}(0,\lcoord{v},\lcoord{w}) = \hpC[11](0,\lcoord{v},\lcoord{w}).
+    \end{equation}
+    % for the $xx$-component 
+    We only considered this component in our analysis, so it should not be affected by this.
+
+    Still, definitions of lattice derivatives, momenta and TT-projection operator. We can test if
+    \begin{equation}
+        \hpC[ij](\lcoordk) =  \ProjectionLambda{ij}{kl}(\lcoord{k}k_\#) \hpC[kl](\lcoordk),
+    \end{equation}
+    which is true for any TT-projected tensor. From~\cref{eq:walls:SE_tensor:TT_projection_11} we have
+    \begin{equation}
+        \hpC[11](0,\lcoord{v},\lcoord{w}) = \frac{1}{2\tilde{\lcoord{n}}^2}  \bclosed{\tilde{\lcoord{n}}^2 \hpC[11] + 2 \lcoord{v}\lcoord{w}\hpC[23] - \lcoord{w}^2 \hpC[22] - \lcoord{v}^2 \hpC[33]  }(0,\lcoord{v},\lcoord{w}) , \quad \tilde{\lcoord{n}}^2 = \lcoord{v}^2 + \lcoord{w}^2;
+    \end{equation}
+    which naively implies
+    \begin{align}
+        \hpC[11]\ap{new}&= \frac{1}{2\tilde{\lcoord{n}}^2}  \bclosed{\tilde{\lcoord{n}}^2 \hpC[11]\ap{new} + 2 \lcoord{v}\lcoord{w}\hpC[23]\ap{new} - \lcoord{w}^2 \hpC[22]\ap{new} - \lcoord{v}^2 \hpC[33]\ap{new}  }\nonumber \\
+        & = \frac{1}{2\tilde{\lcoord{n}}^2} \bclosed{\tilde{\lcoord{n}}^2 \hpC[11]+ 2 \eu[-\im \ppi (\lcoord{v}+\lcoord{w})/N_\#] \lcoord{v}\lcoord{w}\hpC[23] - \eu[-\im \ppi 2\lcoord{w}/N_\#] \lcoord{w}^2 \hpC[22] - \eu[-\im \ppi 2\lcoord{v}/N_\#]\lcoord{v}^2 \hpC[33]\ap{new}  }
+    \end{align}
+    for $\lcoordk = (0,\lcoord{v},\lcoord{w})$. \comment{Either find this result ($\sim$ 15 min), or remove this last part.}
+    
+    % \speak{For the record, since \[\hpC[ij]\ap{new}(\lcoordk) = \eu[-\im \ppi (\lcoordk_i + \lcoordk_j)/N_\# ] \hpC[ij](\lcoordk),  \] we get \[ \hpC[xx]\ap{new}(0,\lcoord{v},\lcoord{w}) = \hpC[xx](0,\lcoord{v},\lcoord{w}) \] our analysis should be unaffected by this}

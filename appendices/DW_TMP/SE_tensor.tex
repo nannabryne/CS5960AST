@@ -39,6 +39,7 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
 \begin{equation}
     W\^{\mu\nu}(\tau, \vec{x}) = \frac{\sigma \Diracdelta(z-z\ped{w})}{a^3}\Fdv{\hat{\gamma}}{\eta\_{\mu\nu}}.
 \end{equation}
+Note that this holds for any first-order perturbation $\epsilon(\tau,x,y)$. 
 % \begin{equation}
 %     \begin{split}
 %         T\^{\mu\nu}
@@ -49,7 +50,8 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
 
 
 
-\subsection{Fourier-space SE tensor}\label{app:walls:SE_tensor:FT_SE}
+\subsection{Fourier-space SE tensor}\label{app:walls:SE_tensor:FT_SE}   
+    We let $\epsilon=\epsilon(\tau,y)$. 
     % We let $\epsilon = \varepsilon(\tau) \sppt(y)$ and $\sppt(y)=\sin{py}$ in this subsection.
     Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, we look at~\cref{eq:pertwalls:gws:def_I_s_and_a} for $\sppt(y)=\sin{py}$ in $\epsilon= \varepsilon(\tau) \sppt(y)$. 
     The trick is to identify the Jacobi--Anger expansion,~\cref{eq:cylinder:prop:JacobiAnger_sin},
@@ -57,9 +59,9 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
     %     The analogous relation for cosine is obtained by inserting $bx \to bx + \ppi/2$ to get an extra factor $\im^n$ inside the sum.
     % }
     \begin{equation}
-    f(x) \equiv\eu[\im a \sin{bx}] = \sum_{n=-\infty}^{\infty} \Bessel[n](a) \eu[\im n bx].
+    f(x) \triangleq \eu[\im a \sin{bx}] = \sum_{n=-\infty}^{\infty} \Bessel[n](a) \eu[\im n bx].
     \end{equation}
-    We postulate that the Fourier transform $\tilde{f}(\omega)\equiv\integ{x} \sum_{n} F_n(x;\omega)$ is 
+    We postulate that the Fourier transform $\tilde{f}(\omega)\triangleq\integ{x} \sum_{n} F_n(x;\omega)$ is 
     \begin{align}
     \tilde{f}(\omega) &= %\integ{x} f(x)\eu[\im \omega x] =
         \sum_{n} \Bessel[n](a) \integ{x}\eu[\im (\omega+ nb)x]\nonumber \\
@@ -70,7 +72,7 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
     % \speak{Why is this not the case, again?} \blahblah
     For %$g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb{( \eu[\im bx] + \eu[-\im bx]) } f(x)$, we find
     \begin{equation}
-    g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb \pclosed{\eu[\im bx] + \eu[-\im bx] } f(x),
+    g(x)\triangleq cb \cos{bx} \cdot f(x) = \frac{1}{2}cb \pclosed{\eu[\im bx] + \eu[-\im bx] } f(x),
     \end{equation}
     we find:
     \begin{align}
@@ -81,7 +83,14 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
     \end{align}
     where in the last line we uses~\cref{eq:derivations:cylinder:recurr_Z_plus}. 
 
-    Now, the expressions in~\cref{eq:pertwalls:gws:def_I_s_and_a} are
+    The non-vanishing SE-tensor components in~\cref{eq:pertwalls:gws:Ft_SE_tensor_general} read
+    \begin{equation}\label{eq:walls:SE_tensor:W_ij}
+        \begin{split}
+            \tilde{W}\_{ab} &= -  a \sigma\ped{w} \eta\_{ab}\cdot 2\ppi \Diracdelta(k_x)\mathscr{D}\ped{w} I\ped{s},  \\
+            \tilde{W}\_{iz} &= -  a \sigma\ped{w} \Krondelta{_{iy}} \cdot 2\ppi \Diracdelta(k_x)\mathscr{D}\ped{w} I\ped{a},
+        \end{split}
+    \end{equation}
+    where the expressions in~\cref{eq:pertwalls:gws:def_I_s_and_a} are
     % We use this to find the relevant expressions in~\cref{sec:pertwalls:gws:Fourier_SE_tensor}:
     \begin{subequations}\label{eq:derivations:jacobianger:I_s_and_a}
     \begin{align}
@@ -90,6 +99,46 @@ Inserted into~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}, we get $W\^{\mu\nu}= T\
         I\ped{a} %&= \integ{y} \sum_{n} \Bessel[n](k_z \varepsilon)  \eu[\im np y  ] \eu[\im k_y y ]\nonumber \\
         & = 2\ppi \frac{p}{k_z} \sum_{n} n \Bessel[n](k_z \varepsilon) \Diracdelta(k_y + np) = - \frac{k_y}{k_z}I\ped{s}.\label{eq:derivations:jacobianger:I_a_only}
     \end{align}
-    \end{subequations}
+    \end{subequations} 
+
+
+
+\subsection{Spin-2 projection}\label{app:walls:SE_tensor:spin2}
+    We consider a symmetric $3\cross 3$ tensor ${S}\_{ij}$ with momentum $\vec{k}=(0,n_2, n_3)k$. Projected onto the TT gauge, the $11$-component reads
+    \begin{align}\label{eq:walls:SE_tensor:TT_projection_11}
+        S\ap{TT}_{11} = \ProjectionLambda{11}{ij}S\_{ij} = \frac{1}{2}\bclosed{ S\_{11} + 2n_2 n_3 S\_{23} - n_3^2 S\_{22} - n_2^2 S\_{33}},
+    \end{align}
+    where we used the projector in~\cref{eq:notation:projection_tensor} and $n_2^2 + n_3^2 = 1$. %
+    We find that the linear polarisation basis is defined through the polarisation tensors
+    \begin{equation}\label{eq:walls:SE_tensor:linear_pol_basis}
+        e\indices*{^+_{ij}}= %
+        {\left(\begin{array}{ccc}
+            1 & 0 & 0 \\
+            0 & -n_3^2 & n_2 n_3 \\
+            0 & n_2 n_3 & -n_2^2 
+        \end{array}\right)},%
+        \quad %\land \quad %
+        e\indices*{^{\times}_{ij}} =
+        {\left(\begin{array}{ccc}
+            0 & n_3 & -n_2 \\
+            -n_3 &0 & 0 \\
+            n_2 & 0& 0
+        \end{array}\right)}, %; \quad \vec{k}=(0,k_y,k_z).%
+    \end{equation}
+    such that $S\iud*{\mathrm{TT}}{ij} = \sum_{P=+, \times} S_P e\indices*{^{P}_{ij}}$. This gives $S_+ = S\iud*{\mathrm{TT}}{11}$.
+
+    Following~\cref{sec:pertwalls:gws}, we have $\tilde{W}\_{11} =  \tilde{W}\_{22} $ for the SE tensor in~\cref{eq:walls:SE_tensor:W_ij}, which by using \cref{eq:walls:SE_tensor:TT_projection_11} yields
+    \begin{equation}\label{eq:walls:SE_tensor:W_plus_TT}
+        \tilde{W}_+ = \frac{1}{2} \bclosed{ n_2^2 \tilde{W}\_{11} + 2 n_2 n_3 \tilde{W}\_{23} }
+    \end{equation}
+    With~\cref{eq:derivations:jacobianger:I_s_and_a} we get the plus-polarised SE tensor
+    \begin{equation}\label{eq:walls:SE_tensor:W_plus_final}
+        \tilde{W}_+  = - \frac{n_2^2 }{2}  \tilde{W}\_{11}.
+    \end{equation}
+
+
+
+
+
 
 

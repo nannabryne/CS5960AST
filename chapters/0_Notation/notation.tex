@@ -1,12 +1,12 @@
 
-\newcommand\Chr{\ChristophelSym}
+\newcommand\Chr{\ChristoffelSym}
 
 
 
 
 \subsubsection{Constants and units}
 % \paragraph{Constants and units.} %
-We use natural units where the speed of light in vacuum is $c=1$ and the reduced Planck mass is $M\nped{Pl}=1/\sqrt{8\ppi G\nped{N}}=1$. $G\nped{N}$ is the Newtonian constant of gravitation. Comoving lengths are usually given in units of megaparsec per Hubble constant $\mathrm{Mpc}/h_0$, where $1\unit{pc}=3.26156$~light-years.
+We use natural units where the speed of light in vacuum is $c=1$ and the reduced Planck mass is $M\nped{Pl}=1/\sqrt{8\ppi G\nped{N}}=1$. Here, $G\nped{N}$ is the Newtonian constant of gravitation. Comoving lengths are usually given in units of megaparsec per Hubble constant $\Mpch$, where $1\unit{pc}=3.26156$~light-years.
 % We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum. %\comment{Planck units? Set $k\nped{B}=G\pned{N}=1$?} 
 % The Newtonian constant of gravitation $G\nped{N}$ is referenced explicitly, and we use Planck units such as the (reduced) Planck mass $M\nped{Pl}=1/\sqrt{ 8\ppi G\nped{N} }$. 
 %$\pclosed{\hbar c /G\nped{N}}^{\shalf} = G\nped{N}^{-\shalf} \sim 10^{-8} \unit{kg}$. 
@@ -41,9 +41,17 @@ We sometimes adopt the comma-notation for partial derivatives $\partial\_\mu$ an
         % {\sq}\phi &\equiv \nabla\^\mu \nabla\_\mu \phi
     \end{align}
 \end{subequations}
+The covariant derivative of a general rank-$(k,l)$ tensor $T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l}$ is
+\begin{equation}
+    \begin{split}
+        \nabla\_\mu T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l} = \partial\_\mu T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l} &+ \Chr{\rho_1}{\mu\nu} T\iud{\nu \rho_2 \dots \rho_k}{\sigma_1 \dots \sigma_l} + \dots \\
+        &- \Chr{\nu}{\mu\sigma_1} T\iud{\rho_1 \dots \rho_k}{\nu\sigma_2 \dots \sigma_l} + \dots,
+    \end{split}
+\end{equation}
+where $\Chr{\rho}{\mu\nu}$ are the Christoffel symbols in~\cref{eq:notation:Christoffel_symbols}.
 The d'Alembertian reads
 \begin{equation}\label{eq:notation:dAlembertian}
-    \sq \phi  = \nabla\^\mu \nabla\_\mu \phi = \frac{1}{\sqrt{-g}} \partial\_\mu \pclosed{ \sqrt{-g} \partial\^\mu \phi},
+    \sq   = \nabla\^\mu \nabla\_\mu  = \frac{1}{\sqrt{-g}} \partial\_\mu \pclosed{ \sqrt{-g} \partial\^\mu},
 \end{equation}
 and we use $\sq\nped{M} \equiv \partial\^\mu\partial\_\mu$ to specify the Minkowski box operator.
 
@@ -65,18 +73,28 @@ The Kronecker delta is defined as
 \begin{equation}\label{eq:notation:Kronecker_delta}
     \Krondelta{_{ij}} = \begin{cases}
         1 &\text{if}\, i=j, \\ 
-        0 &\text{else.}
+        0 &\text{else,}
     \end{cases}
 \end{equation}
-The Christoffel symbols (also called connection coefficients) are given by
-\begin{equation}\label{eq:notation:Christophel_symbols}
-    \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  }.
+and the Levi-Civita symbol is
+\begin{equation}\label{eq:notation:Levi_Civita}
+    \LeviCivita_{{i_1 i_2 \dots i_n}} = \begin{cases}
+        +1 &\text{if}\, (i_1 i_2 \dots i_n)\, \text{is an even permutation of}\, (12\dots n) \\ 
+        -1 &\text{if}\, (i_1 i_2 \dots i_n)\, \text{is an odd permutation of}\, (12\dots n) \\ 
+        0 &\text{else,}
+    \end{cases}
 \end{equation}
+in $n$ dimensions. %
+The Christoffel symbols (also called connection coefficients) are given by
+\begin{equation}\label{eq:notation:Christoffel_symbols}
+    \ChristoffelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  },
+\end{equation}
+where $g\_{\mu\nu}$ is the spacetime metric. %
 % Note that this is not true tensor.
 % \subparagraph[Gamma]{Christoffel symbols.} %
 % The Christoffel symbols or ``connections'' are written
-% \begin{equation}\label{eq:notation:Christophel_symbols}
-%     \ChristophelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  },
+% \begin{equation}\label{eq:notation:Christoffel_symbols}
+%     \ChristoffelSym{\rho}{\mu\nu} = \frac{1}{2} g\^{\rho\sigma} \pclosed{ g\_{\mu\sigma,\nu} + g\_{\mu\sigma,\nu} - g\_{\mu\nu,\sigma}  },
 % \end{equation}
 % and are not true tensors.
 The Riemann curvature tensor is
@@ -119,8 +137,8 @@ where $\vec{k}$ is the propagation direction (see~\cref{sec:GR:gws}).
 We use the following convention for the continuous Fourier transform of $f(\vec{x})$, $\tilde{f}(\vec{k})$, and its inverse, where $\vec{x}$ and $\vec{k}$ are three-vectors:
 \begin{equation}\label{eq:notation:Fourier_transform_and_inverse}
     \begin{split}
-        \tilde{f}(\vec{k}) &=\mathop{\mathcal{F}}_{\vec{k}} {\cclosed{f(\vec{x})}}  =\integ[3]{x}\eu[\im \vec{k}\cdot \vec{x}]f(\vec{x}), \\
-        f(\vec{x}) &=  \mathop{\mathcal{F}}_{\vec{x}}^{-1}  {\cclosed{\tilde{f}(\vec{k})}}  =\integ[3][(2\ppi)^3]{k} \eu[-\im \vec{k}\cdot \vec{x}]\tilde{f}(\vec{k}).
+        \tilde{f}(\vec{k}) &={\mathop{\mathcal{F}}_{\vec{k}}} {\cclosed{f(\vec{x})}}  =\integ[3]{x}\eu[\im \vec{k}\cdot \vec{x}]f(\vec{x}), \\
+        f(\vec{x}) &=  {\mathop{\mathcal{F}}_{\vec{x}}}^{-1}  {\cclosed{\tilde{f}(\vec{k})}}  =\integ[3][(2\ppi)^3]{k} \eu[-\im \vec{k}\cdot \vec{x}]\tilde{f}(\vec{k}).
     \end{split}
 \end{equation}
 % Here, $k\cdot x = k\_{\sigma} x\^{\sigma} = g\_{\rho\sigma} k\^{\rho} x\^{\sigma}$. 
@@ -132,7 +150,7 @@ Note that this gives $\partial\_i \leftrightarrow +\im k\_i$.
 
 \subsubsection{Special functions} %
 \comment{Will fix this.} %
-We will denote various cylinder functions by \blahblah see~\cref{app:special}
+We will denote various cylinder functions by \blahblah see~\cref{app:cylinder}
 
 \begin{tabular*}{\linewidth}{r c l}
     regular Bessel functions: & $\Cylindrical[]$; & $\Cylindrical[\nu]^{(i)}(x)$  \\

@@ -11,9 +11,11 @@
 
 \input{texmex/writingtools.tex}
 
-\title{Gravitational waves from topological defects} 
+% \title{Gravitational Waves from Topological Defects} 
+\title{Spacetime Ripples from Domain-Wall Wiggles} 
 % \title{If Domain Walls Could Talk}
-\subtitle{Signatures of late-time first-order phase transitions} 
+% \subtitle{Gravitational Waves from Topological Defects from Late-Time First-Order Phase Transitions} 
+\subtitle{Analytically predicting the gravitational-wave signature from perturbed topological defects}
 % \subtitle{They would say ...} 
 \author{Nanna Bryne}                    
 
@@ -46,7 +48,7 @@
 
 \tableofcontents{}
 \listoffigures{}     
-% \listoftables{}       
+\listoftables{}       
 
 % \part*{Prologue}
 \begin{preface}
@@ -194,7 +196,8 @@
     {\import{chapters/6_Toy_Model_Trials/}{results.tex}}
 
 
-\chapter{\tmptitle{Ifs, buts and maybes}}\label{chap:whatif}
+% \chapter{\tmptitle{Ifs, buts and maybes}}
+\chapter{Discussion}\label{chap:whatif}
     {\import{chapters/7_TMP_Whatif/}{whatif.tex}}
 
 }
@@ -244,30 +247,27 @@
 \appendix
 
 
-% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-% Notes that are not to be included in the thesis!
-% \begin{Nannasnotes}
-%     {\import{appendices/misc/}{misc.tex}}
-% \end{Nannasnotes}
-% <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+% >> Bessel functions
+\chapter{Cylinder Functions}\label{app:cylinder}
+    {\import{appendices/A_Cylinder_Functions/}{cylinder.tex}}
 
 
-
-\chapter{Cylinder Functions}\label{app:special}
-    {\import{appendices/Special_tmp/}{cylinder.tex}}
-
-
+{\import{texmex/}{simulation_typeset.tex}
+% >> Stable-symmetron calculations
 \chapter{Stable Symmetron}\label{app:stablesym}
-    {\import{appendices/Untitled2_tmp/}{untitled2.tex}}
+    {\import{appendices/B_Stable_Symmetron/}{stablesym.tex}}
 
+% >> Collection of DW calculations
 \chapter{Symmetron Walls in Expanding Spacetime}\label{app:walls}
-    {\import{appendices/TMP_DW/}{walls.tex}}
+    {\import{appendices/DW_TMP/}{walls.tex}}
 
 
+\chapter{Miscellanea}\label{app:misc}
+    {\import{appendices/D_Miscellanea/}{misc.tex}}
+}
 % \chapter{Derivations}\label{app:derivations}
     % {\import{appendices/Derivations_tmp/}{derivations.tex}}
-
-
 
 
 

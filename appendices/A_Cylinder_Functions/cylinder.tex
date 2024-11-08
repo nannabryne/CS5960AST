@@ -30,9 +30,10 @@ We will in the following define the first and second kinds of the (regular) Bess
 % \paragraph{Bessel functions.} %
 The general solution to Bessel's differential equation ($'\equiv \dv*{}{x}$)
 \begin{equation}\label{eq:cylinder:Bessels_eq}
-    x^2 y'' + x y' + (x^2 -\nu^2 )y = 0
+    x^2 y'' + x y' + (x^2 -\nu^2 )y = 0 \quad\Rightarrow\quad y(x) = \Zv(x);
 \end{equation}
-is $y(x) = \Zv(x)$; a linear combination of the (regular) $\nu$th-order \newconcept{Bessel} (first kind, $\Bessel$) and \newconcept{Neumann} (second kind, $\Neumann$) \newconcept{functions}.
+% is $y(x) = \Zv(x)$; 
+is a linear combination of the (regular) $\nu$th-order \newconcept{Bessel} (first kind, $\Bessel$) and \newconcept{Neumann} (second kind, $\Neumann$) \newconcept{functions}.
 
 
 
@@ -67,25 +68,31 @@ is $y(x) = \Zv(x)$; a linear combination of the (regular) $\nu$th-order \newconc
 % \section{IDK}
 
 
-The solution to a similar equation% Bessel's equation
-\begin{equation}
-    x^2y'' + x{(1-2a)}y'+ \bclosed{ {(bcx^{c})}^2 + {(a^2-\nu^2 c^2)} }y = 0
+% The solution to a similar equation% Bessel's equation
+A conveniant rewriting of this reads
+\begin{equation}\label{eq:cylinder:Bessel_eq_abc}
+    x^2y'' + x{(1-2a)}y'+ \bclosed{ {(bcx^{c})}^2 + {(a^2-\nu^2 c^2)} }y = 0 \quad\Rightarrow\quad y(x) = x^a \Cylindrical[\nu](bx^c).
 \end{equation}
-is $y(x) = x^a \Cylindrical[\nu](bx^c)$. %
+% is $y(x) = x^a \Cylindrical[\nu](bx^c)$. %
+% is convenient in many cases. %
 % \begin{equation}
 %     y(x) = x^a \Cylindrical[\nu](bx^c).
 % \end{equation}
 % where $\Cylindrical[\nu]$ is a linear combination of the Bessel functions of the first and second kind, $\Bessel$ and $\Neumann$.
 A variation of this is the spherical Bessel's equation
-\begin{equation}
-    x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0
+The general solution to the spherical Bessel's equation
+\begin{equation}\label{eq:cylinder:spherical_Bessel_eq}
+    x^2 y'' + 2x y' + \pclosed{ x^2 - n(n+1) }y = 0 \quad\Rightarrow\quad y(x)=\zn[n](x);
 \end{equation}
-has the general solution $y(x)=\zn[n](x)$; a linear combination of the $n$th-order \newconcept{spherical Bessel} (first kind, $\sphBessel$) and \newconcept{Neumann} (second kind, $\sphNeumann$) \newconcept{functions}.
-Another useful class of solutions is the general solution to
-\begin{equation}
-    x^2 y'' + \pclosed{ x^2 - n(n+1) }y = 0,
+% has the general solution $y(x)=\zn[n](x)$; 
+is a linear combination of the $n$th-order \newconcept{spherical Bessel} (first kind, $\sphBessel$) and \newconcept{Neumann} (second kind, $\sphNeumann$) \newconcept{functions}. 
+% Another useful class of solutions is the general solution to
+Another special case it the general solution to
+\begin{equation}\label{eq:cylinder:Riccati_Bessel_eq}
+    x^2 y'' + \pclosed{ x^2 - n(n+1) }y = 0 \quad\Rightarrow\quad y(x)= \Rzn(x);
 \end{equation}
-which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{Riccati--Bessel} (first kind, $\RiccatiBessel$) and \newconcept{Riccati--Neumann} (second kind, $\RiccatiNeumann$) \newconcept{functions}.
+% which is $y(x)= \Rzn(x)$; 
+a linear combination of the $n$th-order \newconcept{Riccati--Bessel} (first kind, $\RiccatiBessel$) and \newconcept{Riccati--Neumann} (second kind, $\RiccatiNeumann$) \newconcept{functions}.
 
 
 
@@ -173,6 +180,7 @@ which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{
                 \RiccatiNeumann[n](x) &= -x\sphNeumann[n](x)  = -\sqrt{\frac{\ppi x}{2}} \Neumann[n+1/2](x).
             \end{align}
         \end{subequations}
+        Note that $\RiccatiBessel[0](x)= \sin{x}$ and $\RiccatiNeumann[0](x)=\cos{x}$.
 
         
 
@@ -184,12 +192,12 @@ which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{
 
 
 \section{Properties}
-
-\subsection{Some notable identities}
+    %
+    \subsection{Some notable identities}
     We list some notable recurrence relations:
     \begin{subequations}
         \begin{align}
-           \frac{2\nu}{x}\Zv(x) &= \Zv[\nu-1](x) + \Zv[\nu+1](x), \label{eq:derivations:cylinder:recurr_Z_plus}\\
+            \frac{2\nu}{x}\Zv(x) &= \Zv[\nu-1](x) + \Zv[\nu+1](x), \label{eq:derivations:cylinder:recurr_Z_plus}\\
             2\Zv'(x) &= \Zv[\nu-1](x) - \Zv[\nu+1](x),\label{eq:derivations:cylinder:recurr_Z_minus} \\
             \Zv[\nu]'(x) &= \Zv[\nu-1](x) - \frac{\nu}{x}\Zv[\nu](x),\label{eq:derivations:cylinder:recurr_Z_minus_vol2} \\
             % \Zv[\nu]' &= \Zv[\nu-1]' - \frac{\nu}{x}\Zv[\nu] \\
@@ -198,7 +206,7 @@ which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{
         \end{align}
     \end{subequations}
 
-
+    % 
     The \newconcept{Jacobi--Anger expansion} reads
     \begin{subequations}\label{eq:cylinder:Jacobi_Anger}
         \begin{align}
@@ -206,10 +214,16 @@ which is $y(x)= \Rzn(x)$; a linear combination of the $\nu$th-order \newconcept{
             \eu[\im a \cos{bx}]  &= \sum_{n=-\infty}^{\infty} \im^{n}\Bessel[n](a) \eu[\im n bx] \label{eq:cylinder:Jacobi_Anger_cos}.
         \end{align}
     \end{subequations}
-    
+    %
+
+    Bessel functions obey the relation
+    \begin{equation}\label{eq:cylinder:Bessel_sum_relation}
+        \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y).
+    \end{equation}
 
 
-\subsection{Asymptotic behaviour}
+
+    \subsection{Asymptotic behaviour}
     \iftime{Write something}
 
     \begin{subequations}\label{eq:cylinder:prop:JacobiAnger}

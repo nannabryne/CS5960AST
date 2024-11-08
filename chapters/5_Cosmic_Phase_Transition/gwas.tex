@@ -165,7 +165,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
         \end{split}
     \end{equation}
     as expressions for the walls' displacement field's contribution to the total energy and momentum. %
-    We used the shorthand notation $\mathop{\mathcal{F}}_{k_i}$ for Fourier transforms~\lcomment{Ref. to some sec.!}.
+    We used the shorthand notation $\mathop{\mathcal{F}}_{k_i}$ for Fourier transforms~(\cref{eq:notation:Fourier_transform_and_inverse}).
     % as the SE tensor representing the contribution from tk
     % \begin{equation}\label{eq:PT:gwas:pi_plus_Ft_series}
     %     \Ft{\pi}\_{ij}(\tau, \vec{k})
@@ -293,9 +293,14 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     The code outputs two-dimensional snapshots of tensor perturbations $\Ft{h}\_{ij}$ at the same rate, sliced at $\lcoord{u}=0$. We use only $\Ft{h}_{xx}=\hpC$, but sporadically check that $2\hpC^2 =\Ft{h}\^{ij}\Ft{h}\_{ij} $. 
 
 
-    The formula for the gravitational waves in the thin-wall limit,~\cref{eq:PT:gwas:mywaves_complete_formula}, allows for any function $\varepsilon(\tau)$ as input. Therefore, we will use both the solution to the equation of motion~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, call it $\epsA$, and the simulated result $\epsB$. We will have to keep in mind that the latter is poorly resolved. 
+    The formula for the gravitational waves in the thin-wall limit,~\cref{eq:PT:gwas:mywaves_complete_formula}, allows for any function $\varepsilon(\tau)$ as input. Therefore, we will use both the solution to the equation of motion~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, call it $\epsA$, and the simulated result $\epsB$. We will have to keep in mind that the latter suboptimally resolved. %In addition, the minimum value can
+    \iftime{Comment about the initial evolution and how the minimum can be found at ``several'' coordinates.}
 
-    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme, specifically the \textit{Numpy} library's \texttt{cumptrapz} method \rcomment{More details?}. We let $\hpA$ and $\hpB$ signify the solution to~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} with $\epsA$ and $\epsB$ as input, respectively.
+    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme, %
+    % \begin{equation}
+    %     \integ{x}[x_0][x_N] \approx \Delta x
+    % \end{equation}
+    specifically the \textit{Scipy} library's \texttt{cumptrapz} method in~\texttt{Python} \rcomment{More details?}. We let $\hpA$ and $\hpB$ signify the solution to~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} with $\epsA$ and $\epsB$ as input, respectively.
 
 
     % \comment{Explain how we obtain $\varepsilon$ and how we compute $\Ft{h}_{+}$}

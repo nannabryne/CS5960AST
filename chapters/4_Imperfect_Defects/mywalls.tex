@@ -50,7 +50,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
 \subsection{Solution in matter-dominated universe}
     This work only truly experiments in a universe with, and only with, homogeneous matter distribution, i.e.~$\alpha=2$ and $\sum_{s}\Omega_{s0}=\Omega\ped{m0}=1$. Generalisation of the following to other $\alpha$ should in principle be trivial, but at some point in the following we require $\alpha\geq 1/3$, and so a different analysis would be required for smaller $\alpha$.
 
-    So, restricting our discussion to $\alpha=2$, we continue with the planar domain wall placed parallel to the $xy$-plane, spontaneously formed at symmetry break, $s=1$. Assume an initial perturbation of amplitude $\epsast$ was given to the wall. We consider the solution to~\cref{eq:pertwalls:mywalls:eom_final} that has eigenvalue $\omega=p\tau_\ast$ and restrict $\max{\abs{\sppt(x,y)}}=1$ for the spatial part.
+    Restricting our discussion to $\alpha=2$, we continue with the planar domain wall placed parallel to the $xy$-plane, spontaneously formed at symmetry breaking, $s=1$. Assume an initial perturbation of amplitude $\epsast$ was given to the wall. We consider the solution to~\cref{eq:pertwalls:mywalls:eom_final} that has eigenvalue $\omega=p\tau_\ast$ and restrict $\max{\abs{\sppt(x,y)}}=1$ for the spatial part.
     % $(\partial_x^2 + \partial_y^2)\sppt(x,y)= -p^2 \sppt(x,y)$, giving the ``scale'' of the perturbation $p$.
     With initial conditions $\varepsilon(s=1)=\epsast$ and $\varepsilon'(s=1)=0$, we shall solve
     \begin{equation}\label{eq:pertwalls:mywalls:eom_eps_s_MD}
@@ -71,17 +71,17 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
     % We immediately see that the initial condition 
     When put together, we get a polynomial in $(s-1)$ on the left-hand side of~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, for which all coefficients must vanish. %Solving the system of equations gives $c_1 = 0$, $c_2 =-q^2/5$ and $c_3 = q^2/35$. Thus,
     We solve the system of equations for $\cclosed{c_1,c_2, c_3} $ and find 
-    \begin{equation}\label[eq]{eq:pertwalls:mywalls:eps_s_I_MD}
+    \begin{equation}\label{eq:pertwalls:mywalls:eps_s_I_MD}
         e^{\text{\eqregimenum{I}}}(s) = \bclosed{ 1 - \frac{\omega^2}{5} {(s-1)}^2 + \frac{\omega^2}{35} {(s-1)}^3 } + \BigO{\pclosed{s-1}^4}.
     \end{equation}
 
 
 
     \paragraph{Adiabatic evolution.} %
-    The extra damping term $2d(s)= 9/(2s(s^6-1))$ initially changes extremely rapidly from very large values, before it becomes very small compared to $3a'/a=6/s$. We expect the solution to quickly approach that of~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} as $s\gg 1$. 
+    The extra damping term $2d(s)$ initially changes extremely rapidly from very large values, before it becomes very small compared to $6/s$. We expect the solution to quickly approach that of~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} as $s\gg 1$. 
     % For $s\gg 1$, the damping term $\gamma(s) = 9/(2 s(s^6-1))$ in the eom for $\epsilon$ becomes subdominant \comment{check plag. Julian}, and asymptotically the solution is $s^{-2}\cclosed{c \sphBessel[2](qs) + d \sphNeumann[2](qs)  }$. 
     Said damping term is not completely negligible, however, as it causes a \emph{damping envelope} that is considered much like in the case of a damped harmonic oscillator. We write
-    \begin{equation}\label[eq]{eq:pertwalls:mywalls:eps_s_II_MD_w}
+    \begin{equation}\label{eq:pertwalls:mywalls:eps_s_II_MD_w}
         e^{\text{\eqregimenum{II}}}(s) \simeq   \zeta(s) \cdot \exp{ - \integ{t}[][s] d(t) }.%; \quad w(s) = \frac{c\sphBessel[2](qs) + d \sphNeumann[2](qs)}{s^2}.
     \end{equation}
     Employing this ansatz in the equation of motion gives
@@ -95,7 +95,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
     when the phase shift introduced by $\theta(s)$ is negligible.% and $A$ and $B$ are constants.%
     {\footnote{In fact, it is possible to show that $\lim_{\omega\to \infty}{\bclosed{\sqrt{\omega^2-\theta(1+\omega^{-1})}-\omega} /\omega }= \sqrt{19}/4 -1 \approx 0.09$.}} %
     Now, we find that $\exp{-\integ{t}[][s] d(t)} =s^{9/2} (s^6-1)^{-3/4}  \cdot \text{constant}$. Thus,
-    \begin{equation}
+    \begin{equation}\label{eq:pertwalls:mywalls:eps_s_II_MD}
         e^{\text{\eqregimenum{II}}}(s) \simeq \frac{ A \Bessel[-5/2](\omega s) + B \Neumann[-5/2](\omega s) }{s^{5/2}} \frac{s^{9/2}}{{(s^6-1)}^{3/4}},
     \end{equation}
     where $A$ and $B$ are constants to be determined.
@@ -110,14 +110,15 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
             {e^{\text{\eqregimenum{I}}}}'(s=s\ped{sow}) &= {e^{\text{\eqregimenum{II}}}}'(s=s\ped{sow}),
         \end{split}
     \end{equation}
-    \comment{maybe put expressions in appendix?}
-    where we choose $s\ped{sow}=1+\omega^{-1}$, since only subhorizon modes, $\omega\gg 1$, are of interest. Now,
+    % \comment{maybe put expressions in appendix?}
+    where we choose $s\ped{sow}=1+\omega^{-1}$, since only sub-horizon modes, $\omega\gg 1$, are of interest. Now,
     \begin{equation}\label{eq:pertwalls:mywalls:eps_s_complete_MD}
         \varepsilon(s) =  \epsast \cdot \begin{cases}
             e^{\text{\eqregimenum{I}}} (s)  &\text{if } s \leq s\ped{sow}, \\
-            e^{\text{\eqregimenum{II}}}(s)  &\text{if }  s \geq s\ped{sow}.
+            e^{\text{\eqregimenum{II}}}(s)  &\text{if }  s \geq s\ped{sow},
         \end{cases}
     \end{equation}
+    where the coefficients are given in~\cref{app:walls:dynamics:full_A_B},~\cref{eq:walls:dynamics:full_A_B}. %
     In~\cref{fig:pertwalls:mywalls:demo_analytical_epsilon} we demonstrate how this solution looks like for arbitrary $\omega$, in the different steps described above. %\comment{Should include solution in the case where surface tension is constant.}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%            FIGURE            %%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +136,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
     
 
 
-\subsection{\tmptitle{Review}}
+\subsubsection{Review}
     We see that the initial amplitude $\epsast$ can be factored out and does not affect the evolution of the wall. However, we need to keep in mind that this should be small enough to satisfy $(\epsilon_\ast/\tau_\ast)^2\simeq 0$. 
 
     We ignore $x$-dependence in $\epsilon$ and impose Dirichlet boundary conditions $\sppt(y=0)=\sppt(y=\tau_\ast)=0$. We write the complete solution in terms of eigenvalues $p^{(n)}= \ppi n/\tau_\ast$, 
@@ -284,7 +285,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
 % \begin{equation}\label{eq:pertwalls:mywalls:eom_MD}
 %     \epsilon'' + \left( \frac{6}{s}  +\frac{9}{s\left(s^6-1\right)} \right) \epsilon' + q^2 \epsilon = 0.
 % \end{equation}
-% The dimensionless variables are restricted $s\geq 1$ and $q\gg 1$ to ensure that SSB has happened and \rephrase{that the scale of the perturbation is subhorizon.}
+% The dimensionless variables are restricted $s\geq 1$ and $q\gg 1$ to ensure that SSB has happened and \rephrase{that the scale of the perturbation is sub-horizon.}
 
 % \paragraph{Shortly after symmetry breaking.} %
 % We begin by solving the equation of motion for $s\sim 1$. As our equation has a singularity at $s=1$, the natural way to go is through a Laurent expansion around this point of the damping term in~\cref{eq:pertwalls:mywalls:eom_MD}. We find 

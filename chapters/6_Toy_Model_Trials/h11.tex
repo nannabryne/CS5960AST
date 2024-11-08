@@ -43,7 +43,7 @@ We list a few key points about the simulated gravitational-wave results in gener
 
 
 \subsection{Gravitational radiation}\label{sec:results:h11:rho_gw}
-    We begin by having a look at the energy density of the gravitational waves, which is obtained through the average conformal time derivative of the \emph{real space} tensor perturbations~\citep{kawasakiStudyGravitationalRadiation2011},
+    We begin by having a look at the energy density of the gravitational waves, which is obtained through the spatial average conformal time derivative of the \emph{real space} tensor perturbations~\citep{kawasakiStudyGravitationalRadiation2011},
     % We begin by having a look at the average conformal time derivative of the \emph{real space} tensor perturbations,
     \begin{equation}\label{eq:results:h11:rho_gw}
         \rho\ped{gw} = \frac{1}{32\ppi G\nped{N}a^2(\tau)} \left\langle \dot{h}\^{ij}(\tau, \vec{x})\dot{h}\_{ij}(\tau, \vec{x}) \right\rangle_{\mathrm{box}} =  \frac{1}{32\ppi G\nped{N}a^2(\tau)} \frac{1}{N_\#^3} \sum_{\lcoord{i}\lcoord{j}\lcoord{k}} \sum_{ij} \bclosed{\dot{h}\_{ij}(\tau,\lcoord{x}_{\lcoord{i}, \lcoord{j}, \lcoord{k}} \Delta_\# )}^2.
@@ -114,7 +114,7 @@ We list a few key points about the simulated gravitational-wave results in gener
         \begin{subfigure}[b]{\linewidth}
             \centering
             \includegraphics[width=\linewidth]{Findings/hp_kspace_sim1.pdf}
-        \caption{Simulation~\simnum{1}: $m_{\lcoord{j}}=2$ and $\epsast=0.08L_\#$.}
+        \caption{Simulation~\simnum{1} with $m_{\lcoord{j}}=2$ and $\epsast=0.08L_\#$. The upper left panel in explanatory for all panels.}
         \label{fig:results:h11:hp_kspace_sim1}
         \end{subfigure}
         %
@@ -150,7 +150,7 @@ We list a few key points about the simulated gravitational-wave results in gener
         \label{fig:results:h11:hp_kspace_sim5}
         \end{subfigure}
         %
-        \caption{Monochromatic plus-waves evolving over conformal time $s=\tau/\tau_\ast$, normalised to unity. The lower right panel is explanatory for all panels: Green dash-dotted graphs represent $\hpA$, orange solid ones represent $\hpB$ and in blue are $\hpC$. The wave vector is given in the lower left corner of each plot, as $(\lcoord{v},\lcoord{w})$. The secondary above $x$-axis represents scaled time $t_\omega =p (\tau-\tau_\ast)$.}
+        \caption{Monochromatic plus-waves evolving over conformal time $s=\tau/\tau_\ast$, normalised to unity ($h_+/\max{\abs{h_+}}$). The lower right panel is explanatory for all panels: Green dash-dotted graphs represent $\hpA$, orange solid ones represent $\hpB$ and in blue are $\hpC$. The wave vector is given in the lower left corner of each plot, as $(\lcoord{v},\lcoord{w})$. The secondary above $x$-axis represents scaled time $t_\omega =p (\tau-\tau_\ast)$.}
         \label{fig:results:h11:hp_kspace}
     \end{figure}
     % ------------------------------
@@ -186,7 +186,8 @@ We list a few key points about the simulated gravitational-wave results in gener
     % \end{figure}
     % % ------------------------------
     \Cref{fig:results:h11:hp_kspace} demonstrates this for a number of $\vec{k}$-modes in simulations~\simnum{1},~\simnum{3},~\simnum{7},~\simnum{2} and~\simnum{5}. The magnitudes are ignored in this analysis. There is a quite remarkable likeness between $\hpB$ (solid red lines) and $\hpCI$ (blue dashed lines). Comparison of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7} suggests that more prominent scalar-field fluctuations disturb the gravitational wave modes a little (blue graphs), and that $\hpB$ is sensitive to tiny deviations in $\epsB$ (red graphs). %
-    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time axes that the resonance in $t_\omega$-space lives on to some extent, backed by the right panel of~\cref{fig:results:h11:avhijprimenorm}.
+    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time axes that the resonance in $t_\omega$-space lives on to some extent, backed by the right panel of~\cref{fig:results:h11:avhijprimenorm}. %
+    \speak{TO-DO: Make it clear that we normalise to unity.}
 
 
     % %
@@ -197,22 +198,26 @@ We list a few key points about the simulated gravitational-wave results in gener
 
 
     % SUMMARY STATISTICS
-    Studying each wave mode's evolution over time does not give as much physical insight as it is time-consuming.\footnote{There are potentially $N_\#^2/2 / m_{\lcoord{j}}$ different modes for each simulation.} %
-    Another way to compare the results is through a one-dimensional power spectrum:
-    \begin{equation}\label{eq:results:h11:1d_power_spec}
-        \Diracdelta(k_x)\Diracdelta(k_y - \ell p)P_h(\tau , \vartheta; \ell) =  h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k}).% \left\langle h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k}) \right\rangle,
-        \footnote{It would be more conventional to output and analyse $\dot{h}\_{ij}$, but we make the early (arbitrary) unconventional choice.}
-    \end{equation}
+    Studying each wave mode's evolution over time does not give as much physical insight as it is time-consuming. \footnote{There are potentially $N_\#^2/2 / m_{\lcoord{j}}$ different modes for each simulation.} %
+    % We show some of these in
+    % Another way to compare the results is through a one-dimensional power spectrum:
+    % \begin{equation}\label{eq:results:h11:1d_power_spec}
+    %     \Diracdelta(k_x)\Diracdelta(k_y - \ell p)P_h(\tau , \vartheta; \ell) =  \Ft{h}\^{ij}(\tau, \vec{k}) \Ft{h}\_{ij}(\tau, \vec{k}).% \left\langle h\^{ij}(\tau, \vec{k}) h\_{ij}(\tau, \vec{k}) \right\rangle,
+    %     %\footnote{It would be more conventional to output and analyse $\dot{h}\_{ij}$, but we make the early (arbitrary) unconventional choice.}
+    % \end{equation}
+    % \hl{Just realised, this is simply $2\hpAB^2$, not actually a power spectrum...}
     % where $\zeta = k_z/k_y= k_z/(p\ell)$. 
     % which for the analytical expression becomes \blahblah
     % \begin{equation}
     %     P_h(k_z; \ell) = 2 (h\ap{(1D)}_+(\tau,\ell, k_z))^2
     % \end{equation}
-    We see from~\cref{fig:results:h11:avhijprimenorm} where the intensity of the waves peaks and use this to choose time points for our power-spectrum analysis. It is interesting to compare simulations with different perturbation scale. %
+    Another way to compare the results is to study the strain in some instances in time. 
+    We see from~\cref{fig:results:h11:avhijprimenorm} where the intensity of the waves peaks and use this to choose time points for our coming analysis. It is interesting to compare simulations with different perturbation scale. %
     In~\cref{fig:results:h11:hij_powerspecs} we compare the results from the Nambu--Goto theory (\cref{eq:PT:gwas:mywaves_complete_formula}) $\hpA$ and $\hpB$, %with $\varepsilon = \epsA$ and $\varepsilon = \epsB$, 
-    and directly from simulation, $\hpC$. We stress that the units are arbitrary, and the magnitudes are not reported. Each column represents the same $\ell$-mode for different times, whereas each row signifies the same time point but different $\ell$'s. The horizontal axes show $\vartheta$, where $\vartheta=0^\circ$ and $\vartheta \to 90^\circ$ correspond to $\vec{k} =(0,k,0)$ and $\vec{k} \to (0,0,k)$, respectively. Note that $\vartheta=0^\circ$ suggests waves propagating along the domain wall.
+    and directly from simulation, $\hpC$. %\footnote{Note that this is \emph{not} the power-spectrum output we get from~\gevolution, but $2\abs{\hpC(0,\lcoord{v},\lcoord{w})}^2$.}
+    We stress that the magnitudes are not reported, and all spectra are normalised as $h^2/\max{h^2}$. Each column represents the same $\ell$-mode for different times, whereas each row signifies the same time point but different $\ell$'s. The horizontal axes show $\vartheta$, where $\vartheta=0^\circ$ and $\vartheta \to 90^\circ$ correspond to $\vec{k} =(0,k,0)$ and $\vec{k} \to (0,0,k)$, respectively. Note that $\vartheta=0^\circ$ suggests waves propagating along the domain wall.
 
-   %It is useful to present such comparisons in terms of the dimensionless wave-vector components $\ell= k_y/p$ and $\zeta = k_z/k_y$.
+    %It is useful to present such comparisons in terms of the dimensionless wave-vector components $\ell= k_y/p$ and $\zeta = k_z/k_y$.
 
     % ------------------------------
     % ----------- FIGURE -----------
@@ -221,19 +226,21 @@ We list a few key points about the simulated gravitational-wave results in gener
         %
         \begin{subfigure}[b]{\linewidth}
             \centering
-            \includegraphics[width=\linewidth]{Findings/hij_powerspec.pdf}
+            \includegraphics[width=\linewidth]{Findings/hij_powerspec_sim3.pdf}
         \caption{Simulation~\simnum{3} with $m_{\lcoord{j}}=2$ and $\epsast=0.08L_\#$, for $k_y/k_\#=6,24,36$. }
-        \label{fig:results:h11:hij_powerspec}
+        \label{fig:results:h11:hij_powerspec_sim3}
         \end{subfigure}
         %
         \hfill
         \begin{subfigure}[b]{\linewidth}
-            \includegraphics[width=\linewidth]{Findings/hij_powerspec2.pdf}
+            \includegraphics[width=\linewidth]{Findings/hij_powerspec_sim5.pdf}
         \caption{Simulation~\simnum{5} with $m_{\lcoord{j}}=3$ and $\epsast=0.06L_\#$, for $k_y/k_\#=6,24,36$.}
-        \label{fig:results:h11:hij_powerspec2}
+        \label{fig:results:h11:hij_powerspec_sim5}
         \end{subfigure}
         % %
-        \caption{The one-dimensional power spectrum as functions of angle $\vartheta$, in arbitrary units. Green dash-dotted graphs represent $\hpA$, orange solid ones represent $\hpB$ and in blue are $\hpC$.}
+        \caption{%The one-dimensional power spectrum as functions of angle $\vartheta$, normalised to unity; $P_h/\max{(P_h)}$.
+        The strain squared $\hpAB[]^2 = 2\hpAB^2$ as functions of angle $\vartheta$, normalised to unity; $\Ft{h}^2/\max{\Ft{h}^2}$. %
+        Green dash-dotted graphs represent $\hpA$, orange solid ones represent $\hpB$ and in blue are $\hpC$.}
         \label{fig:results:h11:hij_powerspecs}
     \end{figure}
     % ------------------------------
@@ -242,7 +249,7 @@ We list a few key points about the simulated gravitational-wave results in gener
 
 
     % \phpar[describe the results from~\cref{fig:results:h11:hij_powerspecs}]
-    The results in~\cref{fig:results:h11:hij_powerspecs} show some likeness in the shape and evolution of $P_h$ with $\hpB$ and $\hpC$ for some values of $\ell$. The wave vectors in~\cref{fig:results:h11:hij_powerspec} and~\cref{fig:results:h11:hij_powerspec2} are equal, but the time points are different.
+    The results in~\cref{fig:results:h11:hij_powerspecs} show some likeness in the shape and evolution of $h^2$ with $\hpB$ and $\hpC$ for some values of $\ell$. The wave vectors in~\cref{fig:results:h11:hij_powerspec_sim3} and~\cref{fig:results:h11:hij_powerspec_sim5} are equal, but the time points are different.
 
     
 
@@ -344,7 +351,9 @@ We list a few key points about the simulated gravitational-wave results in gener
 
     There is a large and inconsistent difference in magnitude between $\hpAB^2$ and $\hpC^2$. This thesis does not cover this part of the analysis in depth, but we list some issues that are possibly related to this.
     \begin{itemize}
-        \item The dimensions of the Fourier-transformed tensor perturbations and SE tensor are $[k^{-3}] = \unit{(length)}^{3}$ and $[k \cdot k^{-3}]=\unit{(length)}^{2}$, respectively. There can be a misunderstanding in the unit conversion both from the simulation output and in the computation of $\Ft{\pi}_+$. \iftime{Comment about Delta-functions?} A source of confusion may be the transformation from discrete to continuous Fourier transforms. 
+        \item The dimensions of the Fourier-transformed tensor perturbations and SE tensor are $[k^{-3}] = \unit{(length)}^{3}$ and $[k \cdot k^{-3}]=\unit{(length)}^{2}$, respectively, in the continous case. There can be a misunderstanding in the unit conversion both from the simulation output and in the computation of $\Ft{\pi}_+$. 
+        % \iftime{Comment about Delta-functions?} 
+        A source of confusion may be the transformation from discrete to continuous Fourier transforms. 
         \item The cumulative-trapezoidal scheme that computes $\hpAB$ has numerical weaknesses, and the input to $\hpB$ is originally discrete. Tiny changes in $\varepsilon$ can have massive effect for $\hpAB$, and discontinuities often lead to larger values.
         \item The wall width is defined from convention, and measures scale more than an actual physical observable. 
         % Features like the wall width and \checkthis{surface tension} are \grammar[defined from convention]{not uniquely defined}, and 

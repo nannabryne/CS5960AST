@@ -78,14 +78,14 @@ Let us consider the variation of $S$ under small changes in the world sheet, $X\
 The equation of motion for the normal coordinate is then~\citep{ishibashiEquationMotionDomain1999,garrigaPerturbationsDomainWalls1991}
 % \begin{equation}
 %     \sq_\hypsurf x\^\mu  %
-%     + \ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
+%     + \ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
 %     +\frac{v}{\sigma} n\^\mu = 0,
 % \end{equation}
 \begin{equation}\label{eq:pertwalls:eom_wall:eom_defect}
     % n\_\mu\sq_\hypsurf x\^\mu  %
     n\_\mu \hypacc{{\sq}} X\^\mu 
-    % + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
-    + n\_\mu\ChristophelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
+    % + n\_\mu\ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} e\indices*{^\kappa_a}e\indices*{^\tau_b} %
+    + n\_\mu\ChristoffelSym{\mu}{\kappa\tau} \gamma\^{ab} X\indices{^\kappa_{,a}}X\indices{^\tau_{,b}} %
     +\frac{v}{\sigma} = 0,
 \end{equation}
 where $v=v_+-v_-$ is the difference in vacuum energies, %$\hypacc{\sq}$
@@ -96,16 +96,16 @@ where $v=v_+-v_-$ is the difference in vacuum energies, %$\hypacc{\sq}$
     \hypacc{\sq} = \hypacc{\nabla}\^a  \hypacc{\nabla}\_a  = \frac{1}{\sqrt{-\gamma}} \partial\_a (\sqrt{-\gamma} \gamma\^{ab}\partial\_b)
 \end{equation}
 is the d'Alembertian associated with $\hypsurf$, %
-and $\ChristophelSym{\mu}{\kappa\tau}$ are the spacetime Christoffel symbols. %The only physical observable is the normal component, 
+and $\ChristoffelSym{\mu}{\kappa\tau}$ are the spacetime Christoffel symbols. %The only physical observable is the normal component, 
 %
 This can be written in the simple form 
 \begin{equation}\label{eq:pertwalls:eom_wall:eom_extrinic_curvature}
     \gamma\^{ab} \hypacc{K}\_{ab} = -\frac{v}{\sigma} ,
 \end{equation}
-where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) is
-\begin{equation}
-    \hypacc{K}_{ab} = - e\indices*{^\mu _a}e\indices*{^\nu _b} \nabla\_\nu n\_\mu.
-\end{equation}
+where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) is $\hypacc{K}_{ab} = - e\indices*{^\mu _a}e\indices*{^\nu _b} \nabla\_\nu n\_\mu$.
+% \begin{equation}
+%     \hypacc{K}_{ab} = - e\indices*{^\mu _a}e\indices*{^\nu _b} \nabla\_\nu n\_\mu.
+% \end{equation}
 
 
 
@@ -209,7 +209,7 @@ where the extrinsic curvature tensor (\cref{eq:GR:diffgeo:extrinsic_curvature}) 
         T\^{\mu\nu}\big|\nped{NG}  = \frac{\sigma \Diracdelta(r )}{\sqrt{-g}\sqrt{-\gamma}} \Fdv{\gamma}{g\_{\mu\nu}}.
     \end{equation}
 
-    \speak{Maybe mention \( {\diff \gamma} = \gamma \gamma\^{ab} {\diff \gamma_{ab}}  \)?}
+    % \speak{Maybe mention \( {\diff \gamma} = \gamma \gamma\^{ab} {\diff \gamma_{ab}}  \)?}
 
     % We will consider $\Tw\^{\mu\nu} = T\^{\mu\nu}\rvert\nped{NG}$ to be the stress--energy 
 

@@ -25,7 +25,7 @@ We vary the action with respect to small changes in $\epsilon$, giving
 \end{align}
 where $\beta^3 \equiv \sigma a^3$. %
 In the last line, we used $\partial\_{\underaccent{\bar}{a}} \epsilon \partial\_{\underaccent{\bar}{a}}(\delta \epsilon)= \partial\_{\underaccent{\bar}{a}} (\partial\_{\underaccent{\bar}{a}} \epsilon\cdot \delta \epsilon)- \partial\_{\underaccent{\bar}{a}} \partial\_{\underaccent{\bar}{a}} \epsilon  \cdot \delta \epsilon$, where the under-bar signifies that it is not a summation, and cancelled vanishing surface terms. We get
-\begin{equation}
+\begin{equation}\label{eq:walls:dynamics:eom_beta}
     \partial_\tau^2 \epsilon + 3 ( \partial_\tau \beta / \beta) \partial_\tau \epsilon -  (\partial_x^2 + \partial_y^2) \epsilon = 0.
     % \partial_0^2 \epsilon + 3 ( \partial_0 \beta / \beta) \partial_0 \epsilon -  (\partial_1^2 + \partial_2^2) \epsilon = 0.
 \end{equation}
@@ -107,4 +107,41 @@ In the last line, we used $\partial\_{\underaccent{\bar}{a}} \epsilon \partial\_
 % %     \Fdv{S\nped{NG}}{\epsilon} \delta \epsilon &= 
 % % \end{align}
 
+
+
+
+
+
+\subsection{Full solution}\label{app:walls:dynamics:full_A_B}
+    In matter-dominated universe,~\cref{eq:walls:dynamics:eom_beta} as solutions that are a superposition of $ \varepsilon(\tau) \sppt(x,y)$ where
+    \begin{equation}\label{eq:walls:dynamics:eom_eps_s_MD}
+        \varepsilon'' + \left( \frac{6}{s}  +\frac{9}{2s\left(s^6-1\right)} \right) \varepsilon' + \omega^2 \varepsilon = 0
+    \end{equation}
+    and $\tau_\ast^2(\partial_x^2 + \partial_y^2)\sppt= -\omega^2 $. %
+    In~\cref{sec:pertwalls:mywalls} we obtained a solution in two regimes, one of these in terms of coefficients $A(\omega)$ and $B(\omega)$. %
+    For reference, we give the coefficients $A$ and $B$ in~\cref{eq:pertwalls:mywalls:eps_s_II_MD}, obtained by matching solutions at $s=s\ped{sow}=1+\omega^{-1}$. 
+    %
+
+    \begin{subequations}\label{eq:walls:dynamics:full_A_B}
+        First, we define
+        \begin{multline}
+            D\triangleq \sqrt{2/\ppi}\pclosed{ \omega^9 + 4\omega^8 + 6\omega^7 + 4\omega^6 + \omega^5} \sqrt{\omega+1 }  \\
+            \times \bclosed{ \frac{ 6\omega^5 + 15\omega^4 + 20\omega^3 + 15\omega^2 + 6\omega + 1 }{\omega^6} }^{(1/4)}.
+        \end{multline}
+        With 
+        \begin{multline}
+            P_1 \triangleq  336\omega^9 + 1608\omega^8 + 1051\omega^7 - 6407\omega^6 -17850\omega^5  \\-22050\omega^4 -15162\omega^3 - 5766\omega^2 - 1036\omega - 46
+        \end{multline}
+        and
+        \begin{multline}
+            P_2 \triangleq  84\omega^9 + 1641\omega^8 + 7036\omega^7 +12708\omega^6 +11202\omega^5 \\+ 3120\omega^4 - 2490\omega^3 - 2292\omega^2 -  604\omega - 30,
+        \end{multline}
+        we have
+        \begin{align}
+            A(\omega ) &= - \frac{ P_1\cos{(\omega + 1)} - P_2\sin{(\omega + 1)} }{D}, \\
+            B(\omega ) &= - \frac{ P_2\cos{(\omega + 1)} + P_1\sin({\omega + 1}) }{D}.
+        \end{align}
+        %
+    \end{subequations}
+    Now,~\cref{eq:pertwalls:mywalls:eps_s_complete_MD} with~\cref{eq:walls:dynamics:full_A_B} gives a completely analytical solution to~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}.
 

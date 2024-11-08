@@ -86,6 +86,7 @@ For reference, we cover a few of these concepts in the subsections below.
     %     S = \int \! \dx[4]\, \mathcal{L},
     % \end{equation}
     % with $\mathcal{L}$ being the \emph{Lagrangian}\footnote{Technically, it is the Lagrangian \emph{density}, an insignificant \grammar[point]{distinction} for these purposes.} of the theory. This Lorentz invariant quantity is composed of scalar terms only.
+    \comment{Fix}
     We formulate a theory of field\emph{s} $\Phi(x)$ in four-dimensional Minkowski spacetime in terms of the Lorentz invariant action
     \begin{equation}
         % S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\_{\mu} \phi_i\}),
@@ -98,7 +99,7 @@ For reference, we cover a few of these concepts in the subsections below.
     % For a general (i.e.~curved) spacetime, \blahblah $\partial\_{\mu} \to \nabla\_{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
     \begin{equation}
         % S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{scalar}}, 
-        S = \integ[4]{x}\underbrace{ \mathcal{L}(\Phi,  \nabla\_{\mu} \Phi)}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-g}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\Phi, \nabla\_{\mu} \Phi)}_{\text{scalar}},
+        S = \integ[4]{x}\underbrace{ \mathcal{L}(\Phi,  \partial\_{\mu} \Phi)}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-g}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\Phi, \nabla\_{\mu} \Phi)}_{\text{scalar}},
     \end{equation}
     where $g= \det(g)$ is the determinant of the metric. What was applied here, was the \newconcept{minimal-coupling principle}, 
     and we may refer to $\mathcal{L}$ as the minimally-coupled Lagrangian (density). Loosely speaking, this principle involves replacing the Minkowski metric with the curved-spacetime metric ($\eta\_{\mu\nu}\to g\_{\mu\nu}$), and partial derivatives to covariant derivatives ($\partial\_{\mu} \to \nabla\_{\mu} $).
@@ -204,7 +205,7 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
 
-\subsection{Cosmic chronology}
+\subsection{Cosmic scales}
     % \begin{bullets}
     %     \item expansion rate, cosmic time, conformal time
     %     \item why is flat assumption OK?
@@ -218,6 +219,7 @@ For reference, we cover a few of these concepts in the subsections below.
 
     % There are several common choices of time reference frames in cosmological context.
     % The standard model of cosmology offers several measurements of time that are convenient for various purposes. 
+    \subsubsection{Chronology}
     The standard model of cosmology provides multiple time measurements that are useful for different applications. 
     Cosmic time $t$ is often impractical to use in physical cosmology. The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift} $\redshift$,%
     \footnote{
@@ -227,18 +229,40 @@ For reference, we cover a few of these concepts in the subsections below.
     \begin{equation}
         1 + \redshift = a(t_0)/a(t),
     \end{equation}
-    where $t_0\approx 13.8$ gigayears means today, and $a$ is the dimensionless \newconcept{cosmic scale factor}. The cosmic-time term is defined via $a(t\equiv 0)= 0$, which is to say that we define the time of Big Bang as the time \blahblah \comment{Fix!}
+    where $t$ is cosmic time with value $t_0\approx 13.8$ gigayear today, and $a$ is the dimensionless \newconcept{cosmic scale factor}.\comment{Fix} The cosmic-time term is defined via $a(t\equiv 0)= 0$, which is to say that we define the time of Big Bang as this point in time. 
+    In this thesis we make use of \newconcept{conformal time} $\tau$ for which ${\diff t} = a {\diff \tau}$ holds %
+    %  giving
+    % {\newcommand{\dummy}{}
+    % \begin{equation}
+    %     \tau = \integ{\dummy{t}}\frac{1}{a(\dummy{t})} =  \integ{\dummy{a}} \frac{1}{\dummy{a}^2 H(\dummy{a})}
+    % \end{equation}
+    % }%
+    in units with $c=1$. We will use $\dot{}\equiv\dv*{}{\tau}$ as a shorthand notation for derivatives with respect to conformal time. %Another important
+    Other common measures of time include the physical Hubble factor $H=1/a \dv*{a}{t}$, and conformal Hubble factor $\mathcal{H}= aH = \dot{a}/a$.
+
+    \subsubsection{Comoving and physical scales}
+    We use comoving measures of disctances and relate these to comoving wavenumbers $k$, related to comoving wavelength $\lambda$. We adapt the convention in~\citet{maggioreGravitationalWavesVol2018} and use \newconcept{reduced wavelengths}
+    \begin{align}
+        \lambdabar \equiv   1/k  = \lambda/(2\ppi).
+    \end{align}
+    % We refer to sub- and super-horizon modes as the modes for which $k\tau \ll 1 $
+    Comoving scales remain constant in time. We refer to modes with wavelengths larger than the horizon, $\lambdabar\gg \mathcal{H}^{-1}(a)$, as \newconcept{super-horizon} modes, where $\mathcal{H}=1/a \dv*{a}{\tau}$ is the conformal Hubble factor (\cref{eq:GR:lcdm:first_Friedmann_conformal}) or the ``comoving horizon.'' %
+    Modes well inside the horizon, $\lambdabar\ll \mathcal{H}^{-1}(a)$ are \newconcept{sub-horizon}. %
+    Now, we obtain physical measurements via $k\ped{ph}(a) = k /a$ and $\lambdabar\ped{ph}(a) = a \lambdabar$.
+
     
-    In this project we make use of \newconcept{conformal time} $\tau$ for which ${\diff t} = a {\diff \tau}$ holds.  
+
 
 
 
 \subsection{Cosmological simulations}
-    \phpar[Nyquist frequency, fundamental frequency, DFTs]
+    % \phpar[Nyquist frequency, fundamental frequency, DFTs]
 
-    Simulations of cosmological scenarios are usually performed on three-dimensional lattices with periodic boundaries. Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction. %
-    The \newconcept{fundamental frequency} is the smallest frequency mode, $k\ped{IR}=2\ppi/L$ \blahblah. The Nyquist frequency, $k\ped{UV}=k\ped{IR} N/2 = \ppi N/L$, is the highest resolvable frequency \blahblah.
-    
+    Simulations of cosmological scenarios are usually performed on three-dimensional lattices with periodic boundaries. Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction, giving a spatial resolution of $\Delta=L/N$. %
+    The \newconcept{fundamental frequency} is the smallest frequency mode, which in terms of wavenumber is $k\ped{IR}=2\ppi/L$. %\footnote{We use $\text{wavenumber} = \text{wavelength}^{-1} =  2 \ppi \times \text{frequency}$} 
+    The \newconcept{Nyquist frequency}, given by the angular frequency $k\ped{UV}=k\ped{IR} N/2 = \ppi N/L$, is the highest resolvable frequency.
+
+    % The choice of $L$ and $N$ involves a trade-off between the desire to capture large-scale structures happening on cosmological scales ($\gtrsim \mathrm{Mpc}/h$) and the need for 
 
     \subsubsection{High-performance computing}
 

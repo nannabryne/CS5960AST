@@ -155,7 +155,7 @@ We neglect back-reaction, that is we assume that the defect does not change the 
         \dot{H}_P^{1,2}(\tau, \vec{k})  = \pm k \,\bclosed{ \mathsf{R}_\alpha^{(1,2)}(k\tau) -  n\mathsf{z}^{(1,2)}_n(k\tau) } \integ{\dummy{\tau}}[\tau_\ast][\tau] \mathsf{R}_n^{(2,1)}(k\dummy{\tau})  \Src_P(\dummy{\tau}, \vec{k}).
     \end{equation}
     Note that $\dot{h} = a^{-1} ( \dot{\ah} - \dot{a} \ah)$ is the conformal time derivative of the gravitational waves. 
-    We repeat that $\mathsf{R}^{(i)}$ and $\mathsf{z}^{(i)}$ are the Riccati-- and spherical Bessel functions of $i$th kind, respectively, reported in~\cref{app:special}.
+    We repeat that $\mathsf{R}^{(i)}$ and $\mathsf{z}^{(i)}$ are the Riccati-- and spherical Bessel functions of $i$th kind, respectively, reported in~\cref{app:cylinder}.
 
 
 
@@ -237,7 +237,7 @@ We neglect back-reaction, that is we assume that the defect does not change the 
     %     \end{split}
     % \end{equation}
     % Let us now take the solution $\epsilon(x\^a) = \varepsilon(\tau) \sppt(x,y)$ to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} with eigenvalue 
-    Let us assume $\epsilon_{,x}=0$ s.t.~$\epsilon(\tau,x,y)=\varepsilon(\tau)\sppt(y)$ with eigenvalue $p^2$. %
+    Let us assume $\epsilon_{,x}=0$ s.t.~$\epsilon(\tau,x,y)=\varepsilon(\tau)\sppt(y)$. % with eigenvalue $p^2$. %
     % In addition, we can put $p\_a$ along the $y$-axis. 
     Now
     % \begin{equation}
@@ -252,37 +252,41 @@ We neglect back-reaction, that is we assume that the defect does not change the 
 
     We choose a linear polarisation basis (\cref{sec:GR:gws}). As there is no dependence on $x$ in real space, there is a proportionality to $\Diracdelta(k_x)$ in Fourier space. Considering $\vec{k}=(0,k_y, k_z)$ leaves only one degree of freedom, and we see that
     \begin{equation} 
-        {\Twf\_{ij}}\rvert\ped{TT} = \ProjectionLambda{ij}{kl} \Twf\_{kl} = \sum_{P=\polplus, \polcross} \Twf_P e\indices*{^P_{ij}} = \Twf_\polplus e\indices*{^\polplus_{ij}}.
+        {\Twf\_{ij}}\rvert\ped{TT} = \ProjectionLambda{ij}{kl} \Twf\_{kl} = \sum_{P=\polplus, \polcross} \Twf_P e\indices*{^P_{ij}} = \Twf_\polplus e\indices*{^\polplus_{ij}},
     \end{equation}
-    In addition, we get $\Twf_\polplus = {\Twf_{xx}}\rvert\ped{TT}$. From here, we work with $\Ft{\pi}\ap{w}_\polplus = \Ft{\pi}\ap{w}_{xx}= a^{-2} \ProjectionLambda{xx}{ij}\Twf\_{ij}$. 
-    Applying the spin-2 projector (\cref{eq:notation:projection_tensor}) and using~\cref{eq:pertwalls:gws:Ft_SE_tensor_general}, we find that
+    where detailed expressions are put in~\cref{app:walls:SE_tensor:spin2}.
+    % In addition, we get $\Twf_\polplus = {\Twf_{xx}}\rvert\ped{TT}$. 
+    From here, we work with $\Ft{\pi}\ap{w}_\polplus = \Ft{\pi}\ap{w}_{xx}= a^{-2} \ProjectionLambda{xx}{ij}\Twf\_{ij}$, where
+    % In~\cref{app:walls:SE_tensor:spin2} we show that
+    % Applying the spin-2 projector (\cref{eq:notation:projection_tensor}) and using~\cref{eq:pertwalls:gws:Ft_SE_tensor_general}, we find that
     \begin{equation}
         a^2 \Ft{\pi}\ap{w}_+ =\Twf_+= \frac{k_y}{2k^2} \cclosed{ k_y \Twf\_{xx} + 2k_z \Twf\_{xy}  }.
     \end{equation}
 
+
     
-    \deleteme{%
-        \begin{equation}
-            e\indices*{^+_{ij}}(\vec{k}) = \frac{1}{k^2}%
-            {\left(\begin{array}{ccc}
-                k^2 & 0 & 0 \\
-                0 & -k_z^2 & k_y k_z \\
-                0 & k_y k_z & -k_y^2 
-            \end{array}\right)}\_{ij} %
-            \quad \land \quad %
-            e\indices*{^{\times}_{ij}}(\vec{k})  = \frac{1}{k}%
-            {\left(\begin{array}{ccc}
-                0 & k_z & -k_y \\
-                -k_z&0 & 0 \\
-                k_y & 0&0
-            \end{array}\right)}\_{ij} %
-        \end{equation}
-    }
+    % \deleteme{%
+    %     \begin{equation}
+    %         e\indices*{^+_{ij}}(\vec{k}) = \frac{1}{k^2}%
+    %         {\left(\begin{array}{ccc}
+    %             k^2 & 0 & 0 \\
+    %             0 & -k_z^2 & k_y k_z \\
+    %             0 & k_y k_z & -k_y^2 
+    %         \end{array}\right)}\_{ij} %
+    %         \quad \land \quad %
+    %         e\indices*{^{\times}_{ij}}(\vec{k})  = \frac{1}{k}%
+    %         {\left(\begin{array}{ccc}
+    %             0 & k_z & -k_y \\
+    %             -k_z&0 & 0 \\
+    %             k_y & 0&0
+    %         \end{array}\right)}\_{ij} %
+    %     \end{equation}
+    % }
    
 
 
     \subsubsection{Spatial part}
-    For simplicity, we choose $\sppt(y)=\sin{py}$. In~\cref{app:walls:SE_tensor:FT_SE} we show that this implies
+    For simplicity, we choose $\sppt(y)=\sin{py}$. In~\cref{app:walls:SE_tensor:spin2} we show that this implies
     \begin{equation}
         a^{2}\Ft{\pi}\ap{w}_\polplus = - \frac{k_y^2}{2k^2} \Twf\_{xx}.
     \end{equation}

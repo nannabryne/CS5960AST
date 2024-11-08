@@ -15,14 +15,14 @@
 
 
 % \section{Limits of the framework}
-We review the equations this thin-wall approximation is built on. %
+We review the equations that the thin-wall approximation is built on. %
 Let us consider three steps that are not completely independent, but describe a certain order of things.
 \begin{description}
     \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Here:} Set $\alpha=2$ to get matter domination.
     \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said phase transition. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Here:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
     \item[Step three:] Consider a topological defect that is the product of the aforementioned symmetry break. The defect with vanishing thickness possess dynamics derived from the Nambu--Goto action. Add a perturbation to the wall normal coordinate. We find the TT-part of the corresponding stress--energy tensor and consider this as a source of gravitational waves. \textbf{Here:} We consider the domain wall scenario, specifically a planar wall. The equation of motion for this perturbation is expended into eigenvalues and solved thereafter. We use this as input to the Nambu--Goto SE tensor, which in turn source tensor perturbations.
 \end{description}
-Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. 
+\rephrase{Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. }
 
 % We want everything up to the Fourier SE tensor to be analytically solvable, at least to some level that resembles the actual situation, like when using $\sigma \propto (1-\upsilon)^{3/2}$ in this project. %\comment{The behaviour is recognisable at this stage.} 
 % Okay, so far, so good. We found that for a two-dimensional topological defect in a conformally flat spacetime, we have the SE tensor \blahblah
@@ -67,7 +67,7 @@ With the above elaboration, we comprise the steps in the following ``hierarchy''
         \item\label{item:whatif:framework:bckg_simple_scale_factor} Scale factor $a\propto \tau^\alpha$
         \item\label{item:whatif:framework:bckg_matter_dom} Matter domination, i.e.~$\alpha=2$
     \end{enumerate}
-    \item\label{item:whatif:framework:pt}  Phase transition: quintessence %
+    \item\label{item:whatif:framework:pt}  Phase transition: Scalar-field theory %
         \begin{enumerate}
             \item\label{item:whatif:framework:pt_asymmetron} Asymmetron potential
             \item\label{item:whatif:framework:pt_symmetron}  Symmetron potential
@@ -102,67 +102,80 @@ We mention that to solve the equation of motion for the (unperturbed) wall norma
 
 
 
-
-
 \subsubsection{Different wall perturbation}
-    We take a look at a scenario in which the solution to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} is
-    \begin{equation}
-        \epsilon = \sum_{k} \epsilon_k= \sum_k \varepsilon_k  \sin{( p_k y)}; \quad p_k = \ppi k / L, 
-    \end{equation}
-    where $L$ is some length scale. We let $a_k$ be weights such that $\sum_k\abs{a_k}= \epsast$ and $\varepsilon_k = a_k \varepsilon(\tau; p_k)/\varepsilon(\tau_\ast; p_k) $, where $ \varepsilon(\tau; p_k)$ solves~\cref{eq:pertwalls:mywalls:eom_eps_s_MD} for $p=p_k$. %For simplicity, let us say the SE tensor is $T\^{\mu\nu}=$
-    Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, the $xx$-component of the stress--energy tensor goes as
-    \begin{equation}
-        % \integ{y}\eu[\im k_y y]\integ{z}\eu[\im k_z z]\Diracdelta(z-\epsilon)  = \integ{y} \eu[\im k_z\sum_k \epsilon_k ]\eu[\im k_y y]
-        \tilde{T}_{xx} \sim \Diracdelta(k_x)I\ped{s} =\Diracdelta(k_x) \integ{y} \eu[\im k_z \sum_k \epsilon_k ]\eu[\im k_y y].
-    \end{equation}
-    By the same argumentation as in~\cref{app:walls:SE_tensor:FT_SE}, we get
+    As our working example, we chose the simplest solution to the equation of motion for the wall perturbation, namely $\epsilon= \varepsilon(\tau)\sin{py}$. This way, we kept the number of perturbation parameters to a minimum. This is naturally highly unlikely in real life. 
+    In~\cref{app:walls:SE_tensor_alt:general} we address the situation where the wall perturbation has more complex nature, and not simply the sinus from before. We saw that for only two eigenvalues, the $xx$-component of the stress--energy tensor becomes an infinite sum (\cref{eq:walls:SE_tensor_alt:I_s_with_a1_and_a3}). %
+    % \speak{Some words about this.} 
+    This result is regrettable, but not necessarily catastrophic. %
+    It is perhaps possible to make use of some identities to simplify $I\ped{s}$, such~\cref{eq:cylinder:Bessel_sum_relation}, 
     % \begin{equation}
-    %     \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \textstyle{\sum\nolimits_{j}} n_l p_j) %= \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \frac{\ppi}{L}\textstyle{\sum\nolimits_{j}} n_j j)
+    % \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
     % \end{equation}
-    \begin{equation}
-        % \sum_{n_1, n_2, n_3, \dots} 
-        % \sum_{n_1\in \Integer} \sum_{n_2\in \Integer} \sum_{n_3\in \Integer} \cdots 
-        % \sum_{n_1} \sum_{n_2} \sum_{n_3} \cdots 
-        % \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_2](k_z \varepsilon_2)\Bessel[n_3](k_z \varepsilon_3) \cdots  
-        I\ped{s}=2\ppi\sum_{n_1} \Bessel[n_1](k_z \varepsilon_1)\sum_{n_2} \Bessel[n_2](k_z \varepsilon_2) \sum_{n_3}\Bessel[n_3](k_z \varepsilon_3) \cdots \times \Diracdelta(k_y + \ppi[1n_1 + 2n_2 + 3n_3 + \dots]/L)
-        % \Diracdelta(k_y + \ppi/L \textstyle{ \sum_k k n_k })
-    \end{equation}
-    where $n_k \in \Integer$. %
-    We use the property $\Bessel[n](0)=\deltaup_{n0}$ to check that this reduces to~\cref{eq:derivations:jacobianger:I_s_only} when there is only one nonzero weight (e.g.~$a_1= \varepsilon_\ast$).
-
-    % Recall that $\Bessel[n](0)=\deltaup_{n0}$. We see that for $a_k=0$ except for e.g.~$a_4= \epsast$, the SE tensor for $\epsilon = \varepsilon(\tau; p_4) \sin (p_4 y)$ is retrieved. 
-    More compactly, we can write the contribution as
-    \begin{equation}
-        I\ped{s} = 2\ppi 
-        % \sum_{n_1} J^1_{n_1}  \sum_{n_2} J^2_{n_2}  \sum_{n_3} J^3_{n_3} \cdots 
-        \sum_{n_1,n_2, n_3, \dots} J^1_{n_1}J^2_{n_2} J^3_{n_3}\cdots
-        \times \Diracdelta\big(k_y +p_1\textstyle{ \sum_k k n_k}\big)
-    \end{equation}
-    where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
-    Now say $a_1$ and $a_3$ are the only non-zero weights. The expression becomes
-    \begin{equation}
-        % \sum_{n_1, n_3} \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_3](k_z \varepsilon_3) 
-        \sum_{n_1, n_3} J^1_{n_1} J^3_{n_3} \times
-        \Diracdelta(k_y + p_1[n_1 + 3n_3] ).
-    \end{equation}
-    % where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
-    This means that for modes say $k_y = -10 p_1 $, the term contributes to the source with $J^1_{10} J^3_{0} + J^1_{6} J^3_{1} +J^1_{4} J^3_{2} + J^1_{1} J^3_{3}  + J^1_{16}J^3_{-2} + \dots $, i.e. an infinite series of factors $J^1_{n_1}J^3_{n_3}$ for combinations $n_1+3n_3=10$, $n_k\in \Integer$. %We write this as $\sum_{m\in\Integer} J^1_{10-3m} J^3_{m}$.
-    Thus,
-    \begin{equation}
-        % I\ped{s}\rvert_{k_y=-10p_1} = 2\ppi \Diracdelta(k_y+10p_1) 
-        I\ped{s} = 2\ppi \Diracdelta(k_y+Np_1)\sum_{m\in\Integer} J^1_{N-3m} J^3_{m}
-    \end{equation}
-    for this setup.
-
-    \speak{Some words about this.} This result is regrettable, but not necessarily catastrophic. %
-    It is perhaps possible to make use of some identities to simplify $I\ped{s}$, such as
-    \begin{equation}
-        \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
-    \end{equation}
     but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
     If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. 
 
     \speak{Comment on why we extract the summation from the integration.}
+
+
+
+    % We take a look at a scenario in which the solution to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} is
+    % \begin{equation}
+    %     \epsilon = \sum_{k} \epsilon_k= \sum_k \varepsilon_k  \sin{( p_k y)}; \quad p_k = \ppi k / L, 
+    % \end{equation}
+    % where $L$ is some length scale. We let $a_k$ be weights such that $\sum_k\abs{a_k}= \epsast$ and $\varepsilon_k = a_k \varepsilon(\tau; p_k)/\varepsilon(\tau_\ast; p_k) $, where $ \varepsilon(\tau; p_k)$ solves~\cref{eq:pertwalls:mywalls:eom_eps_s_MD} for $p=p_k$. %For simplicity, let us say the SE tensor is $T\^{\mu\nu}=$
+    % Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, the $xx$-component of the stress--energy tensor goes as
+    % \begin{equation}
+    %     % \integ{y}\eu[\im k_y y]\integ{z}\eu[\im k_z z]\Diracdelta(z-\epsilon)  = \integ{y} \eu[\im k_z\sum_k \epsilon_k ]\eu[\im k_y y]
+    %     \tilde{T}_{xx} \sim \Diracdelta(k_x)I\ped{s} =\Diracdelta(k_x) \integ{y} \eu[\im k_z \sum_k \epsilon_k ]\eu[\im k_y y].
+    % \end{equation}
+    % By the same argumentation as in~\cref{app:walls:SE_tensor:FT_SE}, we get
+    % % \begin{equation}
+    % %     \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \textstyle{\sum\nolimits_{j}} n_l p_j) %= \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \frac{\ppi}{L}\textstyle{\sum\nolimits_{j}} n_j j)
+    % % \end{equation}
+    % \begin{equation}
+    %     % \sum_{n_1, n_2, n_3, \dots} 
+    %     % \sum_{n_1\in \Integer} \sum_{n_2\in \Integer} \sum_{n_3\in \Integer} \cdots 
+    %     % \sum_{n_1} \sum_{n_2} \sum_{n_3} \cdots 
+    %     % \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_2](k_z \varepsilon_2)\Bessel[n_3](k_z \varepsilon_3) \cdots  
+    %     I\ped{s}=2\ppi\sum_{n_1} \Bessel[n_1](k_z \varepsilon_1)\sum_{n_2} \Bessel[n_2](k_z \varepsilon_2) \sum_{n_3}\Bessel[n_3](k_z \varepsilon_3) \cdots \times \Diracdelta(k_y + \ppi[1n_1 + 2n_2 + 3n_3 + \dots]/L)
+    %     % \Diracdelta(k_y + \ppi/L \textstyle{ \sum_k k n_k })
+    % \end{equation}
+    % where $n_k \in \Integer$. %
+    % We use the property $\Bessel[n](0)=\deltaup_{n0}$ to check that this reduces to~\cref{eq:derivations:jacobianger:I_s_only} when there is only one nonzero weight (e.g.~$a_1= \varepsilon_\ast$).
+
+    % % Recall that $\Bessel[n](0)=\deltaup_{n0}$. We see that for $a_k=0$ except for e.g.~$a_4= \epsast$, the SE tensor for $\epsilon = \varepsilon(\tau; p_4) \sin (p_4 y)$ is retrieved. 
+    % More compactly, we can write the contribution as
+    % \begin{equation}
+    %     I\ped{s} = 2\ppi 
+    %     % \sum_{n_1} J^1_{n_1}  \sum_{n_2} J^2_{n_2}  \sum_{n_3} J^3_{n_3} \cdots 
+    %     \sum_{n_1,n_2, n_3, \dots} J^1_{n_1}J^2_{n_2} J^3_{n_3}\cdots
+    %     \times \Diracdelta\big(k_y +p_1\textstyle{ \sum_k k n_k}\big)
+    % \end{equation}
+    % where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+    % Now say $a_1$ and $a_3$ are the only non-zero weights. The expression becomes
+    % \begin{equation}
+    %     % \sum_{n_1, n_3} \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_3](k_z \varepsilon_3) 
+    %     \sum_{n_1, n_3} J^1_{n_1} J^3_{n_3} \times
+    %     \Diracdelta(k_y + p_1[n_1 + 3n_3] ).
+    % \end{equation}
+    % % where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+    % This means that for modes say $k_y = -10 p_1 $, the term contributes to the source with $J^1_{10} J^3_{0} + J^1_{6} J^3_{1} +J^1_{4} J^3_{2} + J^1_{1} J^3_{3}  + J^1_{16}J^3_{-2} + \dots $, i.e. an infinite series of factors $J^1_{n_1}J^3_{n_3}$ for combinations $n_1+3n_3=10$, $n_k\in \Integer$. %We write this as $\sum_{m\in\Integer} J^1_{10-3m} J^3_{m}$.
+    % Thus,
+    % \begin{equation}
+    %     % I\ped{s}\rvert_{k_y=-10p_1} = 2\ppi \Diracdelta(k_y+10p_1) 
+    %     I\ped{s} = 2\ppi \Diracdelta(k_y+Np_1)\sum_{m\in\Integer} J^1_{N-3m} J^3_{m}
+    % \end{equation}
+    % for this setup.
+
+    % \speak{Some words about this.} This result is regrettable, but not necessarily catastrophic. %
+    % It is perhaps possible to make use of some identities to simplify $I\ped{s}$, such as
+    % \begin{equation}
+    %     \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
+    % \end{equation}
+    % but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
+    % If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. 
+
+    
 
     % \begin{bullets}
     %     \item Adding propagating waves on torus

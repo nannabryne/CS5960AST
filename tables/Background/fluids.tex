@@ -1,0 +1,26 @@
+%
+\subimport{../}{style.tex}
+%
+{\small{
+\begin{minipage}{\linewidth}
+    \begin{tabular*}{\tabWidth}{@{\extracolsep{\fill}} l l l l l }
+        % \multicolumn{5}{l}{\tabHeading{Perfect fluids}} \\
+        % \toprule
+        % \tabSubheading{E.o.s.-parameter} & \tabSubheading{Energy density scaling} & \tabSubheading{Type} & \tabHeading{Examples} & \tabHeading{Top.} \\
+        %
+        % \toprule
+        \tabHeading{EOS}\footnote{Effective equation-of-state parameter, $w=p/\rho$.} & \tabHeading{Energy}\footnote{Energy density scaling, $\rho\propto a^{-3(1+w)}$.} &
+        \tabHeading{Scale fac.}\footnote{Scale factor $a \sim \tau^\alpha$.} 
+        & \tabHeading{Constituent} &  \tabHeading{Top. defect}\footnote{Network of topological defects modelled as perfect fluid. Isotropic pressure is $p = -(D/3)\rho$, where $D$ is the dimension of the defect~\citep{vilenkinCosmicStringsOther1994,vachaspatiKinksDomainWalls2006}.} \\
+        \toprule
+        % $1$ & $\propto a^{-6}$ &  X & Y & - \\
+        $w =1/3$ & $\rho\propto a^{-4}$  & $a\sim \tau^{1}$ & ultra-relativistic matter (photons, neutrinos) &  \\
+        $w =0$ & $\rho\propto a^{-3}$  &  $a\sim \tau^2$& non-relativistic matter (CDM, baryons) &  monopoles  \\
+        $w =-1/3$ & $\rho\propto a^{-2}$  &      & curvature & cosmic strings  \\
+        $w =-2/3$ & $\rho\propto a^{-1}$  & $a\sim \tau^{-2}$& & domain walls  \\
+        $w =-1$ & $\rho\propto a^{0}$  &$a\sim \tau^{-1}$ & cosmological constant (vacuum, dark energy) &  \\
+        $w <-1$ &   & & phantom energy~\citep{maggioreGravitationalWavesVol2018,paraskevasEffectsLateGravitational2023} &  \\
+        \bottomrule
+    \end{tabular*}%
+\end{minipage}
+}}

@@ -150,7 +150,8 @@
 
 
 % Levi-Civita symbol (not tensor)
-\newcommandx*\LeviCivita[1]{\ensuremath{\tilde{\text{\textepsilon}}_{#1}}}
+% \newcommandx*\LeviCivita[1]{\ensuremath{\tilde{\text{\textepsilon}}_{#1}}}
+\newcommand{\LeviCivita}{\tilde{\epsilonup}}
 
 
 
@@ -280,7 +281,7 @@
 
 
 % Christoffel symbols
-\newcommandx*{\ChristophelSym}[3][1=\Gamma]{%
+\newcommandx*{\ChristoffelSym}[3][1=\Gamma]{%
     #1\indices*{^{#2}_{#3}}%
 }
 
@@ -401,7 +402,7 @@
 % codes:
 \providecommand*{\latfield}{\textsc{lat}field2}
 \providecommand*{\gevolution}{\texttt{gevolution}}
-\providecommand*{\gwasevolution}{\texttt{AsGRD}}
+\providecommand*{\asgrd}{\texttt{AsGRD}}
 
 % programming:
 \providecommand*{\Python}{\texttt{Python}}
@@ -414,7 +415,7 @@
 
 
 % units:
-\providecommand{\Mpch}{\ensuremath{\mathrm{Mpc}/h_0}}
+\providecommand{\Mpch}{\ensuremath{\mathrm{Mpc/h}}}
 
 
 
@@ -615,6 +616,9 @@
 
 
 \newcommand{\piGN}{\ppi G\nped{N}}
+
+
+\newcommand{\ALIASwallsep}{d\ped{w\widebar{w}}}
 
 
 

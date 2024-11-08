@@ -1,0 +1,78 @@
+% |||||||||||||||||||||||||||||||||
+% |||||| C.4 Stress--energy ||||||
+% |||||||||||||||||||||||||||||||||
+
+% ---------------------------------------------------
+% labels: \label{[type]:walls:SE_tensor_alt:[name]}
+% ---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+In this section, we consider the Fourier-transformed stress--enery tensor when $\epsilon = \epsilon(\tau,y)$, but not necessarily $\epsilon(\tau)\sin{py}$ as in~\cref{app:walls:SE_tensor:FT_SE}.
+
+
+\subsection{Cosine case}\label{app:walls:SE_tensor_alt:cos}
+    Consider $\epsilon=\varepsilon(\tau)\cos{py} = \varepsilon\sin{(py  + \ppi/2 )}$. We get the same result as in~\cref{app:walls:SE_tensor:FT_SE}, only with a prefactor $\im^{\ell}$ where $\ell = k_y/p$. This prefactor can be seen from~\cref{eq:cylinder:Jacobi_Anger_cos}.
+
+
+
+
+\subsection{General case}\label{app:walls:SE_tensor_alt:general}
+    We take a look at a scenario in which the solution to~\cref{eq:pertwalls:thinwall:varepsilon_and_E_eoms} is
+    \begin{equation}
+    \epsilon = \sum_{k} \epsilon_k= \sum_k \varepsilon_k  \sin{( p_k y)}; \quad p_k = \ppi k / L, 
+    \end{equation}
+    where $L$ is some length scale. We let $a_k$ be weights such that $\sum_k\abs{a_k}= \epsast$ and $\varepsilon_k = a_k \varepsilon(\tau; p_k)/\varepsilon(\tau_\ast; p_k) $, where $ \varepsilon(\tau; p_k)$ solves~\cref{eq:pertwalls:mywalls:eom_eps_s_MD} for $p=p_k$. %For simplicity, let us say the SE tensor is $T\^{\mu\nu}=$
+    Following~\cref{sec:pertwalls:gws:Fourier_SE_tensor}, the $xx$-component of the stress--energy tensor goes as
+    \begin{equation}
+    % \integ{y}\eu[\im k_y y]\integ{z}\eu[\im k_z z]\Diracdelta(z-\epsilon)  = \integ{y} \eu[\im k_z\sum_k \epsilon_k ]\eu[\im k_y y]
+    \tilde{W}_{xx} \sim \Diracdelta(k_x)I\ped{s} =\Diracdelta(k_x) \integ{y} \eu[\im k_z \sum_k \epsilon_k ]\eu[\im k_y y].
+    \end{equation}
+    By the same argumentation as in~\cref{app:walls:SE_tensor:FT_SE}, we get
+    % \begin{equation}
+    %     \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \textstyle{\sum\nolimits_{j}} n_l p_j) %= \prod_{l} \sum_{n_l} \Bessel[n_l](k_z \varepsilon(\tau; p_{n_l})) \cdot \Diracdelta(k_y + \frac{\ppi}{L}\textstyle{\sum\nolimits_{j}} n_j j)
+    % \end{equation}
+    \begin{equation}
+    % \sum_{n_1, n_2, n_3, \dots} 
+    % \sum_{n_1\in \Integer} \sum_{n_2\in \Integer} \sum_{n_3\in \Integer} \cdots 
+    % \sum_{n_1} \sum_{n_2} \sum_{n_3} \cdots 
+    % \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_2](k_z \varepsilon_2)\Bessel[n_3](k_z \varepsilon_3) \cdots  
+    I\ped{s}=2\ppi\sum_{n_1} \Bessel[n_1](k_z \varepsilon_1)\sum_{n_2} \Bessel[n_2](k_z \varepsilon_2) \sum_{n_3}\Bessel[n_3](k_z \varepsilon_3) \cdots \times \Diracdelta(k_y + \ppi[1n_1 + 2n_2 + 3n_3 + \dots]/L)
+    % \Diracdelta(k_y + \ppi/L \textstyle{ \sum_k k n_k })
+    \end{equation}
+    where $n_k \in \Integer$. %
+    We use the property $\Bessel[n](0)=\deltaup_{n0}$ to check that this reduces to~\cref{eq:derivations:jacobianger:I_s_only} when there is only one nonzero weight (e.g.~$a_1= \varepsilon_\ast$). 
+    % Recall that $\Bessel[n](0)=\deltaup_{n0}$. We see that for $a_k=0$ except for e.g.~$a_4= \epsast$, the SE tensor for $\epsilon = \varepsilon(\tau; p_4) \sin (p_4 y)$ is retrieved. 
+    More compactly, we can write the contribution as
+    \begin{equation}\label{eq:walls:SE_tensor_alt:I_s_general}
+    I\ped{s} = 2\ppi 
+    % \sum_{n_1} J^1_{n_1}  \sum_{n_2} J^2_{n_2}  \sum_{n_3} J^3_{n_3} \cdots 
+    \sum_{n_1,n_2, n_3, \dots} J^1_{n_1}J^2_{n_2} J^3_{n_3}\cdots
+    \times \Diracdelta\big(k_y +p_1\textstyle{ \sum_k k n_k}\big)
+    \end{equation}
+    where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+
+    \paragraph{Example.} %
+    Now say $a_1$ and $a_3$ are the only non-zero weights. The expression becomes
+    \begin{equation}
+    % \sum_{n_1, n_3} \Bessel[n_1](k_z \varepsilon_1) \Bessel[n_3](k_z \varepsilon_3) 
+    \sum_{n_1, n_3} J^1_{n_1} J^3_{n_3} \times
+    \Diracdelta(k_y + p_1[n_1 + 3n_3] ).
+    \end{equation}
+    % where we defined $J^k_n\triangleq \Bessel[n](k_z \varepsilon_k)$. %
+    This means that for modes say $k_y = -10 p_1 $, the term contributes to the source with $J^1_{10} J^3_{0} + J^1_{6} J^3_{1} +J^1_{4} J^3_{2} + J^1_{1} J^3_{3}  + J^1_{16}J^3_{-2} + \dots $, i.e. an infinite series of factors $J^1_{n_1}J^3_{n_3}$ for combinations $n_1+3n_3=10$, $n_k\in \Integer$. %We write this as $\sum_{m\in\Integer} J^1_{10-3m} J^3_{m}$.
+    Thus,
+    \begin{equation}\label{eq:walls:SE_tensor_alt:I_s_with_a1_and_a3}
+    % I\ped{s}\rvert_{k_y=-10p_1} = 2\ppi \Diracdelta(k_y+10p_1) 
+    I\ped{s} = 2\ppi \Diracdelta(k_y+Np_1)\sum_{m\in\Integer} J^1_{N-3m} J^3_{m}; \quad N=n_1 + 3n_3 
+    \end{equation}
+    for this setup.
+
