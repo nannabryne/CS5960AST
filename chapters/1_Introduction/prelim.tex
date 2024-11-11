@@ -73,8 +73,8 @@ For reference, we cover a few of these concepts in the subsections below.
     \begin{equation}
         \partial\_\mu \equiv \pdv{}{x\^\mu} =\pclosed{ \pdv{}{t}, \vec{\nabla} }
     \end{equation}
-    is ``naturally lowered.'' 
-    \comment{Lorentz invariance.}
+    is ``naturally lowered.'' The contraction between two four-vectors is independent of choice of reference system, commonly known as Lorentz-invariant.
+    % \comment{Lorentz invariance.}
 
 
 
@@ -86,8 +86,8 @@ For reference, we cover a few of these concepts in the subsections below.
     %     S = \int \! \dx[4]\, \mathcal{L},
     % \end{equation}
     % with $\mathcal{L}$ being the \emph{Lagrangian}\footnote{Technically, it is the Lagrangian \emph{density}, an insignificant \grammar[point]{distinction} for these purposes.} of the theory. This Lorentz invariant quantity is composed of scalar terms only.
-    \comment{Fix}
-    We formulate a theory of field\emph{s} $\Phi(x)$ in four-dimensional Minkowski spacetime in terms of the Lorentz invariant action
+    % \comment{Fix}
+    We formulate a theory of scalar fields $\Phi(x)$ in four-dimensional Minkowski spacetime in terms of the Lorentz-invariant action
     \begin{equation}
         % S = \integ[4]{x} \mathcal{L}(\{\phi_i\}, \{ \partial\_{\mu} \phi_i\}),
         S = \integ[4]{x} \mathcal{L}(\Phi, \partial\_\mu \Phi),
@@ -95,13 +95,19 @@ For reference, we cover a few of these concepts in the subsections below.
     with $\mathcal{L}$ being the \emph{Lagrangian density} of the theory, a function of the set of fields $\Phi$ and its first derivatives. We will refer to $\mathcal{L}$ simply as the Lagrangian, as is customary when working with fields. 
 
     % This translates to a general (i.e.~curved) spacetime with the substitution of partial to covariant derivative and the construction of a Lorentz-invariant Lagrangian,
-    This translates to a general (i.e.~curved) spacetime through the construction of a Lorentz-invariant Lagrangian,
+    This translates to a general (i.e.~curved) $n$-dimensional spacetime through the construction of a Lorentz-invariant Lagrangian $\hat{\mathcal{L}}$,
     % For a general (i.e.~curved) spacetime, \blahblah $\partial\_{\mu} \to \nabla\_{\mu} $ \blahblah to construct a Lorentz invariant Lagrangian,
     \begin{equation}
         % S = \integ[4]{x}\underbrace{ \mathcal{L}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-\abs{g}}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\{\phi_i\}, \{ \nabla\_{\mu} \phi_i\})}_{\text{scalar}}, 
-        S = \integ[4]{x}\underbrace{ \mathcal{L}(\Phi,  \partial\_{\mu} \Phi)}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-g}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\Phi, \nabla\_{\mu} \Phi)}_{\text{scalar}},
+        % S = \integ[4]{x}\underbrace{ \mathcal{L}(\Phi,  \partial\_{\mu} \Phi)}_{\text{not scalar}} =  \int \! \underbrace{\dx[4] \, \sqrt{-g}}_{\text{scalar}} \,\underbrace{\hat{\mathcal{L}}(\Phi, \nabla\_{\mu} \Phi)}_{\text{scalar}},
+        S = \integ[n]{x}\mathcal{L}(\Phi,  \partial\_{\mu} \Phi) =  \integ[n]{x\sqrt{-g}}\hat{\mathcal{L}}(\Phi,  \nabla\_{\mu} \Phi) 
     \end{equation}
-    where $g= \det(g)$ is the determinant of the metric. What was applied here, was the \newconcept{minimal-coupling principle}, 
+    where $g\equiv \det~\!(g\_{\mu\nu})$ is the determinant of the metric, and 
+    \begin{equation}
+        d^n \! x \sqrt{-g} =  {\diff x}^0 \wedge {\diff x}^1 \wedge \cdots\wedge  {\diff x}^{n-1}\sqrt{-g}
+    \end{equation} 
+    is the invariant volume element~\citep{carrollSpacetimeGeometryIntroduction2019}. %
+    What was applied here, was the \newconcept{minimal-coupling principle}, 
     and we may refer to $\mathcal{L}$ as the minimally-coupled Lagrangian (density). Loosely speaking, this principle involves replacing the Minkowski metric with the curved-spacetime metric ($\eta\_{\mu\nu}\to g\_{\mu\nu}$), and partial derivatives to covariant derivatives ($\partial\_{\mu} \to \nabla\_{\mu} $).
     
     % where $\hat{\mathcal{L}}$ is a scalar.
@@ -114,7 +120,7 @@ For reference, we cover a few of these concepts in the subsections below.
     We use variational calculus to obtain the fields' equations of motion. For a scalar field $\phi$, we consider the change $\phi \to \phi + \delta \phi$ and apply this to the action, s.t. $S\to S+ \delta S$. %Identifying terms of leading order ($\mathscr{O}(\delta \phi)$), 
     After isolating $S$ and gathering terms up to leading order, we set $\delta S = 0$ and obtain an equation for $\phi$ in terms of first and second derivatives. 
 
-    Often it is necessary to use \checkthis{Stokes' theorem} to set certain terms to zero. The argument \blahblah \comment{Fix or remove!}
+    % Often it is necessary to use \checkthis{Stokes' theorem} to set certain terms to zero. The argument \blahblah \comment{Fix or remove!}
     % We gather zero-order terms and isolate $S$
     % \begin{enumerate}
     %     \item Gather zero-order terms and isolate $S$.
@@ -132,48 +138,48 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
 
-    \subsubsection{Newtonian gravity}
-        \blahblah
+    % \subsubsection{Newtonian gravity}
+    %     \blahblah
 
 
 
 \subsection{Mathematical tools}
-\subsubsection{Perturbation theory}
-    % \blahblah
-    We write that to order $o$ in some small parameter $\epsilon$, we have
-    \begin{equation}
-        \pert{q} \equiv \sum_{i=0}^o \delta^{(i)} q =  q^{(0)} + \epsilon q^{(1)}  + \epsilon^2 q^{(2)} + \dots +  \epsilon^o q^{(o)}, 
-    \end{equation}
-    where 
+% \subsubsection{Perturbation theory}
+%     % \blahblah
+%     We write that to order $o$ in some small parameter $\epsilon$, we have
+%     \begin{equation}
+%         \pert{q} \equiv \sum_{i=0}^o \delta^{(i)} q =  q^{(0)} + \epsilon q^{(1)}  + \epsilon^2 q^{(2)} + \dots +  \epsilon^o q^{(o)}, 
+%     \end{equation}
+%     where 
 
-    Consider $Q(q)$. We write
-    \begin{equation}
-        \pert{Q} \equiv \sum_{i=0}^o {}^{(i)} Q,
-    \end{equation}
-    where ${}^{(i)}Q$ is the $i$th order perturbation of $Q$, not necessarily $\epsilon^i Q$
+%     Consider $Q(q)$. We write
+%     \begin{equation}
+%         \pert{Q} \equiv \sum_{i=0}^o {}^{(i)} Q,
+%     \end{equation}
+%     where ${}^{(i)}Q$ is the $i$th order perturbation of $Q$, not necessarily $\epsilon^i Q$
 
-    \comment{Fix or remove.}
+%     \comment{Fix or remove.}
     
 
 
 
 
-\subsubsection{Method of Green's functions}
+    \subsubsection{Method of Green's functions}
     A linear ordinary differential equation (ODE) $\mathop{\mathrm{L}}_x f(x)=g(x)$ assumes a linear differential operator $\mathop{\mathrm{L}}$, an unknown function $f$, and a right-hand side $g$ that forms the inhomogeneous part of the ODE. The \newconcept{Green's function} $G$ for the ODE (or $\mathop{\mathrm{L}}$) manifests as any solution to $\mathop{\mathrm{L}}_x G(x, y) = \Diracdelta(x-y)$. Now
     \begin{equation}
         f(x) = \integ{y} G(x, y) g(y)
     \end{equation}    
     solves the original ODE. 
 
-    \paragraph{Homogeneous initial conditions.} %
-    If $f(x_0)=\dv*{f}{x}\rvert_{x=x_0}=0$, the solution reads
-    \begin{equation}
-        f(x) = \integ{y}[x_0][x] G(x,y)g(y).
-    \end{equation}
+    % \paragraph{Homogeneous initial conditions.} %
+    % If $f(x_0)=\dv*{f}{x}\rvert_{x=x_0}=0$, the solution reads
+    % \begin{equation}
+    %     f(x) = \integ{y}[x_0][x] G(x,y)g(y).
+    % \end{equation}
 
 
 
-    \paragraph{Pulse signal.} %
+    % \paragraph{Pulse signal.} %
 
     
     % \deleteme{If $\mathop{\mathrm{L}}$ is translation invariant (invariant under $x\mapsto x+a $)---which is equivalent to $\mathop{\mathrm{L}}$ having constant coefficients---we can write $G(x,y)=G(x-y)$ and %\provethis{show?}
@@ -195,9 +201,31 @@ For reference, we cover a few of these concepts in the subsections below.
     % \end{equation}}
 
 
-    \comment{Fix or remove.}
+    % \comment{Fix or remove.}
 
     % This is a test.
+
+
+    \subsubsection{Topology}
+    The \newconcept{$n$-torus} $\mathbb{T}^n$ is the $n$-fold product of the circle $\mathbb{S}^1$, %$\mathbb{T}^n=\mathbb{S}^1 \cross \mathbb{S}^1 \cross \cdots \mathbb{S}^1 \, (n\geq 2)$ 
+    ~\citep{lancasterQuantumFieldTheory2014} 
+    \begin{equation}
+        \mathbb{T}^n = \underbrace{\mathbb{S}^1 \cross \cdots \cross \mathbb{S}^1}_{n} \equiv (\mathbb{S}^1)^n.
+    \end{equation}
+    ``Gluing'' pairs of opposite-facing sides of a cube---which is to impose periodic boundary conditions---gives a 3-torus. %
+    3-tori have no boundaries and are equivalent to infinite flat spaces with a periodically repeated cubic templates~\citep{carrollSpacetimeGeometryIntroduction2019}.
+    
+    
+    % infinite Euclidean space obtained by periodically repeating the exact perturbation pattern of a single cubic template
+    
+    % and are obtained by ``gluing'' pairs of opposite-facing sides of a cube. The periodic boundaries are interpreted \blahblah
+    
+
+
+
+    \subsubsection{The cyclic group}
+    The cyclic group, denoted $\Zn[n]$, describes a symmetry of a plane figure that remains invariant after a rotation of $2\ppi/n$ radians (or $360^\circ/n$ degrees), where $n\in \Integer$ ($n$ is integer)~\citep{lancasterQuantumFieldTheory2014}. We consider discrete $\Zn[2]$-symmetries in this thesis, also called reflectional symmetry, which amounts to invariance under change of sign: $\phi \to\eu[\im 2\ppi/2] \phi  = -\phi$.
+
 
 
 
@@ -221,15 +249,18 @@ For reference, we cover a few of these concepts in the subsections below.
     % The standard model of cosmology offers several measurements of time that are convenient for various purposes. 
     \subsubsection{Chronology}
     The standard model of cosmology provides multiple time measurements that are useful for different applications. 
-    Cosmic time $t$ is often impractical to use in physical cosmology. The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift} $\redshift$,%
+    Cosmic time $t$ is often impractical to use in physical cosmology. The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift}%
     \footnote{
         We will use $\redshift$ to distinguish the cosmic redshift from the Cartesian spatial coordinate $z$ in $\vec{x}=(x,y,z)$, as they will both be used frequently.
     } %
+    $\redshift$, %
     defined through
     \begin{equation}
         1 + \redshift = a(t_0)/a(t),
     \end{equation}
-    where $t$ is cosmic time with value $t_0\approx 13.8$ gigayear today, and $a$ is the dimensionless \newconcept{cosmic scale factor}.\comment{Fix} The cosmic-time term is defined via $a(t\equiv 0)= 0$, which is to say that we define the time of Big Bang as this point in time. 
+    where $t$ is cosmic time with value $t_0\approx 13.8$ gigayears today, and $a$ is the dimensionless \newconcept{cosmic scale factor}. The concept of cosmic time is defined as the coordinate time passed since $a(t\equiv 0)=0$, 
+    % The cosmic-time term is defined via $a(t\equiv 0)= 0$, 
+    which is to say that we define the time of Big Bang as this point in time. 
     In this thesis we make use of \newconcept{conformal time} $\tau$ for which ${\diff t} = a {\diff \tau}$ holds %
     %  giving
     % {\newcommand{\dummy}{}
@@ -258,7 +289,7 @@ For reference, we cover a few of these concepts in the subsections below.
 \subsection{Cosmological simulations}
     % \phpar[Nyquist frequency, fundamental frequency, DFTs]
 
-    Simulations of cosmological scenarios are usually performed on three-dimensional lattices with periodic boundaries. Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction, giving a spatial resolution of $\Delta=L/N$. %
+    Simulations of cosmological scenarios are usually performed on three-dimensional lattices with periodic boundaries (i.e.  3-tori, $\mathbb{T}^3$). Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction, giving a spatial resolution of $\Delta=L/N$. %
     The \newconcept{fundamental frequency} is the smallest frequency mode, which in terms of wavenumber is $k\ped{IR}=2\ppi/L$. %\footnote{We use $\text{wavenumber} = \text{wavelength}^{-1} =  2 \ppi \times \text{frequency}$} 
     The \newconcept{Nyquist frequency}, given by the angular frequency $k\ped{UV}=k\ped{IR} N/2 = \ppi N/L$, is the highest resolvable frequency.
 

@@ -1,3 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Ch. 8: Conclusion and Outlook  %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ---------------------------------------
+% labels: \label{[type]:finalchap:[name]}
+% ---------------------------------------
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+\newcommand{\wallsep}{\ALIASwallsep}
+\newcommand\hpA{\ALIAShpA}
+\newcommand\hpB{\ALIAShpB}
+\newcommand\hpC{\ALIAShpC}
+\newcommand\hpAB{\ALIAShpAB}
+\newcommand\hpCR{\ALIAShpCR}
+\newcommand\hpCI{\ALIAShpCI}
+\newcommand\epsA{\ALIASepsA}
+\newcommand\epsB{\ALIASepsB}
+\newcommand\epsC{\ALIASepsC}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
@@ -10,61 +30,98 @@
 
 
 
-% In the following, we address the results 
+% \section{Concluding remarks}
+    The Nambu--Goto formulation with time-varying surface tension gives rise to an analytically solvable equation of motion for the planar-wall perturbation in the flat FLRW universe dominated by non-relativistic matter. Simulations with two walls per box length $L_\#$ show qualitatively good correspondence with the full theory. Simulations~\simnum{1}--\simnum{5} and \simnum{7} show average and maximum errors corresponding to $(8\pm 3)\%$ and $(16\pm 5)\%$ of the initial perturbation strength $\epsast$, respectively. In restricting $\epsast <\wallsep/5$ (i.e.~excluding simulation~\simnum{2}), where $\wallsep=L_\#/2$ is the distance between every wall centre, we get $(7\pm 1)\%$ and $(13\pm 2)\%$ instead. 
+
+    The model-dependence in the thin-wall limit comes from the time-dependent part of the surface tension, directly related to the theory of phase-transition. In the conventional picture (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}), symmetron \emph{parameters} are factored out and do not affect the thin-wall motion. On the other hand, strength of fifth-force oscillations depends on $a_\ast$ and $\xi_\ast$ (see $m_\ast$ in~\cref{eq:stablesym:m_ast_def}) and can in theory affect the damping term in the equation of motion for $\varepsilon$ (see~\cref{app:walls:surface_tension:new_limits}).
 
 
-% The equation of motion for the wall perturbation $\epsilon$ i
 
-% We consider the 
-The Nambu--Goto formulation with time-varying surface tension gave rise to an analytically solvable equation of motion for the planar-wall perturbation in the flat FLRW universe dominated by non-relativistic matter. Simulations showed qualitatively good correspondence with the full theory. Simulations~\texttt{1}--\texttt{5} and \texttt{7} showed maximum errors corresponding to $(16\pm 5)\%$ of the initial amplitude, and 
-% $ \Delta \varepsilon  \lesssim [0.11,0.21]\epsast$. 
-% $ \Delta \varepsilon  \lesssim (0.16 \pm 0.05)\epsast$. 
-There exists loose restrictions for the maximum amplitude of the perturbation and of the scalar field fluctuations. 
-
-Validations of the gravitational-wave calculations were inconclusive. Our simulation results showed patterns in the gravitational signature that were directly connected to the nature of the wall displacement field, but the exact relations were unclear. 
+    Large fluctuations in the symmetron field can be avoided by tweaking the initial conditions to our favour, as elaborated in~\cref{app:stablesym}. This is successfully tested with a homogeneous simulation (\cref{fig:results:achi:achi_no_wall}), but time limitations will have us stop there. We acknowledge that this improvement would not necessarily affect our results particularly, but it gives a flexibility to control future similar toy-model experiments. 
 
 
-There is a substantial amount of work left if we ever want to compare this to actual gravitational-wave observations.
-
-The results overall are intriguing, and show promise of future analytical estimations of gravitational waves from topological defects. The time-varying surface tension is effectively an additional damping in the equation of motion for the wall displacement field, and during a symmetron phase-transition, there exists explicit solutions to this equation.
-% allows for explicit solutions to the new equation of motion 
-
-
-\speak{Connect to intro}
-
-% \paragraph{Gravitational waves.} %
-% The results regarding gravitational radiation from perturbed, planar domain walls in a matter-dominated universe are inconclusive. More thorough analysis is required for \blahblah.
-% To compare 
-
-% They point in the right direction, but \blahblah
+    We present only non-numerical comparative analyses on the subject of spin-2 perturbations. 
+    As such, validations of the gravitational-wave calculations are inconclusive. Toy-model simulation results show patterns in the gravitational signature that are directly connected to the nature of the wall displacement field, but the exact relations are unclear. %\rephrase{Novel quantitative analyses is required.}
+    The error propagating from the difference in wall positions ($\Delta \varepsilon = \abs*{\epsA-\epsC}$) is significant for the gravitational-wave modes, and we therefore use the simulated wall position as input to the formula~\cref{eq:PT:gwas:mywaves_complete_formula} for the comparison.
 
 
-% \speak{TO-DO: Maybe hard-code reference list! + Fix 2 places with \url{something.no} (month year)}
+    The results overall are intriguing, and show promise of future 
+    % \hyperlink{sentence1}%
+    {analytical estimations of gravitational waves from topological defects}, 
+    % which was one of the aims of this thesis. 
+    which is the general idea~\citep{saikawaReviewGravitationalWaves2017}. %
+    The time-varying surface tension is effectively an additional damping in the equation of motion for the wall displacement field, and during a symmetron phase-transition, there exist explicit solutions to this equation for idealised universes. Completing the framework with novel comparative analyses---both qualitative and quantitative---can potentially elucidate the dependence on symmetron parameters systematically. This would open a window of dynamical ranges and parameter spaces that simulations alone cannot encompass.
 
 
-% \section{Applications}
-%     Similar lines-of-thought should hold for phase transitions in a variety of systems, amongst others the very early universe and particle-physics scenarios. \iftime{Write more.}
+
+    A substantial amount of work remains if we ever want to compare this to actual gravitational-wave observations. We have not investigated the particular implications for future experiments in this thesis, but other literature~\citep{ferreiraGravitationalWavesDomain2023,clementsDetectingDarkDomain2023,paulGravitationalWaveSignatures2021,nakayamaGravitationalWavesDomain2017,hiramatsuEstimationGravitationalWave2014,hiramatsuGravitationalWavesCollapsing2010} support the hypothesis that domain wall signatures can be probed, potentially also discarded.%\comment{or non-found}. 
+
+    % allows for explicit solutions to the new equation of motion 
 
 
 
 
-\section{Summary}
-    We have solved analytically the equation of motion for a pertubed planar domain wall in a matter-dominated universe during a symmetron phase-transition, using the Nambu--Goto theory. This solution was put to the test in full-theory simulations 
+
+
+    % \speak{Connect to intro}
+
+    % \paragraph{Gravitational waves.} %
+    % The results regarding gravitational radiation from perturbed, planar domain walls in a matter-dominated universe are inconclusive. More thorough analysis is required for \blahblah.
+    % To compare 
+
+    % They point in the right direction, but \blahblah
+
+
+    % \speak{TO-DO: Maybe hard-code reference list! + Fix 2 places with \url{something.no} (month year)}
+
+
+    % \section{Applications}
+    %     Similar lines-of-thought should hold for phase transitions in a variety of systems, amongst others the very early universe and particle-physics scenarios. \iftime{Write more.}
+
+
+
+
+\section{Summary of work}
+    In this thesis we have solved analytically the equation of motion for a perturbed planar domain wall in a matter-dominated universe during a symmetron phase-transition, using the Nambu--Goto theory. This solution was put to the test in full field-theory toy-model simulations, along with an estimation of the gravitational-wave modes generated from this motion. We investigated thoroughly the ``$\epsA$ vs. $\epsC$''-anomaly in the limited number of simulation experiments presented. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis.
+
+
+
+
+
+    % and  \blahblah
+    
+    % arguments for further analyses of ($\hpB$ vs. $\hpC$).
+ 
+    % \speak{Prototype, toy model}
+    % Verificatu
 
     % Open questions
-    What it means for the gravitational waves to have any other perturbation $\epsilon= \varepsilon(\tau) \sin{(py + \varphi)}$ is unclear. A starting point for such an analysis was provided in~\cref{app:walls:SE_tensor_alt:general}.
+
+    \subsection{Open questions}
+    What it means for the gravitational waves to have any other perturbation $\epsilon= \varepsilon(\tau) \sin{(py + \varphi)}$ is unclear. A starting point for such an analysis was provided in~\cref{app:walls:SE_tensor_alt:general}. 
+    We have \blahblah
 
 
-\section{Future work}
-    Additional validations and analyses are necessary. We refer to suggestions in~\cref{sec:whatif:discussion:cont_verification}. 
     
+
+
+
+
+\section{Implications and applications}
+    Additional validations and analyses are necessary. We refer to suggestions in~\cref{sec:whatif:cont}. 
     Most urgent is possibly the need for an intuitive statistical measure of the gravitational waves. 
+
+
+
+    Similar lines-of-thought should be applicable to flat spacetimes where phase transition is triggered at a critical temperature instead of a critical density. 
     
     
     \iftime{Write more.}
 
-\speak{\section*{TO DO (end)}}
-\speak{\paragraph{Referance list:} Maybe hard-code reference list! + Fix 2 places with \url{something.no} (month year)}
-\speak{\paragraph{Verb tenses:} Consider adjusting in some chapters/sections.}
+
+
+% \speak{\section*{TO DO (end)}}
+% \speak{\paragraph{Referance list:} Maybe hard-code reference list! + Fix 2 places with \url{something.no} (month year)}
+% \speak{\paragraph{Verb tenses:} Consider adjusting in some chapters/sections.}
 
 

@@ -32,7 +32,7 @@
 \listoftables{}                             %% (omit if none)
 
 \begin{preface}
-  Here comes your preface, including acknowledgments and thanks.
+  Here comes your preface, including acknowledgements and thanks.
 \end{preface}
 
 \mainmatter{}

@@ -14,6 +14,9 @@ We use natural units where the speed of light in vacuum is $c=1$ and the reduced
 
 \subsubsection{Tensors}
 
+We use the convention that tensors in the text are identified by their components in the normal coordinate basis, e.g.~$T\iud{\mu}{\nu}$ refers to the tensor $T=T\iud{\mu}{\nu}\partial\_{\mu} \otimes {\diff x}\^{\nu}$. %
+For convenience, we will often use equality between a tensor and its corresponding matrix or vector representation, e.g.~$x\^\mu = (t,x, y,z)$.% and keep the
+
 \paragraph{Indices.} %
 Greek indices run from $0$ to $N$, and Latin $i,j,k, \dots$ from $1$ to $N$, in an $(N+1)$-dimensional spacetime. Indices $a,b,c$ are reserved for auxiliary coordinate systems. We adopt Einstein's summing convention in which repeated indices are 
 summed over, e.g.~$x\^\mu x\_\mu= \sum_{\mu=0}^N x\^{\mu} x\_{\mu}$.
@@ -21,8 +24,17 @@ summed over, e.g.~$x\^\mu x\_\mu= \sum_{\mu=0}^N x\^{\mu} x\_{\mu}$.
 % \paragraph{Tensors.} %
 \paragraph{Metric.} %
 The metric signature $(-,+,\dots,+)$ is considered. %i.e.~$\det(g\_{\mu\nu})\equiv g < 0 $. 
-The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}$, whereas a general metric is denoted $g\indices{_{\mu\nu}}$. 
-The metric raises and lowers indices of tensors, e.g.~$x\^\mu = g\^{\mu\nu}x\_\nu$.
+The Minkowski metric is denoted $\eta\indices{_{\mu\nu}}\equiv\text{diag}(-1, +1,\dots,+1)$, 
+% \begin{equation}
+%     \eta\_{\mu\nu} \equiv\text{diag}(-1, +1,\dots,+1) = \left(\begin{array}{ccccc}
+%         -1 & 0 & \cdots & & 0 \\
+%         0 & +1 & 0  & &  \vdots \\
+%         \vdots & 0 & \ddots & & 0 \\
+%         0 & \cdots & & & +1
+%     \end{array}\right),
+% \end{equation}
+whereas a general metric is denoted $g\indices{_{\mu\nu}}$. 
+The metric raises and lowers indices of tensors, e.g.~$x\^\mu = g\^{\mu\nu}x\_\nu$. We let $g$ denote the determinant of the metric, $g\equiv \det~\!(g\_{\mu\nu})$.
 
 % A four-vector $p\indices{^{\mu}} = $
 
@@ -42,7 +54,7 @@ We sometimes adopt the comma-notation for partial derivatives $\partial\_\mu$ an
     \end{align}
 \end{subequations}
 The covariant derivative of a general rank-$(k,l)$ tensor $T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l}$ is
-\begin{equation}
+\begin{equation}\label{eq:notation:covariant_derivative_rank_kl}
     \begin{split}
         \nabla\_\mu T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l} = \partial\_\mu T\iud{\rho_1 \dots \rho_k}{\sigma_1 \dots \sigma_l} &+ \Chr{\rho_1}{\mu\nu} T\iud{\nu \rho_2 \dots \rho_k}{\sigma_1 \dots \sigma_l} + \dots \\
         &- \Chr{\nu}{\mu\sigma_1} T\iud{\rho_1 \dots \rho_k}{\nu\sigma_2 \dots \sigma_l} + \dots,
@@ -64,7 +76,8 @@ We make use of the notation
         T\_{[\mu\nu]} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} - T\_{\nu\mu}  }.
     \end{align} 
 \end{subequations}
-We write $T\_{\mu\nu}= T\_{(\mu\nu)} + T\_{[\mu\nu]}$.
+We write $T\_{\mu\nu}= T\_{(\mu\nu)} + T\_{[\mu\nu]}$. %A tensor with 
+\comment{Maybe define diag?}
 
 
 
@@ -79,8 +92,8 @@ The Kronecker delta is defined as
 and the Levi-Civita symbol is
 \begin{equation}\label{eq:notation:Levi_Civita}
     \LeviCivita_{{i_1 i_2 \dots i_n}} = \begin{cases}
-        +1 &\text{if}\, (i_1 i_2 \dots i_n)\, \text{is an even permutation of}\, (12\dots n) \\ 
-        -1 &\text{if}\, (i_1 i_2 \dots i_n)\, \text{is an odd permutation of}\, (12\dots n) \\ 
+        +1 &\text{if $(i_1 i_2 \dots i_n)$ is an even permutation of $(12\dots n)$} \\ 
+        -1 &\text{if $(i_1 i_2 \dots i_n)$ is an odd permutation of $(12\dots n)$} \\ 
         0 &\text{else,}
     \end{cases}
 \end{equation}

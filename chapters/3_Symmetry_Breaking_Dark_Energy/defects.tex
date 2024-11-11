@@ -19,8 +19,8 @@
 {Solitons} are remarkably stable ``humps'' of energy. The simplest soliton is the topological soliton best known as the \newconcept{kink}. 
 Kink solutions placed in spacetime with more than one spatial dimension, they become extended, planar structures (or membranes), that which we call ``domain walls'' \cite{vachaspatiKinksDomainWalls2006}. 
 Domain walls possess richer dynamics than kinks, and these are quite well understood in Minkowski spacetimes. %
-In contrast to higher codimension defects like strings and monopoles, kinks and domain walls are of codimension one and therefore also hypersurfaces, at least approximately. \iftime{Comment about applicability\dots}
-The study of kinks and domain walls can to some extent be applied to other topological defects.
+In contrast to higher codimension defects like strings and monopoles, kinks and domain walls are of codimension one and therefore also hypersurfaces, at least approximately. %
+The study of kinks and domain walls can to some extent be applied to other topological defects~\citep{vachaspatiKinksDomainWalls2006}.
 
 
 % Non-dissipative solutions are so-called soli
@@ -88,7 +88,7 @@ To give an idea of the basic properties of topological defects, we present an ex
 
     % \subsubsection{System of kinks}
     \paragraph{Multi-kink field.} %
-    Without commenting further, we state that this kink has \emph{topological charge} $Q=1$ (\citet[see][Ch.~1]{vachaspatiKinksDomainWalls2006} for discussion). This comes from the boundary conditions, and thus similar arguments constructs solutions with $Q=-1$ by swapping the boundaries; $\phi(x\to \pm \infty) = \mp \eta$. This is the \emph{antikink} solution $\widebar{\phi}\ped{k}(x)=- \phi\ped{k}(x)$. A feature of the \Zn~kinks is that one cannot have a system with topological charge $\abs{Q}>1$. For sufficiently separated kinks and antikinks located at $x_i$ and $\widebar{x}_j$, respectively, we write \citep{vachaspatiKinksDomainWalls2006}:
+    Without commenting further, we state that this kink has \emph{topological charge} $Q=1$ (\citet[see][\namecref{chap:GR}~1]{vachaspatiKinksDomainWalls2006} for discussion). This comes from the boundary conditions, and thus similar arguments constructs solutions with $Q=-1$ by swapping the boundaries; $\phi(x\to \pm \infty) = \mp \eta$. This is the \emph{antikink} solution $\widebar{\phi}\ped{k}(x)=- \phi\ped{k}(x)$. A feature of the \Zn~kinks is that one cannot have a system with topological charge $\abs{Q}>1$. For sufficiently separated kinks and antikinks located at $x_i$ and $\widebar{x}_j$, respectively, we write \citep{vachaspatiKinksDomainWalls2006}:
     \begin{equation}\label{eq:cosmo:defects:many_kinks}
         \phi(x) = \frac{\eta}{\eta^{N+M}} \prod_{i}^{N} \phi\ped{k}(x-x_i) \prod_{j}^{M} \widebar{\phi}\ped{k}(x-\widebar{x}_j),
     \end{equation}
@@ -157,7 +157,7 @@ To give an idea of the basic properties of topological defects, we present an ex
         We can model a network of domain walls a perfect fluid with equation-of-state parameter $w\ped{dw}= -2/3$ (\cref{tab:GR:lcdm:fluids}).\footnote{This is easily seen from the trace Nambu--Goto stress--energy tensor in Minkowski space.} This implies that in the absence of a greater cosmological constant (if $\Omega_{\Lambda 0} < \Omega\ped{dw0}$), 
         even a tiny energy contribution from this network would eventually dominate the energy density in the universe. As this overclosing of the universe happens before matter--dark-energy equality, this contradicts observations.
 
-        The prototypical defect is manifestly stable (robust against perturbations) and dissipationless (survive indefinitely). One way surpass the overclosing problem is to introduce an \newconcept{energy bias} between the two vacua, so that the system eventually converges to the true minima and the walls disappear~\citep{saikawaReviewGravitationalWaves2017}. Another method is to let $\sigma$ decrease with time (melting domain walls), which is considered in~\citet{babichevNANOGravSpectralIndex2023}.
+        The prototypical defect is manifestly stable (robust against perturbations) and dissipationless (survives indefinitely). One way surpass the overclosing problem is to introduce an \newconcept{energy bias} between the two vacua, so that the system eventually converges to the true minima and the walls disappear~\citep{saikawaReviewGravitationalWaves2017}. Another method is to let $\sigma$ decrease with time (melting domain walls), which is considered in~\citet{babichevNANOGravSpectralIndex2023}.
 
 
         % $\langle T\indices{^\mu_\nu}\rangle = \text{diag}(-\rho\ped{w}, p\ped{w}, p\ped{w}, p\ped{w})$
@@ -197,9 +197,11 @@ To give an idea of the basic properties of topological defects, we present an ex
     % Kinks and other topological defects typically form during a phase transition. The nature of the symmetry that is broken decides what type of defect we have at hand. Domain 
     Cosmological defects typically form during a phase transition, and it is the nature of the associated (broken) symmetry that decides what type of defect we have at hand. We mention cosmic strings and monopoles arising from axial and spherical symmetry breaking, respectively. Domain walls---the main interest of this thesis---form when \emph{discrete} symmetries are broken. 
     
-    To study phase transitions it is helpful to use the \newconcept{effective potential} that takes into account the interaction between some field and a background. \lcomment{Rewrite this.}\rephrase{An effective potential can ensure that a scalar field does not really show itself until some critical temperature. % $T\ped{cr}$. 
-    The global minimum at high temperatures turns local at low temperatures. The false vacuum state is metastable, and external perturbations can trigger the system's transition to the true vacuum. This is the prototypical formulation of a first-order phase transition~\citep{vachaspatiKinksDomainWalls2006}. }
-    We will demonstrate this in~\cref{sec:cosmo:quintessence} in the asymmetron scenario.
+    To study phase transitions it is helpful to use the \newconcept{effective potential} that takes into account the interaction between some field and a background~\citep{vachaspatiKinksDomainWalls2006,kolbEarlyUniverse1990}. We will demonstrate this in~\cref{sec:cosmo:quintessence} for a particular scalar-field theory. %
+    % \lcomment{Rewrite this.}
+    % \rephrase{An effective potential can ensure that a scalar field does not really show itself until some critical temperature. % $T\ped{cr}$. 
+    % The global minimum at high temperatures turns local at low temperatures. The false vacuum state is metastable, and external perturbations can trigger the system's transition to the true vacuum. This is the prototypical formulation of a first-order phase transition~\citep{vachaspatiKinksDomainWalls2006}. }
+    % We will demonstrate this in~\cref{sec:cosmo:quintessence} in the asymmetron scenario.
     %  at which the vacuum state goes from being trivial to \blahblah
     % First-order phase transitions are usually formulated like this.
 
@@ -211,7 +213,7 @@ To give an idea of the basic properties of topological defects, we present an ex
 
 
     \subsubsection{Energy bias}
-        Existence of discrete vacua implicates existence of domain walls. The degeneracy of these vacua ensures the stability of such walls. If we imagine a slight break in this degeneracy, that is, if one vacuum is favoured over another, biased domain walls form~\citep{vachaspatiKinksDomainWalls2006}. Some models employ an energy gap directly into the potential. A generalisation of the symmetron model---the \emph{a}symmetron---include a cubic term that also changes the vacuum expectation value. We will discuss the latter in~\cref{sec:cosmo:quintessence:asymmetron}.
+        Existence of discrete vacua implicates existence of domain walls. The degeneracy of these vacua ensures the stability of such walls. If we imagine a slight break in this degeneracy, that is, if one vacuum is favoured over another, biased domain walls form~\citep{vachaspatiKinksDomainWalls2006}. Some models employ an energy gap directly into the potential. A generalisation of the symmetron model~\citep{hinterbichlerSymmetronCosmology2011}---the \emph{a}symmetron~\citep{perivolaropoulosGravitationalTransitionsExplicitly2022}---includes a cubic term in the effective potential that also changes the vacuum expectation value. We will discuss the latter in~\cref{sec:cosmo:quintessence:asymmetron}.
 
 
 

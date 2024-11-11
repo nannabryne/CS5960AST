@@ -18,7 +18,7 @@ We rewrite~\cref{eq:PT:symm_dws:eom_asym_chi_s} in terms of the time coordinate 
     \dv[2]{\brchi}{\chi_+} - \frac{1}{\chi_+ \pclosed{1-\chi_+^2}} \dv{\brchi}{\chi_+} + m_\ast^2 \frac{\chi_+^2 \pclosed{\brchi^2-\chi_+^2}}{\pclosed{1-\chi_+^2}^3}\brchi = 0,
 \end{equation}
 where
-\begin{equation}%\label[eq]{eq:stablesym:eom_asym_chi_chiplus_m_val}
+\begin{equation}\label{eq:stablesym:m_ast_def}
     m_\ast= \frac{2\mu}{3\mathcal{H}_\ast \pclosed{1+\redshift_\ast}} = \frac{\sqrt{2}a_\ast^{3/2}}{3\xi_\ast}.
 \end{equation}
 The idea is to use this solution as boundary conditions for $\chi$:
@@ -75,7 +75,9 @@ To find a suitable $\chi_+\ap{match}$, we actually also match the solutions for 
 
 With the help of \textit{SageMath}~\citep{sagemath}, we find these constants for any given $m_\ast$. 
 Solving this for the fiducial symmetron parameters (\cref{tab:PT:sims:sim_setups}, e.g.~simulation~\texttt{1}) %$(a_\ast, \xi_\ast)=(0.33, 3.33\times 10^{-4})$
-$m_\ast \simeq 268.36$, we get $\chi_\ast \simeq 0.09656$, $\mathcal{C}\simeq 5.837$ and $\chi_+\ap{match}\simeq 0.2568$. 
+$m_\ast \simeq 268.36$, we get $\chi_\ast \simeq 0.09656$, $\mathcal{C}\simeq 5.837$ and $\chi_+\ap{match}\simeq 0.2568$. This is demonstrated in~\cref{fig:stablesym:computation:stablesym_demo}. 
+
+
 
 We update the domain wall profile
 \begin{equation}\label{eq:stablesym:chi_w_quasistatic_FLRW_updated}
@@ -93,5 +95,16 @@ Note that both of these affect the thin-wall analysis in~\cref{chap:pertwalls}.
 
 
 \subsubsection{Optimal vs. idealised path}
-    We distinguish between what we call the idealised path and the optimal path. The former, $\brchi\ap{ideal}$, is given by~\cref{eq:stablesym:optimal_chi_breve}, and the latter is the numerical solution to the asymptotic equation~\cref{eq:PT:symm_dws:eom_asym_chi_s} with initial conditions $\brchi\ap{ideal}$. They are generally marginally different, except at SSB, when $\chi_+ = 0$.
+    We distinguish between what we call the idealised path and the optimal path. The former, $\brchi\ap{ideal}$, is given by~\cref{eq:stablesym:optimal_chi_breve}, and the latter is the numerical solution to the asymptotic equation~\cref{eq:PT:symm_dws:eom_asym_chi_s} with initial conditions $\brchi\ap{ideal}$. They are generally marginally different, except at SSB, when $\chi_+ = 0$. \Cref{fig:stablesym:computation:stablesym_demo} demonstrates this for simulations~\simnum{1} and~\simnum{7} in~\cref{tab:PT:sims:sim_setups}, that were initiated at different times.
+    % \subsection{Demonstration}
+    % We demonstrate in~\cref{fig:stablesym:computation:stablesym_demo}
+    % ------------------------------
+    % ----------- FIGURE -----------
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{Appendices/stablesym_demo.pdf}
+        \caption{\comment{CAPTION.}}
+        \label{fig:stablesym:computation:stablesym_demo}
+    \end{figure}%
+    % ------------------------------
 

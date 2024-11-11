@@ -18,11 +18,19 @@
 We review the equations that the thin-wall approximation is built on. %
 Let us consider three steps that are not completely independent, but describe a certain order of things.
 \begin{description}
-    \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Here:} Set $\alpha=2$ to get matter domination.
-    \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said phase transition. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Here:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
-    \item[Step three:] Consider a topological defect that is the product of the aforementioned symmetry break. The defect with vanishing thickness possess dynamics derived from the Nambu--Goto action. Add a perturbation to the wall normal coordinate. We find the TT-part of the corresponding stress--energy tensor and consider this as a source of gravitational waves. \textbf{Here:} We consider the domain wall scenario, specifically a planar wall. The equation of motion for this perturbation is expended into eigenvalues and solved thereafter. We use this as input to the Nambu--Goto SE tensor, which in turn source tensor perturbations.
+    \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Prototype:} Set $\alpha=2$ to get matter domination.
+    \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said phase transition. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Prototype:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
+    \item[Step three:] Consider a topological defect that is the product of the aforementioned symmetry break. The defect with vanishing thickness possess dynamics derived from the Nambu--Goto action. Add a perturbation to the wall normal coordinate. We find the TT-part of the corresponding stress--energy tensor and consider this as a source of gravitational waves. \textbf{Prototype:} We consider the domain wall scenario, specifically a planar wall. The equation of motion for this perturbation is expended into eigenvalues and solved thereafter. We use this as input to the Nambu--Goto SE tensor, which in turn source tensor perturbations.
 \end{description}
-\rephrase{Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. }
+% Comparative analyses 
+% Verification of the prototype substantiate 
+For this to be of any use in the quest for analytical estimations of gravitational waves that we discussed in~\hyperlink{sentence1}{the introduction}, there has to be a certain level of analytical solvability for the resulting equations. In our prototype, we got pure analytical expressions up to the defect's SE tensor in Fourier space. We need only one numerical integration to compute the Fourier-space tensor perturbations. \blahblah \comment{MORE HERE}
+
+
+
+
+
+% \rephrase{Desired level of analytical solvability is maximum one numerical integration in the resulting tensor perturbation. That is, we want everything up to the defect's SE tensor in Fourier space to have an analytical expression. }
 
 % We want everything up to the Fourier SE tensor to be analytically solvable, at least to some level that resembles the actual situation, like when using $\sigma \propto (1-\upsilon)^{3/2}$ in this project. %\comment{The behaviour is recognisable at this stage.} 
 % Okay, so far, so good. We found that for a two-dimensional topological defect in a conformally flat spacetime, we have the SE tensor \blahblah
@@ -37,7 +45,7 @@ Let us consider three steps that are not completely independent, but describe a 
 % \end{equation}
 
 
-\speak{Write about drawbacks?} %
+% \speak{Write about drawbacks?} %
 % We have not been able to take the tensor analysis back to configuration space. 
 
 
@@ -112,7 +120,7 @@ We mention that to solve the equation of motion for the (unperturbed) wall norma
     % \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
     % \end{equation}
     but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
-    If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. 
+    If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. %However, our toy-model results show Bessel-like behaviour in the gravitational-wave modes  
 
     \speak{Comment on why we extract the summation from the integration.}
 

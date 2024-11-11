@@ -1,0 +1,109 @@
+% |||||||||||||||||||||||||||||||||||||||||||||||
+% |||||| 7.X Continued assessment ||||||
+% |||||||||||||||||||||||||||||||||||||||||||||||
+
+% ----------------------------------------------
+% labels: \label{[type]:whatif:cont:[name]}
+% ----------------------------------------------
+
+
+
+
+In this section, with the toy model from~\cref{sec:PT:gwas} in mind, we elaborate on further analysis that time limitations does not allow us to perform.
+
+% we elaborate on further analysis of the toy model that would 
+
+
+
+
+
+
+
+
+
+% \subsection{Continued assessment}\label{sec:whatif:discussion:cont_verification}
+% We could \comment{brute force}
+
+% Another, perhaps more insightful, method is to obtain an approximate expression for $\rho\ped{gw}$ with~\cref{eq:pertwalls:gws:Hdot_P_12}. Such an expression may exist through asymptotic evaluations and \blahblah, if~\citep{maggioreGravitationalWavesVol2018}
+
+
+\subsection{Inter-wall force}\label{sec:whatif:cont:interwall}
+\Citet{vachaspatiKinksDomainWalls2006} gives a rough estimate of the force between a kink and an antikink. A possible way forward could involve such estimates for our setups, and see if this relates the distance $\abs{z\ped{w}(\tau,y) - \widebar{z}\ped{w}}$ to the resulting $\epsB[\epsilon](\tau, y)$ in any way. 
+
+
+\subsection{Gravitational waves}\label{sec:whatif:cont:gws}
+% The gravitational-wave energy density is given by~\citep{maggioreGravitationalWavesVol2018}
+% \begin{equation}
+%     \rho\ped{gw}(\tau) = \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{ \pclosed{\dot{\ah}_P - \mathcal{H}\ah_P }^2(\tau, \vec{x}) }
+% \end{equation}
+% For sub-horizon modes
+% \begin{equation}
+%     \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{\dot{\ah}^2(\tau, \vec{x}) }.
+% \end{equation}
+% The spatial average~\citep{dufauxTheoryNumericsGravitational2007}
+% % ($\avg{\eu[\im (\vec{k}-\vec{k}')\cdot \vec{x}]}$)
+% \begin{equation}
+%     \frac{1}{V} \integ[3]{x}[V\gg \lambdabar^3] \eu[\im (\vec{k}-\vec{k})\cdot \vec{x} ] = \frac{(2\ppi)^3}{V} \Diracdelta[3](\vec{k}-\vec{k}')
+% \end{equation}
+% where $\lambdabar \sim 1/k, 1/k'$, %
+% we obtain
+% \begin{equation}
+%     \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \frac{1}{V} \sum_{P=+,\times} \integ[3][(2\ppi)^3]{k} \abs{\dot{\Ft{\ah}}(\tau, \vec{k})}^2.
+% \end{equation}
+We consider the energy density of gravitational waves in an FLRW universe given in~\cref{eq:GR:gws:rho_gw_final}. 
+One way to use this is to discretise the integration; $\diff k \to k_\#$, and loop through all possible modes $\lcoordk$. Agnostically, this involves solving two integrals numerically $N_\#^3$ times for each $\tau$. This brute-force experiment is computationally very inefficient, and it would be much more insightful to find an approximate expression for $\rho\ped{gw}$ that is analytical, or at least with only fewer computation steps. %
+Such an expression may exist through asymptotic evaluations of Bessel functions, among other things. Not only would this offer an efficient verification strategy, but would also help put this framework into the context of actual gravitational-wave observations.
+
+\paragraph{In-depth gravitational-wave analysis.} %
+An interesting analysis would be to systematically change various parameters in the source $\Ft{\pi}_+$ and see what effect this has on the resulting tensor perturbations. From what we gather, it appears that in letting $\sigma\ped{w}$ and/or $\delta\ped{w}$ be defined from oscillating asymptotic fields $\pm \breve{\chi}$ instead of $\chi_\pm$, $\Ft{h}_+$ becomes noisier, i.e. with small oscillations around the original result. Changing $\varepsilon$ seems to shift the phase of the oscillations. This analysis is far from thorough, which is why we do not present it as a result. To get actual insights, the analysis is huge as $\Ft{h}_+$ depends on time and a two-dimensional wave vector, and a bunch of other parameters. This is another reason for further attempts as summary statistics that would reduce the dimensionality of the problem drastically. 
+
+
+
+\paragraph{Dimensional analysis.} %
+It might be possible to perform an asymptotic analysis of~\cref{eq:PT:gwas:mywaves_complete_formula} to estimate the strain in terms of $\epsast$ (and possibly also $p$). With~\cref{fig:intro:GWplotter} (and others, of course) one could find a lower limit to $\epsast$ for the produced waves to be detectable. Now, if this limit exceeds the linearity constraint, one would have to reconsider the motivation for further gravitational-wave analyses from linear perturbations.
+
+
+
+\subsection{Supplementary experiments}\label{sec:whatif:cont:extra_sims}
+
+
+
+% \begin{bullets}
+%     \item Better spatial resolution
+%     \item Look at already-formed walls, i.e. drop the formation (see if it matters for the GWs) (time-dep. tension complicates things)
+% \end{bullets}
+
+
+It was indeed very unfortunate that the simulations that were supposed to be updated with optimised initial conditions (cf.~simulation \simnum{7}), were run with a bug that was not detected soon enough. 
+
+\paragraph{Upgraded resolution.} %
+With extended time (and computer) resources, we would have run simulations as described in~\cref{sec:results:hindsight}, preferably with better spatial resolution. Below we describe possible analyses that could come from such fine-grained toy-model experiments.
+\begin{itemize}
+    \item Actually resolving the Compton wavelength $L\nped{C}$ might have shed some light on the contribution from the symmetron field itself to the gravitational radiation. On the other hand, gravitational waves from scalar field fluctuations are expected to peak around the frequency corresponding to $L\nped{C}^{-1}$~\citep{kawasakiStudyGravitationalRadiation2011}, which is necessarily larger than the Nyquist frequency if $\Delta_\# > 2L\nped{C}$. Thus, this contribution should not be relevant for the scales we have been discussing.
+    \item Our attempt to decrease the width of the wall (simulation~\simnum{6}) was not particularly successful. Quantities like $\avg*{q^2}$ diverges at approximately $\tau={\tau\ped{i}+ \wallsep}$, as shown in~\cref{fig:misc:sim6:sim6_err}. This corresponds to the time when massless particles at initially at the middle wall, propagating in the $z$-direction, would reach the opposite wall. 
+    Had we done it again, we would have run the same simulation with better spatial resolution. This could have given insight to the dependence on the wall width in the wall evolution and in turn the gravitational waves.
+    \item Better spatial resolution would allow for smaller initial perturbation amplitude, and thereby help us understand if the discrepancy between the thin-wall approximation and the full theory is due to the perturbation being too large.
+    % \item We could have run
+\end{itemize}
+\paragraph{Varying the physics.} %
+There are several other simulation designs that might help isolate important artefacts from the not-so important features. We list a few of these ideas.
+\begin{itemize}
+    \item We could look at already-formed walls for which $\breve{\chi}\simeq 1$ and  $\sigma \simeq \sigma_\infty$ to see if and how the time-dependence of the surface tension affects the wall displacement field and metric tensor perturbations. Constant surface tension allows cleaner expressions and model-independence. 
+    \item If we change the ``nature'' of the wall perturbation from a sine to a cosine, this might help in understanding the unpredicted imaginary component of the gravitational waves discussed in~\cref{sec:results:h11:comparison}. This we actually did, but did not prioritise saving and presenting these results. The reader may take my word for it, that the trend was alternating real and imaginary modes, arranged oppositely from the Jacobi--Anger expansion (see~\cref{app:walls:SE_tensor_alt:cos}). This is what we expect. % \speak{Maybe this is better placed in~\cref{sec:results:h11:comparison}?}
+    % \item If we had written the code to also output the Fourier-space SE tensor, we could have compared simulative results to purely analytical expressions. This would make debugging much simpler, and it could help us understand the difference magnitude, among other things. The memory-efficiency of~\gevolution{} comes at the expense of simplicity and perhaps flexibility, and it is not a completely straight-forward task to make this happen.
+    \item Testing different amplitudes $\epsast$ and scales $p$ would give insight to the discussion about the validity of the thin-wall approximation. We saw that $\epsA$ becomes the same function when plotted over $t_\omega$ and divided by $\epsast$, and that this did not hold for $\epsB$. For example, if we perform simulation~\simnum{3} with $\epsast=0.06L_\#$, we would have gotten one of three possible results, if put in context with~\cref{fig:results:epsilon:eps_diff_sims_combi}, which could help reduce the number of possible explanations: %
+    \begin{enumerate}
+        \item Overlap with simulation~\simnum{3} (and naturally also~\simnum{1},~\simnum{4} and~\simnum{7}). This might be an indication that the simulation setups in~\simnum{2} and~\simnum{5} are not valid either due to bad spatial resolution, self-interactions or interactions with the opposite wall.
+        \item $\Delta \varepsilon$ smaller than for simulation~\simnum{3}, but follows a similar pattern. In this scenario, one can interpret discrepancy to be related to inter-kink forces unaccounted for in the thin-wall approximation.
+        \item $\Delta \varepsilon$ larger than for, or otherwise different from, simulation~\simnum{3}. This would be unfortunate and unpredicted.
+    \end{enumerate}
+    % \item Finally, a measure of applicability
+\end{itemize}
+
+
+\paragraph{Adjusting the code.} We add that if we had written the code to also output the Fourier-space SE tensor, we could have compared simulative results to purely analytical expressions. This would make debugging much simpler, and it could help us understand the difference magnitude between $\hpAB$ and $\hpC$, among other things. The memory-efficiency of~\gevolution{} comes at the expense of simplicity and perhaps flexibility, and it is not a completely straight-forward task to make this happen.
+
+
+
+\subsection{Flat-space analogy}\label{sec:whatif:cont:minkowski}
+\speak{Only if time.}

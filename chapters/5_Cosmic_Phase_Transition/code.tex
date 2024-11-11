@@ -30,8 +30,8 @@
 
 
 
-As test bed for our theory we use the \texttt{C++}-code \asgrd~\citep{christiansenGravitationalWavesDark2024};\footnote{Code available on~\url{https://github.com/oyvach/AsGRD} (November 2024).} an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGeneralRelativityCosmic2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
-We will describe the code in broad terms, and refer to~\citet{christiansenAsevolutionRelativisticNbody2023,christiansenAsimulationDomainFormation2024,adamekGevolutionCosmologicalNbody2016,christiansenGravitationalWavesDark2024,daverioLatfield2LibraryClassical2016} for more detailed explanations.
+As test bed for our theory we use the \texttt{C++}-code \asgrd~\citep{christiansenGravitationalWavesDark2024};\footnote{Code available on~\url{https://github.com/oyvach/AsGRD} (\thismonthyear).} an extended version of the massively parallelised relativistic $N$-body code \gevolution~\citep{adamekGeneralRelativityCosmic2016}. \latfield~\citep{daverioLatfield2LibraryClassical2016} is used as backend to this. % and was originally \blahblah
+We will describe the code in broad terms, and refer to~\citet{christiansenAsevolutionRelativisticNbody2023,christiansenAsimulationDomainFormation2024,adamekGevolutionCosmologicalNbody2016,christiansenGravitationalWavesDark2024,daverioLatfield2LibraryClassical2016,adamekGeneralRelativityCosmic2016} for more detailed explanations.
 
 % The particle-mesh code \gevolution{} is
 % It is parallelised in accordance with the MPI standard.   
@@ -44,18 +44,21 @@ We will describe the code in broad terms, and refer to~\citet{christiansenAsevol
 
 % \speak{Section about pre-written code}
 
+ 
+\subsubsection{Prelude} % Lattice / structure 
 
-\subsubsection{Prelude}
+% In Cartesian latti
 
-The general setup is a three-dimensional box of equal side lengths $L_\#$ in $\Mpch$ on a lattice of $N_\#^3$ points, giving a spatial resolution of $\Delta_\#=L_\#/N_\#$. %We refer to the points in the configuration space as 
+The general setup is a three-dimensional box of equal side lengths $L_\#$ in $\Mpch$ on a lattice of $N_\#^3$ points, giving spatial resolution $\Delta_\#=L_\#/N_\#$. %We refer to the points in the configuration space as 
 A Cartesian coordinate system defines the comoving coordinate $\vec{x}=(x,y,z)$ and wave vector $\vec{k}=(k_x, k_y, k_z)$. The mapping from lattice coordinates $\lcoordx= (\lcoord{i}, \lcoord{j}, \lcoord{k})$ to comoving is $\vec{x}=\lcoordx\cdot  \Delta_\#$, where $\lcoord{i},\lcoord{j}, \lcoord{k}\in [0, N_\#-1]\in \Integer$. 
 Correspondingly in Fourier space, we have lattice coordinates $\lcoordk =(\lcoord{u}, \lcoord{v}, \lcoord{w})$, where $\lcoord{u}, \lcoord{v}, \lcoord{w} \in\pm[0, N_\#/2-1]$, and the mapping $\vec{k} =\lcoordk \cdot k_\# $. Here,  $k_\#=2\ppi/L_\#$ is the fundamental frequency. 
 The box's boundaries are \emph{periodic} which means that for any function $f(\lcoordx)$, we have
 % $f(\lcoord{i}, \lcoord{j}, \lcoord{k}) = f(\lcoord{i}+N_1 L_\# +\lcoord{i}+N_2 L_\#  + \lcoord{k}+N_3 L_\# )$ for $N_i \in \Integer$.
 \begin{equation}\label{eq:PT:code:periodic_boundaries}
-    f(\lcoord{i}, \lcoord{j}, \lcoord{k}) = f(\lcoord{i}+N_1 L_\# +\lcoord{i}+N_2 L_\#  + \lcoord{k}+N_3 L_\# ) \quad\forall \,  N_i \in \Integer.
+    f(\lcoord{i}, \lcoord{j}, \lcoord{k}) = f(\lcoord{i}+N_1 L_\#, \lcoord{j}+N_2 L_\#, \lcoord{k}+N_3 L_\# ) \quad\forall \,  N_i \in \Integer.
 \end{equation}
-Furthermore, the box is decomposed in rod domains for MPI-parallelisation.
+This is to say that the global topology of the spacelike hypersurface is a 3-torus $\mathbb{T}^3$~\citep{adamekGevolutionCosmologicalNbody2016}. 
+Furthermore, the box is decomposed in rod domains for MPI-parallelisation~\citep{daverioLatfield2LibraryClassical2016}.
 % \begin{equation}
 %     \lcoordx = \lcoordx + 
 % \end{equation}
@@ -91,7 +94,7 @@ where $\tilde{f}^\ast$ is the complex conjugate.
 
 
 \paragraph{Units and conventions.} %
-The code measures length in units of $L_\#$ and the DFT sign convention is opposite of~\cref{eq:PT:gwas:DFT_definition} \emph{and} without normalisation. We need to adjust for this when comparing results to calculations, e.g.~$\tilde{f}\rvert\ped{calc.} \leftrightarrow \tilde{f}^\ast\rvert\ped{code}$.
+The code measures length in units of $L_\#$ and the DFT sign convention is opposite of~\cref{eq:PT:gwas:DFT_definition} \emph{and} without normalisation~\citep{daverioLatfield2LibraryClassical2016,adamekGevolutionCosmologicalNbody2016}. We need to adjust for this when comparing results to calculations, e.g.~$\tilde{f}\rvert\ped{calc.} \leftrightarrow \tilde{f}^\ast\rvert\ped{code}$.
 
 
 

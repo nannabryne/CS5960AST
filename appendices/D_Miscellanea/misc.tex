@@ -31,28 +31,26 @@
 
 
 
-\speak{IF TIME: * Old simulations with $\varepsilon\sim L_\#/4$ *  ``Adjusting the equation of motion'' * Describe plateau in beginning, and the reasoning for discarding those results. Explain how this plateau showed up again in the thin-wall limit when changing the surface tension. *}
-
-\iftime{classification of topological defects }
 
 \section{Simulation~\simnum{6}}\label{app:misc:sim6}
-    % \speak{Figure showing how this fails.}
-    \Cref{fig:misc:sim6:sim6_err} demonstrates how simulation~\simnum{6} ``fails'' after a time period corresponding to $\Delta \tau/L_\#= 1/2$, i.e. conformal time equal half the box length. Results from simulations~\simnum{1} and~\simnum{7} are shown for comparison.
+    Simulation~\simnum{6} is identical to simulation~\simnum{1}, except for a change in the scaled Compton wavelength from $\xi_\ast=3.33\times 10^{-4}$ to $\xi_\ast = 10^{-4}$ (see~\cref{tab:PT:sims:sim_setups}). %
+    The Compton wavelength now is $L\nped{C} = \xi_\ast/H_0 \approx 0.30~\Mpch$ and the wall width $\delta\ped{w}\approx 0.42~\Mpch$, both way smaller than the spatial resolution $\Delta_\# \simeq 1.3~\Mpch$. %  
     % ------------------------------
     % ----------- FIGURE -----------
-    \begin{figure}[h!]
+    \begin{figure}[hb]
         \centering
-        \includegraphics[width=\linewidth]{sim6_err.pdf}
+        \includegraphics[width=\linewidth]{Appendices/sim6_err.pdf}
         \caption{Simulation results from simulations~\simnum{1},~\simnum{7} and~\simnum{6}, as functions of scale factor $a$. \figpanel{Top panel}~The wall position $\epsB$. \figpanel{Bottom panels}~Spatially averaged values of the scalar fields $\chi$ and $q=a^2 \dot{\chi}$.}
         \label{fig:misc:sim6:sim6_err}
     \end{figure}%
     % ------------------------------
+    \Cref{fig:misc:sim6:sim6_err} demonstrates how simulation~\simnum{6} ``fails'' after a time period corresponding to $\Delta \tau/L_\#= 1/2$, i.e. conformal time equal half the box length. Results from simulations~\simnum{1} and~\simnum{7} are shown for comparison. %
     Massless particles propagating in the $z$-direction will have travelled the distance corresponding to the separation between the walls between $a\ped{i}$ and the vertical dashed line in~\cref{fig:misc:sim6:sim6_err}. The fact that $\avg{q}$ blow up here is most likely not a coincidence, but rather an unfortunate collision of information at any of the walls.  
 
 
 
 
-\section{\tmptitle{On the CFT/DFT comparison}}
+\section{On the continuous/discrete Fourier-comparison}
     One thing we simply did not have the time or space to do, was to go into detail about how the gravitational waves were computed in~\asgrd, and how this might affect the way we interpret the components of $\hpC$. 
     % \comment{Write short about this problem!} 
     In doing this analysis properly, we might have gained insight on the fact that $\hpCI \sim \hpB$ and $\hpCR \not\sim \hpB$, following the notation from~\cref{sec:PT:code,sec:PT:gwas}. On the other hand, we have~\citep{adamekGevolutionCosmologicalNbody2016}
@@ -82,3 +80,11 @@
     for $\lcoordk = (0,\lcoord{v},\lcoord{w})$. \comment{Either find this result ($\sim$ 15 min), or remove this last part.}
     
     % \speak{For the record, since \[\hpC[ij]\ap{new}(\lcoordk) = \eu[-\im \ppi (\lcoordk_i + \lcoordk_j)/N_\# ] \hpC[ij](\lcoordk),  \] we get \[ \hpC[xx]\ap{new}(0,\lcoord{v},\lcoord{w}) = \hpC[xx](0,\lcoord{v},\lcoord{w}) \] our analysis should be unaffected by this}
+
+
+
+\speak{\section*{IF TIME:}}
+
+\speak{IF TIME: * Old simulations with $\varepsilon\sim L_\#/4$ *  ``Adjusting the equation of motion'' * Describe plateau in beginning, and the reasoning for discarding those results. Explain how this plateau showed up again in the thin-wall limit when changing the surface tension. *}
+
+\iftime{classification of topological defects }

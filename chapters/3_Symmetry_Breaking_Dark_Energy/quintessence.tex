@@ -45,7 +45,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     % }
 
     % In the Jordan frame, matter fields---denoted collectively by $\Psi$---couple minimally to gravity. In the Einstein frame where the Einstein--Hilbert action assumes its usual form, matter may couple non-minimally to the scalar $\phi$
-    The dynamics of the bosonic field $\phi$ is described by the Einstein-frame action (see~\cref{sec:GR:diffgeo:conformal}) \comment{fix}
+    The dynamics of the bosonic field $\phi$ is described by the Einstein-frame (see~\cref{sec:GR:diffgeo:conformal}) action% \comment{fix}
     \begin{equation}\label{eq:cosmo:quintessence:quintessence_action_Einstein}
         S =\integ[4]{x\sqrt{-g}} \cclosed{ \frac{M\nped{Pl}^2}{2} \mathcal{R} + X(\phi) - V(\phi)} + S\ped{(m)}[\widetilde{g}\_{\mu\nu} , \Psi],
     \end{equation} 
@@ -58,7 +58,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     % \nc{Some article}[appendix?] shows that 
     The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{3} A_{,\phi}\widetilde{T}\ped{(m)}$, where $\widetilde{T}\ped{(m)}= {}\ap{(m)}\widetilde{T}\_{\mu\nu}\widetilde{g}\^{\mu\nu}$ is the trace of the Jordan-frame matter SE tensor~\citep{hinterbichlerSymmetronCosmology2011,christiansenAsevolutionRelativisticNbody2023}. In particular, 
     \begin{equation}
-        \sq\phi = V_{,\phi}(\phi) - A^{3}(\phi) A_{,\phi}(\phi)\widetilde{T}\ped{(m)}.
+        \sq\phi = V_{,\phi}(\phi) - A^{3}(\phi) A_{,\phi}(\phi)\widetilde{T}_m.%\ped{(m)}.
     \end{equation}
     We model the matter content as non-interacting, perfect fluids indexed $s$ with equation-of-state parameter $w_s$ such that the trace becomes $\widetilde{T}\ped{(m)}\rvert\ped{p.f.} = \sum_s (3w_s-1 )\widetilde{\rho}_s$.  
     % The equation of motion for $\phi$ reads
@@ -71,7 +71,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     %     &= V(\phi)  - A^3(\phi) A_{,\phi}(\phi) \sum_{s} (1-3 w_s) \widetilde{\rho}_s 
     % % \end{align}
     % is the effective potential~\citep{hinterbichlerSymmetronCosmology2011}. 
-    We have $\widetilde{\rho}_s\propto (Aa)^{-3(1+w_s)} \equiv A^{-3(1+w_s)}\rho_s$, where $\rho_s=a^{-3(1+w_s)}$ defines a scaled energy density, conserved in the Einstein frame, and $a$ the Einstein-frame scale factor. Now
+    We have $\widetilde{\rho}_s\propto (Aa)^{-3(1+w_s)} \equiv A^{-3(1+w_s)}\rho_s$, where $\rho_s=a^{-3(1+w_s)}$ defines a scaled energy density, conserved in the Einstein frame, and $a$ is the Einstein-frame scale factor. Now
     \begin{equation}
         \sq \phi = V_{,\phi}(\phi) - A_{,\phi}(\phi) \sum_{s} A^{-3w_s}(\phi) (3w_s-1)\rho_s,
     \end{equation}
@@ -80,7 +80,7 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \begin{equation}
         V\ped{eff} = V(\phi) + \sum_s A^{1-3w_s}(\phi) \rho_s
     \end{equation}
-    is the effective potential~\rcomment{Check if this is only symmetron.}. 
+    is the effective potential.%~\rcomment{Check if this is only symmetron.}. 
 
     % The minimal coupling to matter contributes s.t.~$\sq\phi \supset - A^{-1} A_{,\phi}T\ped{m} $, which amounts to writing
     % \begin{equation}
@@ -104,7 +104,9 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
         % \dv[2]{\vec{x}}{t} 
         \dv[2]{\vec{x}}{t} \supset \frac{\vec{F}_5}{m} = - \frac{\beta}{M\nped{Pl}} \vec{\nabla}\phi.
     \end{equation}}
-    $\beta$ is then a measure of the strength of the fifth force relative to the Newtonian gravitational force.  
+    Thus, 
+    $\beta$ is 
+    a measure of the strength of the fifth force relative to the Newtonian gravitational force.  
     % \comment{Violation of WEP. Maybe refer to equations in~\cref{sec:GR:einstein}?}
 
     % Matter particles in the Jordan frame move freely, i.e. obey the geodesic equation, whereas articles in the Einstein frame matter sector do not. 
@@ -130,7 +132,10 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \begin{equation}
         V(\phi) = \frac{\lambda}{4} \phi^4  - \frac{\mu^2}{2} \phi^2 + V_0
     \end{equation}
-    is called the \newconcept{symmetron} model~\citep{hinterbichlerSymmetronCosmology2011}. This theory is invariant under reflection, $\phi\to -\phi$, ($\phi$ is $\Zn$ symmetric) a \nc{requirement from quantum theory.}[lost reference:(] (\iftime{Comment on this.}) %
+    is called the \newconcept{symmetron} model~\citep{hinterbichlerSymmetronCosmology2011}. This theory is invariant under reflection, $\phi\to -\phi$.\footnote{
+        See~\citet[\namecrefs{chap:GR}~11,~12,~20 \&~22]{peskinIntroductionQuantumField1995} or~\citet[\namecref{chap:GR}~7]{kolbEarlyUniverse1990} for discussion on quantum corrections.
+    } %
+    % a \nc{requirement from quantum theory.}[lost reference:(] (\iftime{Comment on this.}) %
     Not equally well-established is the generalisation of this model called the \newconcept{\emph{a}symmetron}~\citep{perivolaropoulosGravitationalTransitionsExplicitly2022}, in which the potential is given an additional cubic term, $V(\phi)\supset -\kappa\phi^3/3 $. Here, one of the domains is favoured over the other. 
 
     Now, why would we want this asymmetry in the first place? It complicates things by breaking the $\Zn$ symmetry of the symmetron, so the theory only holds approximately. However, this asymmetry can aid in overcoming the domain wall problem, manifest in the inevitable biased domain wall collapse. We mentioned this briefly in~\cref{sec:cosmo:defects:dws}. %
@@ -139,22 +144,23 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
     \begin{figure}[h]
         \centering
         {\includegraphics[width=\linewidth]{Background/asymmetron_demo.pdf}}
-        \caption{The evolution of the (a)symmetron effective potential in (dashed red) solid blue. \figpanel{Panel I}~The potential before SSB, \figpanel{panel II}~at SSB, and \figpanel{panels III--VI} after SSB, with diluting density. \iftime{Add two balls.}
+        \caption{The evolution of the (a)symmetron effective potential in (dashed red) solid blue. \figpanel{Panel I}~The potential before SSB, \figpanel{panel II}~at SSB, and \figpanel{panels III--VI} after SSB, with diluting density.
+        % \iftime{Add two balls.}
         % \figpanel{Panel I} shows before SSB, while \figpanel{panel II} is at SSB.
         }
         \label{fig:cosmo:quintessence:asymmetron_demo}
     \end{figure}
 
-    The simplest symmetron model has the quadratic coupling
+    The simplest (a)symmetron model has the quadratic coupling
     \begin{equation}
         A(\phi)  = 1 +\frac{1}{2} \pclosed{\frac{\phi}{M}}^2 + \mathscr{O}\Big( {(\phi/M)}^4 \Big).
     \end{equation}
-    We consider the matter content to be dust-like, so that $\widetilde{T}\ped{(m)}\simeq -\widetilde{\rho}\ped{(m)}$. The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}\lcomment{Mention $V\ped{eff}=V(\phi)+A(\phi)\rho$?}
+    We consider the matter content to be dust-like, so that $\widetilde{T}\ped{(m)}\simeq -\widetilde{\rho}\ped{(m)}$. The effective potential is then given by~\citep{hinterbichlerSymmetronCosmology2011}%\lcomment{Mention $V\ped{eff}=V(\phi)+A(\phi)\rho$?}
     \boxedeq{eq:cosmo:quintessence:asymmetron_effective_potential}{
     V\ped{eff}(\phi) = \frac{\lambda}{4} \phi^4 - \frac{\kappa}{3}\phi^3 + \frac{\mu^2}{2}\pclosed{\frac{\rho\ped{(m)}}{\mu^2M^2}-1} \phi^2 + V_0,}
     %
     up to an irrelevant constant. %
-    This potential becomes unstable when $\rho\ped{(m)}\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua. From the cosmological perspective, ignoring $\kappa$, we imagine an initially dense region in the universe where a scalar field oscillates slightly around zero. The energy density dilutes and eventually reaches $\rho\ped{(m)}=\rho_\ast$, spontaneously breaking the $\Zn$ symmetry, and separates the scalar field into domains according to their sign at the time. A schematic of this evolution is shown in~\cref{fig:cosmo:quintessence:asymmetron_demo}. The potential barriers created at this \emph{phase transition} correspond to the topological solitons discussed in~\cref{sec:cosmo:defects:dws}; namely cosmic domain walls.
+    This potential becomes unstable when (or where) $\rho\ped{(m)}\leq \mu^2M^2\equiv \rho_\ast$, and the field rolls into either of the two vacua We call $\rho_\ast$ the \textit{critical density}. From the cosmological perspective, ignoring $\kappa$, we imagine an initially dense region in the universe where a scalar field oscillates slightly around zero. The energy density dilutes and eventually reaches the critical density ($\rho\ped{(m)}=\rho_\ast$), spontaneously breaking the $\Zn$ symmetry, and separates the scalar field into domains according to their sign at the time. A schematic of this evolution is shown in~\cref{fig:cosmo:quintessence:asymmetron_demo}. The potential barriers created at this \emph{phase transition} correspond to the topological solitons discussed in~\cref{sec:cosmo:defects:dws}; namely cosmic domain walls.
     %  The potential barriers created at this \emph{phase transition} \checkthis{represent topological defects}, e.g.~domain walls.
 
     % \begin{figure}[h]
@@ -201,10 +207,12 @@ General relativity---represented by the Einstein--Hilbert action---is retrieved 
 
     The quartic coupling constant $\lambda$ measures the scalar self-interactions and $\mu$ defines the bare mass of the (a)symmetron. The cubic coupling $\kappa$ is a measure of the difference between the two vacua, and is zero in the symmetron case. The constant $V_0$ can be interpreted as a cosmological constant \textLambda~\citep{christiansenAsevolutionRelativisticNbody2023}, but we will not discuss this here. The conformal coupling scale $M$ governs the matter coupling strength~\citep{burrageAccurateComputationScreening2024}. We introduce the \newconcept{symmetron Compton wavelength}
     \begin{equation}\label{eq:cosmo:quintessence:symmetron_Compton_wavelength}
-        L\nped{C} = \frac{1}{\sqrt{2}\mu}
+        L\nped{C} \equiv \frac{1}{\sqrt{2}\mu}
     \end{equation}
-    which defines the range of the symmetron forces. %
-    Local tests of gravity require $M \lesssim 10^{-3} M\nped{Pl}$ for the quadratic coupling~\citep{burrageAccurateComputationScreening2024,hinterbichlerSymmetronCosmology2011,hinterbichlerScreeningLongRangeForces2010}. This is to say that fifth forces is mediated within a range $L\nped{C}\lesssim\mathrm{Mpc}$~\citep{hinterbichlerScreeningLongRangeForces2010}.
+    which defines the range of the symmetron forces.\footnote{
+        Note that some references consider the dynamical quantity $L\nped{C}\sqrt{1-\upsilon}$ to be the symmetron Compton wavelength, which is the actual dynamical range of the symmetron.
+    } %
+    Local tests of gravity require $M \lesssim 10^{-3} M\nped{Pl}$ for the quadratic coupling~\citep{burrageAccurateComputationScreening2024,hinterbichlerSymmetronCosmology2011,hinterbichlerScreeningLongRangeForces2010,hagalaCosmicTsunamisModified2017}. This is to say that fifth forces is mediated within a range $L\nped{C}\lesssim\mathrm{Mpc}$~\citep{hinterbichlerScreeningLongRangeForces2010}.
 
     % The 
 

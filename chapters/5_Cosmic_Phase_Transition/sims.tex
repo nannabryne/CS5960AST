@@ -6,7 +6,12 @@
 % labels: \label{[type]:PT:sims:[name]}
 % -------------------------------------
 
-
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+% LOCAL MACROS:
+\newcommand{\epsA}{\ALIASepsA}
+\newcommand{\epsB}{\ALIASepsB}
+\newcommand{\epsC}{\ALIASepsC}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
@@ -59,7 +64,7 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
 \subsubsection{Initial configuration}
 
     The normal quasi-static $\tanh$-profile (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) approximates the initial configuration to $\breve{\chi}_\ast\to0$ and $\breve{\chi}'_\ast \to \infty$, which does not actually work out. %    
-    Since $\redshift_\ast=1/a_\ast-1 = 2 + 1/33 > 2$, choosing initial redshift $\redshift\ped{i}=2.00$ leaves wiggle room enough to get simulations started with spatially separated walls. In other words, with $a_\ast=0.33$ and $\redshift\ped{i}=2.00< \redshift_\ast$, there is a tiny slot between SSB and initialiation ($\redshift_\ast-\redshift\ped{i} \approx 0.03$) that we do not simulate.
+    Since $\redshift_\ast=1/a_\ast-1 = 2 + 1/33 > 2$, choosing initial redshift $\redshift\ped{i}=2.00$ leaves wiggle room enough to get simulations started with spatially separated walls. In other words, with $a_\ast=0.33$ and $\redshift\ped{i}=2.00< \redshift_\ast$, there is a tiny slot between SSB and initialisation ($\redshift_\ast-\redshift\ped{i} \approx 0.03$) that we do not simulate.
     
     On the other hand, with the analysis in~\cref{sec:PT:symm_dws:asymptotic} we can impose suitable initial conditions so that the field rolls into the minima in the most effective way. We need to keep in mind that this affects the surface tension and wall width.
     %  However, this affects the expression for the domain wall surface tension and \blahblah 
@@ -80,15 +85,18 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
 
 
 \subsubsection{Nature of wall perturbation}
-    We choose to only perturb one wall so that the time of collision between propagating gravitational waves is at $ \tau\ped{i} + \wallsep$~\lcomment{Is this true? Maybe col. time is double?}, $\wallsep= L_\#/2$.\footnote{
+    For the linear theory to hold, we need $\epsast \ll L$ and $pL \gg 1$ where $L$ is a length scale, earlier taken to be $L\sim \tau_\ast$. For the prototype, we add that $\abs{\varepsilon(\tau)} \gg \delta\ped{w}(\tau)$ for $\tau\in[\tau\ped{i}, \tau\ped{f}]$ for obvious reasons. %, and choose $L\sim L_\#$. % 
+    We choose to only perturb one wall so that the time of collision between massless particles propagating from one of the walls is at $ \tau\ped{i} + \wallsep$~\lcomment{Is this true? Maybe col. time is double?}, $\wallsep= L_\#/2$.\footnote{
         Perturbing both walls would give collision time $\tau\ped{i} + L_{\#}/4$.
     } %
     We would like $\epsast \ll \wallsep$, but with a quick look at~\cref{fig:pertwalls:mywalls:demo_analytical_epsilon} we can assume that this would require a very high spatial resolution. As a result, we choose to exaggerate the initial perturbation amplitude and risk higher-order effects. %\verb|..|
-    \lcomment{Maybe give a length scale?}
+    %\lcomment{Maybe give a length scale?}
 
     % A typical length scale of our setup is perhaps $L/#$; the separation between the two walls. This gives 
 
-    
+    In every simulation, we adjust for the time gap between SSB and initialisation %
+    % $\redshift_\ast$ and $\redshift\ped{i}$ 
+    by using $\epsA(\tau\ped{i})$ and $\epsA[\dot{\varepsilon}](\tau\ped{i})$ from~\cref{eq:pertwalls:mywalls:eps_s_complete_MD}.
 
 
     % First of all, we restrict $\epsast < L_{\#}/4$.
@@ -97,7 +105,7 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
 
 
 
-\subsection{Catalogue}
+\subsection{Toy-model catalogue}
 
    
 

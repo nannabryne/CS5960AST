@@ -51,6 +51,10 @@
 \providecommand*{\bbclosed}[1]{{\left\llbracket #1  \right\rrbracket }}   % double brackets
 
 
+\WithSuffix\newcommandx\pclosed*[2][1=]{{#1( #2 #1)}}
+\WithSuffix\newcommandx\bclosed*[2][1=]{{#1( #2 #1)}}
+\WithSuffix\newcommandx\cclosed*[2][1=]{{#1( #2 #1)}}
+
 
 
 
@@ -610,6 +614,7 @@
 
 
 \newcommand{\avg}[1]{\left\langle{#1}\right\rangle}
+\WithSuffix\newcommandx\avg*[2][1=]{#1\langle{#2}#1\rangle}
 
 
 \newcommand{\tmpequiv}{\triangleq} % temporary definition
@@ -618,7 +623,11 @@
 \newcommand{\piGN}{\ppi G\nped{N}}
 
 
-\newcommand{\ALIASwallsep}{d\ped{w\widebar{w}}}
+
+
+% \newcommand{\ALIASwallsep}{d\ped{w\widebar{w}}}
+% \newcommand{\ALIASwallsep}{D_\#}
+\newcommand{\ALIASwallsep}{\mathfrak{D}}
 
 
 
@@ -632,3 +641,10 @@
 
 
 \newcommand{\ALIASeqregimenum}[1]{{\tiny{\textbf{(#1)}}}}
+
+
+
+
+
+
+\newcommand{\thismonthyear}{Nov.~2024}

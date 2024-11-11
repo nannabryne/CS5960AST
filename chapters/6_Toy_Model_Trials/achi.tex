@@ -26,7 +26,7 @@ We distinguish between the idealised path---call it $\brchi\ap{ideal}$---given b
 
 
 With that established, we move on to wall--anti-wall simulations as described in~\cref{sec:PT:gwas} and~\cref{tab:PT:sims:sim_setups}. %
-In general, the symmetron field $\chi$ will at SSB roll into either minima, depending on the sign of the field right before it happens. The strength of the oscillations around the true minima depend on both the initial field value and its time derivative. In our specific simulations, this is deterministic. %
+In general, the symmetron field $\chi$ will at SSB roll into one of the two minima, depending on the sign of the field right before it happens. The strength of the oscillations around the true minima depends on both the initial field value and its time derivative. In our specific simulations, this is deterministic. %
 We show in~\cref{fig:results:achi:bckg_qnts} a handful of background quantities from various simulations. %
 \begin{figure}[h]
     \centering
@@ -34,7 +34,7 @@ We show in~\cref{fig:results:achi:bckg_qnts} a handful of background quantities 
     \caption{Background quantities. \comment{Not too happy about this plot... FIX LABELS!}}
     \label{fig:results:achi:bckg_qnts}
 \end{figure}
-The simulations with earlier initialisation (simulations~\simnum{4} \&~\simnum{7}) do give enhanced fifth-force oscillations. This is consistent with numerical solutions to the asymptotic equations with similar initial conditions. We take a closer look at the symmetron field in~\cref{fig:results:achi:indepth_achi_aq}. %$\mathord{\textnormal{\ttfamily\textphi}}$\textdelta$\mathtt{\&}$ 
+The simulations with earlier initialisation (simulations~\simnum{4} \&~\simnum{7}) give enhanced fifth-force oscillations. This is consistent with numerical solutions to the asymptotic equations with similar initial conditions. We take a closer look at the symmetron field in~\cref{fig:results:achi:indepth_achi_aq}. %$\mathord{\textnormal{\ttfamily\textphi}}$\textdelta$\mathtt{\&}$ 
 % We will have a closer look at the \blahblah.
 % The maximum ``speed'' of the field seems to be connected to the parameters $\epsast$ and $p$. Naively we assess that the maximal $\epsast$ \blahblah
 
@@ -70,14 +70,14 @@ The simulations with earlier initialisation (simulations~\simnum{4} \&~\simnum{7
 % \footnote{
 %     Not to be confused with the idealised path with zero oscillations. It is the numerical solution to~\cref{eq:PT:symm_dws:eom_asym_chi_s} with initial conditions from said idealised path.
 % } 
-is very close to the actual evolution in simulations initialised at redshift $2.00$, which makes re-runs less useful. On the other hand, we see that simulation~\simnum{7} (and~\simnum{4}) is expected to benefit quite a lot from such a tweaking of initial conditions.
+is very close to the actual evolution in simulations initialised at redshift $2.00$, which makes re-runs less useful. On the other hand, we see that simulation~\simnum{7} is expected to benefit quite a lot from such a tweaking of initial conditions. This also applies for simulation~\simnum{4}.
 
 
 \paragraph{Velocity field.} %
 It turned out to be very convenient to plot certain quantities over the peculiar time parameter $t = \omega(s-1)=p(\tau-\tau_\ast)$. One of the quantities that inhabits such a nature is the asymptotic velocity field $\breve{q}$, or in actuality the maximum of $q$. %
 The similarities in~\cref{fig:results:achi:indepth_aq} are not difficult to spot. We plot the field as $q~[a^2 \epsast/\xi_\ast]$ %
 % in units of \hl{XXX $1/(\epsast \mu)$} 
-to emphasise how the speed scales as the initial perturbation amplitude (and symmetron length scale). We can look at~\cref{fig:results:achi:bckg_qnts} to see that this is a feature of the perturbation, as simulation~\simnum{0} lacks said feature. The next section will show how this periodicity is strongly connected to the wall position. The average absolute value tells us more about the fields' stability, where we see a link between these lines' and the asymptotic scalar field's strength of oscillations around minima.
+to emphasise how the speed scales as the initial perturbation amplitude (and symmetron length scale). We can look at~\cref{fig:results:achi:bckg_qnts} to see that this is a feature of the perturbation, as simulation~\simnum{0} lacks said feature. The next section will show how this periodicity is strongly connected to the wall position. The average absolute value tells us more about the fields' stability, where we see a link between these lines' and the asymptotic scalar field's strength of oscillations around the positive minimum.
 
     % \begin{figure}[h!]
     %     \centering
@@ -108,8 +108,12 @@ to emphasise how the speed scales as the initial perturbation amplitude (and sym
 
     
 
-\subsection{Holistic review} % of \( \chi \)}
-    In the absence of topological defects, we see near on perfect correspondence between predicted and simulated scalar field $\chi=\breve{\chi}$ (\cref{fig:results:achi:achi_no_wall}). Presence of walls messes with the maximum field value (\cref{fig:results:achi:bckg_qnts}), due to the ``bump'' in the profile, a feature that is much more prominent when the walls are perturbed (cf.~two left-most panels in~\cref{fig:results:achi:indepth_achi}). %
-    In any case, we see from the average squared field value that the overall oscillations are very close to what we expect. %\comment{Repeated?}
+\subsection{Review} % of \( \chi \)}
+    In the absence of topological defects, we see near perfect correspondence between predicted and simulated scalar field $\chi=\breve{\chi}$ (\cref{fig:results:achi:achi_no_wall}). Presence of walls alters the maximum field value (\cref{fig:results:achi:indepth_achi}), due to the ``bump'' in the profile (also to be spotted in~\cref{fig:results:epsilon:wall_profile_2D}). This feature is much more prominent when the walls are perturbed (cf.~two left-most panels in~\cref{fig:results:achi:indepth_achi}). %
+    We could have extracted the field value from the snapshots around lattice $z$-coordinate $\lcoord{k}\sim 3 N_\#/4$, but this is unnecessarily complicated and time-consuming, and the temporal resolution is suboptimal. 
+
+    In any case, we see from the \emph{smooth} average-squared field-values in~\cref{fig:results:achi:indepth_achi}, that the overall oscillations are very close to what we expect
+    We believe the aforementioned bumps to be a result of the quasi-static approximation (\cref{sec:PT:symm_dws:quasi-static}), which assumes time derivatives to be close to zero.
+
     The path the field can take that inhabits the smallest possible fifth-force oscillations is close to what happens in simulations~\simnum{0}--\simnum{3} and~\simnum{5}. The same cannot be said for simulations~\simnum{4} and~\simnum{7}.
     

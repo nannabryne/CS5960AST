@@ -8,12 +8,26 @@
 % -----------------------------------------------
 
 
-% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 % LOCAL MACROS:
-% \newcommand{\simnum}{\ALIASsimnum}
-
-% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-
+\newcommand\Ft{\ALIASFt}
+\newcommand\ah{\ALIASah}
+\newcommand\lcoord{\ALIASlcoord}
+\newcommand\lcoordx{\ALIASlcoordx}
+\newcommand\lcoordk{\ALIASlcoordk}
+\newcommand\hpA{\ALIAShpA}
+\newcommand\hpB{\ALIAShpB}
+\newcommand\hpC{\ALIAShpC}
+\newcommand\hpAB{\ALIAShpAB}
+\newcommand\hpCR{\ALIAShpCR}
+\newcommand\hpCI{\ALIAShpCI}
+\newcommand\epsA{\ALIASepsA}
+\newcommand\epsB{\ALIASepsB}
+\newcommand\epsC{\ALIASepsC}
+\newcommand\wallsep{\ALIASwallsep}
+% ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 
 
 
@@ -24,8 +38,9 @@
 
 
 
-We provide a general discussion of the project---both methodically and result-wise---in~\cref{sec:whatif:discussion} with regrets and proposed methods of verification. In~\cref{sec:whatif:framework} we address the framework as is, agnostic to any potential (in)validations, and discuss its implications and potential.
+We provide a general discussion of the toy-model analysis---both methodically and result-wise---in~\cref{sec:whatif:discussion,sec:whatif:cont} with regrets and proposed methods of verification. In~\cref{sec:whatif:framework} we address the framework as is, agnostic to any potential (in)validations, and discuss its implications and potential.
 
+% We refer to the 
 
 
 
@@ -64,6 +79,10 @@ We provide a general discussion of the project---both methodically and result-wi
 
 \section{Project reflection}\label{sec:whatif:discussion}
     {\subimport{./}{discussion.tex}}
+
+
+\section{Continued assessment}\label{sec:whatif:cont}
+{\subimport{./}{cont.tex}}
 
 
 \section{Limitations and possibilities}\label{sec:whatif:framework}

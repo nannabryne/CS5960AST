@@ -38,7 +38,7 @@
 % Albert Einstein formulated GR in terms of differentiable \emph{manifolds} and their geometry, a mathematical discipline known as differential geometry. 
 % Albert 
 Einstein formulated GR in terms of spacetime geometries, using the mathematical discipline known as differential geometry. 
-Whilst most prominent in physics, differential geometry has many applications in natural sciences. This~\lcnamecref{sec:GR:diffgeo} briefly introduces basic concepts and terminology of this mathematical branch. For formal definitions, see e.g.~\citet{carrollSpacetimeGeometryIntroduction2019}.
+Whilst most prominent in physics, differential geometry has many applications in natural sciences. This~\lcnamecref{sec:GR:diffgeo} briefly introduces basic concepts and terminology of this mathematical branch. For formal definitions, see e.g.~\citet[\namecrefs{chap:GR}~2 \&~3]{carrollSpacetimeGeometryIntroduction2019}.
 % Differential geometry knows many applications in natural sciences, most importantly in physics.
 
 
@@ -53,12 +53,15 @@ where $\Krondelta{_{ij}}$ is the Kronecker delta (\cref{eq:notation:Kronecker_de
 %         0 &\text{else.}
 %     \end{cases}
 % \end{equation}
-In the standard picture, the coordinates are $x\^\mu=(t,x,y,z)$ such that the last term above is the three-dimensional Euclidean line element in Cartesian coordinates. 
+% We write 
+In the standard picture, the coordinates are $x\^\mu=(t,x,y,z)$ such that the last term above is the three-dimensional Euclidean line element in Cartesian coordinates. %We write $\eta\_{\mu\nu}= \text{diag}(-1,+1,+1,+1)$ where ``diag'' means diagonal  
 Minkowski manifolds are special cases of pseudo-Riemannian manifolds (discussed below).
 % Other special instances of these manifolds, particularly pseudo-Riemannian, represent curved generalisations of the Minkowski spacetime, and these are the main ingredients in GR. There are certain artefacts to these particular mathematical structures needed to understand the steps in the project.
 
 \subsubsection{Metric tensor}
-The \newconcept{metric tensor} $g\_{\mu\nu}$ is a symmetric rank $(0,2)$ tensor that is non-degenerate ($\det(g)\neq 0$) and relates to the line element as 
+The \newconcept{metric tensor} $g\_{\mu\nu}$ is a symmetric rank $(0,2)$ tensor that is non-degenerate ($\det(g)\neq 0$) and relates to the line element\footnote{
+    ``Line element'' and ``metric'' is often used synonymously.
+} as 
 \begin{equation}
     {ds}^2 = g\_{\mu\nu} {\diff x\^\mu}{\diff x\^\nu}.
 \end{equation}
@@ -67,7 +70,11 @@ Its inverse satisfies $g\^{\mu\kappa}g\_{\kappa\nu} = \Kd{^\mu_\nu} $, and we us
 
 
 \subsubsection{Pseudo-Riemannian manifolds}
-A manifold $\Manifold$ with a metric $g\_{\mu\nu}$ that put into its \emph{canonical form} is $\text{diag}(-1,+1,+1, \dots,+1)$, \comment{is} called Lorentzian or \newconcept{pseudo-Riemannian}. For all practical purposes, it is to say that the spacetime has one time dimension and arbitrary number ($d$) of spatial dimensions. We say that $\Manifold$ has $d+1$ dimensions with coordinates $x\^\mu$, and emphasise that Greek indices runs from $\mu=0,i$ and Latin ones $i = 1, \dots , d$. Now, there exists a unique connection $\ChristoffelSym{\rho}{\mu\nu}$ constructed from the metric, called the \newconcept{Christoffel symbols} (see~\cref{eq:notation:Christoffel_symbols}). From this we get important structures such as the \newconcept{covariant derivative} $\nabla\_\mu$ and the \newconcept{Riemann curvature tensor} $\mathcal{R}\indices{^\rho_{\sigma\mu\nu}}$ (see~\cref{eq:notation:Riemann_tensor}). Further, one can construct the \newconcept{Ricci tensor} $\mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}}$, 
+A manifold $\Manifold$ with a metric $g\_{\mu\nu}$ that, when put into its \emph{canonical form} is~\citep{carrollSpacetimeGeometryIntroduction2019}
+\begin{equation}
+    g\_{\mu\nu} \rvert\ped{canon.} =  \text{diag}(-1,+1,+1, \dots,+1), 
+\end{equation}
+is called Lorentzian or \newconcept{pseudo-Riemannian}. For all practical purposes, it is to say that the spacetime has one time dimension and arbitrary number ($D$) of spatial dimensions. We say that $\Manifold$ has $D+1$ dimensions with coordinates $x\^\mu$, and emphasise that Greek indices take the values $\mu=0,i$ and Latin ones take $i = 1, \dots , D$. Now, there exists a unique connection $\ChristoffelSym{\rho}{\mu\nu}$ constructed from the metric, called the \newconcept{Christoffel symbols} (\cref{eq:notation:Christoffel_symbols}). From this we get important structures such as the \newconcept{covariant derivative} $\nabla\_\mu$ (\cref{eq:notation:covariant_derivative_rank_kl}) and the \newconcept{Riemann curvature tensor} $\mathcal{R}\indices{^\rho_{\sigma\mu\nu}}$ (\cref{eq:notation:Riemann_tensor}). Further, one can construct the \newconcept{Ricci tensor} $\mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}}$, 
 % \begin{equation}
 %     \mathcal{R}\_{\mu\nu}  = \mathcal{R}\indices{^\lambda_{\mu\lambda\nu}} = g\_{\lambda \rho} \mathcal{R}\indices{_{\rho\mu\lambda\nu}} 
 % \end{equation}
@@ -85,7 +92,7 @@ $\mathcal{G}\indices{_{\mu\nu}^{;\nu}}= \nabla\^\nu \mathcal{G}\_{\mu\nu}= 0$, w
 \begin{equation}\label{eq:GR:diffgeo:Einstein_tensor}
     \mathcal{G}\_{\mu\nu}= \mathcal{R}\_{\mu\nu} - \frac{1}{2} g\_{\mu\nu}  \mathcal{R}
 \end{equation}
-is the \newconcept{Einstein tensor}. \iftime{Write better.}
+is the \newconcept{Einstein tensor}.% \iftime{Write better.}
 % or
 % \begin{equation}
 %     \nabla\^\nu \Ric\_{\mu\nu} - \frac{1}{2} \nabla\_\mu \Ric = 0.
@@ -199,7 +206,7 @@ is the \newconcept{Einstein tensor}. \iftime{Write better.}
 
 
     \subsubsection{Expanding universe}
-        If $\cfac(x)=a(\tau)$ and ${ds}^2 = -{\diff \tau}^2 + {d\varSigma}^2$, where $\varSigma$ is a space-like hypersurface with a given Gaussian curvature, then $\wt{ds}^2=a^2 {ds}^2$ is the Friedmann--Lema\circumflex{i}tre--Robertson--Walker (FLRW) line element (see~\cref{sec:GR:lcdm}). If $\varSigma = \Real[3]$, the metric $\wt{g}\_{\mu\nu}$ is said to be conformally flat.
+        If $\cfac(x)=a(\tau)$ and ${ds}^2 = -{\diff \tau}^2 + {d\varSigma}^2$, where $\varSigma$ is a spacelike hypersurface with a given Gaussian curvature, then $\wt{ds}^2=a^2 {ds}^2$ is the Friedmann--Lema\circumflex{i}tre--Robertson--Walker (FLRW) line element (see~\cref{sec:GR:lcdm}). If $\varSigma = \Real[3]$, the metric $\wt{g}\_{\mu\nu}$ is said to be conformally flat.
         % If $\cfac(x)=a(\tau)$ and $g\_{\mu\nu}= \eta\_{\mu\nu}$, where $\tau=x\^0$ is conformal time, then $\wt{g}\_{\mu\nu}$ is the flat FLRW metric (see~\cref{sec:GR:lcdm}). The conformal metric is then conformally flat, as $\cfac^{-2}(x)\wt{g}\_{\mu\nu}= \eta\_{\mu\nu}$. 
         % We use the comoving coordinates $\vec{x}=a$
         % The comoving frame 

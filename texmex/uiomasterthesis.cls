@@ -146,6 +146,14 @@
 
 %%%%%%%%%%% NANNA'S ADDITIONAL STUFF %%%%%%%%%%%
 
+\newcommand*\uio@thanksname{Acknowledgements}
+\renewenvironment{thanks}{%
+  \chapter*{\uio@thanksname}
+  \addcontentsline{toc}{chapter}{\uio@thanksname}% NANNA ADDED THIS
+  \markboth{\uio@thanksname}{}
+  }
+  {}
+
 %% Define \begin{nomen}
 \newcommand*\uio@nomenname{Notation}
 \newenvironment{nomen}{%

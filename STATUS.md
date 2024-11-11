@@ -186,19 +186,47 @@ ______
 
 - [x] Quintessence $\to$ scalar-field theories
 - [ ] Abstract
+  - [x] Main idea
+  - [ ] GW results 
 - [ ] Conclusion
+  - [x] Summary
+  - [ ] Rest
 - [x] Fix power-spectra $\to$ squared strain
-- [ ] Rewrite part about dofs in pert. (cosmology)
+- [x] Rewrite part about dofs in pert. (cosmology)
 - [x] Add "random" references
 - [ ] Comment on why power spectrum is complicated 
-- [ ] Finish section on preliminaries
+- [x] Finish section on preliminaries ($-$HPC)
+- [ ] Finish HPC sec.
+- [x] Feedback from JE
+- [x] Feedback from Farbod
+- [ ] Feedback from Øyvind
+- [ ] Check verb tenses (primarily present tense)
+- [x] Clean discussion
+- [ ] Add to discussion
+- [ ] Read through pt. I
+- [ ] Talk to CM
+- [ ] <mark>Open questions</mark>
 
+
+
+> ## If time
+> - [ ] Hyperlinks in `\simnum` (hypertargets + hyperlinks)
+> - [ ] Analysis where we change the input to eps eq
+> - [ ] Cite P&S
+> - [ ] Consider revision of GR chap
 
 
 ## Close to delivery
-- [ ] Reference list
+- [ ] Reference list (remember to clean up aux, and rerun)
 - [ ] Remove all comments
 - [ ] Notation chapter
-- [ ] Preface
+- [ ] Acknowledgements
 - [ ] Title(s)
 - [ ] Check figure legends/labels
+
+
+
+## Consider for defence only
+- Figure with ball in asymmetron pot. 
+
+
