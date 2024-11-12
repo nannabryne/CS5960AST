@@ -117,7 +117,7 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
     \paragraph{Action principle.} %
-    We use variational calculus to obtain the fields' equations of motion. For a scalar field $\phi$, we consider the change $\phi \to \phi + \delta \phi$ and apply this to the action, s.t. $S\to S+ \delta S$. %Identifying terms of leading order ($\mathscr{O}(\delta \phi)$), 
+    We use variational calculus to obtain the fields' equations of motion. For a scalar field $\phi$, we consider the change $\phi \to \phi + \delta \phi$ and apply this to the action, such that $S\to S+ \delta S$. %Identifying terms of leading order ($\mathscr{O}(\delta \phi)$), 
     After isolating $S$ and gathering terms up to leading order, we set $\delta S = 0$ and obtain an equation for $\phi$ in terms of first and second derivatives. 
 
     % Often it is necessary to use \checkthis{Stokes' theorem} to set certain terms to zero. The argument \blahblah \comment{Fix or remove!}
@@ -234,6 +234,9 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
 \subsection{Cosmic scales}
+
+    % We shall in this thesis where cosmic time is 
+
     % \begin{bullets}
     %     \item expansion rate, cosmic time, conformal time
     %     \item why is flat assumption OK?
@@ -249,18 +252,62 @@ For reference, we cover a few of these concepts in the subsections below.
     % The standard model of cosmology offers several measurements of time that are convenient for various purposes. 
     \subsubsection{Chronology}
     The standard model of cosmology provides multiple time measurements that are useful for different applications. 
-    Cosmic time $t$ is often impractical to use in physical cosmology. The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift}%
-    \footnote{
-        We will use $\redshift$ to distinguish the cosmic redshift from the Cartesian spatial coordinate $z$ in $\vec{x}=(x,y,z)$, as they will both be used frequently.
-    } %
-    $\redshift$, %
-    defined through
-    \begin{equation}
-        1 + \redshift = a(t_0)/a(t),
+    Cosmic time $t$ is often impractical to use in physical cosmology, but it gives a certain intuition that other measures of time may lack. In this thesis, we give cosmic time estimates (in units of (giga)years) from the perspective of a flat \textLambda{}CDM model consisting of $32\%$ non-relativistic matter and $68\%$ vacuum energy today, with Hubble constant $67\unit{km/s/Mpc}$: 
+    \begin{equation}\label{eq:intro:prelim:cosmic_time_parameter_default}
+        \mathrm{h}=0.67, \quad \Omega\ped{m0} = 0.32, \quad \Omega_{\Lambda 0} = 1 -  \Omega\ped{m0} = 0.68,
     \end{equation}
-    where $t$ is cosmic time with value $t_0\approx 13.8$ gigayears today, and $a$ is the dimensionless \newconcept{cosmic scale factor}. The concept of cosmic time is defined as the coordinate time passed since $a(t\equiv 0)=0$, 
-    % The cosmic-time term is defined via $a(t\equiv 0)= 0$, 
-    which is to say that we define the time of Big Bang as this point in time. 
+    which is an appropriate approximate concordance model of cosmology. 
+
+    % The expansion of the universe manifests in a 
+
+
+    The Doppler shift in electromagnetic waves arising from the recession of distant objects is %the \newconcept{cosmic redshift}:
+    \begin{equation*}
+        \text{redshift} = 
+        \frac{\text{observed wavelength} - \text{emitted wavelength} }{\text{emitted wavelength} }.
+    \end{equation*}
+    % \begin{equation*}
+    %     \text{redshift}= 
+    %     \frac{\text{observed wavelength} - \text{emitted wavelength} }{\text{emitted wavelength} } =
+    %     % \frac{\text{observed wavelength}}{\text{emitted wavelength} } 
+    %     \frac{\text{distance now}}{\text{distance then}}-1.
+    % \end{equation*}
+    This shift is determined by the change in proper distance between two comoving points, 
+    \begin{equation*}
+        \frac{\text{proper distance now}}{\text{proper distance then}} = \frac{\text{scale factor now}\cross \text{comoving distance}}{\text{scale factor then}\cross \text{comoving distance}}.
+    \end{equation*}
+    This \newconcept{cosmic scale factor} is denoted $a= a(t)$. Normalised such that ``now'' means ``today'', we get 
+    \begin{equation}
+        1 + \redshift = a_0/a(t),
+    \end{equation}
+    where $a_0 = a(t_0)\equiv 1$ is the scale factor today, and $\redshift$ the \newconcept{cosmic redshift}. 
+    % to $a_0 \equiv a(t_0)$
+    % Now, the \newconcept{cosmic redshift} is defined 
+    % \begin{equation*}
+    %     % \text{cosmic redshift} = 
+    %     \frac{\text{scale factor now}}{\text{scale factor then}} - 1
+    % \end{equation*}
+    % % \newconcept{cosmic redshift}. 
+    % The \newconcept{cosmic redshift} describes the universe' expansion, and 
+    We denote it in this thesis with $\redshift$ to distinguish it from the Cartesian spatial $z$-coordinate, as they both are frequently used variables. %The cosmic time today, $t_0 \approx 13.8$ gigayears (per~\cref{eq:intro:prelim:cosmic_time_parameter_default}), is the coordinate time since $a(t\equiv 0)=0$, defined as the time of Big Bang. 
+    To give some examples, redshifts $\redshift = 0$ and $\redshift=2$ correspond the universe at $t=t_0 \approx 13.8$ (today) and $t\approx 3.2$ gigayears old, respectively, defined as the coordinate time that has passed since $a(t\equiv 0)=0$.
+    % It is calculated as 
+
+
+
+
+    % The Doppler shift arising from the recession of distant objects is the \newconcept{cosmic redshift}%
+    % \footnote{
+    %     We will use $\redshift$ to distinguish the cosmic redshift from the Cartesian spatial coordinate $z$ in $\vec{x}=(x,y,z)$, as they will both be used frequently.
+    % } %
+    % $\redshift$, %
+    % defined through
+    % \begin{equation}
+    %     1 + \redshift = a(t_0)/a(t),
+    % % \end{equation}
+    % where $t$ is cosmic time with value $t_0\approx 13.8$ gigayears today, and $a$ is the dimensionless \newconcept{cosmic scale factor}. The concept of cosmic time is defined as the coordinate time passed since $a(t\equiv 0)=0$, 
+    % % The cosmic-time term is defined via $a(t\equiv 0)= 0$, 
+    % which is to say that we define the time of Big Bang as this point in time. 
     In this thesis we make use of \newconcept{conformal time} $\tau$ for which ${\diff t} = a {\diff \tau}$ holds %
     %  giving
     % {\newcommand{\dummy}{}
@@ -270,6 +317,10 @@ For reference, we cover a few of these concepts in the subsections below.
     % }%
     in units with $c=1$. We will use $\dot{}\equiv\dv*{}{\tau}$ as a shorthand notation for derivatives with respect to conformal time. %Another important
     Other common measures of time include the physical Hubble factor $H=1/a \dv*{a}{t}$, and conformal Hubble factor $\mathcal{H}= aH = \dot{a}/a$.
+
+    % To give some numbers, a simplified concordance model of cosmology describes a flat universe consisting of $32\%$ non-relativistic matter and $68\%$ vacuum energy today, corresponds to a $t_0\approx 13.8$ gigayears old universe. At redshift $\redshift = 2$, the scale factor is $a = 1/3$ and the universe is $t\approx 3.26$ gigayears old.
+    % \comment{Rewrite.}
+
 
     \subsubsection{Comoving and physical scales}
     We use comoving measures of disctances and relate these to comoving wavenumbers $k$, related to comoving wavelength $\lambda$. We adapt the convention in~\citet{maggioreGravitationalWavesVol2018} and use \newconcept{reduced wavelengths}
@@ -289,7 +340,7 @@ For reference, we cover a few of these concepts in the subsections below.
 \subsection{Cosmological simulations}
     % \phpar[Nyquist frequency, fundamental frequency, DFTs]
 
-    Simulations of cosmological scenarios are usually performed on three-dimensional lattices with periodic boundaries (i.e.  3-tori, $\mathbb{T}^3$). Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction, giving a spatial resolution of $\Delta=L/N$. %
+    Simulations of cosmological scenarios are a topic of high-performance computing (HPC) and usually performed on three-dimensional lattices with periodic boundaries (i.e.  3-tori, $\mathbb{T}^3$). Say we have such a cubic lattice of side lengths $L$, with $N$ points in each direction, giving a spatial resolution of $\Delta=L/N$. %
     The \newconcept{fundamental frequency} is the smallest frequency mode, which in terms of wavenumber is $k\ped{IR}=2\ppi/L$. %\footnote{We use $\text{wavenumber} = \text{wavelength}^{-1} =  2 \ppi \times \text{frequency}$} 
     The \newconcept{Nyquist frequency}, given by the angular frequency $k\ped{UV}=k\ped{IR} N/2 = \ppi N/L$, is the highest resolvable frequency.
 
@@ -297,8 +348,17 @@ For reference, we cover a few of these concepts in the subsections below.
 
     \subsubsection{High-performance computing}
 
-    There are two main parallelisation techniques \blahblah
-    
+    There are two main parallelisation techniques used in HPC; the distributed-memory standard Message Passing Interface (\newconcept{MPI}), and the shared-memory Open Multi-Processing (\newconcept{OpenMP}) application. %
+    The MPI standard functions on parallel computing architectures, such as computer clusters. In lattice simulations, this amounts to a clever division of tasks on different parts of the lattice. \comment{OpenMP?} %Large simulations 
+    % With OpenMP, tasks are threaded on the 
+
+    % It is utterly unpractical to perform high-resolution relativistic $N$-body simulations without techniques from high-performance computing (HPC). %
+    % We dedicate this subsection to the \blahblah
+    % The computational expense of a simulation is in principle decided by the most time-consuming task of floating point operations and data access. Today, we are not particularly limited by computer arithmetic, but rather memory bandwidth. Furthermore, \blahblah (series vs. parallel)
+    % % most time-consuming task  
+    % % Computational expense in this contkext is in principle governed by a
+    % There are two main parallelisation techniques used in HPC. The Message Passing Interface (MPI) standard functions on parallel computing architectures, such as computer clusters. In lattice simulations, it is sensible to \blahblah}
+
     
 
     

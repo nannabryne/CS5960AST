@@ -181,13 +181,13 @@ ______
 ______
 ______
 
-# TO DO
+# TO DO 
 
 
 - [x] Quintessence $\to$ scalar-field theories
-- [ ] Abstract
+- [x] Abstract
   - [x] Main idea
-  - [ ] GW results 
+  - [x] GW results 
 - [ ] Conclusion
   - [x] Summary
   - [ ] Rest
@@ -203,17 +203,22 @@ ______
 - [ ] Check verb tenses (primarily present tense)
 - [x] Clean discussion
 - [ ] Add to discussion
-- [ ] Read through pt. I
-- [ ] Talk to CM
+- [x] Read through pt. I
+- [x] Talk to CM
 - [ ] <mark>Open questions</mark>
+- [ ] Feedback from CM
 
 
 
 > ## If time
 > - [ ] Hyperlinks in `\simnum` (hypertargets + hyperlinks)
 > - [ ] Analysis where we change the input to eps eq
-> - [ ] Cite P&S
+> - [x] Cite P&S
 > - [ ] Consider revision of GR chap
+> - [ ] Comment on bump in $\epsilon^\phi$ for $\mathtt{4}$ and $\mathtt{7}$ 
+> - [ ] Provide numbers for difference in GW magnitudes
+> - [ ] Give numbers for simulated GW at $k_y \neq np$
+> - [ ] Flat-space analogy
 
 
 ## Close to delivery

@@ -72,7 +72,8 @@ Note that this holds for any first-order perturbation $\epsilon(\tau,x,y)$.
         &= 2\ppi  \sum_{n} \Bessel[n](a) \Diracdelta(\omega + nb).
     \end{align}
     We assumed that the %integration over $x$ and summation over $n$ 
-    integration and summation operators commute, which is known to be true for $\integ{x}\sum_{n}\abs{F_n(x)} < \infty$ (Fubini's theorem). \lcomment{Comment?} 
+    integration and summation operators commute, which is known to be true for $\integ{x}\sum_{n}\abs{F_n(x)} < \infty$ (Fubini's theorem).\footnote{It is not obvious that this holds, on the contrary; $\integ{x}\sum_n\abs{F_n(x)}=\sum_n\abs{\Bessel[n](a)} \integ{x} \not< \infty$. Still, \texttt{Mathematica} proposes the same solution to this problem, and we need to keep in mind that we are working with distributions and not functions.} 
+    %\lcomment{Comment?} 
     % \speak{Why is this not the case, again?} \blahblah
     For %$g(x)\equiv cb \cos{bx} \cdot f(x) = \frac{1}{2}cb{( \eu[\im bx] + \eu[-\im bx]) } f(x)$, we find
     \begin{equation}
@@ -85,7 +86,7 @@ Note that this holds for any first-order perturbation $\epsilon(\tau,x,y)$.
     &= \ppi cb \sum_{n} \bclosed{ \Bessel[n+1](a) +  \Bessel[n-1](a)} \Diracdelta(\omega + nb ) \nonumber \\
     &= \frac{2\ppi cb}{a} \sum_n n \Bessel[n](a) \Diracdelta(\omega + nb ),
     \end{align}
-    where in the last line we uses~\cref{eq:derivations:cylinder:recurr_Z_plus}. 
+    where in the last line we use~\cref{eq:derivations:cylinder:recurr_Z_plus}. 
 
     The non-vanishing SE-tensor components in~\cref{eq:pertwalls:gws:Ft_SE_tensor_general} read
     \begin{equation}\label{eq:walls:SE_tensor:W_ij}

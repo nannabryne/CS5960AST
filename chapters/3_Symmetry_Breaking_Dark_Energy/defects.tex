@@ -17,7 +17,7 @@
  
 
 {Solitons} are remarkably stable ``humps'' of energy. The simplest soliton is the topological soliton best known as the \newconcept{kink}. 
-Kink solutions placed in spacetime with more than one spatial dimension, they become extended, planar structures (or membranes), that which we call ``domain walls'' \cite{vachaspatiKinksDomainWalls2006}. 
+Kink solutions placed in spacetime with more than one spatial dimension become extended, planar structures (or membranes), which we will call ``domain walls'' \cite{vachaspatiKinksDomainWalls2006}. 
 Domain walls possess richer dynamics than kinks, and these are quite well understood in Minkowski spacetimes. %
 In contrast to higher codimension defects like strings and monopoles, kinks and domain walls are of codimension one and therefore also hypersurfaces, at least approximately. %
 The study of kinks and domain walls can to some extent be applied to other topological defects~\citep{vachaspatiKinksDomainWalls2006}.
@@ -55,9 +55,9 @@ The study of kinks and domain walls can to some extent be applied to other topol
 % \pensive{Is there a difference between topological solitons and topological defects?}
 
 
-Domain walls are of particular interest in this project, %
+Domain walls are of particular interest in this thesis, %
 % The only type of topological defect that is directly relevant to this project is the domain wall,
-specifically the $\Zn$ type. These two-dimensional topological defects that occurs where a discrete symmetry is broken.\footnote{%
+specifically the $\Zn$ type. These two-dimensional topological defects that occur where a discrete symmetry is broken.\footnote{%
 Likewise, cosmic strings and monopoles are products of axial/cylindrical and spherical symmetry breaking, respectively.%
 } %
 % A domain wall is in many ways a \emph{kink} in $3+1$ dimensions, and a kink 
@@ -79,7 +79,7 @@ To give an idea of the basic properties of topological defects, we present an ex
         \phi\ped{k}(x-x_0)=  \eta \tanh{\pclosed{\sqrt{\frac{\lambda}{2}}\eta (x-x_0) }},
     \end{equation}
     where $x_0$ is the position of the kink. %\comment{Translational invariance $\phi\ped{k}(x;x_0)=\phi\ped{k}(x-x_0)$}
-    \iftime{Write about translational invariance.}
+    % \iftime{Write about translational invariance.}
     
 
     % \paragraph{Topological charge.} %
@@ -92,7 +92,7 @@ To give an idea of the basic properties of topological defects, we present an ex
     \begin{equation}\label{eq:cosmo:defects:many_kinks}
         \phi(x) = \frac{\eta}{\eta^{N+M}} \prod_{i}^{N} \phi\ped{k}(x-x_i) \prod_{j}^{M} \widebar{\phi}\ped{k}(x-\widebar{x}_j),
     \end{equation}
-    where $\abs{N-M}\leq 1$ and $x_i < \widebar{x}_j < x_{i+1}$. This describes the allowed system of $N$ kinks and $M$ antikinks aligned in an alternating structure.
+    where $\abs{N-M}\leq 1$ and $x_i < \widebar{x}_j < x_{i+1}$. \comment{rewrite} This describes the allowed system of $N$ kinks and $M$ antikinks aligned in an alternating structure.
 
 
     \subsubsection{Basic properties}
@@ -140,7 +140,7 @@ To give an idea of the basic properties of topological defects, we present an ex
     The volume integral in~\cref{eq:cosmo:defects:energy_of_Z2_kink} is instead an integral over one axis, which means the results is a surface energy density. This is better known as the \newconcept{surface tension} of the wall, denoted $\sigma$, and reads $\sigma = -\integ{z} T\indices{^0_0}$ for a wall in the $xy$-plane. %
     %  surface energy density better known as the \newconcept{surface tension} of the wall, denoted $\sigma$. 
     % The energy in~\cref{eq:cosmo:defects:energy_of_Z2_kink} is now a surface energy density better known as the \newconcept{surface tension} of the wall, denoted $\sigma$. 
-    In analogy with the width parameter, we will refer to $\delta$ as the \newconcept{wall thickness} (parameter), and we see from~\cref{fig:cosmo:defects:Z2_kink_demo} that a Gaussian with standard deviation $\delta$ tracks the energy density well.
+    In analogy to the width parameter, we will refer to $\delta$ as the \newconcept{wall thickness} (parameter), and we see from~\cref{fig:cosmo:defects:Z2_kink_demo} that a Gaussian with standard deviation $\delta$ tracks the energy density well.
     
     For later convenience, we define $\sigma_\infty$ and $\delta_\infty$ as the surface tension and wall thickness as their solutions in the stationary $\Zn$ scenario, respectively. In terms of the mass scale $\mu=\eta\sqrt{\lambda}$,\footnote{In~\cref{part:method}, we set $\phi_\infty = \eta$.} this amounts to
     % For the stationary $\Zn$ wall, we have 
@@ -154,10 +154,10 @@ To give an idea of the basic properties of topological defects, we present an ex
 
     \subsubsection{Cosmological implications}
         % If we imagine a network of domain walls as a perfect fluid, the equation-of-state parameter 
-        We can model a network of domain walls a perfect fluid with equation-of-state parameter $w\ped{dw}= -2/3$ (\cref{tab:GR:lcdm:fluids}).\footnote{This is easily seen from the trace Nambu--Goto stress--energy tensor in Minkowski space.} This implies that in the absence of a greater cosmological constant (if $\Omega_{\Lambda 0} < \Omega\ped{dw0}$), 
+        We can model a network of domain walls as a perfect fluid with equation-of-state parameter $w\ped{dw}= -2/3$ (\cref{tab:GR:lcdm:fluids}).\footnote{This is easily seen from the trace Nambu--Goto stress--energy tensor in Minkowski space.} This implies that in the absence of a greater cosmological constant (if $\Omega_{\Lambda 0} < \Omega\ped{dw0}$), 
         even a tiny energy contribution from this network would eventually dominate the energy density in the universe. As this overclosing of the universe happens before matter--dark-energy equality, this contradicts observations.
 
-        The prototypical defect is manifestly stable (robust against perturbations) and dissipationless (survives indefinitely). One way surpass the overclosing problem is to introduce an \newconcept{energy bias} between the two vacua, so that the system eventually converges to the true minima and the walls disappear~\citep{saikawaReviewGravitationalWaves2017}. Another method is to let $\sigma$ decrease with time (melting domain walls), which is considered in~\citet{babichevNANOGravSpectralIndex2023}.
+        The prototypical defect is manifestly stable (robust against perturbations) and dissipationless (survives indefinitely). One way to surpass the overclosing problem is to introduce an \newconcept{energy bias} between the two vacua, so that the system eventually converges to the true minimum and the walls disappear~\citep{saikawaReviewGravitationalWaves2017}. Another method is to let $\sigma$ decrease with time (melting domain walls), which is considered in~\citet{babichevNANOGravSpectralIndex2023}.
 
 
         % $\langle T\indices{^\mu_\nu}\rangle = \text{diag}(-\rho\ped{w}, p\ped{w}, p\ped{w}, p\ped{w})$
@@ -197,7 +197,7 @@ To give an idea of the basic properties of topological defects, we present an ex
     % Kinks and other topological defects typically form during a phase transition. The nature of the symmetry that is broken decides what type of defect we have at hand. Domain 
     Cosmological defects typically form during a phase transition, and it is the nature of the associated (broken) symmetry that decides what type of defect we have at hand. We mention cosmic strings and monopoles arising from axial and spherical symmetry breaking, respectively. Domain walls---the main interest of this thesis---form when \emph{discrete} symmetries are broken. 
     
-    To study phase transitions it is helpful to use the \newconcept{effective potential} that takes into account the interaction between some field and a background~\citep{vachaspatiKinksDomainWalls2006,kolbEarlyUniverse1990}. We will demonstrate this in~\cref{sec:cosmo:quintessence} for a particular scalar-field theory. %
+    To study phase transitions, it is helpful to use the \newconcept{effective potential} that takes into account the interaction between some field and a background~\citep{vachaspatiKinksDomainWalls2006,kolbEarlyUniverse1990}. We will demonstrate this in~\cref{sec:cosmo:quintessence} for a particular scalar-field theory. %
     % \lcomment{Rewrite this.}
     % \rephrase{An effective potential can ensure that a scalar field does not really show itself until some critical temperature. % $T\ped{cr}$. 
     % The global minimum at high temperatures turns local at low temperatures. The false vacuum state is metastable, and external perturbations can trigger the system's transition to the true vacuum. This is the prototypical formulation of a first-order phase transition~\citep{vachaspatiKinksDomainWalls2006}. }
@@ -213,7 +213,7 @@ To give an idea of the basic properties of topological defects, we present an ex
 
 
     \subsubsection{Energy bias}
-        Existence of discrete vacua implicates existence of domain walls. The degeneracy of these vacua ensures the stability of such walls. If we imagine a slight break in this degeneracy, that is, if one vacuum is favoured over another, biased domain walls form~\citep{vachaspatiKinksDomainWalls2006}. Some models employ an energy gap directly into the potential. A generalisation of the symmetron model~\citep{hinterbichlerSymmetronCosmology2011}---the \emph{a}symmetron~\citep{perivolaropoulosGravitationalTransitionsExplicitly2022}---includes a cubic term in the effective potential that also changes the vacuum expectation value. We will discuss the latter in~\cref{sec:cosmo:quintessence:asymmetron}.
+        Existence of discrete vacua implicates existence of domain walls. The degeneracy of these vacua ensures the stability of such walls. If we imagine a slight break in this degeneracy, that is, if one vacuum is favoured over another, \emph{biased} domain walls form~\citep{vachaspatiKinksDomainWalls2006}. \comment{comment?} Some models employ an energy gap directly into the potential. A generalisation of the symmetron model~\citep{hinterbichlerSymmetronCosmology2011}---the \emph{a}symmetron~\citep{perivolaropoulosGravitationalTransitionsExplicitly2022}---includes a cubic term in the effective potential that also changes the vacuum expectation value. We will discuss the latter in~\cref{sec:cosmo:quintessence:asymmetron}.
 
 
 
