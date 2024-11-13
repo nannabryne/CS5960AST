@@ -60,70 +60,59 @@
 
 
 
-\begin{table}[t]
-    \begin{minipage}[t]{0.5\linewidth}
+
+
+
+
+
+\begin{table}
+    \begin{minipage}{\linewidth}
         {\small{
-        \begin{tabular*}{\linewidth}{c l}
-            \multicolumn{2}{l}{\textsf{Some title}} \\
+        \begin{tabular*}{\linewidth}{c l c l}
+            \multicolumn{4}{l}{\textsf{Some title}} \\
             \toprule
             % ------
-            \multicolumn{2}{l}{\textit{Constants} \comment{SORT!}} \\
+            \multicolumn{4}{l}{\textit{Background physics}}  \\
             \midrule
-            $G\nped{N}$ & Newton's gravitation constant. \\
-            $M\nped{Pl}$ & Reduced Planck mass $1/\sqrt{8\ppi G\nped{N}}$.  \\
-            \midrule
-            \multicolumn{2}{l}{\textit{Background physics}} \\
-            \midrule
+ 
+            $g\_{\mu\nu}$    & Metric tensor, general or FLRW. &
             $a$ &{Scale factor.} \\
-            $\tau$ & Conformal time. \\
-            $\dot{}$ & Conformal time derivative $\dv*{}{\tau}$. \\
-            $\mathcal{H}$%=\dot{a}/a$
-            & Conformal Hubble factor $\dot{a}/a$.  \\
-            $\redshift$ & Cosmic redshift. \\ 
-            $\alpha$ & Exponent \blahblah \\
-            $\eta\_{\mu\nu}$    & Metric tensor, Minkowski.  \\
-            $g\_{\mu\nu}$    & Metric tensor, FLRW.  \\
-            $\vec{x}$ & Comoving coordinate $(x,y,z)$. \\
-            $\vec{k}$ & Comoving wavevector $(k_x,k_y,k_z)$. \\
-            $\Manifold$ & Riemannian manifold. \\
-            $\mathcal{R}\_{\mu\nu}$& Ricci tensor. \\
-            $\mathcal{G}\_{\mu\nu}$& Einstein tensor. \\
-            
 
-            \vdots & \vdots\\
+            $\eta\_{\mu\nu}$    & Metric tensor, Minkowski. &
+            $\tau$ & Conformal time. \\
+            $\vec{x}$ & Comoving coordinate $(x,y,z)$. 
+            & $\dot{}$ & Conformal time derivative $\dv*{}{\tau}$.\\
+            %
+            $\vec{k}$ & Comoving wavevector $(k_x,k_y,k_z)$. &
+            $\mathcal{H}$ & Conformal Hubble factor $\dot{a}/a$.  \\
+            %
+            $\Manifold$ & Riemannian manifold. &
+            $\redshift$ & Cosmic redshift. \\
+            $\mathcal{R}\iud{\mu}{\nu\rho\sigma}$& Ricci scalar. & & \\
+            $\mathcal{R}\_{\mu\nu}$& Ricci tensor.& &  \\
+            $\mathcal{G}\_{\mu\nu}$& Einstein tensor. & & \\
+            $\mathcal{R}$& Ricci scalar. & & \\
+            % $a$ &{Scale factor.} & & \\
+            % $\tau$ & Conformal time. & & \\
+            % $\dot{}$ & Conformal time derivative $\dv*{}{\tau}$. & & \\
+            % $\redshift$ & Cosmic redshift. & & \\ 
+            % $\alpha$ & Exponent \blahblah & & \\
+    
+        %    \vdots & \vdots\\
             % \vdots & \vdots\\
             %----------
-            \bottomrule
-        \end{tabular*}
-        }}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.5\linewidth}
-        {\small{
-        \begin{tabular*}{\linewidth}{c l}
-            \multicolumn{2}{l}{\textsf{Some title}} \\
-            \toprule
-            % ------
-            \vdots & \vdots \\
-            \vdots & \vdots \\
-            \vdots & \vdots \\
-            \vdots & \vdots \\
-            $\Zn[n]$ & Symmetry XXX. \\
-            \vdots & \vdots \\
-            $\upsilon$ &  Time variable $(a_\ast/a)^{3\alpha}$. \\
-            % $s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
-            $s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
             \midrule
-            \multicolumn{2}{l}{\textit{Subscripts}} \\
+            \multicolumn{4}{l}{\textit{Symmetry break}}  \\
             \midrule
-            $\mathrm{m}$ & Non-relativistic matter. \\
-            $0$ & Today ($a_0=1$ is the scale factor today). \\
-            $*$ & Time of phase transition. \\
-            %----------
+            $s$ & Scaled conformal time $\tau/\tau_\ast$. & & \\
+
+
+
             \bottomrule
         \end{tabular*}
         }}
     \end{minipage}
-    \caption{Variables \blahblah}
+    \caption{\comment{Variables ?}}
 \end{table}
 
 
@@ -132,46 +121,121 @@
 
 
 
-% \clearpage
-% \newpage
 
-% \begin{draft}
 
-%     \section*{Writing Tools}
-
-%     \noindent\comment{This is a comment.}
-
-%     \noindent\grammar[Perhaps this?]{This needs spelling check.}
-
-%     \noindent\rephrase{Rephrase this.}
-
-%     \noindent\cringe{Awkward wording.}
-
-%     \noindent\checkthis{Needs double-checking.}
-
-%     \noindent\nc{This is in need of citation or reference to a section.}[With a comment.]
-
-%     \noindent\blahblah (Phantom text.)
-
-%     \noindent\phpar[This is a phantom paragraph, maybe with some keywords.]
-
-%     \begin{bullets}
-%         \item This is a note.
-%         \item This is another note. \begin{itemize}
-%             \item This is a related note.
-%         \end{itemize}
-%     \end{bullets}
+% \begin{table}
+%     \begin{minipage}{0.5\linewidth}
+%         {\small{
+%         \begin{tabular*}{\linewidth}{c l}
+%             \multicolumn{2}{l}{\textsf{Some title}} \\
+%             \toprule
+%             % ------
+%             % \multicolumn{2}{l}{\textit{Constants} \comment{SORT!}} \\
+%             % \midrule
+%             % \rule{0pt}{11pt}$G\nped{N}$ & Newton's gravitation constant. \\
+%             % $M\nped{Pl}$ & Reduced Planck mass $1/\sqrt{8\ppi G\nped{N}}$.  \\
+%             % \midrule
+%             % \multicolumn{2}{l}{\textit{Background physics}} \\
+%             % \midrule
+%             \rule{0pt}{11pt}$a$ &{Scale factor.} \\
+%             \rule{0pt}{11pt}$\tau$ & Conformal time. \\
+%             \rule{0pt}{11pt}$\dot{}$ & Conformal time derivative $\dv*{}{\tau}$. \\
+%             \rule{0pt}{11pt}$\mathcal{H}$%=\dot{a}/a$
+%             \rule{0pt}{11pt}& Conformal Hubble factor $\dot{a}/a$.  \\
+%             \rule{0pt}{11pt}$\redshift$ & Cosmic redshift. \\ 
+%             \rule{0pt}{11pt}$\alpha$ & Exponent \blahblah \\
+%             \rule{0pt}{11pt}$\eta\_{\mu\nu}$    & Metric tensor, Minkowski.  \\
+%             \rule{0pt}{11pt}$g\_{\mu\nu}$    & Metric tensor, FLRW.  \\
+%             \rule{0pt}{11pt}$\vec{x}$ & Comoving coordinate $(x,y,z)$. \\
+%             \rule{0pt}{11pt}$\vec{k}$ & Comoving wavevector $(k_x,k_y,k_z)$. \\
+%             \rule{0pt}{11pt}$\Manifold$ & Riemannian manifold. \\
+%             \rule{0pt}{11pt}$\mathcal{R}\_{\mu\nu}$& Ricci tensor. \\
+%             \rule{0pt}{11pt}$\mathcal{G}\_{\mu\nu}$& Einstein tensor. \\
     
-%     \noindent\important{This is very important.}
+%             \rule{0pt}{11pt}\vdots & \vdots\\
+%             % \vdots & \vdots\\
+%             %----------
+%             \bottomrule
+%         \end{tabular*}
+%         }}
+%     \end{minipage}\hfill
+%     \begin{minipage}{0.5\linewidth}
+%         {\small{
+%         \begin{tabular*}{\linewidth}{c l}
+%             \multicolumn{2}{l}{\textsf{Some title}} \\
+%             \toprule
+%             % ------
+%             % \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}$\Zn[n]$ & Symmetry XXX. \\
+%             \rule{0pt}{11pt}\vdots & \vdots \\
+%             \rule{0pt}{11pt}$\upsilon$ &  Time variable $(a_\ast/a)^{3\alpha}$. \\
+%             % $s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
+%             \rule{0pt}{11pt}$s$ &  Dimensionless conformal time $\tau/\tau_\ast$  \\
+%             % \midrule
+%             % \multicolumn{2}{l}{\textit{Subscripts}} \\
+%             % \midrule
+%             \rule{0pt}{11pt}$\mathrm{m}$ & Non-relativistic matter. \\
+%             \rule{0pt}{11pt}$0$ & Today ($a_0=1$ is the scale factor today). \\
+%             \rule{0pt}{11pt}$*$ & Time of phase transition. \\
+%             %----------
+%             \bottomrule
+%         \end{tabular*}
+%         }}
+%     \end{minipage}
+%     \caption{Variables \blahblah}
+% \end{table}
 
-%     \noindent\hl{This text is highlighted.}
 
-%     \noindent Statement. \provethis{That needs to be shown or proven.}
 
-%     \noindent\tmptitle{Temporary title.}
 
-%     \noindent\question[Question]{Why?}
 
-%     \noindent\pensive{Pensive: for thoughts and jokes.}
 
-% \end{draft}
+
+% % \clearpage
+% % \newpage
+
+% % \begin{draft}
+
+% %     \section*{Writing Tools}
+
+% %     \noindent\comment{This is a comment.}
+
+% %     \noindent\grammar[Perhaps this?]{This needs spelling check.}
+
+% %     \noindent\rephrase{Rephrase this.}
+
+% %     \noindent\cringe{Awkward wording.}
+
+% %     \noindent\checkthis{Needs double-checking.}
+
+% %     \noindent\nc{This is in need of citation or reference to a section.}[With a comment.]
+
+% %     \noindent\blahblah (Phantom text.)
+
+% %     \noindent\phpar[This is a phantom paragraph, maybe with some keywords.]
+
+% %     \begin{bullets}
+% %         \item This is a note.
+% %         \item This is another note. \begin{itemize}
+% %             \item This is a related note.
+% %         \end{itemize}
+% %     \end{bullets}
+    
+% %     \noindent\important{This is very important.}
+
+% %     \noindent\hl{This text is highlighted.}
+
+% %     \noindent Statement. \provethis{That needs to be shown or proven.}
+
+% %     \noindent\tmptitle{Temporary title.}
+
+% %     \noindent\question[Question]{Why?}
+
+% %     \noindent\pensive{Pensive: for thoughts and jokes.}
+
+% % \end{draft}

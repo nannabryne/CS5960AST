@@ -224,7 +224,7 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
     \subsubsection{The cyclic group}
-    The cyclic group, denoted $\Zn[n]$, describes a symmetry of a plane figure that remains invariant after a rotation of $2\ppi/n$ radians (or $360^\circ/n$ degrees), where $n\in \Integer$ ($n$ is integer)~\citep{lancasterQuantumFieldTheory2014}. We consider discrete $\Zn[2]$-symmetries in this thesis, also called reflectional symmetry, which amounts to invariance under change of sign: $\phi \to\eu[\im 2\ppi/2] \phi  = -\phi$.
+    The cyclic group, denoted $\Zn[n]$, describes a symmetry of a plane figure that remains invariant after a rotation of $2\ppi/n$ radians (or $360^\circ/n$ degrees), where $n\in \Integer$ ($n$ is integer)~\citep{lancasterQuantumFieldTheory2014}. We consider a subgroup of this in this thesis, namely discrete $\Zn[2]$-symmetries, also called reflectional symmetries, which amount to invariance under change of sign: $\phi \to\eu[\im 2\ppi/2] \phi  = -\phi$.
 
 
 
@@ -256,7 +256,9 @@ For reference, we cover a few of these concepts in the subsections below.
     \begin{equation}\label{eq:intro:prelim:cosmic_time_parameter_default}
         \mathrm{h}=0.67, \quad \Omega\ped{m0} = 0.32, \quad \Omega_{\Lambda 0} = 1 -  \Omega\ped{m0} = 0.68,
     \end{equation}
-    which is an appropriate approximate concordance model of cosmology. 
+    which is an appropriate approximate concordance model of cosmology. The scale factor and redshift are preferable to cosmic time, and we go roughly through their meaning in the following.
+
+    % \speak{Somewhere write $H_0=(2997.9)^{-1} \unit{Mpc}^{-1}\mathrm{h}$.}
 
     % The expansion of the universe manifests in a 
 
@@ -290,7 +292,7 @@ For reference, we cover a few of these concepts in the subsections below.
     % % \newconcept{cosmic redshift}. 
     % The \newconcept{cosmic redshift} describes the universe' expansion, and 
     We denote it in this thesis with $\redshift$ to distinguish it from the Cartesian spatial $z$-coordinate, as they both are frequently used variables. %The cosmic time today, $t_0 \approx 13.8$ gigayears (per~\cref{eq:intro:prelim:cosmic_time_parameter_default}), is the coordinate time since $a(t\equiv 0)=0$, defined as the time of Big Bang. 
-    To give some examples, redshifts $\redshift = 0$ and $\redshift=2$ correspond the universe at $t=t_0 \approx 13.8$ (today) and $t\approx 3.2$ gigayears old, respectively, defined as the coordinate time that has passed since $a(t\equiv 0)=0$.
+    To give some examples, redshifts $\redshift = 0$ and $\redshift=2$ correspond the universe at $t=t_0 \approx 13.8$ gigayears (today) and $t\approx 3.2$ gigayears old, respectively, defined as the coordinate time that has passed since $a(t\equiv 0)=0$.
     % It is calculated as 
 
 
@@ -323,7 +325,7 @@ For reference, we cover a few of these concepts in the subsections below.
 
 
     \subsubsection{Comoving and physical scales}
-    We use comoving measures of disctances and relate these to comoving wavenumbers $k$, related to comoving wavelength $\lambda$. We adapt the convention in~\citet{maggioreGravitationalWavesVol2018} and use \newconcept{reduced wavelengths}
+    We use comoving measures of disctances and relate these to comoving wavenumbers $k$, which again is related to comoving wavelength $\lambda$. We adapt the convention in~\citet{maggioreGravitationalWavesVol2018} and use \newconcept{reduced wavelengths}
     \begin{align}
         \lambdabar \equiv   1/k  = \lambda/(2\ppi).
     \end{align}
@@ -349,7 +351,7 @@ For reference, we cover a few of these concepts in the subsections below.
     \subsubsection{High-performance computing}
 
     There are two main parallelisation techniques used in HPC; the distributed-memory standard Message Passing Interface (\newconcept{MPI}), and the shared-memory Open Multi-Processing (\newconcept{OpenMP}) application. %
-    The MPI standard functions on parallel computing architectures, such as computer clusters. In lattice simulations, this amounts to a clever division of tasks on different parts of the lattice. \comment{OpenMP?} %Large simulations 
+    The MPI standard functions on parallel computing architectures, such as computer clusters. In lattice simulations, this amounts to a clever division of tasks on different parts of the lattice. %\comment{OpenMP?} %Large simulations 
     % With OpenMP, tasks are threaded on the 
 
     % It is utterly unpractical to perform high-resolution relativistic $N$-body simulations without techniques from high-performance computing (HPC). %

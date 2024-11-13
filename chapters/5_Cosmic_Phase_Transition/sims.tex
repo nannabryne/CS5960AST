@@ -54,25 +54,31 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
     % In the toy model, we are considering ``infinitely'' broad domain walls with vanishing thickness. We need therefore a simulation box of size that is comparable to the universe, 
     % Size of universe ~ 5000 Mpc/h0
 
-    We use a comoving simulation box size that is comparable to the size of the universe---order $\mathscr{O}(\mathrm{Gpc}/h_0)$---so that $\delta\ped{w}\ll L_\#$ and the separation between the walls is $\sim \wallsep \equiv  L_{\#}/2$. If we want to resolve the Compton wavelength, this requires $N_\# \geq L_\#/L\nped{C} \gtrsim \mathscr{O}(10^3)$. However, since we are modelling the entire formation, conventional walls (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) will initially be infinitely thick and therefore interact with each other. 
+    We use a comoving simulation box size that is comparable to the size of the universe---order $\mathscr{O}(\Mpch[G])$---so that $\delta\ped{w}\ll L_\#$ and the separation between the walls is $\sim \wallsep \equiv  L_{\#}/2$. If we want to resolve the Compton wavelength, this requires $N_\# \geq L_\#/L\nped{C} \gtrsim \mathscr{O}(10^3)$. However, since we are modelling the entire formation, conventional walls (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) will initially be infinitely thick and therefore interact with each other. 
 
     % On one hand, we want the comoving box to be large so that the domain wall thickness $\delta\ped{dw}$ is much smaller than the box size $L_\#$ and the separation between the main wall and its counterpart (the ``anti-wall'') are far away from each other. On the other hand, to resolve the Compton wavelength $L\nped{C}$, we require $\Delta_\# \leq L\nped{C}$ and in turn $N_\# \geq L_\#/L\nped{C}$.
 
+    Only non-relativistic matter contributes to the expansion, giving the energy density  $\sum_{s} \Omega_{s0}=\Omega\ped{m0}=1$. The conformal time is
+    \begin{equation}
+        \tau = 2 {(\Omega\ped{m0}H_0^2)}^{-1/2} \sqrt{a/a_0} = {2 \sqrt{a}}/{H_0},
+    \end{equation}
+    giving $\tau_\ast \simeq 3444~\Mpch$, and the scale factor reads $a=a_\ast s^\alpha = a_\ast {(\tau/\tau_\ast)}^2$.
+
     We will provide the time step sizes %$\Delta_\tau^{(\mathrm{})}$
-    in terms of a Courant factor $C\ped{f}=\Delta_\tau/\Delta_\#$ for the external loop and a number $N_\phi=\Delta_\tau/\Delta_\tau^{(\phi)}$ that sets the number of times the asymmetron field solver is used per cycle. \comment{Bad explanation\dots}
+    in terms of a Courant factor $C\ped{f}=\Delta_\tau/\Delta_\#$ for the external loop and a number $N_\phi=\Delta_\tau/\Delta_\tau^{(\phi)}$ that sets the number of times the asymmetron field solver is used per cycle. %\comment{Bad explanation\dots}
 
 \subsubsection{Initial configuration}
 
     The normal quasi-static $\tanh$-profile (\cref{eq:PT:symm_dws:chi_w_quasistatic_FLRW}) approximates the initial configuration to $\breve{\chi}_\ast\to0$ and $\breve{\chi}'_\ast \to \infty$, which does not actually work out. %    
     Since $\redshift_\ast=1/a_\ast-1 = 2 + 1/33 > 2$, choosing initial redshift $\redshift\ped{i}=2.00$ leaves wiggle room enough to get simulations started with spatially separated walls. In other words, with $a_\ast=0.33$ and $\redshift\ped{i}=2.00< \redshift_\ast$, there is a tiny slot between SSB and initialisation ($\redshift_\ast-\redshift\ped{i} \approx 0.03$) that we do not simulate.
     
-    On the other hand, with the analysis in~\cref{sec:PT:symm_dws:asymptotic} we can impose suitable initial conditions so that the field rolls into the minima in the most effective way. We need to keep in mind that this affects the surface tension and wall width.
+    On the other hand, with the analysis in~\cref{sec:PT:symm_dws:asymptotic} we can impose suitable initial conditions so that the field rolls into the minima in the most effective way. We need to keep in mind that this affects the surface tension and wall thickness.
     %  However, this affects the expression for the domain wall surface tension and \blahblah 
 
 
 
 \subsubsection{Symmetron parameters}
-    The code uses phenomenological parameters $(a_\ast, \xi_\ast, \beta_\ast)$ to define the symmetron model. The mapping to Lagrangian parameters $(\mu, M, \lambda)$ is~\citep{christiansenAsevolutionRelativisticNbody2023}:
+    The code uses phenomenological parameters $(a_\ast, \xi_\ast, \beta_\ast)$ to define the symmetron model. The mapping to Lagrangian parameters $(\mu, M, \lambda)$ in~\cref{eq:walls:symmetron_effective_potential} is~\citep{christiansenAsevolutionRelativisticNbody2023}:
     \begin{subequations}\label{eq:PT:sims:mapping_symmetron_params}
         \begin{align}
             a_\ast &=  \pclosed{\frac{\rho\ped{cr0} \Omega\ped{m0}}{\mu^2 M^2}}^{1/3},\\
@@ -80,12 +86,17 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
             \beta_\ast &=\frac{M\nped{Pl}}{M^2} \frac{\mu}{\sqrt{\lambda}}.
         \end{align}
     \end{subequations}
-    $a_\ast$ is the cosmic scale factor at symmetry break, as before, $\xi_\ast= H_0 L\nped{C}$ is the Compton wavelength per Hubble length, and $\beta_\ast$ measures the strength of the fifth force (see~\cref{eq:cosmo:quintessence:framework:fifth_force}). %
+    As before, $a_\ast$ is the cosmic scale factor at symmetry break, $\xi_\ast= H_0 L\nped{C}$ is the Compton wavelength per Hubble length, and $\beta_\ast$ measures the strength of the fifth force (see~\cref{eq:cosmo:quintessence:framework:fifth_force}). %
+
     For $\kappa>0$, the parameter $\beta_\ast$ is modified such that~$\beta_\ast \to \bar{\beta}= (\beta_+ + \beta_-)/2$, and you get an additional parameter $\Delta \beta = \beta_+- \beta_-$. Formal definitions are found in~\citet{christiansenAsevolutionRelativisticNbody2023}. % For the sake of completeness,
 
 
 \subsubsection{Nature of wall perturbation}
-    For the linear theory to hold, we need $\epsast \ll L$ and $pL \gg 1$ where $L$ is a length scale, earlier taken to be $L\sim \tau_\ast$. For the prototype, we add that $\abs{\varepsilon(\tau)} \gg \delta\ped{w}(\tau)$ for $\tau\in[\tau\ped{i}, \tau\ped{f}]$ for obvious reasons. %, and choose $L\sim L_\#$. % 
+    For the linear theory to hold, we need% $\epsast \ll L$ and $pL \gg 1$ 
+    \begin{equation}\label{eq:PT:sims:linearity_constraints}
+        \epsast \ll L \quad \land \quad pL \gg 1
+    \end{equation}
+    where $L$ is a length scale, previously taken to be $L\sim \tau_\ast\approx 3.4~\Mpch[G]$. For the prototype, we add that $\abs{\varepsilon(\tau)} \gg \delta\ped{w}(\tau)$ for $\tau\in[\tau\ped{i}, \tau\ped{f}]$ for obvious reasons. %, and choose $L\sim L_\#$. % 
     We choose to only perturb one wall so that the time of collision between massless particles propagating from different wall centres is at $ \tau\ped{i} + \wallsep$.%~\lcomment{Is this true? Maybe col. time is double?}, $\wallsep= L_\#/2$.
     \footnote{
         Perturbing both walls would give collision time $\tau\ped{i} + L_{\#}/4$.
@@ -144,7 +155,7 @@ Simulations are initiated and broken at redshifts $\redshift\ped{i}$ and $\redsh
 
     \begin{table}[h]
         \import{tables/Methodology/}{sim_setups.tex}
-        \caption{Details about each simulation addressed in~\cref{part:findings}. Each simulation is labelled \simnum{0}--\simnum{7}. See~\cref{sec:PT:sims,sec:PT:gwas} for description of parameters.} %\comment{Should maybe give fiducial set of parameters (sim. \simnum{1}) and only give deviations from this.}}
+        \caption{Details about simulations addressed in~\cref{part:findings}. Each simulation is labelled \simnum{0}--\simnum{7}. See~\cref{sec:PT:sims,sec:PT:gwas} for description of parameters.} %\comment{Should maybe give fiducial set of parameters (sim. \simnum{1}) and only give deviations from this.}}
         \label{tab:PT:sims:sim_setups}
     \end{table}
 

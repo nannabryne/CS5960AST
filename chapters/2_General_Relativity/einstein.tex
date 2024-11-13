@@ -56,7 +56,7 @@ The result is~\citep{carrollSpacetimeGeometryIntroduction2019}
 \end{equation}
 where the right-hand side is identified as proportional the energy--momentum tensor, $8\piGN T\_{\mu\nu}$, and the left-hand side is the Einstein tensor $\mathcal{G}\_{\mu\nu}$ (\cref{eq:GR:diffgeo:Einstein_tensor}). We see that~\cref{eq:GR:einstein:Einstein_eq_G,,eq:GR:einstein:Einstein_eq_R} are equivalent. %
 % \comment{$(d+1)$ dimensions?} 
-\iftime{rewrite this}
+%\iftime{rewrite this}
 
 
 \subsection{Energy--momentum tensor}\label{sec:GR:einstein:SE_tensor}
@@ -76,7 +76,7 @@ where the right-hand side is identified as proportional the energy--momentum ten
         \newcommand\wt{\widetilde}
         % \newcommand\hypacc{\ALIAShypacc}
         % ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-        Let us comment on the energy--momentum tensor under conformal transformations~\cref{eq:GR:diffgeo:conformal_trafo}. Consider the matter action in $d$ spacetime dimensions
+        Let us comment on the energy--momentum tensor under conformal transformations (\cref{eq:GR:diffgeo:conformal_trafo}). Consider the matter action in $d$ spacetime dimensions
         \begin{equation}\label{eq:GR:einstein:matter_action_conformal}
             \widetilde{S}\ped{(m)} = \integ[d]{x\sqrt{-\wt{g}}} \wt{\mathcal{L}}\ped{(m)} = \integ[d]{x\sqrt{-g}} \mathcal{L}\ped{(m)} = S\ped{(m)},
         \end{equation}
@@ -133,32 +133,32 @@ Consequently, the perturbed Einstein reads
 \begin{equation}\label{eq:GR:einstein:linearised_Einstein_eq}
     \pert{\mathcal{G}}\_{\mu\nu} = 8\ppi G\nped{N} \pert{T}\_{\mu\nu},
 \end{equation}
-where $\pert{\mathcal{G}}\_{\mu\nu}$ and $\pert{T}\_{\mu\nu}$ are the $o$th order perturbed Einstein and SE tensor, respectively. \Cref{eq:GR:einstein:linearised_Einstein_eq} is then solved order by order. We refer to~\citet{jokelaGravitationalWaveMemory2022,maggioreGravitationalWavesVol2007,carrollSpacetimeGeometryIntroduction2019} for calculations. 
+where $\pert{\mathcal{G}}\_{\mu\nu}$ and $\pert{T}\_{\mu\nu}$ are the $o$th-order perturbed Einstein and SE tensor, respectively. \Cref{eq:GR:einstein:linearised_Einstein_eq} is then solved order by order. We refer to~\citet{jokelaGravitationalWaveMemory2022,maggioreGravitationalWavesVol2007,carrollSpacetimeGeometryIntroduction2019} for calculations. 
 
-\deleteme{For first-order perturbations to the metric, we get~\citep{jokelaGravitationalWaveMemory2022}
-\begin{subequations}
-    \begin{align}
-        {}^{(0)}\mathcal{G}\indices{^\mu_\nu} &= 8\piGN {}^{(0)}T\indices{^\mu_\nu} \label{eq:GR:einstein:linearised_Einstein_eq_zeroth},\\
-        {}^{(1)}\mathcal{G}\indices{^\mu_\nu} &= 8\piGN {}^{(1)}T\indices{^\mu_\nu} \label{eq:GR:einstein:linearised_Einstein_eq_first},
-    \end{align}
-\end{subequations}
-where superscript ${}^{(i)}$ refers to perturbative order $i$. \Cref{eq:GR:einstein:linearised_Einstein_eq_zeroth} is the background equation. %
-{\newcommand{\delg}{q}%{{\underaccent{\bar}{\delta g}}}
-With $\nabla\^{\mu}\delg\_{\mu\nu}=0$, \cref{eq:GR:einstein:linearised_Einstein_eq_first} now reads~\citep{jokelaGravitationalWaveMemory2022}
-\begin{equation}
-    \sq \delg\_{\mu\nu} - 2\mathcal{R}\_{\rho\mu\nu\sigma}\delg\^{\rho\sigma} - 2 \mathcal{R}\indices{^\rho_{(\mu}}\delg\_{\nu)\rho}
-    - g\_{\mu\nu} \delg\^{\rho\sigma}\mathcal{R}\_{\rho\sigma} + \delg\_{\mu\nu} \mathcal{R} = - 16\piGN {}^{(1)}T\_{\mu\nu}
-\end{equation}
-where
-\begin{equation}
-    \delg\_{\mu\nu} \triangleq (\delta^{1} g)\_{\mu\nu} - \frac{1}{2}  g\_{\mu\nu} (\delta^{1} g)\indices{^\rho_\rho} 
-\end{equation}
-and
-\begin{equation}
-    {}^{(1)}T\_{\mu\nu} = {}^{(1)}\pclosed{g\_{\mu\rho}T\^{\rho\nu}} = (\delta^1 g)\_{\mu\rho}T\indices{^\rho_\nu}+ g\_{\mu\rho} (\delta^1 T)\indices{^\rho_\nu}.
-\end{equation}
-}
-\speak{Possibly unnecessary\dots}}
+% \deleteme{For first-order perturbations to the metric, we get~\citep{jokelaGravitationalWaveMemory2022}
+% \begin{subequations}
+%     \begin{align}
+%         {}^{(0)}\mathcal{G}\indices{^\mu_\nu} &= 8\piGN {}^{(0)}T\indices{^\mu_\nu} \label{eq:GR:einstein:linearised_Einstein_eq_zeroth},\\
+%         {}^{(1)}\mathcal{G}\indices{^\mu_\nu} &= 8\piGN {}^{(1)}T\indices{^\mu_\nu} \label{eq:GR:einstein:linearised_Einstein_eq_first},
+%     \end{align}
+% \end{subequations}
+% where superscript ${}^{(i)}$ refers to perturbative order $i$. \Cref{eq:GR:einstein:linearised_Einstein_eq_zeroth} is the background equation. %
+% {\newcommand{\delg}{q}%{{\underaccent{\bar}{\delta g}}}
+% With $\nabla\^{\mu}\delg\_{\mu\nu}=0$, \cref{eq:GR:einstein:linearised_Einstein_eq_first} now reads~\citep{jokelaGravitationalWaveMemory2022}
+% \begin{equation}
+%     \sq \delg\_{\mu\nu} - 2\mathcal{R}\_{\rho\mu\nu\sigma}\delg\^{\rho\sigma} - 2 \mathcal{R}\indices{^\rho_{(\mu}}\delg\_{\nu)\rho}
+%     - g\_{\mu\nu} \delg\^{\rho\sigma}\mathcal{R}\_{\rho\sigma} + \delg\_{\mu\nu} \mathcal{R} = - 16\piGN {}^{(1)}T\_{\mu\nu}
+% \end{equation}
+% where
+% \begin{equation}
+%     \delg\_{\mu\nu} \triangleq (\delta^{1} g)\_{\mu\nu} - \frac{1}{2}  g\_{\mu\nu} (\delta^{1} g)\indices{^\rho_\rho} 
+% \end{equation}
+% and
+% \begin{equation}
+%     {}^{(1)}T\_{\mu\nu} = {}^{(1)}\pclosed{g\_{\mu\rho}T\^{\rho\nu}} = (\delta^1 g)\_{\mu\rho}T\indices{^\rho_\nu}+ g\_{\mu\rho} (\delta^1 T)\indices{^\rho_\nu}.
+% \end{equation}
+% }
+% \speak{Possibly unnecessary\dots}}
 % where $\pert{\mathcal{G}}\_{\mu\nu}=\sum_{i=0}^{o} {}^{(i)}\mathcal{G}\_{\mu\nu}$ and $\pert{T}\_{\mu\nu}=\sum_{i=0}^{o} {}^{(i)}T\_{\mu\nu}$, in which ${}^{(i)}Q$ implies the perturbed quantity to order $i$. It is then solved order by order.
 % which is solved order by order.
 % \begin{equation}

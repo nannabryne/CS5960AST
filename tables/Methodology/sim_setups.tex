@@ -16,6 +16,36 @@
     % &\simnum{O} &\simnum{I} & \simnum{II} & \simnum{III} &\simnum{IV}  & \simnum{V} &  \simnum{VI} &  \simnum{VII} \\
     %
     \toprule
+    %
+    \multicolumn{9}{l}{\tabSubheading{Simulation box \& numerics}} \\
+    \midrule
+    $L_\#~[\Mpch]$&  1024 & 1024 &  1024 &  1024 &  \different{{1400}} &  1024 &  1024 &  1024 \\
+    $N_\#$ & 768& 768 & 768 & \different{{900}} & 768 & \different{{900}}  & 768 & 768 \\
+    
+    %
+    % \midrule
+    % \multicolumn{9}{l}{\tabSubheading{Numerics}} \\
+    % \midrule
+    $C\ped{f}$ & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 \\
+    % $C\ped{f}$ & \multicolumn{8}{c}{0.2} \\
+    $N_\phi$ & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+    \midrule
+
+
+
+    \multicolumn{9}{l}{\tabSubheading{Initial configuration}} \\
+    \midrule
+    $\redshift\ped{i}$ &2.00 & 2.00 & 2.00 & 2.00 & \different{{2.02}} & 2.00 & 2.00 & \different{{2.02}} \\
+    $\redshift\ped{f}$ &1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
+    $\breve{\chi}\ped{i}$&  0.10 & 0.10  &  0.10  &  0.10  &  \different{0.17} &  0.10  &  0.10  &  \different{0.17} \\
+    $\breve{q}\ped{i}$ &  1.31 & 1.31  &  1.31  &  1.31  &  \different{2.25} &  1.31  &  1.31  &  
+    \different{2.25} \\
+    % $\delta\ped{w}(\tau\ped{i})~[\Mpch] $ & 24.6 &24.6& 24.6 & 42.3 & 24.6 & 24.6 & 7.38& 42.3 \\
+    % ${(\delta\ped{w}/\Delta_\# )}\ped{i}$ & 18.4 & 18.4& 18.4 & 21.6 & 23.2 & 23.0 & 5.52 & 31.2 \\
+
+    \midrule
+
+
     % \midrule
     \multicolumn{9}{l}{\tabSubheading{Symmetron parameters}} \\
     \midrule
@@ -26,36 +56,101 @@
     %
     \multicolumn{9}{l}{\tabSubheading{Perturbation parameters %
     % ($\epsast \sin{ (2\ppi m_{\lcoord{j}} \lcoord{j} )} $)
-    ($\epsast \sin{ (p_y y)} $)
+    ($\epsast \sin{ (p y)} $)
     % (\(\epsast \sin{2\ppi m_{\lcoord{j}}\lcoord{j}\} \))
     }} \\
     \midrule 
     $\epsast/L_\#$& \different{{0.00}} & 0.08 & \different{{0.12}} & 0.08 & 0.08 & \different{{0.06}} & 0.08 & 0.08 \\
     % $m_{\lcoord{j}}$  & -- & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
-    $p_y/k_\#$  & \different{{--}} & 2 & 2 & 2 & 2 & \different{{3}} & 2 & 2 \\
-    $\Upsilon^{\AC}_\ast$  & 0 & 16 & \different{24} & 16 & 16 & \different{18} & 16 & 16 \\
-    \midrule
+    $p/k_\#$  & \different{{--}} & 2 & 2 & 2 & 2 & \different{{3}} & 2 & 2 \\
+    
+
     %
-    \multicolumn{9}{l}{\tabSubheading{Simulation box}} \\
+    % \midrule
     \midrule
-    $L_\#~[\Mpch]$&  1024 & 1024 &  1024 &  1024 &  \different{{1400}} &  1024 &  1024 &  1024 \\
-    $N_\#$ & 768& 768 & 768 & \different{{900}} & 768 & \different{{900}}  & 768 & 768 \\
-    $\Delta_\#~[\Mpch]$& 1.33  &1.33  & 1.33 & \different{1.14} &  \different{1.82} &  \different{1.14}  & 1.33  &  1.33 \\
-    %
+    \multicolumn{9}{l}{\tabSubheading{\textbf{Derived quantities}}} \\
     \midrule
-    \multicolumn{9}{l}{\tabSubheading{Initial configuration}} \\
-    \midrule
-    $\redshift\ped{i}$ &2.00 & 2.00 & 2.00 & 2.00 & \different{{2.02}} & 2.00 & 2.00 & \different{{2.02}} \\
-    $\redshift\ped{f}$ &1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
-    $\breve{\chi}\ped{i}$&  0.10 & 0.10  &  0.10  &  0.10  &  \different{0.17} &  0.10  &  0.10  &  \different{0.17} \\
-    $\breve{q}\ped{i}$ &  1.31 & 1.31  &  1.31  &  1.31  &  \different{2.25} &  1.31  &  1.31  &  \different{2.25} \\
-    %
-    \midrule
-    \multicolumn{9}{l}{\tabSubheading{Numerics}} \\
-    \midrule
-    $C\ped{f}$ & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 \\
-    % $C\ped{f}$ & \multicolumn{8}{c}{0.2} \\
-    $N_\phi$ & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+    $\Delta_\#~[\Mpch]$& 1.33  &1.33  & 1.33 & {1.14} &  {1.82} &  {1.14}  & 1.33  &  1.33 \\
+    $\wallsep~[\Mpch]$& 512  &512  & 512 & 512 &  700 & 512 &512 & 512 \\
+
+    $L\nped{C}~[\Mpch]$& 1.00  &1.00  & 1.00 & 1.00&  1.00&  1.00 & 0.30  &  1.00 \\
+
+    $\delta\ped{w}(\tau\ped{i})/\Delta_\#$ & 18.4 & 18.4& 18.4 & 21.6 & 23.2 & 23.0 & 5.52 & 31.2 \\
+
+    $\delta\ped{w}(\tau\ped{i})/\epsast$ & -- & 0.30& 0.20 & 0.30 & 0.38 & 0.40 & 0.09 & 0.52 \\
+
+    $\omega$  & -- & 42.3 &42.3   & 42.3 & 30.92 & 63.4& 42.3 & 42.3 \\
+    $\Upsilon^{\AC}_\ast$  & 0 & 16 & {24} & 16 & 16 & {18} & 16 & 16 \\
+
+
+
+
     \bottomrule
 \end{tabular*}
 }}
+
+
+
+
+
+% %
+% \subimport{../}{style.tex}
+
+% \newcommand{\different}{\textbf}
+% \newcommand{\csymb}{$\blacksquare$}
+% %
+% {\small{
+% \begin{tabular*}{\tabWidth}{@{\extracolsep{\fill}} c c c c c c c c c}
+%     %
+%     \multicolumn{9}{l}{\tabHeading{Wall--anti-wall simulations}} \\
+%     \toprule
+%     % &\simO &\simI & \simII & \simIII &\simIV & \simV & \simVI & \simVII \\
+%     % %
+%     &\simnum{0} &\simnum{1} & \simnum{2} & \simnum{3} &\simnum{4}  & \simnum{5} &  \simnum{6} &  \simnum{7} \\
+%     &\simcO{\csymb}&\simcI{\csymb}&\simcII{\csymb}&\simcIII{\csymb}&\simcIV{\csymb}&\simcVII{\csymb}&\simcVI{\csymb}&\simcVII{\csymb} \\
+%     % &\simnum{O} &\simnum{I} & \simnum{II} & \simnum{III} &\simnum{IV}  & \simnum{V} &  \simnum{VI} &  \simnum{VII} \\
+%     %
+%     \toprule
+%     % \midrule
+%     \multicolumn{9}{l}{\tabSubheading{Symmetron parameters}} \\
+%     \midrule
+%     $a_\ast$ & 0.33 & 0.33 & 0.33 &0.33 & 0.33 & 0.33 & 0.33& 0.33  \\
+%     $\xi_\ast\times 10^{4}$ & 3.33 & 3.33 & 3.33 &3.33 & 3.33 & 3.33 & \different{{1.00}} & 3.33 \\
+%     $\beta_\ast$ & 1 & 1 & 1 & 1 & 1 & 1 & 1& 1 \\
+%     \midrule
+%     %
+%     \multicolumn{9}{l}{\tabSubheading{Perturbation parameters %
+%     % ($\epsast \sin{ (2\ppi m_{\lcoord{j}} \lcoord{j} )} $)
+%     ($\epsast \sin{ (p_y y)} $)
+%     % (\(\epsast \sin{2\ppi m_{\lcoord{j}}\lcoord{j}\} \))
+%     }} \\
+%     \midrule 
+%     $\epsast/L_\#$& \different{{0.00}} & 0.08 & \different{{0.12}} & 0.08 & 0.08 & \different{{0.06}} & 0.08 & 0.08 \\
+%     % $m_{\lcoord{j}}$  & -- & 2 & 2 & 2 & 2 & 3 & 2 & 2 \\
+%     $p_y/k_\#$  & \different{{--}} & 2 & 2 & 2 & 2 & \different{{3}} & 2 & 2 \\
+%     $\Upsilon^{\AC}_\ast$  & 0 & 16 & \different{24} & 16 & 16 & \different{18} & 16 & 16 \\
+%     \midrule
+%     %
+%     \multicolumn{9}{l}{\tabSubheading{Simulation box}} \\
+%     \midrule
+%     $L_\#~[\Mpch]$&  1024 & 1024 &  1024 &  1024 &  \different{{1400}} &  1024 &  1024 &  1024 \\
+%     $N_\#$ & 768& 768 & 768 & \different{{900}} & 768 & \different{{900}}  & 768 & 768 \\
+%     $\Delta_\#~[\Mpch]$& 1.33  &1.33  & 1.33 & \different{1.14} &  \different{1.82} &  \different{1.14}  & 1.33  &  1.33 \\
+%     %
+%     \midrule
+%     \multicolumn{9}{l}{\tabSubheading{Initial configuration}} \\
+%     \midrule
+%     $\redshift\ped{i}$ &2.00 & 2.00 & 2.00 & 2.00 & \different{{2.02}} & 2.00 & 2.00 & \different{{2.02}} \\
+%     $\redshift\ped{f}$ &1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00\\
+%     $\breve{\chi}\ped{i}$&  0.10 & 0.10  &  0.10  &  0.10  &  \different{0.17} &  0.10  &  0.10  &  \different{0.17} \\
+%     $\breve{q}\ped{i}$ &  1.31 & 1.31  &  1.31  &  1.31  &  \different{2.25} &  1.31  &  1.31  &  \different{2.25} \\
+%     %
+%     \midrule
+%     \multicolumn{9}{l}{\tabSubheading{Numerics}} \\
+%     \midrule
+%     $C\ped{f}$ & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 & 0.2 \\
+%     % $C\ped{f}$ & \multicolumn{8}{c}{0.2} \\
+%     $N_\phi$ & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\
+%     \bottomrule
+% \end{tabular*}
+% }}

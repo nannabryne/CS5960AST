@@ -36,8 +36,10 @@
 % GWs, dynamics,
 We propose a semi-analytical formula for gravitational waves from two-dimensional topological defects in an FLRW universe, using differential geometry and classical field theory. 
 % This is obtained through differential geometry and 
-To this end, we study the Nambu--Goto dynamics of planar domain walls, and solve analytically the equation of motion for domain walls \emph{during} a symmetron phase-transition in a matter-dominated universe. 
-We have not found this solution in other literature. We find that the evolution of this solution, $\epsA$, scales as the initial amplitude $\varepsilon_\ast$, and is not dependent on symmetron parameters.\footnote{\comment{A truth with modifications}; see discussion in~\cref{app:walls:surface_tension:new_limits}.} The damping in the equation of motion is determined by the \emph{model} of phase transition, which in our case is the described symmetron effective potential. Model- and parameter-dependence can still be probed by gravitational waves from this phenomenon. 
+To this end, we study the Nambu--Goto dynamics of planar domain walls, and solve analytically the equation of motion for domain walls \emph{during} a symmetron phase transition in a matter-dominated universe. 
+We have not found this solution in other literature. We find that the evolution of this solution, $\epsA$, scales as the initial amplitude $\varepsilon_\ast$, and is not dependent on symmetron parameters. 
+% \footnote{\comment{A truth with modifications}; see discussion in~\cref{app:walls:surface_tension:new_limits}.} 
+The damping in the equation of motion is determined by the \emph{model} of phase transition, which in our case is the described symmetron effective potential. Model- and parameter-dependence can still be probed by gravitational waves from this phenomenon. 
 % This solution is to the best of our knowledge, . 
 
 
@@ -47,9 +49,9 @@ We have performed a number of periodic-box simulations to test this framework. F
 box side length $L_\#$ (\simnum{4}), 
 number of lattice points $N_\#$ (\simnum{3},~\simnum{5}), 
 initial redshift $\redshift\ped{i}$ (\simnum{4},~\simnum{7}), 
-wall width $\delta\ped{w}$ (\simnum{6}),\footnote{Which is to say we vary symmetron mass scale $\mu$, or Compton wavelength $L\nped{C}$.} %
-initial perturbation amplitude $\epsast$ (\simnum{0},~\simnum{2},~\simnum{5}) and 
-perturbation scale $p$ (\simnum{0},~\simnum{5}).\footnote{Scale $p$ is irrelevant in simulation~\simnum{1} as $\epsast=0$.} In the following, results from simulation~\simnum{6} are discarded (see~\cref{app:misc:sim6} for details). We also exclude simulation~\simnum{0}, as the comparison is trivial.
+asymptotic wall width $\delta_\infty$ (\simnum{6}),\footnote{Which is to say we vary symmetron mass scale $\mu$, or Compton wavelength $L\nped{C}$.} %
+initial perturbation amplitude $\epsast/L_\#$ (\simnum{0},~\simnum{2},~\simnum{5}) and 
+perturbation scale $p/k_\#$ (\simnum{0},~\simnum{5}).\footnote{Scale $p$ is irrelevant in simulation~\simnum{0} as $\epsast=0$.} In the following, results from simulation~\simnum{6} are discarded (see~\cref{app:misc:sim6} for details). We also exclude simulation~\simnum{0}, as the comparison is trivial.
 
 
 % Wall pos.
@@ -61,7 +63,7 @@ which refutes the thin-wall prediction
 % whereas in the thin-wall limit, they are not 
 (provided $\epsast \ll \tau_\ast$). 
 The difference ($\Delta \epsilon=\abs*{\epsA-\epsB}$) between simulated wall position $\epsB$ and theoretical prediction $\epsA$ is maximally $(8\pm 3)\%$ of the initial amplitude $\epsast$, and the average offset is
-$(16\pm 5)\%$. Between simulations~\simnum{1},~\simnum{3}--\simnum{5} and~\simnum{7}, which all obey $\epsast\ll \wallsep/5=0.1L_\#$, the corresponding measures read $\max{(\Delta\varepsilon)} \in [13\pm 2]\epsast$ and $\avg*{\Delta \varepsilon}\in [7\pm 1]\epsast$, respectively. 
+$(16\pm 5)\%$. Between simulations~\simnum{1},~\simnum{3}--\simnum{5} and~\simnum{7}, which all obey $\epsast< \wallsep/5=0.1L_\#$, the corresponding measures read $\max{(\Delta\varepsilon)} \in [13\pm 2]\epsast$ and $\avg*{\Delta \varepsilon}\in [7\pm 1]\epsast$, respectively. 
 
 
 % GWs
@@ -73,7 +75,7 @@ is significant for the gravitational-wave modes, and we therefore use the simula
 
 
 % Stable symmetron
-We know that stochastic scalar-field fluctuations can themselves source gravitational waves~\citep{kawasakiStudyGravitationalRadiation2011}, and we can isolate the defect-sourced waves by minimising this effect. We present a protocol that tweaks the symmetron initial-conditions to our advantage and gives more flexibility to choices of parameters in deterministic toy-model simulations.
+We know that stochastic scalar-field fluctuations can themselves source gravitational waves~\citep{kawasakiStudyGravitationalRadiation2011}, and we can isolate the defect-sourced waves by minimising this effect. We present a protocol that tweaks the symmetron initial conditions to our advantage and gives more parameter flexibility in deterministic toy-model simulations.
 
 
 
@@ -109,16 +111,24 @@ We know that stochastic scalar-field fluctuations can themselves source gravitat
     {analytical estimations of gravitational waves from topological defects}, 
     % which was one of the aims of this thesis. 
     which is the main motivation for this thesis~\citep{saikawaReviewGravitationalWaves2017}. %
-    The time-varying surface tension is effectively an additional damping in the equation of motion for the wall displacement field, and during a symmetron phase-transition, there exist explicit solutions to this equation for idealised universes. Completing the framework with novel comparative analyses---both qualitative and quantitative---can potentially elucidate the dependence on symmetron parameters systematically. This would open a window of dynamical ranges and parameter spaces that simulations alone cannot encompass.
+    The time-varying surface tension is effectively an additional damping in the equation of motion for the wall displacement field, and during a symmetron phase transition, there exist explicit solutions to this equation for idealised universes. Completing the framework with novel comparative analyses---both qualitative and quantitative---can potentially elucidate the dependence on symmetron parameters systematically. This would open a window of dynamical ranges and parameter spaces that simulations alone cannot encompass.
+
+
+    To summarise, we provide the necessary background concerning GR and topological defects. The general dynamics of topological defectsares studied, and perturbative domain-wall dynamics in expanding spacetimes are explicitly solved. The analytical solution to domain-wall perturbations during a symmetron phase transition is, to the best of our knowledge, not found in other literature. 
+    This solution is put in context with the full symmetry-breaking field-theory, and evaluated in simulations using \asgrd{}. We perform comparative analyses of the symmetron field, wall position and gravitational waves in the thin-wall theory and in full-theory simulations. From our results, one can argue that the Nambu--Goto framework provides valuable analytical insights to domain-wall dynamics also when the surface tension is time-dependent. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis.
 
 
 
     A substantial amount of work remains if we ever want to compare this to actual gravitational-wave observations. We have not investigated the particular implications for future experiments in this thesis, but other literature~\citep{ferreiraGravitationalWavesDomain2023,clementsDetectingDarkDomain2023,paulGravitationalWaveSignatures2021,nakayamaGravitationalWavesDomain2017,hiramatsuEstimationGravitationalWave2014,hiramatsuGravitationalWavesCollapsing2010} support the hypothesis that domain wall signatures can be probed and constrained. 
+
+
+
+
     % , potentially also discarded.%\comment{or non-found}. 
 
     % allows for explicit solutions to the new equation of motion 
 
-    \speak{The end.}
+    % \speak{The end.}
 
 
 
@@ -138,19 +148,19 @@ We know that stochastic scalar-field fluctuations can themselves source gravitat
 
 
     % \section{Applications}
-    %     Similar lines-of-thought should hold for phase transitions in a variety of systems, amongst others the very early universe and particle-physics scenarios. \iftime{Write more.}
+%     %     Similar lines-of-thought should hold for phase transitions in a variety of systems, amongst others the very early universe and particle-physics scenarios. \iftime{Write more.}
 
 
 
 
-\section{Summary}
-    We have provided the necessary background concerning GR and topological defects. The general dynamics of topological defects is studied, and perturbative domain-wall dynamics in expanding spacetimes are explicitly solved. The analytical solution to domain-wall perturbations during a symmetron phase-transition is, to the best of our knowledge, not found in other literature. 
-    This is put in context with the full symmetry-breaking field-theory, and evaluated in simulations using \asgrd{}. We perform comparative analyses of the symmetron field, wall position and gravitational waves in the thin-wall theory and in full-theory simulations. From our results, one can argue that the Nambu--Goto framework provides valuable analytical insights to domain-wall dynamics also when the surface tension is time-dependent. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis.
+% \section{Summary}
+%     We have provided the necessary background concerning GR and topological defects. The general dynamics of topological defects is studied, and perturbative domain-wall dynamics in expanding spacetimes are explicitly solved. The analytical solution to domain-wall perturbations during a symmetron phase transition is, to the best of our knowledge, not found in other literature. 
+%     This is put in context with the full symmetry-breaking field-theory, and evaluated in simulations using \asgrd{}. We perform comparative analyses of the symmetron field, wall position and gravitational waves in the thin-wall theory and in full-theory simulations. From our results, one can argue that the Nambu--Goto framework provides valuable analytical insights to domain-wall dynamics also when the surface tension is time-dependent. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis.
 
 
 
 
-    % In this thesis we have solved analytically the equation of motion for a perturbed planar domain wall in a matter-dominated universe during a symmetron phase-transition, using the Nambu--Goto theory. This solution was put to the test in full field-theory toy-model simulations, along with an estimation of the gravitational-wave modes generated from this motion. We investigated thoroughly the ``$\epsA$ vs. $\epsC$''-anomaly in the limited number of simulation experiments presented. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis. From our results, one can argue that the Nambu--Goto framework provides valuable insights to domain-wall dynamics also when the surface tension is time-dependent.
+    % In this thesis we have solved analytically the equation of motion for a perturbed planar domain wall in a matter-dominated universe during a symmetron phase transition, using the Nambu--Goto theory. This solution was put to the test in full field-theory toy-model simulations, along with an estimation of the gravitational-wave modes generated from this motion. We investigated thoroughly the ``$\epsA$ vs. $\epsC$''-anomaly in the limited number of simulation experiments presented. We have laid a solid foundation for complementary simulations with \asgrd{} using tweaked symmetron initial conditions and continued gravitational-wave analysis. From our results, one can argue that the Nambu--Goto framework provides valuable insights to domain-wall dynamics also when the surface tension is time-dependent.
 
 
 
@@ -163,12 +173,12 @@ We know that stochastic scalar-field fluctuations can themselves source gravitat
     % \speak{Prototype, toy model}
     % Verificatu
 
-    % Open questions
+%     % Open questions
 
-    \subsection{Open questions}
-    \comment{Summarise open questions} 
-    What it means for the gravitational waves to have any other perturbation $\epsilon= \varepsilon(\tau) \sin{(py + \varphi)}$ is unclear. A starting point for such an analysis was provided in~\cref{app:walls:SE_tensor_alt:general}. Varying symmetron parameters, or scalar-field theory as such, was the original wish, but other analyses was prioritised. 
-    We have not studied the implications for biased domain walls, but one can  \blahblah 
+%     \subsection{Open questions}
+%     \comment{Summarise open questions} 
+%     What it means for the gravitational waves to have any other perturbation $\epsilon= \varepsilon(\tau) \sin{(py + \varphi)}$ is unclear. A starting point for such an analysis was provided in~\cref{app:walls:SE_tensor_alt:general}. Varying symmetron parameters, or scalar-field theory as such, was the original wish, but other analyses was prioritised. 
+%     We have not studied the implications for biased domain walls, but one can  \blahblah 
 
 
     
@@ -176,20 +186,20 @@ We know that stochastic scalar-field fluctuations can themselves source gravitat
 
 
 
-\section{Implications and applications}
-    Additional validations and analyses are necessary. We refer to suggestions in~\cref{sec:whatif:cont}. 
-    Most urgent is possibly the need for an intuitive statistical measure of the gravitational waves. 
+% \section{Implications and applications}
+%     Additional validations and analyses are necessary. We refer to suggestions in~\cref{sec:whatif:cont}. 
+%     Most urgent is possibly the need for an intuitive statistical measure of the gravitational waves. 
 
 
 
-    Similar lines-of-thought should be applicable to flat spacetimes where phase transition is triggered at a critical temperature instead of a critical density. 
+%     Similar lines-of-thought should be applicable to flat spacetimes where phase transition is triggered at a critical temperature instead of a critical density. 
     
     
-    \iftime{Write more.}
+%     \iftime{Write more.}
 
 
 
-% \speak{\section*{TO DO (end)}}
+% % \speak{\section*{TO DO (end)}}
 % \speak{\paragraph{Referance list:} Maybe hard-code reference list! + Fix 2 places with \url{something.no} (month year)}
 % \speak{\paragraph{Verb tenses:} Consider adjusting in some chapters/sections.}
 

@@ -6,7 +6,8 @@
 
 \subsubsection{Constants and units}
 % \paragraph{Constants and units.} %
-We use natural units where the speed of light in vacuum is $c=1$ and the reduced Planck mass is $M\nped{Pl}=1/\sqrt{8\ppi G\nped{N}}=1$. Here, $G\nped{N}$ is the Newtonian constant of gravitation. Comoving lengths are usually given in units of megaparsec per Hubble constant $\Mpch$, where $1\unit{pc}=3.261566$~light-years.
+We use natural units where the speed of light in vacuum is $c=1$ and the reduced Planck mass is $M\nped{Pl}=1/\sqrt{8\ppi G\nped{N}}=1$. Here, $G\nped{N}$ is the Newtonian constant of gravitation. Comoving lengths are usually given in units of megaparsec per reduced Hubble constant $\Mpch$, where $1\unit{pc}=3.261566$~light-years. The critical density today is $\rho\ped{cr0} = 3H_0^2  M\nped{Pl}^2$, where the Hubble constant is $H_0 = (2997.9~\Mpch)^{-1}$ in these units.
+
 % We use \checkthis{`natural units'} where $\hbar = c = 1$, where $\hbar$ is the reduced Planck constant and $c$ is the speed of light in vacuum. %\comment{Planck units? Set $k\nped{B}=G\pned{N}=1$?} 
 % The Newtonian constant of gravitation $G\nped{N}$ is referenced explicitly, and we use Planck units such as the (reduced) Planck mass $M\nped{Pl}=1/\sqrt{ 8\ppi G\nped{N} }$. 
 %$\pclosed{\hbar c /G\nped{N}}^{\shalf} = G\nped{N}^{-\shalf} \sim 10^{-8} \unit{kg}$. 
@@ -77,7 +78,7 @@ We make use of the notation
         T\_{[\mu\nu]} &\equiv \frac{1}{2} \pclosed{ T\_{\mu\nu} - T\_{\nu\mu}  }.
     \end{align} 
 \end{subequations}
-We write $T\_{\mu\nu}= T\_{(\mu\nu)} + T\_{[\mu\nu]}$. %A tensor with 
+Thus, $T\_{\mu\nu}= T\_{(\mu\nu)} + T\_{[\mu\nu]}$. %A tensor with 
 % \comment{Maybe define diag?}
 
 
@@ -120,7 +121,7 @@ The Riemann curvature tensor is
 \end{equation}
 
 % \subparagraph[Lambda]{``Lambda tensor.''} %
-We express the \textit{Lambda tensor}---sometimes called the ``projection operator'' or ``spin-2 operator''---that projects a symmetric tensor onto the TT gauge as
+We express the \textit{Lambda tensor}---sometimes called the ``projection operator'' or ``spin-2 projector''---that projects a symmetric tensor onto the TT gauge as
 \begin{equation}\label{eq:notation:projection_tensor}
 % \begin{split}
     \ProjectionLambda{ij}{kl}(\vec{k}) = P\indices*{_i^k}(\vec{k})P\indices*{_j^l}(\vec{k}) - \frac{1}{2}P\_{ij}(\vec{k})P\^{kl}(\vec{k});
@@ -163,15 +164,17 @@ Note that this gives $\partial\_i \leftrightarrow +\im k\_i$.
 
 
 \subsubsection{Special functions} %
-\comment{Will fix this.} %
-We will denote various cylinder functions by \blahblah see~\cref{app:cylinder}
+We denote linear combinations of the first and second kind of regular Bessel, spherical Bessel and Riccati--Bessel functions by $\Cylindrical[]$, $\Cylindrical[][z]$ and $\Cylindrical[][R]$, respectively. More details are found in~\cref{app:cylinder}.
 
-\begin{tabular*}{\linewidth}{r c l}
-    regular Bessel functions: & $\Cylindrical[]$; & $\Cylindrical[\nu]^{(i)}(x)$  \\
-    spherical Bessel functions: & $\Cylindrical[][z]$; &  $\Cylindrical[n][z]^{(i)}(x) = \sqrt{\ppi/(2x)} \,\Cylindrical[n+1/2]^{(i)}(x) $ \\
-    Riccati--Bessel functions: & $\Cylindrical[][R]$; &  $\Cylindrical[n][R]^{(i)}(x) =-(-1)^{i}\cdot x\,\Cylindrical[n][z]^{(i)}(x) $ 
-\end{tabular*}
-Here, $\nu\in \Complex$ and $n\in\Integer$ denotes order, while $i=1,2$ refers to the \emph{$i$th kind}. \speak{Too messy!}
+% \comment{Will fix this.} %
+% We will denote various cylinder functions by \blahblah see~\cref{app:cylinder}
+
+% \begin{tabular*}{\linewidth}{r c l}
+%     regular Bessel functions: & $\Cylindrical[]$; & $\Cylindrical[\nu]^{(i)}(x)$  \\
+%     spherical Bessel functions: & $\Cylindrical[][z]$; &  $\Cylindrical[n][z]^{(i)}(x) = \sqrt{\ppi/(2x)} \,\Cylindrical[n+1/2]^{(i)}(x) $ \\
+%     Riccati--Bessel functions: & $\Cylindrical[][R]$; &  $\Cylindrical[n][R]^{(i)}(x) =-(-1)^{i}\cdot x\,\Cylindrical[n][z]^{(i)}(x) $ 
+% \end{tabular*}
+% Here, $\nu\in \Complex$ and $n\in\Integer$ denotes order, while $i=1,2$ refers to the \emph{$i$th kind}. \speak{Too messy!}
 
 
 
@@ -195,5 +198,5 @@ We use $\equiv$ for global definitions and $\triangleq$ for temporary placeholde
 \subimport{./}{abbrv.tex}
 % \comment{Glossary?}k
 
-\section*{Nomenclature}
-\subimport{./}{symbols.tex}
+% \section*{Nomenclature}
+% \subimport{./}{symbols.tex}

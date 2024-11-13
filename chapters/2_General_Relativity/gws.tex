@@ -201,7 +201,7 @@ Note that
     %
     \paragraph{Homogeneous solution.} %
     % We see that for large modes $k^2 \gg \ddot{a}/a \sim \tau^{-2}$, the general solution
-    We see that for large modes $k \gg \ddot{a}/a \sim \tau^{-2}$, the linear operator is approximately $\partial_\tau^2 + k^2$, i.e.~the harmonic oscillator, with plane wave solutions for $f_P=0$. That is to say, small-scale gravitational waves, in the absence of a source, propagate free waves in an FRW spacetime (divided by the scale factor). On larger scales, the propagation is damped in accordance with the expansion of the universe. This damping term generally depends on expansion history.
+    We see that for small modes $k \gg \ddot{a}/a \sim \tau^{-2}$, the linear operator is approximately $\partial_\tau^2 + k^2$, i.e.~the harmonic oscillator, with plane wave solutions for $f_P=0$. That is to say, small-scale gravitational waves, in the absence of a source, propagate free waves in an FLRW spacetime (divided by the scale factor). On larger scales, the propagation is damped in accordance with the expansion of the universe. This damping term generally depends on expansion history.
 
 
     
@@ -212,11 +212,11 @@ Note that
     \begin{equation}
         \mathop{\mathrm{L}}_u = \dv[2]{}{u} + \pclosed{1 - \frac{(\alpha-1)\alpha}{u^2}}
     \end{equation}
-    has a Green's function in terms of Bessel functions $\sqrt{u}\Cylindrical[\alpha-1/2](u)$, which is the case in a single-substance universe with $a \propto \tau^\alpha$. On an even more compact form, if $n\equiv\alpha-1 \in \Integer$, we can use the Green's function
+    has a Green's function in terms of Bessel functions $\sqrt{u}\Cylindrical[\alpha-1/2](u)$, which is the case of power-law expansion, $a \propto \tau^\alpha$. On a compact form, if $n\equiv\alpha-1 \in \Integer$, we can use the Green's function
     \begin{equation}\label{eq:GR:gws:Greens_function_n}
         G(u,v) = \RiccatiBessel[n](u)\RiccatiNeumann[n](v) - \RiccatiNeumann[n](u)\RiccatiBessel[n](v)
     \end{equation}
-    where $\RiccatiBessel[n](x)$ and $\RiccatiNeumann[n](x)$ are the Riccati--Bessel and --Neumann functions (given in \cref{app:cylinder}).
+    where $\RiccatiBessel[n](x)$ and $\RiccatiNeumann[n](x)$ are the Riccati--Bessel and --Neumann functions (given in~\cref{eq:cylinder:Riccati_Bessel}).
         
     % \end{equation}
     % % Otherwise, for a single-substance universe, 

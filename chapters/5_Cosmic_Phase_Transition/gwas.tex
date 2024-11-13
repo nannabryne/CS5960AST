@@ -28,7 +28,7 @@ To accurately compare the soliton's evolution with the Nambu--Goto prediction, i
 That said, we do not actually have these exact solutions in curved spacetime. %~\lcomment{Revise calculation, I forgot it\dots}. 
 However, with sufficient tweaking, we should be able to design our desired scenario in a~\gevolution{} simulation box.
 % \speak{Section about the configuration, particular case}
-This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuration that is the toy model.
+This~\lcnamecref{sec:PT:gwas} elaborates on the specific simulation configuration that is the toy model.
 
 
 
@@ -220,7 +220,7 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     \begin{subequations}\label{eq:PT:gwas:mywaves_pi_plus_series}%
     Now consider the TT-projected SE tensor associated with an infinitely thin wall located the origin. We use~\cref{eq:pertwalls:gws:pi_w_plus_Ft} to write
     \begin{equation}
-        a(\tau)\Ft{\pi}\ap{w0}_+(\tau, \ell, \vartheta) = 2\ppi^2\sigma\ped{w}(\tau) \cos^2{\vartheta} \cdot (-1)^\ell\Bessel[\ell]\big[\ell \tan{\vartheta} \cdot p \varepsilon(\tau)\big],
+        a(\tau)\Ft{\pi}\ap{w0}_+(\tau, \ell, \vartheta) \triangleq 2\ppi^2\sigma\ped{w}(\tau) \cos^2{\vartheta} \cdot (-1)^\ell\Bessel[\ell]\big[\ell \tan{\vartheta} \cdot p \varepsilon(\tau)\big],
     \end{equation}
     where $\ell = k_y/p \in \Integer$ and $\vartheta = \arctan{k_z/k_y}\in [0,2\ppi)$. %
     We make further use of this parametrisation 
@@ -289,19 +289,19 @@ This~\lcnamecref{sec:PT:gwas} elaborates on the detailed simulation configuratio
     % The code automatically outputs scalar quantities like extremal values of $\chi$ and $q$, as well as their box-averaged values. Besides this, we request two-dimensional snapshots of the field in question at every-something time step. 
     % \phpar[about background output and HDF5 output]
 
-    We use the outputted two-dimensional snapshots of $\chi$ at lattice coordinate $\lcoord{i}=4$ (chosen randomly) to track the simulated wall position, considered as the coordinates $(y,z)$ of the minimum value of $\abs{\chi}$ (ignoring the anti-wall). We define $\epsC$ as the aforementioned quantity at a $y$-coordinate for which $\sin{py}=1$, subtracting the initial position $z_0=L_\#/2$. The confidence region of this is then $\pm \Delta_\#/2$ in the $z$-direction. \iftime{Comment about temporal resolution.}
+    We use the outputted two-dimensional snapshots of $\chi$ at lattice coordinate $\lcoord{i}=4$ (chosen randomly) to track the simulated wall position, considered as the coordinates $(y,z)$ of the minimum value of $\abs{\chi}$ (ignoring the anti-wall). We define $\epsC$ as the aforementioned quantity at a $y$-coordinate for which $\sin{py}=1$, subtracting the initial position $z_0=L_\#/2$. The confidence region of this is then $\pm \Delta_\#/2$ in the $z$-direction. %\iftime{Comment about temporal resolution.}
 
     The code outputs two-dimensional snapshots of tensor perturbations $\Ft{h}\_{ij}$ at the same rate, sliced at $\lcoord{u}=0$. We use only $\Ft{h}_{xx}=\hpC$, but sporadically check that $2\hpC^2 =\Ft{h}\^{ij}\Ft{h}\_{ij} $. 
 
 
     The formula for the gravitational waves in the thin-wall limit,~\cref{eq:PT:gwas:mywaves_complete_formula}, allows for any function $\varepsilon(\tau)$ as input. Therefore, we will use both the solution to the equation of motion~\cref{eq:pertwalls:mywalls:eom_eps_s_MD}, call it $\epsA$, and the simulated result $\epsB$. We will have to keep in mind that the latter suboptimally resolved. %In addition, the minimum value can
-    \iftime{Comment about the initial evolution and how the minimum can be found at ``several'' coordinates.}
+    %\iftime{Comment about the initial evolution and how the minimum can be found at ``several'' coordinates.}
 
-    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme, %
+    The semi-analytical solution $\hpAB$ is obtained by means of the simple trapezoidal scheme in~\texttt{Python}, %
     % \begin{equation}
     %     \integ{x}[x_0][x_N] \approx \Delta x
     % \end{equation}
-    specifically the \textit{Scipy} library's \texttt{cumptrapz} method in~\texttt{Python}. We let $\hpA$ and $\hpB$ signify the solution to~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} with $\epsA$ and $\epsB$ as input, respectively.
+    specifically the \textit{Scipy} library's \texttt{cumptrapz} method. We let $\hpA$ and $\hpB$ signify the solution to~\crefrange{eq:PT:gwas:mywaves_complete_formula}{eq:PT:gwas:mywaves_pi_plus_series} with $\epsA$ and $\epsB$ as input, respectively.
 
 
     % \comment{Explain how we obtain $\varepsilon$ and how we compute $\Ft{h}_{+}$}

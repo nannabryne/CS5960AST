@@ -188,9 +188,9 @@ ______
 - [x] Abstract
   - [x] Main idea
   - [x] GW results 
-- [ ] Conclusion
+- [x] Conclusion
   - [x] Summary
-  - [ ] Rest
+  - [x] Rest
 - [x] Fix power-spectra $\to$ squared strain
 - [x] Rewrite part about dofs in pert. (cosmology)
 - [x] Add "random" references

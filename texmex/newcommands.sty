@@ -414,12 +414,13 @@
 
 
 % subscripts:
-\providecommand\phys{\ped{ph}}  % or phys
+% \providecommand\phys{\ped{ph}}  % or phys
 
 
 
 % units:
-\providecommand{\Mpch}{\ensuremath{\mathrm{Mpc/h}}}
+% \providecommand{\Mpch}{\ensuremath{\mathrm{Mpc/h}}}
+\newcommandx{\Mpch}[1][1=M]{\ensuremath{\mathrm{{#1}pc/h}}}
 
 
 

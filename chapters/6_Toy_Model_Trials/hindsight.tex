@@ -9,11 +9,20 @@
 
 Some technicalities regarding our choices is necessary to address at this point. %\rcomment{Is it OK to suddenly write in past tense\dots?} %
 It seemed natural to begin with a set of parameters that was deemed sensible before, i.e. $a_\ast = 0.33$, $\xi_\ast = 3.33\times 10^{-4}$ and $\beta_\ast = 1$ from~\citet{christiansenAsevolutionRelativisticNbody2023}. %
-The initial idea was to start simulations at initial redshift $\redshift\ped{i}=2.00$ with SSB happening only a few time steps before this, at $\redshift_\ast = 1/a_\ast - 1 = 2 + 1/33 \simeq 2.0303$. This way, the ``true'' wall width $\delta\ped{w} = (a\mu\chi_+)^{-1}$ is not infinite at the start, and we may use the quasi-static approximation for $\chi$ and $q$ with $\breve{\chi}= \chi_+$. We used the analytical expression for $\varepsilon$ and $\dot{\varepsilon}$ to find suitable values at initial time. To get an idea of the impact of larger oscillations around minima, we attempted initialising at redshift $2.02$, where the walls were dangerously close to colliding, but where separated just enough. 
+The initial idea was to start simulations at initial redshift $\redshift\ped{i}=2.00$ with SSB happening only a few time steps before this, at $\redshift_\ast = 1/a_\ast - 1 = 2 + 1/33 \simeq 2.0303$. This way, the ``true'' wall width $\delta\ped{w} = (a\mu\chi_+)^{-1}$ is not infinite at the start, and we may use the quasi-static approximation for $\chi$ and $q$ with $\breve{\chi}= \chi_+$. We used the analytical expression for $\varepsilon$ and $\dot{\varepsilon}$ to find suitable values at initial time. To get an idea of the impact of larger oscillations around minima, we attempted initialising at redshift $2.02$, where the walls were dangerously close to colliding, but were separated just enough. 
+% \speak{Between $\redshift=2.03$ and $\redshift=2.00$, about fifty million years has passed.}
 
 
 
 It was not until later that we decided to tweak the initial conditions to our advantage, and performed the analysis in~\cref{sec:PT:symm_dws:asymptotic}. Now we could initialise as close to phase transition as we wanted. The catch was now that maybe the surface tension was too different from what we used in~\cref{sec:pertwalls:mywalls}, so we spent some time adjusting the expression for $\sigma\ped{w}$ and studying the effect on $\varepsilon$. The result was that only when the fifth-force oscillations are exaggeratively large was there significant changes in $\varepsilon$. 
+
+
+
+Now, the plan was to run additional optimised simulations as explained in~\cref{app:stablesym:initialisation}, but the first experiments (including~\simnum{7}) did not show any change in the symmetron field. This was due to a bug in the new lines of \texttt{C++}-code that overwrote the initial conditions to the previous versions ($\chi_+$ and $q_+$). One of these,simulation~\simnum{7}, is presented amongst the results, as it is unique, while the rest was equivalent to other simulations and therefore discarded. 
+Due to shortage of time, no more simulations were run, with the exeption of the homogeneous one presented in~\cref{fig:results:achi:achi_no_wall}.
+
+
+
 
 
 If we were to do it all over again, it might make sense to set %

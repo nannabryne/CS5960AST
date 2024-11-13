@@ -36,14 +36,14 @@ We list a few key points about the simulated gravitational-wave results in gener
     \item Zero walls or unperturbed walls (simulation~\simnum{0}) produce no gravitational radiation.
     \item The predicted periodicity in $k_y$ (that $\Ft{h}_{xx}\rvert_{k_y\neq np} \to 0 $) agrees with simulations. %\iftime{Maybe provide some numbers?}
     \item There is decidedly a signature of the perturbation in some wave modes. The characteristics are similar to what the thin-wall limit predicts, but the resemblance varies a lot from mode to mode, and also in time.
-    \item Stronger scalar-field fluctuations correspond to noisier gravitational-wave modes. \comment{COMMENT!}
+    % \item Stronger scalar-field fluctuations correspond to noisier gravitational-wave modes. \comment{COMMENT!}
     \item Computing the magnitude of the gravitational waves analytically does not agree with corresponding simulative results. %\iftime{Somewhere report an estimate of the absolute difference in magnitude?}
     \item The unpredicted \emph{imaginary} parts of the simulated gravitational waves carry much more resemblance to analytically calculated, real ones, than their real counterparts.
 \end{itemize}
 
 
 \subsection{Gravitational radiation}\label{sec:results:h11:rho_gw}
-    We begin by having a look at the energy density of the gravitational waves, which is obtained through the spatial average conformal time derivative of the \emph{real space} tensor perturbations~\citep{kawasakiStudyGravitationalRadiation2011},
+    We begin by having a look at the energy density of the gravitational waves, which is obtained through the spatial average conformal time derivative of the \emph{real-space} tensor perturbations~\citep{kawasakiStudyGravitationalRadiation2011},
     % We begin by having a look at the average conformal time derivative of the \emph{real space} tensor perturbations,
     \begin{equation}\label{eq:results:h11:rho_gw}
         \rho\ped{gw} = \frac{1}{32\ppi G\nped{N}a^2(\tau)} \left\langle \dot{h}\^{ij}(\tau, \vec{x})\dot{h}\_{ij}(\tau, \vec{x}) \right\rangle_{\mathrm{box}} =  \frac{1}{32\ppi G\nped{N}a^2(\tau)} \frac{1}{N_\#^3} \sum_{\lcoord{i}\lcoord{j}\lcoord{k}} \sum_{ij} \bclosed{\dot{h}\_{ij}(\tau,\lcoord{x}_{\lcoord{i}, \lcoord{j}, \lcoord{k}} \Delta_\# )}^2.
@@ -52,7 +52,7 @@ We list a few key points about the simulated gravitational-wave results in gener
     \begin{figure}[ht]
         \centering
         \includegraphics[width=\linewidth]{Findings/avhijprimenorm.pdf}
-        \caption{The box-averaged gravitational wave radiation, normalised to the critical density today. Note the logarithmic $y$-axes.~\figpanel{Left panel}~$\rho\ped{gw}$ as function of $s=\tau/\tau_\ast$. \figpanel{Right panel}~$\rho\ped{gw}$ as function of $t_\omega = \omega(s-1)= p(\tau-\tau_\ast)$.}
+        \caption{The box-averaged gravitational-wave radiation, normalised to the critical density today. Note the logarithmic $y$-axes.~\figpanel{Left panel}~$\rho\ped{gw}$ as function of $s=\tau/\tau_\ast$. \figpanel{Right panel}~$\rho\ped{gw}$ as function of $t_\omega = \omega(s-1)= p(\tau-\tau_\ast)$.}
         \label{fig:results:h11:avhijprimenorm}
     \end{figure}
     %
@@ -186,7 +186,7 @@ We list a few key points about the simulated gravitational-wave results in gener
     % \end{figure}
     % % ------------------------------
     \Cref{fig:results:h11:hp_kspace} demonstrates this for a number of $\vec{k}$-modes in simulations~\simnum{1},~\simnum{3},~\simnum{7},~\simnum{2} and~\simnum{5}. The magnitudes are ignored in this analysis. There is a quite remarkable likeness between $\hpB$ (solid red lines) and $\hpCI$ (blue dashed lines). Comparison of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7} suggests that more prominent scalar-field fluctuations disturb the gravitational wave modes a little (blue graphs), and that $\hpB$ is sensitive to tiny deviations in $\epsB$ (red graphs). %
-    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time axes that the resonance in $t_\omega$-space lives on to some extent, backed by the right panel of~\cref{fig:results:h11:avhijprimenorm}. %
+    The initial size of the perturbation, $\epsast$, affects the temporal behaviour, as expected, and not just the scale parameter $p$. This is seen by comparing~\cref{fig:results:h11:hp_kspace_sim2,fig:results:h11:hp_kspace_sim5} to any of~\cref{fig:results:h11:hp_kspace_sim1,fig:results:h11:hp_kspace_sim3,fig:results:h11:hp_kspace_sim7}. We see from the secondary time-axes that the resonance in $t_\omega$-space lives on to some extent, backed by the right panel of~\cref{fig:results:h11:avhijprimenorm}. %
     % \speak{TO-DO: Make it clear that we normalise to unity.}
 
 
@@ -198,7 +198,7 @@ We list a few key points about the simulated gravitational-wave results in gener
 
 
     % SUMMARY STATISTICS
-    Studying each wave mode's evolution over time does not give as much physical insight as it is time-consuming. \footnote{There are potentially $N_\#^2/2 / m_{\lcoord{j}}$ different modes for each simulation.} %
+    Studying each wave mode's evolution over time does not give as much physical insight as it is time-consuming.\footnote{There are potentially $N_\#^2/2 / m_{\lcoord{j}}$ different modes for each simulation.} %
     % We show some of these in
     % Another way to compare the results is through a one-dimensional power spectrum:
     % \begin{equation}\label{eq:results:h11:1d_power_spec}
@@ -344,7 +344,7 @@ We list a few key points about the simulated gravitational-wave results in gener
     % \phpar[thoughts about the GW results]
     
     
-    \Cref{fig:results:h11:hp_kspace} shows that the perturbation parameters clearly manifest in the gravitational waves. The physical insight of analysing this mode by mode is maybe not too great, but the likeness indicates that there is a pattern to be found, at least. We would have to go further into technicalities regarding the lattice spin-2 operator to conclude anything about what causes $\hpCI\neq 0$. 
+    \Cref{fig:results:h11:hp_kspace} shows that the perturbation parameters clearly manifest in the gravitational waves. The physical insight of analysing this mode by mode is maybe not too great, but the likeness indicates that there is a pattern to be found, at least. We would have to go further into technicalities regarding the lattice spin-2 projector to conclude anything about what causes $\hpCI\neq 0$ (see~\cref{app:misc:CFT_DFT}). 
     \Cref{fig:results:h11:avhijprimenorm} agrees that there is a predictable relationship between the wall perturbation in its simplest form ($\varepsilon \sin{py}$) and gravitational radiation. 
 
     % It is challenging to gain physical intuition from~\cref{fig:results:h11:hij_powerspecs}. \blahblah

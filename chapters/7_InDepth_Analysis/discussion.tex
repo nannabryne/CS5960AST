@@ -1,0 +1,215 @@
+% ||||||||||||||||||||||||||||||||||||
+% |||||| 7.1 General discussion ||||||
+% ||||||||||||||||||||||||||||||||||||
+
+
+
+% -----------------------------------------------
+% labels: \label{[type]:whatif:discussion:[name]}
+% -----------------------------------------------
+
+
+
+We are able to create model scenarios with \asgrd{} that lets us test the validity of the thin-wall approximation. The quasi-static approximation with naive boundary conditions ($\breve{\chi}=\chi_+$) is used as to configure the initial symmetron state, which can affect the comparison. %
+Besides this, there are three main reasons why we do not expect a perfect match between $\epsA$ and $\epsB$:
+\begin{description}
+    %
+    \item[Wall thickness:] The wall is thin compared to other dimensions of the problem throughout the entire evolution. In particular, $\max{(\delta\ped{w})}=\delta_\infty  {(a\ped{i}\breve{\chi}\ped{i})}^{-1} \approx 25~\Mpch \ll L_\#$ for the majority of the simulations (see~\cref{tab:PT:sims:sim_setups}). However, the wall thickness is comparable to the perturbation amplitude in the very beginning and this might affect the wall motion.
+    %
+    \item[Perturbation amplitude:] We choose initial perturbation strengths $\epsast\in[0.12, 0.24]\wallsep$, where the wall separation is $\wallsep=L_\#/2$. If we let $\wallsep$ be the linear-perturbation length scale, then ${(\epsast/\wallsep)}^2 \to 0$, which is not the case. 
+    In other words, we are pushing the limits of the linear perturbation theory. %
+    Still, between simulations~\simnum{1},~\simnum{3}--\simnum{5} and~\simnum{7} we have $\abs*{\varepsilon} < 0.06 \wallsep$ for $t_\omega>2.3$, following~\cref{fig:results:epsilon:eps_diff_sims_combi}, so second order terms are small after this (${(\varepsilon/\wallsep)}^2< 4$\textperthousand).
+    %
+    \item[Spatial resolution:] We expect discrepancies due to the discreteness of the lattice. The absolute wall displacement field is below 3\% of the box length for the majority of the evolution. For example in simulation~\simnum{1}, this corresponds to only about 23 lattice points. 
+    Another thing to have in mind is that to get $\epsC$, we extract the $z$-coordinate with the smallest absolute value of $\chi$, which in principle can be a range of coordinates.
+\end{description}
+The first two arguments are most prominent in the initial evolution. %, whereas the third point is
+% These effects are not large enough to 
+% We should also mension
+
+
+
+
+
+
+% the entire evolution of the symmetron field, 
+% and we used the naive boundary conditions ($\breve{\chi}=\chi_+$) on this.
+
+
+% % The a-priori expectation was not to get a perfect match between $\epsA$ and $\epsC$, as the wall thickness is $\delta\ped{w}(\tau\ped{i})=\delta_\infty  {(a\ped{i}\breve{\chi}\ped{i})}^{-1} \approx 25~\Mpch$ for the majority of the simulations (see~\cref{tab:PT:sims:sim_setups}), and because 
+
+% We choose initial perturbation strengths $\epsast\in[0.12, 0.24]\wallsep$, where the wall separation $\wallsep=L_\#/2$ in truth would be the optimal length scale to which we constrain first-order perturbations. Simulation~\simnum{2} with $\epsast=0.24 \wallsep$ seems to be an outlier in~\cref{fig:results:epsilon:eps_diff_sims_combi}. 
+% In other words, we are pushing the limits of the linear perturbation theory. %
+% Still, between simulations ~\simnum{1},~\simnum{3}--\simnum{5} and~\simnum{7} we have $\abs*{\varepsilon\rvert_{t_\omega >  2.3}} < 0.06 \wallsep$, following~\cref{fig:results:epsilon:eps_diff_sims_combi}, so second order terms are small after this (${(\varepsilon/\wallsep)}^2< 4$\textperthousand). Simulation~\simnum{2} with $\epsast=0.24 \wallsep$ seems to be an outlier in~\cref{fig:results:epsilon:eps_diff_sims_combi}.
+% the motion is quickly reduced to $\abs*{\varepsilon\rvert_{t_\omega >  2.3}} < 0.04 \wallsep$, 
+% where we have ${(\varepsilon/\wallsep)}^2< 2$\textperthousand. 
+% For simulations~\simnum{1},~\simnum{2}, and~\simnum{7}, this is $\lesssim 15 \Delta_\#$, so much smaller initial 
+
+
+
+
+% We presented results from co
+Simulations give substance to the derived equation of motion for a linear perturbation to the planar-wall normal coordinate,~\cref{eq:pertwalls:mywalls:eom_final}, in a matter-dominated, conformally flat spacetime. The difference between the analytical and numerical solution to this is insignificant. The anomaly between the Nambu--Goto and full field-theoretical results is more or less consistent in-between simulations, which speaks against any numerical explanations.
+
+
+The toy-model simulations give tensor perturbations $\hpC= \hpCR+ \im \, \hpCI $ roughly comparable to the Nambu--Goto prediction with the simulated wall position as input, $\hpB\in \Real$. The Nambu--Goto ``naive'' prediction $\hpA\in \Real$ is generally worse than $\hpB$, and the resemblance is most prominent between $\hpB$ and $\hpCI$.
+
+
+
+With more time, we could have developed the expression for $\dot{\Ft{h}}_+$ more so that we might have obtained an analytical approximation for $\rho\ped{gw}(\tau)$ in the thin-wall limit to compare with~\cref{fig:results:h11:avhijprimenorm}. We elaborate on this in~\cref{sec:whatif:cont}.
+
+
+Systematic convergence-testing would give more reliability to our results. Such an analysis is not covered in this thesis. Together with similar analyses~\citep{christiansenAsimulationDomainFormation2024,christiansenAsevolutionRelativisticNbody2023}, trial-and-error is how we set the numerical parameters on the simulations. 
+
+
+
+
+
+
+
+% We are able to create model scenarios with \asgrd{} that lets us test the validity of the thin-wall approximation. The a-priori expectation was not to get a perfect match between $\epsA$ and $\epsC$. We choose initial perturbation strengths $\epsast\in[0.12, 0.24]\wallsep$, where the wall separation $\wallsep=L_\#/2$ in truth would be the optimal length scale to which we constrain first-order perturbations. 
+% In other words, we are pushing the limits of the linear perturbation theory. %
+% Still, the motion is quickly reduced to $\abs*{\varepsilon\rvert_{t_\omega >  2.3}} < 0.04 \wallsep$, where we have ${(\varepsilon/\wallsep)}^2< 2$\textperthousand. 
+
+
+
+
+% % We presented results from co
+% Simulations give substance to the proposed equation of motion for a linear perturbation to the planar wall normal coordinate,~\cref{eq:pertwalls:mywalls:eom_final}, in a matter-dominated, conformally flat spacetime. The difference between the analytical and numerical solution to this is insignificant. The anomaly between the Nambu--Goto and full field-theoretical results is more or less consistent in-between simulations, which speaks against any numerical explanations.
+
+
+% The toy-model simulations give tensor perturbations $\hpC= \hpCR+ \im \, \hpCI $ conceptually comparable to the Nambu--Goto prediction with the simulated wall position as input, $\hpB\in \Real$. The Nambu--Goto ``naive'' prediction $\hpA\in \Real$ is generally worse than $\hpB$, and the resemblance is most prominent between $\hpB$ and $\hpCI$.
+
+
+
+% With more time, we could have massaged the expression for $\dot{\Ft{h}}_+$ more so that we might have obtained an analytical approximation for $\rho\ped{gw}(\tau)$ in the thin-wall limit to compare with~\cref{fig:results:h11:avhijprimenorm}. We elaborate on this in~\cref{sec:whatif:cont}.
+
+
+% Systematic convergence-testing would give more reliability to our results. Such an analysis is not covered in this already quite long thesis. Together with similar analyses~\citep{christiansenAsimulationDomainFormation2024,christiansenAsevolutionRelativisticNbody2023}, trial-and-error is how we set the numerical parameters on the simulations. %The choice to stick with one single value of e.g.~$N_\phi=4$ throughout all simulations (see~\cref{tab:PT:sims:sim_setups}), is deliberate, so 
+% % \blahblah
+% % and in allowing this to vary, we would have risked 
+
+% % A systematic convergence test for the
+
+
+% % The bump \blahblah
+
+
+% % \subsection{Open questions}
+% %     % \iftime{Write or remove}
+
+
+% %     \paragraph{Is the surface tension important?} %
+% %     We have seen that time-varying surface tension of domain walls complicates the thin-wall dynamics. The defect formation process is quite quick, in the sense that the system asserts a quasi-static state after a short non-equilibrium phase. The expression we used for the time-varying surface tension in the symmetron model, when inserted into the equation of motion for the wall perturbation, captures the main properties of the damped harmonic oscillatory movement seen in simulations. We established that the discrepancies are not likely due to \blahblah \comment{no, there was no time \dots}
+
+
+% %     \paragraph{Is there a pure analytic expression for the gravitational waves?} %
+% %     It is hard to imagine there exists a pure analytical formula for gravitational waves in the thin-wall limit in our setup (\cref{eq:PT:gwas:mywaves_complete_formula}), at least for time-dependent surface tension. Perhaps an asymptotic analysis, in which $k\tau \gg 1$ such that~the Riccati--Bessel functions would reduce to simple trigonometric functions, could simplify the integrals and \blahblah
+    
+% %     %We could imagine that the \blahblah \iftime{Discussion.}
+% %     % \subparagraph{Flat space.} %
+% %     %     The equations are less complicated in Minkowski spacetime, both for the wall motion and tensor perturbations to the metric.
+
+% %     \paragraph{What is the effect of an energy bias?} %
+% %     We have seen that small variations in the asymptotic scalar field 
+% %     % \iftime{Discussion.}
+
+
+% %     \paragraph{What parameters are important?} %
+% %     \dots 
+
+
+
+%     % \subsection{Flat-space analogy}
+%     %     Let us review the corresponding scenario in flat spacetime with constant surface tension. The equation of motion for the perturbation to the wall normal coordinate is the simple wave equation $\partial_t^2 \epsilon = (\partial_x^2 + \partial_y^2) \epsilon$. \iftime{Discussion.}
+
+%     % Discussion:
+%     % \begin{description}
+%     %     \item[Asymptotic symmetron field:] In the absence of topological defects, we see near on perfect correspondence between predicted and simulated scalar field $\breve{\chi}$. Presence of walls messes with the maximum field value, due to the ``bump'' in the profile, but we see from the average squared field value that the overall oscillations are very close to what we expect.
+%     %     \item[Equation for wall perturbation:] Minimising oscillations does not seem to affect the wall evolution particularly. This can be seen by comparing simulations \simnum{1}, \simnum{3}, \simnum{4} and \simnum{7} which all have the same relative initial amplitude, but different levels of oscillations. However, changing the \emph{curvature} of the wall, seems to change the overall behaviour of the wall. In particular, increasing the parameter $\Upsilon^{\AC}_\ast$ from 16 to 18 (sim. \simnum{3}) or 24 (sim. \simnum{5}). We use this as a naive quantification of the badness of the eom for $\epsilon$; the larger amplitude, the more likely we are to see higher-order effects, and the larger wavenumber, the farther we are from the wall normal coordinate $n\^\mu=\deltaup\^{\mu z}$. I suppose it is also fair to assume some inter-kink forces or perhaps intra-kink forces could contribute to the equation of motion. It would have been interesting to solve the actual eom for the wall normal coordinate and see if we could come closer to the simulated result.
+%     %     \item[Behaviour of tensor perturbation:] One clearly sees characteristics in some tensor modes that definitely has to do with the wall perturbation. However, the correspondence is not obvious in for all modes, the real component and \blahblah
+%     % \end{description}
+
+
+
+% % \subsection{Continued assessment}\label{sec:whatif:discussion:cont_verification}
+% %     % We could \comment{brute force}
+
+% %     % Another, perhaps more insightful, method is to obtain an approximate expression for $\rho\ped{gw}$ with~\cref{eq:pertwalls:gws:Hdot_P_12}. Such an expression may exist through asymptotic evaluations and \blahblah, if~\citep{maggioreGravitationalWavesVol2018}
+
+
+% %     \subsubsection{Inter-wall force}
+% %     \Citet{vachaspatiKinksDomainWalls2006} gives a rough estimate of the force between a kink and an antikink. A possible way forward could involve such estimates for our setups, and see if this relates the distance $\abs{z\ped{w}(\tau,y) - \widebar{z}\ped{w}}$ to the resulting $\epsB[\epsilon](\tau, y)$ in any way. 
+
+
+% %     \subsubsection{Gravitational waves}
+% %     % The gravitational-wave energy density is given by~\citep{maggioreGravitationalWavesVol2018}
+% %     % \begin{equation}
+% %     %     \rho\ped{gw}(\tau) = \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{ \pclosed{\dot{\ah}_P - \mathcal{H}\ah_P }^2(\tau, \vec{x}) }
+% %     % \end{equation}
+% %     % For sub-horizon modes
+% %     % \begin{equation}
+% %     %     \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \sum_{P=+,\times}\avg{\dot{\ah}^2(\tau, \vec{x}) }.
+% %     % \end{equation}
+% %     % The spatial average~\citep{dufauxTheoryNumericsGravitational2007}
+% %     % % ($\avg{\eu[\im (\vec{k}-\vec{k}')\cdot \vec{x}]}$)
+% %     % \begin{equation}
+% %     %     \frac{1}{V} \integ[3]{x}[V\gg \lambdabar^3] \eu[\im (\vec{k}-\vec{k})\cdot \vec{x} ] = \frac{(2\ppi)^3}{V} \Diracdelta[3](\vec{k}-\vec{k}')
+% %     % \end{equation}
+% %     % where $\lambdabar \sim 1/k, 1/k'$, %
+% %     % we obtain
+% %     % \begin{equation}
+% %     %     \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \frac{1}{V} \sum_{P=+,\times} \integ[3][(2\ppi)^3]{k} \abs{\dot{\Ft{\ah}}(\tau, \vec{k})}^2.
+% %     % \end{equation}
+% %     We consider the energy density of gravitational waves in an FLRW universe given in~\cref{eq:GR:gws:rho_gw_final}. 
+% %     One way to use this is to discretise the integration; $\diff k \to k_\#$, and loop through all possible modes $\lcoordk$. Agnostically, this involves solving two integrals numerically $N_\#^3$ times for each $\tau$. This brute-force experiment is computationally very inefficient, and it would be much more insightful to find an approximate expression for $\rho\ped{gw}$ that is analytical, or at least with only fewer computation steps. %
+% %     Such an expression may exist through asymptotic evaluations of Bessel functions, among other things. Not only would this offer an efficient verification strategy, but would also help put this framework into the context of actual gravitational-wave observations.
+
+% %     \paragraph{In-depth gravitational-wave analysis.} %
+% %     An interesting analysis would be to systematically change various parameters in the source $\Ft{\pi}_+$ and see what effect this has on the resulting tensor perturbations. From what we gather, it appears that in letting $\sigma\ped{w}$ and/or $\delta\ped{w}$ be defined from oscillating asymptotic fields $\pm \breve{\chi}$ instead of $\chi_\pm$, $\Ft{h}_+$ becomes noisier, i.e. with small oscillations around the original result. Changing $\varepsilon$ seems to shift the phase of the oscillations. This analysis is far from thorough, which is why we do not present it as a result. To get actual insights, the analysis is huge as $\Ft{h}_+$ depends on time and a two-dimensional wave vector, and a bunch of other parameters. This is another reason for further attempts as summary statistics that would reduce the dimensionality of the problem drastically. 
+
+
+
+% %     \paragraph{Dimensional analysis.} %
+% %     It might be possible to perform an asymptotic analysis of~\cref{eq:PT:gwas:mywaves_complete_formula} to estimate the strain in terms of $\epsast$ (and possibly also $p$). With~\cref{fig:intro:GWplotter} (and others, of course) one could find a lower limit to $\epsast$ for the produced waves to be detectable. Now, if this limit exceeds the linearity constraint, one would have to reconsider the motivation for further gravitational-wave analyses from linear perturbations.
+
+
+
+% %     \subsubsection{Supplementary experiments}
+
+
+
+% %     % \begin{bullets}
+% %     %     \item Better spatial resolution
+% %     %     \item Look at already-formed walls, i.e. drop the formation (see if it matters for the GWs) (time-dep. tension complicates things)
+% %     % \end{bullets}
+
+
+% %     It was indeed very unfortunate that the simulations that were supposed to be updated with optimised initial conditions (cf.~simulation \simnum{7}), were run with a bug that was not detected soon enough. With extended time (and computer) resources, we would have run simulations as described in~\cref{sec:results:hindsight}, preferably with better spatial resolution. Below we describe possible analyses that could come from such fine-grained toy-model experiments.
+% %     \begin{itemize}
+% %         \item Actually resolving the Compton wavelength $L\nped{C}$ might have shed some light on the contribution from the symmetron field itself to the gravitational radiation. On the other hand, gravitational waves from scalar field fluctuations are expected to peak around the frequency corresponding to $L\nped{C}^{-1}$~\citep{kawasakiStudyGravitationalRadiation2011}, which is necessarily larger than the Nyquist frequency if $\Delta_\# > 2L\nped{C}$. Thus, this contribution should not be relevant for the scales we have been discussing.
+% %         \item Our attempt to decrease the width of the wall (simulation~\simnum{6}) was not particularly successful. Quantities like $\avg*{q^2}$ diverges at approximately $\tau={\tau\ped{i}+L_\#/2}$, as shown in~\cref{fig:misc:sim6:sim6_err}. This corresponds to the time when massless particles at initially at the middle wall, propagating in the $z$-direction, would reach the opposite wall. 
+% %         Had we done it again, we would have run the same simulation with better spatial resolution. This could have given insight to the dependence on the wall width in the wall evolution and in turn the gravitational waves.
+% %         \item Better spatial resolution would allow for smaller initial perturbation amplitude, and thereby help us understand if the discrepancy between the thin-wall approximation and the full theory is due to the perturbation being too large.
+% %         % \item We could have run
+% %     \end{itemize}
+% %     There are several other simulation designs that might help isolate important artefacts from the not-so important features. We list a few of these ideas.
+% %     \begin{itemize}
+% %         \item We could look at already-formed walls for which $\breve{\chi}\simeq 1$ and  $\sigma \simeq \sigma_\infty$ to see if and how the time-dependence of the surface tension affects the wall displacement field and metric tensor perturbations. Constant surface tension allows cleaner expressions and model-independence. 
+% %         \item If we change the ``nature'' of the wall perturbation from a sine to a cosine, this might help in understanding the unpredicted imaginary component of the gravitational waves discussed in~\cref{sec:results:h11:comparison}. This we actually did, but did not prioritise saving and presenting these results. The reader may take my word for it, that the trend was alternating real and imaginary modes, arranged oppositely from the Jacobi--Anger expansion (see~\cref{app:walls:SE_tensor_alt:cos}). This is what we would expect. % \speak{Maybe this is better placed in~\cref{sec:results:h11:comparison}?}
+% %         \item If we had written the code to also output the Fourier-space SE tensor, we could have compared simulative results to purely analytical expressions. This would make debugging much simpler, and it could help us understand the difference magnitude, among other things. The memory-efficiency of~\gevolution{} comes at the expense of simplicity and perhaps flexibility, and it is not a completely straight-forward task to make this happen.
+% %         \item Testing different amplitudes $\epsast$ and scales $p$ would give insight to the discussion about the validity of the thin-wall approximation. We saw that $\epsA$ becomes the same function when plotted over $t_\omega$ and divided by $\epsast$, and that this did not hold for $\epsB$. For example, if we perform simulation~\simnum{3} with $\epsast=0.06L_\#$, we would have gotten one of three possible results, if put in context with~\cref{fig:results:epsilon:eps_diff_sims_combi}, which could help reduce the number of possible explanations: %
+% %         \begin{enumerate}
+% %             \item Overlap with simulation~\simnum{3} (and naturally also~\simnum{1},~\simnum{4} and~\simnum{7}). This might be an indication that the simulation setups in~\simnum{2} and~\simnum{5} are not valid either due to bad spatial resolution, self-interactions or interactions with the opposite wall.
+% %             \item $\Delta \varepsilon$ smaller than for simulation~\simnum{3}, but follows a similar pattern. In this scenario, one can interpret discrepancy to be related to inter-kink forces unaccounted for in the thin-wall approximation.
+% %             \item $\Delta \varepsilon$ larger than for, or otherwise different from, simulation~\simnum{3}. This would be unfortunate and unpredicted.
+% %         \end{enumerate}
+% %         % \item Finally, a measure of applicability
+% %     \end{itemize}
+
+
+
+% %     \subsubsection{Flat-space analogy}
+
+
+

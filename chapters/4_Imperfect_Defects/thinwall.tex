@@ -13,8 +13,8 @@
 
 So far, we have addressed the very general Nambu--Goto picture. %
 % From here, we specify defects to be $(2+1)$-dimensional i in $(3+1)$
-From here, we turn our attention to $(2+1)$-dimensional topological defects living in $(3+1)$-dimensional spacetime, i.e.~domain walls. Let $v=v_+-v_- =0$. %
-We describe the wall position in $\Manifold$ with $x\^\mu = X\^\mu(\xi\^a)$ where $\mu=0,1,2,3$ and $a=0,1,2$., and impose coordinates that satisfy
+From here, we turn our attention to $(2+1)$-dimensional submanifolds living in $(3+1)$-dimensional spacetime, i.e.~domain walls. Let $v=v_+-v_- =0$. %
+We describe the wall position in $\Manifold$ with $x\^\mu = X\^\mu(\xi\^a)$ where $\mu=0,1,2,3$ and $a=0,1,2$, and impose coordinates that satisfy
 \begin{equation}
     {ds}^2 =  {\diff Y}^2  + \gamma\_{ab} {\diff \xi\^a}{\diff \xi\^b},
 \end{equation}
@@ -80,9 +80,9 @@ This is a separable partial differential equation (PDE) and we assume solutions 
 \begin{align}\label{eq:pertwalls:thinwall:varepsilon_and_E_eoms}
     \ddot{\varepsilon} + \mathcal{D}(\tau) \dot{\varepsilon} + p^2 \varepsilon = 0 \quad\text{and}\quad  \sppt_{,xx} + \sppt_{,yy} + p^2 \sppt = 0,
 \end{align}
-where $\mathcal{D}(\tau) = \mathcal{H}(\tau)$. %
+where $\mathcal{D}(\tau) = 3\mathcal{H}(\tau)$. %
 The spatial part has solutions that are linear combinations of $\sin{(p_x x+p_y y)}$ and $\cos{(p_x x+p_y y)}$, with $p_x^2+p_y^2 = p^2$. %
-The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindrical[\nu](p\tau)$ with $ \nu=(1-3\alpha)/2$ (see~\cref{app:cylinder},~\cref{eq:cylinder:Bessel_eq_abc}).
+The solutions to this equation are of the form $\varepsilon = {(p\tau)}^\nu \Cylindrical[\nu](p\tau)$ with $ \nu=(1-3\alpha)/2$ (see~\cref{app:cylinder},~\cref{eq:cylinder:Bessel_eq_abc}).
 
 
 % \hlineSep
@@ -204,7 +204,7 @@ The solutions to this equation are of the form $\varepsilon = \tau^\nu \Cylindri
 \subsubsection{Energy and momentum} %
 
 % \paragraph{Non-vanishing thickness.} % 
-To some extent, we can account for a possibly non-vanishing wall half-width $l\sim\delta$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
+To some extent, we can account for a possibly non-vanishing thickness $l\sim\delta$ by choosing a Gaussian function instead of a Dirac delta distribution. Simply substituting
 \begin{equation}
     \Diracdelta(r) \to   \varPhi_l (r) \equiv\frac{1}{\sqrt{2\ppi}l} \exp{ -\frac{r^2}{2l^2} }
 \end{equation}
@@ -221,9 +221,9 @@ The non-vanishing spatial components are
 \begin{equation}\label{eq:pertwalls:thinwall:SE_tensor}
     \begin{split}
         % T\_{ab}(\tau, \vec{x})
-        \Tw\_{AB}&=  -a \sigma\ped{w} \varPhi_l(z-z\ped{w}) \cdot \Krondelta{_{AB}} ,\\
+        \Tw\_{AB}&=  -a \sigma \varPhi_l(z-z\ped{w}) \cdot \Krondelta{_{AB}} ,\\
         % T\_{(i3)}(\tau, \vec{x})
-        \Tw\_{(A3)}&= -a \sigma\ped{w}\varPhi_l(z-z\ped{w} ) \cdot\epsilon\_{,A}, %\partial\_{i} \epsilon
+        \Tw\_{(A3)}&= -a \sigma\varPhi_l(z-z\ped{w} ) \cdot\epsilon\_{,A}, %\partial\_{i} \epsilon
     \end{split}
 \end{equation}
 where indices $A,B=1,2$ and $z\ped{w}=z_0 + \epsilon$. The tensor $\Tw\^{\mu\nu}$ refers to the stress--energy tensor associated with a particular domain wall by~\cref{eq:pertwalls:eom_wall:SE_tensor_NG}.
