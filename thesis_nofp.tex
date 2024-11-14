@@ -1,0 +1,403 @@
+\documentclass[UKenglish]{texmex/uiomasterthesis}
+
+\usepackage{import}
+\usepackage{texmex/overhead}
+
+% \addbibresource{refs.bib}
+
+
+% Writing tools (remove before submission):
+% \import{texmex/}{writingtools.sty}
+
+% \input{texmex/writingtools.tex}
+
+% \title{Gravitational Waves from Topological Defects} 
+% \title{Spacetime Ripples from Domain-Wall Wiggles} 
+% \title{If Domain Walls Could Talk}
+% \subtitle{Gravitational Waves from Topological Defects from Late-Time First-Order Phase Transitions} 
+% \subtitle{On the analytical prediction of the gravitational-wave signature from perturbed topological defects in expanding spacetime}
+% \subtitle{Analytically searching for gravitational-wave signature from perturbed topological defects in expanding spacetime}
+% \subtitle{Gravitational waves from topological defects}
+% \subtitle{They would say ...} 
+% \author{Nanna Bryne}                    
+
+\begin{document}
+
+% \bibliographystyle{plain}
+
+
+%%%%%%%%%%%%%%% FRONT PAGE %%%%%%%%%%%%%%%
+
+% \uiomasterfp[
+%     dept={Institute of Theoretical Astrophysics\and Department of Physics},
+%     program={CS:~Astrophysics}, 
+%     supervisor={David Fonseca Mota}, % or supervisors={A Name\and B Name},  
+%     color={blue},
+%     fgimage={starry-night.png},
+%     long] 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%
+
+\frontmatter{}
+\begin{abstract}
+    \import{./}{abstract.tex}
+\end{abstract}
+
+
+\tableofcontents{}
+\listoffigures{}     
+\listoftables{}       
+
+% \part*{Prologue}
+% \begin{preface}
+%     Here comes your preface, including acknowledgements and thanks.
+
+
+%     \section*{Acknowledgments}
+
+
+%     % I would like to give thanks to all my friends and family.
+
+%     % To my mother and father, I am especially grateful. 
+%     % \comment{Thank m+p; Lars, the coffee maker; stjerne20 and -22; computer resources}
+% \end{preface}
+
+\begin{thanks}
+    I would like to give thanks to my extraordinary group of supervisors, David Mota, Øyvind Christiansen, Farbod Hassani and Julian Adamek, for guidance and support. I am grateful to the cosmology group at the Institute for Theoretical Astrophysics (ITA) for helpful discussion. Special thanks to ITA's own Morsal Saba, for being the person everyone can go to about anything.
+
+    This would not have been possible without the love, support and food from my generous family. Special thanks to my dear father for always believing in me, and to my loving mother for her help and guidence. 
+    And to all the roommates I have had during these years, I am thankful for your patience with me. % generosity
+
+    % % My study mates Johan, Vetle and Anna has 
+    % % To my study mates Johan, Anna and Vetle, I want to say thank you as well. Carl Martin 
+
+    % Thanks to quiz masters Lars Vegheim (\textit{Aftenposte}n), Gabriel Quizlas (\textit{Universitas}) and XY (\textit{Morgenbladet}) for bringing weekly entertainment to our lunch breaks
+
+
+    Words cannot express my gratitude to my study mates for our friendship and sense of community. 
+    % I will not mention you all by name, as 
+    
+    %Without our friendship, this endeavour would not have been 
+    % To all my study mates: words cannot express my gratitude for our friendship.
+
+    % \speak{FIXME}
+
+
+    Lars the Loyal Coffee Maker---who has never failed me---deserves my gratitude as well. I guess a thank you also to \textit{Ringnes AS} is in order. Lastly, I would like to recognise the radio channel \textit{NRK Nyheter} for consistently reminding me that the world is bigger than this Master's thesis.
+    %
+
+\end{thanks}
+
+
+
+% NOMENCLATURE etc
+\begin{nomen}
+    \import{chapters/0_Notation/}{notation.tex}
+\end{nomen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%% MAIN MATTER %%%%%%%%%%%%%%%
+
+\mainmatter{}
+
+% >>> 
+
+% \part*{}%
+
+% \chapter*{(chapter) Title Case}
+% Lorem ipsum\dots
+% \section*{(section) Sentence case}
+% Lorem ipsum\dots
+% \subsection*{(subsection) Sentence case}
+% Lorem ipsum\dots
+
+% \paragraph*{(paragraph) Sentence case with punctuation.} %
+% Lorem ipsum\dots
+
+% Below, we describe some phenomena or whatever.
+% \begin{description}
+%     \item[Gravitational waves] are called that or GWs, tensor perturbations, \dots pdsfovnsoz avoszjasvo aoc awvn anvo pewnfvao noav
+%     \item[Stress--energy tensor] is called that or SE tensor(?) \comment{OBS: Hilbert SE tensor = HSE tensor?}.
+%     \item[Domain walls] are called that or walls, \underline{never} DWs.
+%     \item[General relativity] is called that or GR, Einstein's theory of gravity.
+%     \item[Einstein field equation(s)] are called that or EFE(s).
+%     \item[Equation(s) of motion] are called that or eom(s).  
+% \end{description}
+
+
+
+
+
+
+
+% INTRODUCTION
+\chapter{Introduction}\label{chap:intro}
+    \import{chapters/1_Introduction/}{intro.tex}
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > BACKGROUND (math+context)
+% ______________________________________________________________________________
+
+
+
+% >>> THEORETICAL BACKGROUND
+
+\part{Background}\label{part:bckg}
+
+
+% GR
+\chapter{General Relativity}\label{chap:GR}
+    {\import{chapters/2_General_Relativity/}{GR.tex}}
+
+% DWs
+%Kinks in Cosmology
+\chapter{Symmetry-Breaking Dark Energy}\label{chap:cosmo}
+    {\import{chapters/3_Symmetry_Breaking_Dark_Energy/}{cosmo.tex}}
+
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+
+
+
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > METHOD (calculations+context+equations+assumptions)
+% ______________________________________________________________________________
+
+
+% >>> THE PROJECT
+
+\part{Methodology}\label{part:method}
+
+
+
+
+% ANALYTICAL CALCULATIONS
+\chapter{Imperfect Defects}\label{chap:pertwalls}
+    {\import{chapters/4_Imperfect_Defects/}{pertwalls.tex}}
+
+
+% Get simulation typesetting
+{\import{texmex/}{simulation_typeset.tex}
+
+
+% COMPUTATIONAL CALCULATIONS
+\chapter{Cosmic Phase Transitions}\label{chap:PT}
+    {\import{chapters/5_Cosmic_Phase_Transition/}{PT.tex}}
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø 
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+% > FINDINGS (results+analysis+discussion+conclusion)
+% ______________________________________________________________________________
+
+
+\part{Findings}\label{part:findings}
+
+
+
+% \chapter{\tmptitle{Toy Model Trials}}\label{chap:results}
+\chapter{Pilot Testing}\label{chap:results}
+    {\import{chapters/6_Toy_Model_Trials/}{results.tex}}
+
+
+% \chapter{\tmptitle{Ifs, buts and maybes}}
+\chapter{In-Depth Analysis}\label{chap:whatif}
+% \chapter{Complete Evaluation}\label{chap:whatif}
+    {\import{chapters/7_InDepth_Analysis/}{whatif.tex}}
+
+
+
+
+
+% >>> 
+
+
+\part*{Summary} % Epilogue?
+
+% CONCLUSION
+
+\chapter{Conclusion and Outlook}\label{chap:finalchap}
+    {\import{chapters/8_Conclusion_and_Outlook/}{finalchap.tex}}
+
+% øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+
+
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%% BACK MATTER %%%%%%%%%%%%%%%
+
+\backmatter{}
+
+
+
+
+\bibliography{refs}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\part*{Appendices}
+
+\appendix
+
+
+
+% >> Bessel functions
+\chapter{Cylinder Functions}\label{app:cylinder}
+    {\import{appendices/A_Cylinder_Functions/}{cylinder.tex}}
+
+
+{\import{texmex/}{simulation_typeset.tex}
+% >> Stable-symmetron calculations
+\chapter{Stable Symmetron}\label{app:stablesym}
+    {\import{appendices/B_Stable_Symmetron/}{stablesym.tex}}
+
+% >> Collection of DW calculations
+\chapter{Symmetron Walls in Expanding Spacetime}\label{app:walls}
+    {\import{appendices/DW_TMP/}{walls.tex}}
+
+
+\chapter{Miscellanea}\label{app:misc}
+    {\import{appendices/D_Miscellanea/}{misc.tex}}
+}
+% \chapter{Derivations}\label{app:derivations}
+    % {\import{appendices/Derivations_tmp/}{derivations.tex}}
+
+
+
+
+
+    
+% \chapter{I do not have an appendix}
+
+
+% \chapter*{Old drafts}
+%     {\import{appendices/}{oldtexts.tex}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% |||||||||||||||||||||||||||||||||||||||||||||||| 
+
+% \chapter*{My commands}
+
+% \important{This section is so that my commands are saved in the cache.} 
+
+% \hl{Delete before submission!}
+
+% \begin{bullets}
+%     \item \dots
+%     \item bullet points
+% \end{bullets}
+
+% \nc{need citation}
+
+% \checkthis{check this}
+
+% \rephrase{rephrase}
+
+% \cringe{awkward wording}
+
+% \comment{comment}
+
+% \phpar[\dots]
+
+% \noindent
+% \begin{tabular*}{\linewidth}{ r l }
+%     \toprule    
+% \end{tabular*}
+
+% \Group{SO}{3} is a group 
+
+% \textsf{SO(3)} is a group \nc
+
+% $\Group{SO}{3}$ is a group
+
+% The order \BigO{1} is large
+
+% The order $\BigO{1}$ is large
+
+
+
+% The Planck unit \Planck{M}
+
+% \begin{draft}
+%     \dots
+% \end{draft}
+
+% \begin{align}
+%     \pclosed{\dots}\,  \bclosed{\dots}\,  \cclosed{\dots} \\
+%     \integ{x} f 
+% \end{align}
+
+
+
+
+
+
+% % |||||||||||||||||||||||||||||||||||||||||||||||| 
+
+
+% % \end{document}
