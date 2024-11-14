@@ -11,10 +11,10 @@
 
 
 We are able to create model scenarios with \asgrd{} that lets us test the validity of the thin-wall approximation. The quasi-static approximation with naive boundary conditions ($\breve{\chi}=\chi_+$) is used as to configure the initial symmetron state, which can affect the comparison. %
-Besides this, there are three main reasons why we do not expect a perfect match between $\epsA$ and $\epsB$:
+Besides this inherent approximation, there are three main reasons why we do not expect a perfect match between $\epsA$ and $\epsB$:
 \begin{description}
     %
-    \item[Wall thickness:] The wall is thin compared to other dimensions of the problem throughout the entire evolution. In particular, $\max{(\delta\ped{w})}=\delta_\infty  {(a\ped{i}\breve{\chi}\ped{i})}^{-1} \approx 25~\Mpch \ll L_\#$ for the majority of the simulations (see~\cref{tab:PT:sims:sim_setups}). However, the wall thickness is comparable to the perturbation amplitude in the very beginning and this might affect the wall motion.
+    \item[Wall thickness:] The wall is thin compared to other dimensions of the problem throughout the entire evolution. In particular, $\max{(\delta\ped{w})}=\delta_\infty  {(a\ped{i}\breve{\chi}\ped{i})}^{-1} \approx 25~\Mpch \ll L_\#$ for the majority of the simulations (see~\cref{tab:PT:sims:sim_setups}). However, the wall thickness is comparable to the perturbation amplitude in the very beginning of the simulations and this might affect the wall motion.
     %
     \item[Perturbation amplitude:] We choose initial perturbation strengths $\epsast\in[0.12, 0.24]\wallsep$, where the wall separation is $\wallsep=L_\#/2$. If we let $\wallsep$ be the linear-perturbation length scale, then ${(\epsast/\wallsep)}^2 \to 0$, which is not the case. 
     In other words, we are pushing the limits of the linear perturbation theory. %

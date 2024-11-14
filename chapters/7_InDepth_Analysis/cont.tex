@@ -50,17 +50,27 @@ In this section, with the toy model from~\cref{sec:PT:gwas} in mind, we elaborat
 % \begin{equation}
 %     \rho\ped{gw}(\tau) \simeq \frac{1}{16 \ppi G\nped{N} a^4(\tau)} \frac{1}{V} \sum_{P=+,\times} \integ[3][(2\ppi)^3]{k} \abs{\dot{\Ft{\ah}}(\tau, \vec{k})}^2.
 % \end{equation}
-\rephrase{We turn our attention to the \emph{analytically} computed gravitational-wave modes in~\cref{eq:PT:gwas:mywaves_complete_formula}. 
+
+% \rephrase{
+We turn our attention to the \emph{analytically} computed gravitational-wave modes in~\cref{eq:PT:gwas:mywaves_complete_formula}. 
 The energy density of gravitational waves in an FLRW universe given in~\cref{eq:GR:gws:rho_gw_final}, presented for \emph{simulated} waves in~\cref{fig:results:h11:avhijprimenorm}. 
 % We consider the energy density of gravitational waves in an FLRW universe given in~\cref{eq:GR:gws:rho_gw_final}. %
-One way to use this is to discretise the integration; $\diff k \to k_\#$, and loop through all possible modes $\lcoordk$. Agnostically, this involves solving two integrals numerically $N_\#^3$ times for each $\tau$. This brute-force experiment is computationally very inefficient, and it would be much more insightful to find an approximate expression for $\rho\ped{gw}$ that is analytical, or at least with only fewer computation steps. %
-Such an expression may exist through asymptotic evaluations of Bessel functions, among other things. Not only would this offer an efficient verification strategy, but would also help put this framework into the context of actual gravitational-wave observations.}
+One way to use this, is to discretise the integration; $\diff k \to k_\#$, and loop through all possible modes $\lcoordk$ (which is an option in~\asgrd{}). Agnostically, this involves solving two integrals numerically $N_\#^3$ times for each $\tau$. This brute-force experiment is computationally very inefficient, and it would be much more insightful to find an approximate expression for $\rho\ped{gw}$ that is analytical, or at least with fewer computation steps. %
+Such an expression may exist through asymptotic evaluations of Bessel functions, among other things. Not only would this offer an efficient verification strategy, but would also help put this framework into the context of actual gravitational-wave observations.
+% }
+
+In any case, the aforementioned seemingly trivial brute-force analysis was tried towards the end. This precursory analysis is not presentable due to unforeseen problems and time-shortage.
+
+% We acknowledge that this analysis could have been performed relatively easily, \blahblah
 
 
 \paragraph{In-depth gravitational-wave analysis.} %
-An interesting analysis would be to systematically change various parameters in the source $\Ft{\pi}_+$ and see what effect this has on the resulting tensor perturbations. From what we gather, it appears that in letting $\sigma\ped{w}$ and/or $\delta\ped{w}$ be defined from oscillating asymptotic fields $\pm \breve{\chi}$ instead of $\chi_\pm$, $\Ft{h}_+$ becomes noisier, i.e. with small oscillations around the original result. Changing $\varepsilon$ seems to shift the phase of the oscillations. The analysis is precursory, and therefore not included here. %
+An interesting analysis would be to systematically change various parameters in the source $\Ft{\pi}_+$ and see what effect this has on the resulting tensor perturbations. From what we gather, it appears that in letting $\sigma\ped{w}$ and/or $\delta\ped{w}$ be defined from oscillating asymptotic fields $\pm \breve{\chi}$ instead of $\chi_\pm$, $\Ft{h}_+$ becomes noisier, i.e. with small oscillations around the original result. Changing $\varepsilon$ seems to shift the phase of the oscillations.
+The analysis is precursory, and therefore not included here. %
+This is comprehensive as 
 % This analysis is far from thorough, which is why we do not present it as a result. 
-To get more insights, the analysis is huge as $\Ft{h}_+$ depends on time and a two-dimensional wave vector, and several other parameters. This motivates approaches such as attempts at summary statistics that would reduce the dimensionality of the problem drastically. 
+% To get more insights, the analysis is huge as 
+$\Ft{h}_+$ depends on time and a two-dimensional wave vector, and several other parameters. This motivates approaches such as attempts at summary statistics that would reduce the dimensionality of the problem drastically. 
 
 
 
@@ -82,7 +92,7 @@ It might be possible to perform an asymptotic analysis of~\cref{eq:PT:gwas:mywav
 % We explained in~\cref{sec:results:hindsight}
 
 
-It was indeed very unfortunate that the simulations that were supposed to be updated with optimised initial conditions (cf.~simulation \simnum{7}), were run with {a bug that was not detected soon enough}, as elaborated in~\cref{sec:results:hindsight}. 
+It was indeed very unfortunate that the simulations that were supposed to be updated with optimised initial conditions (cf.~simulation \simnum{7}), were run with {a bug that was not detected soon enough}, as elaborated in~\cref{sec:results:hindsight}. Here are some alterations that can be done in future experiments.
 
 \paragraph{Upgraded resolution.} %
 With extended time (and computer) resources, we would have run simulations as described in~\cref{sec:results:hindsight}, preferably with better spatial and temporal resolution. Below we describe possible analyses that could come from such fine-grained toy-model experiments.
@@ -97,11 +107,11 @@ With extended time (and computer) resources, we would have run simulations as de
 \paragraph{Varying the physics.} %
 There are several other simulation designs that might help isolate important artefacts from the not-so important features. We list a few of these ideas.
 \begin{itemize}
-    \item We could look at already-formed walls for which $\breve{\chi}\simeq 1$ and  $\sigma \simeq \sigma_\infty$ to see if and how the time-dependence of the surface tension affects the wall displacement field and metric tensor perturbations. Constant surface tension allows cleaner expressions and model-independence. 
+    \item We could look at already-formed walls for which $\breve{\chi}\simeq 1$ and  $\sigma \simeq \sigma_\infty$ to see if and how the time-dependence of the surface tension affects the wall displacement field and metric tensor perturbations. Constant surface tension allows cleaner expressions as well as model-independence. 
     \item If we change the ``nature'' of the wall perturbation from a sine to a cosine, this might help in understanding the unpredicted imaginary component of the gravitational waves discussed in~\cref{sec:results:h11:comparison}. We performed some tentative studies doing exactly this, and saw that the trend was alternating real and imaginary modes, arranged oppositely from the Jacobi--Anger expansion (see~\cref{app:walls:SE_tensor_alt:cos}). This is what we expect, but more careful studies should have been made.
     % This we actually did, but did not prioritise saving and presenting these results. The reader may take my word for it, that the trend was alternating real and imaginary modes, arranged oppositely from the Jacobi--Anger expansion (see~\cref{app:walls:SE_tensor_alt:cos}). This is what we expect. % \speak{Maybe this is better placed in~\cref{sec:results:h11:comparison}?}
     % \item If we had written the code to also output the Fourier-space SE tensor, we could have compared simulative results to purely analytical expressions. This would make debugging much simpler, and it could help us understand the difference magnitude, among other things. The memory-efficiency of~\gevolution{} comes at the expense of simplicity and perhaps flexibility, and it is not a completely straight-forward task to make this happen.
-    \item Testing different amplitudes $\epsast$ and scales $p$ would give insight to the discussion about the validity of the thin-wall approximation. We saw that $\epsA$ becomes the same function when plotted over $t_\omega$ and divided by $\epsast$, and that this did not hold for $\epsB$. For example, if we perform simulation~\simnum{3} with $\epsast=0.06L_\#$, we would have gotten one of three possible results, if put in context with~\cref{fig:results:epsilon:eps_diff_sims_combi}, which could help reduce the number of possible explanations: %
+    \item Testing different amplitudes $\epsast$ and scales $p$ would give insight to the discussion about the validity of the thin-wall approximation. We saw that $\epsA$ becomes the same function when plotted over $t_\omega$ and divided by $\epsast$, and that this did not hold for $\epsB$. For example, if we perform simulation~\simnum{3} with $\epsast=0.06L_\#$, we would have got one of three possible results, if put in context with~\cref{fig:results:epsilon:eps_diff_sims_combi}, which could help reduce the number of possible explanations: %
     \begin{enumerate}
         \item Overlap with simulation~\simnum{3} (and naturally also~\simnum{1},~\simnum{4} and~\simnum{7}). This might be an indication that the simulation setups in~\simnum{2} and~\simnum{5} are not valid either due to bad spatial resolution, self-interactions or interactions with the opposite wall.
         \item $\Delta \varepsilon$ smaller than for simulation~\simnum{3}, but follows a similar pattern. In this scenario, one can interpret discrepancy to be related to inter-kink forces unaccounted for in the thin-wall approximation.

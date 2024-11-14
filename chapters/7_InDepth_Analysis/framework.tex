@@ -1,5 +1,5 @@
 % |||||||||||||||||||||||||||||||||||||||||||||||
-% |||||| 7.2 Limitations and possibilities ||||||
+% |||||| 7.3 Limitations and possibilities ||||||
 % |||||||||||||||||||||||||||||||||||||||||||||||
 
 % ----------------------------------------------
@@ -11,12 +11,12 @@
 
 
 
-
-
-
+% \rephrase{Now let us review the mathematical framework outside the context of verification.} 
 % \section{Limits of the framework}
-We review the theory that builds this framework. \comment{Why?}%
-Let us consider three steps that are not completely independent, but describe a certain order of things.
+% We review the theory that builds this framework. \comment{Why?}%
+
+We have analysed the results and discussed possible methods of verification and complementary analyses. Now, let us review the mathematical framework as it stands, in order to get an idea of the applicability. 
+We consider three steps that are not completely independent, but describe a certain order of things.
 \begin{description}
     \item[Step one:] Choose a background spacetime, particularly a conformally flat four-dimensional manifold, with conformal factor $a\propto \tau^\alpha$, where $\tau=x\^0$ is the conformal time. \textbf{Prototype:} Set $\alpha=2$ to get matter domination.
     \item[Step two:] Invoke a (first-order) phase transition at $\tau = \tau_\ast$, and a scalar boson $\phi$ responsible for said phase transition. Choose a scalar-field or scalar--tensor theory with a suitable symmetry-breaking (effective) potential $V\ped{eff}(\phi)$. \textbf{Prototype:} Specify that $\phi$ is the (a)symmetron field, and consider $\kappa=0$ (symmetron).
@@ -24,8 +24,9 @@ Let us consider three steps that are not completely independent, but describe a 
 \end{description}
 % Comparative analyses 
 % Verification of the prototype substantiate 
-For this to be of any use in the quest for analytical estimations of gravitational waves that we discussed in~\hyperlink{sentence1}{the introduction}, there has to be a certain level of analytical solvability for the resulting equations. In our prototype, we got pure analytical expressions up to the defect's SE tensor in Fourier space. We need only one numerical integration to compute the Fourier-space tensor perturbations for our prototype, which is quite neat. %In another case, if there are more than one numerical step, possibly 
+For this to be of any use in the quest for analytical estimations of gravitational waves that we discussed in~\hyperlink{sentence1}{the introduction}, there has to be a certain level of analytical solvability for the resulting equations. In our prototype, we got pure analytical expressions up to the defect's SE tensor in Fourier space. We need therefore only one numerical integration to compute the Fourier-space tensor perturbations for our prototype, which is quite neat. %In another case, if there are more than one numerical step, possibly 
 % It would have b
+
 
 
 
@@ -99,12 +100,12 @@ With the above elaboration, we comprise the steps in the following ``hierarchy''
 
 Generalisation from~\cref{item:whatif:framework:bckg_matter_dom} to~\labelcref{item:whatif:framework:bckg_simple_scale_factor} %
 %~\crefrange{item:whatif:framework:bckg_matter_dom}{item:whatif:framework:bckg_simple_scale_factor} 
-should be uncomplicated. Considering $N$ spatial dimensions is straight-forward, as long as the topological defect is of codimension one (with $D=N-1$ spatial dimensions). %\comment{Comment about coordinates.}
+should be uncomplicated. Considering $N$ spatial dimensions is straight-forward, at least if the topological defect is of codimension one (with $D=N-1$ spatial dimensions). %\comment{Comment about coordinates.}
 
 
 It would have been interesting to study the effect of non-degenerate vacua, e.g.~the asymmetron 
 % (\crefrange{item:whatif:framework:pt_symmetron}{item:whatif:framework:pt_asymmetron})
-(\cref{item:whatif:framework:pt_symmetron} to~\labelcref{item:whatif:framework:pt_asymmetron}). Our symmetron results suggest that minor changes in $\phi_\pm$---the limits of the integral on the surface tension---do not drastically alter the overall behaviour of the perturbation on the wall. One can imagine that a similar expression for $\sigma$ would hold for the asymmetron as well. Then there is just the matter of a non-zero vacuum energy difference $v=v_+-v_-$, but this will also generally be time-dependent, $v=V(\phi_+)-V(\phi_-)$. In Minkowski spacetime and the limit where $\sigma$ and $v$ are constants, the solution to the equation of motion corresponding to our setup is the hyperbola~\citep{garrigaPerturbationsDomainWalls1991}, and we should expect solution the conformally related flat, FLRW ambient spacetime to inhabit similar features. 
+(\cref{item:whatif:framework:pt_symmetron} to~\labelcref{item:whatif:framework:pt_asymmetron}). Our symmetron results suggest that minor changes in $\phi_\pm$---the limits of the integral on the surface tension---do not drastically alter the overall behaviour of the perturbation on the wall. One can imagine that a similar expression for $\sigma$ would hold for the asymmetron as well. Then there is just the matter of a non-zero vacuum energy difference $v=v_+-v_-$, but this will also generally be time-dependent, $v=V(\phi_+)-V(\phi_-)$. In Minkowski spacetime and the limit where $\sigma$ and $v$ are constants, the solution to the equation of motion corresponding to our setup is the hyperbola~\citep{garrigaPerturbationsDomainWalls1991}, and we should expect the solution in the conformally related flat, FLRW ambient spacetime to inhabit similar features. 
 % \begin{equation}
 %     % \frac{\sigma}{\sqrt{1-{(\partial_t z)}^2}} - v z = \text{constant}.z
 %     z^2 - t^2 = {(\sigma/v)}^2,
@@ -126,11 +127,11 @@ We mention that to solve the equation of motion for the (unperturbed) wall norma
     % \begin{equation}
     % \sum_{m\in \Integer} \Bessel[m](x) \Bessel[n\mp m](y) = \Bessel[n](\pm x+y),
     % \end{equation}
-    but time limitations make us have to leave this for another time. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
+    but time limitations make us have to leave this for now. To get the full picture, one would have to consider $I\ped{a}$ as well, and keep in mind that the TT-projection we did before (\cref{sec:pertwalls:gws:Fourier_SE_tensor}) was a result of the single Dirac delta, which gave $I\ped{a}\propto I\ped{s}$ (\cref{eq:derivations:jacobianger:I_a_only}). %
     If proven that this blows up, there is reason to believe that the simplified analysis (\cref{app:walls:SE_tensor:FT_SE}) does not hold either. %However, our toy-model results show Bessel-like behaviour in the gravitational-wave modes  
 
 
-    Now, we performed the same naive operation as in~\cref{app:walls:SE_tensor} where we extract a summation from an integral, without necessarily fulfilling the criteria for the commutation of these operators. There are differences however to how one should interpret distributions and functions, but these technicalities lie beyond the scope of this thesis.
+    Now, we have performed the same naive operation as in~\cref{app:walls:SE_tensor} where we extract a summation from an integral, without necessarily fulfilling the criteria for the commutation of these operators. Contributing factor to this confusion might have to do with differences to how one should interpret distributions versus functions, but these technicalities lie beyond the scope of this thesis.
 
     
 

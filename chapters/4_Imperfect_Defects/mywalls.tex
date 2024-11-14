@@ -38,9 +38,12 @@ We will use $s\equiv \tau/\tau_\ast$ as our time variable, and $\omega \equiv p\
 \end{equation}
 where primes mean derivatives with respect to $s$. %
 Finally, the equation of motion for the scalar perturbation to the wall normal coordinate is
-\begin{equation}\label{eq:pertwalls:mywalls:eom_final}
-    \varepsilon'' + \left(  \frac{3\alpha}{s}  + 2 d(s)\right)\varepsilon' + \omega^2\varepsilon = 0; \quad d(s)\triangleq \frac{9\alpha}{4 s \left( s^{3\alpha}-1 \right)}.
-\end{equation}
+\boxedeq{eq:pertwalls:mywalls:eom_final}{
+    \varepsilon'' + \pclosed{\frac{3\alpha}{s}  + 2 d(s)} \varepsilon' + \omega^2\varepsilon = 0; \quad d(s)\triangleq \frac{9\alpha}{4 s \left( s^{3\alpha}-1 \right)}.%
+    }
+% \begin{equation}\label{eq:pertwalls:mywalls:eom_final}
+%     \varepsilon'' + \left(  \frac{3\alpha}{s}  + 2 d(s)\right)\varepsilon' + \omega^2\varepsilon = 0; \quad d(s)\triangleq \frac{9\alpha}{4 s \left( s^{3\alpha}-1 \right)}.
+% \end{equation}
 % From hereon, we express the function in terms of $s$ and $\omega$, i.e.~$\epsilon_u(s)$.
 
 % \speak{TO-DO: Check if this is a misunderstanding, as $\rho$ in effective potential is manifestly dust-like?}
@@ -125,7 +128,7 @@ Finally, the equation of motion for the scalar perturbation to the wall normal c
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[h]
         \centering
-        \includegraphics[width=\linewidth]{Methodology/demo_analytical_epsilon.pdf}
+        \includegraphics[width=\linewidth]{Methodology/demo_analytical_epsilon.png}
         %%%%%%%%%%
         \caption{Demonstration of how the analytical solution to the equation of motion for $\varepsilon(s)$ was obtained. The numerical solution is included, both in the case with constant (``naive'') and time-varying (numerical) surface tension.}  
         \label{fig:pertwalls:mywalls:demo_analytical_epsilon}
