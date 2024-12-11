@@ -1,3 +1,4 @@
+
 \documentclass[UKenglish,aspectratio=169]{beamer}
 
 \usepackage{import}
@@ -5,22 +6,95 @@
 
 
 
+% Options
+
+\newif\ifCompAnims  % Compile animations
+\newif\ifOnlyNotes  % Show only notes
+\newif\ifShowNotes  % Show notes in the right panel (overrides the others)
+
+% -------
+
+% Set option values
+\ShowNotesfalse
+
+\CompAnimstrue
+
+\OnlyNotesfalse
+
+
+\ifOnlyNotes\ShowNotestrue\CompAnimsfalse\else\fi
+
+% -------
+
+
+\ifShowNotes
+  \setbeameroption{show notes}
+  \ifOnlyNotes
+    \setbeameroption{show only notes}
+  \else
+    \setbeameroption{show notes on second screen=right}
+  \fi
+  \setbeamertemplate{note page}[plain] % removed the thumbnail of the slide
+  \setbeamerfont{note page}{size=\fontsize{13}{14}}
+  % \setbeamercolor{note page}{bg=uioyellow}
+  % \setbeamerfont{beamer-font name}{attributes}
+  % \setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}
+\else\fi
+
+
+
 \author{Nanna Bryne}
 % \uioemail{dag@ifi.uio.no}
 \title{Spacetime Ripples from Domain-Wall Wiggles}
-\subtitle{On the analytical prediction of the gravitational-wave signature from perturbed topological defects in expanding spacetime}
+\subtitle{\footnotesize On the analytical prediction of the gravitational-wave signature from perturbed topological defects in expanding spacetime}
 
 \begin{document}
+
+\ifOnlyNotes
+\else
 \uiofrontpage[dept={Institute of Theoretical Astrophysics},
   info={Master's presentation},
-  image={fp_im.png}, 
-%   academictitle={Spacetime Ripples from Domain-Wall Wiggles}
+  image={figs/fp_im.png},
+  date={12th December 2024},
   smaller]
+\fi
 
 
 
-\section{Introduction}\label{sec:intro}
+
+% \note{}
+{\setbeamercolor{background canvas}{bg=uioblue3}
+\begin{frame}[plain,noframenumbering]
+  \frametitle{Contents}
+  % \(+\)~\textsc{intro}
+  \tableofcontents[hideallsubsections]%\note{We will spend most time on the intro. and description of the project.}
+  % \(+\)~\textsc{outro}
+  % \begin{notes}{0}
+  %   \nnote{}{%
+  %     1) Aimed at more broad audience, but not expected to explain all concepts.\par
+  %     2) Somewhat technical, but should be possible to follow for many. \par
+  %     3) Largely a validation analysis, non-physicists will hopefully also keep track\dots \par
+  %     4) Closing words, way forward.
+  %   }
+  % \end{notes}
+  % \note[item]{\emph{intro:} Will mostly make sense to those with basic knowledge of the field.}
+  % \note[item]{\emph{background:} }
+  % \note[item]{\emph{project:} Somewhat technical, but should be possible to follow for many.}
+  % \note[item]{\emph{analysis:} Largely a validation analysis, non-physicists will hopefully also keep track\dots}
+  % \note[item]{\emph{end:} Closing words, way forward.}
+\end{frame}}
+
+
+% \section*{\textsc{intro}}\label{sec:intro}
+% {%\setbeamercolor{background canvas}{bg=uioorange3}
+% % \usebackgroundtemplate{\includegraphics[width=0.5\paperwidth, keepaspectratio]{starry-night.png}}
+% \import{sections/}{intro.tex}}
+
+
+\section{Background}\label{sec:background}
 {\import{sections/}{intro.tex}}
+{\import{sections/}{background.tex}}
+
 
 
 \section{Project}\label{sec:project}
@@ -32,17 +106,42 @@
 \section{Analysis}\label{sec:analysis}
 {\import{sections/}{analysis.tex}}
 
+\section{Foreground}\label{sec:end}
+{\import{sections/}{end.tex}}
+
+% \section*{\textsc{outro}}\label{sec:intro}
+% {\setbeamercolor{background canvas}{bg=uioblue3}
+% % \usebackgroundtemplate{\includegraphics[width=0.5\paperwidth, keepaspectratio]{starry-night.png}}
+% \import{sections/}{outro.tex}}
 
 
 
 % \section{The end}
 
 
-\uiofullpageimage{starry-night.png}
-\uiofullpageimage{starry-night.png}
-\uiofullpageimage{starry-night.png}
-\uiofullpageimage{starry-night.png}
+% \uiofullpageimage{starry-night.png}
+% \uiofullpageimage{starry-night.png}
+% \uiofullpageimage{starry-night.png}
+% \uiofullpageimage{starry-night.png}
 
+
+% \begin{frame}{\textcolor{DUMMY1}{DUMMY}}
+%   \textcolor{DUMMY1}{%
+%   \cite{christiansenGravitationalWavesDark2024,christiansenAsevolutionRelativisticNbody2023,christiansenCosmologicalSimulationsPhase2024,christiansenAsimulationDomainFormation2024}}
+%   \textcolor{DUMMY1}{%
+%   \cite{hinterbichlerSymmetronCosmology2011,perivolaropoulosGravitationalTransitionsExplicitly2022}}
+%   %
+% \end{frame}
+
+
+\section*{Bibliography}
+\begin{frame}[plain,noframenumbering]{Bibliography}
+  \begin{footnotesize}
+    \bibliography{../refs}
+    \textcolor{uiogrey}{((All figures are created by the author.))}
+  \end{footnotesize}
+\end{frame}
 
 
 \end{document}
+
