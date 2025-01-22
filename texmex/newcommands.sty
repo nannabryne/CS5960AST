@@ -52,8 +52,8 @@
 
 
 \WithSuffix\newcommandx\pclosed*[2][1=]{{#1( #2 #1)}}
-\WithSuffix\newcommandx\bclosed*[2][1=]{{#1( #2 #1)}}
-\WithSuffix\newcommandx\cclosed*[2][1=]{{#1( #2 #1)}}
+\WithSuffix\newcommandx\bclosed*[2][1=]{{#1[ #2 #1]}}
+\WithSuffix\newcommandx\cclosed*[2][1=]{{#1\{ #2 #1\}}}
 
 
 
@@ -65,7 +65,7 @@
 \newcommand{\diff}[1][\@nil]{%
 \def\tmp{#1}%
     \ifx\tmp\@nnil
-        \ensuremath{\mathrm{d}}
+        \ensuremath{\text{d}}
     \else
         % \ensuremath{\mathrm{d}^{#1}}
         \ensuremath{d^{#1}}\!

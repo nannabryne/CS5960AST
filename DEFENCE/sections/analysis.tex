@@ -156,6 +156,7 @@
     \itnote{4}{
         \item Initially defn. not thin, and very close to anti-wall.
         \item Spatial resolution might not capture sinus wave.
+        \item \textbf{Inter- and intra-wall forces}
         \item Asymptotic field inhabits oscillations that might affect both wall thickness, but more importantly surface tension, and then again the eom for $\varepsilon$.
         \item \textcolor{O1}{To mention some\dots}
     }
@@ -169,7 +170,7 @@
 %     % \vspace*{-3mm}
     % ****** ANIMATION ******
     \ifCompAnims
-        \animategraphics[loop,keepaspectratio,width=\columnwidth,height=\textheight,autoplay]{45}{gifs/eps_achi2/eps_achi2-}{0}{182}
+        \animategraphics[loop,keepaspectratio,width=\columnwidth,height=\textheight,autoplay]{50}{gifs/eps_achi2/eps_achi2-}{0}{182}
     \else
         \includegraphics[keepaspectratio,width=\columnwidth,height=\textheight]{gifs/eps_achi2/eps_achi2-182}
     \fi
@@ -186,7 +187,7 @@
 % \uiofullpageimage{gifs/eps_achi2/eps_achi2-182}
 
 % \begin{frame}{idk}
-\uiobigimage{Analytical vs. simulated wall position}{../../figs/Findings/eps_diff_sims_combi.pdf}{$e\equiv\varepsilon/\epsast, \quad \Delta e \equiv \abs*{\epsA-\epsB}, \quad t_\omega = \omega (s-1)$}%
+\uiobigimage{Wall position $e=\varepsilon/\epsast$ as functions of $t_\omega=p(\tau-\tau_\ast)$}{../../figs/Findings/eps_diff_sims_combi.pdf}{$e\equiv\varepsilon/\epsast, \quad \Delta e \equiv \abs*{\epsA-\epsB}, \quad t_\omega = \omega (s-1)$}%
 \notesImage[This x-axis is not time][combi plot]
 
 % \uiofullpageimage{../../figs/Findings/eps_diff_sims_combi.pdf}
@@ -362,7 +363,7 @@
             \midrule
             % -----------
             \uncover<2->{$e$ independent of $\epsast$ & \YAY & \NAY } \\
-            \uncover<3->{$e\not\sim s^{-5/2}\Cylindrical[-5/2](\omega s)$ & \YAY & \YAY} \\
+            \uncover<3->{$e \sim s^{-5/2}\Cylindrical[-5/2](\omega s)$ & \NAY & \NAY} \\
             % \uncover<3->{$e\not\sim\zeta(s)$ & \YAY & \YAY} \\
             \uncover<4->{($e$ vs.~$t_\omega$)-plot indep. of parameters &\YAY & \MAY} \\
             \uncover<5->{$e$ unaffected by large fifth-force oscillations & \MAY & \MAY} \\
@@ -390,6 +391,7 @@
 % NOTES *******************************
 \begin{notes}[9][summary (TABLE)]
     \nnote{1}{Summarise\dots}
+    \nnote{3}{\textit{Is the time-dependence of the surface tension insignificant?}}
     \nnote{4}{\textit{Is there a single, common graph when normalised and plotted over $t_\omega$?}}
     \nnote{5}{Want to mention that the discrepancy does matter when computing the GWs, and that is why we insert this result into the formula for $h_+$}
 \end{notes}

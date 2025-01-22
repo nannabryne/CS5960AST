@@ -1,7 +1,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{babel, fancyvrb, textcomp}
 
-\usetheme[toc, sectionsep=uioblue2, summary, uiostandard]{UiO}
+\usetheme[toc=uioblue3, sectionsep=uioblue2, summary, uiostandard]{UiO}
 
 \usepackage{physics,amssymb}
 \usepackage{manfnt}
@@ -15,6 +15,9 @@
 \usepackage[absolute,overlay]{textpos}  % For absolute positioning
 
 
+\usepackage{animate}
+
+\usepackage{xcolor}
 
 
 % \usetikzlibrary{mindmap,backgrounds}
@@ -35,8 +38,45 @@
 % \graphicspath{../figs/}
 
 
+\usepackage[sort]{natbib}
+\bibpunct{((}{))}{;}{a}{}{,} %
+\bibliographystyle{../texmex/naa}
 
 
+
+
+
+\usepackage{tensor}         % for tensor indices
+\usepackage{xfrac}          % provides \sfrac
+\usepackage{textgreek}      % provides \textmu etc.
+\usepackage{mathrsfs}       % provides \mathscr
+\usepackage{accents}        % provides \accentset
+
+
+
+% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% DELETE ME:
+\definecolor{DUMMY1}{rgb}{0.87, 0.0, 1.0}
+\definecolor{DUMMY2}{RGB}{112, 245, 91}
+\newcommand{\comment}[1]{\textcolor{DUMMY1}{\small{\(\lceil\)#1\(\rfloor\)}}}
+\newcommand{\unfinishedSlide}{\(\mathcolor{DUMMY2}{\star}\)}
+% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+\definecolor{DSG}{rgb}{0.184314, 0.309804, 0.309804}    % darkslategrey
+
+\definecolor{k02}{gray}{0.6}
+
+\definecolor{lighttaupe}{rgb}{0.7, 0.55, 0.43}
+\definecolor{sand}{rgb}{0.76, 0.7, 0.5}
+\definecolor{paletaupe}{rgb}{0.74, 0.6, 0.49}
+\definecolor{pastelgray}{rgb}{0.81, 0.81, 0.77}
+\definecolor{moccasin}{rgb}{0.98, 0.92, 0.84}
+\definecolor{mediumchampagne}{rgb}{0.95, 0.9, 0.67}
+
+
+% \definecolor{DSGA}{rgba}{0.184314, 0.309804, 0.309804, 0.8}
 % UIO COLOURS
 
 
@@ -63,6 +103,26 @@
 
 
 
+
+
+% ----- hyperref setup -----
+% \usepackage[hidelinks, hypertexnames=false]{hyperref}
+\usepackage{hyperref}
+%   uiopink:    {0.984 0.400 0.400}
+%   uioblue:    {0.525 0.642 0.969}
+%   uiogreen:   {0.484 0.882 0.671}
+%   uioorange:  {0.992 0.796 0.529}
+\hypersetup{allbordercolors={0.984 0.400 0.400}}    % \uiopink  (default)
+\hypersetup{linkbordercolor={0.992 0.796 0.529}}    % \uioorange  (\(cref))
+\hypersetup{citebordercolor={0.808 1.000 0.875}}    % \uiogreen (\cite(...))
+\hypersetup{urlbordercolor ={0.525 0.642 0.969}}    % \uioblue  (\url)
+\hypersetup{filebordercolor={0.525 0.642 0.969}}    % \uioblue  (\file)
+\hypersetup{menubordercolor={0.525 0.642 0.969}}    % \uioblue  ??
+
+
+
+
+
 \input{../texmex/adjustments.sty}
 \input{../texmex/newcommands.sty}
 
@@ -74,12 +134,13 @@
 
 
 \renewcommandx{\Mpch}[1][1=M]{\ensuremath{\text{{#1}pc/h}}}
+\renewcommandx{\unit}[1]{\ensuremath{~\text{#1}}}
 
 
 
 
 
-\newcommandx{\hpAB}[1][1=+]{\ALIASFt{h}_{#1}}
+\newcommandx{\hpAB}[1][1=+]{\ALIASFt{h}_{#1}^{\text{\tiny{NG}}, \phi}}
 \newcommandx{\hpA}[1][1=+]{\ALIAShpAB[#1]\nap{NG}}
 \newcommandx{\hpB}[1][1=+]{\ALIAShpAB[#1]^{\phi}}
 \newcommandx{\hpC}[1][1=+]{\ALIASFt{\mathtt{h}}_{#1}}
@@ -91,6 +152,10 @@
 \newcommandx{\epsB}[1][1=\varepsilon]{{#1}^{\phi}}
 \newcommandx{\epsC}{\ALIASepsB}
 
+\newcommandx{\pert}{\ALIASpert}
+
+\newcommandx{\ah}{\ALIASah}
+\newcommand{\sppt}{\ALIASsppt}
 
 
 
@@ -105,6 +170,128 @@
 
 
 
+\newcommand{\paragraph}[1]{\par\noindent\textbf{\textsc{#1}}~~}
+\renewcommand{\newconcept}[1]{\textbf{#1}}
+
+
+
 \makeatletter
 \newcommand{\beamLastFrameSlide}{\beamer@finalframeslide}
 \makeatother
+
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommandx{\citef}[2][1=]{\footnote[#1]{\cite{#2}}}
+
+
+
+
+
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
+
+
+
+
+\newcommand{\SideNote}[2]{%
+    \fcolorbox{black}{uioyellow}{
+    \parbox{\textwidth}{
+    \small
+    \paragraph{#1}
+    #2}
+    }
+}
+
+
+\newcommand{\aProblem}[2]{%
+    {\small
+    \textcolor{uiopink1}{\paragraph{#1}}%
+    #2}\normalsize
+    }
+    
+\newcommand{\aSolution}[2]{%
+    {\small
+    \textcolor{uiogreen1}{\paragraph{#1}}%
+    #2}\normalsize%
+    }
+
+
+% \newcommandx{\Here}[2][1=Here]{\textcolor{gray}{[\footnotesize\textit{#1}:~#2}\textcolor{gray}{]}}
+\newcommandx{\Here}[2][1=Here]{\footnote{\textcolor{gray}{\textit{#1}:~#2}}}
+
+
+
+
+\newcommand{\noteNext}[1]{
+    \bigskip\bigskip
+    \begin{flushright}
+        \rule{0.8\textwidth}{0.4pt}
+
+        \medskip
+        \(\longrightarrow\)~\textbf{NEXT:} {#1}
+    \end{flushright}
+}
+
+
+
+% \newcommandx{\NotePage}[3][1=1,3=]{\note<#1>{\textbf{Page {#2}}~{#3}\par}}
+% \newcommandx{\Note}[3][1=1]{\note<#1>{\paragraph{(#2)}#3}}
+
+
+% \newenvironment{mynote}[4][1=1,3=1]{
+%     % \let\lastlay#1
+%     \newcommand{\entry}[2][]{\note{\par\noindent\textbf{##1}~}{##2}}
+%     %
+%     \note{\textbf{Page {#2}}~{#3}\par}%
+%     }{}
+% \newcountet
+
+\newcounter{ocounter}
+\newcounter{notes}
+\setcounter{notes}{0}
+
+\resetcounteronoverlays{notes}
+% \roman{ocounter}
+% \setcounter{ocounter}{0}
+\newenvironmentx{notes}[2][1=1,2=]{
+    \refstepcounter{notes}
+    \newcommand\gesture[1]{\textcolor{uiogreen1}{[##1]}}
+    % \newcommand\mustsay[1]{\textcolor{uioorange1}{##1}}
+    \newcommand\mustsay{\textcolor{uioorange1}}
+    %
+    % \newcommand\fnote\note<#1>
+    \note<#1>{\fcolorbox{black}{uioyellow}{\Large\textbf{{\thenotes}}}\large~\underline{#2}\par}
+    % \newcommand\nnote[2]{\note<#1>{\medskip\par\noindent{\textcolor{uioblue2}{##1)}}~##2}}
+    \newcommand\nnote[2]{\note<#1>{\smallskip
+    \begin{description}%
+        \item[{\textcolor{uioblue2}{##1)}}~]##2%
+        \end{description}%
+        }}
+    \newcommand{\itnote}[2]{\nnote{##1}{%
+        % \small
+        \begin{itemize}
+            ##2
+        \end{itemize}%
+    }}
+    % \setcounter{ocounter}{0}
+    % \newcommand\itnote[1]{\stepcounter{ocounter}{
+    %     \note<#1>{\paragraph{\theocounter)}##1}}
+    %     }
+    %
+    
+}{}
+
+
+\newcommandx{\notesImage}[2][1=,2=]{\note{%
+    \refstepcounter{notes}
+    \fcolorbox{black}{uioyellow}{\Large\textbf{{\thenotes}}}\large~\underline{#2}\par
+    \smallskip
+    \begin{description}%
+        \item[{\textcolor{uioblue2}{1)}}~]#1%
+    \end{description}%
+    }}
+
+
+
+

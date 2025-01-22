@@ -46,7 +46,10 @@
 \newboolean{uio@summary}
 \DeclareOptionBeamer{summary}[true]{\setboolean{uio@summary}{#1}}
 \newboolean{uio@toc}
-\DeclareOptionBeamer{toc}[true]{\setboolean{uio@toc}{#1}}
+% \DeclareOptionBeamer{toc}[true]{\setboolean{uio@toc}{#1}}
+% \DeclareOptionBeamer{no-toc}{\setboolean{uio@toc}{false}}
+\DeclareOptionBeamer{toc}[white]{\setboolean{uio@toc}{true}%
+  \def \uio@toc@colour{#1}}
 \DeclareOptionBeamer{no-toc}{\setboolean{uio@toc}{false}}
 
 % Process options
@@ -243,6 +246,34 @@
       height=\textheight]{\uioimagefile}%
     \rlap{\hspace*{1mm}\rotatebox{90}{\scriptsize \uio@beamer@image@info}}\par
     \uioendonecolumn\uioendcolumns}
+  
+  % Nanna's stuff
+  % \define@key{uio@beamer@anim@keys}{info}{\def \uio@beamer@anim@info{#1}}
+
+  \newenvironment{uioanimframe}[2][]
+    {\def \uio@beamer@image@info {}%
+      \setkeys{uio@beamer@image@keys}{#1}%
+      \begin{frame}[fragile,plain,environment=uioanimframe]
+        \begingroup\ignorespaces
+      %  \def\uioanimfile{#2}%
+      %  \def\uioanimendnum{#4}%
+      %  \def\uioanimstartnum{#3}%
+      %\uiostartcolumns\uiostartonecolumn
+       }
+    {%\uioendonecolumn\uiostartonecolumn
+      %\centering
+      %\vspace*{-3mm}%
+      % \includegraphics[keepaspectratio,width=\columnwidth,
+        % height=\textheight]{\uioanimfile}%
+      % \animategraphics[keepaspectratio,width=\columnwidth,
+        % height=\textheight, loop, autoplay]{10}{\uioanimfile}{\uioanimstartnum}{\uioanimendnum}
+      % \animategraphics[width=\columnwidth,
+        % loop, autoplay]{10}{\uioanimfile}{\uioanimstartnum}{\uioanimendnum}
+      % \rlap{\hspace*{1mm}\rotatebox{90}{\scriptsize \uio@beamer@image@info}}\par
+      % \uioendonecolumn\uioendcolumns
+      \endgroup\end{frame}}
+      % \end{frame}%
+      % }
 
 %% Final page with summary
 
@@ -293,10 +324,11 @@
   {}
   % Table of contents
   \ifthenelse{\boolean{uio@toc}}
-  {\begin{frame}[plain,noframenumbering]
+  {{\setbeamercolor{background canvas}{bg=\uio@toc@colour}
+    \begin{frame}[plain,noframenumbering]
     \frametitle{\contentsname}
     \tableofcontents[currentsection, hideothersubsections]
-   \end{frame}}
+   \end{frame}}}
   {}}
 \setbeamertemplate{section in toc}[circle]
 \setbeamertemplate{section in toc shaded}[default][50]
